@@ -1,0 +1,4 @@
+0-99999
+g_ctp_parm_filename ="PARAM/general.param"
+g_decode_map_filename ="MAPS/hms.map"
+g_ctp_kinematics_filename ="DBASE/standard.kinematics"

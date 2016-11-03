@@ -1,0 +1,25 @@
+#real raddeg
+raddeg=3.14159265/180
+;
+#include "PARAM/hcana.param"
+; hmsflags.param include spectrometer offsets and options.
+#include "PARAM/genflags.param"
+#include "PARAM/hmsflags.param"
+
+#include "PARAM/gdebug.param"
+#include "PARAM/hdebug.param"
+#include "PARAM/htracking.param"
+
+#include "PARAM/gtarget.param"
+#include "PARAM/gbeam.param"
+;  
+#include "PARAM/hdc_offsets.param"
+#include "PARAM/hdc.pos"
+#include "PARAM/hhodo.pos"
+#include "PARAM/hcal.pos"
+#include "PARAM/hhodo.param"
+#include "PARAM/haero.param"
+#include "PARAM/hdc.param"
+#include "PARAM/hdriftmap.param"
+#include "PARAM/hcal.param"
+#include "PARAM/hcer.param"
