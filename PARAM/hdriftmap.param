@@ -1,3 +1,10 @@
+; Lookup table
+;number of bins in Meek's time to distance lookup table
+hdriftbins=138
+;number of 1st bin in Meek's table in ns
+hdrift1stbin=-24
+;bin size in ns of Meek's table
+hdriftbinsz=2
 hwc1x1fract=0.0000,0.0001,0.0001,0.0002,0.0003,0.0004,0.0004,0.0005
 0.0007,0.0008,0.0010,0.0012,0.0015,0.0020,0.0028,0.0041,0.0060,0.0086
 0.0121,0.0167,0.0230,0.0311,0.0412,0.0529,0.0658,0.0800,0.0951,0.1114
