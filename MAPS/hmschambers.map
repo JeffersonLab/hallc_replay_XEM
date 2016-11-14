@@ -1,5 +1,5 @@
 !HMS:
-! HDC_ID=11
+! HDC_ID= 1               TDC
 
 ! Caen 1190 VME Modules
 ROC=2
@@ -11,10 +11,12 @@ bsub=1190     ! put the module type here to help perl script
 ! Scintillators and reference channels.
 ! First 10 are scintillator PMTs, last 6 are reference channels
 
-detector=11
+!detector=11 !SOS chambers
+detector=1 ! HMS chambers
 
 ====== WIREMAP ======
 SLOT=5
+! channel,plane,wire
 96,3,1 ! Plane U, wire 1
 97,3,2 ! Plane U, wire 2
 98,3,3 ! Plane U, wire 3
@@ -124,6 +126,7 @@ SLOT=5
 14,3,106 ! Plane U, wire 106
 15,3,107 ! Plane U, wire 107
 SLOT=7
+! channel,plane,wire
 96,4,1 ! Plane V, wire 1
 97,4,2 ! Plane V, wire 2
 98,4,3 ! Plane V, wire 3
@@ -155,6 +158,7 @@ SLOT=7
 125,4,28 ! Plane V, wire 28
 126,4,29 ! Plane V, wire 29
 SLOT=8
+! channel,plane,wire
 0,4,30 ! Plane V, wire 30
 1,4,31 ! Plane V, wire 31
 2,4,32 ! Plane V, wire 32
@@ -218,6 +222,7 @@ SLOT=8
 61,4,90 ! Plane V, wire 90
 62,4,91 ! Plane V, wire 91
 SLOT=4
+! channel,plane,wire
 96,4,92 ! Plane V, wire 92
 97,4,93 ! Plane V, wire 93
 98,4,94 ! Plane V, wire 94
@@ -331,6 +336,7 @@ SLOT=4
 14,1,95 ! Plane X, wire 95
 15,1,96 ! Plane X, wire 96
 SLOT=7
+! channel,plane,wire
 80,1,97 ! Plane X, wire 97
 81,1,98 ! Plane X, wire 98
 82,1,99 ! Plane X, wire 99
@@ -348,6 +354,7 @@ SLOT=7
 94,1,111 ! Plane X, wire 111
 95,1,112 ! Plane X, wire 112
 SLOT=4
+! channel,plane,wire
 112,6,1 ! Plane X', wire 1
 113,6,2 ! Plane X', wire 2
 114,6,3 ! Plane X', wire 3
@@ -365,6 +372,7 @@ SLOT=4
 126,6,15 ! Plane X', wire 15
 127,6,16 ! Plane X', wire 16
 SLOT=5
+! channel,plane,wire
 112,6,17 ! Plane X', wire 17
 113,6,18 ! Plane X', wire 18
 114,6,19 ! Plane X', wire 19
@@ -382,6 +390,7 @@ SLOT=5
 126,6,31 ! Plane X', wire 31
 127,6,32 ! Plane X', wire 32
 SLOT=7
+! channel,plane,wire
 0,6,33 ! Plane X', wire 33
 1,6,34 ! Plane X', wire 34
 2,6,35 ! Plane X', wire 35
@@ -463,6 +472,7 @@ SLOT=7
 78,6,111 ! Plane X', wire 111
 79,6,112 ! Plane X', wire 112
 SLOT=8
+! channel,plane,wire
 64,2,1 ! Plane Y, wire 1
 65,2,2 ! Plane Y, wire 2
 66,2,3 ! Plane Y, wire 3
@@ -516,6 +526,7 @@ SLOT=8
 123,2,51 ! Plane Y, wire 51
 124,2,52 ! Plane Y, wire 52
 SLOT=10
+! channel,plane,wire
 0,5,1 ! Plane Y', wire 1
 1,5,2 ! Plane Y', wire 2
 2,5,3 ! Plane Y', wire 3
@@ -570,6 +581,7 @@ SLOT=10
 60,5,52 ! Plane Y', wire 52
 ====== WIREMAP ======
 SLOT=16
+! channel,plane,wire
 96,9,1 ! Plane U, wire 1
 97,9,2 ! Plane U, wire 2
 98,9,3 ! Plane U, wire 3
@@ -601,6 +613,7 @@ SLOT=16
 125,9,28 ! Plane U, wire 28
 126,9,29 ! Plane U, wire 29
 SLOT=14
+! channel,plane,wire
 0,9,30 ! Plane U, wire 30
 1,9,31 ! Plane U, wire 31
 2,9,32 ! Plane U, wire 32
@@ -680,6 +693,7 @@ SLOT=14
 94,9,106 ! Plane U, wire 106
 95,9,107 ! Plane U, wire 107
 SLOT=16
+! channel,plane,wire
 80,10,1 ! Plane V, wire 1
 81,10,2 ! Plane V, wire 2
 82,10,3 ! Plane V, wire 3
@@ -696,6 +710,7 @@ SLOT=16
 93,10,14 ! Plane V, wire 14
 94,12,113 ! Plane X', wire 113
 SLOT=14
+! channel,plane,wire
 96,10,15 ! Plane V, wire 15
 97,10,16 ! Plane V, wire 16
 98,10,17 ! Plane V, wire 17
@@ -728,6 +743,7 @@ SLOT=14
 126,10,44 ! Plane V, wire 44
 127,10,45 ! Plane V, wire 45
 SLOT=17
+! channel,plane,wire
 0,10,46 ! Plane V, wire 46
 1,10,47 ! Plane V, wire 47
 2,10,48 ! Plane V, wire 48
@@ -791,6 +807,7 @@ SLOT=17
 62,10,106 ! Plane V, wire 106
 63,10,107 ! Plane V, wire 107
 SLOT=13
+! channel,plane,wire
 0,7,1 ! Plane X, wire 1
 1,7,2 ! Plane X, wire 2
 2,7,3 ! Plane X, wire 3
@@ -920,6 +937,7 @@ SLOT=13
 126,12,15 ! Plane X', wire 15
 127,12,16 ! Plane X', wire 16
 SLOT=14
+! channel,plane,wire
 16,12,17 ! Plane X', wire 17
 17,12,18 ! Plane X', wire 18
 18,12,19 ! Plane X', wire 19
@@ -937,6 +955,7 @@ SLOT=14
 30,12,31 ! Plane X', wire 31
 31,12,32 ! Plane X', wire 32
 SLOT=16
+! channel,plane,wire
 0,12,33 ! Plane X', wire 33
 1,12,34 ! Plane X', wire 34
 2,12,35 ! Plane X', wire 35
@@ -1018,6 +1037,7 @@ SLOT=16
 78,12,111 ! Plane X', wire 111
 79,12,112 ! Plane X', wire 112
 SLOT=17
+! channel,plane,wire
 64,8,1 ! Plane Y, wire 1
 65,8,2 ! Plane Y, wire 2
 66,8,3 ! Plane Y, wire 3
@@ -1071,6 +1091,7 @@ SLOT=17
 123,8,51 ! Plane Y, wire 51
 124,8,52 ! Plane Y, wire 52
 SLOT=10
+! channel,plane,wire
 64,11,1 ! Plane Y', wire 1
 65,11,2 ! Plane Y', wire 2
 66,11,3 ! Plane Y', wire 3
