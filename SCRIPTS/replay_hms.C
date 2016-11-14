@@ -2,7 +2,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   //
   //
-  if(RunNumber == 0) {
+ if(RunNumber == 0) {
     cout << "Enter a Run Number (-1 to exit): ";
     cin >> RunNumber;
     if( RunNumber<=0 ) break;
@@ -16,12 +16,9 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
     }
   }
   
-  // char* RunFileNamePattern="raw/test_%d.dat";
-  // const char* ROOTFileNamePattern = "ROOTfiles/hms1190_%d.root";
-
-  char* RunFileNamePattern="/home/pooser/HallC/FADC250_Devel/fadc_data/hms_single_000%d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/hms1190_%d.root";
-
+    char* RunFileNamePattern="raw/test_%d.dat";
+    const char* ROOTFileNamePattern = "ROOTfiles/hms1190_%d.root";
+    //
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
   
@@ -49,11 +46,11 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THaApparatus* HMS = new THcHallCSpectrometer("H","HMS");
   gHaApps->Add( HMS );
   
-  HMS->AddDetector( new THcHodoscope("hod", "Hodoscope" ));
+  //  HMS->AddDetector( new THcHodoscope("hod", "Hodoscope" ));
   //HMS->AddDetector( new THcShower("cal", "Shower" ));
   //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov" );
   // HMS->AddDetector( cherenkov );
-  //HMS->AddDetector( new THcDC("dc", "Drift Chambers" ));
+  HMS->AddDetector( new THcDC("dc", "Drift Chambers" ));
   //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov" );
   //HMS->AddDetector( aerogel );
   //
@@ -61,7 +58,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   //  hscaler->SetDebugFile("HScaler.txt");
   //gHaEvtHandlers->Add (hscaler);
   //
-  //
+   //
 
 
   // Set up the analyzer - we use the standard one,
@@ -86,7 +83,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
   run->SetEventRange(1,MaxEvent);//  Physics Event number, does not
-  // include scaler or control events
+                                // include scaler or control events
   run->SetNscan(1);
   run->SetDataRequired(0x7);
   run->Print();
