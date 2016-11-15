@@ -37,7 +37,6 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   //  gHcParms->GetString("g_decode_map_filename")
   //);
   //system(command);
-
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
@@ -95,6 +94,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
  analyzer->SetEvent(event);
+ analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
  analyzer->SetOdefFile("DEF-files/hdcana.def");
  analyzer->SetCutFile("DEF-files/hdcana_cuts.def");    // optional
