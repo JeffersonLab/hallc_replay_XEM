@@ -2,7 +2,7 @@
 ! HAERO_ID= 7             (TDC),ADC
 
 ROC=1
-detector=7 !HAERO
+detector=7
 
 !F250 modules
 SLOT=16

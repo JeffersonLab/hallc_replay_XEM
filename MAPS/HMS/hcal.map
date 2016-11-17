@@ -2,11 +2,11 @@
 ! HCAL_ID= 4              ADC
 
 ROC=1
-detector=4 !HCAL
+detector=4
 
 !F250 modules
 SLOT=3
-! chan   column    row      sig
+! chan   plane    row      sig
      0,      1,      1,      0!    hA01+
      1,      1,      2,      0!    hA02+
      2,      1,      3,      0!    hA03+
@@ -24,7 +24,7 @@ SLOT=3
      14,     1,      2,      1!    hA02-
      15,     1,      3,      1!    hA03-
 SLOT=4
-! chan   column    row      sig
+! chan   plane    row      sig
      0,      1,      4,      1!    hA04-
      1,      1,      5,      1!    hA05-
      2,      1,      6,      1!    hA06-
@@ -42,7 +42,7 @@ SLOT=4
      14,     2,      5,      0!    hB05+
      15,     2,      6,      0!    hB06+
 SLOT=5
-! chan   column    row      sig
+! chan   plane    row      sig
      0,      2,      7,      0!    hB07+
      1,      2,      8,      0!    hB08+
      2,      2,      9,      0!    hB09+
@@ -60,7 +60,7 @@ SLOT=5
      14,     2,      8,      1!    hB08-
      15,     2,      9,      1!    hB09-
 SLOT=6
-! chan   column    row      sig
+! chan   plane    row      sig
      0,      2,      10,     1!    hB10-
      1,      2,      11,     1!    hB11-
      2,      2,      12,     1!    hB12-
@@ -78,7 +78,7 @@ SLOT=6
      14,     3,      11,     0!    hC11+
      15,     3,      12,     0!    hC12+
 SLOT=7
-! chan   column    row      sig     
+! chan   plane    row      sig     
      0,      3,      13,     0!    hC13+
      1,      4,      1,      0!    hD01+
      2,      4,      2,      0!    hD02+
