@@ -1,0 +1,47 @@
+!HMS:
+! HCAL_ID= 5     ADC, TDC
+
+ROC=1
+detector=5
+
+! Plane = 1 >> ADC Only
+! Plane = 2 >> TDC Only
+! Plane = 3 >> Both ADC & TDC
+
+!F250 module
+SLOT=17
+! chan    plane     bar    sig
+     8,       3,      1,     0!  hASUM
+     9,       3,      2,     0!  hBSUM
+     10,      3,      3,     0!  hCSUM
+     11,      3,      4,     0!  hDSUM
+     12,      4,      1,     0!  hPSHWR
+     13,      3,      5,     0!  hSHWR
+     14,      3,      6,     0!  hAERSUM
+     15,      3,      7,     0!  hCERSUM
+     
+!CAEN1190 module
+SLOT=2
+! A0
+! chan      TDC     bar    sig
+     0,       2,      1      0!  h1X
+     1,       2,      2      0!  h1Y
+     2,       2,      3      0!  h2X
+     3,       2,      4      0!  h2Y
+     4,       2,      5      0!  h1T
+     5,       2,      6      0!  h2T
+     6,       2,      7      0!  hT
+     7,       3,      1      0!  hASUM
+     8,       3,      2      0!  hBSUM
+     9,       3,      3      0!  hCSUM
+    10,       3,      4      0!  hDSUM
+    11,       4,      1      0!  hPSHWRLO
+    12,       4,      1      0!  hPSHWRHI
+    13,       3,      5      0!  hSHWR
+    14,       3,      6      0!  hAERSUM
+    15,       3,      7      0!  hCERSUM
+!CAEN1190 module
+SLOT=20
+! D1
+! chan      TDC     bar    sig
+     127,     2,      7      1! hT

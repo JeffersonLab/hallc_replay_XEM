@@ -8,11 +8,19 @@
 
 !The following lists the various HMS crates read out in Hall C
 
-Crate 1 >> Hodoscope (ADC,TDC), Calorimeter (ADC), Aerogel (ADC), Cherenkov (ADC) >> Trigger (ADC,TDC)
+!Crate 1 >> Hodoscope (ADC,TDC), Calorimeter (ADC), Aerogel (ADC), Cherenkov (ADC) >> Trigger (ADC,TDC)
 
-Crate 3 >> Drift Chambers (TDC)
+!Crate 3 >> Drift Chambers (TDC)
 
-Crate 5 >> Hardware Scalers
+!Crate 5 >> Hardware Scalers
+
+!The shell script "make_cratemap.sh" exists so that the user can create a singular crate map
+!db_cratemap.dat which contains the necessary information from various crates in both the
+!HMS & SHMS spectrometer arms to run the analyzer.  The script prompts the user to enter
+!the crate number(s), separated by spaces, in which they would like a crate map to be 
+!generated for.  The file "db_cratemap.dat" id created in the current working directory. It 
+!is useful to note that one could do this by hand simply by cat-ing the desired crate maps
+! in both the HMS & SHMS MAPS directories.
 
 !:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
@@ -47,7 +55,7 @@ Detector: HMS Aerogel >> Decetor ID: HAERO_ID= 7 >> Detector Map: haero.map
 FADC:hAero[1-8]+ >> Slot 17 >> Chan 0 - 7
 FADC:hAero[1-8]- >> Slot 16 >> Chan 8 - 15
 
-!NOTE: As of 11/16/2016 all 16 chanels in the aerogel are noisy and not fir for production
+!NOTE: As of 11/16/2016 all 16 chanels in the aerogel are noisy and not fit for production
 !running.  This detector will not be used in the Srping 2017 commissioning runs
 
 !:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
@@ -72,35 +80,39 @@ FADC:hD[1-13]+ >> Slot 7  >> Chan 1  - 13
 Detector: Trigger >> Dectector ID: HTRIG_ID= 8 >> Detector Map: htrig.map
 
 ! Calorimeter Trigger FADC Channels
-FADC:hASUM  >> Slot 17 >> Chan 8
-FADC:hBSUM  >> Slot 17 >> Chan 9
-FADC:hCSUM  >> Slot 17 >> Chan 10
-FADC:hDSUM  >> Slot 17 >> Chan 11
-FADC:hPSHWR >> Slot 17 >> Chan 12
-FADC:hSHWR  >> Slot 17 >> Chan 13
-
-! Calorimeter Trigger TDC Channels
-TDC:hASUM  >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of A+ & A-
-TDC:hBSUM  >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of B+ & B- 
-TDC:hCSUM  >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of C+ & C- 
-TDC:hDSUM  >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of D+ & D- 
-TDC:hPSHWR >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of A & B  
-TDC:hSHWR  >>  Slot 2 >> Sub-Slot  >> Chan  ! Sum of A, B, C, & D 
+FADC:hASUM  >> Slot 17 >> Chan 8  ! Sum of A+ & A-
+FADC:hBSUM  >> Slot 17 >> Chan 9  ! Sum of B+ & B- 
+FADC:hCSUM  >> Slot 17 >> Chan 10 ! Sum of C+ & C- 
+FADC:hDSUM  >> Slot 17 >> Chan 11 ! Sum of D+ & D- 
+FADC:hPSHWR >> Slot 17 >> Chan 12 ! Sum of A & B
+FADC:hSHWR  >> Slot 17 >> Chan 13 ! Sum of A, B, C, & D 
 
 ! Hodoscope Trigger TDC Channels
-TDC:h1X >> Slot 2 >> Sub-Slot >> Chan 
-TDC:h1Y >> Slot 2 >> Sub-Slot >> Chan 
-TDC:h2X >> Slot 2 >> Sub-Slot >> Chan 
-TDC:h2Y >> Slot 2 >> Sub-Slot >> Chan 
-TDC:h1T >> Slot 2 >> Sub-Slot >> Chan 
-TDC:h2T >> Slot 2 >> Sub-Slot >> Chan 
-TDC:hT  >> Slot 2 >> Sub-Slot >> Chan 
+TDC:h1X >> Slot 2  >> Sub-Slot A0 >> Chan 0   ! (OR of +) AND (OR of -)
+TDC:h1Y >> Slot 2  >> Sub-Slot A0 >> Chan 1   ! (OR of +) AND (OR of -)
+TDC:h2X >> Slot 2  >> Sub-Slot A0 >> Chan 2   ! (OR of +) AND (OR of -)
+TDC:h2Y >> Slot 2  >> Sub-Slot A0 >> Chan 3   ! (OR of +) AND (OR of -)
+TDC:h1T >> Slot 2  >> Sub-Slot A0 >> Chan 4   ! h1x AND h1Y
+TDC:h2T >> Slot 2  >> Sub-Slot A0 >> Chan 5   ! h2x AND h2y
+TDC:hT  >> Slot 2  >> Sub-Slot A0 >> Chan 6   ! h1T AND h2T
+TDC:hT  >> Slot 20 >> Sub-Slot D1 >> Chan 127 ! h1T AND h2T
 
-! Cherenkov Trigger Channel
-TDC:hCerT >> Slot 2 >> Sub-Slot >> Chan  ! Sum of channels 1 & 2
+! Calorimeter Trigger TDC Channels
+TDC:hASUM    >>  Slot 2 >> Sub-Slot A0 >> Chan 7  ! Sum of A+ & A-
+TDC:hBSUM    >>  Slot 2 >> Sub-Slot A0 >> Chan 8  ! Sum of B+ & B- 
+TDC:hCSUM    >>  Slot 2 >> Sub-Slot A0 >> Chan 9  ! Sum of C+ & C- 
+TDC:hDSUM    >>  Slot 2 >> Sub-Slot A0 >> Chan 10 ! Sum of D+ & D- 
+TDC:hPSHWRLO >>  Slot 2 >> Sub-Slot A0 >> Chan 11 ! Sum of A & B, low threshold 
+TDC:hPSHWRHI >>  Slot 2 >> Sub-Slot A0 >> Chan 12 ! Sum of A & B, high threshold  
+TDC:hSHWR    >>  Slot 2 >> Sub-Slot A0 >> Chan 13 ! Sum of A, B, C, & D 
 
 ! Aerogel Trigger Channel
-TDC:hAeroT >> Slot 2 >> Sub-Slot >> Chan  ! Sum of 8+ chan 8- 		
+FADC:hAERSUM >> Slot 17 >> Chan 14 ! Sum of channels [1-8]+ & [1-8]-
+TDC:hAERSUM  >> Slot 2  >> Sub-Slot A0 >> Chan 14 ! Sum of channels [1-8]+ & [1-8]- 		
+
+! Cherenkov Trigger Channel
+FADC:hCERSUM >> Slot 17 >> Chan 15 ! Sum of channels [1-2]
+TDC:hCERSUM  >> Slot 2  >> Sub-Slot A0 >> Chan 15 ! Sum of channels [1-2]
 	   
 !:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
