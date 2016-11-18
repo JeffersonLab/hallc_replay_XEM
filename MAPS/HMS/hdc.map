@@ -1,20 +1,10 @@
 !HMS:
 ! HDC_ID= 1               TDC
 
-! Caen 1190 VME Modules
-ROC=2
-! Probably ignore these
-nsubadd=128
-mask=FF00001Fx
-bsub=1190     ! put the module type here to help perl script
+ROC=3
+detector=1 ! HMS chambers >> detector=11  for SOS chambers
 
-! Scintillators and reference channels.
-! First 10 are scintillator PMTs, last 6 are reference channels
-
-!detector=11 !SOS chambers
-detector=1 ! HMS chambers
-
-====== WIREMAP ======
+! Caen 1190 VME Modules >> DC1
 SLOT=5
 ! channel,plane,wire
 96,3,1 ! Plane U, wire 1
@@ -579,7 +569,8 @@ SLOT=10
 58,5,50 ! Plane Y', wire 50
 59,5,51 ! Plane Y', wire 51
 60,5,52 ! Plane Y', wire 52
-====== WIREMAP ======
+
+! Caen 1190 VME Modules >> DC2
 SLOT=16
 ! channel,plane,wire
 96,9,1 ! Plane U, wire 1

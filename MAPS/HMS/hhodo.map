@@ -1,8 +1,8 @@
 !HMS:
-! HSCIN_ID=1   ADC+,ADC-,TDC+,TDC-
+! HSCIN_ID= 2   ADC+,ADC-,TDC+,TDC-
 
 ROC=1
-detector=1
+detector=2
 
 ! F250 modules
 SLOT=8
