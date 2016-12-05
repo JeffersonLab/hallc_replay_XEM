@@ -1,0 +1,7 @@
+Changelog starting with v1.2
+
+Jul 9, 2010 - version v1.2.1
+  * Implement goldenrootfile for TTree Draws from Brad Sawatzky
+  * Fix a bug with setting the drawcommand title if the end of the string contains
+    spaces or tabs after the end quote.  It's really a hack.  Not sure of
+    unintended consequences.
