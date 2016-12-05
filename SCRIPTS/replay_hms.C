@@ -4,7 +4,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   if(RunNumber == 0) {
     cout << "Enter a Run Number (-1 to exit): ";
     cin >> RunNumber;
-    if( RunNumber<=0 ) break;
+    if( RunNumber<=0 ) return;
   }
   if(MaxEvent == 0) {
     cout << "\nNumber of Events to analyze: ";
@@ -16,7 +16,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  char* RunFileNamePattern = "raw/test_%d.dat";
+  const char* RunFileNamePattern = "raw/test_%d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/hms1190_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);

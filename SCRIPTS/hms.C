@@ -5,7 +5,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
  if(RunNumber == 0) {
     cout << "Enter a Run Number (-1 to exit): ";
     cin >> RunNumber;
-    if( RunNumber<=0 ) break;
+    if( RunNumber<=0 ) return;
   }
   if(MaxEvent == 0) {
     cout << "\nNumber of Events to analyze: ";
@@ -15,13 +15,13 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
       exit;
     }
   }
-  
-    char* RunFileNamePattern="raw/test_%d.log.0";
+
+    const char* RunFileNamePattern="raw/test_%d.log.0";
     const char* ROOTFileNamePattern = "ROOTfiles/hms1190_%d.root";
     //
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
-  
+
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
 
   // g_ctp_parm_filename and g_decode_map_filename should now be defined
@@ -39,12 +39,12 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C style detector map
   gHcDetectorMap=new THcDetectorMap();
   gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  
+
   // Set up the equipment to be analyzed.
-  
+
   THaApparatus* HMS = new THcHallCSpectrometer("H","HMS");
   gHaApps->Add( HMS );
-  
+
   //  HMS->AddDetector( new THcHodoscope("hod", "Hodoscope" ));
   //HMS->AddDetector( new THcShower("cal", "Shower" ));
   //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov" );
@@ -66,13 +66,13 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // tests/cuts, loops over Acpparatus's and PhysicsModules,
   // and executes the output routines.
   THcAnalyzer* analyzer = new THcAnalyzer;
-   
+
 
   // A simple event class to be output to the resulting tree.
   // Creating your own descendant of THaEvent is one way of
   // defining and controlling the output.
   THaEvent* event = new THaEvent;
-  
+
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
   char RunFileName[100];
@@ -89,16 +89,16 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the analysis parameters
   analyzer->SetCountMode( 2 ); // 0 = counter is # of physics triggers
-			       //1 = counter is # of all decode reads 
+			       //1 = counter is # of all decode reads
                                //2= counter is event number
   analyzer->SetEvent( event );
   analyzer->SetOutFile( ROOTFileName.Data() );
   analyzer->SetOdefFile("Def-files/hdana.def");
   analyzer->SetCutFile("Def-files/hdana_cuts.def");        // optional
-  
+
   // File to record cuts accounting information
   //  analyzer->SetSummaryFile("summary_example.log"); // optional
-  
+
   analyzer->Process(run);     // start the actual analysis
-  analyzer->PrintReport("TEMPLATES/report.template",Form("REPORT_OUTPUT/replay_both_%05d.report",RunNumber)); 
+  analyzer->PrintReport("TEMPLATES/report.template",Form("REPORT_OUTPUT/replay_both_%05d.report",RunNumber));
 }
