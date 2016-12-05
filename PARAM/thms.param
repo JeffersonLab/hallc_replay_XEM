@@ -1,0 +1,8 @@
+t_hms_numAdc = 8
+t_hms_numTdc = 17
+
+; bar num:        1     2     3     4     5      6     7       8
+t_hms_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAERSUM hCERSUM"
+
+; bar num:        1   2   3   4   5   6   7   8     9     10    11    12       13       14    15      16      17
+t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPSHWRLO hPSHWRHI hSHWR hAERSUM hCERSUM hT2"
