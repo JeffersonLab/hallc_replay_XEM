@@ -1,0 +1,15 @@
+; Custom parameter file which should loaded when aiming to
+; analyze HMS drift chamber data with no tracking.
+
+
+; Increase HMS TDC window size
+  hdc_tdc_min_win = -50000,-50000,-50000,-50000,-50000,-50000
+  		    -50000,-50000,-50000,-50000,-50000,-50000
+  hdc_tdc_max_win = 50000,5000,50000,50000,5000,50000
+                    50000,5000,50000,50000,5000,50000
+; Remove hodoscope dependence on tracking
+  hsel_using_scin = 0
+
+;  Adjust HMS DC plane t = 0
+;   hdc_plane_time_zero = 1500.0,1500.0,1500.0,1500.0,1500.0,1500.0
+;  		         1500.0,1500.0,1500.0,1500.0,1500.0,1500.0
