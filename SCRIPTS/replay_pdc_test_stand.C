@@ -1,4 +1,4 @@
-void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -16,8 +16,8 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/test_%d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/test_%d.root";
+  const char* RunFileNamePattern = "raw/shms_dc_00%d.dat";
+  const char* ROOTFileNamePattern = "ROOTfiles/shms_dc_00%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -29,41 +29,16 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
-  // Load params for HMS DC test stand configuration
-  gHcParms->Load("PARAM/hdc_test_stand.param");
-
-  // Generate db_cratemap to correspond to map file contents via Pearl script.
-  //char command[100];
-  //sprintf(
-  //  command,
-  //  "MAPS/make_cratemap.pl < %s > MAPS/db_cratemap.dat",
-  //  gHcParms->GetString("g_decode_map_filename")
-  //);
-  //system(command);
-  // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-
+  //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
+  gHcDetectorMap->Load("MAPS/SHMS/pdc.map");
 
   // Set up the equipment to be analyzed.
-  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
-  gHaApps->Add(HMS);
+  THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
+  gHaApps->Add(SHMS);
 
-  HMS->AddDetector(new THcDC("dc", "Drift Chambers"));
-
-  // Additional detectors:
-  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
-  //HMS->AddDetector(new THcShower("cal", "Shower"));
-  //
-  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  //HMS->AddDetector(cherenkov);
-  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  //HMS->AddDetector(aerogel);
-  //
-  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
-  //hscaler->SetDebugFile("HScaler.txt");
-  //gHaEvtHandlers->Add(hscaler);
-
+  // Add SHMS drift chambers
+  SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -99,10 +74,6 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
-
- // analyzer->SetOdefFile("DEF-files/hdcana.def");
- // analyzer->SetCutFile("DEF-files/hdcana_cuts.def");    // optional
-
  analyzer->SetOdefFile("DEF-files/pdcana.def");
  analyzer->SetCutFile("DEF-files/pdcana_cuts.def");    // optional
 
