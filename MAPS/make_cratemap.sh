@@ -14,10 +14,10 @@ function proceed {
     done
     for crate in "${arr[@]}"; do
 	if ((crate%2 == 1)) && ((crate != 7)); then
-	    (cat ${PWD}/HMS/db_crate${crate}map.dat; echo; echo) >> db_cratemap.dat
+	    (cat ${PWD}/HMS/CRATE/db_crate${crate}map.dat; echo; echo) >> db_cratemap.dat
 	    echo; echo "HMS  Crate ${crate} has been added to db_cratemap.dat"
 	elif ((crate%2 == 0)) || ((crate == 7)); then
-	    (cat ${PWD}/SHMS/db_crate${crate}map.dat; echo; echo) >> db_cratemap.dat
+	    (cat ${PWD}/SHMS/CRATE/db_crate${crate}map.dat; echo; echo) >> db_cratemap.dat
 	    echo; echo "SHMS Crate ${crate} has been added to db_cratemap.dat"
 	    if ((crate == 7)); then echo; fi
 	fi

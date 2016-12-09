@@ -1,27 +1,39 @@
 #real raddeg
 raddeg=3.14159265/180
-;
-#include "PARAM/hcana.param"
-; hmsflags.param include spectrometer offsets and options.
-#include "PARAM/genflags.param"
-#include "PARAM/hmsflags.param"
 
-#include "PARAM/gdebug.param"
-#include "PARAM/hdebug.param"
-#include "PARAM/htracking.param"
+; General Hall-C parameter files
+#include "PARAM/GEN/genflags.param"
+#include "PARAM/GEN/gdebug.param"
+#include "PARAM/GEN/gtarget.param"
+#include "PARAM/GEN/gbeam.param"
 
-#include "PARAM/gtarget.param"
-#include "PARAM/gbeam.param"
-;  
-#include "PARAM/hdc_offsets.param"
-#include "PARAM/hdc.pos"
-#include "PARAM/hhodo.pos"
-#include "PARAM/hcal.pos"
-#include "PARAM/hhodo.param"
-#include "PARAM/haero.param"
-#include "PARAM/hdc.param"
-#include "PARAM/hdriftmap.param"
-#include "PARAM/hcal.param"
-#include "PARAM/hcer.param"
+; General HMS parameter files
+; Note: hmsflags.param includes spectrometer offsets and options.
+#include "PARAM/HMS/GEN/hcana.param"
+#include "PARAM/HMS/GEN/hdebug.param"
+#include "PARAM/HMS/GEN/hmsflags.param"
+#include "PARAM/HMS/GEN/htracking.param"
 
-#include "PARAM/pdc.param"
+; HMS detector specific paramter files  
+#include "PARAM/HMS/AERO/haero.param"
+#include "PARAM/HMS/CAL/hcal.pos"
+#include "PARAM/HMS/CAL/hcal.param"
+#include "PARAM/HMS/CER/hcer.param"
+#include "PARAM/HMS/DC/hdc_offsets.param"
+#include "PARAM/HMS/DC/hdc.pos"
+#include "PARAM/HMS/DC/hdc.param"
+#include "PARAM/HMS/DC/hdriftmap.param"
+#include "PARAM/HMS/HODO/hhodo.pos"
+#include "PARAM/HMS/HODO/hhodo.param"
+
+; General SHMS parameter files
+; Note: shmsflags.param includes spectrometer offsets and options.
+#include "PARAM/SHMS/GEN/pcana.param"
+#include "PARAM/SHMS/GEN/pdebug.param"
+#include "PARAM/SHMS/GEN/shmsflags.param"
+#include "PARAM/SHMS/GEN/ptracking.param"
+
+; SHMS detector specific paramter files
+#include "PARAM/SHMS/DC/pdc.pos"
+#include "PARAM/SHMS/DC/pdc.param"
+#include "PARAM/SHMS/DC/pdriftmap.param"
