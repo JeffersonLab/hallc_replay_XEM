@@ -1,4 +1,4 @@
-void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -32,38 +32,16 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load params for HMS DC test stand configuration
   gHcParms->Load("PARAM/hdc_test_stand.param");
 
-  // Generate db_cratemap to correspond to map file contents via Pearl script.
-  //char command[100];
-  //sprintf(
-  //  command,
-  //  "MAPS/make_cratemap.pl < %s > MAPS/db_cratemap.dat",
-  //  gHcParms->GetString("g_decode_map_filename")
-  //);
-  //system(command);
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-
+  //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
+  gHcDetectorMap->Load("MAPS/HMS/hdc.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
-
+  // Add HMS drift chambers
   HMS->AddDetector(new THcDC("dc", "Drift Chambers"));
-
-  // Additional detectors:
-  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
-  //HMS->AddDetector(new THcShower("cal", "Shower"));
-  //
-  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  //HMS->AddDetector(cherenkov);
-  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  //HMS->AddDetector(aerogel);
-  //
-  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
-  //hscaler->SetDebugFile("HScaler.txt");
-  //gHaEvtHandlers->Add(hscaler);
-
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -99,12 +77,8 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
-
- // analyzer->SetOdefFile("DEF-files/hdcana.def");
- // analyzer->SetCutFile("DEF-files/hdcana_cuts.def");    // optional
-
- analyzer->SetOdefFile("DEF-files/pdcana.def");
- analyzer->SetCutFile("DEF-files/pdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/hdcana.def");
+ analyzer->SetCutFile("DEF-files/hdcana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional
