@@ -2,7 +2,7 @@
 ! PDC_ID=21               TDC
 
 ROC=6
-detector=21 ! SHMS chambers >> detector=21, 11 for HMS drift chambers
+detector=21 ! SHMS chambers
 
 ! Caen 1190 VME Modules >> DC1
 SLOT=9

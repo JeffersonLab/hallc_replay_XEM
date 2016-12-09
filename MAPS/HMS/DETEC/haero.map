@@ -1,8 +1,8 @@
 !HMS:
-! HAERO_ID= 7             (TDC),ADC
+! HAERO_ID= 12             (TDC),ADC
 
 ROC=1
-detector=7
+detector=12
 
 !F250 modules
 SLOT=16

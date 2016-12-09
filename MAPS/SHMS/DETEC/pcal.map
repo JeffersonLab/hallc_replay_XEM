@@ -1,8 +1,8 @@
 !SHMS
-! SCAL_ID=14              ADC
+! SCAL_ID=26              ADC
 
 ROC=4
-detector=14
+detector=26
 
 !F250 modules
 SLOT=3

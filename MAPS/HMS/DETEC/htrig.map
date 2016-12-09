@@ -1,5 +1,5 @@
 !HMS:
-! THMS_ID=2    ADC,TDC
+! THMS_ID=10    ADC,TDC
 
 ! Plane = 1 >> ADC Only
 ! Plane = 2 >> TDC Only

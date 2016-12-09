@@ -1,8 +1,8 @@
 !HMS:
-! HDC_ID= 1               TDC
+! HDC_ID= 11               TDC
 
 ROC=3
-detector=1 ! HMS chambers >> detector=11  for SOS chambers
+detector=11 ! HMS chambers 
 
 ! Caen 1190 VME Modules >> DC1
 SLOT=5

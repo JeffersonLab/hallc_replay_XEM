@@ -31,7 +31,7 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  gHcDetectorMap->Load("MAPS/SHMS/pdc.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/pdc.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
@@ -39,6 +39,19 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Add SHMS drift chambers
   SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
+
+  // Additional detectors:
+  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
+  //HMS->AddDetector(new THcShower("cal", "Shower"));
+  //
+  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
+  //HMS->AddDetector(cherenkov);
+  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
+  //HMS->AddDetector(aerogel);
+  //
+  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
+  //hscaler->SetDebugFile("HScaler.txt");
+  //gHaEvtHandlers->Add(hscaler);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -74,8 +87,8 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/pdcana.def");
- analyzer->SetCutFile("DEF-files/pdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/SHMS/DC/pdcana.def");
+ analyzer->SetCutFile("DEF-files/SHMS/DC/pdcana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional

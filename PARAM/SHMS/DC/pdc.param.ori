@@ -1,0 +1,14 @@
+
+ppartmass = 0.139
+phodo_num_planes = 1
+
+; Scintillator parameters
+pref_npaddles = 6
+pref_nsperchan = 0.1
+pref_offset = 0.0
+
+
+
+
+
+
