@@ -58,6 +58,7 @@ class Slot:
         string = 'SLOT={0.ID}'.format(self)
         if self.comment != '':
             string += '  ! {0.comment}'.format(self)
+        string += '\n'
         for k, v in self.KWs.items():
             if v > -1:
                 string += '{}={}\n'.format(k, v)
@@ -107,12 +108,13 @@ header = {
     "signals": [],
 }
 
-detectors = [Detector()]
+detectors = []
 
 
 for fileName in fileNames:
     # Track detector IDs in current file.
     currentIDs = []
+    detectors.append(Detector())
 
     with open(fileName, 'r') as fi:
         for line in fi:
@@ -246,7 +248,7 @@ with open(mergedName, 'w') as fo:
                     fo.write('\n{}\n'.format(roc))
 
                     for slot in roc.slots:
-                        fo.write('\n{}\n'.format(slot))
+                        fo.write('\n{}'.format(slot))
 
                         for channel in slot.channels:
                             fo.write('{}\n'.format(channel))
