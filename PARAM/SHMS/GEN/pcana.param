@@ -1,0 +1,19 @@
+; Parameters we need to keep THcHallCSpectrometer Happy
+p_recon_coeff_filename = ""
+
+ppartmass = 0.139
+phodo_num_planes = 1
+
+; Scintillator parameters
+pref_npaddles = 6
+pref_nsperchan = 0.1
+pref_offset = 0.0
+
+; Names of planes so that parameter names can be constructed
+pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"
+
+; Compatibility parameters.  Should be zero to precisely mimic ENGINE
+; behavior, but one for more correct behavior
+pdc_fix_lr = 1 ; Let hit have different L/R assignment for different space point
+pdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
+                     ; in a space point
