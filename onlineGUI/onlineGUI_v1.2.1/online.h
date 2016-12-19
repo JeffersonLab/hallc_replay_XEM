@@ -78,6 +78,8 @@ private:
   TString protorootfile; // Prototype for getting the rootfilename
   TString guicolor; // User's choice of background color
   TString plotsdir; // Where to store sample plots.. automatically stored as .jpg's).
+  UInt_t canvaswidth; // Width of histogram canvas
+  UInt_t canvasheight; // Width of histogram canvas
   vector < pair <UInt_t,UInt_t> > pageInfo; 
   vector <TCut> cutList; 
   vector <UInt_t> GetDrawIndex(UInt_t);
@@ -107,6 +109,8 @@ public:
   vector <TString> SplitString(TString,TString);
   void OverrideRootFile(UInt_t);
   Bool_t IsMonitor() { return fMonitor; };
+  UInt_t GetCanvasWidth() { return canvaswidth; };
+  UInt_t GetCanvasHeight() { return canvasheight; };
 };
 
 class OnlineGUI {

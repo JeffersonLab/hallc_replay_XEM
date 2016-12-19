@@ -38,7 +38,8 @@
 //#define NOISY
 //#define INTERNALSTYLE
 
-TString guiDirectory = "onlineGUI_v1.2.1/";
+//TString guiDirectory = "onlineGUI_v1.2.1/";
+TString guiDirectory = "./";
 
 ///////////////////////////////////////////////////////////////////
 //  Class: OnlineConfig
@@ -205,6 +206,8 @@ Bool_t OnlineConfig::ParseConfig()
   UInt_t command_cnt=0;
   UInt_t j=0;
   Bool_t hasMultiPlots=kFALSE;
+  canvaswidth = 800;		// Default canvas size
+  canvasheight = 600;
   // If statement for each high level command (cut, newpage, etc)
   for(UInt_t i=0;i<sConfFile.size();i++) {
     // "newpage" command
@@ -290,6 +293,16 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       guicolor = sConfFile[i][1];
+    }
+    if(sConfFile[i][0] == "canvassize") {
+      if(sConfFile[i].size() != 3) {
+	cerr << "WARNING: canvassize command does not have the "
+	     << "correct number of arguments (needs 2)"
+	     << endl;
+	continue;
+      }
+      canvaswidth = UInt_t(atoi(sConfFile[i][1]));
+      canvasheight = UInt_t(atoi(sConfFile[i][2]));
     }
     if(sConfFile[i][0] == "plotsdir") {
       if(sConfFile[i].size() != 2) {
@@ -502,7 +515,7 @@ pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
   
   // If not defined, return the "default."
   UInt_t draw_count = GetDrawCount(page);
-  UInt_t dim = UInt_t(TMath::Nint(sqrt(Double_t(draw_count+1))));
+  UInt_t dim = UInt_t(TMath::Nint(sqrt(double(draw_count+1))));
   outDim = make_pair(dim,dim);
 
   return outDim;
@@ -594,14 +607,13 @@ drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
        (sConfFile[index][1] != "-title") &&
        (sConfFile[index][1] != "-tree") &&
        (sConfFile[index][1] != "-noshowgolden") &&
-       (sConfFile[index][1] != "-nostat"))
-      {
-    if(out_command.variable=="macro") {
-      out_command.macro = sConfFile[index][1];
-    } else {
-      out_command.cut = sConfFile[index][1];
-    }
+       (sConfFile[index][1] != "-nostat")) {
+      if(out_command.variable=="macro") {
+	out_command.macro = sConfFile[index][1];
+      } else {
+	out_command.cut = sConfFile[index][1];
       }
+    }
   }
 
   // Now go through the rest of that line..
@@ -806,6 +818,9 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   gClient->GetColorByName("lightblue",lightblue);
   gClient->GetColorByName("red",red);
 
+  UInt_t canvas_width = fConfig->GetCanvasWidth();
+  UInt_t canvas_height = fConfig->GetCanvasHeight();
+
   Bool_t good_color=kFALSE; 
   TString usercolor = fConfig->GetGuiColor();
   if(!usercolor.IsNull()) {
@@ -856,7 +871,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   if(!fConfig->IsMonitor()) {
     wile = 
       new TGPictureButton(vframe,
-			  gClient->GetPicture(guiDirectory+"/defaultPic.xpm"));
+			  gClient->GetPicture(guiDirectory+"/hcsmall.png"));
     wile->Connect("Pressed()","OnlineGUI", this,"DoDraw()");
   } else {
     wile = 
@@ -875,18 +890,18 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
 					kLHintsCenterY,2,2,2,2));
   
   // Create canvas widget
-  fEcanvas = new TRootEmbeddedCanvas("Ecanvas", fTopframe, 800, 600);
+  fEcanvas = new TRootEmbeddedCanvas("Ecanvas", fTopframe, canvas_width, canvas_height);
   fEcanvas->SetBackgroundColor(mainguicolor);
   fTopframe->AddFrame(fEcanvas, new TGLayoutHints(kLHintsExpandY,10,10,10,1));
   fCanvas = fEcanvas->GetCanvas();
 
   // Create the bottom frame.  Contains control buttons
-  fBottomFrame = new TGHorizontalFrame(fMain,1200,200);
+  fBottomFrame = new TGHorizontalFrame(fMain,canvas_width+400,200);
   fBottomFrame->SetBackgroundColor(mainguicolor);
   fMain->AddFrame(fBottomFrame, new TGLayoutHints(kLHintsExpandX,10,10,10,10));
   
   // Create a horizontal frame widget with buttons
-  hframe = new TGHorizontalFrame(fBottomFrame,1200,40);
+  hframe = new TGHorizontalFrame(fBottomFrame,canvas_width+400,40);
   hframe->SetBackgroundColor(mainguicolor);
   fBottomFrame->AddFrame(hframe,new TGLayoutHints(kLHintsExpandX,200,20,2,2));
 
