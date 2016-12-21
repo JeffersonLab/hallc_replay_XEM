@@ -1,4 +1,4 @@
-haero.map
-hcal.map
+HMS/DETEC/haero.map
+HMS/DETEC/hcal.map
 
 #hhodo.map
