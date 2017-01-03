@@ -1,6 +1,6 @@
-! THMS_ID=10       ::  ADC+,ADC-,TDC+,TDC-
-! HDC_ID=11        ::  ADC+,ADC-,TDC+,TDC-
-! HSCIN_ID=13      ::  ADC+,ADC-,TDC+,TDC-
+! THMS_ID=10       ::  TDC
+! HDC_ID=11        ::  TDC
+! HSCIN_ID=13      ::  TDC
 
 
 DETECTOR=10
@@ -1324,14 +1324,14 @@ SLOT=15
   15,   4,   2,   1  ! h2y02A-
 
 SLOT=16
-   0,   4,  10,   1  ! h2y10A-
-   1,   4,   9,   1  ! h2y09A-
-   2,   4,   8,   1  ! h2y08A-
-   3,   4,   7,   1  ! h2y07A-
-   4,   4,   6,   1  ! h2y06A-
-   5,   4,   5,   1  ! h2y05A-
-   6,   4,   4,   1  ! h2y04A-
-   7,   4,   3,   1  ! h2y03A-
+   0,   4,   3,   1  ! h2y03A-
+   1,   4,   4,   1  ! h2y04A-
+   2,   4,   5,   1  ! h2y05A-
+   3,   4,   6,   1  ! h2y06A-
+   4,   4,   7,   1  ! h2y07A-
+   5,   4,   8,   1  ! h2y08A-
+   6,   4,   9,   1  ! h2y09A-
+   7,   4,  10,   1  ! h2y10A-
 
 SLOT=20
    0,   1,   1,   2  ! h1x01T+

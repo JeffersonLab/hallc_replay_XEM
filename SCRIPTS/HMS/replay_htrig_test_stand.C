@@ -1,4 +1,4 @@
-void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_htrig_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -32,7 +32,7 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
   // Load params for HMS DC test stand configuration
-  gHcParms->Load("PARAM/HMS/DC/hdc_test_stand.param");
+  // gHcParms->Load("PARAM/HMS/DC/hdc_test_stand.param");
   gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
@@ -47,14 +47,14 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_hhodo_htrig.map");
   
   // Set up the equipment to be analyzed.
-  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
-  gHaApps->Add(HMS);
+  // THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
+  // gHaApps->Add(HMS);
   // Add drift chambers to HMS apparatus
-  THcDC* dc = new THcDC("dc", "Drift Chambers");
-  HMS->AddDetector(dc);
+  // THcDC* dc = new THcDC("dc", "Drift Chambers");
+  // HMS->AddDetector(dc);
   // Add hodoscope to HMS apparatus
-  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  HMS->AddDetector(hod);
+  // THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  // HMS->AddDetector(hod);
   // // Add calorimeter to HMS apparatus
   // THcShower* cal = new THcShower("cal", "Calorimeter");
   // HMS->AddDetector(cal);
@@ -110,8 +110,8 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/HMS/DC/hdcana.def");
- analyzer->SetCutFile("DEF-files/HMS/DC/hdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/HMS/TRIG/htrigana.def");
+ analyzer->SetCutFile("DEF-files/HMS/TRIG/htrigana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional
