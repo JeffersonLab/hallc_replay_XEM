@@ -4,8 +4,7 @@
 ! Plane = 1 >> ADC Only
 ! Plane = 2 >> TDC Only
 
-
-detector=5
+detector=10
 
 ROC=11
 
@@ -45,4 +44,20 @@ SLOT=2
 SLOT=20
 ! D1
 ! chan    plane     bar    sig
-     127,     2,     17      1!  hT2
+     127,     2,     17,      1!  hT2
+
+ROC=3
+
+!CAEN1190 module
+SLOT=5
+! chan    plane     bar    sig
+     111,     2,     18,      1!  hDCREF1
+SLOT=8
+! chan    plane     bar    sig
+     127,     2,     19,      1!  hDCREF2
+SLOT=10
+! chan    plane     bar    sig
+     127,     2,     20,      1!  hDCREF3
+SLOT=17
+! chan    plane     bar    sig
+     127,     2,     21,      1!  hDCREF4
