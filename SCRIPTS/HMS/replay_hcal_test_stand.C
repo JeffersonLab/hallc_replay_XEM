@@ -1,4 +1,4 @@
-void replay_hhodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_hcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -31,14 +31,14 @@ void replay_hhodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hhodo.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hcal.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
   // Add hodoscope to HMS apparatus
-  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  HMS->AddDetector(hod);
+  THcShower* cal = new THcShower("cal", "Calorimeter");
+  HMS->AddDetector(cal);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -74,8 +74,8 @@ void replay_hhodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/HMS/HODO/hhodoana.def");
- analyzer->SetCutFile("DEF-files/HMS/HODO/hhodoana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/HMS/CAL/hcalana.def");
+ analyzer->SetCutFile("DEF-files/HMS/CAL/hcalana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional
