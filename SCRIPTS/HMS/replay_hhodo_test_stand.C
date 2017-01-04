@@ -29,9 +29,12 @@ void replay_hhodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
+  // Load params for HMS trigger configuration
+  gHcParms->Load("PARAM/TRIG/thms.param");
+
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hhodo.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hhodo_htrig.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
@@ -39,6 +42,13 @@ void replay_hhodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add hodoscope to HMS apparatus
   THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
   HMS->AddDetector(hod);
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.

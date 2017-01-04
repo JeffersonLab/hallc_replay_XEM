@@ -1,3 +1,21 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block H.cal.*
+
+TH1F hcal_hAm_pi 'HMS hA- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.aneg 2500 0 25000
+TH1F hcal_hAp_pi 'HMS hA+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.apos 2500 0 25000
+
+TH1F hcal_hBm_pi 'HMS hB- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.aneg 2500 0 25000
+TH1F hcal_hBp_pi 'HMS hB+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.apos 2500 0 25000
+
+TH1F hcal_hCp_pi 'HMS hC+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.3ta.apos 2500 0 25000
+TH1F hcal_hDp_pi 'HMS hD+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.4ta.apos 2500 0 25000
+
+TH1F hcal_hAm_occu "HMS hA- ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.1pr.negadchits 13 0.5 13.5
+TH1F hcal_hAp_occu "HMS hA+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.1pr.posadchits 13 0.5 13.5
+
+TH1F hcal_hBm_occu "HMS hB- ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.2ta.negadchits 13 0.5 13.5
+TH1F hcal_hBp_occu "HMS hB+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.2ta.posadchits 13 0.5 13.5
+
+TH1F hcal_hCp_occu "HMS hC+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.3ta.posadchits 13 0.5 13.5
+TH1F hcal_hDp_occu "HMS hD+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.4ta.posadchits 13 0.5 13.5
