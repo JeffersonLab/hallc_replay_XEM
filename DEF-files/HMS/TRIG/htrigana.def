@@ -1,3 +1,44 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block T.hms.*
+
+TH1F htrig_h1x_tdc 'HMS h1X TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1X_tdc 4000 0 40000
+TH1F htrig_h1y_tdc 'HMS h1Y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1Y_tdc 4000 0 40000
+TH1F htrig_h2x_tdc 'HMS h2X TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2X_tdc 4000 0 40000
+TH1F htrig_h2y_tdc 'HMS h2Y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2Y_tdc 4000 0 40000
+
+TH1F htrig_h1T_tdc 'HMS h1X/h1Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1T_tdc 4000 0 40000
+TH1F htrig_h2T_tdc 'HMS h2X/h2Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2T_tdc 4000 0 40000
+
+TH1F htrig_hT1_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 2); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hT1_tdc 4000 0 40000
+TH1F htrig_hT2_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 20); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hT2_tdc 4000 0 40000
+
+TH1F htrig_hasum_adc_pi 'HMS hAsum Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adc 3000 0 30000
+TH1F htrig_hasum_adc_ped 'HMS hAsum Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adc 2000 0 20000
+TH1F htrig_hasum_tdc 'HMS hAsum TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hASUM_tdc 4000 0 40000
+
+TH1F htrig_hbsum_adc_pi 'HMS hBsum Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adc 3000 0 30000
+TH1F htrig_hbsum_adc_ped 'HMS hBsum Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adc 2000 0 20000
+TH1F htrig_hbsum_tdc 'HMS hBsum TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hBSUM_tdc 4000 0 40000
+
+TH1F htrig_hcsum_adc_pi 'HMS hCsum Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adc 3000 0 30000
+TH1F htrig_hcsum_adc_ped 'HMS hCsum Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adc 2000 0 20000
+TH1F htrig_hcsum_tdc 'HMS hCsum TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCSUM_tdc 4000 0 40000
+
+TH1F htrig_hdsum_adc_pi 'HMS hDsum Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adc 3000 0 30000
+TH1F htrig_hdsum_adc_ped 'HMS hDsum Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adc 2000 0 20000
+TH1F htrig_hdsum_tdc 'HMS hDsum TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDSUM_tdc 4000 0 40000
+
+TH1F htrig_hpreShwr_adc_pi 'HMS hpreShwr Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adc 3000 0 30000
+TH1F htrig_hpreShwr_adc_ped 'HMS hpreShwr Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adc 2000 0 20000
+TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRLO_tdc 4000 0 40000
+TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRHI_tdc 4000 0 40000
+
+TH1F htrig_hShwr_adc_pi 'HMS hShwr Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adc 3000 0 30000
+TH1F htrig_hShwr_adc_ped 'HMS hShwr Pulse Pedestal; Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adc 2000 0 20000
+TH1F htrig_hShwr_tdc 'HMS hShwr TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hSHWR_tdc 4000 0 40000
+
+TH1F htrig_hdc_ref1 'HMS HDC Reference Time 1; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF1_tdc 4000 0 40000
+TH1F htrig_hdc_ref2 'HMS HDC Reference Time 2; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF2_tdc 4000 0 40000
+TH1F htrig_hdc_ref3 'HMS HDC Reference Time 3; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF3_tdc 4000 0 40000
+TH1F htrig_hdc_ref4 'HMS HDC Reference Time 4; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF4_tdc 4000 0 40000
