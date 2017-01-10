@@ -37,3 +37,5 @@ raddeg=3.14159265/180
 #include "PARAM/SHMS/DC/pdc.pos"
 #include "PARAM/SHMS/DC/pdc.param"
 #include "PARAM/SHMS/DC/pdriftmap.param"
+#include "PARAM/SHMS/HODO/phodo.pos"
+#include "PARAM/SHMS/HODO/phodo.param"
