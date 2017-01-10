@@ -1,3 +1,37 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block P.hod.*
+TH2F phodo_1x_posadc_val_v_pad '' P.hod.1x.posadcpad  P.hod.1x.posadcval 13 0.5 13.5 4000 0 40000
+TH2F phodo_1y_posadc_val_v_pad '' P.hod.1y.posadcpad  P.hod.1y.posadcval 13 0.5 13.5 4000 0 40000
+TH2F phodo_2x_posadc_val_v_pad '' P.hod.2x.posadcpad  P.hod.2x.posadcval 14 0.5 14.5 4000 0 40000
+TH2F phodo_2y_posadc_val_v_pad '' P.hod.2y.posadcpad  P.hod.2y.posadcval 21 0.5 21.5 4000 0 40000
+
+TH2F phodo_1x_negadc_val_v_pad '' P.hod.1x.negadcpad  P.hod.1x.negadcval 13 0.5 13.5 4000 0 40000
+TH2F phodo_1y_negadc_val_v_pad '' P.hod.1y.negadcpad  P.hod.1y.negadcval 13 0.5 13.5 4000 0 40000
+TH2F phodo_2x_negadc_val_v_pad '' P.hod.2x.negadcpad  P.hod.2x.negadcval 14 0.5 14.5 4000 0 40000
+TH2F phodo_2y_negadc_val_v_pad '' P.hod.2y.negadcpad  P.hod.2y.negadcval 21 0.5 21.5 4000 0 40000
+
+TH1F phodo_h1x_multi 'SHMS 1X Multiplicity; Number of Hits; Counts' P.hod.1x.nhits 13 0.5 13.5
+TH1F phodo_h1y_multi 'SHMS 1Y Multiplicity; Number of Hits; Counts' P.hod.1y.nhits 13 0.5 13.5
+TH1F phodo_h2x_multi 'SHMS 2X Multiplicity; Number of Hits; Counts' P.hod.2x.nhits 14 0.5 14.5
+TH1F phodo_h2y_multi 'SHMS 2Y Multiplicity; Number of Hits; Counts' P.hod.2y.nhits 21 0.5 21.5
+
+TH1F phodo_h1xm_adc_occu 'SHMS 1X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negadcpad 13 0.5 13.5
+TH1F phodo_h1ym_adc_occu 'SHMS 1Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negadcpad 13 0.5 13.5 
+TH1F phodo_h2xm_adc_occu 'SHMS 2X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negadcpad 14 0.5 14.5
+TH1F phodo_h2ym_adc_occu 'SHMS 2Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negadcpad 21 0.5 21.5
+
+TH1F phodo_h1xp_adc_occu 'SHMS 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posadcpad 13 0.5 13.5
+TH1F phodo_h1yp_adc_occu 'SHMS 1Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posadcpad 13 0.5 13.5 
+TH1F phodo_h2xp_adc_occu 'SHMS 2X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posadcpad 14 0.5 14.5
+TH1F phodo_h2yp_adc_occu 'SHMS 2Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posadcpad 21 0.5 21.5
+
+TH1F phodo_h1xm_tdc_occu 'SHMS 1X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negtdcpad 13 0.5 13.5
+TH1F phodo_h1ym_tdc_occu 'SHMS 1Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negtdcpad 13 0.5 13.5 
+TH1F phodo_h2xm_tdc_occu 'SHMS 2X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negtdcpad 14 0.5 14.5
+TH1F phodo_h2ym_tdc_occu 'SHMS 2Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negtdcpad 21 0.5 21.5
+
+TH1F phodo_h1xp_tdc_occu 'SHMS 1X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.postdcpad 13 0.5 13.5
+TH1F phodo_h1yp_tdc_occu 'SHMS 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.postdcpad 13 0.5 13.5 
+TH1F phodo_h2xp_tdc_occu 'SHMS 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.postdcpad 14 0.5 14.5
+TH1F phodo_h2yp_tdc_occu 'SHMS 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.postdcpad 21 0.5 21.5
