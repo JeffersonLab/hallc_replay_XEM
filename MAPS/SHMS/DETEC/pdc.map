@@ -1,11 +1,12 @@
-! PDC_ID=21        ::  TDC
+! PDC_ID=22        ::  TDC
 
 
-DETECTOR=21  ! SHMS chambers
+DETECTOR=22  ! SHMS chambers
 
 ROC=6
 
 SLOT=9
+REFCHAN=79
   77,   1,   1  ! Plane U, wire 1
   76,   1,   2  ! Plane U, wire 2
   75,   1,   3  ! Plane U, wire 3
@@ -22,6 +23,7 @@ SLOT=9
   64,   1,  14  ! Plane U, wire 14
 
 SLOT=7
+REFCHAN=79
   31,   1,  15  ! Plane U, wire 15
   30,   1,  16  ! Plane U, wire 16
   29,   1,  17  ! Plane U, wire 17
@@ -40,6 +42,7 @@ SLOT=7
   16,   1,  30  ! Plane U, wire 30
 
 SLOT=6
+REFCHAN=79
   95,   1,  31  ! Plane U, wire 31
   94,   1,  32  ! Plane U, wire 32
   93,   1,  33  ! Plane U, wire 33
@@ -74,6 +77,7 @@ SLOT=6
   16,   1,  62  ! Plane U, wire 62
 
 SLOT=8
+REFCHAN=79
  112,   1,  63  ! Plane U, wire 63
  113,   1,  64  ! Plane U, wire 64
  114,   1,  65  ! Plane U, wire 65
@@ -107,6 +111,7 @@ SLOT=8
   62,   1,  93  ! Plane U, wire 93
 
 SLOT=9
+REFCHAN=79
   78,   1,  94  ! Plane U, wire 94
  112,   1,  95  ! Plane U, wire 95
  113,   1,  96  ! Plane U, wire 96
@@ -122,6 +127,7 @@ SLOT=9
  123,   1, 106  ! Plane U, wire 106
 
 SLOT=8
+REFCHAN=79
   74,   2,   1  ! Plane U', wire 1
   73,   2,   2  ! Plane U', wire 2
   72,   2,   3  ! Plane U', wire 3
@@ -135,6 +141,7 @@ SLOT=8
   64,   2,  11  ! Plane U', wire 11
 
 SLOT=6
+REFCHAN=79
  127,   2,  12  ! Plane U', wire 12
  126,   2,  13  ! Plane U', wire 13
  125,   2,  14  ! Plane U', wire 14
@@ -168,9 +175,11 @@ SLOT=6
   33,   2,  42  ! Plane U', wire 42
 
 SLOT=8
+REFCHAN=79
   75,   2,  43  ! Plane U', wire 43
 
 SLOT=9
+REFCHAN=79
    0,   2,  44  ! Plane U', wire 44
    1,   2,  45  ! Plane U', wire 45
    2,   2,  46  ! Plane U', wire 46
@@ -189,6 +198,7 @@ SLOT=9
   15,   2,  59  ! Plane U', wire 59
 
 SLOT=8
+REFCHAN=79
   96,   2,  60  ! Plane U', wire 60
   97,   2,  61  ! Plane U', wire 61
   98,   2,  62  ! Plane U', wire 62
@@ -207,6 +217,7 @@ SLOT=8
  111,   2,  75  ! Plane U', wire 75
 
 SLOT=10
+REFCHAN=79
   80,   2,  76  ! Plane U', wire 76
   81,   2,  77  ! Plane U', wire 77
   82,   2,  78  ! Plane U', wire 78
@@ -240,6 +251,7 @@ SLOT=10
   30,   2, 106  ! Plane U', wire 106
 
 SLOT=9
+REFCHAN=79
   45,   5,   1  ! Plane V, wire 1
   44,   5,   2  ! Plane V, wire 2
   43,   5,   3  ! Plane V, wire 3
@@ -256,6 +268,7 @@ SLOT=9
   32,   5,  14  ! Plane V, wire 14
 
 SLOT=8
+REFCHAN=79
   31,   5,  15  ! Plane V, wire 15
   30,   5,  16  ! Plane V, wire 16
   29,   5,  17  ! Plane V, wire 17
@@ -274,6 +287,7 @@ SLOT=8
   16,   5,  30  ! Plane V, wire 30
 
 SLOT=10
+REFCHAN=79
   15,   5,  31  ! Plane V, wire 31
   14,   5,  32  ! Plane V, wire 32
   13,   5,  33  ! Plane V, wire 33
@@ -292,6 +306,7 @@ SLOT=10
    0,   5,  46  ! Plane V, wire 46
 
 SLOT=9
+REFCHAN=79
   63,   5,  47  ! Plane V, wire 47
   62,   5,  48  ! Plane V, wire 48
   61,   5,  49  ! Plane V, wire 49
@@ -310,6 +325,7 @@ SLOT=9
   48,   5,  62  ! Plane V, wire 62
 
 SLOT=7
+REFCHAN=79
   32,   5,  63  ! Plane V, wire 63
   33,   5,  64  ! Plane V, wire 64
   34,   5,  65  ! Plane V, wire 65
@@ -355,9 +371,11 @@ SLOT=7
   74,   5, 105  ! Plane V, wire 105
 
 SLOT=9
+REFCHAN=79
   46,   5, 106  ! Plane V, wire 106
 
 SLOT=10
+REFCHAN=79
   74,   6,   1  ! Plane V', wire 1
   73,   6,   2  ! Plane V', wire 2
   72,   6,   3  ! Plane V', wire 3
@@ -387,6 +405,7 @@ SLOT=10
   32,   6,  27  ! Plane V', wire 27
 
 SLOT=9
+REFCHAN=79
  111,   6,  28  ! Plane V', wire 28
  110,   6,  29  ! Plane V', wire 29
  109,   6,  30  ! Plane V', wire 30
@@ -405,6 +424,7 @@ SLOT=9
   96,   6,  43  ! Plane V', wire 43
 
 SLOT=8
+REFCHAN=79
   80,   6,  44  ! Plane V', wire 44
   81,   6,  45  ! Plane V', wire 45
   82,   6,  46  ! Plane V', wire 46
@@ -423,6 +443,7 @@ SLOT=8
   95,   6,  59  ! Plane V', wire 59
 
 SLOT=7
+REFCHAN=79
  112,   6,  60  ! Plane V', wire 60
  113,   6,  61  ! Plane V', wire 61
  114,   6,  62  ! Plane V', wire 62
@@ -457,6 +478,7 @@ SLOT=7
   95,   6,  91  ! Plane V', wire 91
 
 SLOT=6
+REFCHAN=79
   64,   6,  92  ! Plane V', wire 92
   65,   6,  93  ! Plane V', wire 93
   66,   6,  94  ! Plane V', wire 94
@@ -473,9 +495,11 @@ SLOT=6
   77,   6, 105  ! Plane V', wire 105
 
 SLOT=10
+REFCHAN=79
   75,   6, 106  ! Plane V', wire 106
 
 SLOT=8
+REFCHAN=79
   14,   3,   1  ! Plane X, wire 1
   13,   3,   2  ! Plane X, wire 2
   12,   3,   3  ! Plane X, wire 3
@@ -493,6 +517,7 @@ SLOT=8
    0,   3,  15  ! Plane X, wire 15
 
 SLOT=7
+REFCHAN=79
   63,   3,  16  ! Plane X, wire 16
   62,   3,  17  ! Plane X, wire 17
   61,   3,  18  ! Plane X, wire 18
@@ -511,6 +536,7 @@ SLOT=7
   48,   3,  31  ! Plane X, wire 31
 
 SLOT=6
+REFCHAN=79
   63,   3,  32  ! Plane X, wire 32
   62,   3,  33  ! Plane X, wire 33
   61,   3,  34  ! Plane X, wire 34
@@ -528,9 +554,11 @@ SLOT=6
   49,   3,  46  ! Plane X, wire 46
 
 SLOT=8
+REFCHAN=79
   15,   3,  47  ! Plane X, wire 47
 
 SLOT=10
+REFCHAN=79
   48,   3,  48  ! Plane X, wire 48
   49,   3,  49  ! Plane X, wire 49
   50,   3,  50  ! Plane X, wire 50
@@ -549,6 +577,7 @@ SLOT=10
   63,   3,  63  ! Plane X, wire 63
 
 SLOT=9
+REFCHAN=79
   80,   3,  64  ! Plane X, wire 64
   81,   3,  65  ! Plane X, wire 65
   82,   3,  66  ! Plane X, wire 66
@@ -580,6 +609,7 @@ SLOT=9
   16,   4,  14  ! Plane X', wire 14
 
 SLOT=8
+REFCHAN=79
   47,   4,  15  ! Plane X', wire 15
   46,   4,  16  ! Plane X', wire 16
   45,   4,  17  ! Plane X', wire 17
@@ -598,6 +628,7 @@ SLOT=8
   32,   4,  30  ! Plane X', wire 30
 
 SLOT=7
+REFCHAN=79
    0,   4,  31  ! Plane X', wire 31
    1,   4,  32  ! Plane X', wire 32
    2,   4,  33  ! Plane X', wire 33
@@ -616,6 +647,7 @@ SLOT=7
   15,   4,  46  ! Plane X', wire 46
 
 SLOT=6
+REFCHAN=79
   96,   4,  47  ! Plane X', wire 47
   97,   4,  48  ! Plane X', wire 48
   98,   4,  49  ! Plane X', wire 49
@@ -649,9 +681,11 @@ SLOT=6
   14,   4,  77  ! Plane X', wire 77
 
 SLOT=9
+REFCHAN=79
   30,   4,  78  ! Plane X', wire 78
 
 SLOT=14
+REFCHAN=15
   45,  12,   1  ! Plane U, wire 1
   44,  12,   2  ! Plane U, wire 2
   43,  12,   3  ! Plane U, wire 3
@@ -668,6 +702,7 @@ SLOT=14
   32,  12,  14  ! Plane U, wire 14
 
 SLOT=11
+REFCHAN=47
  127,  12,  15  ! Plane U, wire 15
  126,  12,  16  ! Plane U, wire 16
  125,  12,  17  ! Plane U, wire 17
@@ -702,6 +737,7 @@ SLOT=11
   48,  12,  46  ! Plane U, wire 46
 
 SLOT=10
+REFCHAN=79
  127,  12,  47  ! Plane U, wire 47
  126,  12,  48  ! Plane U, wire 48
  125,  12,  49  ! Plane U, wire 49
@@ -720,6 +756,7 @@ SLOT=10
  112,  12,  62  ! Plane U, wire 62
 
 SLOT=13
+REFCHAN=47
   80,  12,  63  ! Plane U, wire 63
   81,  12,  64  ! Plane U, wire 64
   82,  12,  65  ! Plane U, wire 65
@@ -753,6 +790,7 @@ SLOT=13
   30,  12,  93  ! Plane U, wire 93
 
 SLOT=14
+REFCHAN=15
   46,  12,  94  ! Plane U, wire 94
   80,  12,  95  ! Plane U, wire 95
   81,  12,  96  ! Plane U, wire 96
@@ -768,6 +806,7 @@ SLOT=14
   91,  12, 106  ! Plane U, wire 106
 
 SLOT=13
+REFCHAN=47
   42,  11,   1  ! Plane U', wire 1
   41,  11,   2  ! Plane U', wire 2
   40,  11,   3  ! Plane U', wire 3
@@ -781,6 +820,7 @@ SLOT=13
   32,  11,  11  ! Plane U', wire 11
 
 SLOT=11
+REFCHAN=47
   95,  11,  12  ! Plane U', wire 12
   94,  11,  13  ! Plane U', wire 13
   93,  11,  14  ! Plane U', wire 14
@@ -814,6 +854,7 @@ SLOT=11
    1,  11,  42  ! Plane U', wire 42
 
 SLOT=13
+REFCHAN=47
   43,  11,  43  ! Plane U', wire 43
   96,  11,  44  ! Plane U', wire 44
   97,  11,  45  ! Plane U', wire 45
@@ -849,6 +890,7 @@ SLOT=13
   79,  11,  75  ! Plane U', wire 75
 
 SLOT=15
+REFCHAN=47
   48,  11,  76  ! Plane U', wire 76
   49,  11,  77  ! Plane U', wire 77
   50,  11,  78  ! Plane U', wire 78
@@ -867,6 +909,7 @@ SLOT=15
   63,  11,  91  ! Plane U', wire 91
 
 SLOT=14
+REFCHAN=15
  112,  11,  92  ! Plane U', wire 92
  113,  11,  93  ! Plane U', wire 93
  114,  11,  94  ! Plane U', wire 94
@@ -898,6 +941,7 @@ SLOT=14
    0,   8,  14  ! Plane V, wire 14
 
 SLOT=12
+REFCHAN=47
  127,   8,  15  ! Plane V, wire 15
  126,   8,  16  ! Plane V, wire 16
  125,   8,  17  ! Plane V, wire 17
@@ -916,6 +960,7 @@ SLOT=12
  112,   8,  30  ! Plane V, wire 30
 
 SLOT=14
+REFCHAN=15
  111,   8,  31  ! Plane V, wire 31
  110,   8,  32  ! Plane V, wire 32
  109,   8,  33  ! Plane V, wire 33
@@ -950,6 +995,7 @@ SLOT=14
   16,   8,  62  ! Plane V, wire 62
 
 SLOT=12
+REFCHAN=47
    0,   8,  63  ! Plane V, wire 63
    1,   8,  64  ! Plane V, wire 64
    2,   8,  65  ! Plane V, wire 65
@@ -995,9 +1041,11 @@ SLOT=12
   42,   8, 105  ! Plane V, wire 105
 
 SLOT=14
+REFCHAN=15
   14,   8, 106  ! Plane V, wire 106
 
 SLOT=15
+REFCHAN=47
   42,   7,   1  ! Plane V', wire 1
   41,   7,   2  ! Plane V', wire 2
   40,   7,   3  ! Plane V', wire 3
@@ -1027,6 +1075,7 @@ SLOT=15
    0,   7,  27  ! Plane V', wire 27
 
 SLOT=14
+REFCHAN=15
   79,   7,  28  ! Plane V', wire 28
   78,   7,  29  ! Plane V', wire 29
   77,   7,  30  ! Plane V', wire 30
@@ -1045,6 +1094,7 @@ SLOT=14
   64,   7,  43  ! Plane V', wire 43
 
 SLOT=13
+REFCHAN=47
   48,   7,  44  ! Plane V', wire 44
   49,   7,  45  ! Plane V', wire 45
   50,   7,  46  ! Plane V', wire 46
@@ -1063,6 +1113,7 @@ SLOT=13
   63,   7,  59  ! Plane V', wire 59
 
 SLOT=12
+REFCHAN=47
   80,   7,  60  ! Plane V', wire 60
   81,   7,  61  ! Plane V', wire 61
   82,   7,  62  ! Plane V', wire 62
@@ -1097,6 +1148,7 @@ SLOT=12
   63,   7,  91  ! Plane V', wire 91
 
 SLOT=11
+REFCHAN=47
   32,   7,  92  ! Plane V', wire 92
   33,   7,  93  ! Plane V', wire 93
   34,   7,  94  ! Plane V', wire 94
@@ -1113,9 +1165,11 @@ SLOT=11
   45,   7, 105  ! Plane V', wire 105
 
 SLOT=15
+REFCHAN=47
   43,   7, 106  ! Plane V', wire 106
 
 SLOT=12
+REFCHAN=47
  110,  10,   1  ! Plane X, wire 1
  109,  10,   2  ! Plane X, wire 2
  108,  10,   3  ! Plane X, wire 3
@@ -1149,6 +1203,7 @@ SLOT=12
   16,  10,  31  ! Plane X, wire 31
 
 SLOT=11
+REFCHAN=47
   31,  10,  32  ! Plane X, wire 32
   30,  10,  33  ! Plane X, wire 33
   29,  10,  34  ! Plane X, wire 34
@@ -1166,9 +1221,11 @@ SLOT=11
   17,  10,  46  ! Plane X, wire 46
 
 SLOT=12
+REFCHAN=47
  111,  10,  47  ! Plane X, wire 47
 
 SLOT=15
+REFCHAN=47
   16,  10,  48  ! Plane X, wire 48
   17,  10,  49  ! Plane X, wire 49
   18,  10,  50  ! Plane X, wire 50
@@ -1187,6 +1244,7 @@ SLOT=15
   31,  10,  63  ! Plane X, wire 63
 
 SLOT=14
+REFCHAN=15
   48,  10,  64  ! Plane X, wire 64
   49,  10,  65  ! Plane X, wire 65
   50,  10,  66  ! Plane X, wire 66
@@ -1204,6 +1262,7 @@ SLOT=14
   62,  10,  78  ! Plane X, wire 78
 
 SLOT=13
+REFCHAN=47
  125,   9,   1  ! Plane X', wire 1
  124,   9,   2  ! Plane X', wire 2
  123,   9,   3  ! Plane X', wire 3
@@ -1236,6 +1295,7 @@ SLOT=13
    0,   9,  30  ! Plane X', wire 30
 
 SLOT=11
+REFCHAN=47
   96,   9,  31  ! Plane X', wire 31
   97,   9,  32  ! Plane X', wire 32
   98,   9,  33  ! Plane X', wire 33
@@ -1270,6 +1330,7 @@ SLOT=11
   79,   9,  62  ! Plane X', wire 62
 
 SLOT=10
+REFCHAN=79
   96,   9,  63  ! Plane X', wire 63
   97,   9,  64  ! Plane X', wire 64
   98,   9,  65  ! Plane X', wire 65
@@ -1287,4 +1348,5 @@ SLOT=10
  110,   9,  77  ! Plane X', wire 77
 
 SLOT=13
+REFCHAN=47
  126,   9,  78  ! Plane X', wire 78
