@@ -1,6 +1,8 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block P.hod.*
+block T.shms.*
+
 TH2F phodo_1x_posadc_val_v_pad '' P.hod.1x.posadcpad  P.hod.1x.posadcval 13 0.5 13.5 4000 0 40000
 TH2F phodo_1y_posadc_val_v_pad '' P.hod.1y.posadcpad  P.hod.1y.posadcval 13 0.5 13.5 4000 0 40000
 TH2F phodo_2x_posadc_val_v_pad '' P.hod.2x.posadcpad  P.hod.2x.posadcval 14 0.5 14.5 4000 0 40000
