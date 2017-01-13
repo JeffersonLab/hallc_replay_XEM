@@ -2,20 +2,29 @@
 #
 block H.cal.*
 
-TH1F hcal_hAm_pi 'HMS hA- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.aneg 2500 0 25000
-TH1F hcal_hAp_pi 'HMS hA+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.apos 2500 0 25000
+TH1F hcal_hA+_pi 'HMS hA+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.apos 2500 0 25000
+TH1F hcal_hA-_pi 'HMS hA- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.aneg 2500 0 25000
 
-TH1F hcal_hBm_pi 'HMS hB- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.aneg 2500 0 25000
-TH1F hcal_hBp_pi 'HMS hB+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.apos 2500 0 25000
+TH1F hcal_hB+_pi 'HMS hB+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.apos 2500 0 25000
+TH1F hcal_hB-_pi 'HMS hB- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.aneg 2500 0 25000
 
-TH1F hcal_hCp_pi 'HMS hC+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.3ta.apos 2500 0 25000
-TH1F hcal_hDp_pi 'HMS hD+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.4ta.apos 2500 0 25000
+TH1F hcal_hC+_pi 'HMS hC+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.3ta.apos 2500 0 25000
+TH1F hcal_hD+_pi 'HMS hD+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.4ta.apos 2500 0 25000
 
-TH1F hcal_hAm_occu "HMS hA- ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.1pr.negadchits 13 0.5 13.5
-TH1F hcal_hAp_occu "HMS hA+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.1pr.posadchits 13 0.5 13.5
+TH1F hcal_hA+_occu "HMS hA+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.posadchits 13 0.5 13.5
+TH1F hcal_hA-_occu "HMS hA- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.negadchits 13 0.5 13.5
 
-TH1F hcal_hBm_occu "HMS hB- ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.2ta.negadchits 13 0.5 13.5
-TH1F hcal_hBp_occu "HMS hB+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.2ta.posadchits 13 0.5 13.5
+TH1F hcal_hB+_occu "HMS hB+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.posadchits 13 0.5 13.5
+TH1F hcal_hB-_occu "HMS hB- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.negadchits 13 0.5 13.5
 
-TH1F hcal_hCp_occu "HMS hC+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.3ta.posadchits 13 0.5 13.5
-TH1F hcal_hDp_occu "HMS hD+ ADC Occupancy; Paddle Number; Number of ADC Hits' H.cal.4ta.posadchits 13 0.5 13.5
+TH1F hcal_hC+_occu "HMS hC+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.3ta.posadchits 13 0.5 13.5
+TH1F hcal_hD+_occu "HMS hD+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.4ta.posadchits 13 0.5 13.5
+
+TH2F hcal_hA+_pi_vs_blk 'HMS hA+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.posadchits H.cal.1pr.apos 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA-_pi_vs_blk 'HMS hA- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.negadchits H.cal.1pr.aneg 13 0.5 13.5 4000 0 40000
+
+TH2F hcal_hB+_pi_vs_blk 'HMS hB+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.posadchits H.cal.2ta.apos 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB-_pi_vs_blk 'HMS hB- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.negadchits H.cal.2ta.aneg 13 0.5 13.5 4000 0 40000
+
+TH2F hcal_hC+_pi_vs_blk 'HMS hC+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.3ta.posadchits H.cal.3ta.apos 13 0.5 13.5 4000 0 40000
+TH2F hcal_hD+_pi_vs_blk 'HMS hD+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.4ta.posadchits H.cal.4ta.apos 13 0.5 13.5 4000 0 40000
