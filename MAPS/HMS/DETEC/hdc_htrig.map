@@ -1,10 +1,10 @@
-! THMS_ID=10       ::  TDC
-! HDC_ID=11        ::  TDC
+! THMS_ID=10       ::  ADC,TDC
+! HDC_ID=11        ::  ADC,TDC
 
 
 DETECTOR=10
 
-ROC=1
+ROC=11
 
 SLOT=17
    8,   1,   1,   0  ! hASUM
