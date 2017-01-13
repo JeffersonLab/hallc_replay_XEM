@@ -16,7 +16,7 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/shms_all_00%d.dat";
+  const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/phodo_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -34,7 +34,7 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/phodo.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/phodo_ptrig.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
