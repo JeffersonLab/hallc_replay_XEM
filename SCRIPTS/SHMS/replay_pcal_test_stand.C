@@ -1,4 +1,4 @@
-void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_pcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -17,7 +17,7 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/shms_dc_00%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/shms_pcal_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -29,32 +29,16 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
-  // Load params for HMS DC test stand configuration
-  gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
-
+  // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/pdc.map");
-
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/pcal.map");
+  
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
-
-  // Add SHMS drift chambers
-  SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
-
-  // Additional detectors:
-  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
-  //HMS->AddDetector(new THcShower("cal", "Shower"));
-  //
-  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  //HMS->AddDetector(cherenkov);
-  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  //HMS->AddDetector(aerogel);
-  //
-  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
-  //hscaler->SetDebugFile("HScaler.txt");
-  //gHaEvtHandlers->Add(hscaler);
+  // Add hodoscope to HMS apparatus
+  THcShower* cal = new THcShower("cal", "Calorimeter");
+  SHMS->AddDetector(cal);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -90,8 +74,8 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/SHMS/DC/pdcana.def");
- analyzer->SetCutFile("DEF-files/SHMS/DC/pdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/SHMS/CAL/pcalana.def");
+ analyzer->SetCutFile("DEF-files/SHMS/CAL/pcalana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional

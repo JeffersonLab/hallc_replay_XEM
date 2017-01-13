@@ -1,0 +1,26 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block T.shms.*
+
+TH1F ptrig_p1x_tdc 'SHMS p1x TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p1X_tdc 4000 -20000 20000
+TH1F ptrig_p1y_tdc 'SHMS p1y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p1Y_tdc 4000 -20000 20000
+TH1F ptrig_p2x_tdc 'SHMS p2x TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p2X_tdc 4000 -20000 20000
+TH1F ptrig_p2y_tdc 'SHMS p2y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p2Y_tdc 4000 -20000 20000
+
+TH1F ptrig_h1T_tdc 'SHMS p1x/p1y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p1T_tdc 4000 -20000 20000
+TH1F ptrig_h2T_tdc 'SHMS p2x/p2y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.p2T_tdc 4000 -20000 20000
+
+TH1F ptrig_hT1_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 20, Channel 15); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pT1_tdc 4000 -20000 20000
+TH1F ptrig_hT2_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 31); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pT2_tdc 4000 -20000 20000
+TH1F ptrig_hT3_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 38); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pT3_tdc 4000 -20000 20000
+
+TH1F ptrig_hdc_ref1  'SHMS HDC Reference Time 1;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF1_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref2  'SHMS HDC Reference Time 2;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF2_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref3  'SHMS HDC Reference Time 3;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF3_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref4  'SHMS HDC Reference Time 4;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF4_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref5  'SHMS HDC Reference Time 5;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF5_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref6  'SHMS HDC Reference Time 6;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF6_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref7  'SHMS HDC Reference Time 7;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF7_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref8  'SHMS HDC Reference Time 8;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF8_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref9  'SHMS HDC Reference Time 9;  Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF9_tdc  4000 -20000 20000
+TH1F ptrig_hdc_ref10 'SHMS HDC Reference Time 10; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.shms.pDCREF10_tdc 4000 -20000 20000

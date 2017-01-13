@@ -3,39 +3,67 @@
 block H.hod.*
 block T.hms.*
 
-TH2F htest '' H.hod.1x.posadcpad  H.hod.1x.posadcval 16 1 17 4000 0 40000
-
 TH1F hhodo_h1x_multi 'HMS h1X Multiplicity; Number of Hits; Counts' H.hod.1x.nhits 16 0.5 16.5
 TH1F hhodo_h1y_multi 'HMS h1Y Multiplicity; Number of Hits; Counts' H.hod.1y.nhits 10 0.5 10.5
 TH1F hhodo_h2x_multi 'HMS h2X Multiplicity; Number of Hits; Counts' H.hod.2x.nhits 16 0.5 16.5
 TH1F hhodo_h2y_multi 'HMS h2Y Multiplicity; Number of Hits; Counts' H.hod.2y.nhits 10 0.5 10.5
-
-TH1F hhodo_h1xm_adc_occu 'HMS h1X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negadcpad 16 0.5 16.5
-TH1F hhodo_h1ym_adc_occu 'HMS h1Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negadcpad 10 0.5 10.5 
-TH1F hhodo_h2xm_adc_occu 'HMS h2X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negadcpad 16 0.5 16.5
-TH1F hhodo_h2ym_adc_occu 'HMS h2Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negadcpad 10 0.5 10.5
 
 TH1F hhodo_h1xp_adc_occu 'HMS h1X+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.1x.posadcpad 16 0.5 16.5
 TH1F hhodo_h1yp_adc_occu 'HMS h1Y+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.1y.posadcpad 10 0.5 10.5 
 TH1F hhodo_h2xp_adc_occu 'HMS h2X+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.2x.posadcpad 16 0.5 16.5
 TH1F hhodo_h2yp_adc_occu 'HMS h2Y+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.2y.posadcpad 10 0.5 10.5
 
-TH1F hhodo_h1xm_tdc_occu 'HMS h1X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negtdcpad 16 0.5 16.5
-TH1F hhodo_h1ym_tdc_occu 'HMS h1Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negtdcpad 10 0.5 10.5 
-TH1F hhodo_h2xm_tdc_occu 'HMS h2X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negtdcpad 16 0.5 16.5
-TH1F hhodo_h2ym_tdc_occu 'HMS h2Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negtdcpad 10 0.5 10.5
+TH1F hhodo_h1xm_adc_occu 'HMS h1X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negadcpad 16 0.5 16.5
+TH1F hhodo_h1ym_adc_occu 'HMS h1Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negadcpad 10 0.5 10.5 
+TH1F hhodo_h2xm_adc_occu 'HMS h2X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negadcpad 16 0.5 16.5
+TH1F hhodo_h2ym_adc_occu 'HMS h2Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negadcpad 10 0.5 10.5
 
 TH1F hhodo_h1xp_tdc_occu 'HMS h1X+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.1x.postdcpad 16 0.5 16.5
 TH1F hhodo_h1yp_tdc_occu 'HMS h1Y+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.1y.postdcpad 10 0.5 10.5 
 TH1F hhodo_h2xp_tdc_occu 'HMS h2X+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.2x.postdcpad 16 0.5 16.5
 TH1F hhodo_h2yp_tdc_occu 'HMS h2Y+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.2y.postdcpad 10 0.5 10.5
 
-TH2F hhodo_h1xm_piVtdc 'HMS h1X- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1x.negadcval H.hod.1x.negtdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h1ym_piVtdc 'HMS h1Y- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1y.negadcval H.hod.1y.negtdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h2xm_piVtdc 'HMS h2X- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2x.negadcval H.hod.2x.negtdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h2ym_piVtdc 'HMS h2Y- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2y.negadcval H.hod.2y.negtdcval 2500 0 25000 800 0 8000
+TH1F hhodo_h1xm_tdc_occu 'HMS h1X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negtdcpad 16 0.5 16.5
+TH1F hhodo_h1ym_tdc_occu 'HMS h1Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negtdcpad 10 0.5 10.5 
+TH1F hhodo_h2xm_tdc_occu 'HMS h2X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negtdcpad 16 0.5 16.5
+TH1F hhodo_h2ym_tdc_occu 'HMS h2Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negtdcpad 10 0.5 10.5
 
-TH2F hhodo_h1xp_piVtdc 'HMS h1X+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1x.posadcval H.hod.1x.postdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h1yp_piVtdc 'HMS h1Y+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1y.posadcval H.hod.1y.postdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h2xp_piVtdc 'HMS h2X+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2x.posadcval H.hod.2x.postdcval 2500 0 25000 800 0 8000
-TH2F hhodo_h2yp_piVtdc 'HMS h2Y+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2y.posadcval H.hod.2y.postdcval 2500 0 25000 800 0 8000
+TH2F hhodo_h1x+_pi_vs_padnum 'HMS h1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1x.posadcpad H.hod.1x.posadcval 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h1y+_pi_vs_padnum 'HMS h1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1y.posadcpad H.hod.1y.posadcval 10 0.5 10.5 4000 0 40000
+TH2F hhodo_h2x+_pi_vs_padnum 'HMS h2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2x.posadcpad H.hod.2x.posadcval 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h2y+_pi_vs_padnum 'HMS h2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2y.posadcpad H.hod.2y.posadcval 10 0.5 10.5 4000 0 40000
+
+TH2F hhodo_h1x-_pi_vs_padnum 'HMS h1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1x.negadcpad H.hod.1x.negadcval 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h1y-_pi_vs_padnum 'HMS h1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1y.negadcpad H.hod.1y.negadcval 10 0.5 10.5 4000 0 40000
+TH2F hhodo_h2x-_pi_vs_padnum 'HMS h2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2x.negadcpad H.hod.2x.negadcval 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h2y-_pi_vs_padnum 'HMS h2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2y.negadcpad H.hod.2y.negadcval 10 0.5 10.5 4000 0 40000
+
+TH2F hhodo_h1x+_ped_vs_padnum 'HMS h1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.1x.posadcpad H.hod.1x.posadcped 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h1y+_ped_vs_padnum 'HMS h1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.1y.posadcpad H.hod.1y.posadcped 10 0.5 10.5 4000 0 40000
+TH2F hhodo_h2x+_ped_vs_padnum 'HMS h2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.2x.posadcpad H.hod.2x.posadcped 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h2y+_ped_vs_padnum 'HMS h2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.2y.posadcpad H.hod.2y.posadcped 10 0.5 10.5 4000 0 40000
+
+TH2F hhodo_h1x-_ped_vs_padnum 'HMS h1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.1x.negadcpad H.hod.1x.negadcped 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h1y-_ped_vs_padnum 'HMS h1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.1y.negadcpad H.hod.1y.negadcped 10 0.5 10.5 4000 0 40000
+TH2F hhodo_h2x-_ped_vs_padnum 'HMS h2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.2x.negadcpad H.hod.2x.negadcped 16 0.5 16.5 4000 0 40000
+TH2F hhodo_h2y-_ped_vs_padnum 'HMS h2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' H.hod.2y.negadcpad H.hod.2y.negadcped 10 0.5 10.5 4000 0 40000
+
+TH2F hhodo_h1x+_tdc_vs_padnum 'HMS h1X+ Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.1x.postdcpad H.hod.1x.postdcval 16 0.5 16.5 4000 -20000 20000
+TH2F hhodo_h1y+_tdc_vs_padnum 'HMS h1Y+ Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.1y.postdcpad H.hod.1y.postdcval 10 0.5 10.5 4000 -20000 20000
+TH2F hhodo_h2x+_tdc_vs_padnum 'HMS h2X+ Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.2x.postdcpad H.hod.2x.postdcval 16 0.5 16.5 4000 -20000 20000
+TH2F hhodo_h2y+_tdc_vs_padnum 'HMS h2Y+ Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.2y.postdcpad H.hod.2y.postdcval 10 0.5 10.5 4000 -20000 20000
+
+TH2F hhodo_h1x-_tdc_vs_padnum 'HMS h1X- Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.1x.negtdcpad H.hod.1x.negtdcval 16 0.5 16.5 4000 -20000 20000
+TH2F hhodo_h1y-_tdc_vs_padnum 'HMS h1Y- Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.1y.negtdcpad H.hod.1y.negtdcval 10 0.5 10.5 4000 -20000 20000
+TH2F hhodo_h2x-_tdc_vs_padnum 'HMS h2X- Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.2x.negtdcpad H.hod.2x.negtdcval 16 0.5 16.5 4000 -20000 20000
+TH2F hhodo_h2y-_tdc_vs_padnum 'HMS h2Y- Raw TDC vs. Paddle Number; Paddle Number; Raw TDC / 10 TDC Units' H.hod.2y.negtdcpad H.hod.2y.negtdcval 10 0.5 10.5 4000 -20000 20000
+
+TH2F hhodo_h1xp_piVtdc 'HMS h1X+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1x.posadcval H.hod.1x.postdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h1yp_piVtdc 'HMS h1Y+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1y.posadcval H.hod.1y.postdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h2xp_piVtdc 'HMS h2X+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2x.posadcval H.hod.2x.postdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h2yp_piVtdc 'HMS h2Y+ Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2y.posadcval H.hod.2y.postdcval 2500 0 25000 4000 -20000 20000
+
+TH2F hhodo_h1xm_piVtdc 'HMS h1X- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1x.negadcval H.hod.1x.negtdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h1ym_piVtdc 'HMS h1Y- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.1y.negadcval H.hod.1y.negtdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h2xm_piVtdc 'HMS h2X- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2x.negadcval H.hod.2x.negtdcval 2500 0 25000 4000 -20000 20000
+TH2F hhodo_h2ym_piVtdc 'HMS h2Y- Pulse Integral vs. TDC Time; Pulse Integral / 10 ADC Units; Raw TDC Time / 10 TDC Units' H.hod.2y.negadcval H.hod.2y.negtdcval 2500 0 25000 4000 -20000 20000

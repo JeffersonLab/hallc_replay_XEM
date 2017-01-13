@@ -1,6 +1,6 @@
-! THMS_ID=10       ::  TDC
-! HDC_ID=11        ::  TDC
-! HSCIN_ID=13      ::  TDC
+! THMS_ID=10       ::  ADC,TDC
+! HDC_ID=11        ::  ADC,TDC
+! HSCIN_ID=13      ::  ADC,TDC
 
 
 DETECTOR=10
@@ -1334,6 +1334,8 @@ SLOT=16
    7,   4,  10,   1  ! h2y10A-
 
 SLOT=20
+REFINDEX=0
+ 127,1000,   0,   0
    0,   1,   1,   2  ! h1x01T+
    1,   1,   3,   2  ! h1x03T+
    2,   1,   5,   2  ! h1x05T+
