@@ -1,0 +1,7 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block P.cal.*
+
+TH2F pcal_pi_v_shwr_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.adchits P.cal.fly.a 224 0.5 224.5 4000 0 40000
+TH2F pcal_pi_v_prshwr_pos_blk 'SHMS Positive Preshower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.posadchits P.cal.pr.apos 13 0.5 13.5 4000 0 40000
+TH2F pcal_pi_v_prshwr_neg_blk 'SHMS Negative Preshower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.negadchits P.cal.pr.aneg 13 0.5 13.5 4000 0 40000
