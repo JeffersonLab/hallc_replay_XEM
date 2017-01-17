@@ -73,7 +73,6 @@ ppcentral_offset = 0.0
 ppcentral = 0.0
 ptheta_lab = 0.0
 ppartmass = 0.139
-phodo_num_planes = 1
 
 ; "Hodoscope" parameters
 ; Not used, but to keep THcTestPaddles happy
