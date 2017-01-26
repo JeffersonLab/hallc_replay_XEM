@@ -19,3 +19,6 @@ pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"
 pdc_fix_lr = 1 ; Let hit have different L/R assignment for different space point
 pdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
                      ; in a space point
+
+; Number of aerogel pairs of pmt's
+paero_num_pairs = 7
