@@ -2,6 +2,31 @@
 #
 block P.cal.*
 
-TH2F pcal_pi_v_shwr_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.adchits P.cal.fly.a 224 0.5 224.5 4000 0 40000
-TH2F pcal_pi_v_prshwr_pos_blk 'SHMS Positive Preshower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.posadchits P.cal.pr.apos 13 0.5 13.5 4000 0 40000
-TH2F pcal_pi_v_prshwr_neg_blk 'SHMS Negative Preshower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.negadchits P.cal.pr.aneg 13 0.5 13.5 4000 0 40000
+TH2F pcal_prshwr-_rawped_blk 'SHMS Preshower- Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F pcal_prshwr-_rawpi_blk 'SHMS Preshower- Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F pcal_prshwr-_rawamp_blk 'SHMS Preshower- Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmpRaw 13 0.5 13.5 410 0 4100 
+TH2F pcal_prshwr-_rawptime_blk 'SHMS Preshower- Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+
+TH2F pcal_prshwr+_rawped_blk 'SHMS Preshower+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F pcal_prshwr+_rawpi_blk 'SHMS Preshower+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F pcal_prshwr+_rawamp_blk 'SHMS Preshower+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmpRaw 13 0.5 13.5 410 0 4100 
+TH2F pcal_prshwr+_rawptime_blk 'SHMS Preshower+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+
+TH2F pcal_pshwr-_ped_blk 'SHMS Preshower- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPed 13 0.5 13.5 400 0 4000
+TH2F pcal_prshwr-_pi_blk 'SHMS Preshower- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F pcal_prshwr-_amp_blk 'SHMS Preshower- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmp 13 0.5 13.5 410 0 4100 
+
+TH2F pcal_prshwr+_ped_blk 'SHMS Preshower+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPed 13 0.5 13.5 400 0 4000
+TH2F pcal_prshwr+_pi_blk 'SHMS Preshower+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F pcal_prshwr+_amp_blk 'SHMS Preshower+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+
+TH2F pcal_shwr_rawped_blk 'SHMS Shower Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F pcal_shwr_rawpi_blk 'SHMS Shower Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F pcal_shwr_rawamp_blk 'SHMS Shower Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPulseAmpRaw 13 0.5 13.5 410 0 4100 
+TH2F pcal_shwr_rawptime_blk 'SHMS Shower Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+
+TH2F pcal_shwr_ped_blk 'SHMS Shower Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPed 13 0.5 13.5 400 0 4000
+TH2F pcal_shwr_pi_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F pcal_shwr_amp_blk 'SHMS Shower Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.fly.AdcCounter P.cal.fly.AdcPulseAmp 13 0.5 13.5 410 0 4100 
+
+

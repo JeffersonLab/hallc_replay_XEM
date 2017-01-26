@@ -8,20 +8,20 @@ TH1F paero+_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aer
 
 TH2F paero-_rawped_vs_cntr 'SHMS Aero- Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPedRaw 7 0.5 7.5 1000 0 10000
 TH2F paero-_rawpi_vs_cntr 'SHMS Aero- Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseIntRaw 7 0.5 7.5 4000 0 40000
-TH2F paero-_rawpped_vs_cntr 'SHMS Aero- Raw Pulse Peak vs. Counter Number; Counter Number; Raw Pulse Peak / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
+TH2F paero-_rawamp_vs_cntr 'SHMS Aero- Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
 TH2F paero-_rawptime_vs_cntr 'SHMS Aero- Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseTimeRaw 7 0.5 7.5 1000 0 10000
 
 TH2F paero+_rawped_vs_cntr 'SHMS Aero+ Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPedRaw 7 0.5 7.5 1000 0 10000
 TH2F paero+_rawpi_vs_cntr 'SHMS Aero+ Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseIntRaw 7 0.5 7.5 4000 0 40000
-TH2F paero+_rawpped_vs_cntr 'SHMS Aero+ Raw Pulse Peak vs. Counter Number; Counter Number; Raw Pulse Peak / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
+TH2F paero+_rawamp_vs_cntr 'SHMS Aero+ Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
 TH2F paero+_rawptime_vs_cntr 'SHMS Aero+ Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseTimeRaw 7 0.5 7.5 1000 0 10000
 
 TH2F paero-_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 1000 0 10000
 TH2F paero-_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero-_pped_vs_cntr 'SHMS Aero- Pulse Peak vs. Counter Number; Counter Number;  Pulse Peak / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 410 0 4100
+TH2F paero-_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 410 0 4100
 
 TH2F paero+_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 1000 0 10000
 TH2F paero+_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero+_pped_vs_cntr 'SHMS Aero+ Pulse Peak vs. Counter Number; Counter Number;  Pulse Peak / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 410 0 4100
+TH2F paero+_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 410 0 4100
 
 
