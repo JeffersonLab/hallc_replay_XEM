@@ -1,4 +1,4 @@
-! SHGC_ID=24       ::  ADC
+! PHGC_ID=24       ::  ADC
 
 
 DETECTOR=24
@@ -6,7 +6,7 @@ DETECTOR=24
 ROC=2
 
 SLOT=13
-   8,   1,   1,   0  ! sHGC01
-   9,   1,   2,   0  ! sHGC02
-  10,   1,   3,   0  ! sHGC03
-  11,   1,   4,   0  ! sHGC04
+   8,   1,   1,   0  ! pHGC01
+   9,   1,   2,   0  ! pHGC02
+  10,   1,   3,   0  ! pHGC03
+  11,   1,   4,   0  ! pHGC04
