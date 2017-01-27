@@ -1,0 +1,12 @@
+! PHGCER_ID=24       ::  ADC
+
+
+DETECTOR=24
+
+ROC=2
+
+SLOT=13
+   8,   1,   1,   0  ! pHGCER01
+   9,   1,   2,   0  ! pHGCER02
+  10,   1,   3,   0  ! pHGCER03
+  11,   1,   4,   0  ! pHGCER04

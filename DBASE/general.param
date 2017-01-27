@@ -34,7 +34,10 @@ raddeg=3.14159265/180
 #include "PARAM/SHMS/GEN/ptracking.param"
 
 ; SHMS detector specific paramter files
+#include "PARAM/SHMS/AERO/paero.param"
 #include "PARAM/SHMS/CAL/pcal.param"
+#include "PARAM/SHMS/HGCER/phgcer.param"
+#include "PARAM/SHMS/NGCER/pngcer.param"
 #include "PARAM/SHMS/DC/pdc.pos"
 #include "PARAM/SHMS/DC/pdc.param"
 #include "PARAM/SHMS/DC/pdriftmap.param"
