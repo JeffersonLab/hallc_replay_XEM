@@ -7,8 +7,8 @@ ROC=2
 
 SLOT=14
    0,   1,   1,   0  ! pAERSUM
-   1,   1,   2,   0  ! pHGCSUM
-   2,   1,   3,   0  ! pNGCSUM
+   1,   1,   2,   0  ! pHGCERSUM
+   2,   1,   3,   0  ! pNGCERSUM
 
 SLOT=20
   15,   2,   1,   1  ! pT1
@@ -23,8 +23,8 @@ SLOT=19
   37,   2,   8,   1  ! p2T
   38,   2,   9,   1  ! pT3
   39,   2,  10,   1  ! pAERSUM
-  40,   2,  11,   1  ! pHGCSUM
-  41,   2,  12,   1  ! pNGCSUM
+  40,   2,  11,   1  ! pHGCERSUM
+  41,   2,  12,   1  ! pNGCERSUM
 
 ROC=6
 
