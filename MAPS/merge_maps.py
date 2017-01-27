@@ -137,7 +137,7 @@ for fileName in fileNames:
 
                 KW =  line[1:i].strip()
                 ID = line[i+4:].split()[0].strip()
-                signal = ','.join(line[i+4:].split()[1:])
+                signal = ','.join(line[i+4:].replace('::', '').split()[1:])
 
                 if KW in header['KWs']:
                     print('Detector keyword `{}` already present!'.format(KW))
@@ -237,7 +237,7 @@ with open(mergedName, 'w') as fo:
         header['IDs'], header['KWs'], header['signals']
     )):
         IDString = '{0}_ID={1}'.format(KW, ID)
-        fo.write('! {0:15}  ::  {1}\n'.format(IDString, signal))
+        fo.write('! {0:15}  ::  {1}\n'.format(IDString, signals))
 
     # Write detector maps sorted by IDs.
     for ID, KW in sorted(zip(
