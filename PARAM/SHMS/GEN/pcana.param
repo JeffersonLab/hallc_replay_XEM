@@ -3,9 +3,6 @@ p_recon_coeff_filename = ""
 
 ppartmass = 0.139
 
-phodo_num_planes = 4
-phodo_plane_names = "1x 1y 2x 2y"
-ptofusinginvadc=0
 ; Scintillator parameters
 pref_npaddles = 6
 pref_nsperchan = 0.1

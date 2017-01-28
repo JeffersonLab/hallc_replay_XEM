@@ -1,3 +1,7 @@
+
+hhodo_num_planes = 4
+hhodo_plane_names = "1x 1y 2x 2y"
+;
       hpathlength_central = 2500
 ; Z positions of hodoscopes
       hscin_1x_zpos =  (89.14-11.31)
