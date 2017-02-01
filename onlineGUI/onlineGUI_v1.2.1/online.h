@@ -76,6 +76,7 @@ private:
   TString rootfilename;  //  Just the name
   TString goldenrootfilename; // Golden rootfile for comparisons
   TString protorootfile; // Prototype for getting the rootfilename
+  TString configfilestart; // 
   TString guicolor; // User's choice of background color
   TString plotsdir; // Where to store sample plots.. automatically stored as .jpg's).
   UInt_t canvaswidth; // Width of histogram canvas
@@ -111,6 +112,7 @@ public:
   Bool_t IsMonitor() { return fMonitor; };
   UInt_t GetCanvasWidth() { return canvaswidth; };
   UInt_t GetCanvasHeight() { return canvasheight; };
+  TString GetConfigStart() {return configfilestart;}; // 
 };
 
 class OnlineGUI {

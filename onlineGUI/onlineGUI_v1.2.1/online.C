@@ -62,6 +62,7 @@ OnlineConfig::OnlineConfig(TString anatype)
   //  Loads up the configuration file, and stores it's contents for access.
   
   confFileName = anatype;
+  configfilestart=anatype;
   if(!confFileName.Contains(".cfg"))
     confFileName += ".cfg";
   fMonitor = kFALSE;
@@ -1830,7 +1831,12 @@ void OnlineGUI::PrintPages() {
   Bool_t useJPG = kFALSE;
   if(!plotsdir.IsNull()) useJPG = kTRUE;
 
-  TString filename = "summaryplots";
+  //  TString filename = "summaryplots";
+  TString ConfigStartAll=fConfig->GetConfigStart();
+  TObjArray *tx= ConfigStartAll.Tokenize("/");
+  TString temp=((TObjString *)(tx->At(tx->GetEntries()-1)))->String();
+  Ssiz_t pos=temp.Index(".cfg");
+  TString filename=temp(0,pos);
   if(runNumber!=0) {
     filename += "_";
     filename += runNumber;
@@ -1839,7 +1845,7 @@ void OnlineGUI::PrintPages() {
     filename.Prepend(plotsdir+"/");
     filename += "_pageXXXX.jpg";
   }
-  else filename += ".ps";
+  else filename += ".pdf";
 
   TString pagehead = "Summary Plots";
   if(runNumber!=0) {
@@ -1855,6 +1861,7 @@ void OnlineGUI::PrintPages() {
   gStyle->SetPadBorderMode(0);
   gStyle->SetHistLineColor(1);
   gStyle->SetHistFillColor(1);
+  cout << filename << endl;
   if(!useJPG) fCanvas->Print(filename+"[");
   TString origFilename = filename;
   for(UInt_t i=0; i<fConfig->GetPageCount(); i++) {
