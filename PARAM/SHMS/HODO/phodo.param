@@ -7,7 +7,7 @@ phodo_adc_mode=1
 ; 
 ; hhodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc to between 0 and 4000 channels.
-  phodo_tdc_offset = 1800, 1800, 1800, 1800
+  phodo_tdc_offset = 1300, 1300, 1300, 1300
 ; pstart_time_center  center of allowed time window                             
    pstart_time_center = 32.                                                     
 ; hstart_time_slop    1/2 width of time window                                  

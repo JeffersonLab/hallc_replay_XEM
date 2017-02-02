@@ -733,7 +733,7 @@ void OnlineConfig::OverrideRootFile(UInt_t runnumber)
 //
 //
 
-OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly,UInt_t RunNum):
+OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly, Bool_t rootonly,UInt_t RunNum):
   runNumber(RunNum),
   timer(0),
   fFileAlive(kFALSE)
@@ -742,7 +742,7 @@ OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly,UInt_t RunNum):
 
   fConfig = &config;
 
-  if(printonly) {
+  if(printonly || rootonly) {
     fPrintOnly=kTRUE;
     PrintPages();
   } else {
@@ -1749,20 +1749,22 @@ void OnlineGUI::PrintToFile()
   //  A file dialog pop's up to request the file name.
   fCanvas = fEcanvas->GetCanvas();
   gStyle->SetPaperSize(20,24);
-  static TString dir("printouts");
+  static TString dir(".");
   TGFileInfo fi;
   const char *myfiletypes[] = 
     { "All files","*",
-      "PostScript files","*.ps",
-      "Encapsulated PostScript files","*.eps",
+      "PDF files","*.pdf",
+      "PNG files","*.png",
       "GIF files","*.gif",
       "JPG files","*.jpg",
       0,               0 };
   fi.fFileTypes = myfiletypes;
   fi.fIniDir    = StrDup(dir.Data());
-
+  cout << " INitiail = " << fi.fIniDir << endl;
   new TGFileDialog(gClient->GetRoot(), fMain, kFDSave, &fi);
-  if(fi.fFilename!=NULL) fCanvas->Print(fi.fFilename);
+  if(fi.fFilename!=NULL) {
+    fCanvas->Print(fi.fFilename);
+  }
 }
 
 void OnlineGUI::PrintPages() {
@@ -1856,8 +1858,8 @@ void OnlineGUI::PrintPages() {
   pagehead += ": ";
 
   gStyle->SetPalette(1);
-  gStyle->SetTitleX(0.15);
-  gStyle->SetTitleY(0.9);
+  gStyle->SetTitleX(0.5);
+  gStyle->SetTitleY(0.95);
   gStyle->SetPadBorderMode(0);
   gStyle->SetHistLineColor(1);
   gStyle->SetHistFillColor(1);
@@ -1879,7 +1881,9 @@ void OnlineGUI::PrintPages() {
     fCanvas->Print(filename);
   }
   if(!useJPG) fCanvas->Print(filename+"]");
-  
+  //
+  TFile *hroot = new TFile(filename+"_hist.root","recreate");
+  //
 #ifdef STANDALONE
   gApplication->Terminate();
 #endif
@@ -1948,11 +1952,11 @@ OnlineGUI::~OnlineGUI()
   delete fConfig;
 }
 
-void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE) 
+void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE,Bool_t rootonly=kFALSE) 
 {
   // "main" routine.  Run this at the ROOT commandline.
 
-  if(printonly) {
+  if(printonly || rootonly) {
     if(!gROOT->IsBatch()) {
 #ifdef STANDALONE
       gROOT->SetBatch();
@@ -1977,7 +1981,7 @@ void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE)
 
   if(run!=0) fconfig->OverrideRootFile(run);
 
-  new OnlineGUI(*fconfig,printonly,run);
+  new OnlineGUI(*fconfig,printonly,rootonly,run);
 
 }
 
@@ -1990,6 +1994,7 @@ void Usage()
   cerr << "  -r : runnumber" << endl;
   cerr << "  -f : configuration file" << endl;
   cerr << "  -P : Only Print Summary Plots" << endl;
+  cerr << "  -R : Only Rootfile " << endl;
   cerr << endl;
 
 }
@@ -1999,6 +2004,7 @@ int main(int argc, char **argv)
   TString type="default";
   UInt_t run=0;
   Bool_t printonly=kFALSE;
+  Bool_t rootonly=kFALSE;
   Bool_t showedUsage=kFALSE;
 
   TApplication theApp("App",&argc,argv,NULL,-1);
@@ -2017,6 +2023,9 @@ int main(int argc, char **argv)
       } else if (sArg=="-P") {
 	printonly = kTRUE;
 	cout <<  " PrintOnly" << endl;
+      } else if (sArg=="-R") {
+	rootonly = kTRUE;
+	cout <<  " RootOnly" << endl;
       } else if (sArg=="-h") {
 	if(!showedUsage) Usage();
 	showedUsage=kTRUE;
@@ -2028,7 +2037,7 @@ int main(int argc, char **argv)
       }
     }
 
-  online(type,run,printonly);
+  online(type,run,printonly,rootonly);
   theApp.Run();
 
   return 0;

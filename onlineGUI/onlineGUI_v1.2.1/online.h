@@ -142,10 +142,11 @@ private:
   UInt_t                            runNumber;
   TTimer                           *timer;
   Bool_t                            fPrintOnly;
+  Bool_t                            fRootOnly;
   Bool_t                            fFileAlive;
 
 public:
-  OnlineGUI(OnlineConfig&,Bool_t,UInt_t RunNum=0);
+  OnlineGUI(OnlineConfig&,Bool_t,Bool_t,UInt_t RunNum=0);
   void CreateGUI(const TGWindow *p, UInt_t w, UInt_t h);
   virtual ~OnlineGUI();
   void DoDraw();

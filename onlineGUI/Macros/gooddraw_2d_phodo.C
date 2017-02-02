@@ -7,19 +7,19 @@ void UserScript()
 
   const UInt_t NPLANES  = 4;
   const UInt_t NSIDES   = 2;
-  const UInt_t MAXBARS  = 16;  
+  const UInt_t MAXBARS  = 21;  
   const UInt_t MAXHITS  = 16*16;  
   const UInt_t NSIGNALS = 2;
   const UInt_t NADCSIGNALS = 1;
   const UInt_t NTDCSIGNALS = 3;
 
-  const TString SPECTROMETER = "H";
+  const TString SPECTROMETER = "P";
   const TString DETECTOR = "hod";
 
   const TString plane_names[NPLANES] = {"1x", "1y", "2x", "2y"};
   const TString plane_check_names[NPLANES] = {"1y", "1x", "2y", "2x"};
-  const UInt_t  nbars[NPLANES] = {16, 10, 16, 10};
-  const UInt_t  nbars_check[NPLANES] = {10, 16, 10, 16};
+  const UInt_t  nbars[NPLANES] = {13, 13, 14, 21};
+  const UInt_t  nbars_check[NPLANES] = {13, 13, 21, 14};
   const TString sides[NSIDES] = {"GoodNeg", "GoodPos"};
   const TString signals[NSIGNALS] = {"Adc", "Tdc"};
   const TString adc_signals[NADCSIGNALS] = {"PulseInt"};
@@ -55,21 +55,13 @@ void UserScript()
   make histogram of plane ADC versus position in perpendicalur plane
    */
   TH2F* hadc_dis[NPLANES*MAXBARS][2];
-  Int_t dis_bin[4]={10,16,10,16};
+  Int_t dis_bin[4]={13,13,21,14};
   Double_t dis_min[4];
   Double_t dis_max[4];
   Double_t dis_center_pad1[4]={33.75,-56.25,33.75,-56.25};
   Double_t dis_sign[4]={-1.,1.,-1.,1.};
   Double_t dis_space=7.5;
-  //
-  TH2F*   hpadx;
-  TH2F*   hpadxy1;
-  TH2F*   hpady;
-  hpadx= new TH2F("hpadx",";paddle X1;paddle X2",16,1,17,16,1,17);
-  hpadxy1= new TH2F("hpadxy1",";paddle X1;paddle Y1",16,1,17,10,1,11);
-  hpady= new TH2F("hpady",";paddle Y1;paddle Y2",10,1,11,10,1,11);
-  //
-  /*
+   /*
 Histograms for Neg and Pos PMT efficiencies as function of paddle in other perpendicular plane
     Each X1 paddle efficiency as function of Y1 paddle.
     Each Y1 paddle efficiency as function of X1 paddle.
@@ -95,10 +87,10 @@ Loop through all planes and all bars in that plane ib=0,nbars[ip]
 end event
 Efficiency is ratio of did/should which is calculated using hodo_efficiency.C   
    */
-  TH1F* hgood_neg_should[4][16];
-  TH1F* hgood_pos_should[4][16];
-  TH1F* hgood_neg_did[4][16];
-  TH1F* hgood_pos_did[4][16];
+  TH1F* hgood_neg_should[4][MAXBARS];
+  TH1F* hgood_pos_should[4][MAXBARS];
+  TH1F* hgood_neg_did[4][MAXBARS];
+  TH1F* hgood_pos_did[4][MAXBARS];
   //
   Int_t adc_ihit, tdc_ihit;
 
@@ -186,7 +178,7 @@ Efficiency is ratio of did/should which is calculated using hodo_efficiency.C
   Double_t good_pad[4];
   Double_t good_adc[4][2];
   Int_t check_plane[4]={1,0,3,2};
-  Bool_t good_neg[4][16],good_pos[4][16];
+  Bool_t good_neg[4][MAXBARS],good_pos[4][MAXBARS];
   for(UInt_t iev = 0, N = T->GetEntries(); iev < N; iev++) {
     T->GetEntry(iev);
     if (iev%10000==0) cout << " iev = " << iev << endl;
@@ -201,16 +193,16 @@ Efficiency is ratio of did/should which is calculated using hodo_efficiency.C
      }
     if (nhits[0]==1&&nhits[1]==1&&nhits[2]==1&&nhits[3]==1) good_should = kTRUE;
       for(UInt_t ip = 0; ip < NPLANES; ip++){ 
-	//	 cout << iev << " " << ip << " " << nhits[ip]<< endl;
+	//		 cout << iev << " plane = " << ip+1 << " nhits =  " << nhits[ip]<< endl;
 		for(Int_t ihit = 0; ihit < nhits[ip]; ihit++)  {
  		UInt_t bar = TMath::Nint(paddles[ip][ihit]) - 1;
 		Double_t tdc_neg_val = tdc_values[ip][0][1][ihit];
 		Double_t tdc_pos_val =tdc_values[ip][1][1][ihit];
 		Double_t adc_neg_val = adc_values[ip][0][0][ihit]*adcbit_to_pC;
 		Double_t adc_pos_val = adc_values[ip][1][0][ihit]*adcbit_to_pC;
-		//		cout << " " << ihit << " " << bar << " "  << tdc_neg_val << endl;
+		//	cout << " " << ihit << " " << bar << " "  << tdc_neg_val << endl;
 		htdc_tdc[ip*MAXBARS+bar]->Fill(tdc_neg_val,tdc_pos_val);
-		//		if (tdc_neg_val > 0 && tdc_pos_val >0) hadc_adc[ip*MAXBARS+bar]->Fill(adc_neg_val,adc_pos_val);
+				if (tdc_neg_val > 0 && tdc_pos_val >0) hadc_adc[ip*MAXBARS+bar]->Fill(adc_neg_val,adc_pos_val);
 		hadc_adc[ip*MAXBARS+bar]->Fill(adc_neg_val,adc_pos_val);
 		if (tdc_pos_val>0 && tdc_neg_val>0 ) {
                   hadc_adc_good[ip*MAXBARS+bar]->Fill(adc_neg_val,adc_pos_val);
@@ -249,7 +241,7 @@ Efficiency is ratio of did/should which is calculated using hodo_efficiency.C
 
 
 
-void gooddraw_2d_hhodo(TString histname) {
+void gooddraw_2d_phodo(TString histname) {
 
   TH1F* h1d;
   TH2F* h2d;
