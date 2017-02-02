@@ -38,13 +38,7 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  // Load the HMS dc map
-  // gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc.map");
-  // Load the trigger map
-  // gHcDetectorMap->Load("MAPS/HMS/DETEC/htrig.map");
-  // Load combined map
-  // gHcDetectorMap->Load("MAPS/hdc_htrig.map");
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_hhodo_htrig.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_htrig.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
@@ -53,17 +47,8 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcDC* dc = new THcDC("dc", "Drift Chambers");
   HMS->AddDetector(dc);
   // Add hodoscope to HMS apparatus
-  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  HMS->AddDetector(hod);
-  // // Add calorimeter to HMS apparatus
-  // THcShower* cal = new THcShower("cal", "Calorimeter");
-  // HMS->AddDetector(cal);
-  // // Add cherenkov to HMS appratus
-  // THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  // HMS->AddDetector(cherenkov);
-  // // Add aerogel to HMS apparatus
-  // THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  // HMS->AddDetector(aerogel);
+  // THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  // HMS->AddDetector(hod);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
