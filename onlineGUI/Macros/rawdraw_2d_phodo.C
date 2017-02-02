@@ -52,6 +52,8 @@ void UserScript()
   TH2F* htdc_tdc[NPLANES*MAXBARS];
   TH2F* hadc_adc[NPLANES*MAXBARS];
   TH2F* hadcint_adcint[NPLANES*MAXBARS];
+  TH2F* hadc_adc_cut[NPLANES*MAXBARS];
+  TH2F* hadcint_adcint_cut[NPLANES*MAXBARS];
   TH2F* hatdc_atdc[NPLANES*MAXBARS];
   TH2F* hadc_atdc[NPLANES*NSIDES*MAXBARS];
   TH2F* hnhits_negtdc_paddle[NPLANES];
@@ -83,9 +85,14 @@ void UserScript()
 	      TString h2dtname="uh2dadcpeak"+plane_names[ip]+i2dbarname;
 	      //             hadc_adc[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,500,-200,5800,500,-200,5800.);
 	                 hadc_adc[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,160,0,800,160,0,800.);
+	      TString h2dtname="uh2dadcpeakcut"+plane_names[ip]+i2dbarname;
+	      //             hadc_adc[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,500,-200,5800,500,-200,5800.);
+	                 hadc_adc_cut[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,160,0,800,160,0,800.);
 	      TString h2dttitle= "ADC Int Amp "+plane_names[ip]+i2dbarname+"; Neg (pC); Pos (pC)";
 	      TString h2dtname="uh2dadcint"+plane_names[ip]+i2dbarname;
 	                 hadcint_adcint[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,50,0,100,50,0,100.);
+	      TString h2dtname="uh2dadcintcut"+plane_names[ip]+i2dbarname;
+	                 hadcint_adcint_cut[ip*MAXBARS+ibar]= new TH2F(h2dtname,h2dttitle,50,0,100,50,0,100.);
 	    }
   }
   //
@@ -185,9 +192,12 @@ void UserScript()
   for(UInt_t iev = 0, N = T->GetEntries(); iev < N; iev++) {
     if (iev%1000==0) cout << " iev = " << iev << endl;
     T->GetEntry(iev);
-    /*
-    Double_t tdcbar_save=-1;
-       for(UInt_t ip = 0; ip < NPLANES; ip++) {
+    Double_t tdcbarx1_save=-1;
+    Double_t tdcbarx2_save=-10;
+    Double_t tdcbary1_save=-1;
+    Double_t tdcbary2_save=-10;
+     /*
+      for(UInt_t ip = 0; ip < NPLANES; ip++) {
 	  Double_t nhits_neg[21]={0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.};
 	  Double_t nhits_pos[21]={0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.};
  		for(Int_t tdc3_ihit = 0; tdc3_ihit < ntdchits[ip][0][1]; tdc3_ihit++)  {
@@ -214,7 +224,10 @@ void UserScript()
 		  Double_t tdc2val =tdc_values[ip][1][0][tdc2_ihit];
 		  //                  cout << iev << " " << tdc1_ihit << " " << tdc1val << " " << tdc1bar << " tdc 2 = " << tdc2_ihit << " " << tdc2val   << " " << tdc2bar << endl;
 		  if ( tdc2bar == tdc1bar) htdc_tdc[ip*MAXBARS+tdc1bar]->Fill(tdc1val,tdc2val);
-                  if ( ip==3 && tdc2bar == tdc1bar) tdcbar_save=tdc2bar;
+                  if ( ip==0 && tdc2bar == tdc1bar) tdcbarx1_save=tdc2bar;
+                  if ( ip==1 && tdc2bar == tdc1bar) tdcbary1_save=tdc2bar;
+                  if ( ip==2 && tdc2bar == tdc1bar) tdcbarx2_save=tdc2bar;
+                  if ( ip==3 && tdc2bar == tdc1bar) tdcbary2_save=tdc2bar;
 		}
 		}
 	}
@@ -231,8 +244,10 @@ void UserScript()
 		  Double_t adc2pval =amp_values[ip][1][4][adc2_ihit]*adcpeak_to_mV*fac_for_disc[ip];
 		  Double_t adc2tval =ptraw_values[ip][1][6][adc2_ihit];
 		  //            cout << iev << " " << adc1_ihit << " " << adc1tval << " " << adc1bar << " adc 2 = " << adc2_ihit << " " << adc2tval   << " " << adc2bar << endl;
-		  if ( adc2bar == adc1bar ) hadc_adc[ip*MAXBARS+adc1bar]->Fill(adc1pval,adc2pval);
-		  if ( adc2bar == adc1bar ) hadcint_adcint[ip*MAXBARS+adc1bar]->Fill(adc1val,adc2val);
+		  if ( adc2bar == adc1bar) hadc_adc[ip*MAXBARS+adc1bar]->Fill(adc1pval,adc2pval);
+		  if ( adc2bar == adc1bar && TMath::Abs(tdcbarx1_save-tdcbarx2_save)<2) hadc_adc_cut[ip*MAXBARS+adc1bar]->Fill(adc1pval,adc2pval);
+		  if ( adc2bar == adc1bar) hadcint_adcint[ip*MAXBARS+adc1bar]->Fill(adc1val,adc2val);
+		  if ( adc2bar == adc1bar && TMath::Abs(tdcbarx1_save-tdcbarx2_save)<2) hadcint_adcint_cut[ip*MAXBARS+adc1bar]->Fill(adc1val,adc2val);
 		  if ( adc2bar == adc1bar) hatdc_atdc[ip*MAXBARS+adc1bar]->Fill(adc1tval,adc2tval);
 		}
 		}
