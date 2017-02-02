@@ -1,4 +1,4 @@
-void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_hcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -16,10 +16,8 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  //const char* RunFileNamePattern = "raw/test_%d.dat"
-  //const char* RunFileNamePattern = "raw/hms_dc_000%d.dat";
   const char* RunFileNamePattern = "raw/hms_all_%05d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/test_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/hcer_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -31,24 +29,19 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
-  // Load params for HMS DC test stand configuration
-  gHcParms->Load("PARAM/HMS/DC/hdc_test_stand.param");
+  // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_htrig.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hcer_htrig.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
-  // Add drift chambers to HMS apparatus
-  THcDC* dc = new THcDC("dc", "Drift Chambers");
-  HMS->AddDetector(dc);
   // Add hodoscope to HMS apparatus
-  // THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  // HMS->AddDetector(hod);
+  THcCherenkov* cer = new THcCherenkov("cer", "Heavy Gas Cherenkov");
+  HMS->AddDetector(cer);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -56,10 +49,6 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add trigger detector to trigger apparatus
   THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
   TRG->AddDetector(hms);
-  
-  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
-  //hscaler->SetDebugFile("HScaler.txt");
-  //gHaEvtHandlers->Add(hscaler);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -95,8 +84,8 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/HMS/DC/hdcana.def");
- analyzer->SetCutFile("DEF-files/HMS/DC/hdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/HMS/CER/hcerana.def");
+ analyzer->SetCutFile("DEF-files/HMS/CER/hcerana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional

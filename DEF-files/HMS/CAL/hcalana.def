@@ -2,29 +2,58 @@
 #
 block H.cal.*
 
-TH1F hcal_hA+_pi 'HMS hA+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.apos 2500 0 25000
-TH1F hcal_hA-_pi 'HMS hA- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.1pr.aneg 2500 0 25000
+TH1F hcal_hA_pos_occu 'HMS hA+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.posAdcCounter 13 0.5 13.5
+TH1F hcal_hA_neg_occu 'HMS hA- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.negAdcCounter 13 0.5 13.5
+TH1F hcal_hB_pos_occu 'HMS hB+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.posAdcCounter 13 0.5 13.5
+TH1F hcal_hB_neg_occu 'HMS hB- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.negAdcCounter 13 0.5 13.5
+TH1F hcal_hC_pos_occu 'HMS hC+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.3ta.posAdcCounter 13 0.5 13.5
+TH1F hcal_hD_pos_occu 'HMS hD+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.4ta.posAdcCounter 13 0.5 13.5
 
-TH1F hcal_hB+_pi 'HMS hB+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.apos 2500 0 25000
-TH1F hcal_hB-_pi 'HMS hB- Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.2ta.aneg 2500 0 25000
+TH2F hcal_hA_pos_rawped_vs_blk 'HMS hA+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F hcal_hA_neg_rawped_vs_blk 'HMS hA- Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F hcal_hB_pos_rawped_vs_blk 'HMS hB+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F hcal_hB_neg_rawped_vs_blk 'HMS hB- Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F hcal_hC_pos_rawped_vs_blk 'HMS hC+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPedRaw 13 0.5 13.5 400 0 4000
+TH2F hcal_hD_pos_rawped_vs_blk 'HMS hD+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPedRaw 13 0.5 13.5 400 0 4000
 
-TH1F hcal_hC+_pi 'HMS hC+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.3ta.apos 2500 0 25000
-TH1F hcal_hD+_pi 'HMS hD+ Pulse Integral; Pulse Integral (ADC Units); Counts / 10 ADC Units' H.cal.4ta.apos 2500 0 25000
+TH2F hcal_hA_pos_rawpint_vs_blk 'HMS hA+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_neg_rawpint_vs_blk 'HMS hA- Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_pos_rawpint_vs_blk 'HMS hB+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_neg_rawpint_vs_blk 'HMS hB- Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hC_pos_rawpint_vs_blk 'HMS hC+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hD_pos_rawpint_vs_blk 'HMS hD+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseIntRaw 13 0.5 13.5 4000 0 40000
 
-TH1F hcal_hA+_occu "HMS hA+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.posadchits 13 0.5 13.5
-TH1F hcal_hA-_occu "HMS hA- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.negadchits 13 0.5 13.5
+TH2F hcal_hA_pos_rawpamp_vs_blk 'HMS hA+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
+TH2F hcal_hA_neg_rawpamp_vs_blk 'HMS hA- Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
+TH2F hcal_hB_pos_rawpamp_vs_blk 'HMS hB+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
+TH2F hcal_hB_neg_rawpamp_vs_blk 'HMS hB- Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
+TH2F hcal_hC_pos_rawpamp_vs_blk 'HMS hC+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
+TH2F hcal_hD_pos_rawpamp_vs_blk 'HMS hD+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmpRaw 13 0.5 13.5 410 0 4100
 
-TH1F hcal_hB+_occu "HMS hB+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.posadchits 13 0.5 13.5
-TH1F hcal_hB-_occu "HMS hB- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.negadchits 13 0.5 13.5
+TH2F hcal_hA_pos_rawptime_vs_blk 'HMS hA+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_neg_rawptime_vs_blk 'HMS hA- Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_pos_rawptime_vs_blk 'HMS hB+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_neg_rawptime_vs_blk 'HMS hB- Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hC_pos_rawptime_vs_blk 'HMS hC+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
+TH2F hcal_hD_pos_rawptime_vs_blk 'HMS hD+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseTimeRaw 13 0.5 13.5 4000 0 40000
 
-TH1F hcal_hC+_occu "HMS hC+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.3ta.posadchits 13 0.5 13.5
-TH1F hcal_hD+_occu "HMS hD+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.4ta.posadchits 13 0.5 13.5
+TH2F hcal_hA_pos_pped_vs_blk 'HMS hA+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPed 13 0.5 13.5 400 0 4000
+TH2F hcal_hA_neg_pped_vs_blk 'HMS hA- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPed 13 0.5 13.5 400 0 4000
+TH2F hcal_hB_pos_pped_vs_blk 'HMS hB+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPed 13 0.5 13.5 400 0 4000
+TH2F hcal_hB_neg_pped_vs_blk 'HMS hB- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPed 13 0.5 13.5 400 0 4000
+TH2F hcal_hC_pos_pped_vs_blk 'HMS hC+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPed 13 0.5 13.5 400 0 4000
+TH2F hcal_hD_pos_pped_vs_blk 'HMS hD+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPed 13 0.5 13.5 400 0 4000
 
-TH2F hcal_hA+_pi_vs_blk 'HMS hA+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.posadchits H.cal.1pr.apos 13 0.5 13.5 4000 0 40000
-TH2F hcal_hA-_pi_vs_blk 'HMS hA- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.negadchits H.cal.1pr.aneg 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_pos_pi_vs_blk 'HMS hA+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_neg_pi_vs_blk 'HMS hA- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_pos_pi_vs_blk 'HMS hB+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_neg_pi_vs_blk 'HMS hB- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hC_pos_pi_vs_blk 'HMS hC+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hD_pos_pi_vs_blk 'HMS hD+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
 
-TH2F hcal_hB+_pi_vs_blk 'HMS hB+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.posadchits H.cal.2ta.apos 13 0.5 13.5 4000 0 40000
-TH2F hcal_hB-_pi_vs_blk 'HMS hB- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.negadchits H.cal.2ta.aneg 13 0.5 13.5 4000 0 40000
-
-TH2F hcal_hC+_pi_vs_blk 'HMS hC+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.3ta.posadchits H.cal.3ta.apos 13 0.5 13.5 4000 0 40000
-TH2F hcal_hD+_pi_vs_blk 'HMS hD+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.4ta.posadchits H.cal.4ta.apos 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_pos_pamp_vs_blk 'HMS hA+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F hcal_hA_neg_pamp_vs_blk 'HMS hA- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F hcal_hB_pos_pamp_vs_blk 'HMS hB+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F hcal_hB_neg_pamp_vs_blk 'HMS hB- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F hcal_hC_pos_pamp_vs_blk 'HMS hC+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F hcal_hD_pos_pamp_vs_blk 'HMS hD+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmp 13 0.5 13.5 410 0 4100

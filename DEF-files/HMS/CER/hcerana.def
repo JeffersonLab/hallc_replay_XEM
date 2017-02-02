@@ -1,0 +1,15 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block H.cer.*
+block T.hms.*
+
+TH1F hcer_occu 'HMS Cherenkov ADC Occupancy; PMT Number; Number of ADC Hits' H.cer.adcCounter 2 0.5 2.5
+
+TH2F hcer_rawped 'HMS Cherenkov Raw Pulse Pedestal; PMT Number; Raw Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPedRaw 2 0.5 2.5 400 0 4000
+TH2F hcer_rawpint 'HMS Cherenkov Raw Pulse Integral; PMT Number; Raw Pulse Integral / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseIntRaw 2 0.5 2.5 4000 0 40000
+TH2F hcer_rawpamp 'HMS Cherenkov Raw Pulse Amplitude; PMT Number; Raw Pulse Amplitude / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseAmpRaw 2 0.5 2.5 410 0 4100
+TH2F hcer_rawptime 'HMS Cherenkov Raw Pulse Time; PMT Number; Raw Pulse Time / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseTimeRaw 2 0.5 2.5 400 0 4000
+
+TH2F hcer_ped 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPed 2 0.5 2.5 400 0 4000
+TH2F hcer_pint 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 4000 0 40000
+TH2F hcer_pamp 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 410 0 4100

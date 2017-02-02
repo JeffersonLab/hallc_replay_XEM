@@ -2,7 +2,6 @@
 #
 block H.dc.*
 block T.hms.*
-block H.hod.*
 
 TH1F hdc_ref1 'HDC Reference Time 1' T.hms.hDCREF1_tdc 10000 -50000 50000 
 TH1F hdc_ref2 'HDC Reference Time 2' T.hms.hDCREF2_tdc 10000 -50000 50000
