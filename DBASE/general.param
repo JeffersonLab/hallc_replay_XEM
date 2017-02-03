@@ -1,5 +1,7 @@
 #real raddeg
 raddeg=3.14159265/180
+#real cminch
+cminch=2.54
 
 ; General Hall-C parameter files
 #include "PARAM/GEN/genflags.param"
@@ -14,7 +16,7 @@ raddeg=3.14159265/180
 #include "PARAM/HMS/GEN/hmsflags.param"
 #include "PARAM/HMS/GEN/htracking.param"
 
-; HMS detector specific paramter files  
+; HMS detector specific paramter files
 #include "PARAM/HMS/AERO/haero.param"
 #include "PARAM/HMS/CAL/hcal.pos"
 #include "PARAM/HMS/CAL/hcal.param"
