@@ -1,25 +1,28 @@
-;---------------------------------------------------------------------
-; SHMS_TRACKING
-; CTP parameter file containing all tracking parameters for the HMS
-;----------------------------------------------------------------------
+; Names of planes.
+pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"  ; TODO
 
-; sigma of wire chabmer resolution for each plane
-  pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02 
-  	      0.02, 0.02, 0.02, 0.02, 0.02, 0.02
+; Sigma of wire chamber resolution for each plane.
+pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO
+            0.02, 0.02, 0.02, 0.02, 0.02, 0.02
 
-; tdc window, wide limits for now
-  pdc_tdc_min_win = -55000,-55000,-55000,-55000,-55000,-55000
-  		    -55000,-55000,-55000,-55000,-55000,-55000
-  pdc_tdc_max_win = 55000,55000,55000,55000,55000,55000
-  		    55000,55000,55000,55000,55000,55000
+; TDC window limits for each plane.
+pdc_tdc_min_win = -55000,-55000,-55000,-55000,-55000,-55000  ; TODO - wide limits for now
+                  -55000,-55000,-55000,-55000,-55000,-55000
+pdc_tdc_max_win = 55000,55000,55000,55000,55000,55000  ; TODO - wide limits for now
+                  55000,55000,55000,55000,55000,55000
 
-; conversion from tdc lciks to ns
-  pdc_tdc_time_per_channel = -0.10 ; CAEN1190 TDC step size = 100ps
+; Conversion factor from TDC clicks to ns.
+pdc_tdc_time_per_channel = -0.10
 
-; zero time, decreasing moves sdtime plots to lower time
-  pdc_plane_time_zero = 120.0,120.0,120.0,120.0,120.0,120.0
-  		      	120.0,120.0,120.0,120.0,120.0,120.0
+;  Zero time correction for each plane in ns that is added to TDC time.
+pdc_plane_time_zero = 120.0,120.0,120.0,120.0,120.0,120.0  ; TODO
+                      120.0,120.0,120.0,120.0,120.0,120.0
 
-; wire velocity
-  pdc_wire_velocity = 13.0
-  pdc_central_time = 1,1,1,1,1,1,1,1,1,1,1,1
+; For wire velocity corrections.
+pdc_wire_velocity = 13.0  ; TODO
+pdc_central_time = 1,1,1,1,1,1  ; TODO
+                   1,1,1,1,1,1
+pdc_drifttime_sign = 1,-1,-1,1,1,-1  ; TODO
+                     1,-1,-1,1,1,-1
+pdc_fix_lr = 1
+pdc_fix_propcorr = 1
