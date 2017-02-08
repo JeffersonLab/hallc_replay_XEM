@@ -1,9 +1,9 @@
 1-99999
-gpbeam=999
-gtarg_num = 999
-htheta_lab = 999
-stheta_lab = 999
-hpcentral = 999
-spcentral = 999
+gpbeam=6.
+gtarg_num = 1
+htheta_lab = 15.
+ptheta_lab = 15.
+hpcentral = 2.
+ppcentral = 2.
 hpartmass = 0.00051099
-spartmass = 0.00051099
+ppartmass = 0.00051099

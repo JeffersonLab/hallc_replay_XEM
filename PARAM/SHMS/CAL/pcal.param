@@ -62,19 +62,3 @@ pcal_neg_gain_cor=1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
 
 pcal_min_peds = 500
 
-; Parameters we need to keep THcHallCSpectrometer Happy
-p_recon_coeff_filename = ""
-ptheta_offset = 0.0
-pphi_offset = 0.0
-pdelta_offset = 0.0
-pthetacentral_offset = 0.0
-p_oopcentral_offset = 0.0
-ppcentral_offset = 0.0
-ppcentral = 0.0
-ptheta_lab = 0.0
-ppartmass = 0.139
-
-; "Hodoscope" parameters
-; Not used, but to keep THcTestPaddles happy
-pref_offset = 0
-pref_nsperchan = 0.1
