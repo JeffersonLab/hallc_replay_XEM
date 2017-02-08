@@ -1,6 +1,6 @@
 
-; The hdelta_offset,htheta_offset,hphi_offset effect the
-; reconstructed target quantities. Used in h_targ_trans.f 
+; The pdelta_offset,ptheta_offset,pphi_offset effect the
+; reconstructed target quantities. 
 ; For transport x is in the dispersive direction with + down
 ;               y is in the horizontal + towards small angles.
 ;               z is along the central optics axis.
@@ -8,7 +8,7 @@
 ;    but for unknown reasons the yp offset is named  htheta_offset
 ;    and  the xp offset is named  hphi_offset
 ; Do not to change these values, since these are the zero order
-;  CMOP matrix elements. If you do change then your hms sieve
+;  CMOP matrix elements. If you do change then your shms sieve
 ;  plots will be screwed up.
 
 pdelta_offset = 0.0
@@ -16,13 +16,11 @@ ptheta_offset = 0.0
 pphi_offset = 0.0
 
 ; The following offsets are applied to the central kinematic variables
-;  in h_apply_offsets.f  . These might be modified by an experiment
+; These might be modified by an experiment
 ;  after doing calibration with elastic ep.
 
 pthetacentral_offset = 0.0
 p_oopcentral_offset = 0.0
 ppcentral_offset = 0.0
-ppcentral = 0.0
-ptheta_lab = 0.0
 
 

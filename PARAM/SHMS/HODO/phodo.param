@@ -1,3 +1,4 @@
+pcosmicflag=1
 ; for now manually set hte FADC mode
 ;  1 == Use the pulse int - pulse ped
 ;  2 == Use the sample integral - known ped
@@ -7,7 +8,7 @@ phodo_adc_mode=1
 ; 
 ; hhodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc to between 0 and 4000 channels.
-  phodo_tdc_offset = 1300, 1300, 1300, 1300
+  phodo_tdc_offset = 1450, 1550, 1550, 1550
 ; pstart_time_center  center of allowed time window                             
    pstart_time_center = 32.                                                     
 ; hstart_time_slop    1/2 width of time window                                  
