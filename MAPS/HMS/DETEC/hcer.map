@@ -5,7 +5,7 @@ ROC=11
 detector=14
 
 !F250 modules
-SLOT=17
+SLOT=7
 !  chan    plane   tube     sig
     14,      1,      1,      0!    hCER01
     15,      1,      2,      0!    hCER02
