@@ -81,7 +81,7 @@ pdc_xcenter = 0.0, 0.0  ; TODO: survey
 pdc_ycenter = 0.0, 0.0  ; TODO: survey
 
 ; Wire number of center of wire chamber for each plane.
-pdc_central_wire = 54.25, 53.75, 40.25, 39.75, 54.25, 53.75,
+pdc_central_wire = 54.25, 53.75, 40.25, 39.75, 54.25, 53.75
                    53.75, 54.25, 39.75, 40.25, 53.75, 54.25
 
 ; Number of chamber that each plane belongs to.
