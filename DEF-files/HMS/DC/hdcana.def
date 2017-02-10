@@ -3,19 +3,19 @@
 block H.dc.*
 block T.hms.*
 
-TH1F hdc_ref1 'HDC Reference Time 1' T.hms.hDCREF1_tdc 10000 -50000 50000 
-TH1F hdc_ref2 'HDC Reference Time 2' T.hms.hDCREF2_tdc 10000 -50000 50000
-TH1F hdc_ref3 'HDC Reference Time 3' T.hms.hDCREF3_tdc 10000 -50000 50000
-TH1F hdc_ref4 'HDC Reference Time 4' T.hms.hDCREF4_tdc 10000 -50000 50000
+TH1F hdc_ref1 'HDC Reference Time 1; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 15000 0 15000 
+TH1F hdc_ref2 'HDC Reference Time 2; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime 15000 0 15000
+TH1F hdc_ref3 'HDC Reference Time 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime 15000 0 15000
+TH1F hdc_ref4 'HDC Reference Time 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF4_tdcTime 15000 0 15000
 
-TH1F hdc_refdiff_1m2 'HDC Reference time 1 minus 2' T.hms.hDCREF1_tdc-T.hms.hDCREF2_tdc 10000 -50000 50000
-TH1F hdc_refdiff_1m3 'HDC Reference time 1 minus 3' T.hms.hDCREF1_tdc-T.hms.hDCREF3_tdc 10000 -50000 50000
-TH1F hdc_refdiff_1m4 'HDC Reference time 1 minus 4' T.hms.hDCREF1_tdc-T.hms.hDCREF4_tdc 10000 -50000 50000
+TH1F hdc_refdiff_1m2 'HDC Reference time 1 minus 2; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF2_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m3 'HDC Reference time 1 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m4 'HDC Reference time 1 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
 
-TH1F hdc_refdiff_2m3 'HDC Reference time 2 minus 3' T.hms.hDCREF2_tdc-T.hms.hDCREF3_tdc 10000 -50000 5000
-TH1F hdc_refdiff_2m4 'HDC Reference time 2 minus 4' T.hms.hDCREF2_tdc-T.hms.hDCREF4_tdc 10000 -50000 50000
+TH1F hdc_refdiff_2m3 'HDC Reference time 2 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_2m4 'HDC Reference time 2 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
 
-TH1F hdc_refdiff_3m4 'HDC Reference time 3 minus 4' T.hms.hDCREF3_tdc-T.hms.hDCREF4_tdc 10000 -50000 50000
+TH1F hdc_refdiff_3m4 'HDC Reference time 3 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
 
 TH1F hdc1x1_wm 'HDC 1X1 Wiremap' H.dc.1x1.wirenum 113 0.5 113.5
 TH1F hdc1y1_wm 'HDC 1Y1 Wiremap' H.dc.1y1.wirenum  52 0.5  52.5
