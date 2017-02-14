@@ -1,0 +1,23 @@
+
+hmin_hit = 4, 4
+
+hmin_combos = 3, 3
+
+hstub_max_xpdiff = 0.5
+
+hsingle_stub = 1
+
+hxloscin  = 1, 1
+hxhiscin  = 16, 16
+hyloscin  = 1, 1
+hyhiscin  = 10, 10 
+
+htrack_eff_test_num_scin_planes = 2
+
+hdc_tdc_min_win = -55000,-55000,-55000,-55000,-55000,-55000
+ 		  -55000,-55000,-55000,-55000,-55000,-55000
+
+hdc_tdc_max_win = 55000,55000,55000,55000,55000,55000
+                  55000,55000,55000,55000,55000,55000
+
+
