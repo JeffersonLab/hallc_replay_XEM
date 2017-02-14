@@ -29,11 +29,11 @@ void UserScript() {
 
 }
 
-
 void kpp_analysis(TString histname) {
 
   TH1F* h;
   h = (TH1F*) gDirectory->Get(histname);
+  asdf f;
   if(!h) {
     UserScript();
     h = (TH1F*) gDirectory->Get(histname);
