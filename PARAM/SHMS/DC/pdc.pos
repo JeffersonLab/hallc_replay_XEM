@@ -19,8 +19,8 @@ pdc_zpos   = pdc_1_zpos - 0.6875*cminch
              pdc_2_zpos + 0.4375*cminch
              pdc_2_zpos + 0.6875*cminch
 
-pdc_1_roll = 0.0  ; TODO - survey
-pdc_2_roll = 0.0  ; TODO - survey
+pdc_1_roll = 180.0  ; TODO - survey
+pdc_2_roll = 180.0  ; TODO - survey
 ; Angle alpha of wires for each plane in radians.
 pdc_alpha_angle = (30-pdc_1_roll)*raddeg
                   (30-pdc_1_roll)*raddeg
