@@ -15,6 +15,7 @@ void UserScript() {
   Double_t p1X_negTdcHits, p1Y_negTdcHits, p2X_negTdcHits, p2Y_negTdcHits;
   Double_t p1X_negAdcPulseTime, p1Y_negAdcPulseTime, p2X_negAdcPulseTime, p2Y_negAdcPulseTime;
   Double_t p1X_negTdcTime, p1Y_negTdcTime, p2X_negTdcTime, p2Y_negTdcTime;
+  Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
   Long64_t nentries;
 
   // Declare Histos
@@ -25,7 +26,8 @@ void UserScript() {
   TH1F *h_p1XmpT3_tdc, *h_p1YmpT3_tdc, *h_p2XmpT3_tdc, *h_p2YmpT3_tdc;
   TH1F *h_p1TmpT2_tdc, *h_p2TmpT2_tdc, *h_p1TmpT3_tdc, *h_p2TmpT3_tdc;
   TH1F *h_pDCREF_tdc[ndcRefTimes];
-  TH1F *h_p1Xneg_pt_tt_diff, *h_p1Yneg_pt_tt_diff, *h_p2Xneg_pt_tt_diff, *h_p2Yneg_pt_tt_diff;
+  //TH1F *h_p1Xneg_pt_tt_diff, *h_p1Yneg_pt_tt_diff, *h_p2Xneg_pt_tt_diff, *h_p2Yneg_pt_tt_diff;
+  TH1F *h_p1X_fpTime, *h_p1Y_fpTime, *h_p2X_fpTime, *h_p2Y_fpTime;
 
   // Declare trees
   TTree *T = (TTree*) gDirectory->Get("T");
@@ -49,14 +51,18 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.ngoodhits", &p1Y_nGoodHodoHits);
   T->SetBranchAddress("P.hod.2x.ngoodhits", &p2X_nGoodHodoHits);
   T->SetBranchAddress("P.hod.2y.ngoodhits", &p2Y_nGoodHodoHits);
-  T->SetBranchAddress("P.hod.1x.negAdcPulseTimeRaw", &p1X_negAdcPulseTime);
-  T->SetBranchAddress("P.hod.1y.negAdcPulseTimeRaw", &p1Y_negAdcPulseTime);
-  T->SetBranchAddress("P.hod.2x.negAdcPulseTimeRaw", &p2X_negAdcPulseTime);
-  T->SetBranchAddress("P.hod.2y.negAdcPulseTimeRaw", &p2Y_negAdcPulseTime);
-  T->SetBranchAddress("P.hod.1x.negTdcTime", &p1X_negTdcTime);
-  T->SetBranchAddress("P.hod.1y.negTdcTime", &p1Y_negTdcTime);
-  T->SetBranchAddress("P.hod.2x.negTdcTime", &p2X_negTdcTime);
-  T->SetBranchAddress("P.hod.2y.negTdcTime", &p2Y_negTdcTime);
+  // T->SetBranchAddress("P.hod.1x.negAdcPulseTimeRaw", &p1X_negAdcPulseTime);
+  // T->SetBranchAddress("P.hod.1y.negAdcPulseTimeRaw", &p1Y_negAdcPulseTime);
+  // T->SetBranchAddress("P.hod.2x.negAdcPulseTimeRaw", &p2X_negAdcPulseTime);
+  // T->SetBranchAddress("P.hod.2y.negAdcPulseTimeRaw", &p2Y_negAdcPulseTime);
+  // T->SetBranchAddress("P.hod.1x.negTdcTime", &p1X_negTdcTime);
+  // T->SetBranchAddress("P.hod.1y.negTdcTime", &p1Y_negTdcTime);
+  // T->SetBranchAddress("P.hod.2x.negTdcTime", &p2X_negTdcTime);
+  // T->SetBranchAddress("P.hod.2y.negTdcTime", &p2Y_negTdcTime);
+  T->SetBranchAddress("P.hod.1x.fptime", &p1X_fpTime);
+  T->SetBranchAddress("P.hod.1y.fptime", &p1Y_fpTime);
+  T->SetBranchAddress("P.hod.2x.fptime", &p2X_fpTime);
+  T->SetBranchAddress("P.hod.2y.fptime", &p2Y_fpTime);
           
   // Create histos
   h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
@@ -69,7 +75,7 @@ void UserScript() {
   h_pT2_tdc = new TH1F("h_pT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31); TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_pT3_tdc = new TH1F("h_pT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38); TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
-    h_pDCREF_tdc[iref] = new TH1F(Form("h_pDCREF%d_tdc", iref+1), Form("DC Reference Time %d; TDC Time (ns); Counts / 1 ns", iref+1), 100, 500, 600);
+    h_pDCREF_tdc[iref] = new TH1F(Form("h_pDCREF%d_tdc", iref+1), Form("DC Reference Time %d; TDC Time (ns); Counts / 1 ns", iref+1), 200, 1200, 1400);
   h_p1XmpT2_tdc = new TH1F("h_p1XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p1YmpT2_tdc = new TH1F("h_p1YmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p2XmpT2_tdc = new TH1F("h_p2XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
@@ -82,17 +88,23 @@ void UserScript() {
   h_p2YmpT3_tdc = new TH1F("h_p2YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p1TmpT3_tdc = new TH1F("h_p1TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p2TmpT3_tdc = new TH1F("h_p2TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1Xneg_pt_tt_diff = new TH1F("h_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p1Yneg_pt_tt_diff = new TH1F("h_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p2Xneg_pt_tt_diff = new TH1F("h_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p2Yneg_pt_tt_diff = new TH1F("h_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  
+  // h_p1Xneg_pt_tt_diff = new TH1F("h_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
+  // h_p1Yneg_pt_tt_diff = new TH1F("h_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
+  // h_p2Xneg_pt_tt_diff = new TH1F("h_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
+  // h_p2Yneg_pt_tt_diff = new TH1F("h_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
+  h_p1X_fpTime = new TH1F("h_p1X_fpTime", "S1X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p1Y_fpTime = new TH1F("h_p1Y_fpTime", "S1Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p2X_fpTime = new TH1F("h_p2X_fpTime", "S2X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p2Y_fpTime = new TH1F("h_p2Y_fpTime", "S2Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+
+
   // Loop of entries in tree
   for(UInt_t ievent = 0; ievent < nentries; ievent++) {
     
     T->GetEntry(ievent);
 
-    if (p1X_nGoodHodoHits < 1 || p1Y_nGoodHodoHits < 1 || p2X_nGoodHodoHits < 1  || p2Y_nGoodHodoHits < 1) continue;
+    //if (p1X_nGoodHodoHits < 1 || p1Y_nGoodHodoHits < 1 || p2X_nGoodHodoHits < 1  || p2Y_nGoodHodoHits < 1) continue;
+    if (p1X_nGoodHodoHits != 1 || p1Y_nGoodHodoHits != 1 || p2X_nGoodHodoHits != 1  || p2Y_nGoodHodoHits != 1) continue;
         
     // Fill histos
     h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc); h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
@@ -107,8 +119,10 @@ void UserScript() {
     h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc); h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
     h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc); h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
     h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc); h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
-    h_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPulseTime - p1X_negTdcTime); h_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPulseTime - p1Y_negTdcTime);
-    h_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPulseTime - p2X_negTdcTime); h_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPulseTime - p2Y_negTdcTime);
+    //h_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPulseTime - p1X_negTdcTime); h_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPulseTime - p1Y_negTdcTime);
+    //h_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPulseTime - p2X_negTdcTime); h_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPulseTime - p2Y_negTdcTime);
+    h_p1X_fpTime->Fill(p1X_fpTime); h_p1Y_fpTime->Fill(p1Y_fpTime);
+    h_p2X_fpTime->Fill(p2X_fpTime); h_p2Y_fpTime->Fill(p2Y_fpTime);
 
   }  // Entries loop
 }  // UserScript function
