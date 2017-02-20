@@ -4,22 +4,24 @@ block T.shms.*
 #block P.ngcer.*
 #block P.dc.*
 #block P.tr.*
-#block P.hod.*
+block P.hod.*
 #block P.hgcer.*
 #block P.aero.*
 #block P.cal.*
 #block P.gtr.*
 
-#TH1F hptrig2_minus_p1x 'SHMS Trigger 2 - p1X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1X_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
-#TH1F hptrig2_minus_p1y 'SHMS Trigger 2 - p1Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1Y_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
-#TH1F hptrig2_minus_p2x 'SHMS Trigger 2 - p2X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2X_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
-#TH1F hptrig2_minus_p2y 'SHMS Trigger 2 - p2Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2Y_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
-#TH1F hptrig2_minus_ps1 'SHMS Trigger 2 - pS1 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1T_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
-#TH1F hptrig2_minus_ps2 'SHMS Trigger 2 - pS2 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2T_tdcTime[0])*0.1 150 0 150 T.shms.pT2_tdcMultiplicity==1
+TH1F hptrig2_minus_p1x 'SHMS Trigger 2 - p1X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1X_tdcTime)*0.1 150 0 150
+TH1F hptrig2_minus_p1y 'SHMS Trigger 2 - p1Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1Y_tdcTime)*0.1 150 0 150 
+TH1F hptrig2_minus_p2x 'SHMS Trigger 2 - p2X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2X_tdcTime)*0.1 150 0 150 
+TH1F hptrig2_minus_p2y 'SHMS Trigger 2 - p2Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2Y_tdcTime)*0.1 150 0 150 
+TH1F hptrig2_minus_ps1 'SHMS Trigger 2 - pS1 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p1T_tdcTime)*0.1 150 0 150 
+TH1F hptrig2_minus_ps2 'SHMS Trigger 2 - pS2 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT2_tdcTime-T.shms.p2T_tdcTime)*0.1 150 0 150 
 
-#TH1F hptrig3_minus_p1x 'SHMS Trigger 3 - p1X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1X_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
-#TH1F hptrig3_minus_p1y 'SHMS Trigger 3 - p1Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1Y_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
-#TH1F hptrig3_minus_p2x 'SHMS Trigger 3 - p2X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2X_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
-#TH1F hptrig3_minus_p2y 'SHMS Trigger 3 - p2Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2Y_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
-#TH1F hptrig2_minus_ps1 'SHMS Trigger 3 - pS1 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1T_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
-#TH1F hptrig2_minus_ps2 'SHMS Trigger 3 - pS2 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2T_tdcTime[0])*0.1 150 0 150 T.shms.pT3_tdcMultiplicity==1
+TH1F hptrig3_minus_p1x 'SHMS Trigger 3 - p1X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1X_tdcTime)*0.1 150 0 150 
+TH1F hptrig3_minus_p1y 'SHMS Trigger 3 - p1Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1Y_tdcTime)*0.1 150 0 150 
+TH1F hptrig3_minus_p2x 'SHMS Trigger 3 - p2X TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2X_tdcTime)*0.1 150 0 150 
+TH1F hptrig3_minus_p2y 'SHMS Trigger 3 - p2Y TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2Y_tdcTime)*0.1 150 0 150 
+TH1F hptrig3_minus_ps1 'SHMS Trigger 3 - pS1 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p1T_tdcTime)*0.1 150 0 150 
+TH1F hptrig3_minus_ps2 'SHMS Trigger 3 - pS2 TDC; TDC Time (ns); Counts / 1 ns' (T.shms.pT3_tdcTime-T.shms.p2T_tdcTime)*0.1 150 0 150
+
+TH1F hptrig3_minus_ptrig2 'test' (T.shms.pT3_tdcTime-T.shms.pT2_tdcTime)*0.1 2000 -1000 1000
