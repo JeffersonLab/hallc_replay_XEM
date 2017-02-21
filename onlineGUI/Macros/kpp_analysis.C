@@ -3,6 +3,7 @@ void UserScript() {
 
   // Declare constants
   static const Double_t clk2tdc     = 0.100;
+  static const Double_t clk2adc     = 0.0625;
   static const UInt_t   ndcRefTimes = 10;
 
   // Declare variables
@@ -11,8 +12,10 @@ void UserScript() {
   Double_t pT1_tdcTime, pT2_tdcTime, pT3_tdcTime;
   Double_t pDCREF_tdcTime[ndcRefTimes];
   Double_t p1X_nGoodHodoHits, p1Y_nGoodHodoHits, p2X_nGoodHodoHits, p2Y_nGoodHodoHits;
-  Double_t p1X_negAdcHits, p1Y_negAdcHits, p2X_negAdcHits, p2Y_negAdcHits;
-  Double_t p1X_negTdcHits, p1Y_negTdcHits, p2X_negTdcHits, p2Y_negTdcHits;
+  Int_t p1X_negAdcHits, p1Y_negAdcHits, p2X_negAdcHits, p2Y_negAdcHits;
+  Int_t p1X_negTdcHits, p1Y_negTdcHits, p2X_negTdcHits, p2Y_negTdcHits;
+  Double_t p1X_negAdcPaddle, p1Y_negAdcPaddle, p2X_negAdcPaddle, p2Y_negAdcPaddle;
+  Double_t p1X_negTdcPaddle, p1Y_negTdcPaddle, p2X_negTdcPaddle, p2Y_negTdcPaddle;
   Double_t p1X_negAdcPulseTime, p1Y_negAdcPulseTime, p2X_negAdcPulseTime, p2Y_negAdcPulseTime;
   Double_t p1X_negTdcTime, p1Y_negTdcTime, p2X_negTdcTime, p2Y_negTdcTime;
   Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
@@ -63,6 +66,22 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.fptime", &p1Y_fpTime);
   T->SetBranchAddress("P.hod.2x.fptime", &p2X_fpTime);
   T->SetBranchAddress("P.hod.2y.fptime", &p2Y_fpTime);
+  // T->SetBranchAddress("P.hod.1x.negAdcCounter", &p1X_negAdcPaddle);
+  // T->SetBranchAddress("P.hod.1y.negAdcCounter", &p1Y_negAdcPaddle);
+  // T->SetBranchAddress("P.hod.2x.negAdcCounter", &p2X_negAdcPaddle);
+  // T->SetBranchAddress("P.hod.2y.negAdcCounter", &p2Y_negAdcPaddle);
+  // T->SetBranchAddress("P.hod.1x.negTdcCounter", &p1X_negTdcPaddle);
+  // T->SetBranchAddress("P.hod.1y.negTdcCounter", &p1Y_negTdcPaddle);
+  // T->SetBranchAddress("P.hod.2x.negTdcCounter", &p2X_negTdcPaddle);
+  // T->SetBranchAddress("P.hod.2y.negTdcCounter", &p2Y_negTdcPaddle);
+  T->SetBranchAddress("Ndata.P.hod.1x.negAdcCounter", &p1X_negAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.1y.negAdcCounter", &p1Y_negAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2x.negAdcCounter", &p2X_negAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2y.negAdcCounter", &p2Y_negAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.1x.negTdcCounter", &p1X_negTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.1y.negTdcCounter", &p1Y_negTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2x.negTdcCounter", &p2X_negTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2y.negTdcCounter", &p2Y_negTdcHits);
           
   // Create histos
   h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
@@ -119,8 +138,8 @@ void UserScript() {
     h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc); h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
     h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc); h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
     h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc); h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
-    //h_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPulseTime - p1X_negTdcTime); h_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPulseTime - p1Y_negTdcTime);
-    //h_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPulseTime - p2X_negTdcTime); h_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPulseTime - p2Y_negTdcTime);
+    //h_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPulseTime*clk2adc - p1X_negTdcTime); h_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPulseTime*clk2adc - p1Y_negTdcTime);
+    //h_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPulseTime*clk2adc - p2X_negTdcTime); h_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPulseTime*clk2adc - p2Y_negTdcTime);
     h_p1X_fpTime->Fill(p1X_fpTime); h_p1Y_fpTime->Fill(p1Y_fpTime);
     h_p2X_fpTime->Fill(p2X_fpTime); h_p2Y_fpTime->Fill(p2Y_fpTime);
 
