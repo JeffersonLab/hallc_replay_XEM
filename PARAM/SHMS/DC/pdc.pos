@@ -1,43 +1,69 @@
-; Total number of DC planes and chambers.
-pdc_num_planes = 12
-pdc_num_chambers = 2
+; CHAMBER POSITION PARAMETERS
 
-
+; x, y and z position of center for each wire chamber in cm.
+; From survey C1771.
+pdc_xcenter = -0.036, 0.008  ; TODO - final survey
+pdc_ycenter =  0.019, 0.013  ; TODO - final survey
 pdc_1_zpos = -40 - 0.656  ; TODO - final survey
 pdc_2_zpos =  40 - 0.668  ; TODO - final survey
-; z position in cm of each plane measured from focal plane.
-pdc_zpos   = pdc_1_zpos - 0.6875*cminch
-             pdc_1_zpos - 0.4375*cminch
-             pdc_1_zpos - 0.1875*cminch
-             pdc_1_zpos + 0.1875*cminch
-             pdc_1_zpos + 0.4375*cminch
-             pdc_1_zpos + 0.6875*cminch
-             pdc_2_zpos - 0.6875*cminch
-             pdc_2_zpos - 0.4375*cminch
-             pdc_2_zpos - 0.1875*cminch
-             pdc_2_zpos + 0.1875*cminch
-             pdc_2_zpos + 0.4375*cminch
-             pdc_2_zpos + 0.6875*cminch
 
+; Roll, pitch and yaw for each wire chamber in degrees.
+; From survey C1771.
 pdc_1_roll = 180.0  ; TODO - survey
 pdc_2_roll = 180.0  ; TODO - survey
-; Angle alpha of wires for each plane in radians.
-pdc_alpha_angle = ( 30 - pdc_1_roll)*raddeg
-                  ( 30 - pdc_1_roll)*raddeg
-                  ( 90 - pdc_1_roll)*raddeg
-                  ( 90 - pdc_1_roll)*raddeg
-                  (150 - pdc_1_roll)*raddeg
-                  (150 - pdc_1_roll)*raddeg
-                  ( 30 - pdc_2_roll)*raddeg
-                  ( 30 - pdc_2_roll)*raddeg
-                  ( 90 - pdc_2_roll)*raddeg
-                  ( 90 - pdc_2_roll)*raddeg
-                  (150 - pdc_2_roll)*raddeg
-                  (150 - pdc_2_roll)*raddeg
-
 pdc_1_pitch = -0.006  ; TODO - final survey
 pdc_2_pitch =  0.001  ; TODO - final survey
-; Angle beta of wires for each plane in radians.
+pdc_1_yaw = -0.006  ; TODO - final survey
+pdc_2_yaw = -0.035  ; TODO - final survey
+
+
+; PLANE POSITION PARAMETERS
+
+; Wire number of center of wire chamber for each plane.
+; From technical drawings.
+pdc_central_wire = 54.25, 53.75, 40.25, 39.75, 54.25, 53.75
+                   53.75, 54.25, 39.75, 40.25, 53.75, 54.25
+
+; Distance between wires for each plane in cm.
+; From technical drawings.
+pdc_pitch = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+            1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+
+; Order in which wires are counted in each plane.
+pdc_wire_counting = 0, 0, 0, 0, 0, 0
+                    0, 0, 0, 0, 0, 0
+
+; z position in cm of each plane measured from focal plane.
+; From technical drawings.
+pdc_zpos = pdc_1_zpos - 0.6875*cminch
+           pdc_1_zpos - 0.4375*cminch
+           pdc_1_zpos - 0.1875*cminch
+           pdc_1_zpos + 0.1875*cminch
+           pdc_1_zpos + 0.4375*cminch
+           pdc_1_zpos + 0.6875*cminch
+           pdc_2_zpos - 0.6875*cminch
+           pdc_2_zpos - 0.4375*cminch
+           pdc_2_zpos - 0.1875*cminch
+           pdc_2_zpos + 0.1875*cminch
+           pdc_2_zpos + 0.4375*cminch
+           pdc_2_zpos + 0.6875*cminch
+
+; Alpha angle of wires for each plane in radians.
+; From technical drawings.
+pdc_alpha_angle = ( 30 + pdc_1_roll)*raddeg
+                  ( 30 + pdc_1_roll)*raddeg
+                  ( 90 + pdc_1_roll)*raddeg
+                  ( 90 + pdc_1_roll)*raddeg
+                  (150 + pdc_1_roll)*raddeg
+                  (150 + pdc_1_roll)*raddeg
+                  ( 30 + pdc_2_roll)*raddeg
+                  ( 30 + pdc_2_roll)*raddeg
+                  ( 90 + pdc_2_roll)*raddeg
+                  ( 90 + pdc_2_roll)*raddeg
+                  (150 + pdc_2_roll)*raddeg
+                  (150 + pdc_2_roll)*raddeg
+
+; Beta angle of wires for each plane in radians.
 pdc_beta_angle = pdc_1_pitch*raddeg
                  pdc_1_pitch*raddeg
                  pdc_1_pitch*raddeg
@@ -51,9 +77,7 @@ pdc_beta_angle = pdc_1_pitch*raddeg
                  pdc_2_pitch*raddeg
                  pdc_2_pitch*raddeg
 
-pdc_1_yaw = -0.006  ; TODO - final survey
-pdc_2_yaw = -0.035  ; TODO - final survey
-; Angle gamma of wires for each plane in radians
+; Gamma angle of wires for each plane in radians
 pdc_gamma_angle = pdc_1_yaw*raddeg
                   pdc_1_yaw*raddeg
                   pdc_1_yaw*raddeg
@@ -66,28 +90,3 @@ pdc_gamma_angle = pdc_1_yaw*raddeg
                   pdc_2_yaw*raddeg
                   pdc_2_yaw*raddeg
                   pdc_2_yaw*raddeg
-
-
-; Distance between wires for each plane in cm.
-pdc_pitch = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
-            1.0, 1.0, 1.0, 1.0, 1.0, 1.0
-
-; Number of wires in each plane.
-pdc_nrwire = 107, 107, 79, 79, 107, 107
-             107, 107, 79, 79, 107, 107
-
-; x and y position of center of each wire chamber.
-pdc_xcenter = -0.036, 0.008  ; TODO - final survey
-pdc_ycenter =  0.019, 0.013  ; TODO - final survey
-
-; Wire number of center of wire chamber for each plane.
-pdc_central_wire = 54.25, 53.75, 40.25, 39.75, 54.25, 53.75
-                   53.75, 54.25, 39.75, 40.25, 53.75, 54.25
-
-; Number of chamber that each plane belongs to.
-pdc_chamber_planes = 1, 1, 1, 1, 1, 1
-                     2, 2, 2, 2, 2, 2
-
-; Order in which wires are counted in each plane.
-pdc_wire_counting = 0, 0, 0, 0, 0, 0
-                    0, 0, 0, 0, 0, 0

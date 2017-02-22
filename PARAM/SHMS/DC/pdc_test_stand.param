@@ -1,1 +1,5 @@
+; TEST-STAND PARAMETERS
+; Custom parameter file which should be loaded when aiming to analyze HMS DC
+; data with no tracking.
+
 psel_using_scin = 0
