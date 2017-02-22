@@ -30,6 +30,11 @@ void UserScript() {
   Double_t p2X_negAdcPulseTime[maxAdcHits*nbars_2x], p2Y_negAdcPulseTime[maxAdcHits*nbars_2y];
   Double_t p1X_negTdcTime[maxTdcHits*nbars_1x], p1Y_negTdcTime[maxTdcHits*nbars_1y];
   Double_t p2X_negTdcTime[maxTdcHits*nbars_2x], p2Y_negTdcTime[maxTdcHits*nbars_2y];
+  Int_t    p1X_numGoodNegTdcTimeCorr, p1Y_numGoodNegTdcTimeCorr;
+  Int_t    p2X_numGoodNegTdcTimeCorr, p2Y_numGoodNegTdcTimeCorr;
+  Double_t p1X_goodNegTdcTimeCorr[maxTdcHits*nbars_1x], p1Y_goodNegTdcTimeCorr[maxTdcHits*nbars_1y];
+  Double_t p2X_goodNegTdcTimeCorr[maxTdcHits*nbars_2x], p2Y_goodNegTdcTimeCorr[maxTdcHits*nbars_2y];
+  
   Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
   Long64_t nentries;
 
@@ -43,7 +48,7 @@ void UserScript() {
   TH1F *h_pDCREF_tdc[ndcRefTimes];
   TH1F *h_p1Xneg_pt_tt_diff, *h_p1Yneg_pt_tt_diff, *h_p2Xneg_pt_tt_diff, *h_p2Yneg_pt_tt_diff;
   TH1F *h_p1X_fpTime, *h_p1Y_fpTime, *h_p2X_fpTime, *h_p2Y_fpTime;
-
+  
   // Declare trees
   TTree *T = (TTree*) gDirectory->Get("T");
 
@@ -100,6 +105,15 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.negTdcTime", p1Y_negTdcTime);
   T->SetBranchAddress("P.hod.2x.negTdcTime", p2X_negTdcTime);
   T->SetBranchAddress("P.hod.2y.negTdcTime", p2Y_negTdcTime);
+  // Hodoscope corrected times (not corrected for TOF to focal plane)
+  T->SetBranchAddress("Ndata.P.hod.1x.GoodNegTdcTimeCorr", &p1X_numGoodNegTdcTimeCorr);
+  T->SetBranchAddress("Ndata.P.hod.1y.GoodNegTdcTimeCorr", &p1Y_numGoodNegTdcTimeCorr);
+  T->SetBranchAddress("Ndata.P.hod.2x.GoodNegTdcTimeCorr", &p2X_numGoodNegTdcTimeCorr);
+  T->SetBranchAddress("Ndata.P.hod.2y.GoodNegTdcTimeCorr", &p2Y_numGoodNegTdcTimeCorr);
+  T->SetBranchAddress("P.hod.1x.GoodNegTdcTimeCorr", p1X_goodNegTdcTimeCorr);
+  T->SetBranchAddress("P.hod.1y.GoodNegTdcTimeCorr", p1Y_goodNegTdcTimeCorr);
+  T->SetBranchAddress("P.hod.2x.GoodNegTdcTimeCorr", p2X_goodNegTdcTimeCorr);
+  T->SetBranchAddress("P.hod.2y.GoodNegTdcTimeCorr", p2Y_goodNegTdcTimeCorr); 
           
   // Create histos
   h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
