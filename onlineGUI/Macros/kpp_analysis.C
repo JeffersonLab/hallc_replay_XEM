@@ -14,12 +14,15 @@ void UserScript() {
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
 
+  // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
   // Declare variables
   Double_t p1X_tdcTime, p1Y_tdcTime, p2X_tdcTime, p2Y_tdcTime;
   Double_t p1T_tdcTime, p2T_tdcTime;
   Double_t pT1_tdcTime, pT2_tdcTime, pT3_tdcTime;
   Double_t pDCREF_tdcTime[ndcRefTimes];
-  Double_t p1X_nGoodHodoHits, p1Y_nGoodHodoHits, p2X_nGoodHodoHits, p2Y_nGoodHodoHits;
+
+  // Negative hodoscope hits
   Int_t    p1X_negAdcHits, p1Y_negAdcHits, p2X_negAdcHits, p2Y_negAdcHits;
   Int_t    p1X_negTdcHits, p1Y_negTdcHits, p2X_negTdcHits, p2Y_negTdcHits;
   Double_t p1X_negAdcPaddle[maxAdcHits*nbars_1x], p1Y_negAdcPaddle[maxAdcHits*nbars_1y];
@@ -30,13 +33,22 @@ void UserScript() {
   Double_t p2X_negAdcPulseTime[maxAdcHits*nbars_2x], p2Y_negAdcPulseTime[maxAdcHits*nbars_2y];
   Double_t p1X_negTdcTime[maxTdcHits*nbars_1x], p1Y_negTdcTime[maxTdcHits*nbars_1y];
   Double_t p2X_negTdcTime[maxTdcHits*nbars_2x], p2Y_negTdcTime[maxTdcHits*nbars_2y];
-  Int_t    p1X_numGoodNegTdcTimeCorr, p1Y_numGoodNegTdcTimeCorr;
-  Int_t    p2X_numGoodNegTdcTimeCorr, p2Y_numGoodNegTdcTimeCorr;
+
+  // "Good" hodo hits
+  Int_t    p1X_nGoodHodoHits, p1Y_nGoodHodoHits, p2X_nGoodHodoHits, p2Y_nGoodHodoHits;
+  Double_t p1X_goodPaddle[maxAdcHits*nbars_1x], p1Y_goodPaddle[maxAdcHits*nbars_1y];
+  Double_t p2X_goodPaddle[maxAdcHits*nbars_2x], p2Y_goodPaddle[maxAdcHits*nbars_2y];
   Double_t p1X_goodNegTdcTimeCorr[maxTdcHits*nbars_1x], p1Y_goodNegTdcTimeCorr[maxTdcHits*nbars_1y];
   Double_t p2X_goodNegTdcTimeCorr[maxTdcHits*nbars_2x], p2Y_goodNegTdcTimeCorr[maxTdcHits*nbars_2y];
+  Double_t p1X_goodPosTdcTimeCorr[maxTdcHits*nbars_1x], p1Y_goodPosTdcTimeCorr[maxTdcHits*nbars_1y];
+  Double_t p2X_goodPosTdcTimeCorr[maxTdcHits*nbars_2x], p2Y_goodPosTdcTimeCorr[maxTdcHits*nbars_2y];
   
+  // Hodoscope focal plane times
   Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
+  
   Long64_t nentries;
+
+  // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Declare Histos
   TH1F *h_p1X_tdc, *h_p1Y_tdc, *h_p2X_tdc, *h_p2Y_tdc;
@@ -46,8 +58,15 @@ void UserScript() {
   TH1F *h_p1XmpT3_tdc, *h_p1YmpT3_tdc, *h_p2XmpT3_tdc, *h_p2YmpT3_tdc;
   TH1F *h_p1TmpT2_tdc, *h_p2TmpT2_tdc, *h_p1TmpT3_tdc, *h_p2TmpT3_tdc;
   TH1F *h_pDCREF_tdc[ndcRefTimes];
-  TH1F *h_p1Xneg_pt_tt_diff, *h_p1Yneg_pt_tt_diff, *h_p2Xneg_pt_tt_diff, *h_p2Yneg_pt_tt_diff;
+
+  TH2F *h2_p1Xneg_pt_tt_diff, *h2_p1Yneg_pt_tt_diff, *h2_p2Xneg_pt_tt_diff, *h2_p2Yneg_pt_tt_diff;
+
   TH1F *h_p1X_fpTime, *h_p1Y_fpTime, *h_p2X_fpTime, *h_p2Y_fpTime;
+
+  TH2F *h2_p1X_negTdcCorr, *h2_p1Y_negTdcCorr, *h2_p2X_negTdcCorr, *h2_p2Y_negTdcCorr;
+  TH2F *h2_p1X_posTdcCorr, *h2_p1Y_posTdcCorr, *h2_p2X_posTdcCorr, *h2_p2Y_posTdcCorr;
+
+  // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
   
   // Declare trees
   TTree *T = (TTree*) gDirectory->Get("T");
@@ -69,11 +88,6 @@ void UserScript() {
   // DC reference times
   for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
     T->SetBranchAddress(Form("T.shms.pDCREF%d_tdcTime", iref+1), &pDCREF_tdcTime[iref]);
-  // Number of "good" hodoscope hits 
-  T->SetBranchAddress("P.hod.1x.ngoodhits", &p1X_nGoodHodoHits);
-  T->SetBranchAddress("P.hod.1y.ngoodhits", &p1Y_nGoodHodoHits);
-  T->SetBranchAddress("P.hod.2x.ngoodhits", &p2X_nGoodHodoHits);
-  T->SetBranchAddress("P.hod.2y.ngoodhits", &p2Y_nGoodHodoHits);
   // Hodoscope focal plane time calculation
   T->SetBranchAddress("P.hod.1x.fptime", &p1X_fpTime);
   T->SetBranchAddress("P.hod.1y.fptime", &p1Y_fpTime);
@@ -105,15 +119,26 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.negTdcTime", p1Y_negTdcTime);
   T->SetBranchAddress("P.hod.2x.negTdcTime", p2X_negTdcTime);
   T->SetBranchAddress("P.hod.2y.negTdcTime", p2Y_negTdcTime);
+  // "Good" hodoscope hits
   // Hodoscope corrected times (not corrected for TOF to focal plane)
-  T->SetBranchAddress("Ndata.P.hod.1x.GoodNegTdcTimeCorr", &p1X_numGoodNegTdcTimeCorr);
-  T->SetBranchAddress("Ndata.P.hod.1y.GoodNegTdcTimeCorr", &p1Y_numGoodNegTdcTimeCorr);
-  T->SetBranchAddress("Ndata.P.hod.2x.GoodNegTdcTimeCorr", &p2X_numGoodNegTdcTimeCorr);
-  T->SetBranchAddress("Ndata.P.hod.2y.GoodNegTdcTimeCorr", &p2Y_numGoodNegTdcTimeCorr);
+  T->SetBranchAddress("Ndata.P.hod.1x.GoodPaddle", &p1X_nGoodHodoHits);
+  T->SetBranchAddress("Ndata.P.hod.1y.GoodPaddle", &p1Y_nGoodHodoHits);
+  T->SetBranchAddress("Ndata.P.hod.2x.GoodPaddle", &p2X_nGoodHodoHits);
+  T->SetBranchAddress("Ndata.P.hod.2y.GoodPaddle", &p2Y_nGoodHodoHits);
+  T->SetBranchAddress("P.hod.1x.GoodPaddle", p1X_goodPaddle);
+  T->SetBranchAddress("P.hod.1y.GoodPaddle", p1Y_goodPaddle);
+  T->SetBranchAddress("P.hod.2x.GoodPaddle", p2X_goodPaddle);
+  T->SetBranchAddress("P.hod.2y.GoodPaddle", p2Y_goodPaddle);
   T->SetBranchAddress("P.hod.1x.GoodNegTdcTimeCorr", p1X_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.1y.GoodNegTdcTimeCorr", p1Y_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.2x.GoodNegTdcTimeCorr", p2X_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.2y.GoodNegTdcTimeCorr", p2Y_goodNegTdcTimeCorr); 
+  T->SetBranchAddress("P.hod.1x.GoodPosTdcTimeCorr", p1X_goodPosTdcTimeCorr);
+  T->SetBranchAddress("P.hod.1y.GoodPosTdcTimeCorr", p1Y_goodPosTdcTimeCorr);
+  T->SetBranchAddress("P.hod.2x.GoodPosTdcTimeCorr", p2X_goodPosTdcTimeCorr);
+  T->SetBranchAddress("P.hod.2y.GoodPosTdcTimeCorr", p2Y_goodPosTdcTimeCorr); 
+
+  // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
           
   // Create histos
   h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
@@ -139,25 +164,63 @@ void UserScript() {
   h_p2YmpT3_tdc = new TH1F("h_p2YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p1TmpT3_tdc = new TH1F("h_p1TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p2TmpT3_tdc = new TH1F("h_p2TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1Xneg_pt_tt_diff = new TH1F("h_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p1Yneg_pt_tt_diff = new TH1F("h_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p2Xneg_pt_tt_diff = new TH1F("h_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
-  h_p2Yneg_pt_tt_diff = new TH1F("h_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", 500, -250, 250);
+  h2_p1Xneg_pt_tt_diff = new TH2F("h2_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1x, 0.5, nbars_1x + 0.5, 500, -250, 250);
+  h2_p1Yneg_pt_tt_diff = new TH2F("h2_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1y, 0.5, nbars_1y + 0.5, 500, -250, 250);
+  h2_p2Xneg_pt_tt_diff = new TH2F("h2_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2x, 0.5, nbars_2x + 0.5, 500, -250, 250);
+  h2_p2Yneg_pt_tt_diff = new TH2F("h2_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2y, 0.5, nbars_2y + 0.5, 500, -250, 250);
   h_p1X_fpTime = new TH1F("h_p1X_fpTime", "S1X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p1Y_fpTime = new TH1F("h_p1Y_fpTime", "S1Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p2X_fpTime = new TH1F("h_p2X_fpTime", "S2X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p2Y_fpTime = new TH1F("h_p2Y_fpTime", "S2Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h2_p1X_negTdcCorr = new TH2F("h2_p1X_negTdcCorr", "S1X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, 0, 100);
+  h2_p1Y_negTdcCorr = new TH2F("h2_p1Y_negTdcCorr", "S1Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
+  h2_p2X_negTdcCorr = new TH2F("h2_p2X_negTdcCorr", "S2X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
+  h2_p2Y_negTdcCorr = new TH2F("h2_p2Y_negTdcCorr", "S2Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, 0, 100);
+  h2_p1X_posTdcCorr = new TH2F("h2_p1X_posTdcCorr", "S1X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, 0, 100);
+  h2_p1Y_posTdcCorr = new TH2F("h2_p1Y_posTdcCorr", "S1Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
+  h2_p2X_posTdcCorr = new TH2F("h2_p2X_posTdcCorr", "S2X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
+  h2_p2Y_posTdcCorr = new TH2F("h2_p2Y_posTdcCorr", "S2Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, 0, 100);
 
+  // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Loop of entries in tree
   for(UInt_t ievent = 0; ievent < nentries; ievent++) {
     
     T->GetEntry(ievent);
 
-    //cout << p1X_negAdcPaddle[0] << "\t" << p1X_negAdcPaddle[1] << endl;
-
     if (p1X_nGoodHodoHits != 1 || p1Y_nGoodHodoHits != 1 || p2X_nGoodHodoHits != 1  || p2Y_nGoodHodoHits != 1) continue;
-        
+
+    // cout << "Event number = " << ievent << endl;
+    for (UInt_t igoodhit = 0; igoodhit < p1X_nGoodHodoHits; igoodhit++) {
+    //   // cout << "Number of good hits in 1x = " << p1X_nGoodHodoHits << endl;
+    //   // cout << "The paddle which was hit = " << p1X_goodPaddle[igoodhit] << endl;
+    //   // cout << "Negative TDC corrected time = " << p1X_goodNegTdcTimeCorr[igoodhit] << endl;
+    //   // cout << "Positive TDC corrected time = " << p1X_goodPosTdcTimeCorr[igoodhit] << endl;
+      h2_p1X_negTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodNegTdcTimeCorr[igoodhit]);
+      h2_p1X_posTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit]);
+    }
+    for (UInt_t igoodhit = 0; igoodhit < p1Y_nGoodHodoHits; igoodhit++) {
+      h2_p1Y_negTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodNegTdcTimeCorr[igoodhit]);
+      h2_p1Y_posTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit]);
+    }
+    for (UInt_t igoodhit = 0; igoodhit < p2X_nGoodHodoHits; igoodhit++) {
+      h2_p2X_negTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodNegTdcTimeCorr[igoodhit]);
+      h2_p2X_posTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit]);
+    }
+    for (UInt_t igoodhit = 0; igoodhit < p2Y_nGoodHodoHits; igoodhit++) {
+      h2_p2Y_negTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodNegTdcTimeCorr[igoodhit]);
+      h2_p2Y_posTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit]);
+    }
+
+    if (p1X_negAdcHits > 0 && p1X_negTdcHits > 0) {
+      for (UInt_t iadchit = 0; iadchit < p1X_negAdcHits; iadchit++) {
+    	for (UInt_t itdchit = 0; itdchit < p1X_negTdcHits; itdchit++) {
+    	  if (p1X_negAdcPaddle[iadchit] != p1X_negTdcPaddle[itdchit]) continue;
+    	  h2_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPaddle[iadchit], (p1X_negAdcPulseTime[iadchit]*clk2adc - p1X_negTdcTime[itdchit]*clk2adc));
+    	}
+      }
+    }
+           
     // Fill histos
     h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc); h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
     h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc); h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
@@ -186,8 +249,8 @@ void UserScript() {
 void kpp_analysis(TString histname) {
 
   // Grab the histo
-  TH1F *h; h = dynamic_cast <TH1F*> gDirectory->Get(histname);
-
+  TH1F *h;  h  = dynamic_cast <TH1F*> gDirectory->Get(histname);
+  
   // Grab histo directly if it does not already exist
   if(!h) {
     
@@ -197,6 +260,7 @@ void kpp_analysis(TString histname) {
     // Throw error
     if(!h) { cout << "User histogram " << histname << " not found" << endl; exit(1);}
   }  // Histo existing condition
-  h->Draw();
-  
+  //else 
+  h->Draw("colz");
+
 }  // kpp_analysis function
