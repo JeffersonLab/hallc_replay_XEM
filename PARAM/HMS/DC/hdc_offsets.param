@@ -1,3 +1,5 @@
+; deprecated parameters
+
 ; cable id's for HMS Drift Chambers
 ; array is 113,12 (wires,planes) but most planes have less than 113 wires)
 
@@ -122,4 +124,3 @@ hdc_card_delay =  0, 0, 0, 0, 0, 0, 0, 0, 0, 0
                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0
                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0
                   0, 0
-

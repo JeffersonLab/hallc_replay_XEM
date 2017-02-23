@@ -1,17 +1,17 @@
-; Custom parameter file which should loaded when aiming to
-; analyze HMS drift chamber data with no tracking.
+; TEST-STAND PARAMETERS
+; Custom parameter file which should be loaded when aiming to analyze HMS DC
+; data with no tracking.
 
+; Increase HMS TDC window size.
+hdc_tdc_min_win = -50000, -50000, -50000, -50000, -50000, -50000
+                  -50000, -50000, -50000, -50000, -50000, -50000
+hdc_tdc_max_win = 50000, 50000, 50000, 50000, 50000, 50000
+                  50000, 50000, 50000, 50000, 50000, 50000
 
-; Increase HMS TDC window size
-  hdc_tdc_min_win = -50000,-50000,-50000,-50000,-50000,-50000
-  		    -50000,-50000,-50000,-50000,-50000,-50000
-  hdc_tdc_max_win = 50000,50000,50000,50000,50000,50000
-                    50000,50000,50000,50000,50000,50000
-; Remove hodoscope dependence on tracking
-  hsel_using_scin  = 0
-;  hsel_using_prune = 0
+; Remove hodoscope dependence on tracking.
+hsel_using_scin  = 0
+; hsel_using_prune = 0
 
-;  Adjust HMS DC plane t = 0
-;   hdc_plane_time_zero = 1500.0,1500.0,1500.0,1500.0,1500.0,1500.0
-;  	                 1500.0,1500.0,1500.0,1500.0,1500.0,1500.0
-
+; Adjust HMS DC plane t = 0
+; hdc_plane_time_zero = 1500.0, 1500.0, 1500.0, 1500.0, 1500.0, 1500.0
+;                       1500.0, 1500.0, 1500.0, 1500.0, 1500.0, 1500.0
