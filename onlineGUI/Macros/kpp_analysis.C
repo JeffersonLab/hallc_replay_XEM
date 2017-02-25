@@ -11,6 +11,16 @@ void UserScript() {
   static const UInt_t nbars_2x = 14;
   static const UInt_t nbars_2y = 21;
 
+  static const UInt_t nshwr_blks      = 224;
+  static const UInt_t npos_pshwr_blks = 14;
+  static const UInt_t nneg_pshwr_blks = 14;
+
+  static const UInt_t nhgc_pmts = 4;
+  static const UInt_t nngc_pmts = 4;
+
+  static const UInt_t npos_aero_pmts = 7;
+  static const UInt_t nneg_aero_pmts = 7; 
+
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
 
@@ -22,7 +32,7 @@ void UserScript() {
   Double_t pT1_tdcTime, pT2_tdcTime, pT3_tdcTime;
   Double_t pDCREF_tdcTime[ndcRefTimes];
 
-  // Negative hodoscope hits
+  // Hodoscope hits
   Int_t    p1X_negAdcHits, p1Y_negAdcHits, p2X_negAdcHits, p2Y_negAdcHits;
   Int_t    p1X_negTdcHits, p1Y_negTdcHits, p2X_negTdcHits, p2Y_negTdcHits;
   Double_t p1X_negAdcPaddle[maxAdcHits*nbars_1x], p1Y_negAdcPaddle[maxAdcHits*nbars_1y];
@@ -33,6 +43,16 @@ void UserScript() {
   Double_t p2X_negAdcPulseTime[maxAdcHits*nbars_2x], p2Y_negAdcPulseTime[maxAdcHits*nbars_2y];
   Double_t p1X_negTdcTime[maxTdcHits*nbars_1x], p1Y_negTdcTime[maxTdcHits*nbars_1y];
   Double_t p2X_negTdcTime[maxTdcHits*nbars_2x], p2Y_negTdcTime[maxTdcHits*nbars_2y];
+  Int_t    p1X_posAdcHits, p1Y_posAdcHits, p2X_posAdcHits, p2Y_posAdcHits;
+  Int_t    p1X_posTdcHits, p1Y_posTdcHits, p2X_posTdcHits, p2Y_posTdcHits;
+  Double_t p1X_posAdcPaddle[maxAdcHits*nbars_1x], p1Y_posAdcPaddle[maxAdcHits*nbars_1y];
+  Double_t p2X_posAdcPaddle[maxAdcHits*nbars_2x], p2Y_posAdcPaddle[maxAdcHits*nbars_2y];
+  Double_t p1X_posTdcPaddle[maxTdcHits*nbars_1x], p1Y_posTdcPaddle[maxTdcHits*nbars_1y];
+  Double_t p2X_posTdcPaddle[maxTdcHits*nbars_2x], p2Y_posTdcPaddle[maxTdcHits*nbars_2y];
+  Double_t p1X_posAdcPulseTime[maxAdcHits*nbars_1x], p1Y_posAdcPulseTime[maxAdcHits*nbars_1y];
+  Double_t p2X_posAdcPulseTime[maxAdcHits*nbars_2x], p2Y_posAdcPulseTime[maxAdcHits*nbars_2y];
+  Double_t p1X_posTdcTime[maxTdcHits*nbars_1x], p1Y_posTdcTime[maxTdcHits*nbars_1y];
+  Double_t p2X_posTdcTime[maxTdcHits*nbars_2x], p2Y_posTdcTime[maxTdcHits*nbars_2y];
 
   // "Good" hodo hits
   Int_t    p1X_nGoodHodoHits, p1Y_nGoodHodoHits, p2X_nGoodHodoHits, p2Y_nGoodHodoHits;
@@ -45,6 +65,12 @@ void UserScript() {
   
   // Hodoscope focal plane times
   Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
+  Double_t p1X_plTime, p1Y_plTime, p2X_plTime, p2Y_plTime;
+
+  // Aerogel ADC
+  Int_t paero_posHits, paero_negHits;
+  Double_t paero_posPmt[maxAdcHits*npos_aero_pmts], paero_negPmt[maxAdcHits*nneg_aero_pmts];
+  Double_t paero_posPulseTime[maxAdcHits*npos_aero_pmts], paero_negPulseTime[maxAdcHits*nneg_aero_pmts];
   
   Long64_t nentries;
 
@@ -60,11 +86,16 @@ void UserScript() {
   TH1F *h_pDCREF_tdc[ndcRefTimes];
 
   TH2F *h2_p1Xneg_pt_tt_diff, *h2_p1Yneg_pt_tt_diff, *h2_p2Xneg_pt_tt_diff, *h2_p2Yneg_pt_tt_diff;
+  TH2F *h2_p1Xpos_pt_tt_diff, *h2_p1Ypos_pt_tt_diff, *h2_p2Xpos_pt_tt_diff, *h2_p2Ypos_pt_tt_diff;
 
   TH1F *h_p1X_fpTime, *h_p1Y_fpTime, *h_p2X_fpTime, *h_p2Y_fpTime;
+  TH1F *h_p1X_plTime, *h_p1Y_plTime, *h_p2X_plTime, *h_p2Y_plTime;
 
   TH2F *h2_p1X_negTdcCorr, *h2_p1Y_negTdcCorr, *h2_p2X_negTdcCorr, *h2_p2Y_negTdcCorr;
   TH2F *h2_p1X_posTdcCorr, *h2_p1Y_posTdcCorr, *h2_p2X_posTdcCorr, *h2_p2Y_posTdcCorr;
+  TH2F *h2_p1X_tdcCorrDiff, *h2_p1Y_tdcCorrDiff, *h2_p2X_tdcCorrDiff, *h2_p2Y_tdcCorrDiff;
+
+  TH2F *h2_paero_posPulseTime, *h2_paero_negPulseTime;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
   
@@ -85,14 +116,23 @@ void UserScript() {
   T->SetBranchAddress("T.shms.pT1_tdcTime", &pT1_tdcTime);
   T->SetBranchAddress("T.shms.pT2_tdcTime", &pT2_tdcTime);
   T->SetBranchAddress("T.shms.pT3_tdcTime", &pT3_tdcTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   // DC reference times
   for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
     T->SetBranchAddress(Form("T.shms.pDCREF%d_tdcTime", iref+1), &pDCREF_tdcTime[iref]);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   // Hodoscope focal plane time calculation
   T->SetBranchAddress("P.hod.1x.fptime", &p1X_fpTime);
   T->SetBranchAddress("P.hod.1y.fptime", &p1Y_fpTime);
   T->SetBranchAddress("P.hod.2x.fptime", &p2X_fpTime);
   T->SetBranchAddress("P.hod.2y.fptime", &p2Y_fpTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   // Hodoscope ADC information
   T->SetBranchAddress("Ndata.P.hod.1x.negAdcCounter", &p1X_negAdcHits);
   T->SetBranchAddress("Ndata.P.hod.1y.negAdcCounter", &p1Y_negAdcHits);
@@ -106,6 +146,18 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.negAdcPulseTimeRaw", p1Y_negAdcPulseTime);
   T->SetBranchAddress("P.hod.2x.negAdcPulseTimeRaw", p2X_negAdcPulseTime);
   T->SetBranchAddress("P.hod.2y.negAdcPulseTimeRaw", p2Y_negAdcPulseTime);
+  T->SetBranchAddress("Ndata.P.hod.1x.posAdcCounter", &p1X_posAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.1y.posAdcCounter", &p1Y_posAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2x.posAdcCounter", &p2X_posAdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2y.posAdcCounter", &p2Y_posAdcHits);
+  T->SetBranchAddress("P.hod.1x.posAdcCounter", p1X_posAdcPaddle);
+  T->SetBranchAddress("P.hod.1y.posAdcCounter", p1Y_posAdcPaddle);
+  T->SetBranchAddress("P.hod.2x.posAdcCounter", p2X_posAdcPaddle);
+  T->SetBranchAddress("P.hod.2y.posAdcCounter", p2Y_posAdcPaddle);
+  T->SetBranchAddress("P.hod.1x.posAdcPulseTimeRaw", p1X_posAdcPulseTime);
+  T->SetBranchAddress("P.hod.1y.posAdcPulseTimeRaw", p1Y_posAdcPulseTime);
+  T->SetBranchAddress("P.hod.2x.posAdcPulseTimeRaw", p2X_posAdcPulseTime);
+  T->SetBranchAddress("P.hod.2y.posAdcPulseTimeRaw", p2Y_posAdcPulseTime);
   // Hodoscope TDC information
   T->SetBranchAddress("Ndata.P.hod.1x.negTdcCounter", &p1X_negTdcHits);
   T->SetBranchAddress("Ndata.P.hod.1y.negTdcCounter", &p1Y_negTdcHits);
@@ -119,6 +171,21 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1y.negTdcTime", p1Y_negTdcTime);
   T->SetBranchAddress("P.hod.2x.negTdcTime", p2X_negTdcTime);
   T->SetBranchAddress("P.hod.2y.negTdcTime", p2Y_negTdcTime);
+  T->SetBranchAddress("Ndata.P.hod.1x.posTdcCounter", &p1X_posTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.1y.posTdcCounter", &p1Y_posTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2x.posTdcCounter", &p2X_posTdcHits);
+  T->SetBranchAddress("Ndata.P.hod.2y.posTdcCounter", &p2Y_posTdcHits);
+  T->SetBranchAddress("P.hod.1x.posTdcCounter", p1X_posTdcPaddle);
+  T->SetBranchAddress("P.hod.1y.posTdcCounter", p1Y_posTdcPaddle);
+  T->SetBranchAddress("P.hod.2x.posTdcCounter", p2X_posTdcPaddle);
+  T->SetBranchAddress("P.hod.2y.posTdcCounter", p2Y_posTdcPaddle);
+  T->SetBranchAddress("P.hod.1x.posTdcTime", p1X_posTdcTime);
+  T->SetBranchAddress("P.hod.1y.posTdcTime", p1Y_posTdcTime);
+  T->SetBranchAddress("P.hod.2x.posTdcTime", p2X_posTdcTime);
+  T->SetBranchAddress("P.hod.2y.posTdcTime", p2Y_posTdcTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   // "Good" hodoscope hits
   // Hodoscope corrected times (not corrected for TOF to focal plane)
   T->SetBranchAddress("Ndata.P.hod.1x.GoodPaddle", &p1X_nGoodHodoHits);
@@ -138,9 +205,21 @@ void UserScript() {
   T->SetBranchAddress("P.hod.2x.GoodPosTdcTimeCorr", p2X_goodPosTdcTimeCorr);
   T->SetBranchAddress("P.hod.2y.GoodPosTdcTimeCorr", p2Y_goodPosTdcTimeCorr); 
 
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("Ndata.P.aero.negAdcCounter", &paero_negHits);
+  T->SetBranchAddress("Ndata.P.aero.posAdcCounter", &paero_posHits);
+  T->SetBranchAddress("P.aero.negAdcCounter", paero_negPmt);
+  T->SetBranchAddress("P.aero.posAdcCounter", paero_posPmt);
+  T->SetBranchAddress("P.aero.negAdcPulseTimeRaw", paero_negPulseTime);
+  T->SetBranchAddress("P.aero.posAdcPulseTimeRaw", paero_posPulseTime);
+
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
           
   // Create histos
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p1Y_tdc = new TH1F("h_p1Y_tdc", "S1Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p2X_tdc = new TH1F("h_p2X_tdc", "S2X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
@@ -164,14 +243,32 @@ void UserScript() {
   h_p2YmpT3_tdc = new TH1F("h_p2YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p1TmpT3_tdc = new TH1F("h_p1TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
   h_p2TmpT3_tdc = new TH1F("h_p2TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h2_p1Xneg_pt_tt_diff = new TH2F("h2_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1x, 0.5, nbars_1x + 0.5, 500, -250, 250);
-  h2_p1Yneg_pt_tt_diff = new TH2F("h2_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1y, 0.5, nbars_1y + 0.5, 500, -250, 250);
-  h2_p2Xneg_pt_tt_diff = new TH2F("h2_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2x, 0.5, nbars_2x + 0.5, 500, -250, 250);
-  h2_p2Yneg_pt_tt_diff = new TH2F("h2_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2y, 0.5, nbars_2y + 0.5, 500, -250, 250);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_p1Xneg_pt_tt_diff = new TH2F("h2_p1Xneg_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1x, 0.5, nbars_1x + 0.5, 300, 0, 300);
+  h2_p1Yneg_pt_tt_diff = new TH2F("h2_p1Yneg_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1y, 0.5, nbars_1y + 0.5, 300, 0, 300);
+  h2_p2Xneg_pt_tt_diff = new TH2F("h2_p2Xneg_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2x, 0.5, nbars_2x + 0.5, 300, 0, 300);
+  h2_p2Yneg_pt_tt_diff = new TH2F("h2_p2Yneg_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2y, 0.5, nbars_2y + 0.5, 300, 0, 300);
+  h2_p1Xpos_pt_tt_diff = new TH2F("h2_p1Xpos_pt_tt_diff", "S1X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1x, 0.5, nbars_1x + 0.5, 300, 0, 300);
+  h2_p1Ypos_pt_tt_diff = new TH2F("h2_p1Ypos_pt_tt_diff", "S1Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_1y, 0.5, nbars_1y + 0.5, 300, 0, 300);
+  h2_p2Xpos_pt_tt_diff = new TH2F("h2_p2Xpos_pt_tt_diff", "S2X- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2x, 0.5, nbars_2x + 0.5, 300, 0, 300);
+  h2_p2Ypos_pt_tt_diff = new TH2F("h2_p2Ypos_pt_tt_diff", "S2Y- Pulse Time - TDC Time; Pulse Time - TDC Time (ns); Counts / 1 ns", nbars_2y, 0.5, nbars_2y + 0.5, 300, 0, 300);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   h_p1X_fpTime = new TH1F("h_p1X_fpTime", "S1X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p1Y_fpTime = new TH1F("h_p1Y_fpTime", "S1Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p2X_fpTime = new TH1F("h_p2X_fpTime", "S2X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p2Y_fpTime = new TH1F("h_p2Y_fpTime", "S2Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+
+  h_p1X_plTime = new TH1F("h_p1X_plTime", "S1X Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p1Y_plTime = new TH1F("h_p1Y_plTime", "S1Y Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p2X_plTime = new TH1F("h_p2X_plTime", "S2X Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p2Y_plTime = new TH1F("h_p2Y_plTime", "S2Y Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
   h2_p1X_negTdcCorr = new TH2F("h2_p1X_negTdcCorr", "S1X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, 0, 100);
   h2_p1Y_negTdcCorr = new TH2F("h2_p1Y_negTdcCorr", "S1Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
   h2_p2X_negTdcCorr = new TH2F("h2_p2X_negTdcCorr", "S2X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
@@ -180,6 +277,15 @@ void UserScript() {
   h2_p1Y_posTdcCorr = new TH2F("h2_p1Y_posTdcCorr", "S1Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
   h2_p2X_posTdcCorr = new TH2F("h2_p2X_posTdcCorr", "S2X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
   h2_p2Y_posTdcCorr = new TH2F("h2_p2Y_posTdcCorr", "S2Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, 0, 100);
+  h2_p1X_tdcCorrDiff = new TH2F("h2_p1X_tdcCorrDiff", "S1X-/S1X+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, -50, 50);
+  h2_p1Y_tdcCorrDiff = new TH2F("h2_p1Y_tdcCorrDiff", "S1Y-/S1Y+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, -50, 50);
+  h2_p2X_tdcCorrDiff = new TH2F("h2_p2X_tdcCorrDiff", "S2X-/S2X+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, -50, 50);
+  h2_p2Y_tdcCorrDiff = new TH2F("h2_p2Y_tdcCorrDiff", "S2Y-/S2Y+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, -50, 50);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_paero_negPulseTime = new TH2F("h2_paero_negPulseTime", "SHMS Negative Aerogel ADC Pulse Time; PMT Number; ADC Pulse Time - Trigger Time (ns)", nneg_aero_pmts, 0.5, nneg_aero_pmts + 0.5, 500, 0, 500);
+  h2_paero_posPulseTime = new TH2F("h2_paero_posPulseTime", "SHMS Positive Aerogel ADC Pulse Time; PMT Number; ADC Pulse Time - Trigger Time (ns)", npos_aero_pmts, 0.5, npos_aero_pmts + 0.5, 500, 0, 500);
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -188,60 +294,143 @@ void UserScript() {
     
     T->GetEntry(ievent);
 
-    if (p1X_nGoodHodoHits != 1 || p1Y_nGoodHodoHits != 1 || p2X_nGoodHodoHits != 1  || p2Y_nGoodHodoHits != 1) continue;
+    // cout << "========================" << endl;
+    // cout << "Event Number = " << ievent << endl;
+    // cout << "========================" << endl;
 
-    // cout << "Event number = " << ievent << endl;
+    for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++)
+      h2_paero_negPulseTime->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc);
+    for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++)
+      h2_paero_posPulseTime->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc);
+      
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    // Fill "good" hit histos
     for (UInt_t igoodhit = 0; igoodhit < p1X_nGoodHodoHits; igoodhit++) {
-    //   // cout << "Number of good hits in 1x = " << p1X_nGoodHodoHits << endl;
-    //   // cout << "The paddle which was hit = " << p1X_goodPaddle[igoodhit] << endl;
-    //   // cout << "Negative TDC corrected time = " << p1X_goodNegTdcTimeCorr[igoodhit] << endl;
-    //   // cout << "Positive TDC corrected time = " << p1X_goodPosTdcTimeCorr[igoodhit] << endl;
       h2_p1X_negTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodNegTdcTimeCorr[igoodhit]);
       h2_p1X_posTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit]);
+      h2_p1X_tdcCorrDiff->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]);
+      if (TMath::Abs(p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+      h_p1X_plTime->Fill(p1X_goodPosTdcTimeCorr[igoodhit]);
     }
     for (UInt_t igoodhit = 0; igoodhit < p1Y_nGoodHodoHits; igoodhit++) {
       h2_p1Y_negTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodNegTdcTimeCorr[igoodhit]);
       h2_p1Y_posTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit]);
+      h2_p1Y_tdcCorrDiff->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]);
+      if (TMath::Abs(p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+      h_p1Y_plTime->Fill(p1Y_goodPosTdcTimeCorr[igoodhit]);
     }
     for (UInt_t igoodhit = 0; igoodhit < p2X_nGoodHodoHits; igoodhit++) {
       h2_p2X_negTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodNegTdcTimeCorr[igoodhit]);
       h2_p2X_posTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit]);
+      h2_p2X_tdcCorrDiff->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]);
+      if (TMath::Abs(p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+      h_p2X_plTime->Fill(p2X_goodPosTdcTimeCorr[igoodhit]);
     }
     for (UInt_t igoodhit = 0; igoodhit < p2Y_nGoodHodoHits; igoodhit++) {
       h2_p2Y_negTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodNegTdcTimeCorr[igoodhit]);
       h2_p2Y_posTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit]);
+      h2_p2Y_tdcCorrDiff->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]);
+      if (TMath::Abs(p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+      h_p2Y_plTime->Fill(p2Y_goodPosTdcTimeCorr[igoodhit]);
     }
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
-    if (p1X_negAdcHits > 0 && p1X_negTdcHits > 0) {
-      for (UInt_t iadchit = 0; iadchit < p1X_negAdcHits; iadchit++) {
-    	for (UInt_t itdchit = 0; itdchit < p1X_negTdcHits; itdchit++) {
-    	  if (p1X_negAdcPaddle[iadchit] != p1X_negTdcPaddle[itdchit]) continue;
-    	  h2_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPaddle[iadchit], (p1X_negAdcPulseTime[iadchit]*clk2adc - p1X_negTdcTime[itdchit]*clk2adc));
-    	}
+    // Fill pulse/tdc time difference histos
+
+    // cout << "Num of ADC Hits = " << p1X_negAdcHits << endl;
+    // cout << "ADC Paddle Number = " << p1X_negAdcPaddle[iadchit] << endl;
+    // cout << "Num of TDC Hits = " << p1X_negTdcHits << endl;
+    // cout << "TDC Paddle Number = " << p1X_negTdcPaddle[itdchit] << endl;
+
+    for (UInt_t iadchit = 0; iadchit < p1X_negAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p1X_negTdcHits; itdchit++) {
+	if (p1X_negAdcPaddle[iadchit] != p1X_negTdcPaddle[itdchit]) continue;
+	h2_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPaddle[iadchit], p1X_negAdcPulseTime[iadchit]*clk2adc - p1X_negTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p1Y_negAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p1Y_negTdcHits; itdchit++) {
+	if (p1Y_negAdcPaddle[iadchit] != p1Y_negTdcPaddle[itdchit]) continue;
+	h2_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPaddle[iadchit], p1Y_negAdcPulseTime[iadchit]*clk2adc - p1Y_negTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p2X_negAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p2X_negTdcHits; itdchit++) {
+	if (p2X_negAdcPaddle[iadchit] != p2X_negTdcPaddle[itdchit]) continue;
+	h2_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPaddle[iadchit], p2X_negAdcPulseTime[iadchit]*clk2adc - p2X_negTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p2Y_negAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p2Y_negTdcHits; itdchit++) {
+	if (p2Y_negAdcPaddle[iadchit] != p2Y_negTdcPaddle[itdchit]) continue;
+	h2_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPaddle[iadchit], p2Y_negAdcPulseTime[iadchit]*clk2adc - p2Y_negTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p1X_posAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p1X_posTdcHits; itdchit++) {
+	if (p1X_posAdcPaddle[iadchit] != p1X_posTdcPaddle[itdchit]) continue;
+	h2_p1Xpos_pt_tt_diff->Fill(p1X_posAdcPaddle[iadchit], p1X_posAdcPulseTime[iadchit]*clk2adc - p1X_posTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p1Y_posAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p1Y_posTdcHits; itdchit++) {
+	if (p1Y_nGoodHodoHits < 1) continue;
+	if (p1Y_posAdcPaddle[iadchit] != p1Y_posTdcPaddle[itdchit]) continue;
+	h2_p1Ypos_pt_tt_diff->Fill(p1Y_posAdcPaddle[iadchit], p1Y_posAdcPulseTime[iadchit]*clk2adc - p1Y_posTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p2X_posAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p2X_posTdcHits; itdchit++) {
+	if (p2X_posAdcPaddle[iadchit] != p2X_posTdcPaddle[itdchit]) continue;
+	h2_p2Xpos_pt_tt_diff->Fill(p2X_posAdcPaddle[iadchit], p2X_posAdcPulseTime[iadchit]*clk2adc - p2X_posTdcTime[itdchit]*clk2tdc);
+      }
+    }
+    for (UInt_t iadchit = 0; iadchit < p2Y_posAdcHits; iadchit++) {
+      for (UInt_t itdchit = 0; itdchit < p2Y_posTdcHits; itdchit++) {
+	if (p2Y_posAdcPaddle[iadchit] != p2Y_posTdcPaddle[itdchit]) continue;
+	h2_p2Ypos_pt_tt_diff->Fill(p2Y_posAdcPaddle[iadchit], p2Y_posAdcPulseTime[iadchit]*clk2adc - p2Y_posTdcTime[itdchit]*clk2tdc);
       }
     }
            
-    // Fill histos
-    h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc); h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
-    h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc); h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
-    h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc); h_p2T_tdc->Fill(p2T_tdcTime*clk2tdc);
-    h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc); h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc); h_pT3_tdc->Fill(pT3_tdcTime*clk2tdc);
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    // Fill trigger time histos
+    h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc);
+    h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
+    h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc); 
+    h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
+    h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc); 
+    h_p2T_tdc->Fill(p2T_tdcTime*clk2tdc);
+
+    h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc); 
+    h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc); 
+    h_pT3_tdc->Fill(pT3_tdcTime*clk2tdc);
+
     for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
       h_pDCREF_tdc[iref]->Fill(pDCREF_tdcTime[iref]*clk2tdc);
-    h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc); h_p1YmpT2_tdc->Fill((pT2_tdcTime - p1Y_tdcTime)*clk2tdc);
-    h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc); h_p2YmpT2_tdc->Fill((pT2_tdcTime - p2Y_tdcTime)*clk2tdc);
-    h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc); h_p2TmpT2_tdc->Fill((pT2_tdcTime - p2T_tdcTime)*clk2tdc);
-    h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc); h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
-    h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc); h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
-    h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc); h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
-    //h_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPulseTime*clk2adc - p1X_negTdcTime); h_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPulseTime*clk2adc - p1Y_negTdcTime);
-    //h_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPulseTime*clk2adc - p2X_negTdcTime); h_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPulseTime*clk2adc - p2Y_negTdcTime);
+
+    h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc); 
+    h_p1YmpT2_tdc->Fill((pT2_tdcTime - p1Y_tdcTime)*clk2tdc);
+    h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc); 
+    h_p2YmpT2_tdc->Fill((pT2_tdcTime - p2Y_tdcTime)*clk2tdc);
+    h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc); 
+    h_p2TmpT2_tdc->Fill((pT2_tdcTime - p2T_tdcTime)*clk2tdc);
+
+    h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc); 
+    h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
+    h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc); 
+    h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
+    h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc); 
+    h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
     h_p1X_fpTime->Fill(p1X_fpTime); h_p1Y_fpTime->Fill(p1Y_fpTime);
     h_p2X_fpTime->Fill(p2X_fpTime); h_p2Y_fpTime->Fill(p2Y_fpTime);
 
-    // for (UInt_t ihit = 0; ihit < p1X_negAdcHits; ihit++){
-    //   //T->SetBranchAddress("P.hod.1x.negAdcCounter", &p1X_negAdcPaddle[ihit]);
-    // }
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
   }  // Entries loop
 }  // UserScript function
