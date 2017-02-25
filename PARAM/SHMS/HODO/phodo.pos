@@ -58,7 +58,7 @@ phodo_plane_names = "1x 1y 2x 2y"
                         35.
                         42. 
       pscin_2x_left  =  55.
-      pscin_2x_right =  55.
+      pscin_2x_right =  -55.
       pscin_2x_offset=  0.0
       pscin_2x_center=  -58.5
                         -49.5
