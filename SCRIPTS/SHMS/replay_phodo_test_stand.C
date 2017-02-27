@@ -35,13 +35,16 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/phodo_ptrig.map");
-  
+
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add hodoscope to HMS apparatus
   THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
   SHMS->AddDetector(hod);
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -49,6 +52,10 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add trigger detector to trigger apparatus
   THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
   TRG->AddDetector(shms);
+
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.

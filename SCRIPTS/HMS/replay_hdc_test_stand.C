@@ -39,7 +39,7 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
   gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_htrig.map");
-  
+
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
@@ -56,7 +56,11 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add trigger detector to trigger apparatus
   THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
   TRG->AddDetector(hms);
-  
+
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
+
   //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
   //hscaler->SetDebugFile("HScaler.txt");
   //gHaEvtHandlers->Add(hscaler);
