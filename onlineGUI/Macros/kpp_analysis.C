@@ -71,6 +71,23 @@ void UserScript() {
   Int_t paero_posHits, paero_negHits;
   Double_t paero_posPmt[maxAdcHits*npos_aero_pmts], paero_negPmt[maxAdcHits*nneg_aero_pmts];
   Double_t paero_posPulseTime[maxAdcHits*npos_aero_pmts], paero_negPulseTime[maxAdcHits*nneg_aero_pmts];
+
+  // Pre-Shower ADC
+  Int_t ppshwr_posHits, ppshwr_negHits;
+  Double_t ppshwr_posPmt[maxAdcHits*npos_pshwr_blks], ppshwr_negPmt[maxAdcHits*nneg_pshwr_blks];
+  Double_t ppshwr_posPulseTime[maxAdcHits*npos_pshwr_blks], ppshwr_negPulseTime[maxAdcHits*nneg_pshwr_blks];
+
+  // Shower ADC
+  Int_t pshwr_hits;
+  Double_t pshwr_pmt[maxAdcHits*nshwr_blks], pshwr_pulseTime[maxAdcHits*nshwr_blks];
+
+  // Heavy gas Cherenkov ADC
+  Int_t phgc_hits;
+  Double_t phgc_pmt[maxAdcHits*nhgc_pmts], phgc_pulseTime[maxAdcHits*nhgc_pmts];
+  
+  // Noble gas Cherenkov ADC
+  Int_t pngc_hits;
+  Double_t pngc_pmt[maxAdcHits*nngc_pmts], pngc_pulseTime[maxAdcHits*nngc_pmts];
   
   Long64_t nentries;
 
@@ -95,7 +112,25 @@ void UserScript() {
   TH2F *h2_p1X_posTdcCorr, *h2_p1Y_posTdcCorr, *h2_p2X_posTdcCorr, *h2_p2Y_posTdcCorr;
   TH2F *h2_p1X_tdcCorrDiff, *h2_p1Y_tdcCorrDiff, *h2_p2X_tdcCorrDiff, *h2_p2Y_tdcCorrDiff;
 
-  TH2F *h2_paero_posPulseTime, *h2_paero_negPulseTime;
+  TH2F *h2_paero_posPulseTime_pT1_diff, *h2_paero_negPulseTime_pT1_diff;
+  TH2F *h2_paero_posPulseTime_pT2_diff, *h2_paero_negPulseTime_pT2_diff;
+  TH2F *h2_paero_posPulseTime_pT3_diff, *h2_paero_negPulseTime_pT3_diff;
+
+  TH2F *h2_ppshwr_posPulseTime_pT1_diff, *h2_ppshwr_negPulseTime_pT1_diff;
+  TH2F *h2_ppshwr_posPulseTime_pT2_diff, *h2_ppshwr_negPulseTime_pT2_diff;
+  TH2F *h2_ppshwr_posPulseTime_pT3_diff, *h2_ppshwr_negPulseTime_pT3_diff;
+
+  TH2F *h2_pshwr_pulseTime_pT1_diff;
+  TH2F *h2_pshwr_pulseTime_pT2_diff;
+  TH2F *h2_pshwr_pulseTime_pT3_diff;
+
+  TH2F *h2_phgc_pulseTime_pT1_diff;
+  TH2F *h2_phgc_pulseTime_pT2_diff;
+  TH2F *h2_phgc_pulseTime_pT3_diff;
+  
+  TH2F *h2_pngc_pulseTime_pT1_diff;
+  TH2F *h2_pngc_pulseTime_pT2_diff;
+  TH2F *h2_pngc_pulseTime_pT3_diff;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
   
@@ -214,35 +249,62 @@ void UserScript() {
   T->SetBranchAddress("P.aero.negAdcPulseTimeRaw", paero_negPulseTime);
   T->SetBranchAddress("P.aero.posAdcPulseTimeRaw", paero_posPulseTime);
 
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("Ndata.P.cal.pr.negAdcCounter", &ppshwr_negHits);
+  T->SetBranchAddress("Ndata.P.cal.pr.posAdcCounter", &ppshwr_posHits);
+  T->SetBranchAddress("P.cal.pr.negAdcCounter", ppshwr_negPmt);
+  T->SetBranchAddress("P.cal.pr.posAdcCounter", ppshwr_posPmt);
+  T->SetBranchAddress("P.cal.pr.negAdcPulseTimeRaw", ppshwr_negPulseTime);
+  T->SetBranchAddress("P.cal.pr.posAdcPulseTimeRaw", ppshwr_posPulseTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("Ndata.P.cal.fly.adcCounter", &pshwr_hits);
+  T->SetBranchAddress("P.cal.fly.adcCounter", pshwr_pmt);
+  T->SetBranchAddress("P.cal.fly.adcPulseTimeRaw", pshwr_pulseTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("Ndata.P.hgcer.adcCounter", &phgc_hits);
+  T->SetBranchAddress("P.hgcer.adcCounter", &phgc_pmt);
+  T->SetBranchAddress("P.hgcer.adcPulseTimeRaw", &phgc_pulseTime);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("Ndata.P.ngcer.adcCounter", &pngc_hits);
+  T->SetBranchAddress("P.ngcer.adcCounter", &pngc_pmt);
+  T->SetBranchAddress("P.ngcer.adcPulseTimeRaw", &pngc_pulseTime);
+  
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
           
   // Create histos
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
-  h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1Y_tdc = new TH1F("h_p1Y_tdc", "S1Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2X_tdc = new TH1F("h_p2X_tdc", "S2X Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2Y_tdc = new TH1F("h_p2Y_tdc", "S2Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1T_tdc = new TH1F("h_p1T_tdc", "S1X/S1Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2T_tdc = new TH1F("h_p2T_tdc", "S2X/S2Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_pT1_tdc = new TH1F("h_pT1_tdc", "Hodoscope Trigger (Slot 20 Channel 15); TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_pT2_tdc = new TH1F("h_pT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31); TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_pT3_tdc = new TH1F("h_pT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38); TDC Time (ns); Counts / 1 ns", 200, 0, 200);
+  h_p1X_tdc = new TH1F("h_p1X_tdc", "S1X Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1Y_tdc = new TH1F("h_p1Y_tdc", "S1Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2X_tdc = new TH1F("h_p2X_tdc", "S2X Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2Y_tdc = new TH1F("h_p2Y_tdc", "S2Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1T_tdc = new TH1F("h_p1T_tdc", "S1X/S1Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2T_tdc = new TH1F("h_p2T_tdc", "S2X/S2Y Coincidence Time; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_pT1_tdc = new TH1F("h_pT1_tdc", "Hodoscope Trigger (Slot 20 Channel 15); TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_pT2_tdc = new TH1F("h_pT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31); TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_pT3_tdc = new TH1F("h_pT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38); TDC Time (ns); Counts / 1 ns", 250, 0, 250);
   for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
     h_pDCREF_tdc[iref] = new TH1F(Form("h_pDCREF%d_tdc", iref+1), Form("DC Reference Time %d; TDC Time (ns); Counts / 1 ns", iref+1), 200, 1200, 1400);
-  h_p1XmpT2_tdc = new TH1F("h_p1XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1YmpT2_tdc = new TH1F("h_p1YmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2XmpT2_tdc = new TH1F("h_p2XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2YmpT2_tdc = new TH1F("h_p2YmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1TmpT2_tdc = new TH1F("h_p1TmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2TmpT2_tdc = new TH1F("h_p2TmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1XmpT3_tdc = new TH1F("h_p1XmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1YmpT3_tdc = new TH1F("h_p1YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2XmpT3_tdc = new TH1F("h_p2XmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2X; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2YmpT3_tdc = new TH1F("h_p2YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2Y; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p1TmpT3_tdc = new TH1F("h_p1TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
-  h_p2TmpT3_tdc = new TH1F("h_p2TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2; TDC Time (ns); Counts / 1 ns", 200, 0, 200);
+  h_p1XmpT2_tdc = new TH1F("h_p1XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1X; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1YmpT2_tdc = new TH1F("h_p1YmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1Y; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2XmpT2_tdc = new TH1F("h_p2XmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2X; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2YmpT2_tdc = new TH1F("h_p2YmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2Y; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1TmpT2_tdc = new TH1F("h_p1TmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S1; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2TmpT2_tdc = new TH1F("h_p2TmpT2_tdc", "Hodoscope Trigger (Slot 19 Channel 31) - S2; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1XmpT3_tdc = new TH1F("h_p1XmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1X; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1YmpT3_tdc = new TH1F("h_p1YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1Y; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2XmpT3_tdc = new TH1F("h_p2XmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2X; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2YmpT3_tdc = new TH1F("h_p2YmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2Y; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p1TmpT3_tdc = new TH1F("h_p1TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S1; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
+  h_p2TmpT3_tdc = new TH1F("h_p2TmpT3_tdc", "Hodoscope Trigger (Slot 19 Channel 38) - S2; TDC Time (ns); Counts / 1 ns", 250, 0, 250);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
@@ -262,21 +324,21 @@ void UserScript() {
   h_p2X_fpTime = new TH1F("h_p2X_fpTime", "S2X Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
   h_p2Y_fpTime = new TH1F("h_p2Y_fpTime", "S2Y Focal Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
 
-  h_p1X_plTime = new TH1F("h_p1X_plTime", "S1X Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
-  h_p1Y_plTime = new TH1F("h_p1Y_plTime", "S1Y Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
-  h_p2X_plTime = new TH1F("h_p2X_plTime", "S2X Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
-  h_p2Y_plTime = new TH1F("h_p2Y_plTime", "S2Y Plane Time; TDC Time (ns); Counts / 1ns", 100, 0, 100);
+  h_p1X_plTime = new TH1F("h_p1X_plTime", "S1X Plane Time; TDC Time (ns); Counts / 1ns", 200, -100, 100);
+  h_p1Y_plTime = new TH1F("h_p1Y_plTime", "S1Y Plane Time; TDC Time (ns); Counts / 1ns", 200, -100, 100);
+  h_p2X_plTime = new TH1F("h_p2X_plTime", "S2X Plane Time; TDC Time (ns); Counts / 1ns", 200, -100, 100);
+  h_p2Y_plTime = new TH1F("h_p2Y_plTime", "S2Y Plane Time; TDC Time (ns); Counts / 1ns", 200, -100, 100);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
-  h2_p1X_negTdcCorr = new TH2F("h2_p1X_negTdcCorr", "S1X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, 0, 100);
-  h2_p1Y_negTdcCorr = new TH2F("h2_p1Y_negTdcCorr", "S1Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
-  h2_p2X_negTdcCorr = new TH2F("h2_p2X_negTdcCorr", "S2X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
-  h2_p2Y_negTdcCorr = new TH2F("h2_p2Y_negTdcCorr", "S2Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, 0, 100);
-  h2_p1X_posTdcCorr = new TH2F("h2_p1X_posTdcCorr", "S1X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, 0, 100);
-  h2_p1Y_posTdcCorr = new TH2F("h2_p1Y_posTdcCorr", "S1Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, 0, 100);
-  h2_p2X_posTdcCorr = new TH2F("h2_p2X_posTdcCorr", "S2X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, 0, 100);
-  h2_p2Y_posTdcCorr = new TH2F("h2_p2Y_posTdcCorr", "S2Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 100, 0, 100);
+  h2_p1X_negTdcCorr = new TH2F("h2_p1X_negTdcCorr", "S1X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 200, -100, 100);
+  h2_p1Y_negTdcCorr = new TH2F("h2_p1Y_negTdcCorr", "S1Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 200, -100, 100);
+  h2_p2X_negTdcCorr = new TH2F("h2_p2X_negTdcCorr", "S2X- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 200, -100, 100);
+  h2_p2Y_negTdcCorr = new TH2F("h2_p2Y_negTdcCorr", "S2Y- Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 200, -100, 100);
+  h2_p1X_posTdcCorr = new TH2F("h2_p1X_posTdcCorr", "S1X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 200, -100, 100);
+  h2_p1Y_posTdcCorr = new TH2F("h2_p1Y_posTdcCorr", "S1Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 200, -100, 100);
+  h2_p2X_posTdcCorr = new TH2F("h2_p2X_posTdcCorr", "S2X+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 200, -100, 100);
+  h2_p2Y_posTdcCorr = new TH2F("h2_p2Y_posTdcCorr", "S2Y+ Corrected TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2y, 0.5, nbars_2y + 0.5, 200, -100, 100);
   h2_p1X_tdcCorrDiff = new TH2F("h2_p1X_tdcCorrDiff", "S1X-/S1X+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1x, 0.5, nbars_1x + 0.5, 100, -50, 50);
   h2_p1Y_tdcCorrDiff = new TH2F("h2_p1Y_tdcCorrDiff", "S1Y-/S1Y+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_1y, 0.5, nbars_1y + 0.5, 100, -50, 50);
   h2_p2X_tdcCorrDiff = new TH2F("h2_p2X_tdcCorrDiff", "S2X-/S2X+ Corrected TDC Time Difference vs. Paddle Number; Paddle Number; TDC Time (ns)", nbars_2x, 0.5, nbars_2x + 0.5, 100, -50, 50);
@@ -284,9 +346,40 @@ void UserScript() {
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
-  h2_paero_negPulseTime = new TH2F("h2_paero_negPulseTime", "SHMS Negative Aerogel ADC Pulse Time; PMT Number; ADC Pulse Time - Trigger Time (ns)", nneg_aero_pmts, 0.5, nneg_aero_pmts + 0.5, 500, 0, 500);
-  h2_paero_posPulseTime = new TH2F("h2_paero_posPulseTime", "SHMS Positive Aerogel ADC Pulse Time; PMT Number; ADC Pulse Time - Trigger Time (ns)", npos_aero_pmts, 0.5, npos_aero_pmts + 0.5, 500, 0, 500);
+  h2_paero_negPulseTime_pT1_diff = new TH2F("h2_paero_negPulseTime_pT1_diff", "SHMS Negative Aerogel ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nneg_aero_pmts, 0.5, nneg_aero_pmts + 0.5, 500, -250, 250);
+  h2_paero_negPulseTime_pT2_diff = new TH2F("h2_paero_negPulseTime_pT2_diff", "SHMS Negative Aerogel ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nneg_aero_pmts, 0.5, nneg_aero_pmts + 0.5, 500, -250, 250);
+  h2_paero_negPulseTime_pT3_diff = new TH2F("h2_paero_negPulseTime_pT3_diff", "SHMS Negative Aerogel ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nneg_aero_pmts, 0.5, nneg_aero_pmts + 0.5, 500, -250, 250);
+  h2_paero_posPulseTime_pT1_diff = new TH2F("h2_paero_posPulseTime_pT1_diff", "SHMS Positive Aerogel ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", npos_aero_pmts, 0.5, npos_aero_pmts + 0.5, 500, -250, 250);
+  h2_paero_posPulseTime_pT2_diff = new TH2F("h2_paero_posPulseTime_pT2_diff", "SHMS Positive Aerogel ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", npos_aero_pmts, 0.5, npos_aero_pmts + 0.5, 500, -250, 250);
+  h2_paero_posPulseTime_pT3_diff = new TH2F("h2_paero_posPulseTime_pT3_diff", "SHMS Positive Aerogel ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", npos_aero_pmts, 0.5, npos_aero_pmts + 0.5, 500, -250, 250);
 
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_ppshwr_negPulseTime_pT1_diff = new TH2F("h2_ppshwr_negPulseTime_pT1_diff", "SHMS Negative Pre Shower ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nneg_pshwr_blks, 0.5, nneg_pshwr_blks + 0.5, 500, -250, 250);
+  h2_ppshwr_negPulseTime_pT2_diff = new TH2F("h2_ppshwr_negPulseTime_pT2_diff", "SHMS Negative Pre Shower ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nneg_pshwr_blks, 0.5, nneg_pshwr_blks + 0.5, 500, -250, 250);
+  h2_ppshwr_negPulseTime_pT3_diff = new TH2F("h2_ppshwr_negPulseTime_pT3_diff", "SHMS Negative Pre Shower ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nneg_pshwr_blks, 0.5, nneg_pshwr_blks + 0.5, 500, -250, 250);
+  h2_ppshwr_posPulseTime_pT1_diff = new TH2F("h2_ppshwr_posPulseTime_pT1_diff", "SHMS Positive Pre Shower ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", npos_pshwr_blks, 0.5, npos_pshwr_blks + 0.5, 500, -250, 250);
+  h2_ppshwr_posPulseTime_pT2_diff = new TH2F("h2_ppshwr_posPulseTime_pT2_diff", "SHMS Positive Pre Shower ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", npos_pshwr_blks, 0.5, npos_pshwr_blks + 0.5, 500, -250, 250);
+  h2_ppshwr_posPulseTime_pT3_diff = new TH2F("h2_ppshwr_posPulseTime_pT3_diff", "SHMS Positive Pre Shower ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", npos_pshwr_blks, 0.5, npos_pshwr_blks + 0.5, 500, -250, 250);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_pshwr_pulseTime_pT1_diff = new TH2F("h2_pshwr_pulseTime_pT1_diff", "SHMS Shower ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nshwr_blks, 0.5, nshwr_blks + 0.5, 500, -250, 250);
+  h2_pshwr_pulseTime_pT2_diff = new TH2F("h2_pshwr_pulseTime_pT2_diff", "SHMS Shower ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nshwr_blks, 0.5, nshwr_blks + 0.5, 500, -250, 250);
+  h2_pshwr_pulseTime_pT3_diff = new TH2F("h2_pshwr_pulseTime_pT3_diff", "SHMS Shower ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nshwr_blks, 0.5, nshwr_blks + 0.5, 500, -250, 250);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_phgc_pulseTime_pT1_diff = new TH2F("h2_phgc_pulseTime_pT1_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 500, -250, 250);
+  h2_phgc_pulseTime_pT2_diff = new TH2F("h2_phgc_pulseTime_pT2_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 500, -250, 250);
+  h2_phgc_pulseTime_pT3_diff = new TH2F("h2_phgc_pulseTime_pT3_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 500, -250, 250);
+  
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_pngc_pulseTime_pT1_diff = new TH2F("h2_pngc_pulseTime_pT1_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
+  h2_pngc_pulseTime_pT2_diff = new TH2F("h2_pngc_pulseTime_pT2_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
+  h2_pngc_pulseTime_pT3_diff = new TH2F("h2_pngc_pulseTime_pT3_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
+  
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Loop of entries in tree
@@ -296,13 +389,7 @@ void UserScript() {
 
     // cout << "========================" << endl;
     // cout << "Event Number = " << ievent << endl;
-    // cout << "========================" << endl;
-
-    for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++)
-      h2_paero_negPulseTime->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc);
-    for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++)
-      h2_paero_posPulseTime->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc);
-      
+    // cout << "========================" << endl;   
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
@@ -432,6 +519,59 @@ void UserScript() {
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
+    for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++) {
+      h2_paero_negPulseTime_pT1_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_paero_negPulseTime_pT2_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_paero_negPulseTime_pT3_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+    for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++) {
+      h2_paero_posPulseTime_pT1_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_paero_posPulseTime_pT2_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_paero_posPulseTime_pT3_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+    
+    for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_negHits; ipshwrhit++) {
+      h2_ppshwr_negPulseTime_pT1_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_ppshwr_negPulseTime_pT2_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_ppshwr_negPulseTime_pT3_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+    for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_posHits; ipshwrhit++) {
+      h2_ppshwr_posPulseTime_pT1_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_ppshwr_posPulseTime_pT2_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_ppshwr_posPulseTime_pT3_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    for (UInt_t ishwrhit = 0; ishwrhit < pshwr_hits; ishwrhit++) {
+      h2_pshwr_pulseTime_pT1_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_pshwr_pulseTime_pT2_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_pshwr_pulseTime_pT3_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    for (UInt_t ihgchit = 0; ihgchit < phgc_hits; ihgchit++) {
+      h2_phgc_pulseTime_pT1_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_phgc_pulseTime_pT2_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_phgc_pulseTime_pT3_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    for (UInt_t ingchit = 0; ingchit < pngc_hits; ingchit++) {
+      h2_pngc_pulseTime_pT1_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT1_tdcTime*clk2tdc);
+      h2_pngc_pulseTime_pT2_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT2_tdcTime*clk2tdc);
+      h2_pngc_pulseTime_pT3_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT3_tdcTime*clk2tdc);
+    }
+
+    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    if ((ievent)%1000 == 0)
+      cout << "ievent = " << ievent << endl;
+    
   }  // Entries loop
 }  // UserScript function
 
