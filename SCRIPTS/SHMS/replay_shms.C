@@ -72,6 +72,7 @@ void replay_shms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
   gHaPhysics->Add(gtr);
 
+  // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);			     
   
