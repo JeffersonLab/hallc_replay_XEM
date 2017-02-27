@@ -1,0 +1,299 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+begin epics
+C1068_QDAC01                    40908                           # Pockels Cell POS HV           
+C1068_QDAC07                    32800                           # IA Cell Setpoint  Hall A DAC 07 A0
+C1068_QDAC08                    32800                           # IA Cell Setpoint  Hall A DAC 08 A1
+C1068_QDAC09                    32800                           # IA Cell Setpoint  Hall A DAC 09 A2
+C1068_QDAC10                    32800                           # IA Cell Setpoint  Hall A DAC 10 A3
+C1068_QDAC11                    33411                           # IA Cell Setpoint  Hall C DAC 11 A0
+C1068_QDAC12                    33411                           # IA Cell Setpoint  Hall C DAC 12 A1
+C1068_QDAC13                    33411                           # IA Cell Setpoint  Hall C DAC 13 A2
+C1068_QDAC14                    33411                           # IA Cell Setpoint  Hall C DAC 14 A3
+CFI60DLP                        15.1522                         # "dirty flowrate" at ESR (warm return) g/s
+CFI6711C                        15.0215                         # 4k flow, g/s                  
+CFI6731C                        0                               # 15k Flow g/s                  
+COLPOS1                         0                               # Collimator Block 1            
+COLPOS2                         0                               # Collimator Block 2            
+COLPOS3                         0                               # Collimator Block 3            
+COLPOS4                         0                               # Collimator Block 4            
+COLPOS5                         0                               # Collimator Block 5            
+COLPOS6                         0                               # Collimator Block 6            
+COLPOS7                         0                               # Collimator Block 7            
+CPI671SC                        3.14437                         # 4K Supply pressure at ESR atm 
+CPI672                          1.22453                         # 5K return pressure at ESR atm 
+CPI673                          1.39524                         # 15K Supply pressure at ESR atm
+CPI9541                         1.08368                         # 20K return pressure at ESR atm
+CTD6614                         14.59                           # Hall A 15K supply temp K      
+CTD671SC                        4.11                            # 4K Supply temp at ESR K       
+CTD672                          4.5                             # 5K return temp at ESR K       
+CTD673                          220.43                          # 15K Supply temp at ESR K      
+CTD9541                         264.79                          # 20K return temp at ESR K      
+HALLC:p				6390.9                          # Tiefenback energy                     
+EHCFR_ENERGY                    8.519                           # -                             
+EHCFR_LIPRC                     disabled                        # Master Focus Location:  1=G0, 0=Pivot
+EHCFR_LIXWidth                  1                               # -                             
+EHCFR_LIYWidth                  1                               # -                             
+FB_A:FB_On                      Off                             # 
+FB_A:status:mbbi2.B7            1                               # 
+FB_A:use_RF                     RF Off                          # 
+FB_C:CORR:C1_value.B            0                               # -                             
+FB_C:CORR:C2_value.B            0                               # -                             
+FB_C:CORR:C3_value.B            0                               # -                             
+FB_C:CORR:C4_value.B            0                               # -                             
+FB_C:FB_On                      Off                             # 
+FB_C:status:mbbi2.B7            1                               # 
+FB_C:use_RF                     RF Off                          # 
+HELCLOCKd                       Free Clock                      # Helicity Clock Read           
+HELCLOCKs                       Free Clock                      # Helicity Clock Set            
+HELDELAYd                       No Delay                        # Helicity Delay Read           
+HELDELAYs                       No Delay                        # Helicity Delay Set            
+HELFREQ                         29.5596                         # Helicity Frequency            
+HELPATTERNd                     Quartet                         # Helicity Pattern Read         
+HELPATTERNs                     Quartet                         # Helicity Pattern Set          
+HELTSETTLEd                     500                             # Helicity Settle Read          
+HELTSTABLEd                     33330                           # Helicity Stable Read          
+HWienAngle                      0                               # Horizontal Wien Angle         
+IBC1H04CRCUR2                   0                               # Hall A MPS BCM Current uA     
+IBC3H00CRCUR4                   0                               # Hall C MPS BCM Current uA     
+IFY0I06I                        not inserted                    # PolCup position: FC1 (is/is not) inserted
+IFY0I06R                        retracted                       # PolCup position: FC1 (is/is not) retracted
+IFY0L03I                        not inserted                    # PolCup position: FC2 (is/is not) inserted
+IFY0L03R                        retracted                       # PolCup position: FC2 (is/is not) retracted
+IFY1I07I                        not inserted                    # PolCup position: PolCup (is/is not) inserted
+IFY1I07R                        retracted                       # PolCup position: PolCup (is/is not) retracted
+IGL1I00AI17                     2.98413                         # Dummy Helicity Pockels Cell Voltage V
+IGL1I00AI22                     0                               # G0 X PZT Voltage V            
+IGL1I00AI23                     0                               # G0 Y PZT Voltage V            
+IGL1I00AI24                     0                               # IA Voltage V                  
+IGL1I00AI25                     0                               # Hall A X PZT Voltage V        
+IGL1I00AI26                     0                               # Hall A Y PZT Voltage  V       
+IGL1I00AI27                     0                               # Hall A IA Voltage  V          
+IGL1I00AI7                      3.44322                         # Gun 2 PITA Voltage Positive V 
+IGL1I00AI8                      3.15507                         # Gun 2 PITA Voltage Negative V 
+IGL1I00DAC2                     0                               # Hall B Control Level          
+IGL1I00DAC3                     0                               # Hall B Seed Level             
+IGL1I00DAC5                     0                               # Horizontal Wien Electrode Voltage
+IGL1I00DAC6                     0                               # Vertical Wien Electrode Voltage
+IGL1I00DI24_24M                 IN                              # Beam Half-wave plate Read(off=out) () --
+IGL1I00DIOFLRD                  13119                           # Carlini insertable waveplate state (1
+IGL1I00DIOHWTB.B2               0                               # Carlini insertable waveplate state (0=in,1=out)
+IGL1I00OD16_16                  IN                              # Beam Half-wave plate Set(off=out)
+IGL1I00OD16_4                   POSITIVE                        # Vertical Wien HV Polarity     
+IGL1I00OD16_8                   ON                              # Pockels Cell ON/OFF           
+IGL1I00OD16_9                   POSITIVE                        # Horizontal Wien HV Polarity   
+IGL1I00PStrans                  0                               # Injector transmission         
+IGLdac2:G2Ch3Pos                0                               # Gun2: PC (PITA) POS           
+IGLdac2:G2Ch4Neg                0                               # Gun2: PC (PITA) NEG           
+pgunFreqDiv:A:frequency	        500	 			# Hall A Laser Frequency:  0: 500 MHz, 1: 250 MHz
+pgunFreqDiv:C:frequency        	250	       			# Hall C Laser Frequency:  0: 500 MHz, 1: 250 MHz
+IHA3H07AIR                      72.8365                         # monitor                       
+IHA3H07BIR                      83.6352                         # monitor                       
+IOCSE14:PassSel;r               Auto Select                     # Auto Select                   
+IOCSE14:SEEGainMod;r            Auto Gain                       # Auto Gain                     
+IOCSE14:SEEProcMod;r            SEE Norm Ops                    # SEE Norm Ops                  
+IOCSE17:PassSel;r               Auto Select                     # Auto Select                   
+IOCSE17:SEEGainMod;r            Auto Gain                       # Auto Gain                     
+IOCSE17:SEEProcMod;r            SEE Norm Ops                    # SEE Norm Ops                  
+IOCSE18:PassSel;r               Auto Select                     # Auto Select                   
+IOCSE18:SEEGainMod;r            Auto Gain                       # Auto Gain                     
+IOCSE18:SEEProcMod;r            SEE Norm Ops                    # SEE Norm Ops                  
+IOCSE20:PassSel;r               Auto Select                     # Auto Select                   
+IOCSE20:SEEGainMod;r            Auto Gain                       # Auto Gain                     
+IOCSE20:SEEProcMod;r            SEE Norm Ops                    # SEE Norm Ops                  
+IPM2C24A.IENG                   0.121083                        # Hall B Beam Current (2C24A)   
+IPM3C00.XPOS                    0                               # This should be added,           stripline bpm x position ,  BPM POSITION
+IPM3C00.YPOS                    0                               # This should be added,           stripline bpm x position
+IPM3C01.XPOS                    0                               # 
+IPM3C01.YPOS                    0                               # 
+IPM3C02.XPOS                    0                               # 
+IPM3C02.YPOS                    0                               # 
+IPM3C03.XPOS                    0                               # 
+IPM3C03.YPOS                    0                               # 
+IPM3C04.XPOS                    0                               # 
+IPM3C04.YPOS                    0                               # 
+IPM3C05.XPOS                    0                               # 
+IPM3C05.YPOS                    0                               # 
+IPM3C06.XPOS                    0                               # 
+IPM3C06.YPOS                    0                               # 
+IPM3C07.XPOS                    0                               # 
+IPM3C07.YPOS                    0                               # 
+IPM3C07A.XPOS                   0                               # 
+IPM3C07A.YPOS                   0                               # 
+IPM3C08.XPOS                    0                               # 
+IPM3C08.YPOS                    0                               # 
+IPM3C10.XPOS                    0                               # 
+IPM3C10.YPOS                    0                               # 
+IPM3C11.XPOS                    0                               # 
+IPM3C11.YPOS                    0                               # 
+IPM3C12.XPOS                    0                               # 
+IPM3C12.YPOS                    0                               # 
+IPM3C14.XPOS                    0                               # 
+IPM3C14.YPOS                    0                               # 
+IPM3C16.XPOS                    0                               # 
+IPM3C16.YPOS                    0                               # 
+IPM3C17.XIFG                    3000                            # stripline bpm x position auto-gain, BPM Position Auto-Gain
+IPM3C17.XPOS                    0                               # 
+IPM3C17.XSOF                    0.223                           # stripline bpm x position offset, BPM Position OffSet
+IPM3C17.YIFG                    3000                            # stripline bpm y position auto-gain
+IPM3C17.YPOS                    0                               # 
+IPM3C17.YSOF                    -0.356                          # stripline bpm y position offset
+IPM3C18.XIFG                    3000                            # 
+IPM3C18.XPOS                    0                               # 
+IPM3C18.XSOF                    -0.049                          # 
+IPM3C18.YIFG                    3000                            # 
+IPM3C18.YPOS                    0                               # 
+IPM3C18.YSOF                    -0.225                          # 
+IPM3C19.XIFG                    3000                            # 
+IPM3C19.XPOS                    0                               # 
+IPM3C19.XSOF                    0.003                           # 
+IPM3C19.YIFG                    3000                            # 
+IPM3C19.YPOS                    0                               # 
+IPM3C19.YSOF                    0.015                           # 
+IPM3C20.XIFG                    3000                            # 
+IPM3C20.XPOS                    0                               # 
+IPM3C20.XSOF                    0.11                            # 
+IPM3C20.YIFG                    3000                            # 
+IPM3C20.YPOS                    0                               # 
+IPM3C20.YSOF                    -0.52                           # 
+IPM3C21.XIFG                    3000                            # 
+IPM3C21.XPOS                    0                               # 
+IPM3C21.XSOF                    0.04                            # 
+IPM3C21.YIFG                    3000                            # 
+IPM3C21.YPOS                    0                               # 
+IPM3C21.YSOF                    -0.56                           # 
+IPM3H02.XIFG                    3000                            # 
+IPM3H02.XPOS                    0                               # 
+IPM3H02.XSOF                    0                               # 
+IPM3H02.YIFG                    3000                            # 
+IPM3H02.YPOS                    0                               # 
+IPM3H02.YSOF                    0                               # 
+IPM3H04.XIFG                    3000                            # 
+IPM3H04.XPOS                    0                               # 
+IPM3H04.XSOF                    0                               # 
+IPM3H04.YIFG                    3000                            # 
+IPM3H04.YPOS                    0                               # 
+IPM3H04.YSOF                    0                               # 
+IPM3H07A.XIFG                   3000                            # 
+IPM3H07A.XPOF                   -9999                           # BPM XXXX  OffSet (looks like offset but don't know)
+IPM3H07A.XPOS                   0                               # 
+IPM3H07A.XRAW                   0                               # BPM RAW                       
+IPM3H07A.XSOF                   0.4                             # 
+IPM3H07A.YIFG                   3000                            # 
+IPM3H07A.YPOF                   -9999                           # 
+IPM3H07A.YPOS                   0                               # 
+IPM3H07A.YRAW                   0                               # 
+IPM3H07A.YSOF                   0.2                             # 
+IPM3H07B.XIFG                   3000                            # 
+IPM3H07B.XPOF                   -9999                           # 
+IPM3H07B.XPOS                   0                               # 
+IPM3H07B.XRAW                   0                               # 
+IPM3H07B.XSOF                   0.2                             # 
+IPM3H07B.YIFG                   3000                            # 
+IPM3H07B.YPOF                   -9999                           # 
+IPM3H07B.YPOS                   0                               # 
+IPM3H07B.YRAW                   0                               # 
+IPM3H07B.YSOF                   0.2                             # 
+IPM3H07C.XIFG                   3000                            # 
+IPM3H07C.XPOF                   -9999                           # 
+IPM3H07C.XPOS                   0                               # 
+IPM3H07C.XRAW                   0                               # 
+IPM3H07C.XSOF                   0.6                             # 
+IPM3H07C.YIFG                   3000                            # 
+IPM3H07C.YPOF                   -9999                           # 
+IPM3H07C.YPOS                   0                               # 
+IPM3H07C.YRAW                   0                               # 
+IPM3H07C.YSOF                   0                               # 
+IPM3H08.XPOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew, Big BPM target down stream,  
+IPM3H08.XPOS                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H08.XRAW                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H08.XSOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,   
+IPM3H08.YPOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew, Big BPM target down stream,  
+IPM3H08.YPOS                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H08.YRAW                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H08.YSOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.XIFG                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew, 
+IPM3H09.XPOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew, Big BPM target down stream, 
+IPM3H09.XPOS                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.XRAW                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.XSOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.YIFG                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.YPOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew, Big BPM target down stream,  
+IPM3H09.YPOS                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.YRAW                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3H09.YSOF                    new Big BPMs at downstream               # offline in the Transports , Halls BPM Overwiew,  
+IPM3P01.XPOS                    *** not connected               # Hall-C Compton Control, offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P01.YPOS                    *** not connected               # Hall-C Compton Control, offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P02A.XIFG                   3000                            # 
+IPM3P02A.XPOS                   0                               # Hall-C Compton Control,       
+IPM3P02A.XSOF                   -0.48                           # 
+IPM3P02A.YIFG                   3000                            # 
+IPM3P02A.YPOS                   0                               # Hall-C Compton Control,       
+IPM3P02A.YSOF                   -0.4                            # 
+IPM3P02B.XIFG                   3000                            # 
+IPM3P02B.XPOS                   0                               # Hall-C Compton Control,       
+IPM3P02B.XSOF                   0                               # 
+IPM3P02B.YIFG                   3000                            # 
+IPM3P02B.YPOS                   0                               # Hall-C Compton Control,       
+IPM3P02B.YSOF                   0.07                            # 
+IPM3P03.XIFG                   *** not connected               # offline in the Transports , Halls BPM Overwiew, 
+IPM3P03.XPOS                   *** not connected               # Hall-C Compton Control, offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P03.XSOF                   *** not connected               # offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P03.YIFG                   *** not connected               # offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P03.YPOS                   *** not connected               # Hall-C Compton Control, offline in the Transports , Halls BPM Overwiew,  Compton
+IPM3P03.YSOF                   *** not connected               # offline in the Transports , Halls BPM Overwiew, Compton
+ISL0I04DT                       In                              # Master Slit Setting           
+MFG1I04A.BDL                    978                             # First Solenoid BDL (G-cm)     
+MFG1I04B.BDL                    -977.988                        # Second Solenoid BDL (G-cm)    
+MWF0I02.BDL                     -7.66356e-06                    # Horizontal Wien BDL (G-cm)    
+MWF1I04.BDL                     9.37619e-06                     # Vertical Wien BDL (G-cm)      
+OXSS_MGFD                       0                               # Persistent Field (T)          
+OXSS_RDF                        0                               # Leads Field                   
+Phi_FG                          0.000516931                     # Solenoids Angle (Phi_FG)      
+R00PGSET                        0.7                             # Prebuncher Setting            
+SMRPOSA                         -1.03809                        # Hall A Slit Position (Hall A Chopper Slit Readback) --
+SMRPOSB                         8                               # Hall B Chopper Slit Position Readback
+SMRPOSC                         8                               # Hall C Chopper Slit Position Readback
+TARGPOS                         0                               # Target position X             
+VWienAngle                      0                               # Vertical Wien Angle           
+WienAngle                       0                               # Wien Filter Angle Setting  degrees
+cdipc_xpos                      5e-05                           # Pockels Cell X Stage          
+cdipc_ypos                      0.0762                          # Pockels Cell Y Stage          
+hac_bcm_average                 0.0608161                       # Hall A BCM Current uA         
+halla_photocurrent              0                               # Hall A photocurrent uA        
+halla_transmission              0                               # Hall A Independent Transmission %
+hallb_transmission              0                               # Hall B Independent Transmission %
+hallc_photocurrent              0                               # Hall C photocurrent  uA       
+hel_even_1                      0                               # MHE0L01V Even Setpoint        
+hel_even_2                      0                               # MHE0L02H Even Setpoint        
+hel_even_3                      0                               # MHE0L03V Even Setpoint        
+hel_even_4                      0                               # MHE0L04H Even Setpoint        
+hel_mag_status.D                -1                              # Hel State Asymmetry           
+hel_odd_1                       0                               # MHE0L01V Even Setpoint        
+hel_odd_2                       0                               # MHE0L02H Even Setpoint        
+hel_odd_3                       0                               # MHE0L03V Even Setpoint        
+hel_odd_4                       0                               # MHE0L04H Even Setpoint        
+ibcm1                           0.00964451                      # Hall C Beam Current (monitor # 1): careful, this is also in target epics
+ibcm17                          -5.58226                        # Hall C Beam Current (monitor # 3): careful, this is also in target epics
+ibcm2                           0.000827091                     # Hall C Beam Current (monitor # 2): careful, this is also in target epics
+itov1out                        0.021978                        # A1 Slit Current               
+itov2out                        0.175824                        # A2 Slit Current               
+itov3out                        0                               # Master Slit Current           
+itov4out                        0                               # INJ Faraday cup (PCup, FC1, FC2, Dump) Current
+itov5out                        0                               # A3 Slit Current               
+itov7out                        0.029304                        # A4 Slit Current               
+iunser                          2477.15                         # Hall C Beam Current (unser)   
+laser_a_wavelength              0                               # Hall A laser wavelength nm    
+laser_b_wavelength              0                               # Hall B laser wavelength nm    
+laser_c_wavelength              0                               # Hall C laser wavelength nm    
+psub_aa_pos                     280.021                         # Hall A Laser Attenuator (Hall A Laser Attenuator Setting) --
+psub_ab_pos                     190.797                         # Hall B Laser Attenuator Setting
+psub_ac_pos                     120.01                          # Hall C Laser Attenuator Setting
+psub_cx_pos                     10500                           # Wafer X Stage         (X laser position on cathode) --
+psub_cy_pos                     11500                           # Wafer Y Stage         (Y laser position on cathode) --
+psub_pl_pos                     0.168                           # Rotating waveplate (Rotatable Half Wave Plate Setting) --
+qe_halla                        0.4498                          # Hall A Quantum Efficiency %   
+qe_hallb                        0.423                           # Hall B Quantum Efficiency %   
+qe_hallc                        0.4578                          # Hall C Quantum Efficiency %   
+scaler_calc1                    0.0711763                       # Hall B Beam Current (Faraday Cup) nA	
+end epics
