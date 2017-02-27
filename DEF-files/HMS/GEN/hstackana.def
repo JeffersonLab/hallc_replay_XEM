@@ -1,22 +1,22 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
-#block T.hms.*
+block T.hms.*
 block H.dc.*
 block H.tr.*
-#block H.hod.*
-#block H.cer.*
-#block H.cal.*
+block H.hod.*
+block H.cer.*
+block H.cal.*
 block H.gtr.*
 
-TH1D hhdc_resid_1 '' H.dc.residual[0] 200 -1.0 1.0 
-TH1D hhdc_resid_2 '' H.dc.residual[1] 200 -1.0 1.0 
-TH1D hhdc_resid_3 '' H.dc.residual[2] 200 -1.0 1.0 
-TH1D hhdc_resid_4 '' H.dc.residual[3] 200 -1.0 1.0 
-TH1D hhdc_resid_5 '' H.dc.residual[4] 200 -1.0 1.0 
-TH1D hhdc_resid_6 '' H.dc.residual[5] 200 -1.0 1.0 
-TH1D hhdc_resid_7 '' H.dc.residual[6] 200 -1.0 1.0 
-TH1D hhdc_resid_8 '' H.dc.residual[7] 200 -1.0 1.0 
-TH1D hhdc_resid_9 '' H.dc.residual[8] 200 -1.0 1.0 
-TH1D hhdc_resid_10 '' H.dc.residual[9] 200 -1.0 1.0 
-TH1D hhdc_resid_11 '' H.dc.residual[10] 200 -1.0 1.0 
+TH1D hhdc_resid_1 '' H.dc.residual[0] 200 -1.0 1.0
+TH1D hhdc_resid_2 '' H.dc.residual[1] 200 -1.0 1.0
+TH1D hhdc_resid_3 '' H.dc.residual[2] 200 -1.0 1.0
+TH1D hhdc_resid_4 '' H.dc.residual[3] 200 -1.0 1.0
+TH1D hhdc_resid_5 '' H.dc.residual[4] 200 -1.0 1.0
+TH1D hhdc_resid_6 '' H.dc.residual[5] 200 -1.0 1.0
+TH1D hhdc_resid_7 '' H.dc.residual[6] 200 -1.0 1.0
+TH1D hhdc_resid_8 '' H.dc.residual[7] 200 -1.0 1.0
+TH1D hhdc_resid_9 '' H.dc.residual[8] 200 -1.0 1.0
+TH1D hhdc_resid_10 '' H.dc.residual[9] 200 -1.0 1.0
+TH1D hhdc_resid_11 '' H.dc.residual[10] 200 -1.0 1.0
 TH1D hhdc_resid_12 '' H.dc.residual[11] 200 -1.0 1.0
