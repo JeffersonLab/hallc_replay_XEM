@@ -1,26 +1,25 @@
-; hms pattern recognition and tracking code parameters
-; hmax_pr_hits is the maximum number of decoded hits allowed in a chamber for
-;              pattern recognition to proceed. This protexts against unusual
-;              kami kaze events which hang the analyzer to a long time.
-;
-        hmax_pr_hits =    35, 35
-; maximum number of possible focal plane tracks, must be <= 20
-        hntracks_max_fp = 10
-; if h_remove_sppt_if_one_y_plane=1 then remove space point if space point
-;    contains only one y plane.
-; Recommend h_remove_sppt_if_one_y_plane=0.  
-        h_remove_sppt_if_one_y_plane=0
-; hminhit(i)   minimum number of hits in each space point (one for each chamber)
-	hmin_hit =     5, 5
-; hmin_combos(i) minimum number of pairs in each space point ( one per chamber)
-; should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking (JRA)
-	hmin_combos = 4, 4 
-; hspace_point_criterion(i) minimum separation of distinct space points
-; recommended value for hspace_point_criterion ( based on meeting
-; Feb 2003) 
-       hspace_point_criterion = 1.0, 1.0
+; Maximum number of hits allowed in chambers for pattern recognition to proceed (one for each chamber)
+hmax_pr_hits = 35, 35
 
-        hstub_max_xpdiff = .05
+; Maximum number of possible focal plane tracks, must be <= 20
+hntracks_max_fp = 10
+
+; Remove space point if space point contains only one y plane (0 recommended)
+h_remove_sppt_if_one_y_plane = 0
+
+; Minimum number of hits in each space point (one per chamber)
+hmin_hit = 5, 5
+
+; Minimum number of pairs in each space point (one per chamber)
+; Should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking
+hmin_combos = 4, 4 
+
+; Minimum separation of distinct space points
+hspace_point_criterion = 1.0, 1.0
+
+; Maximum difference between xp returned by stub and expected xp
+hstub_max_xpdiff = .05
+
 ;
 ; The following four criteria are applied to the stub fit results at the
 ; focal plane position to link stubs to tracks
