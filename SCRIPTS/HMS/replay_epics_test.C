@@ -1,4 +1,4 @@
-void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_epics_test(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -16,8 +16,8 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/phodo_replay_%05d.root";
+  const char* RunFileNamePattern = "raw/hms_all_%05d.dat";
+  const char* ROOTFileNamePattern = "ROOTfiles/epics_variable_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -30,32 +30,33 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
   // Load params for HMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/tshms.param");
+  gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/phodo_ptrig.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hhodo_htrig.map");
 
+  // debug : testing epics variable in Ttree
+  // gHaEvtHandlers->Add (new THaEpicsEvtHandler("epics","HC EPICS event type 180"));
+  
   // Set up the equipment to be analyzed.
-  THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
-  gHaApps->Add(SHMS);
+  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
+  gHaApps->Add(HMS);
   // Add hodoscope to HMS apparatus
   THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  SHMS->AddDetector(hod);
-  // Add handler for prestart event 125.
-  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
-  gHaEvtHandlers->Add(ev125);
+  HMS->AddDetector(hod);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);
   // Add trigger detector to trigger apparatus
-  THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
-  TRG->AddDetector(shms);
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
 
-  // Add handler for prestart event 125.
-  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
-  gHaEvtHandlers->Add(ev125);
+  // Add EPICS variables
+  //  THaEpics* epics = new THcEpics("T", "Epics");
+  //   gHaApps->AddDetector(epics);
+
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -91,8 +92,10 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/SHMS/HODO/phodoana.def");
- analyzer->SetCutFile("DEF-files/SHMS/HODO/phodoana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/HMS/HODO/hhodoana.def");
+ analyzer->SetCutFile("DEF-files/HMS/HODO/hhodoana_cuts.def");    // optional
+
+ analyzer->SetOdefFile("DEF-files/HMS/EPICS/epics.def");  // Call EPICS variables  K.Park
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional

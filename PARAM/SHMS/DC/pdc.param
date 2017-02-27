@@ -1,28 +1,19 @@
+; GENERAL PARAMETERS
+
+; Number of drift chambers.
+pdc_num_chambers = 2
+
+; Total number of planes.
+pdc_num_planes = 12
+
 ; Names of planes.
 pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"  ; TODO
 
-; Sigma of wire chamber resolution for each plane.
-pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
-            0.02, 0.02, 0.02, 0.02, 0.02, 0.02
+; Chamber index for each plane.
+pdc_chamber_planes = 1, 1, 1, 1, 1, 1
+                     2, 2, 2, 2, 2, 2
 
-; TDC window limits for each plane.
-pdc_tdc_min_win = -55000, -55000, -55000, -55000, -55000, -55000  ; TODO - wide limits for now
-                  -55000, -55000, -55000, -55000, -55000, -55000
-pdc_tdc_max_win = 55000, 55000, 55000, 55000, 55000, 55000  ; TODO - wide limits for now
-                  55000, 55000, 55000, 55000, 55000, 55000
-
-; Conversion factor from TDC clicks to ns.
-pdc_tdc_time_per_channel = -0.10
-
-;  Zero time correction for each plane in ns that is added to TDC time.
-pdc_plane_time_zero = 1440.0, 1440.0, 1440.0, 1440.0, 1440.0, 1440.0  ; TODO - SOS values for now
-                      1440.0, 1440.0, 1440.0, 1440.0, 1440.0, 1440.0
-
-; For wire velocity corrections.
-pdc_wire_velocity = 13.0  ; TODO
-pdc_central_time = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
-                   0, 0, 0, 0, 0, 0
-pdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
-                     0, 0, 0, 0, 0, 0
-pdc_fix_lr = 1
-pdc_fix_propcorr = 1
+; Number of wires in each plane.
+; Should be 109 and 80, but edge sense wire were not strung.
+pdc_nrwire = 107, 107, 79, 79, 107, 107
+             107, 107, 79, 79, 107, 107
