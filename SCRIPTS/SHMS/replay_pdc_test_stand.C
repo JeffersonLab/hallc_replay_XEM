@@ -39,9 +39,12 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
-
   // Add SHMS drift chambers
   SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
+
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
 
   // Additional detectors:
   //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
