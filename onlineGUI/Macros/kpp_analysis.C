@@ -24,6 +24,14 @@ void UserScript() {
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
 
+  static const Double_t pshwr_adc2GeV = 0.001;
+  static const Double_t shwr_adc2GeV  = 0.0005;
+
+  static const Double_t hgc_adc2npe = 1./150.;
+  static const Double_t ngc_adc2npe = 1./150.;
+
+  static const Double_t aero_adc2npe = 1./200.;
+
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Declare variables
@@ -71,23 +79,28 @@ void UserScript() {
   Int_t paero_posHits, paero_negHits;
   Double_t paero_posPmt[maxAdcHits*npos_aero_pmts], paero_negPmt[maxAdcHits*nneg_aero_pmts];
   Double_t paero_posPulseTime[maxAdcHits*npos_aero_pmts], paero_negPulseTime[maxAdcHits*nneg_aero_pmts];
+  Double_t paero_posPulseInt[maxAdcHits*npos_aero_pmts], paero_negPulseInt[maxAdcHits*nneg_aero_pmts];
 
   // Pre-Shower ADC
   Int_t ppshwr_posHits, ppshwr_negHits;
   Double_t ppshwr_posPmt[maxAdcHits*npos_pshwr_blks], ppshwr_negPmt[maxAdcHits*nneg_pshwr_blks];
   Double_t ppshwr_posPulseTime[maxAdcHits*npos_pshwr_blks], ppshwr_negPulseTime[maxAdcHits*nneg_pshwr_blks];
+  Double_t ppshwr_posPulseInt[maxAdcHits*npos_pshwr_blks], ppshwr_negPulseInt[maxAdcHits*nneg_pshwr_blks];
 
   // Shower ADC
   Int_t pshwr_hits;
   Double_t pshwr_pmt[maxAdcHits*nshwr_blks], pshwr_pulseTime[maxAdcHits*nshwr_blks];
+  Double_t pshwr_pulseInt[maxAdcHits*nshwr_blks];
 
   // Heavy gas Cherenkov ADC
   Int_t phgc_hits;
   Double_t phgc_pmt[maxAdcHits*nhgc_pmts], phgc_pulseTime[maxAdcHits*nhgc_pmts];
+  Double_t phgc_pulseInt[maxAdcHits*nhgc_pmts];
   
   // Noble gas Cherenkov ADC
   Int_t pngc_hits;
   Double_t pngc_pmt[maxAdcHits*nngc_pmts], pngc_pulseTime[maxAdcHits*nngc_pmts];
+  Double_t pngc_pulseInt[maxAdcHits*nngc_pmts];
   
   Long64_t nentries;
 
@@ -131,6 +144,9 @@ void UserScript() {
   TH2F *h2_pngc_pulseTime_pT1_diff;
   TH2F *h2_pngc_pulseTime_pT2_diff;
   TH2F *h2_pngc_pulseTime_pT3_diff;
+
+  TH2F *h2_pshwr_vs_phgcer, *h2_pshwr_vs_pngcer;
+  TH1F *h_paero_sum, *h_ppshwr_sum, *h_pshwr_sum, h_phgc_sum, h_pngc_sum;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
   
@@ -248,6 +264,8 @@ void UserScript() {
   T->SetBranchAddress("P.aero.posAdcCounter", paero_posPmt);
   T->SetBranchAddress("P.aero.negAdcPulseTimeRaw", paero_negPulseTime);
   T->SetBranchAddress("P.aero.posAdcPulseTimeRaw", paero_posPulseTime);
+  T->SetBranchAddress("P.aero.negAdcPulseInt", paero_negPulseInt);
+  T->SetBranchAddress("P.aero.posAdcPulseInt", paero_posPulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
@@ -257,24 +275,29 @@ void UserScript() {
   T->SetBranchAddress("P.cal.pr.posAdcCounter", ppshwr_posPmt);
   T->SetBranchAddress("P.cal.pr.negAdcPulseTimeRaw", ppshwr_negPulseTime);
   T->SetBranchAddress("P.cal.pr.posAdcPulseTimeRaw", ppshwr_posPulseTime);
+  T->SetBranchAddress("P.cal.pr.negAdcPulseInt", ppshwr_negPulseInt);
+  T->SetBranchAddress("P.cal.pr.posAdcPulseInt", ppshwr_posPulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("Ndata.P.cal.fly.adcCounter", &pshwr_hits);
   T->SetBranchAddress("P.cal.fly.adcCounter", pshwr_pmt);
   T->SetBranchAddress("P.cal.fly.adcPulseTimeRaw", pshwr_pulseTime);
+  T->SetBranchAddress("P.cal.fly.adcPulseInt", pshwr_pulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("Ndata.P.hgcer.adcCounter", &phgc_hits);
   T->SetBranchAddress("P.hgcer.adcCounter", &phgc_pmt);
   T->SetBranchAddress("P.hgcer.adcPulseTimeRaw", &phgc_pulseTime);
+  T->SetBranchAddress("P.hgcer.adcPulseInt", &phgc_pulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("Ndata.P.ngcer.adcCounter", &pngc_hits);
   T->SetBranchAddress("P.ngcer.adcCounter", &pngc_pmt);
   T->SetBranchAddress("P.ngcer.adcPulseTimeRaw", &pngc_pulseTime);
+  T->SetBranchAddress("P.ngcer.adcPulseInt", &pngc_pulseInt);
   
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
           
@@ -379,6 +402,16 @@ void UserScript() {
   h2_pngc_pulseTime_pT1_diff = new TH2F("h2_pngc_pulseTime_pT1_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
   h2_pngc_pulseTime_pT2_diff = new TH2F("h2_pngc_pulseTime_pT2_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
   h2_pngc_pulseTime_pT3_diff = new TH2F("h2_pngc_pulseTime_pT3_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 500, -250, 250);
+    
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_pshwr_vs_phgcer = new TH2F ("h2_pshwr_vs_phgcer", "SHMS Shower vs. Heavy Gas Cherenkov; Number of HGC Photoelectrons; Shower Energy / 10 MeV", 1000, 0, 1000, 1200, 0, 12);
+  h2_pshwr_vs_pngcer = new TH2F ("h2_pshwr_vs_pngcer", "SHMS Shower vs. Noble Gas Cherenkov; Number of HGC Photoelectrons; Shower Energy / 10 MeV", 1000, 0, 1000, 1200, 0, 12);
+  h_paero_sum = new TH1F ("h_paero_sum", "SHMS Number of Aerogrel Photoelectrons; Number of Aerogel Photoelectrons; Counts / 10 Photoelectron", 1000, 0, 10000);
+  h_ppshwr_sum = new TH1F ("h_ppshwr_sum", "SHMS Pre-Shower Energy; Pre-Shower Energy; Counts / 10 MeV", 1200, 0, 12);
+  h_pshwr_sum = new TH1F ("h_pshwr_sum", "SHMS Shower Energy; Shower Energy; Counts / 10 MeV", 1200, 0, 12);
+  h_phgc_sum = new TH1F ("h_phgc_sum", "SHMS Number of HGC Photoelectrons; Number of HGC Photoelectrons; Counts / 10 Photoelectron", 1000, 0, 10000);
+  h_pngc_sum = new TH1F ("h_pngc_sum", "SHMS Number of NGC Photoelectrons; Number of NGC Photoelectrons; Counts / 10 Photoelectron", 1000, 0, 10000);
   
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -519,16 +552,20 @@ void UserScript() {
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
+    Double_t paero_sum = 0.0;
     for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++) {
       h2_paero_negPulseTime_pT1_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_paero_negPulseTime_pT2_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_paero_negPulseTime_pT3_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+      paero_sum += paero_negPulseInt[iaerohit]*aero_adc2npe;
     }
     for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++) {
       h2_paero_posPulseTime_pT1_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_paero_posPulseTime_pT2_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_paero_posPulseTime_pT3_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+      paero_sum += paero_posPulseInt[iaerohit]*aero_adc2npe;
     }
+    h_paero_sum->Fill(paero_sum);
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
     
@@ -542,6 +579,7 @@ void UserScript() {
       h2_ppshwr_posPulseTime_pT2_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_ppshwr_posPulseTime_pT3_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
     }
+
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 

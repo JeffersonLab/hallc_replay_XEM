@@ -71,6 +71,9 @@ void replay_shms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
   gHaPhysics->Add(gtr);
+
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);			     
   
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
