@@ -1554,6 +1554,7 @@ void OnlineGUI::HistDraw(drawcommand command) {
 	fRootFile.mytemp2d->SetStats(showStat);
 	if(!htitle.IsNull()) fGoldenFile.mytemp2d->SetTitle(htitle);
 	fRootFile.mytemp2d->Draw(type);
+	fRootFile.mytemp2d->Draw("colz");
       }
     }
     return;
