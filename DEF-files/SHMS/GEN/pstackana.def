@@ -9,3 +9,23 @@ block P.hgcer.*
 block P.aero.*
 block P.cal.*
 #block P.gtr.*
+
+# Noble Gas Cherenkov
+TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
+TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 10000
+TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
+TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 410 0 4100
+
+# Aerogel
+TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
+TH2F paero_pos_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 410 0 4100
+TH2F paero_pos_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 4000 0 40000
+TH2F paero_pos_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 410 0 4100
+TH1F paero_neg_occu 'SHMS Aero- Occupancy; Counter Number; Number of Entries' P.aero.negAdcCounter 7 0.5 7.5
+TH2F paero_neg_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 410 0 4100
+TH2F paero_neg_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 4000 0 40000
+TH2F paero_neg_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 410 0 4100
+
+
+
+
