@@ -30,7 +30,7 @@ void UserScript() {
   static const Double_t hgc_adc2npe = 1./205.;
   static const Double_t ngc_adc2npe = 1./150.;
 
-  static const Double_t aero_adc2npe = 1./2000.;
+  static const Double_t aero_adc2npe = 1./500.;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -635,18 +635,30 @@ void UserScript() {
 void kpp_analysis(TString histname) {
 
   // Grab the histo
-  TH1F *h;  h  = dynamic_cast <TH1F*> gDirectory->Get(histname);
+  TH1F *h1d;
+  TH2F *h2d;  
+  
+  h1d = dynamic_cast <TH1F*> gDirectory->Get(histname);
+  h2d = dynamic_cast <TH2F*> gDirectory->Get(histname);
   
   // Grab histo directly if it does not already exist
-  if(!h) {
-    
+  if(!h1d && !h2d) {
     UserScript();
-    h = (TH1F*) gDirectory->Get(histname);
-
+    h1d = (TH1F*) gDirectory->Get(histname);
+    h2d = (TH2F*) gDirectory->Get(histname);
     // Throw error
-    if(!h) { cout << "User histogram " << histname << " not found" << endl; exit(1);}
-  }  // Histo existing condition
+    if(!h1d || !h2d) {
+      cout << "User histogram " << histname << " not found" << endl; 
+      exit(1);
+    }
+  }  
   //else 
-  h->Draw("colz");
-
+  if (h2d) {
+    h2d->SetStats(0);
+    h2d->Draw("colz");
+  }
+  else {
+    h1d->SetStats(0);
+    h1d->Draw();
+  }
 }  // kpp_analysis function
