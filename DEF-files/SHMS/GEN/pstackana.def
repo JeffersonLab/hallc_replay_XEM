@@ -16,18 +16,6 @@ TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Num
 TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 410 0 4100
 
-# Aerogel
-TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
-TH2F paero_pos_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 410 0 4100
-TH2F paero_pos_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero_pos_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 410 0 4100
-TH1F paero_neg_occu 'SHMS Aero- Occupancy; Counter Number; Number of Entries' P.aero.negAdcCounter 7 0.5 7.5
-TH2F paero_neg_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 410 0 4100
-TH2F paero_neg_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero_neg_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 410 0 4100
-
-# Hodoscope
-
 # Drift Chambers
 TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
 TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
@@ -71,4 +59,86 @@ TH2F pdc2x1_wirenum_vs_resid 'SHMS 2X1 DC Wire Number vs. Residuals; Wire Number
 TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 200 -1.0 1.0
 
+# Hodoscopes (Positive/Left) 
+TH1F phodo_1x_pos_adc_occu 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5
+TH1F phodo_1y_pos_adc_occu 'SHMS Hodoscope 1Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posAdcCounter 13 0.5 13.5 
+TH1F phodo_2x_pos_adc_occu 'SHMS Hodoscope 2X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posAdcCounter 14 0.5 14.5
+TH1F phodo_2y_pos_adc_occu 'SHMS Hodoscope 2Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posAdcCounter 21 0.5 21.5
+TH1F phodo_1x_pos_tdc_occu 'SHMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posTdcCounter 13 0.5 13.5
+TH1F phodo_1y_pos_tdc_occu 'SHMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posTdcCounter 13 0.5 13.5 
+TH1F phodo_2x_pos_tdc_occu 'SHMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posTdcCounter 14 0.5 14.5
+TH1F phodo_2y_pos_tdc_occu 'SHMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posTdcCounter 21 0.5 21.5
+TH2F phodo_1x_pos_ped_vs_pad 'SHMS Hodoscope 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPed 13 0.5 13.5 410 0 4100
+TH2F phodo_1y_pos_ped_vs_pad 'SHMS Hodoscope 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPed 13 0.5 13.5 410 0 4100
+TH2F phodo_2x_pos_ped_vs_pad 'SHMS Hodoscope 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPed 14 0.5 14.5 410 0 4100
+TH2F phodo_2y_pos_ped_vs_pad 'SHMS Hodoscope 2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPed 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_pos_pi_vs_pad 'SHMS Hodoscope 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F phodo_1y_pos_pi_vs_pad 'SHMS Hodoscope 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F phodo_2x_pos_pi_vs_pad 'SHMS Hodoscope 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseInt 14 0.5 14.5 4000 0 40000
+TH2F phodo_2y_pos_pi_vs_pad 'SHMS Hodoscope 2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseInt 21 0.5 21.5 4000 0 40000
+TH2F phodo_1x_pos_pamp_vs_pad 'SHMS Hodoscope 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F phodo_1y_pos_pamp_vs_pad 'SHMS Hodoscope 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F phodo_2x_pos_pamp_vs_pad 'SHMS Hodoscope 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseAmp 14 0.5 14.5 410 0 4100
+TH2F phodo_2y_pos_pamp_vs_pad 'SHMS Hodoscope 2Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseAmp 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_pos_tdc_time_vs_pad 'SHMS Hodoscope 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.1x.posTdcCounter  P.hod.1x.posTdcTime 13 0.5 13.5 500 -2500 2500
+TH2F phodo_1y_pos_tdc_time_vs_pad 'SHMS Hodoscope 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.1y.posTdcCounter  P.hod.1y.posTdcTime 13 0.5 13.5 500 -2500 2500
+TH2F phodo_2x_pos_tdc_time_vs_pad 'SHMS Hodoscope 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.2x.posTdcCounter  P.hod.2x.posTdcTime 14 0.5 14.5 500 -2500 2500
+TH2F phodo_2y_pos_tdc_time_vs_pad 'SHMS Hodoscope 2Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.2y.posTdcCounter  P.hod.2y.posTdcTime 21 0.5 21.5 500 -2500 2500
 
+# Hodoscopes (Negative/Right)
+TH1F phodo_1x_neg_adc_occu 'SHMS Hodoscope 1X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negAdcCounter 13 0.5 13.5
+TH1F phodo_1y_neg_adc_occu 'SHMS Hodoscope 1Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negAdcCounter 13 0.5 13.5 
+TH1F phodo_2x_neg_adc_occu 'SHMS Hodoscope 2X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negAdcCounter 14 0.5 14.5
+TH1F phodo_2y_neg_adc_occu 'SHMS Hodoscope 2Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negAdcCounter 21 0.5 21.5
+TH1F phodo_1x_neg_tdc_occu 'SHMS Hodoscope 1X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negTdcCounter 13 0.5 13.5
+TH1F phodo_1y_neg_tdc_occu 'SHMS Hodoscope 1Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negTdcCounter 13 0.5 13.5 
+TH1F phodo_2x_neg_tdc_occu 'SHMS Hodoscope 2X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negTdcCounter 14 0.5 14.5
+TH1F phodo_2y_neg_tdc_occu 'SHMS Hodoscope 2Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negTdcCounter 21 0.5 21.5
+TH2F phodo_1x_neg_ped_vs_pad 'SHMS Hodoscope 1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPed 13 0.5 13.5 410 0 4100
+TH2F phodo_1y_neg_ped_vs_pad 'SHMS Hodoscope 1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPed 13 0.5 13.5 410 0 4100
+TH2F phodo_2x_neg_ped_vs_pad 'SHMS Hodoscope 2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPed 14 0.5 14.5 410 0 4100
+TH2F phodo_2y_neg_ped_vs_pad 'SHMS Hodoscope 2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 10 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPed 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_neg_pi_vs_pad 'SHMS Hodoscope 1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F phodo_1y_neg_pi_vs_pad 'SHMS Hodoscope 1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F phodo_2x_neg_pi_vs_pad 'SHMS Hodoscope 2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseInt 14 0.5 14.5 4000 0 40000
+TH2F phodo_2y_neg_pi_vs_pad 'SHMS Hodoscope 2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseInt 21 0.5 21.5 4000 0 40000
+TH2F phodo_1x_neg_pamp_vs_pad 'SHMS Hodoscope 1X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F phodo_1y_neg_pamp_vs_pad 'SHMS Hodoscope 1Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseAmp 13 0.5 13.5 410 0 4100
+TH2F phodo_2x_neg_pamp_vs_pad 'SHMS Hodoscope 2X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseAmp 14 0.5 14.5 410 0 4100
+TH2F phodo_2y_neg_pamp_vs_pad 'SHMS Hodoscope 2Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 10 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseAmp 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_neg_tdc_time_vs_pad 'SHMS Hodoscope 1X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.1x.negTdcCounter  P.hod.1x.negTdcTime 13 0.5 13.5 500 -2500 2500
+TH2F phodo_1y_neg_tdc_time_vs_pad 'SHMS Hodoscope 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.1y.negTdcCounter  P.hod.1y.negTdcTime 13 0.5 13.5 500 -2500 2500
+TH2F phodo_2x_neg_tdc_time_vs_pad 'SHMS Hodoscope 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.2x.negTdcCounter  P.hod.2x.negTdcTime 14 0.5 14.5 500 -2500 2500
+TH2F phodo_2y_neg_tdc_time_vs_pad 'SHMS Hodoscope 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' P.hod.2y.negTdcCounter  P.hod.2y.negTdcTime 21 0.5 21.5 500 -2500 2500
+
+# Heavy Gas Cherenkov
+TH1F phgcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.hgcer.adcCounter 4 0.5 4.5
+TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 1000 0 10000
+TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
+TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 410 0 4100
+
+# Aerogel
+TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
+TH2F paero_pos_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 410 0 4100
+TH2F paero_pos_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 4000 0 40000
+TH2F paero_pos_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 410 0 4100
+TH1F paero_neg_occu 'SHMS Aero- Occupancy; Counter Number; Number of Entries' P.aero.negAdcCounter 7 0.5 7.5
+TH2F paero_neg_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 410 0 4100
+TH2F paero_neg_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 4000 0 40000
+TH2F paero_neg_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 410 0 4100
+
+# Pre-Shower Calorimeter
+TH1F pcal_prshwr_pos_occu 'SHMS Preshower+ Occupancy; Block Number; Number of Entries' P.cal.pr.posAdcCounter 14 0.5 14.5
+TH2F pcal_prshwr_pos_ped_blk 'SHMS Preshower+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPed 14 0.5 14.5 410 0 4100
+TH2F pcal_prshwr_pos_pi_blk 'SHMS Preshower+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseInt 14 0.5 14.5 4000 0 40000
+TH2F pcal_prshwr_pos_amp_blk 'SHMS Preshower+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmp 14 0.5 14.5 410 0 4100
+TH1F pcal_prshwr_neg_occu 'SHMS Preshower- Occupancy; Block Number; Number of Entries' P.cal.pr.negAdcCounter 14 0.5 14.5
+TH2F pcal_prshwr_neg_ped_blk 'SHMS Preshower- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPed 14 0.5 14.5 410 0 4100
+TH2F pcal_prshwr_neg_pi_blk 'SHMS Preshower- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseInt 14 0.5 14.5 4000 0 40000
+TH2F pcal_prshwr_neg_amp_blk 'SHMS Preshower- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmp 14 0.5 14.5 410 0 4100 
+
+# Shower Calorimeter
+TH1F pcal_shwr_occu 'SHMS Shower Occupancy; Block Number; Number of Entries' P.cal.fly.adcCounter 224 0.5 224.5
+TH2F pcal_shwr_ped_blk 'SHMS Shower Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPed 224 0.5 224.5 410 0 4100
+TH2F pcal_shwr_pi_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseInt 224 0.5 224.5 4000 0 40000
+TH2F pcal_shwr_amp_blk 'SHMS Shower Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseAmp 224 0.5 224.5 410 0 4100 
