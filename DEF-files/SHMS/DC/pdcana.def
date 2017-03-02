@@ -72,5 +72,8 @@ TH2F pdc2x1_wirenum_vs_resid 'SHMS 2X1 DC Wire Number vs. Residuals; Wire Number
 TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 200 -1.0 1.0
 
+TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yxp; Yfp (cm) / 1 mm; Xfp (cm) / 1 mm' P.dc.y P.dc.x 1000 -50 50 1000 -50 50
+TH2F pdc_xfpp_vs_yxpp 'SHMS DC Xfpp vs Yxpp; Yfpp; Xfpp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1
+
 
 
