@@ -1,5 +1,5 @@
 ; Parameters we need to keep THcHallCSpectrometer Happy
-p_recon_coeff_filename = ""
+p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
 
 ppartmass = 0.139
 
