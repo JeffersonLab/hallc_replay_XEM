@@ -1,0 +1,7 @@
+t_shms_numAdc = 4
+t_shms_numTdc = 1
+
+; bar num:                1     2     3     4     5      6     7       8
+t_shms_adcNames = "pFRXA pFRYA pFRXB pFRYB"
+t_shms_tdcNames = "pFRXA"
+
