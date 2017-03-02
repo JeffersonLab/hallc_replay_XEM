@@ -17,16 +17,16 @@ TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Numb
 TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
 # Drift Chambers
-TH1F pdc_ref1  'SHMS DC Reference Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF1_tdcTime  200 12000 14000
-TH1F pdc_ref2  'SHMS DC Reference Slot 7 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF2_tdcTime  200 12000 14000
-TH1F pdc_ref3  'SHMS DC Reference Slot 8 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF3_tdcTime  200 12000 14000
-TH1F pdc_ref4  'SHMS DC Reference Slot 9 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF4_tdcTime  200 12000 14000
-TH1F pdc_ref5  'SHMS DC Reference Slot 10 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF5_tdcTime  200 12000 14000
-TH1F pdc_ref6  'SHMS DC Reference Slot 11 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF6_tdcTime  200 12000 14000
-TH1F pdc_ref7  'SHMS DC Reference Slot 12 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF7_tdcTime  200 12000 14000
-TH1F pdc_ref8  'SHMS DC Reference Slot 13 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF8_tdcTime  200 12000 14000
-TH1F pdc_ref9  'SHMS DC Reference Slot 14 Channel 15; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF9_tdcTime  200 12000 14000
-TH1F pdc_ref10 'SHMS DC Reference Slot 15 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF10_tdcTime 200 12000 14000
+TH1F pdc_ref1  'SHMS DC Reference Time Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF1_tdcTime  200 12000 14000
+TH1F pdc_ref2  'SHMS DC Reference Time Slot 7 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF2_tdcTime  200 12000 14000
+TH1F pdc_ref3  'SHMS DC Reference Time Slot 8 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF3_tdcTime  200 12000 14000
+TH1F pdc_ref4  'SHMS DC Reference Time Slot 9 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF4_tdcTime  200 12000 14000
+TH1F pdc_ref5  'SHMS DC Reference Time Slot 10 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF5_tdcTime  200 12000 14000
+TH1F pdc_ref6  'SHMS DC Reference Time Slot 11 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF6_tdcTime  200 12000 14000
+TH1F pdc_ref7  'SHMS DC Reference Time Slot 12 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF7_tdcTime  200 12000 14000
+TH1F pdc_ref8  'SHMS DC Reference Time Slot 13 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF8_tdcTime  200 12000 14000
+TH1F pdc_ref9  'SHMS DC Reference Time Slot 14 Channel 15; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF9_tdcTime  200 12000 14000
+TH1F pdc_ref10 'SHMS DC Reference Time Slot 15 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF10_tdcTime 200 12000 14000
 
 TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
 TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
