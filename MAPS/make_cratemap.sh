@@ -7,7 +7,7 @@ function proceed {
     echo ;read -p "Enter the crate(s), separated by spaces, you would like to form a single crate map for > " list
     arr=($list)
     for crate in "${arr[@]}"; do
-	if ((${crate} < 1)) || ((${crate} > 11)); then
+	if ((${crate} < 1)) || ((${crate} > 7)); then
 	    echo; echo "You must enter an integer value in the range [1, 7]"; echo
 	    exit
 	fi

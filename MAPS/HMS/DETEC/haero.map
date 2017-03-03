@@ -1,7 +1,7 @@
 !HMS:
 ! HAERO_ID= 12             (TDC),ADC
 
-ROC=11
+ROC=1
 detector=12
 
 !F250 modules

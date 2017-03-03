@@ -1,4 +1,8 @@
-HMS/DETEC/haero.map
-HMS/DETEC/hcal.map
+SHMS/DETEC/ptrig.map
+SHMS/DETEC/pdc.map
+SHMS/DETEC/phodo.map
+SHMS/DETEC/phgcer.map
+SHMS/DETEC/pngcer.map
+SHMS/DETEC/pcal.map
+SHMS/DETEC/paero.map
 
-#hhodo.map

@@ -1,7 +1,7 @@
 !HMS:
 ! HSCIN_ID= 13   ADC+,ADC-,TDC+,TDC-
 
-ROC=11
+ROC=1
 detector=13
 
 ! F250 modules
