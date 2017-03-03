@@ -6,7 +6,7 @@
 
 detector=10
 
-ROC=11
+ROC=1
 
 !F250 module
 SLOT=18

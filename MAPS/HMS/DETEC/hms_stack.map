@@ -7,7 +7,7 @@
 
 DETECTOR=10
 
-ROC=11
+ROC=1
 
 SLOT=17
    8,   1,   1,   0  ! hASUM
@@ -1215,7 +1215,7 @@ REFINDEX=0
 
 DETECTOR=13
 
-ROC=11
+ROC=1
 
 SLOT=8
    0,   1,   1,   0  ! h1x01A+
@@ -1446,7 +1446,7 @@ REFINDEX=0
 
 DETECTOR=14
 
-ROC=11
+ROC=1
 
 SLOT=7
   14,   1,   1,   0  ! hCER01
@@ -1455,7 +1455,7 @@ SLOT=7
 
 DETECTOR=15
 
-ROC=11
+ROC=1
 
 SLOT=3
    0,   1,   1,   0  ! hA01+

@@ -4,7 +4,7 @@
 
 DETECTOR=10
 
-ROC=11
+ROC=1
 
 SLOT=17
    8,   1,   1,   0  ! hASUM
@@ -54,7 +54,7 @@ SLOT=17
 
 DETECTOR=14
 
-ROC=11
+ROC=1
 
 SLOT=7
   14,   1,   1,   0  ! hCER01

@@ -1,7 +1,7 @@
 !HMS:
 ! HCAL_ID= 15              ADC
 
-ROC=11
+ROC=1
 detector=15
 
 !F250 modules
