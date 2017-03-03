@@ -1,0 +1,20 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block T.shms.*
+# Assume FADC range is set to 1V and the integration is 25 channels
+# Offset in the FADC is about 0.122V or 500 channels.
+formula FRXA_V T.shms.pFRXA_adcPulseIntRaw*(1./4096.)/25.
+formula FRXB_V T.shms.pFRXB_adcPulseIntRaw*(1./4096.)/25.
+formula FRYA_V T.shms.pFRYA_adcPulseIntRaw*(1./4096.)/25.
+formula FRYB_V T.shms.pFRYB_adcPulseIntRaw*(1./4096.)/25.
+TH1F pFRXA 'SHMS FRXA; FRXA RAW ADC (chan); Counts' T.shms.pFRXA_adcPulseIntRaw 1000 0 100000
+TH1F pFRXA_V 'SHMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
+TH1F pFRXB 'SHMS FRXB; FRXB RAW ADC (chan); Counts' T.shms.pFRXB_adcPulseIntRaw 1000 0 100000
+TH1F pFRXB_V 'SHMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0
+TH1F pFRYA 'SHMS FRYA; FRYA RAW ADC (chan); Counts' T.shms.pFRYA_adcPulseIntRaw 1000 0 100000
+TH1F pFRYA_V 'SHMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0
+TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' T.shms.pFRYB_adcPulseIntRaw 1000 0 100000
+TH1F pFRYB_V 'SHMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
+TH2F pFRA_XvsY 'HMSFRA_XvsY ; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
+TH2F pFRB_XvsY 'HMSFRB_XvsY ; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0
+
