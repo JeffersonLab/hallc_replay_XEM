@@ -1,5 +1,3 @@
 0-99999
 g_ctp_parm_filename ="DBASE/general.param"
-g_decode_map_filename ="MAPS/HMS/hdc.map"
-g_decode_map_filename ="MAPS/SHMS/pdc.map"
 g_ctp_kinematics_filename ="DBASE/standard.kinematics"
