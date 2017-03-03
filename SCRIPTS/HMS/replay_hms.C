@@ -32,7 +32,6 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms.param");
 
-
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack.map");

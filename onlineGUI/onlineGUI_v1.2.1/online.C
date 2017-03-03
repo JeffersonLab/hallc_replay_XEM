@@ -495,7 +495,10 @@ pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
   UInt_t page_index = pageInfo[page].first;
   
   UInt_t size1 = 2;
+
+  if (IsLogx(page)) size1 = 3;  // last word is "logy"
   if (IsLogy(page)) size1 = 3;  // last word is "logy"
+  if (IsLogz(page)) size1 = 3;  // last word is "logy"
   
   // If the dimensions are defined, return them.
   if(sConfFile[page_index].size()>size1-1) {
@@ -1554,6 +1557,7 @@ void OnlineGUI::HistDraw(drawcommand command) {
 	fRootFile.mytemp2d->SetStats(showStat);
 	if(!htitle.IsNull()) fGoldenFile.mytemp2d->SetTitle(htitle);
 	fRootFile.mytemp2d->Draw(type);
+	fRootFile.mytemp2d->Draw("colz");
       }
     }
     return;

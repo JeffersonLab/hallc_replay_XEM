@@ -2,62 +2,78 @@
 #
 block P.dc.*
 
-TH1F pdc1u1_wm 'PDC 1U1 Wiremap' P.dc.1u1.wirenum 107 0.5 107.5
-TH1F pdc1u2_wm 'PDC 1U2 Wiremap' P.dc.1u2.wirenum 107 0.5 107.5
-TH1F pdc1x1_wm 'PDC 1X1 Wiremap' P.dc.1x1.wirenum  79 0.5  79.5
-TH1F pdc1x2_wm 'PDC 1X2 Wiremap' P.dc.1x2.wirenum  79 0.5  79.5
-TH1F pdc1v1_wm 'PDC 1V1 Wiremap' P.dc.1v1.wirenum 107 0.5 107.5
-TH1F pdc1v2_wm 'PDC 1V2 Wiremap' P.dc.1v2.wirenum 107 0.5 107.5
+TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
+TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
+TH1F pdc1x1_wirenum 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.1x1.wirenum  79 0.5  79.5
+TH1F pdc1x2_wirenum 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.1x2.wirenum  79 0.5  79.5
+TH1F pdc1v1_wirenum 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries' P.dc.1v1.wirenum 107 0.5 107.5
+TH1F pdc1v2_wirenum 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.1v2.wirenum 107 0.5 107.5
 
-TH1F pdc2v2_wm 'PDC 2V2 Wiremap' P.dc.2v2.wirenum 107 0.5 107.5
-TH1F pdc2v1_wm 'PDC 2V1 Wiremap' P.dc.2v1.wirenum 107 0.5 107.5
-TH1F pdc2x2_wm 'PDC 2X2 Wiremap' P.dc.2x2.wirenum  79 0.5  79.5
-TH1F pdc2x1_wm 'PDC 2X1 Wiremap' P.dc.2x1.wirenum  79 0.5  79.5
-TH1F pdc2u2_wm 'PDC 2U2 Wiremap' P.dc.2u2.wirenum 107 0.5 107.5
-TH1F pdc2u1_wm 'PDC 2U1 Wiremap' P.dc.2u1.wirenum 107 0.5 107.5
+TH1F pdc2v2_wirenum 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.2v2.wirenum 107 0.5 107.5
+TH1F pdc2v1_wirenum 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.2v1.wirenum 107 0.5 107.5
+TH1F pdc2x2_wirenum 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.2x2.wirenum  79 0.5  79.5
+TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.2x1.wirenum  79 0.5  79.5
+TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
+TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
 
-TH2F pdc1u1_wire_num_vs_raw_tdc 'PDC 1U1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1u1.wirenum P.dc.1u1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1u2_wire_num_vs_raw_tdc 'PDC 1U2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1u2.wirenum P.dc.1u2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1x1_wire_num_vs_raw_tdc 'PDC 1X1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1x1.wirenum P.dc.1x1.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1x2_wire_num_vs_raw_tdc 'PDC 1X2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1x2.wirenum P.dc.1x2.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1v1_wire_num_vs_raw_tdc 'PDC 1V1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1v1.wirenum P.dc.1v1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1v2_wire_num_vs_raw_tdc 'PDC 1V2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1v2.wirenum P.dc.1v2.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc1u1_wirenum_vs_raw_tdc 'PDC 1U1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1u1.wirenum P.dc.1u1.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc1u2_wirenum_vs_raw_tdc 'PDC 1U2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1u2.wirenum P.dc.1u2.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc1x1_wirenum_vs_raw_tdc 'PDC 1X1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1x1.wirenum P.dc.1x1.rawtdc  79 0.5  79.5 5000 -25000 25000
+TH2F pdc1x2_wirenum_vs_raw_tdc 'PDC 1X2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1x2.wirenum P.dc.1x2.rawtdc  79 0.5  79.5 5000 -25000 25000
+TH2F pdc1v1_wirenum_vs_raw_tdc 'PDC 1V1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1v1.wirenum P.dc.1v1.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc1v2_wirenum_vs_raw_tdc 'PDC 1V2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.1v2.wirenum P.dc.1v2.rawtdc 107 0.5 107.5 5000 -25000 25000
 
-TH2F pdc2v2_wire_num_vs_raw_tdc 'PDC 2V2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2v2.wirenum P.dc.2v2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2v1_wire_num_vs_raw_tdc 'PDC 2V1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2v1.wirenum P.dc.2v1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2x2_wire_num_vs_raw_tdc 'PDC 2X2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2x2.wirenum P.dc.2x2.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2x1_wire_num_vs_raw_tdc 'PDC 2X1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2x1.wirenum P.dc.2x1.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2u2_wire_num_vs_raw_tdc 'PDC 2U2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2u2.wirenum P.dc.2u2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2u1_wire_num_vs_raw_tdc 'PDC 2U1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2u1.wirenum P.dc.2u1.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc2v2_wirenum_vs_raw_tdc 'PDC 2V2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2v2.wirenum P.dc.2v2.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc2v1_wirenum_vs_raw_tdc 'PDC 2V1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2v1.wirenum P.dc.2v1.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc2x2_wirenum_vs_raw_tdc 'PDC 2X2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2x2.wirenum P.dc.2x2.rawtdc  79 0.5  79.5 5000 -25000 25000
+TH2F pdc2x1_wirenum_vs_raw_tdc 'PDC 2X1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2x1.wirenum P.dc.2x1.rawtdc  79 0.5  79.5 5000 -25000 25000
+TH2F pdc2u2_wirenum_vs_raw_tdc 'PDC 2U2 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2u2.wirenum P.dc.2u2.rawtdc 107 0.5 107.5 5000 -25000 25000
+TH2F pdc2u1_wirenum_vs_raw_tdc 'PDC 2U1 Wiremap vs. Raw TDC; Wire Number; Raw TDC Value (clicks)' P.dc.2u1.wirenum P.dc.2u1.rawtdc 107 0.5 107.5 5000 -25000 25000
 
-TH2F pdc1u1_wire_num_vs_tdc_time 'PDC 1U1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1u2_wire_num_vs_tdc_time 'PDC 1U2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1u2.wirenum P.dc.1u2.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1x1_wire_num_vs_tdc_time 'PDC 1X1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1x1.wirenum P.dc.1x1.time  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1x2_wire_num_vs_tdc_time 'PDC 1X2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1x2.wirenum P.dc.1x2.time  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1v1_wire_num_vs_tdc_time 'PDC 1V1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1v1.wirenum P.dc.1v1.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1v2_wire_num_vs_tdc_time 'PDC 1V2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.1v2.wirenum P.dc.1v2.time 107 0.5 107.5 5000 -25000 25000
+TH2F pdc1u1_wirenum_vs_tdc 'SHMS DC 1U1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 500 0 500
+TH2F pdc1u2_wirenum_vs_tdc 'SHMS DC 1U2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1u2.wirenum P.dc.1u2.time 107 0.5 107.5 500 0 500
+TH2F pdc1x1_wirenum_vs_tdc 'SHMS DC 1X1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1x1.wirenum P.dc.1x1.time  79 0.5  79.5 500 0 500
+TH2F pdc1x2_wirenum_vs_tdc 'SHMS DC 1X2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1x2.wirenum P.dc.1x2.time  79 0.5  79.5 500 0 500
+TH2F pdc1v1_wirenum_vs_tdc 'SHMS DC 1V1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1v1.wirenum P.dc.1v1.time 107 0.5 107.5 500 0 500
+TH2F pdc1v2_wirenum_vs_tdc 'SHMS DC 1V2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.1v2.wirenum P.dc.1v2.time 107 0.5 107.5 500 0 500
 
-TH2F pdc2v2_wire_num_vs_tdc_time 'PDC 2V2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2v2.wirenum P.dc.2v2.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2v1_wire_num_vs_tdc_time 'PDC 2V1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2v1.wirenum P.dc.2v1.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2x2_wire_num_vs_tdc_time 'PDC 2X2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2x2.wirenum P.dc.2x2.time  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2x1_wire_num_vs_tdc_time 'PDC 2X1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2x1.wirenum P.dc.2x1.time  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2u2_wire_num_vs_tdc_time 'PDC 2U2 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2u1_wire_num_vs_tdc_time 'PDC 2U1 Wiremap vs. TDC; Wire Number; TDC Value (ns)' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 5000 -25000 25000
+TH2F pdc2v2_wirenum_vs_tdc 'SHMS DC 2V2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2v2.wirenum P.dc.2v2.time 107 0.5 107.5 500 0 500
+TH2F pdc2v1_wirenum_vs_tdc 'SHMS DC 2V1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2v1.wirenum P.dc.2v1.time 107 0.5 107.5 500 0 500
+TH2F pdc2x2_wirenum_vs_tdc 'SHMS DC 2X2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2x2.wirenum P.dc.2x2.time  79 0.5  79.5 500 0 500
+TH2F pdc2x1_wirenum_vs_tdc 'SHMS DC 2X1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2x1.wirenum P.dc.2x1.time  79 0.5  79.5 500 0 500
+TH2F pdc2u2_wirenum_vs_tdc 'SHMS DC 2U2 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 500 0 500
+TH2F pdc2u1_wirenum_vs_tdc 'SHMS DC 2U1 Wire Number vs. TDC; Wire Number; TDC Value (ns)' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 500 0 500
 
-TH2F pdc1u1_wire_num_vs_ddist 'PDC 1U1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u1.wirenum P.dc.1u1.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc1u2_wire_num_vs_ddist 'PDC 1U2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u2.wirenum P.dc.1u2.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc1x1_wire_num_vs_ddist 'PDC 1X1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1x1.wirenum P.dc.1x1.dist  79 0.5  79.5 300 -0.1 0.6
-TH2F pdc1x2_wire_num_vs_ddist 'PDC 1X2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1x2.wirenum P.dc.1x2.dist  79 0.5  79.5 300 -0.1 0.6
-TH2F pdc1v1_wire_num_vs_ddist 'PDC 1V1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1v1.wirenum P.dc.1v1.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc1v2_wire_num_vs_ddist 'PDC 1V2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1v2.wirenum P.dc.1v2.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc1u1_wirenum_vs_ddist 'PDC 1U1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u1.wirenum P.dc.1u1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc1u2_wirenum_vs_ddist 'PDC 1U2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u2.wirenum P.dc.1u2.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc1x1_wirenum_vs_ddist 'PDC 1X1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1x1.wirenum P.dc.1x1.dist  79 0.5  79.5 300 -0.1 0.6
+TH2F pdc1x2_wirenum_vs_ddist 'PDC 1X2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1x2.wirenum P.dc.1x2.dist  79 0.5  79.5 300 -0.1 0.6
+TH2F pdc1v1_wirenum_vs_ddist 'PDC 1V1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1v1.wirenum P.dc.1v1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc1v2_wirenum_vs_ddist 'PDC 1V2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1v2.wirenum P.dc.1v2.dist 107 0.5 107.5 300 -0.1 0.6
 
-TH2F pdc2u2_wire_num_vs_ddist 'PDC 2U2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2u2.wirenum P.dc.2u2.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc2u1_wire_num_vs_ddist 'PDC 2U1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2u1.wirenum P.dc.2u1.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc2x2_wire_num_vs_ddist 'PDC 2X2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2x2.wirenum P.dc.2x2.dist  79 0.5  79.5 300 -0.1 0.6
-TH2F pdc2x1_wire_num_vs_ddist 'PDC 2X1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2x1.wirenum P.dc.2x1.dist  79 0.5  79.5 300 -0.1 0.6
-TH2F pdc2v2_wire_num_vs_ddist 'PDC 2V2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v2.wirenum P.dc.2v2.dist 107 0.5 107.5 300 -0.1 0.6
-TH2F pdc2v1_wire_num_vs_ddist 'PDC 2V1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v1.wirenum P.dc.2v1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc2u2_wirenum_vs_ddist 'PDC 2U2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2u2.wirenum P.dc.2u2.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc2u1_wirenum_vs_ddist 'PDC 2U1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2u1.wirenum P.dc.2u1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc2x2_wirenum_vs_ddist 'PDC 2X2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2x2.wirenum P.dc.2x2.dist  79 0.5  79.5 300 -0.1 0.6
+TH2F pdc2x1_wirenum_vs_ddist 'PDC 2X1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2x1.wirenum P.dc.2x1.dist  79 0.5  79.5 300 -0.1 0.6
+TH2F pdc2v2_wirenum_vs_ddist 'PDC 2V2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v2.wirenum P.dc.2v2.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F pdc2v1_wirenum_vs_ddist 'PDC 2V1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v1.wirenum P.dc.2v1.dist 107 0.5 107.5 300 -0.1 0.6
 
+TH2F pdc1u1_wirenum_vs_resid 'SHMS 1U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u1.wirenum P.dc.residual[0] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc1u2_wirenum_vs_resid 'SHMS 1U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u2.wirenum P.dc.residual[1] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc1x1_wirenum_vs_resid 'SHMS 1X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x1.wirenum P.dc.residual[2] 79 0.5  79.5 200 -1.0 1.0
+TH2F pdc1x2_wirenum_vs_resid 'SHMS 1X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x2.wirenum P.dc.residual[3] 79 0.5  79.5 200 -1.0 1.0
+TH2F pdc1v1_wirenum_vs_resid 'SHMS 1V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v1.wirenum P.dc.residual[4] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc1v2_wirenum_vs_resid 'SHMS 1V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v2.wirenum P.dc.residual[5] 107 0.5 107.5 200 -1.0 1.0
+
+TH2F pdc2v2_wirenum_vs_resid 'SHMS 2V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v2.wirenum P.dc.residual[6] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc2v1_wirenum_vs_resid 'SHMS 2V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v1.wirenum P.dc.residual[7] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc2x2_wirenum_vs_resid 'SHMS 2X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x2.wirenum P.dc.residual[8] 79 0.5  79.5 200 -1.0 1.0
+TH2F pdc2x1_wirenum_vs_resid 'SHMS 2X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x1.wirenum P.dc.residual[9] 79 0.5  79.5 200 -1.0 1.0
+TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 200 -1.0 1.0
+TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 200 -1.0 1.0
+
+TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yxp; Yfp (cm) / 1 mm; Xfp (cm) / 1 mm' P.dc.y P.dc.x 1000 -50 50 1000 -50 50
+TH2F pdc_xfpp_vs_yxpp 'SHMS DC Xfpp vs Yxpp; Yfpp; Xfpp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1
 
 
 

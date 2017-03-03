@@ -101,6 +101,9 @@ void UserScript() {
   Int_t pngc_hits;
   Double_t pngc_pmt[maxAdcHits*nngc_pmts], pngc_pulseTime[maxAdcHits*nngc_pmts];
   Double_t pngc_pulseInt[maxAdcHits*nngc_pmts];
+
+  // Tracking information
+  Double_t trk_pmag;
   
   Long64_t nentries;
 
@@ -147,6 +150,8 @@ void UserScript() {
 
   TH2F *h2_pshwr_vs_phgcer, *h2_pshwr_vs_pngcer, *h2_pshwr_vs_ppshwr;
   TH1F *h_paero_sum, *h_ppshwr_sum, *h_pshwr_sum, *h_ptotshwr_sum, *h_phgc_sum, *h_pngc_sum;
+
+  TH2F *h2_EdivP_vs_P;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
   
@@ -298,6 +303,10 @@ void UserScript() {
   T->SetBranchAddress("P.ngcer.adcCounter", &pngc_pmt);
   T->SetBranchAddress("P.ngcer.adcPulseTimeRaw", &pngc_pulseTime);
   T->SetBranchAddress("P.ngcer.adcPulseInt", &pngc_pulseInt);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  T->SetBranchAddress("P.tr.p", &trk_pmag);
   
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
           
@@ -414,6 +423,10 @@ void UserScript() {
   h_ptotshwr_sum = new TH1F ("h_ptotshwr_sum", "SHMS Total Shower Energy; Total Shower Energy; Counts / 10 MeV", 1200, 0, 12);
   h_phgc_sum = new TH1F ("h_phgc_sum", "SHMS Number of HGC Photoelectrons; Number of HGC Photoelectrons; Counts / 1 Photoelectron", 500, 0, 500);
   h_pngc_sum = new TH1F ("h_pngc_sum", "SHMS Number of NGC Photoelectrons; Number of NGC Photoelectrons; Counts / 1 Photoelectron", 500, 0, 500);
+
+  // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
+
+  h2_EdivP_vs_P = new TH2F ("h2_EdivP_vs_P", "SHMS E/p vs. p; p (geV); E/p", 600, 0, 6, 100, 0, 1);
   
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -598,7 +611,10 @@ void UserScript() {
     }
     if (pshwr_sum != 0.0) h_pshwr_sum->Fill(pshwr_sum);
     if ((ppshwr_sum + pshwr_sum) != 0.0) h_ptotshwr_sum->Fill(ppshwr_sum + pshwr_sum);
-    if (ppshwr_sum != 0.0 && pshwr_sum != 0.0) h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);
+    if (ppshwr_sum != 0.0 && pshwr_sum != 0.0) {
+      h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);
+      if (trk_pmag != 0.0) h2_EdivP_vs_P->Fill(trk_pmag, (ppshwr_sum + pshwr_sum)/trk_pmag);
+    }
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 

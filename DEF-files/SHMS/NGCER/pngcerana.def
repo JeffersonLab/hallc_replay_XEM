@@ -3,23 +3,13 @@
 block P.ngcer.*
 block T.shms.*
 
-TH1F pngcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
-TH1F pngcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
+TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
 
-TH2F pngcer_rawped_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPedRaw 4 0.5 4.5 1000 0 10000
-TH2F pngcer_rawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseIntRaw 4 0.5 4.5 4000 0 40000
-TH2F pngcer_rawamp_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmpRaw 4 0.5 4.5 410 0 4100
-TH2F pngcer_rawptime_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseTimeRaw 4 0.5 4.5 1000 0 10000
+TH2F pngcer_rawped_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPedRaw 4 0.5 4.5 1000 0 10000
+TH2F pngcer_rawpi_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseIntRaw 4 0.5 4.5 4000 0 40000
+TH2F pngcer_rawamp_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmpRaw 4 0.5 4.5 410 0 4100
+TH2F pngcer_rawptime_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseTimeRaw 4 0.5 4.5 1000 0 10000
 
-TH2F pngcer_rawped_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPedRaw 4 0.5 4.5 1000 0 10000
-TH2F pngcer_rawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseIntRaw 4 0.5 4.5 4000 0 40000
-TH2F pngcer_rawamp_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmpRaw 4 0.5 4.5 410 0 4100
-TH2F pngcer_rawptime_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseTimeRaw 4 0.5 4.5 1000 0 10000
-
-TH2F pngcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 10000
-TH2F pngcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
-TH2F pngcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 410 0 4100
-
-TH2F pngcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 10000
-TH2F pngcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
-TH2F pngcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 410 0 4100
+TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 10000
+TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
+TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 410 0 4100

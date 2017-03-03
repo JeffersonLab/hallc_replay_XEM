@@ -1,22 +1,189 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
+#block *
 block T.hms.*
 block H.dc.*
 block H.tr.*
 block H.hod.*
 block H.cer.*
 block H.cal.*
-block H.gtr.*
+#block H.gtr.*
 
-TH1D hhdc_resid_1 '' H.dc.residual[0] 200 -1.0 1.0
-TH1D hhdc_resid_2 '' H.dc.residual[1] 200 -1.0 1.0
-TH1D hhdc_resid_3 '' H.dc.residual[2] 200 -1.0 1.0
-TH1D hhdc_resid_4 '' H.dc.residual[3] 200 -1.0 1.0
-TH1D hhdc_resid_5 '' H.dc.residual[4] 200 -1.0 1.0
-TH1D hhdc_resid_6 '' H.dc.residual[5] 200 -1.0 1.0
-TH1D hhdc_resid_7 '' H.dc.residual[6] 200 -1.0 1.0
-TH1D hhdc_resid_8 '' H.dc.residual[7] 200 -1.0 1.0
-TH1D hhdc_resid_9 '' H.dc.residual[8] 200 -1.0 1.0
-TH1D hhdc_resid_10 '' H.dc.residual[9] 200 -1.0 1.0
-TH1D hhdc_resid_11 '' H.dc.residual[10] 200 -1.0 1.0
-TH1D hhdc_resid_12 '' H.dc.residual[11] 200 -1.0 1.0
+# Drift Chambers
+TH1F hdc_ref1 'HMS DC Reference Time Slot 5 Channel 111; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 3000 12000 15000 
+TH1F hdc_ref2 'HMS DC Reference Time Slot 8 Channel 127; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime 3000 12000 15000
+TH1F hdc_ref3 'HMS DC Reference Time Slot 10 Channel 127; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime 3000 12000 15000
+TH1F hdc_ref4 'HMS DC Reference Time Slot 17 Channel 127; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF4_tdcTime 3000 12000 15000
+
+TH1F hdc1x1_wirenum 'HMS DC 1X1 Wiremap; Wire Number; Number of Entries' H.dc.1x1.wirenum 113 0.5 113.5
+TH1F hdc1y1_wirenum 'HMS DC 1Y1 Wiremap; Wire Number; Number of Entries' H.dc.1y1.wirenum  52 0.5  52.5
+TH1F hdc1u1_wirenum 'HMS DC 1U1 Wiremap; Wire Number; Number of Entries' H.dc.1u1.wirenum 107 0.5 107.5
+TH1F hdc1v1_wirenum 'HMS DC 1V1 Wiremap; Wire Number; Number of Entries' H.dc.1v1.wirenum 107 0.5 107.5
+TH1F hdc1y2_wirenum 'HMS DC 1Y2 Wiremap; Wire Number; Number of Entries' H.dc.1y2.wirenum  52 0.5  52.5
+TH1F hdc1x2_wirenum 'HMS DC 1X2 Wiremap; Wire Number; Number of Entries' H.dc.1x2.wirenum 113 0.5 113.5
+
+TH1F hdc2x1_wirenum 'HMS DC 2X1 Wiremap; Wire Number; Number of Entries' H.dc.2x1.wirenum 113 0.5 113.5
+TH1F hdc2y1_wirenum 'HMS DC 2Y1 Wiremap; Wire Number; Number of Entries' H.dc.2y1.wirenum  52 0.5  52.5
+TH1F hdc2u1_wirenum 'HMS DC 2U1 Wiremap; Wire Number; Number of Entries' H.dc.2u1.wirenum 107 0.5 107.5
+TH1F hdc2v1_wirenum 'HMS DC 2V1 Wiremap; Wire Number; Number of Entries' H.dc.2v1.wirenum 107 0.5 107.5
+TH1F hdc2y2_wirenum 'HMS DC 2Y2 Wiremap; Wire Number; Number of Entries' H.dc.2y2.wirenum  52 0.5  52.5
+TH1F hdc2x2_wirenum 'HMS DC 2X2 Wiremap; Wire Number; Number of Entries' H.dc.2x2.wirenum 113 0.5 113.5
+
+TH2F hdc1x1_wirenum_vs_tdc 'HMS DC 1X1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1x1.wirenum H.dc.1x1.time 113 0.5 113.5 2000 -500 1500
+TH2F hdc1y1_wirenum_vs_tdc 'HMS DC 1Y1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1y1.wirenum H.dc.1y1.time 52  0.5  52.5 2000 -500 1500
+TH2F hdc1u1_wirenum_vs_tdc 'HMS DC 1U1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1u1.wirenum H.dc.1u1.time 107 0.5 107.5 2000 -500 1500
+TH2F hdc1v1_wirenum_vs_tdc 'HMS DC 1V1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1v1.wirenum H.dc.1v1.time 107 0.5 107.5 2000 -500 1500
+TH2F hdc1y2_wirenum_vs_tdc 'HMS DC 1Y2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1y2.wirenum H.dc.1y2.time 52  0.5  52.5 2000 -500 1500
+TH2F hdc1x2_wirenum_vs_tdc 'HMS DC 1X2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1x2.wirenum H.dc.1x2.time 113 0.5 113.5 2000 -500 1500
+
+TH2F hdc2x1_wirenum_vs_tdc 'HMS DC 2X1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2x1.wirenum H.dc.2x1.time 113 0.5 113.5 2000 -500 1500
+TH2F hdc2y1_wirenum_vs_tdc 'HMS DC 2Y1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2y1.wirenum H.dc.2y1.time 52  0.5  52.5 2000 -500 1500
+TH2F hdc2u1_wirenum_vs_tdc 'HMS DC 2U1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2u1.wirenum H.dc.2u1.time 107 0.5 107.5 2000 -500 1500
+TH2F hdc2v1_wirenum_vs_tdc 'HMS DC 2V1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2v1.wirenum H.dc.2v1.time 107 0.5 107.5 2000 -500 1500
+TH2F hdc2y2_wirenum_vs_tdc 'HMS DC 2Y2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2y2.wirenum H.dc.2y2.time 52  0.5  52.5 2000 -500 1500
+TH2F hdc2x2_wirenum_vs_tdc 'HMS DC 2X2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2x2.wirenum H.dc.2x2.time 113 0.5 113.5 2000 -500 1500
+
+TH2F hdc1x1_wirenum_vs_resid 'HMS DC 1X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x1.wirenum H.dc.residual[0] 113 0.5 113.5 200 -1.0 1.0
+TH2F hdc1y1_wirenum_vs_resid 'HMS DC 1Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y1.wirenum H.dc.residual[1] 52  0.5  52.5 200 -1.0 1.0
+TH2F hdc1u1_wirenum_vs_resid 'HMS DC 1U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1u1.wirenum H.dc.residual[2] 107 0.5 107.5 200 -1.0 1.0
+TH2F hdc1v1_wirenum_vs_resid 'HMS DC 1V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1v1.wirenum H.dc.residual[3] 107 0.5 107.5 200 -1.0 1.0
+TH2F hdc1y2_wirenum_vs_resid 'HMS DC 1Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y2.wirenum H.dc.residual[4] 52  0.5  52.5 200 -1.0 1.0
+TH2F hdc1x2_wirenum_vs_resid 'HMS DC 1X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x2.wirenum H.dc.residual[5] 113 0.5 113.5 200 -1.0 1.0
+
+TH2F hdc2x1_wirenum_vs_resid 'HMS DC 2X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x1.wirenum H.dc.residual[6] 113 0.5 113.5 200 -1.0 1.0
+TH2F hdc2y1_wirenum_vs_resid 'HMS DC 2Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y1.wirenum H.dc.residual[7] 52  0.5  52.5 200 -1.0 1.0
+TH2F hdc2u1_wirenum_vs_resid 'HMS DC 2U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2u1.wirenum H.dc.residual[8] 107 0.5 107.5 200 -1.0 1.0
+TH2F hdc2v1_wirenum_vs_resid 'HMS DC 2V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2v1.wirenum H.dc.residual[9] 107 0.5 107.5 200 -1.0 1.0
+TH2F hdc2y2_wirenum_vs_resid 'HMS DC 2Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y2.wirenum H.dc.residual[10] 52  0.5  52.5 200 -1.0 1.0
+TH2F hdc2x2_wirenum_vs_resid 'HMS DC 2X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x2.wirenum H.dc.residual[11] 113 0.5 113.5 200 -1.0 1.0
+
+TH2F hdc_xfp_vs_yxp 'HMS DC Xfp vs Yxp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' H.dc.y H.dc.x 100 -50 50 100 -50 50
+TH2F hdc_xfpp_vs_yxpp 'HMS DC Xfpp vs Yxpp; Yfpp; Xfpp' H.dc.yp H.dc.xp 100 -1 1 100 -1 1
+
+# Hodoscopes (Positive/Left) 
+TH1F hhodo_1x_pos_adc_occu 'HMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.1x.posAdcCounter 16 0.5 16.5
+TH1F hhodo_1y_pos_adc_occu 'HMS Hodoscope 1Y+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.1y.posAdcCounter 10 0.5 10.5 
+TH1F hhodo_2x_pos_adc_occu 'HMS Hodoscope 2X+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.2x.posAdcCounter 16 0.5 16.5
+TH1F hhodo_2y_pos_adc_occu 'HMS Hodoscope 2Y+ ADC Occupancy; Paddle Number; Number of Hits' H.hod.2y.posAdcCounter 10 0.5 10.5
+TH1F hhodo_1x_pos_tdc_occu 'HMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.1x.posTdcCounter 16 0.5 16.5
+TH1F hhodo_1y_pos_tdc_occu 'HMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.1y.posTdcCounter 10 0.5 10.5 
+TH1F hhodo_2x_pos_tdc_occu 'HMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.2x.posTdcCounter 16 0.5 16.5
+TH1F hhodo_2y_pos_tdc_occu 'HMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' H.hod.2y.posTdcCounter 10 0.5 10.5
+TH2F hhodo_1x_pos_ped_vs_pad 'HMS Hodoscope 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPed 16 0.5 16.5 1000 0 1000
+TH2F hhodo_1y_pos_ped_vs_pad 'HMS Hodoscope 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_2x_pos_ped_vs_pad 'HMS Hodoscope 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPed 16 0.5 16.5 1000 0 1000
+TH2F hhodo_2y_pos_ped_vs_pad 'HMS Hodoscope 2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_1x_pos_pi_vs_pad 'HMS Hodoscope 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1x.GoodPaddle  H.hod.1x.GoodPosAdcPulseInt 16 0.5 16.5 4000 0 40000
+TH2F hhodo_1y_pos_pi_vs_pad 'HMS Hodoscope 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1y.GoodPaddle  H.hod.1y.GoodPosAdcPulseInt 10 0.5 10.5 4000 0 40000
+TH2F hhodo_2x_pos_pi_vs_pad 'HMS Hodoscope 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2x.GoodPaddle  H.hod.2x.GoodPosAdcPulseInt 16 0.5 16.5 4000 0 40000
+TH2F hhodo_2y_pos_pi_vs_pad 'HMS Hodoscope 2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2y.GoodPaddle  H.hod.2y.GoodPosAdcPulseInt 10 0.5 10.5 4000 0 40000
+TH2F hhodo_1x_pos_pamp_vs_pad 'HMS Hodoscope 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.1x.GoodPaddle  H.hod.1x.GoodPosAdcPulseAmp 16 0.5 16.5 4100 0 4100
+TH2F hhodo_1y_pos_pamp_vs_pad 'HMS Hodoscope 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.1y.GoodPaddle  H.hod.1y.GoodPosAdcPulseAmp 10 0.5 10.5 4100 0 4100
+TH2F hhodo_2x_pos_pamp_vs_pad 'HMS Hodoscope 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.2x.GoodPaddle  H.hod.2x.GoodPosAdcPulseAmp 16 0.5 16.5 4100 0 4100
+TH2F hhodo_2y_pos_pamp_vs_pad 'HMS Hodoscope 2Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.2y.GoodPaddle  H.hod.2y.GoodPosAdcPulseAmp 10 0.5 10.5 4100 0 4100
+TH2F hhodo_1x_pos_tdc_time_vs_pad 'HMS Hodoscope 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.1x.GoodPaddle  H.hod.1x.GoodPosTdcChan 16 0.5 16.5 3500 -500 3000
+TH2F hhodo_1y_pos_tdc_time_vs_pad 'HMS Hodoscope 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.1y.GoodPaddle  H.hod.1y.GoodPosTdcChan 10 0.5 10.5 3500 -500 3000
+TH2F hhodo_2x_pos_tdc_time_vs_pad 'HMS Hodoscope 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.2x.GoodPaddle  H.hod.2x.GoodPosTdcChan 16 0.5 16.5 3500 -500 3000
+TH2F hhodo_2y_pos_tdc_time_vs_pad 'HMS Hodoscope 2Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.2y.GoodPaddle  H.hod.2y.GoodPosTdcChan 10 0.5 10.5 3500 -500 3000
+
+# Hodoscopes (Negative/Right)
+TH1F hhodo_1x_neg_adc_occu 'HMS Hodoscope 1X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negAdcCounter 16 0.5 16.5
+TH1F hhodo_1y_neg_adc_occu 'HMS Hodoscope 1Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negAdcCounter 10 0.5 10.5 
+TH1F hhodo_2x_neg_adc_occu 'HMS Hodoscope 2X- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negAdcCounter 16 0.5 16.5
+TH1F hhodo_2y_neg_adc_occu 'HMS Hodoscope 2Y- ADC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negAdcCounter 10 0.5 10.5
+TH1F hhodo_1x_neg_tdc_occu 'HMS Hodoscope 1X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1x.negTdcCounter 16 0.5 16.5
+TH1F hhodo_1y_neg_tdc_occu 'HMS Hodoscope 1Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.1y.negTdcCounter 10 0.5 10.5 
+TH1F hhodo_2x_neg_tdc_occu 'HMS Hodoscope 2X- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2x.negTdcCounter 16 0.5 16.5
+TH1F hhodo_2y_neg_tdc_occu 'HMS Hodoscope 2Y- TDC Occupancy; Paddle Number; Number of Hits' H.hod.2y.negTdcCounter 10 0.5 10.5
+TH2F hhodo_1x_neg_ped_vs_pad 'HMS Hodoscope 1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPed 16 0.5 16.5 1000 0 1000
+TH2F hhodo_1y_neg_ped_vs_pad 'HMS Hodoscope 1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_2x_neg_ped_vs_pad 'HMS Hodoscope 2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPed 16 0.5 16.5 1000 0 1000
+TH2F hhodo_2y_neg_ped_vs_pad 'HMS Hodoscope 2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_1x_neg_pi_vs_pad 'HMS Hodoscope 1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1x.GoodPaddle  H.hod.1x.GoodNegAdcPulseInt 16 0.5 16.5 4000 0 40000
+TH2F hhodo_1y_neg_pi_vs_pad 'HMS Hodoscope 1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.1y.GoodPaddle  H.hod.1y.GoodNegAdcPulseInt 10 0.5 10.5 4000 0 40000
+TH2F hhodo_2x_neg_pi_vs_pad 'HMS Hodoscope 2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2x.GoodPaddle  H.hod.2x.GoodNegAdcPulseInt 16 0.5 16.5 4000 0 40000
+TH2F hhodo_2y_neg_pi_vs_pad 'HMS Hodoscope 2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' H.hod.2y.GoodPaddle  H.hod.2y.GoodNegAdcPulseInt 10 0.5 10.5 4000 0 40000
+TH2F hhodo_1x_neg_pamp_vs_pad 'HMS Hodoscope 1X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.1x.GoodPaddle  H.hod.1x.GoodNegAdcPulseAmp 16 0.5 16.5 4100 0 4100
+TH2F hhodo_1y_neg_pamp_vs_pad 'HMS Hodoscope 1Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.1y.GoodPaddle  H.hod.1y.GoodNegAdcPulseAmp 10 0.5 10.5 4100 0 4100
+TH2F hhodo_2x_neg_pamp_vs_pad 'HMS Hodoscope 2X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.2x.GoodPaddle  H.hod.2x.GoodNegAdcPulseAmp 16 0.5 16.5 4100 0 4100
+TH2F hhodo_2y_neg_pamp_vs_pad 'HMS Hodoscope 2Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' H.hod.2y.GoodPaddle  H.hod.2y.GoodNegAdcPulseAmp 10 0.5 10.5 4100 0 4100
+TH2F hhodo_1x_neg_tdc_time_vs_pad 'HMS Hodoscope 1X- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.1x.GoodPaddle  H.hod.1x.GoodNegTdcChan 16 0.5 16.5 3500 -500 3000
+TH2F hhodo_1y_neg_tdc_time_vs_pad 'HMS Hodoscope 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.1y.GoodPaddle  H.hod.1y.GoodNegTdcChan 10 0.5 10.5 3500 -500 3000
+TH2F hhodo_2x_neg_tdc_time_vs_pad 'HMS Hodoscope 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.2x.GoodPaddle  H.hod.2x.GoodNegTdcChan 16 0.5 16.5 3500 -500 3000
+TH2F hhodo_2y_neg_tdc_time_vs_pad 'HMS Hodoscope 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' H.hod.2y.GoodPaddle  H.hod.2y.GoodNegTdcChan 10 0.5 10.5 3500 -500 3000
+
+# Cherenkov
+TH1F hgcer_occu 'HMS Cherenkov ADC Occupancy; PMT Number; Number of ADC Hits' H.cer.adcCounter 2 0.5 2.5
+TH2F hgcer_ped_vs_cntr 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPed 2 0.5 2.5 1000 0 1000
+TH2F hgcer_pi_vs_cntr 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 4000 0 40000
+TH2F hgcer_pamp_vs_cntr 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 4100 0 4100
+
+# Pre-Shower
+TH1F hcal_hA_pos_occu 'HMS hA+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.posAdcCounter 13 0.5 13.5
+TH2F hcal_hA_pos_ped_blk 'HMS hA+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hA_pos_pi_blk 'HMS hA+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_pos_pamp_blk 'HMS hA+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+TH1F hcal_hA_neg_occu 'HMS hA- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.negAdcCounter 13 0.5 13.5
+TH2F hcal_hA_neg_ped_blk 'HMS hA- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hA_neg_pi_blk 'HMS hA- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hA_neg_pamp_blk 'HMS hA- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+TH1F hcal_hB_pos_occu 'HMS hB+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.posAdcCounter 13 0.5 13.5
+TH2F hcal_hB_pos_ped_blk 'HMS hB+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hB_pos_pi_blk 'HMS hB+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_pos_pamp_blk 'HMS hB+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+TH1F hcal_hB_neg_occu 'HMS hB- ADC Occupancy; Block Number; Number of ADC Hits' H.cal.2ta.negAdcCounter 13 0.5 13.5
+TH2F hcal_hB_neg_ped_blk 'HMS hB- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hB_neg_pi_blk 'HMS hB- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hB_neg_pamp_blk 'HMS hB- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+# Shower
+TH1F hcal_hC_occu 'HMS hC+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.3ta.posAdcCounter 13 0.5 13.5
+TH2F hcal_hC_ped_blk 'HMS hC+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hC_pi_blk 'HMS hC+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hC_pamp_blk 'HMS hC+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+TH1F hcal_hD_occu 'HMS hD+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.4ta.posAdcCounter 13 0.5 13.5
+TH2F hcal_hD_ped_blk 'HMS hD+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPed 13 0.5 13.5 1000 0 1000
+TH2F hcal_hD_pi_blk 'HMS hD+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
+TH2F hcal_hD_pamp_blk 'HMS hD+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmp 13 0.5 13.5 4100 0 4100
+
+# Trigger Apparatus
+TH1F htrig_hCERsum_pped 'HMS Cherenkov Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hCERSUM_adcPed 1000 0 1000
+TH1F htrig_hCERsum_pint 'HMS Cherenkov Sum Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.hms.hCERSUM_adcPulseInt 4000 0 40000
+TH1F htrig_hCERsum_pamp 'HMS Cherenkov Sum Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Unit' T.hms.hCERSUM_adcPulseAmp 4100 0 4100
+TH1F htrig_hCERsum_tdc_time 'HMS Cherenkov Sum TDC Time; TDC Time (TDC Clicks); Number of Entries / 1 TDC Clicks' T.hms.hCERSUM_tdcTime 4000 0 4000
+
+TH1F htrig_hAsum_pped 'HMS hA Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hASUM_adcPed 1000 0 1000
+TH1F htrig_hAsum_pint 'HMS hA Sum Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.hms.hASUM_adcPulseInt 4000 0 40000
+TH1F htrig_hAsum_pamp 'HMS hA Sum Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Unit' T.hms.hASUM_adcPulseAmp 4100 0 4100
+TH1F htrig_hAsum_tdc_time 'HMS hA Sum TDC Time; TDC Time (TDC Clicks); Number of Entries / 1 TDC Clicks' T.hms.hASUM_tdcTime 4000 0 4000
+
+TH1F htrig_hBsum_pped 'HMS hB Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hBSUM_adcPed 1000 0 1000
+TH1F htrig_hBsum_pint 'HMS hB Sum Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.hms.hBSUM_adcPulseInt 4000 0 40000
+TH1F htrig_hBsum_pamp 'HMS hB Sum Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Unit' T.hms.hBSUM_adcPulseAmp 4100 0 4100
+TH1F htrig_hBsum_tdc_time 'HMS hB Sum TDC Time; TDC Time (TDC Clicks); Number of Entries / 1 TDC Clicks' T.hms.hBSUM_tdcTime 4000 0 4000
+
+TH1F htrig_hCsum_pped 'HMS hC Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hCSUM_adcPed 1000 0 1000
+TH1F htrig_hCsum_pint 'HMS hC Sum Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.hms.hCSUM_adcPulseInt 4000 0 40000
+TH1F htrig_hCsum_pamp 'HMS hC Sum Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Unit' T.hms.hCSUM_adcPulseAmp 4100 0 4100
+TH1F htrig_hCsum_tdc_time 'HMS hC Sum TDC Time; TDC Time (TDC Clicks); Number of Entries / 1 TDC Clicks' T.hms.hCSUM_tdcTime 4000 0 4000
+
+TH1F htrig_hDsum_pped 'HMS hD Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hDSUM_adcPed 1000 0 1000
+TH1F htrig_hDsum_pint 'HMS hD Sum Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.hms.hDSUM_adcPulseInt 4000 0 40000
+TH1F htrig_hDsum_pamp 'HMS hD Sum Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Unit' T.hms.hDSUM_adcPulseAmp 4100 0 4100
+TH1F htrig_hDsum_tdc_time 'HMS hD Sum TDC Time; TDC Time (TDC Clicks); Number of Entries / 1 TDC Clicks' T.hms.hDSUM_tdcTime 4000 0 4000
+
+TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Sum Pulse Pedestal; Pulse Pedestal (ADC Units); Number of Entries / 1 ADC Units;' T.hms.hPSHWR_adcPed 1000 0 1000
+TH1F htrig_hpreShwr_adc_pint 'HMS Pre-Shower Sum Pulse Integral; Pulse Integral (ADC Units); Number of Entries / 10 ADC Units;' T.hms.hPSHWR_adcPulseInt 4000 0 40000
+TH1F htrig_hpreShwr_adc_pamp 'HMS Pre-Shower Sum Pulse Amplitude; Pulse Amplitude (ADC Units); Number of Entries / 1 ADC Units;' T.hms.hPSHWR_adcPulseAmp 4100 0 4100
+
+TH1F htrig_hshwr_adc_pped 'HMS Shower Pulse Pedestal; Pulse Pedestal (ADC Units); Number of Entries / 1 ADC Units;' T.hms.hSHWR_adcPed 1000 0 1000
+TH1F htrig_hshwr_adc_pint 'HMS Shower Pulse Integral; Pulse Integral (ADC Units); Number of Entries / 10 ADC Units;' T.hms.hSHWR_adcPulseInt 4000 0 40000
+TH1F htrig_hshwr_adc_pamp 'HMS Shower Pulse Amplitude; Pulse Amplitude (ADC Units); Number of Entries / 1 ADC Units;' T.hms.hSHWR_adcPulseAmp 4100 0 4100
+
+TH1F htrig_hpreShwrLow_tdc 'HMS Pre-Shower Low TDC Time; TDC Time (TDC Units); Number of Entries / 1 TDC Units;' T.hms.hPSHWRLO_tdcTime 4000 0 4000
+TH1F htrig_hpreShwrHigh_tdc 'HMS Pre-Shower High TDC Time; TDC Time (TDC Units); Number of Entries / 1 TDC Units;' T.hms.hPSHWRHI_tdcTime 4000 0 4000
+TH1F htrig_hshwr_tdc 'HMS Shower TDC Time; TDC Time (TDC Units); Number of Entries / 1 TDC Units;' T.hms.hSHWR_tdcTime 4000 0 4000
