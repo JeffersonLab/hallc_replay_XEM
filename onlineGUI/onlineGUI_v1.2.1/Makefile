@@ -1,6 +1,6 @@
 # Makefile for standalone version of panguin/onlineGUI
-#  - B. Moffit 
-# 
+#  - B. Moffit
+#
 
 # Choose the compiler.
 GCC=g++
@@ -10,14 +10,15 @@ ifdef INSURE
   GLD=insure
 endif
 
+ROOTMVERSION  = $(shell root-config --version | cut -f1 -d.)
 ROOTLIBS      = $(shell root-config --libs)
 ROOTGLIBS     = $(shell root-config --glibs)
 INCLUDES      = -I$(ROOTSYS)/include
 CXX           = $(GCC)
 CXXFLAGS      = -Wall -fno-exceptions -fPIC $(INCLUDES) -fpermissive
 LD            = $(GLD)
-LDFLAGS       = 
-SOFLAGS       = -shared 
+LDFLAGS       =
+SOFLAGS       = -shared
 GLIBS         = $(ROOTGLIBS) -L/usr/X11R6/lib -lXpm -lX11
 LIBS          = $(GLIBS) $(ROOTLIBS) $(ROOTGLIBS)
 
@@ -25,8 +26,12 @@ MAKEDEPEND    = $(GCC)
 
 ALL_LIBS = $(LIBS)
 
-
 CXXFLAGS += -DSTANDALONE
+
+ifeq ($(ROOTMVERSION), 6)
+	CXXFLAGS += -std=c++11
+	MAKEDEPEND += -std=c++11
+endif
 
 # Insert extra headers needed by GetRootFileName.C or GetRunNumber.C
 ifdef PAN_SRC_PATH
@@ -42,7 +47,7 @@ endif
 
 SRC = online.C
 DEPS = $(SRC:.C=.d)
-OBJS = $(SRC:.C=.o) 
+OBJS = $(SRC:.C=.o)
 HEAD = $(SRC:.C=.h)
 
 # Make the dictionary
@@ -54,12 +59,12 @@ PROGS = online
 install: all
 	 mv $(PROGS) ../
 
-all: $(PROGS) 
+all: $(PROGS)
 
-$(PROGS): $(OBJS) $(SRC) $(HEAD) 
+$(PROGS): $(OBJS) $(SRC) $(HEAD)
 	rm -f $@
 	@echo "Generating" $@
-	$(LD) $(CXXFLAGS) -o $@ $(OBJS) $(ALL_LIBS) 
+	$(LD) $(CXXFLAGS) -o $@ $(OBJS) $(ALL_LIBS)
 
 # Dictionary
 onlineDict.C: $(DOBJS) onlineLinkDef.h
@@ -71,7 +76,7 @@ clean:
 	rm -f *.o core *~ *.d *.tar *.so  *Dict* $(PROGS)
 
 realclean:  clean
-	rm -f *.d ../$(PROGS) 
+	rm -f *.d ../$(PROGS)
 
 .SUFFIXES:
 .SUFFIXES: .c .cc .cpp .C .o .d
@@ -87,5 +92,3 @@ realclean:  clean
 	      [ -s $@ ] || rm -f $@'
 
 -include $(DEPS)
-
-
