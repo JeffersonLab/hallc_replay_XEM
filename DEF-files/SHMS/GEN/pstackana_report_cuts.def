@@ -1,0 +1,189 @@
+# Demo cuts for hodtest
+#
+
+Block: RawDecode
+
+Pedestal_event    g.evtyp==4
+scalar_event      g.evtyp==0
+HMS_event         g.evtyp==1
+SHMS_event         g.evtyp==1
+coin_event        g.evtyp==3
+misc_event        g.evtyp>=5
+hmscoin_event     g.evtyp==1||g.evtyp==3
+shmscoin_event     g.evtyp==2||g.evtyp==3
+all_event         g.evtyp==1||g.evtyp==2||g.evtyp==3
+RawDecode_master  1
+
+Block: Decode
+Decode_master     HMS_event
+
+Block: CoarseTracking
+CoarseTracking_master HMS_event
+
+all_trigs             g.evtyp==1 || g.evtyp==2 || g.evtyp==3
+hms_shms_trig          g.evtyp==1 || g.evtyp==2
+hms_coin_trig         g.evtyp==1 || g.evtyp==3
+
+
+shmsDC1Planes_large  (P.dc.1x1.nhit+P.dc.1u2.nhit+P.dc.1u1.nhit+P.dc.1v1.nhit+P.dc.1x2.nhit+P.dc.1v2.nhit) >20
+shmsDC2Planes_large  (P.dc.2x1.nhit+P.dc.2u2.nhit+P.dc.2u1.nhit+P.dc.2v1.nhit+P.dc.2x2.nhit+P.dc.2v2.nhit) >20
+
+shmsDC1_1hit_x1                P.dc.1x1.nhit == 1
+shmsDC1_1hit_u1                P.dc.1u1.nhit == 1
+shmsDC1_1hit_u2                P.dc.1u2.nhit == 1
+shmsDC1_1hit_v1                P.dc.1v1.nhit == 1
+shmsDC1_1hit_v2                P.dc.1v2.nhit == 1
+shmsDC1_1hit_x2                P.dc.1x2.nhit == 1
+
+shmsDC2_1hit_x1                P.dc.2x1.nhit == 1
+shmsDC2_1hit_u1                P.dc.2u1.nhit == 1
+shmsDC2_1hit_u2                P.dc.2u2.nhit == 1
+shmsDC2_1hit_v1                P.dc.2v1.nhit == 1
+shmsDC2_1hit_v2                P.dc.2v2.nhit == 1
+shmsDC2_1hit_x2                P.dc.2x2.nhit == 1
+
+h1hit1                P.dc.1x1.nhit >= 1
+h1hit2                P.dc.1u1.nhit >= 1
+h1hit3                P.dc.1u2.nhit >= 1
+h1hit4                P.dc.1v1.nhit >= 1
+h1hit5                P.dc.1v2.nhit >= 1
+h1hit6                P.dc.1x2.nhit >= 1
+
+h2hit1                P.dc.2x1.nhit >= 1
+h2hit2                P.dc.2u1.nhit >= 1
+h2hit3                P.dc.2u2.nhit >= 1
+h2hit4                P.dc.2v1.nhit >= 1
+h2hit5                P.dc.2v2.nhit >= 1
+h2hit6                P.dc.2x2.nhit >= 1
+
+shmsDC1Planes6hits shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_u2&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC2Planes6hits shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_u2&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC1_5hits_x1     shmsDC1_1hit_u1&&shmsDC1_1hit_u2&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_6hits_x1     h1hit1&&shmsDC1_1hit_u1&&shmsDC1_1hit_u2&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_5hits_u1     shmsDC1_1hit_x1&&shmsDC1_1hit_u2&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_6hits_u1     h1hit2&&shmsDC1_1hit_x1&&shmsDC1_1hit_u2&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_5hits_u2     shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_6hits_u2     h1hit3&&shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_v1&&shmsDC1_1hit_v2
+shmsDC1_5hits_v1     shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_u2&&shmsDC1_1hit_v2
+shmsDC1_6hits_v1     h1hit4&&shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_u2&&shmsDC1_1hit_v2
+shmsDC1_5hits_v2     shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_u2&&shmsDC1_1hit_v1
+shmsDC1_6hits_v2     h1hit5&&shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_x2&&shmsDC1_1hit_u2&&shmsDC1_1hit_v1
+shmsDC1_5hits_x2     shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_v1&&shmsDC1_1hit_u2&&shmsDC1_1hit_v2
+shmsDC1_6hits_x2     h1hit6&&shmsDC1_1hit_x1&&shmsDC1_1hit_u1&&shmsDC1_1hit_v1&&shmsDC1_1hit_u2&&shmsDC1_1hit_v2
+
+shmsDC2_5hits_x1     shmsDC2_1hit_u1&&shmsDC2_1hit_u2&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_6hits_x1     h2hit1&&shmsDC2_1hit_u1&&shmsDC2_1hit_u2&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_5hits_u1     shmsDC2_1hit_x1&&shmsDC2_1hit_u2&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_6hits_u1     h2hit2&&shmsDC2_1hit_x1&&shmsDC2_1hit_u2&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_5hits_u2     shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_6hits_u2     h2hit3&&shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_v1&&shmsDC2_1hit_v2
+shmsDC2_5hits_v1     shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_u2&&shmsDC2_1hit_v2
+shmsDC2_6hits_v1     h2hit4&&shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_u2&&shmsDC2_1hit_v2
+shmsDC2_5hits_v2     shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_u2&&shmsDC2_1hit_v1
+shmsDC2_6hits_v2     h2hit5&&shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_x2&&shmsDC2_1hit_u2&&shmsDC2_1hit_v1
+shmsDC2_5hits_x2     shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_v1&&shmsDC2_1hit_u2&&shmsDC2_1hit_v2
+shmsDC2_6hits_x2     h2hit6&&shmsDC2_1hit_x1&&shmsDC2_1hit_u1&&shmsDC2_1hit_v1&&shmsDC2_1hit_u2&&shmsDC2_1hit_v2
+
+
+
+
+
+shms1HitsLt            P.dc.Ch1.nhit <= P.dc.Ch1.maxhits && g.evtyp==1
+shms2HitsLt            P.dc.Ch2.nhit <= P.dc.Ch2.maxhits && g.evtyp==1
+shmsHitsLt             P.dc.Ch1.nhit <= P.dc.Ch1.maxhits && P.dc.Ch2.nhit <= P.dc.Ch2.maxhits && g.evtyp==1
+shmsDC1PlanesGT        (h1hit1 + h1hit2 + h1hit3 + h1hit4 + h1hit5 + h1hit6 )>=5
+shmsDC2PlanesGT        (h2hit1 + h2hit2 + h2hit3 + h2hit4 + h2hit5 + h2hit6 )>=5
+shmsPlanesGT           shmsDC1PlanesGT && shmsDC2PlanesGT
+shmsHitsPlanes         (P.dc.Ch1.nhit <= P.dc.Ch1.maxhits) && (P.dc.Ch2.nhit <= P.dc.Ch2.maxhits) && shmsPlanesGT
+hSpacePoints          P.dc.Ch1.spacepoints >= 1 && P.dc.Ch2.spacepoints >=1
+hSpacePointsStub      P.dc.stubtest==1 && P.dc.Ch1.spacepoints >=1 && P.dc.Ch2.spacepoints >=1
+hFoundTrack           P.dc.ntrack>0 
+hStubLT               P.dc.stubtest==1
+f1HSpacePoints        shms1HitsLt && shmsDC1PlanesGT && P.dc.Ch1.spacepoints==0 && g.evtyp==1
+f2HSpacePoints        shms2HitsLt && shmsDC2PlanesGT && P.dc.Ch2.spacepoints==0 && g.evtyp==1
+hTest1                shmsHitsPlanes && (!hSpacePoints)
+hTest2                hSpacePoints && (!hStubLT)
+
+
+
+
+
+
+Block: CoarseReconstruct
+CoarseReconstruct_master shms_event
+
+Block: Tracking
+Tracking_master  shms_event
+
+Block: Reconstruct
+Reconstruct_master shms_event
+
+shmsScinGood           P.hod.goodscinhit == 1
+
+shmsScinShould         shmsScinGood && P.cal.etotnorm > 0.7 && P.hgcer.npesum > 2.0
+shmsScinShoulde        shmsScinGood && P.hgcer.npesum > 2.0
+shmsScinShouldh        P.hod.goodscinhit == 1 && g.evtyp == 1
+
+shmsScinDid            shmsScinShould && P.dc.ntrack > 0
+shmsScinDide           shmsScinShoulde && P.dc.ntrack > 0
+shmsScinDidh           shmsScinShouldh && P.dc.ntrack > 0
+
+
+
+goodHDC1x1            P.dc.1x1.nhit > 0 && P.dc.1x1.nhit < 3
+goodHDC1u2            P.dc.1u2.nhit > 0 && P.dc.1u2.nhit < 3
+goodHDC1u1            P.dc.1u1.nhit > 0 && P.dc.1u1.nhit < 3
+goodHDC1v1            P.dc.1v1.nhit > 0 && P.dc.1v1.nhit < 3
+goodHDC1v2            P.dc.1v2.nhit > 0 && P.dc.1v2.nhit < 3
+goodHDC1x2            P.dc.1x2.nhit > 0 && P.dc.1x2.nhit < 3
+
+goodHDC2x1            P.dc.2x1.nhit > 0 && P.dc.2x1.nhit < 3
+goodHDC2u2            P.dc.2u2.nhit > 0 && P.dc.2u2.nhit < 3
+goodHDC2u1            P.dc.2u1.nhit > 0 && P.dc.2u1.nhit < 3
+goodHDC2v1            P.dc.2v1.nhit > 0 && P.dc.2v1.nhit < 3
+goodHDC2v2            P.dc.2v2.nhit > 0 && P.dc.2v2.nhit < 3
+goodHDC2x2            P.dc.2x2.nhit > 0 && P.dc.2x2.nhit < 3
+
+goodHDC1              goodHDC1x1  && goodHDC1u2 && goodHDC1u1 && goodHDC1v1 && goodHDC1v2 && goodHDC1x2 
+goodHDC2              goodHDC2x1  && goodHDC2u2 && goodHDC2u1 && goodHDC2v1 && goodHDC2v2 && goodHDC2x2 
+bothGood              goodHDC1 && goodHDC2
+
+realhdc1x1            goodHDC1x1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc1u2            goodHDC1u2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc1u1            goodHDC1u1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc1v1            goodHDC1v1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc1v2            goodHDC1v2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2x2            goodHDC1x2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2x1            goodHDC2x1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2u2            goodHDC2u2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2u1            goodHDC2u1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2v1            goodHDC2v1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2v2            goodHDC2v2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+realhdc2x2            goodHDC2x2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
+
+hFound1Track          P.dc.ntrack == 1
+hFound2Track          P.dc.ntrack == 2
+hFound3Track          P.dc.ntrack == 3
+hFound4Track          P.dc.ntrack == 4
+
+hCleanTrack           P.gtr.index > -1
+1hCleanTrack          P.gtr.index == 0
+2hCleanTrack          P.gtr.index == 1
+3hCleanTrack          P.gtr.index == 2
+4hCleanTrack          P.gtr.index == 3
+
+anyhs1x               P.hod.1x.nhits > 0
+anyhs1y               P.hod.1y.nhits > 0
+anyhs2x               P.hod.2x.nhits > 0
+anyhs2y               P.hod.2y.nhits > 0
+
+goodhs1x              P.hod.1x.nhits > 0 && P.hod.1x.nhits < 3
+goodhs1y              P.hod.1y.nhits > 0 && P.hod.1y.nhits < 3
+goodhs1               goodhs1x && goodhs1y
+goodhs2x              P.hod.2x.nhits > 0 && P.hod.2x.nhits < 3
+goodhs2y              P.hod.2y.nhits > 0 && P.hod.2y.nhits < 3
+goodhs2               goodhs2x && goodhs2y
+goodhs1s2             goodhs1 && goodhs2
+
+Block: Physics
+Physics_master shms_event
