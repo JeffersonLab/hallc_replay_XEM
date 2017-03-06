@@ -8,11 +8,11 @@ hntracks_max_fp = 10
 h_remove_sppt_if_one_y_plane = 0
 
 ; Minimum number of hits in each space point (one per chamber)
-hmin_hit = 5, 5
+hmin_hit = 4, 4
 
 ; Minimum number of pairs in each space point (one per chamber)
 ; Should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking
-hmin_combos = 4, 4 
+hmin_combos = 3, 3 
 
 ; Minimum separation of distinct space points
 hspace_point_criterion = 1.0, 1.0
@@ -60,8 +60,11 @@ hstub_max_xpdiff = .05
 
 ; hstat_maxchisq          chisquared limit for tracks used to measure hodo. eff.
   hstat_maxchisq = 10.
+; if both hsel_using_scin = 0 and hsel_using_prune = 0 then best chi2 track is used.
 ; hsel_using_scin         uses scintillator for track selection
-  hsel_using_scin = 1
+  hsel_using_scin = 0
+; hsel_using_prune         using prune
+  hsel_using_prune = 0
 ; hstat_slop              distance from center of scin. to count as expecting hit
   hstat_slop = 2.
 ; hstat_mineff            warning level for scin. effic.

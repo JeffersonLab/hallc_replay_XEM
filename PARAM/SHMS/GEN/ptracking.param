@@ -25,7 +25,7 @@ pntracks_max_fp = 10
 ; focal plane position to link stubs to tracks
   pntracks_max_fp = 10
   pxt_track_criterion = 100.0
-  pyt_track_criterion = 2.0
+  pyt_track_criterion = 20.0
   pxpt_track_criterion = 1.0
   pypt_track_criterion = 1.0
 
@@ -56,8 +56,11 @@ pntracks_max_fp = 10
 
 ; pstat_maxchisq          chisquared limit for tracks used to measure hodo. eff.
   pstat_maxchisq = 10.
+; if both psel_using_scin = 0 and psel_using_prune = 0 then best chi2 track is used.
 ; psel_using_scin         uses scintillator for track selection
-  psel_using_scin = 1
+  psel_using_scin = 0
+; psel_using_prune         using prune
+  psel_using_prune = 0
 ; pstat_slop              distance from center of scin. to count as expecting hit
   pstat_slop = 2.
 ; pstat_mineff            warning level for scin. effic.
