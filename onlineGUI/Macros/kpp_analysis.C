@@ -32,6 +32,8 @@ void UserScript() {
 
   static const Double_t aero_adc2npe = 1./500.;
 
+  static const UInt_t maxNumTracks = 10;
+
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Declare variables
@@ -103,7 +105,8 @@ void UserScript() {
   Double_t pngc_pulseInt[maxAdcHits*nngc_pmts];
 
   // Tracking information
-  Double_t trk_pmag;
+  Int_t ntracks;
+  Double_t trk_pmag[maxNumTracks];
 
   Long64_t nentries;
 
@@ -293,20 +296,21 @@ void UserScript() {
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("Ndata.P.hgcer.adcCounter", &phgc_hits);
-  T->SetBranchAddress("P.hgcer.adcCounter", &phgc_pmt);
-  T->SetBranchAddress("P.hgcer.adcPulseTimeRaw", &phgc_pulseTime);
-  T->SetBranchAddress("P.hgcer.adcPulseInt", &phgc_pulseInt);
+  T->SetBranchAddress("P.hgcer.adcCounter", phgc_pmt);
+  T->SetBranchAddress("P.hgcer.adcPulseTimeRaw", phgc_pulseTime);
+  T->SetBranchAddress("P.hgcer.adcPulseInt", phgc_pulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("Ndata.P.ngcer.adcCounter", &pngc_hits);
-  T->SetBranchAddress("P.ngcer.adcCounter", &pngc_pmt);
-  T->SetBranchAddress("P.ngcer.adcPulseTimeRaw", &pngc_pulseTime);
-  T->SetBranchAddress("P.ngcer.adcPulseInt", &pngc_pulseInt);
+  T->SetBranchAddress("P.ngcer.adcCounter", pngc_pmt);
+  T->SetBranchAddress("P.ngcer.adcPulseTimeRaw", pngc_pulseTime);
+  T->SetBranchAddress("P.ngcer.adcPulseInt", pngc_pulseInt);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
-  T->SetBranchAddress("P.tr.p", &trk_pmag);
+  T->SetBranchAddress("Ndata.P.tr.p", &ntracks);
+  T->SetBranchAddress("P.tr.p", trk_pmag);
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -612,9 +616,11 @@ void UserScript() {
     if (pshwr_sum != 0.0) h_pshwr_sum->Fill(pshwr_sum);
     if ((ppshwr_sum + pshwr_sum) != 0.0) h_ptotshwr_sum->Fill(ppshwr_sum + pshwr_sum);
     if (ppshwr_sum != 0.0 && pshwr_sum != 0.0) {
-      h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);
-      if (trk_pmag != 0.0) h2_EdivP_vs_P->Fill(trk_pmag, (ppshwr_sum + pshwr_sum)/trk_pmag);
+      h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);   
     }
+    
+    for (UInt_t itrack = 0; itrack < ntracks; itrack++)
+      if (trk_pmag != 0.0 && ntracks == 1) h2_EdivP_vs_P->Fill(trk_pmag[0], (ppshwr_sum + pshwr_sum)/trk_pmag[0]);
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
