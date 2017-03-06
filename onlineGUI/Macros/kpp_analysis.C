@@ -19,7 +19,7 @@ void UserScript() {
   static const UInt_t nngc_pmts = 4;
 
   static const UInt_t npos_aero_pmts = 7;
-  static const UInt_t nneg_aero_pmts = 7; 
+  static const UInt_t nneg_aero_pmts = 7;
 
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
@@ -70,7 +70,7 @@ void UserScript() {
   Double_t p2X_goodNegTdcTimeCorr[maxTdcHits*nbars_2x], p2Y_goodNegTdcTimeCorr[maxTdcHits*nbars_2y];
   Double_t p1X_goodPosTdcTimeCorr[maxTdcHits*nbars_1x], p1Y_goodPosTdcTimeCorr[maxTdcHits*nbars_1y];
   Double_t p2X_goodPosTdcTimeCorr[maxTdcHits*nbars_2x], p2Y_goodPosTdcTimeCorr[maxTdcHits*nbars_2y];
-  
+
   // Hodoscope focal plane times
   Double_t p1X_fpTime, p1Y_fpTime, p2X_fpTime, p2Y_fpTime;
   Double_t p1X_plTime, p1Y_plTime, p2X_plTime, p2Y_plTime;
@@ -96,7 +96,7 @@ void UserScript() {
   Int_t phgc_hits;
   Double_t phgc_pmt[maxAdcHits*nhgc_pmts], phgc_pulseTime[maxAdcHits*nhgc_pmts];
   Double_t phgc_pulseInt[maxAdcHits*nhgc_pmts];
-  
+
   // Noble gas Cherenkov ADC
   Int_t pngc_hits;
   Double_t pngc_pmt[maxAdcHits*nngc_pmts], pngc_pulseTime[maxAdcHits*nngc_pmts];
@@ -104,7 +104,7 @@ void UserScript() {
 
   // Tracking information
   Double_t trk_pmag;
-  
+
   Long64_t nentries;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
@@ -143,7 +143,7 @@ void UserScript() {
   TH2F *h2_phgc_pulseTime_pT1_diff;
   TH2F *h2_phgc_pulseTime_pT2_diff;
   TH2F *h2_phgc_pulseTime_pT3_diff;
-  
+
   TH2F *h2_pngc_pulseTime_pT1_diff;
   TH2F *h2_pngc_pulseTime_pT2_diff;
   TH2F *h2_pngc_pulseTime_pT3_diff;
@@ -154,7 +154,7 @@ void UserScript() {
   TH2F *h2_EdivP_vs_P;
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
-  
+
   // Declare trees
   TTree *T = (TTree*) gDirectory->Get("T");
 
@@ -255,11 +255,11 @@ void UserScript() {
   T->SetBranchAddress("P.hod.1x.GoodNegTdcTimeCorr", p1X_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.1y.GoodNegTdcTimeCorr", p1Y_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.2x.GoodNegTdcTimeCorr", p2X_goodNegTdcTimeCorr);
-  T->SetBranchAddress("P.hod.2y.GoodNegTdcTimeCorr", p2Y_goodNegTdcTimeCorr); 
+  T->SetBranchAddress("P.hod.2y.GoodNegTdcTimeCorr", p2Y_goodNegTdcTimeCorr);
   T->SetBranchAddress("P.hod.1x.GoodPosTdcTimeCorr", p1X_goodPosTdcTimeCorr);
   T->SetBranchAddress("P.hod.1y.GoodPosTdcTimeCorr", p1Y_goodPosTdcTimeCorr);
   T->SetBranchAddress("P.hod.2x.GoodPosTdcTimeCorr", p2X_goodPosTdcTimeCorr);
-  T->SetBranchAddress("P.hod.2y.GoodPosTdcTimeCorr", p2Y_goodPosTdcTimeCorr); 
+  T->SetBranchAddress("P.hod.2y.GoodPosTdcTimeCorr", p2Y_goodPosTdcTimeCorr);
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
@@ -307,9 +307,9 @@ void UserScript() {
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   T->SetBranchAddress("P.tr.p", &trk_pmag);
-  
+
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
-          
+
   // Create histos
 
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
@@ -405,13 +405,13 @@ void UserScript() {
   h2_phgc_pulseTime_pT1_diff = new TH2F("h2_phgc_pulseTime_pT1_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 300, -300, 0);
   h2_phgc_pulseTime_pT2_diff = new TH2F("h2_phgc_pulseTime_pT2_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 300, -300, 0);
   h2_phgc_pulseTime_pT3_diff = new TH2F("h2_phgc_pulseTime_pT3_diff", "SHMS Heavy Gas Cherenkov ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nhgc_pmts, 0.5, nhgc_pmts + 0.5, 300, -300, 0);
-  
+
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   h2_pngc_pulseTime_pT1_diff = new TH2F("h2_pngc_pulseTime_pT1_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T1; PMT Number; ADC Pulse Time - Trigger 1 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 300, -300, 0);
   h2_pngc_pulseTime_pT2_diff = new TH2F("h2_pngc_pulseTime_pT2_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T2; PMT Number; ADC Pulse Time - Trigger 2 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 300, -300, 0);
   h2_pngc_pulseTime_pT3_diff = new TH2F("h2_pngc_pulseTime_pT3_diff", "SHMS Noble Gas Cherenkov ADC Pulse Time - T3; PMT Number; ADC Pulse Time - Trigger 3 Time (ns)", nngc_pmts, 0.5, nngc_pmts + 0.5, 300, -300, 0);
-    
+
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   h2_pshwr_vs_phgcer = new TH2F ("h2_pshwr_vs_phgcer", "SHMS Shower vs. Heavy Gas Cherenkov; Number of HGC Photoelectrons / 1 Photoelectron; Shower Energy / 1 MeV", 500, 0, 500, 4000, 0, 4);
@@ -427,17 +427,17 @@ void UserScript() {
   // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//
 
   h2_EdivP_vs_P = new TH2F ("h2_EdivP_vs_P", "SHMS E/p vs. p; p (geV); E/p", 600, 0, 6, 100, 0, 1);
-  
+
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
   // Loop of entries in tree
   for(UInt_t ievent = 0; ievent < nentries; ievent++) {
-    
+
     T->GetEntry(ievent);
 
     // cout << "========================" << endl;
     // cout << "Event Number = " << ievent << endl;
-    // cout << "========================" << endl;   
+    // cout << "========================" << endl;
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
@@ -528,36 +528,36 @@ void UserScript() {
 	h2_p2Ypos_pt_tt_diff->Fill(p2Y_posAdcPaddle[iadchit], p2Y_posAdcPulseTime[iadchit]*clk2adc - p2Y_posTdcTime[itdchit]*clk2tdc);
       }
     }
-           
+
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
     // Fill trigger time histos
     if (p1X_tdcTime != 0.0) h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc);
     if (p1Y_tdcTime != 0.0) h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc); 
+    if (p2X_tdcTime != 0.0) h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc);
     if (p2Y_tdcTime != 0.0) h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc); 
+    if (p1T_tdcTime != 0.0) h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc);
     if (p2T_tdcTime != 0.0) h_p2T_tdc->Fill(p2T_tdcTime*clk2tdc);
 
-    h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc); 
-    h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc); 
+    h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc);
+    h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc);
     h_pT3_tdc->Fill(pT3_tdcTime*clk2tdc);
 
     for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
       h_pDCREF_tdc[iref]->Fill(pDCREF_tdcTime[iref]*clk2tdc);
 
-    if (p1X_tdcTime != 0.0) h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc); 
+    if (p1X_tdcTime != 0.0) h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc);
     if (p1Y_tdcTime != 0.0) h_p1YmpT2_tdc->Fill((pT2_tdcTime - p1Y_tdcTime)*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc); 
+    if (p2X_tdcTime != 0.0) h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc);
     if (p2Y_tdcTime != 0.0) h_p2YmpT2_tdc->Fill((pT2_tdcTime - p2Y_tdcTime)*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc); 
+    if (p1T_tdcTime != 0.0) h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc);
     if (p2T_tdcTime != 0.0) h_p2TmpT2_tdc->Fill((pT2_tdcTime - p2T_tdcTime)*clk2tdc);
 
-    if (p1X_tdcTime != 0.0) h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc); 
+    if (p1X_tdcTime != 0.0) h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc);
     if (p1Y_tdcTime != 0.0) h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc); 
+    if (p2X_tdcTime != 0.0) h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc);
     if (p2Y_tdcTime != 0.0) h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc); 
+    if (p1T_tdcTime != 0.0) h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc);
     if (p2T_tdcTime != 0.0) h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
@@ -583,7 +583,7 @@ void UserScript() {
     if (paero_sum != 0.0) h_paero_sum->Fill(paero_sum);
 
     // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-    
+
     Double_t ppshwr_sum = 0.0;
     for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_negHits; ipshwrhit++) {
       h2_ppshwr_negPulseTime_pT1_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
@@ -644,7 +644,7 @@ void UserScript() {
 
     if ((ievent)%1000 == 0)
       cout << "ievent = " << ievent << endl;
-    
+
   }  // Entries loop
 }  // UserScript function
 
@@ -652,23 +652,23 @@ void kpp_analysis(TString histname) {
 
   // Grab the histo
   TH1F *h1d;
-  TH2F *h2d;  
-  
-  h1d = dynamic_cast <TH1F*> gDirectory->Get(histname);
-  h2d = dynamic_cast <TH2F*> gDirectory->Get(histname);
-  
+  TH2F *h2d;
+
+  h1d = dynamic_cast <TH1F*> (gDirectory->Get(histname));
+  h2d = dynamic_cast <TH2F*> (gDirectory->Get(histname));
+
   // Grab histo directly if it does not already exist
   if(!h1d && !h2d) {
     UserScript();
-    h1d = (TH1F*) gDirectory->Get(histname);
-    h2d = (TH2F*) gDirectory->Get(histname);
+    h1d = (TH1F*) (gDirectory->Get(histname));
+    h2d = (TH2F*) (gDirectory->Get(histname));
     // Throw error
     if(!h1d || !h2d) {
-      cout << "User histogram " << histname << " not found" << endl; 
+      cout << "User histogram " << histname << " not found" << endl;
       exit(1);
     }
-  }  
-  //else 
+  }
+  //else
   if (h2d) {
     h2d->SetStats(0);
     h2d->Draw("colz");
