@@ -37,20 +37,20 @@
 
       open(unit=7,file='tofcal.inp')
       read(7,'(a)') filename
-      open(unit=8,file='tofcal.out')
+c      open(unit=8,file='tofcal.out')
       open(unit=11,file='tofcal.parampass1')
       open(unit=12,file='tofcal.param')
-      open(unit=13,file='tofcal.adchist')
-      write(13,'(1x,'' xv'',50f5.0)') (20.*(j-0.5),j=1,50)
-      open(unit=14,file='tofcal.tdchist')
-      write(14,'(1x,'' xv'',50f5.1)') (-5.0+0.2*(j-0.5),j=1,50)
+c      open(unit=13,file='tofcal.adchist')
+c      write(13,'(1x,'' xv'',50f5.0)') (20.*(j-0.5),j=1,50)
+c      open(unit=14,file='tofcal.tdchist')
+c      write(14,'(1x,'' xv'',50f5.1)') (-5.0+0.2*(j-0.5),j=1,50)
 
 ! first see how many hits per PMT: need at least 100 for fitting
 ! also make ADC histograms
       open(unit=9,file=filename,err=998)
-       if(filename(1:1).ne.'h'.and.filename(1:1).ne.'s') then
+       if(filename(1:1).ne.'h'.and.filename(1:1).ne.'p') then
         write(6,'(1x,''error, input file name '',
-     >   '' sould start with h or s'')')
+     >   '' should start with h or p'')')
         goto 999
        endif
        write(*,*) ' filling adc histograms'
@@ -77,7 +77,7 @@
  10   do i=1,200
         adcmin(i)=50.
         if(nhit0(i).gt.0.) then
-          write(13,'(i3,50i4)') i,(min(999,adchistf(i,j)),j=1,50)
+c          write(13,'(i3,50i4)') i,(min(999,adchistf(i,j)),j=1,50)
           hival=0.
           k=0
           do j=1,17
@@ -102,7 +102,7 @@ c         write(13,'(1x,''adcmin='',f6.1)') adcmin(i)
 
 ! Do everything twice, 2nd time with tighter tolerance (ttol) on
 ! time differences, based on first pass
-      ttol=20.0
+      ttol=10.0
       do iloop=1,2
          write(*,*) ' loop = ',iloop
 ! Initialize the fitting arrays
@@ -179,7 +179,7 @@ c          adc(n) = min(500, max(0., adc(n)))
               ipdet(nparam)=idet(j)
               iptyp(nparam)=3
               k=idet(j)
-              write(8,'(1x,i3,4i5)') k,nhit(k),ip1(k),ip2(k),ip3(k)
+c              write(8,'(1x,i3,4i5)') k,nhit(k),ip1(k),ip2(k),ip3(k)
             endif
           enddo ! loop over n
 
@@ -275,7 +275,7 @@ c          adc(n) = min(500, max(0., adc(n)))
       if(iloop.eq.1) then
        do i=1,200
         if(sum1(i).gt.0.) then
-          write(13,'(i3,18i4)') i,(phist(i,j),j=1,18)
+c          write(13,'(i3,18i4)') i,(phist(i,j),j=1,18)
         endif
        enddo
       endif
@@ -285,8 +285,8 @@ c          adc(n) = min(500, max(0., adc(n)))
           mean0(i)=sum2(i)/sum1(i)
           sig0(i)=sqrt(sum3(i)/sum1(i) - mean0(i)**2)
         endif
-        write(8,'(1x,i3,i5,2f6.2,10i5)') i,nhit(i),
-     >    mean0(i),sig0(i),(min(9999,thist(i,j)),j=1,10)
+c        write(8,'(1x,i3,i5,2f6.2,10i5)') i,nhit(i),
+c     >    mean0(i),sig0(i),(min(9999,thist(i,j)),j=1,10)
         sum1(i)=0.
         sum2(i)=0.
         sum3(i)=0.
@@ -297,12 +297,12 @@ c          adc(n) = min(500, max(0., adc(n)))
       df = max(1., df - nparam)
       write(6,'(1x,''initial chi2/d.f.='',f8.3,'' for '',f7.0,
      >   '' deg. freedom'')') chisq/df,df
-      write(8,'(1x,''initial chi2/d.f.='',f8.3,'' for '',f7.0,
-     >   '' deg. freedom'')') chisq/df,df
+c      write(8,'(1x,''initial chi2/d.f.='',f8.3,'' for '',f7.0,
+c     >   '' deg. freedom'')') chisq/df,df
 
 ! find the solutions
       call deqn (nparam,ax,1000,iwork,ifail,1,bx)
-      write(8,'(1x,''ifail='',i10)') ifail
+c      write(8,'(1x,''ifail='',i10)') ifail
 
 ! association of parameters with detectors
       do i=1,nparam
@@ -429,10 +429,10 @@ c          adc(n) = min(500, max(0., adc(n)))
           mean(i)=sum2(i)/sum1(i)
           sig(i)=sqrt(sum3(i)/sum1(i) - mean(i)**2)
         endif
-        write(8,'(1x,i3,i5,2f6.2,10i5)') i,nhit(i),
-     >    mean(i),sig(i),(min(9999,thist(i,j)),j=1,10)
-        if(iloop.eq.2)
-     >    write(14,'(1x,i3,50i5)') i,(min(9999,thistf(i,j)),j=1,50)
+c        write(8,'(1x,i3,i5,2f6.2,10i5)') i,nhit(i),
+c     >    mean(i),sig(i),(min(9999,thist(i,j)),j=1,10)
+c        if(iloop.eq.2)
+c     >    write(14,'(1x,i3,50i5)') i,(min(9999,thistf(i,j)),j=1,50)
         sum1(i)=0.
         sum2(i)=0.
         sum3(i)=0.
@@ -443,8 +443,8 @@ c          adc(n) = min(500, max(0., adc(n)))
       df = max(1., df - nparam)
       write(6,'(1x,''  final chi2/d.f.='',f8.3,'' for '',f7.0,
      >   '' deg. freedom'')') chisq/df,df
-      write(8,'(1x,''  final chi2/d.f.='',f8.3,'' for '',f7.0,
-     >   '' deg. freedom'')') chisq/df,df
+c      write(8,'(1x,''  final chi2/d.f.='',f8.3,'' for '',f7.0,
+c     >   '' deg. freedom'')') chisq/df,df
 
       write(10+iloop,'(/a,''hodo_pos_sigma ='',3(f8.2,'',''),
      >  f8.2)')filename(1:1),(sig(i),i=  1, 80,20)
@@ -462,8 +462,8 @@ c          adc(n) = min(500, max(0., adc(n)))
       enddo ! loop over time tolerance
 
       do i=1,200
-        write(15,'(1x,i3,20i4)') i,(adchistpm(i,j,1),j=1,20)
-        write(15,'(1x,i3,20i4)') i,(adchistpm(i,j,2),j=1,20)
+c        write(15,'(1x,i3,20i4)') i,(adchistpm(i,j,1),j=1,20)
+c        write(15,'(1x,i3,20i4)') i,(adchistpm(i,j,2),j=1,20)
       enddo
 
       goto 999

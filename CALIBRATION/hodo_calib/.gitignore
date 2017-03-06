@@ -1,10 +1,4 @@
-fort.15
-hmsfort.37
-hmstofcal.179
-shmsfort.37
-tofcal.adchist
-tofcal.out
+*.37
 tofcal.param
 tofcal.parampass1
-tofcal.tdchist
 tofcal
