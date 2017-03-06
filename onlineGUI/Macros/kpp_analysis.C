@@ -649,7 +649,7 @@ void UserScript() {
 }  // UserScript function
 
 void kpp_analysis(TString histname) {
-cout << histname << endl;
+
   // Grab the histo
   TH1F *h1d;
   TH2F *h2d;
