@@ -42,25 +42,6 @@ hmsDC2_1hit_v1                H.dc.2v1.nhit == 1
 hmsDC2_1hit_y2                H.dc.2y2.nhit == 1
 hmsDC2_1hit_x2                H.dc.2x2.nhit == 1
 
-hmsDC1Planes6hits   (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit) ==6
-hmsDC2Planes6hits   (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit )==6
-hmsDC1_5hits_x1     (H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit)==5
-hmsDC1_5hits_y1     (H.dc.1x1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit)==5
-hmsDC1_5hits_u1     (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit)==5
-hmsDC1_5hits_v1     (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit)==5 
-hmsDC1_5hits_x2     (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1y2.nhit)==5
-hmsDC1_5hits_y2     (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit)==5
-
-hmsDC2_5hits_x1     (H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit)==5
-hmsDC2_5hits_y1     (H.dc.2x1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit)==5
-hmsDC2_5hits_u1     (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit)==5
-hmsDC2_5hits_v1     (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit)==5 
-hmsDC2_5hits_x2     (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2y2.nhit)==5
-hmsDC2_5hits_y2     (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit)==5
-
-
-
-
 h1hit1                H.dc.1x1.nhit >= 1
 h1hit2                H.dc.1y1.nhit >= 1
 h1hit3                H.dc.1u1.nhit >= 1
@@ -74,6 +55,38 @@ h2hit3                H.dc.2u1.nhit >= 1
 h2hit4                H.dc.2v1.nhit >= 1
 h2hit5                H.dc.2y2.nhit >= 1
 h2hit6                H.dc.2x2.nhit >= 1
+
+hmsDC1Planes6hits   (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit) ==6
+hmsDC2Planes6hits   (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit )==6
+hmsDC1_5hits_x1     hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_6hits_x1     h1hit1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_5hits_y1     hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_6hits_y1     h1hit2&&hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_5hits_u1     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_6hits_u1     h1hit3&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_5hits_v1     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2 
+hmsDC1_6hits_v1     h1hit4&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
+hmsDC1_5hits_x2     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_y2
+hmsDC1_6hits_x2     h1hit6&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_y2
+hmsDC1_5hits_y2     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+hmsDC1_6hits_y2     h1hit5&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+
+hmsDC2_5hits_x1     hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_6hits_x1     h2hit1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_5hits_y1     hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_6hits_y1     h2hit2&&hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_5hits_u1     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_6hits_u1     h2hit3&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_5hits_v1     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2 
+hmsDC2_6hits_v1     h2hit4&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
+hmsDC2_5hits_x2     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_y2
+hmsDC2_6hits_x2     h2hit6&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_y2
+hmsDC2_5hits_y2     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+hmsDC2_6hits_y2     h2hit5&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+
+
+
+
 hms1HitsLt            H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && g.evtyp==1
 hms2HitsLt            H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1
 hmsHitsLt             H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1

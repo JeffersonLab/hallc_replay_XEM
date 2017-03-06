@@ -16,21 +16,21 @@ hmsDC2Planes_large  Counts:	  {hmsDC2Planes_large.npassed}  /all_trigs : {hmsDC2
 hmsDC1Planes6     Counts: {hmsDC1Planes6hits.npassed} /all_trigs : {hmsDC1Planes6hits.npassed/all_trigs.npassed}
 hmsDC2Planes6  	  Counts: {hmsDC2Planes6hits.npassed} /all_trigs : {hmsDC2Planes6hits.npassed/all_trigs.npassed}  
 
+hmsDC1x1Planes5	  Counts: {hmsDC1_5hits_x1.npassed} eff : {hmsDC1_6hits_x1.npassed/hmsDC1_5hits_x1.npassed}
+hmsDC1u1Planes5	  Counts: {hmsDC1_5hits_u1.npassed} eff : {hmsDC1_6hits_u1.npassed/hmsDC1_5hits_u1.npassed}
+hmsDC1y2Planes5	  Counts: {hmsDC1_5hits_y2.npassed} eff : {hmsDC1_6hits_y2.npassed/hmsDC1_5hits_y2.npassed}
+hmsDC1v1Planes5	  Counts: {hmsDC1_5hits_v1.npassed} eff : {hmsDC1_6hits_v1.npassed/hmsDC1_5hits_v1.npassed}
+hmsDC1y1Planes5	  Counts: {hmsDC1_5hits_y1.npassed} eff : {hmsDC1_6hits_y1.npassed/hmsDC1_5hits_y1.npassed}
+hmsDC1x2Planes5	  Counts: {hmsDC1_5hits_x2.npassed} eff : {hmsDC1_6hits_x2.npassed/hmsDC1_5hits_x2.npassed}
+
+
+hmsDC2x1Planes5	  Counts: {hmsDC2_5hits_x1.npassed} eff : {hmsDC2_6hits_x1.npassed/hmsDC2_5hits_x1.npassed}
+hmsDC2u1Planes5	  Counts: {hmsDC2_5hits_u1.npassed} eff : {hmsDC2_6hits_u1.npassed/hmsDC2_5hits_u1.npassed}
+hmsDC2y2Planes5	  Counts: {hmsDC2_5hits_y2.npassed} eff : {hmsDC2_6hits_y2.npassed/hmsDC2_5hits_y2.npassed}
+hmsDC2v1Planes5	  Counts: {hmsDC2_5hits_v1.npassed} eff : {hmsDC2_6hits_v1.npassed/hmsDC2_5hits_v1.npassed}
+hmsDC2y1Planes5	  Counts: {hmsDC2_5hits_y1.npassed} eff : {hmsDC2_6hits_y1.npassed/hmsDC2_5hits_y1.npassed}
+hmsDC2x2Planes5	  Counts: {hmsDC2_5hits_x2.npassed} eff : {hmsDC2_6hits_x2.npassed/hmsDC2_5hits_x2.npassed}
 	       	                      	       
-hmsDC1x1Planes5	  Counts: {hmsDC1_5hits_x1.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_x1.npassed}
-hmsDC1y1Planes5	  Counts: {hmsDC1_5hits_y1.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_y1.npassed}
-hmsDC1u1Planes5	  Counts: {hmsDC1_5hits_u1.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_u1.npassed}
-hmsDC1v1Planes5	  Counts: {hmsDC1_5hits_v1.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_v1.npassed}
-hmsDC1x2Planes5	  Counts: {hmsDC1_5hits_y2.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_y2.npassed} 
-hmsDC1y2Planes5	  Counts: {hmsDC1_5hits_x2.npassed} /hmsDC1Planes6 : {hmsDC1Planes6hits.npassed/hmsDC1_5hits_x2.npassed}
-
-
-hmsDC2x1Planes5	  Counts: {hmsDC2_5hits_x1.npassed}  /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_x1.npassed}
-hmsDC2y1Planes5	  Counts: {hmsDC2_5hits_y1.npassed} /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_y1.npassed}
-hmsDC2u1Planes5	  Counts: {hmsDC2_5hits_u1.npassed} /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_u1.npassed}
-hmsDC2v1Planes5	  Counts: {hmsDC2_5hits_v1.npassed} /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_v1.npassed}
-hmsDC2x2Planes5	  Counts: {hmsDC2_5hits_y2.npassed} /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_y2.npassed} 
-hmsDC2y2Planes5	  Counts: {hmsDC2_5hits_x2.npassed} /hmsDC1Planes6 : {hmsDC2Planes6hits.npassed/hmsDC2_5hits_x2.npassed}
 	       	   	       
 
 *****************************

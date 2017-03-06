@@ -2,14 +2,14 @@ phodo_num_planes = 4
 phodo_plane_names = "1x 1y 2x 2y"
       ppathlength_central = 1800
 ; Z positions of hodoscopes
-      pscin_1x_zpos =  (89.14-11.31)
-      pscin_1y_zpos =  (108.83-11.31)
-      pscin_2x_zpos =  (310.13-11.31)
-      pscin_2y_zpos =  (329.82-11.31)
-      pscin_1x_dzpos = 2.12
-      pscin_1y_dzpos = 2.12
-      pscin_2x_dzpos = 2.12
-      pscin_2y_dzpos = 2.12
+      pscin_1x_zpos =  56.3-9.5
+      pscin_1y_zpos =  56.3+9.5
+      pscin_2x_zpos =  276.35-9.5
+      pscin_2y_zpos =  276.35+9.5
+      pscin_1x_dzpos = 1.0
+      pscin_1y_dzpos = 1.0
+      pscin_2x_dzpos = 1.0
+      pscin_2y_dzpos = 1.0
       pscin_1x_size = 8.0
       pscin_1y_size = 8.0
       pscin_2x_size = 8.0
@@ -44,19 +44,19 @@ phodo_plane_names = "1x 1y 2x 2y"
       pscin_1y_top   = -50
       pscin_1y_bot   =  50
       pscin_1y_offset=  0.0
-      pscin_1y_center= -42.
-                       -35.
-                       -28.
-                       -21.
-                       -14.
-                       -7.
+      pscin_1y_center= +42.
+                       +35.
+                       +28.
+                       +21.
+                       +14.
+                       +7.
                         0.0
-                        7.
-                        14.
-                        21.
-                        28.
-                        35.
-                        42. 
+                        -7.
+                        -14.
+                        -21.
+                        -28.
+                        -35.
+                        -42. 
       pscin_2x_left  =  55.
       pscin_2x_right =  -55.
       pscin_2x_offset=  0.0
