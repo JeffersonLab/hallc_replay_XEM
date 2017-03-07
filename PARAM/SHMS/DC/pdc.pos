@@ -35,18 +35,18 @@ pdc_wire_counting = 0, 0, 0, 0, 0, 0
 
 ; z position in cm of each plane measured from focal plane.
 ; From technical drawings.
-pdc_zpos = pdc_1_zpos - 0.6875*cminch
-           pdc_1_zpos - 0.4375*cminch
-           pdc_1_zpos - 0.1875*cminch
-           pdc_1_zpos + 0.1875*cminch
-           pdc_1_zpos + 0.4375*cminch
-           pdc_1_zpos + 0.6875*cminch
-           pdc_2_zpos - 0.6875*cminch
-           pdc_2_zpos - 0.4375*cminch
-           pdc_2_zpos - 0.1875*cminch
-           pdc_2_zpos + 0.1875*cminch
-           pdc_2_zpos + 0.4375*cminch
-           pdc_2_zpos + 0.6875*cminch
+pdc_zpos = pdc_1_zpos - 0.68701*cminch
+           pdc_1_zpos - 0.43701*cminch
+           pdc_1_zpos - 0.18701*cminch
+           pdc_1_zpos + 0.18701*cminch
+           pdc_1_zpos + 0.43701*cminch
+           pdc_1_zpos + 0.68701*cminch
+           pdc_2_zpos - 0.68701*cminch
+           pdc_2_zpos - 0.43701*cminch
+           pdc_2_zpos - 0.18701*cminch
+           pdc_2_zpos + 0.18701*cminch
+           pdc_2_zpos + 0.43701*cminch
+           pdc_2_zpos + 0.68701*cminch
 
 ; Alpha angle of wires for each plane in radians.
 ; From technical drawings.
