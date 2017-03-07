@@ -14,8 +14,8 @@ pdc_tdc_max_win = 55000, 55000, 55000, 55000, 55000, 55000  ; TODO - wide limits
 pdc_tdc_time_per_channel = -0.10
 
 ; Zero time correction for each plane in ns that is added to TDC time.
-pdc_plane_time_zero = 1260.0, 1260.0, 1260.0, 1260.0, 1260.0, 1260.0
-                      1260.0, 1260.0, 1260.0, 1260.0, 1260.0, 1260.0
+pdc_plane_time_zero = 1280.0, 1280.0, 1280.0, 1280.0, 1280.0, 1280.0  ; TODO - fine calibration
+                      1280.0, 1280.0, 1280.0, 1280.0, 1280.0, 1280.0
 
 ; For wire velocity corrections.
 pdc_wire_velocity = 13.0  ; TODO
