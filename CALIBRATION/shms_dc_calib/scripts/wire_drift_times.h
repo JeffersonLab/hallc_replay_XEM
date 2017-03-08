@@ -324,9 +324,14 @@ wire_drift_times::wire_drift_times(TTree *tree) : fChain(0)
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
    if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("../../../ROOTfiles/shms_replay_437.root");
+     int run_NUM;
+     TString f0 = "input_RUN.txt";
+     ifstream  infile(f0);
+     infile >> run_NUM;
+
+     TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("../../../ROOTfiles/shms_replay_%d.root", run_NUM));
       if (!f || !f->IsOpen()) {
-         f = new TFile("../../../ROOTfiles/shms_replay_437.root");
+	f = new TFile(Form("../../../ROOTfiles/shms_replay_%d.root", run_NUM));
       }
       f->GetObject("T",tree);
 
