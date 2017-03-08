@@ -127,7 +127,7 @@ TH2F phodo_2y_neg_tdc_time_vs_pad 'SHMS Hodoscope 2Y- TDC Time vs. Paddle Number
 
 # Heavy Gas Cherenkov
 TH1F phgcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.hgcer.adcCounter 4 0.5 4.5
-TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 1000 0 10000
+TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 1000 0 1000
 TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
