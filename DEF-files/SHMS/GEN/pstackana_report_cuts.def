@@ -110,13 +110,13 @@ hTest2                hSpacePoints && (!hStubLT)
 
 
 Block: CoarseReconstruct
-CoarseReconstruct_master shms_event
+CoarseReconstruct_master SHMS_event
 
 Block: Tracking
-Tracking_master  shms_event
+Tracking_master  SHMS_event
 
 Block: Reconstruct
-Reconstruct_master shms_event
+Reconstruct_master SHMS_event
 
 shmsScinGood           P.hod.goodscinhit == 1
 
@@ -186,4 +186,4 @@ goodhs2               goodhs2x && goodhs2y
 goodhs1s2             goodhs1 && goodhs2
 
 Block: Physics
-Physics_master shms_event
+Physics_master SHMS_event

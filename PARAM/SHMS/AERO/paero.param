@@ -1,3 +1,5 @@
+; Number of aerogel pairs of pmt's
+paero_num_pairs = 7
 
 
 paero_pos_gain = 1./496.7, 1./467.5, 1./554.3, 1./766.1, 1./412.1, 1./517.9, 1./435.6, 1./500.,
