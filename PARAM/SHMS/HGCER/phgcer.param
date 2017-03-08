@@ -1,6 +1,9 @@
-phgcer_width = 50, 50
+; Number of heavy gas Cherenkov PMT's
+phgcer_tot_pmts = 4
 
-phgcer_adc_to_npe = 1/145.0, 1/122.0
+phgcer_width = 50, 50,50, 50
+
+phgcer_adc_to_npe = 1/8895., 1/5293.,1/8000., 1/10000.
 
 
 phgcer_chi2max = 50.
@@ -20,5 +23,5 @@ phgcer_region =   30,  -30,   0,
                 .1,   .1,  .1,
                 .1,   .1,  .1
 
-phgcer_ped_limit =  1000,1000
+phgcer_ped_limit =  1000,1000, 1000,1000
 	       
