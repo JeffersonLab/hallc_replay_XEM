@@ -42,19 +42,19 @@ TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.2
 TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
 TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
 
-TH2F pdc1u1_wirenum_vs_tdc 'SHMS DC 1U1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 500 0 500
-TH2F pdc1u2_wirenum_vs_tdc 'SHMS DC 1U2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1u2.wirenum P.dc.1u2.time 107 0.5 107.5 500 0 500
-TH2F pdc1x1_wirenum_vs_tdc 'SHMS DC 1X1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1x1.wirenum P.dc.1x1.time  79 0.5  79.5 500 0 500
-TH2F pdc1x2_wirenum_vs_tdc 'SHMS DC 1X2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1x2.wirenum P.dc.1x2.time  79 0.5  79.5 500 0 500
-TH2F pdc1v1_wirenum_vs_tdc 'SHMS DC 1V1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1v1.wirenum P.dc.1v1.time 107 0.5 107.5 500 0 500
-TH2F pdc1v2_wirenum_vs_tdc 'SHMS DC 1V2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1v2.wirenum P.dc.1v2.time 107 0.5 107.5 500 0 500
+TH2F pdc1u1_wirenum_vs_tdc 'SHMS DC 1U1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 600 -100 500
+TH2F pdc1u2_wirenum_vs_tdc 'SHMS DC 1U2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1u2.wirenum P.dc.1u2.time 107 0.5 107.5 600 -100 500
+TH2F pdc1x1_wirenum_vs_tdc 'SHMS DC 1X1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1x1.wirenum P.dc.1x1.time  79 0.5  79.5 600 -100 500
+TH2F pdc1x2_wirenum_vs_tdc 'SHMS DC 1X2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1x2.wirenum P.dc.1x2.time  79 0.5  79.5 600 -100 500
+TH2F pdc1v1_wirenum_vs_tdc 'SHMS DC 1V1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1v1.wirenum P.dc.1v1.time 107 0.5 107.5 600 -100 500
+TH2F pdc1v2_wirenum_vs_tdc 'SHMS DC 1V2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.1v2.wirenum P.dc.1v2.time 107 0.5 107.5 600 -100 500
 
-TH2F pdc2v2_wirenum_vs_tdc 'SHMS DC 2V2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2v2.wirenum P.dc.2v2.time 107 0.5 107.5 500 0 500
-TH2F pdc2v1_wirenum_vs_tdc 'SHMS DC 2V1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2v1.wirenum P.dc.2v1.time 107 0.5 107.5 500 0 500
-TH2F pdc2x2_wirenum_vs_tdc 'SHMS DC 2X2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2x2.wirenum P.dc.2x2.time  79 0.5  79.5 500 0 500
-TH2F pdc2x1_wirenum_vs_tdc 'SHMS DC 2X1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2x1.wirenum P.dc.2x1.time  79 0.5  79.5 500 0 500
-TH2F pdc2u2_wirenum_vs_tdc 'SHMS DC 2U2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 500 0 500
-TH2F pdc2u1_wirenum_vs_tdc 'SHMS DC 2U1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 500 0 500
+TH2F pdc2v2_wirenum_vs_tdc 'SHMS DC 2V2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2v2.wirenum P.dc.2v2.time 107 0.5 107.5 600 -100 500
+TH2F pdc2v1_wirenum_vs_tdc 'SHMS DC 2V1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2v1.wirenum P.dc.2v1.time 107 0.5 107.5 600 -100 500
+TH2F pdc2x2_wirenum_vs_tdc 'SHMS DC 2X2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2x2.wirenum P.dc.2x2.time  79 0.5  79.5 600 -100 500
+TH2F pdc2x1_wirenum_vs_tdc 'SHMS DC 2X1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2x1.wirenum P.dc.2x1.time  79 0.5  79.5 600 -100 500
+TH2F pdc2u2_wirenum_vs_tdc 'SHMS DC 2U2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 600 -100 500
+TH2F pdc2u1_wirenum_vs_tdc 'SHMS DC 2U1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 600 -100 500
 
 TH2F pdc1u1_wirenum_vs_resid 'SHMS 1U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u1.wirenum P.dc.residual[0] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc1u2_wirenum_vs_resid 'SHMS 1U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u2.wirenum P.dc.residual[1] 107 0.5 107.5 200 -1.0 1.0

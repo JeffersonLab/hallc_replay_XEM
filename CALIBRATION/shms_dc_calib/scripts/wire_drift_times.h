@@ -2,7 +2,7 @@
 // This class has been automatically generated on
 // Tue Mar  7 17:30:40 2017 by ROOT version 5.34/36
 // from TTree T/Hall A Analyzer Output DST
-// found on file: ROOTfiles/pdc_replay_407.root
+// found on file: ROOTfiles/pdc_replay_437.root
 //////////////////////////////////////////////////////////
 
 #ifndef wire_drift_times_h
@@ -324,9 +324,9 @@ wire_drift_times::wire_drift_times(TTree *tree) : fChain(0)
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
    if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("../../../ROOTfiles/pdc_replay_407.root");
+      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("../../../ROOTfiles/shms_replay_437.root");
       if (!f || !f->IsOpen()) {
-         f = new TFile("../../../ROOTfiles/pdc_replay_407.root");
+         f = new TFile("../../../ROOTfiles/shms_replay_437.root");
       }
       f->GetObject("T",tree);
 
