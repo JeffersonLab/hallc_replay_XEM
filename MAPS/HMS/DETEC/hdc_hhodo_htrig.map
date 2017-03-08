@@ -58,7 +58,7 @@ DETECTOR=11  ! HMS chambers
 ROC=3
 
 SLOT=5
-REFINDEX=0
+REFINDEX=1
  111,1000,   0,   0
   96,   3,   1  ! Plane U, wire 1
   97,   3,   2  ! Plane U, wire 2
@@ -170,7 +170,7 @@ REFINDEX=0
   15,   3, 107  ! Plane U, wire 107
 
 SLOT=7
-REFINDEX=0
+REFINDEX=1
   96,   4,   1  ! Plane V, wire 1
   97,   4,   2  ! Plane V, wire 2
   98,   4,   3  ! Plane V, wire 3
@@ -203,7 +203,7 @@ REFINDEX=0
  126,   4,  29  ! Plane V, wire 29
 
 SLOT=8
-REFINDEX=0
+REFINDEX=1
  127,1000,   0,   1
    0,   4,  30  ! Plane V, wire 30
    1,   4,  31  ! Plane V, wire 31
@@ -269,7 +269,7 @@ REFINDEX=0
   62,   4,  91  ! Plane V, wire 91
 
 SLOT=4
-REFINDEX=0
+REFINDEX=1
   96,   4,  92  ! Plane V, wire 92
   97,   4,  93  ! Plane V, wire 93
   98,   4,  94  ! Plane V, wire 94
@@ -384,7 +384,7 @@ REFINDEX=0
   15,   1,  96  ! Plane X, wire 96
 
 SLOT=7
-REFINDEX=0
+REFINDEX=1
   80,   1,  97  ! Plane X, wire 97
   81,   1,  98  ! Plane X, wire 98
   82,   1,  99  ! Plane X, wire 99
@@ -403,7 +403,7 @@ REFINDEX=0
   95,   1, 112  ! Plane X, wire 112
 
 SLOT=4
-REFINDEX=0
+REFINDEX=1
  112,   6,   1  ! Plane X', wire 1
  113,   6,   2  ! Plane X', wire 2
  114,   6,   3  ! Plane X', wire 3
@@ -422,7 +422,7 @@ REFINDEX=0
  127,   6,  16  ! Plane X', wire 16
 
 SLOT=5
-REFINDEX=0
+REFINDEX=1
  112,   6,  17  ! Plane X', wire 17
  113,   6,  18  ! Plane X', wire 18
  114,   6,  19  ! Plane X', wire 19
@@ -441,7 +441,7 @@ REFINDEX=0
  127,   6,  32  ! Plane X', wire 32
 
 SLOT=7
-REFINDEX=0
+REFINDEX=1
    0,   6,  33  ! Plane X', wire 33
    1,   6,  34  ! Plane X', wire 34
    2,   6,  35  ! Plane X', wire 35
@@ -524,7 +524,7 @@ REFINDEX=0
   79,   6, 112  ! Plane X', wire 112
 
 SLOT=8
-REFINDEX=0
+REFINDEX=1
   64,   2,   1  ! Plane Y, wire 1
   65,   2,   2  ! Plane Y, wire 2
   66,   2,   3  ! Plane Y, wire 3
@@ -579,7 +579,7 @@ REFINDEX=0
  124,   2,  52  ! Plane Y, wire 52
 
 SLOT=10
-REFINDEX=0
+REFINDEX=1
  127,1000,   0,   2
    0,   5,   1  ! Plane Y', wire 1
    1,   5,   2  ! Plane Y', wire 2
@@ -635,7 +635,7 @@ REFINDEX=0
   60,   5,  52  ! Plane Y', wire 52
 
 SLOT=16
-REFINDEX=0
+REFINDEX=1
   96,   9,   1  ! Plane U, wire 1
   97,   9,   2  ! Plane U, wire 2
   98,   9,   3  ! Plane U, wire 3
@@ -668,7 +668,7 @@ REFINDEX=0
  126,   9,  29  ! Plane U, wire 29
 
 SLOT=14
-REFINDEX=0
+REFINDEX=1
    0,   9,  30  ! Plane U, wire 30
    1,   9,  31  ! Plane U, wire 31
    2,   9,  32  ! Plane U, wire 32
@@ -749,7 +749,7 @@ REFINDEX=0
   95,   9, 107  ! Plane U, wire 107
 
 SLOT=16
-REFINDEX=0
+REFINDEX=1
   80,  10,   1  ! Plane V, wire 1
   81,  10,   2  ! Plane V, wire 2
   82,  10,   3  ! Plane V, wire 3
@@ -767,7 +767,7 @@ REFINDEX=0
   94,  12, 113  ! Plane X', wire 113
 
 SLOT=14
-REFINDEX=0
+REFINDEX=1
   96,  10,  15  ! Plane V, wire 15
   97,  10,  16  ! Plane V, wire 16
   98,  10,  17  ! Plane V, wire 17
@@ -801,7 +801,7 @@ REFINDEX=0
  127,  10,  45  ! Plane V, wire 45
 
 SLOT=17
-REFINDEX=0
+REFINDEX=1
  127,1000,   0,   3
    0,  10,  46  ! Plane V, wire 46
    1,  10,  47  ! Plane V, wire 47
@@ -867,7 +867,7 @@ REFINDEX=0
   63,  10, 107  ! Plane V, wire 107
 
 SLOT=13
-REFINDEX=0
+REFINDEX=1
    0,   7,   1  ! Plane X, wire 1
    1,   7,   2  ! Plane X, wire 2
    2,   7,   3  ! Plane X, wire 3
@@ -998,7 +998,7 @@ REFINDEX=0
  127,  12,  16  ! Plane X', wire 16
 
 SLOT=14
-REFINDEX=0
+REFINDEX=1
   16,  12,  17  ! Plane X', wire 17
   17,  12,  18  ! Plane X', wire 18
   18,  12,  19  ! Plane X', wire 19
@@ -1017,7 +1017,7 @@ REFINDEX=0
   31,  12,  32  ! Plane X', wire 32
 
 SLOT=16
-REFINDEX=0
+REFINDEX=1
    0,  12,  33  ! Plane X', wire 33
    1,  12,  34  ! Plane X', wire 34
    2,  12,  35  ! Plane X', wire 35
@@ -1100,7 +1100,7 @@ REFINDEX=0
   79,  12, 112  ! Plane X', wire 112
 
 SLOT=17
-REFINDEX=0
+REFINDEX=1
   64,   8,   1  ! Plane Y, wire 1
   65,   8,   2  ! Plane Y, wire 2
   66,   8,   3  ! Plane Y, wire 3
@@ -1155,7 +1155,7 @@ REFINDEX=0
  124,   8,  52  ! Plane Y, wire 52
 
 SLOT=10
-REFINDEX=0
+REFINDEX=1
  127,1000,   0,   1
   64,  11,   1  ! Plane Y', wire 1
   65,  11,   2  ! Plane Y', wire 2
