@@ -16,7 +16,7 @@ void get_pdc_time_histo_tzero_corrected()
 
 
 	  //open file
-	  TFile *f = new TFile(Form("../../../ROOTfiles/pdc_replay_%d.root", run_NUM), "READ");
+	  TFile *f = new TFile(Form("../../../ROOTfiles/shms_replay_%d.root", run_NUM), "READ");
 
 	  //updates file
 	  TFile *g = new TFile(Form("../root_files/run%d/shms_dc_t0_corrected_%d.root", run_NUM, run_NUM), "UPDATE"); // create new file to store histo

@@ -12,9 +12,11 @@ void get_pdc_time_histo()
   ifstream infile(f0);
   infile >> run_NUM;
 
+  TString file_name = "../../../ROOTfiles/shms_replay_%d.root";
+
   //Create RUN Directories if they dont exist
-  char *dir0 = Form("mkdir ../root_files/run%d", run_NUM);
-  char *dir1 = Form("mkdir ../data_files/run%d", run_NUM);
+  char *dir0 = Form("mkdir -p ../root_files/run%d", run_NUM);
+  char *dir1 = Form("mkdir -p ../data_files/run%d", run_NUM);
 
   if (system(dir0 || dir1) != 0) {
     system(dir0);
@@ -22,7 +24,7 @@ void get_pdc_time_histo()
   }
 
   //open file
-  TFile *f = new TFile(Form("../../../ROOTfiles/pdc_replay_%d.root", run_NUM), "READ");
+  TFile *f = new TFile(Form(file_name.Data(), run_NUM), "READ");
 
   //create new file
   TFile *g = new TFile(Form("../root_files/run%d/shms_dc_time_%d.root", run_NUM, run_NUM), "RECREATE"); // create new file to store histo
@@ -63,7 +65,6 @@ void get_pdc_time_histo()
     h[ip] = new TH1F(drift_time_histo, title, 200, -50, 350);  //set time to 400 ns/200 bins = 2ns/bin
   }
  
-
  
   //Declare number of entries in the tree
   Long64_t nentries = tree->GetEntries(); //number of triggers (particles that passed through all 4 hodo planes)
@@ -87,12 +88,6 @@ void get_pdc_time_histo()
 
     }
 
-
-
-		
   //Write histograms to file
   g->Write();
-
-
-
 }
