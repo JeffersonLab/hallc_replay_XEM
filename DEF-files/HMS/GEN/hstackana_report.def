@@ -118,6 +118,13 @@ TH2F hgcer_ped_vs_cntr 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal
 TH2F hgcer_pi_vs_cntr 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 4000 0 40000
 TH2F hgcer_pamp_vs_cntr 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 4100 0 4100
 
+#
+TH1F hgcer_pmt1_adc  'HMS Cherenkov PMT 1 ; ADC (chan) ; Counts' H.cer.adc_p[0] 1000 0. 100000. H.cer.adc_hit[0]==1
+TH1F hgcer_pmt2_adc  'HMS Cherenkov PMT 2 ; ADC (chan) ; Counts' H.cer.adc_p[1] 1000 0. 100000. H.cer.adc_hit[1]==1
+TH1F hgcer_pmt1_nphe 'HMS Cherenkov PMT 1 ; N_Phe ; Counts' H.cer.npe[0] 500 0. 100. H.cer.adc_hit[0]==1
+TH1F hgcer_pmt2_nphe 'HMS Cherenkov PMT 2 ; N_Phe ; Counts' H.cer.npe[1] 500 0. 100. H.cer.adc_hit[1]==1
+
+
 # Pre-Shower
 TH1F hcal_hA_pos_occu 'HMS hA+ ADC Occupancy; Block Number; Number of ADC Hits' H.cal.1pr.posAdcCounter 13 0.5 13.5
 TH2F hcal_hA_pos_ped_blk 'HMS hA+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPed 13 0.5 13.5 1000 0 1000
