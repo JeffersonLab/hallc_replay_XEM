@@ -1,3 +1,6 @@
 online
 *.o
 *.d
+*#
+onlineDict.C
+.root_history

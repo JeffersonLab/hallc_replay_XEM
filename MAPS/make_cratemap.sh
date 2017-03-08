@@ -31,7 +31,7 @@ function ask_proceed {
 	exit
     elif [[ $response = "yes" ]]; then
 	proceed
-    else 
+    else
 	echo; echo "Please respond by specifically typing yes or no"; echo; exit
     fi
 }

@@ -1,0 +1,64 @@
+Run #{gen_run_number}
+           Standalone drift chamber analysis report template
+The names of the HMS drift chamber planes are: 
+{pdc_plane_names}
+Horizontal drift chamber z positions:
+Chamber 1: {pdc_zpos[0]:%6.2f} {pdc_zpos[1]:%6.2f} {pdc_zpos[2]:%6.2f} 
+           {pdc_zpos[3]:%6.2f} {pdc_zpos[4]:%6.2f} {pdc_zpos[5]:%6.2f} 
+Chamber 2: {pdc_zpos[6]:%6.2f} {pdc_zpos[7]:%6.2f} {pdc_zpos[8]:%6.2f} 
+           {pdc_zpos[9]:%6.2f} {pdc_zpos[10]:%6.2f} {pdc_zpos[11]:%6.2f}
+
+All triggers:  {all_trigs.npassed}
+ 
+shmsDC1Planes_large  Counts:  {shmsDC1Planes_large.npassed} /all_trigs : {shmsDC1Planes_large.npassed/all_trigs.npassed}
+shmsDC2Planes_large  Counts:	  {shmsDC2Planes_large.npassed}  /all_trigs : {shmsDC2Planes_large.npassed/all_trigs.npassed}  
+
+shmsDC1Planes6     Counts: {shmsDC1Planes6hits.npassed} /all_trigs : {shmsDC1Planes6hits.npassed/all_trigs.npassed}
+shmsDC2Planes6  	  Counts: {shmsDC2Planes6hits.npassed} /all_trigs : {shmsDC2Planes6hits.npassed/all_trigs.npassed}  
+
+	       	                      	       
+shmsDC1x1Planes5	  Counts: {shmsDC1_5hits_x1.npassed} eff : {shmsDC1_6hits_x1.npassed/shmsDC1_5hits_x1.npassed}
+shmsDC1u1Planes5	  Counts: {shmsDC1_5hits_u1.npassed} eff : {shmsDC1_6hits_u1.npassed/shmsDC1_5hits_u1.npassed}
+shmsDC1u2Planes5	  Counts: {shmsDC1_5hits_u2.npassed} eff : {shmsDC1_6hits_u2.npassed/shmsDC1_5hits_u2.npassed}
+shmsDC1v1Planes5	  Counts: {shmsDC1_5hits_v1.npassed} eff : {shmsDC1_6hits_v1.npassed/shmsDC1_5hits_v1.npassed}
+shmsDC1v2Planes5	  Counts: {shmsDC1_5hits_v2.npassed} eff : {shmsDC1_6hits_v2.npassed/shmsDC1_5hits_v2.npassed}
+shmsDC1x2Planes5	  Counts: {shmsDC1_5hits_x2.npassed} eff : {shmsDC1_6hits_x2.npassed/shmsDC1_5hits_x2.npassed}
+
+
+shmsDC2x1Planes5	  Counts: {shmsDC2_5hits_x1.npassed} eff : {shmsDC2_6hits_x1.npassed/shmsDC2_5hits_x1.npassed}
+shmsDC2u1Planes5	  Counts: {shmsDC2_5hits_u1.npassed} eff : {shmsDC2_6hits_u1.npassed/shmsDC2_5hits_u1.npassed}
+shmsDC2u2Planes5	  Counts: {shmsDC2_5hits_u2.npassed} eff : {shmsDC2_6hits_u2.npassed/shmsDC2_5hits_u2.npassed}
+shmsDC2v1Planes5	  Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.npassed/shmsDC2_5hits_v1.npassed}
+shmsDC2v2Planes5	  Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed/shmsDC2_5hits_v2.npassed}
+shmsDC2x2Planes5	  Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed/shmsDC2_5hits_x2.npassed}
+	       	   	       
+
+*****************************
+*shms TRACKING EFFICIENCIES *
+*****************************
+htrig                          :   {shmscoin_event.npassed}
+hhitslt = passed hits/cham     :   {shmsHitsLt.npassed}
+hhitsplanes = +planes >= 5/6   :   {shmsHitsPlanes.npassed}
+hhitsplanessps = + sps         :   {hSpacePoints.npassed}
+hhitsplanesspsstubs +stub      :   {hSpacePointsStub.npassed}
+hsfoundtrack                   :   {hFoundTrack.npassed}
+hscleantrack                   :   {hCleanTrack.npassed}
+hstublt = passed stub tests    :   {hStubLT.npassed}
+h1hitslt                       :   {shms1HitsLt.npassed}
+h2hitslt                       :   {shms2HitsLt.npassed}
+h1planesgt                     :   {shmsDC1PlanesGT.npassed}
+h2planesgt                     :   {shmsDC2PlanesGT.npassed}
+hplanesgt = gt 5 planes/cham   :   {shmsPlanesGT.npassed}
+f1hspacepoints                 :   {f1HSpacePoints.npassed}
+f2hspacepoints                 :   {f2HSpacePoints.npassed}
+htest1=p hits/planes, f sp     :   {hTest1.npassed}
+htest2=p sp, f stubs           :   {hTest2.npassed}
+hdid                           :   {shmsScinDid.npassed}
+hdide                          :   {shmsScinDide.npassed}
+hdidh                          :   {shmsScinDidh.npassed}
+hscinshould                    :   {shmsScinShould.npassed}
+hscinshoulde                   :   {shmsScinShoulde.npassed}
+hscinshouldh                   :   {shmsScinShouldh.npassed}
+SING FID TRACK EFFIC           : {shmsScinDid.npassed/(shmsScinShould.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShould.npassed-shmsScinDid.npassed)/(shmsScinShould.npassed+.0001)):%8.4f}
+E SING FID TRACK EFFIC         : {shmsScinDide.npassed/(shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed)/(shmsScinShoulde.npassed+.0001)):%8.4f}
+HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed/(shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed)/(shmsScinShouldh.npassed+.0001)):%8.4f}

@@ -51,8 +51,11 @@ class Slot:
     def __init__(self):
         self.ID = -1
         self.comment = ''
-        self.KWs = {kw: -1 for kw in slotKWs}
+        self.KWs = {}
         self.channels = []
+
+        for kw in slotKWs:
+            self.KWs[kw] = -1
 
     def __str__(self):
         string = 'SLOT={0.ID}'.format(self)
@@ -84,7 +87,7 @@ class Channel:
         return string
 
 
-if (sys.argv[1] == '-h' or len(sys.argv) != 3):
+if (len(sys.argv) != 3 or sys.argv[1] == '-h'):
     print('Call as:')
     print('  merge_maps.py merge_list.txt outfile.map')
     sys.exit()
@@ -134,7 +137,7 @@ for fileName in fileNames:
 
                 KW =  line[1:i].strip()
                 ID = line[i+4:].split()[0].strip()
-                signal = ','.join(line[i+4:].split()[1:])
+                signal = ','.join(line[i+4:].replace('::', '').split()[1:])
 
                 if KW in header['KWs']:
                     print('Detector keyword `{}` already present!'.format(KW))
@@ -233,8 +236,8 @@ with open(mergedName, 'w') as fo:
     for ID, KW, signals in sorted(zip(
         header['IDs'], header['KWs'], header['signals']
     )):
-        IDString = '{}_ID={}'.format(KW, ID)
-        fo.write('! {:15}  ::  {}\n'.format(IDString, signal))
+        IDString = '{0}_ID={1}'.format(KW, ID)
+        fo.write('! {0:15}  ::  {1}\n'.format(IDString, signals))
 
     # Write detector maps sorted by IDs.
     for ID, KW in sorted(zip(
@@ -242,16 +245,16 @@ with open(mergedName, 'w') as fo:
     )):
         for detector in detectors:
             if detector.ID == ID:
-                fo.write('\n\n{}\n'.format(detector))
+                fo.write('\n\n{0}\n'.format(detector))
 
                 for roc in detector.rocs:
-                    fo.write('\n{}\n'.format(roc))
+                    fo.write('\n{0}\n'.format(roc))
 
                     for slot in roc.slots:
-                        fo.write('\n{}'.format(slot))
+                        fo.write('\n{0}'.format(slot))
 
                         for channel in slot.channels:
-                            fo.write('{}\n'.format(channel))
+                            fo.write('{0}\n'.format(channel))
 
 
 print('\nDone.')

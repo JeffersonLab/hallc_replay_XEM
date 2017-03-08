@@ -16,8 +16,8 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/shms_dc_00%d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/shms_dc_00%d.root";
+  const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
+  const char* ROOTFileNamePattern = "ROOTfiles/pdc_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -29,6 +29,9 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
+  // Load params for HMS DC test stand configuration
+  gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
+
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/pdc.map");
@@ -36,9 +39,12 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
-
   // Add SHMS drift chambers
   SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
+
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
 
   // Additional detectors:
   //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));

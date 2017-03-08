@@ -1,134 +1,92 @@
-; Number of planes installed in SHMS detector setup
-  pdc_num_planes = 12
-; Number of chambers installed in SHMS detector setup
-  pdc_num_chambers = 2
+; CHAMBER POSITION PARAMETERS
+
+; x, y and z position of center for each wire chamber in cm.
+; From survey C1771.
+pdc_xcenter = -0.036, 0.008  ; TODO - final survey
+pdc_ycenter =  0.019, 0.013  ; TODO - final survey
+pdc_1_zpos = -40 - 0.656  ; TODO - final survey
+pdc_2_zpos =  40 - 0.668  ; TODO - final survey
+
+; Roll, pitch and yaw for each wire chamber in degrees.
+; From survey C1771.
+pdc_1_roll = 180.0  ; TODO - survey
+pdc_2_roll = 180.0  ; TODO - survey
+pdc_1_pitch = -0.006  ; TODO - final survey
+pdc_2_pitch =  0.001  ; TODO - final survey
+pdc_1_yaw = -0.006  ; TODO - final survey
+pdc_2_yaw = -0.035  ; TODO - final survey
 
 
-; Z positions of various planes in SHMS chambers
-; Use geometry of previous SOS chambers for now
+; PLANE POSITION PARAMETERS
 
-; pdc_1_zpos = -14.5*2.54
-  pdc_1_zpos = 0 ; Chamber 1, do not try to project to scintillators
-  pdc_2_zpos = 0, 0 ; Chamber 2
+; Wire number of center of wire chamber for each plane.
+; From technical drawings.
+pdc_central_wire = 54.25, 53.75, 40.25, 39.75, 54.25, 53.75
+                   53.75, 54.25, 39.75, 40.25, 53.75, 54.25
 
-; Use geometry of SOS chambers for now
-  pdc_zpos   = pdc_1_zpos - 1.5875
-               pdc_1_zpos - 0.9525
-               pdc_1_zpos - 0.3175
-               pdc_1_zpos + 0.3175
-               pdc_1_zpos + 0.9525
-               pdc_1_zpos + 1.5875
-	       pdc_1_zpos - 1.5875	  
-               pdc_1_zpos - 0.9525
-               pdc_1_zpos - 0.3175
-               pdc_1_zpos + 0.3175
-               pdc_1_zpos + 0.9525
-               pdc_1_zpos + 1.5875
+; Distance between wires for each plane in cm.
+; From technical drawings.
+pdc_pitch = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+            1.0, 1.0, 1.0, 1.0, 1.0, 1.0
 
-; Angle alpha of wires in wire chamber planes
-  pdc_roll = 0.0 ; SOS chambers had roll as installed
-  pdc_alpha_angle = (30-pdc_roll)*raddeg
-  		    (30-pdc_roll)*raddeg
-  		    (90-pdc_roll)*raddeg
-  		    (90-pdc_roll)*raddeg
-  		    (150-pdc_roll)*raddeg
-  		    (150-pdc_roll)*raddeg
-		    (30-pdc_roll)*raddeg
-  		    (30-pdc_roll)*raddeg
-  		    (90-pdc_roll)*raddeg
-  		    (90-pdc_roll)*raddeg
-  		    (150-pdc_roll)*raddeg
-  		    (150-pdc_roll)*raddeg
+; Order in which wires are counted in each plane.
+pdc_wire_counting = 0, 0, 0, 0, 0, 0
+                    0, 0, 0, 0, 0, 0
 
-  pdc_beta = 0.0
-  pdc_beta_angle = pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
-		   pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
-                   pdc_beta
+; z position in cm of each plane measured from focal plane.
+; From technical drawings.
+pdc_zpos = pdc_1_zpos - 0.68701*cminch
+           pdc_1_zpos - 0.43701*cminch
+           pdc_1_zpos - 0.18701*cminch
+           pdc_1_zpos + 0.18701*cminch
+           pdc_1_zpos + 0.43701*cminch
+           pdc_1_zpos + 0.68701*cminch
+           pdc_2_zpos - 0.68701*cminch
+           pdc_2_zpos - 0.43701*cminch
+           pdc_2_zpos - 0.18701*cminch
+           pdc_2_zpos + 0.18701*cminch
+           pdc_2_zpos + 0.43701*cminch
+           pdc_2_zpos + 0.68701*cminch
 
-  pdc_gamma = 0.0
-  pdc_gamma_angle = pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-		    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-                    pdc_gamma
-  pdc_pitch = 1.0000
-              1.0000
-              1.0000
-              1.0000
-              1.0000
-              1.0000
-	      1.0000	      
-              1.0000
-              1.0000
-              1.0000
-              1.0000
-              1.0000
-; Number of wires per plane
-      pdc_nrwire = 107
-                   107
-                   79
-                   79
-                   107
-                   107
-		   107
-                   107
-                   79
-                   79
-                   107
-                   107
+; Alpha angle of wires for each plane in radians.
+; From technical drawings.
+pdc_alpha_angle = ( 30 + pdc_1_roll)*raddeg
+                  ( 30 + pdc_1_roll)*raddeg
+                  ( 90 + pdc_1_roll)*raddeg
+                  ( 90 + pdc_1_roll)*raddeg
+                  (150 + pdc_1_roll)*raddeg
+                  (150 + pdc_1_roll)*raddeg
+                  ( 30 + pdc_2_roll)*raddeg
+                  ( 30 + pdc_2_roll)*raddeg
+                  ( 90 + pdc_2_roll)*raddeg
+                  ( 90 + pdc_2_roll)*raddeg
+                  (150 + pdc_2_roll)*raddeg
+                  (150 + pdc_2_roll)*raddeg
 
-; X,Y position of center of wire chamber
-  pdc_xcenter = 0.0, 0.0
-  pdc_ycenter = 0.0, 0.0
+; Beta angle of wires for each plane in radians.
+pdc_beta_angle = pdc_1_pitch*raddeg
+                 pdc_1_pitch*raddeg
+                 pdc_1_pitch*raddeg
+                 pdc_1_pitch*raddeg
+                 pdc_1_pitch*raddeg
+                 pdc_1_pitch*raddeg
+                 pdc_2_pitch*raddeg
+                 pdc_2_pitch*raddeg
+                 pdc_2_pitch*raddeg
+                 pdc_2_pitch*raddeg
+                 pdc_2_pitch*raddeg
+                 pdc_2_pitch*raddeg
 
-; Wire number of center of wire chamber
-; Note the convention : x : low number =  -x , u,v : low number = "-x"
-; x1 and x2, u1 and u2, v1 and v2 are offset by half a cell length
-; assume 1st wire of 1st dc of a set is closest to edge where counting starts
-; (These taken from SOS.  Will be different for SHMS
-      pdc_central_wire = 54.25
-                         53.75
-                         40.25
-                         40.75
-                         54.25
-                         53.75 
-			 53.75
-			 54.25
-			 40.75
-			 40.25
-			 53.75
-			 54.25
-
-;  Chamber # for each plane
-pdc_chamber_planes = 1,1,1,1,1,1,2,2,2,2,2,2  
-
-; Order in which wires are readout
-  pdc_wire_counting = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-; If pdc_wire_counting(plane) = 0
-;  the wire center is at (wire - pdc_central_wire) * pitch
-; If pdc_wire_counting(plane) = 1
-;  the wire center is at ( pdc_nrwire + 1 - wire - pdc_central_wire) * pitch
-
-; The velocity correction is the distance from the center of the wire divided
-; by the velocity of propagation times pdc_drifttime_sign(pln).  +/-1
-; for disc. card at +/- coord. (i.e. top = -x direction, so top readout is +1)
-;
-; These are guesses taken from the SOS Chambers
-;
-  pdc_drifttime_sign = 1, -1, -1, 1, 1, -1,  1, -1, -1, 1, 1, -1
+; Gamma angle of wires for each plane in radians
+pdc_gamma_angle = pdc_1_yaw*raddeg
+                  pdc_1_yaw*raddeg
+                  pdc_1_yaw*raddeg
+                  pdc_1_yaw*raddeg
+                  pdc_1_yaw*raddeg
+                  pdc_1_yaw*raddeg
+                  pdc_2_yaw*raddeg
+                  pdc_2_yaw*raddeg
+                  pdc_2_yaw*raddeg
+                  pdc_2_yaw*raddeg
+                  pdc_2_yaw*raddeg
+                  pdc_2_yaw*raddeg

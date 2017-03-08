@@ -1,7 +1,21 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block H.dc.*
-#block H.scin.*
+block T.hms.*
+
+TH1F hdc_ref1 'HDC Reference Time 1; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 15000 0 15000 
+TH1F hdc_ref2 'HDC Reference Time 2; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime 15000 0 15000
+TH1F hdc_ref3 'HDC Reference Time 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime 15000 0 15000
+TH1F hdc_ref4 'HDC Reference Time 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF4_tdcTime 15000 0 15000
+
+TH1F hdc_refdiff_1m2 'HDC Reference time 1 minus 2; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF2_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m3 'HDC Reference time 1 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m4 'HDC Reference time 1 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
+
+TH1F hdc_refdiff_2m3 'HDC Reference time 2 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_2m4 'HDC Reference time 2 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
+
+TH1F hdc_refdiff_3m4 'HDC Reference time 3 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
 
 TH1F hdc1x1_wm 'HDC 1X1 Wiremap' H.dc.1x1.wirenum 113 0.5 113.5
 TH1F hdc1y1_wm 'HDC 1Y1 Wiremap' H.dc.1y1.wirenum  52 0.5  52.5
@@ -17,19 +31,19 @@ TH1F hdc2v1_wm 'HDC 2V1 Wiremap' H.dc.2v1.wirenum 107 0.5 107.5
 TH1F hdc2y2_wm 'HDC 2Y2 Wiremap' H.dc.2y2.wirenum  52 0.5  52.5
 TH1F hdc2x2_wm 'HDC 2X2 Wiremap' H.dc.2x2.wirenum 113 0.5 113.5
 
-TH2F hdc1x1_wire_num_vs_raw_tdc 'HDC 1X1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1x1.wirenum H.dc.1x1.rawtdc 113 0.5 113.5 5000 0 50000
-TH2F hdc1y1_wire_num_vs_raw_tdc 'HDC 1Y1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1y1.wirenum H.dc.1y1.rawtdc 52  0.5  52.5 5000 0 50000
-TH2F hdc1u1_wire_num_vs_raw_tdc 'HDC 1U1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1u1.wirenum H.dc.1u1.rawtdc 107 0.5 107.5 5000 0 50000
-TH2F hdc1v1_wire_num_vs_raw_tdc 'HDC 1V1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1v1.wirenum H.dc.1v1.rawtdc 107 0.5 107.5 5000 0 50000
-TH2F hdc1y2_wire_num_vs_raw_tdc 'HDC 1Y2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1y2.wirenum H.dc.1y2.rawtdc 52  0.5  52.5 5000 0 50000
-TH2F hdc1x2_wire_num_vs_raw_tdc 'HDC 1X2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1x2.wirenum H.dc.1x2.rawtdc 113 0.5 113.5 5000 0 50000
+TH2F hdc1x1_wire_num_vs_raw_tdc 'HDC 1X1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1x1.wirenum H.dc.1x1.rawtdc 113 0.5 113.5 10000 -50000 50000
+TH2F hdc1y1_wire_num_vs_raw_tdc 'HDC 1Y1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1y1.wirenum H.dc.1y1.rawtdc 52  0.5  52.5 10000 -50000 50000
+TH2F hdc1u1_wire_num_vs_raw_tdc 'HDC 1U1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1u1.wirenum H.dc.1u1.rawtdc 107 0.5 107.5 10000 -50000 50000
+TH2F hdc1v1_wire_num_vs_raw_tdc 'HDC 1V1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1v1.wirenum H.dc.1v1.rawtdc 107 0.5 107.5 10000 -50000 50000
+TH2F hdc1y2_wire_num_vs_raw_tdc 'HDC 1Y2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1y2.wirenum H.dc.1y2.rawtdc 52  0.5  52.5 10000 -50000 50000
+TH2F hdc1x2_wire_num_vs_raw_tdc 'HDC 1X2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.1x2.wirenum H.dc.1x2.rawtdc 113 0.5 113.5 10000 -50000 50000
 
-TH2F hdc2x1_wire_num_vs_raw_tdc 'HDC 2X1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2x1.wirenum H.dc.2x1.rawtdc 113 0.5 113.5 5000 0 50000
-TH2F hdc2y1_wire_num_vs_raw_tdc 'HDC 2Y1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2y1.wirenum H.dc.2y1.rawtdc 52  0.5  52.5 5000 0 50000
-TH2F hdc2u1_wire_num_vs_raw_tdc 'HDC 2U1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2u1.wirenum H.dc.2u1.rawtdc 107 0.5 107.5 5000 0 50000
-TH2F hdc2v1_wire_num_vs_raw_tdc 'HDC 2V1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2v1.wirenum H.dc.2v1.rawtdc 107 0.5 107.5 5000 0 50000
-TH2F hdc2y2_wire_num_vs_raw_tdc 'HDC 2Y2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2y2.wirenum H.dc.2y2.rawtdc 52  0.5  52.5 5000 0 50000
-TH2F hdc2x2_wire_num_vs_raw_tdc 'HDC 2X2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2x2.wirenum H.dc.2x2.rawtdc 113 0.5 113.5 5000 0 50000
+TH2F hdc2x1_wire_num_vs_raw_tdc 'HDC 2X1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2x1.wirenum H.dc.2x1.rawtdc 113 0.5 113.5 10000 -50000 50000
+TH2F hdc2y1_wire_num_vs_raw_tdc 'HDC 2Y1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2y1.wirenum H.dc.2y1.rawtdc 52  0.5  52.5 10000 -50000 50000
+TH2F hdc2u1_wire_num_vs_raw_tdc 'HDC 2U1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2u1.wirenum H.dc.2u1.rawtdc 107 0.5 107.5 10000 -50000 50000
+TH2F hdc2v1_wire_num_vs_raw_tdc 'HDC 2V1 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2v1.wirenum H.dc.2v1.rawtdc 107 0.5 107.5 10000 -50000 50000
+TH2F hdc2y2_wire_num_vs_raw_tdc 'HDC 2Y2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2y2.wirenum H.dc.2y2.rawtdc 52  0.5  52.5 10000 -50000 50000
+TH2F hdc2x2_wire_num_vs_raw_tdc 'HDC 2X2 Wiremap; Wire Number; Raw TDC Value (clicks)' H.dc.2x2.wirenum H.dc.2x2.rawtdc 113 0.5 113.5 10000 -50000 50000
 
 TH2F hdc1x1_wire_num_vs_tdc_time 'HDC 1X1 Wiremap; Wire Number; TDC Time (ns)' H.dc.1x1.wirenum H.dc.1x1.time 113 0.5 113.5 6000 -1000 5000
 TH2F hdc1y1_wire_num_vs_tdc_time 'HDC 1Y1 Wiremap; Wire Number; TDC Time (ns)' H.dc.1y1.wirenum H.dc.1y1.time 52  0.5  52.5 6000 -1000 5000

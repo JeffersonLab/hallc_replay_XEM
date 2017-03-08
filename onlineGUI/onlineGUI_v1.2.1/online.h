@@ -76,8 +76,11 @@ private:
   TString rootfilename;  //  Just the name
   TString goldenrootfilename; // Golden rootfile for comparisons
   TString protorootfile; // Prototype for getting the rootfilename
+  TString configfilestart; // 
   TString guicolor; // User's choice of background color
   TString plotsdir; // Where to store sample plots.. automatically stored as .jpg's).
+  UInt_t canvaswidth; // Width of histogram canvas
+  UInt_t canvasheight; // Width of histogram canvas
   vector < pair <UInt_t,UInt_t> > pageInfo; 
   vector <TCut> cutList; 
   vector <UInt_t> GetDrawIndex(UInt_t);
@@ -107,6 +110,9 @@ public:
   vector <TString> SplitString(TString,TString);
   void OverrideRootFile(UInt_t);
   Bool_t IsMonitor() { return fMonitor; };
+  UInt_t GetCanvasWidth() { return canvaswidth; };
+  UInt_t GetCanvasHeight() { return canvasheight; };
+  TString GetConfigStart() {return configfilestart;}; // 
 };
 
 class OnlineGUI {
@@ -136,10 +142,11 @@ private:
   UInt_t                            runNumber;
   TTimer                           *timer;
   Bool_t                            fPrintOnly;
+  Bool_t                            fRootOnly;
   Bool_t                            fFileAlive;
 
 public:
-  OnlineGUI(OnlineConfig&,Bool_t,UInt_t RunNum=0);
+  OnlineGUI(OnlineConfig&,Bool_t,Bool_t,UInt_t RunNum=0);
   void CreateGUI(const TGWindow *p, UInt_t w, UInt_t h);
   virtual ~OnlineGUI();
   void DoDraw();

@@ -1,25 +1,19 @@
-;---------------------------------------------------------------------
-; SHMS_TRACKING
-; CTP parameter file containing all tracking parameters for the HMS
-;----------------------------------------------------------------------
+; GENERAL PARAMETERS
 
-; sigma of wire chabmer resolution for each plane
-  pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02 
-  	      0.02, 0.02, 0.02, 0.02, 0.02, 0.02
+; Number of drift chambers.
+pdc_num_chambers = 2
 
-; tdc window, wide limits for now
-  pdc_tdc_min_win = -55000,-55000,-55000,-55000,-55000,-55000
-  		    -55000,-55000,-55000,-55000,-55000,-55000
-  pdc_tdc_max_win = 55000,55000,55000,55000,55000,55000
-  		    55000,55000,55000,55000,55000,55000
+; Total number of planes.
+pdc_num_planes = 12
 
-; conversion from tdc lciks to ns
-  pdc_tdc_time_per_channel = -0.10 ; CAEN1190 TDC step size = 100ps
+; Names of planes.
+pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"  ; TODO
 
-; zero time, decreasing moves sdtime plots to lower time
-  pdc_plane_time_zero = 120.0,120.0,120.0,120.0,120.0,120.0
-  		      	120.0,120.0,120.0,120.0,120.0,120.0
+; Chamber index for each plane.
+pdc_chamber_planes = 1, 1, 1, 1, 1, 1
+                     2, 2, 2, 2, 2, 2
 
-; wire velocity
-  pdc_wire_velocity = 13.0
-  pdc_central_time = 1,1,1,1,1,1,1,1,1,1,1,1
+; Number of wires in each plane.
+; Should be 109 and 80, but edge sense wire were not strung.
+pdc_nrwire = 107, 107, 79, 79, 107, 107
+             107, 107, 79, 79, 107, 107

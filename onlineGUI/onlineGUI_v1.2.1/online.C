@@ -38,7 +38,8 @@
 //#define NOISY
 //#define INTERNALSTYLE
 
-TString guiDirectory = "onlineGUI_v1.2.1/";
+//TString guiDirectory = "onlineGUI_v1.2.1/";
+TString guiDirectory = "./";
 
 ///////////////////////////////////////////////////////////////////
 //  Class: OnlineConfig
@@ -48,19 +49,20 @@ TString guiDirectory = "onlineGUI_v1.2.1/";
 //
 //
 
-OnlineConfig::OnlineConfig() 
+OnlineConfig::OnlineConfig()
 {
   // Constructor.  Without an argument, will use default "standard" config
   fMonitor = kFALSE;
   OnlineConfig("standard");
 }
 
-OnlineConfig::OnlineConfig(TString anatype) 
+OnlineConfig::OnlineConfig(TString anatype)
 {
   // Constructor.  Takes the config anatype as the only argument.
   //  Loads up the configuration file, and stores it's contents for access.
-  
+
   confFileName = anatype;
+  configfilestart=anatype;
   if(!confFileName.Contains(".cfg"))
     confFileName += ".cfg";
   fMonitor = kFALSE;
@@ -78,7 +80,7 @@ OnlineConfig::OnlineConfig(TString anatype)
     if ( ! (*fConfFile) ) {
       // Didn't find it... load up the default config
       confFileName = guiDirectory+"/default.cfg";
-      cout << "OnlineConfig()  Trying " << confFileName.Data() 
+      cout << "OnlineConfig()  Trying " << confFileName.Data()
 	   << " as default configuration." << endl
 	   << " (May be ok.)" << endl;
       fConfFile = new ifstream(confFileName.Data());
@@ -99,7 +101,7 @@ OnlineConfig::OnlineConfig(TString anatype)
   }
 
   if(fFoundCfg) {
-  clog << "GUI Configuration loading from " 
+  clog << "GUI Configuration loading from "
        << confFileName.Data() << endl;
   }
 
@@ -115,7 +117,7 @@ OnlineConfig::OnlineConfig(TString anatype)
 
 }
 
-void OnlineConfig::ParseFile() 
+void OnlineConfig::ParseFile()
 {
   // Reads in the Config File, and makes the proper calls to put
   //  the information contained into memory.
@@ -176,24 +178,24 @@ void OnlineConfig::ParseFile()
       delete tmpoarr2;
     }
     sConfFile.push_back(strvect);
-    
+
 }
 
 #ifdef DEBUGPARSE
   for(UInt_t ii=0; ii<sConfFile.size(); ii++) {
     cout << "Line " << ii << endl << "  ";
-    for(UInt_t jj=0; jj<sConfFile[ii].size(); jj++) 
+    for(UInt_t jj=0; jj<sConfFile[ii].size(); jj++)
       cout << sConfFile[ii][jj] << " ";
     cout << endl;
   }
 #endif
 
-  cout << "     " << sConfFile.size() << " lines read from " 
+  cout << "     " << sConfFile.size() << " lines read from "
        << confFileName << endl;
-  
+
 }
 
-Bool_t OnlineConfig::ParseConfig() 
+Bool_t OnlineConfig::ParseConfig()
 {
   //  Goes through each line of the config [must have been ParseFile()'d]
   //   and interprets.
@@ -205,6 +207,8 @@ Bool_t OnlineConfig::ParseConfig()
   UInt_t command_cnt=0;
   UInt_t j=0;
   Bool_t hasMultiPlots=kFALSE;
+  canvaswidth = 800;		// Default canvas size
+  canvasheight = 600;
   // If statement for each high level command (cut, newpage, etc)
   for(UInt_t i=0;i<sConfFile.size();i++) {
     // "newpage" command
@@ -239,8 +243,8 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       if(!rootfilename.IsNull()) {
-	cerr << "WARNING: too many rootfile's defined. " 
-	     << " Will only use the first one." 
+	cerr << "WARNING: too many rootfile's defined. "
+	     << " Will only use the first one."
 	     << endl;
 	continue;
       }
@@ -254,8 +258,8 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       if(!goldenrootfilename.IsNull()) {
-	cerr << "WARNING: too many goldenrootfile's defined. " 
-	     << " Will only use the first one." 
+	cerr << "WARNING: too many goldenrootfile's defined. "
+	     << " Will only use the first one."
 	     << endl;
 	continue;
       }
@@ -269,8 +273,8 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       if(!protorootfile.IsNull()) {
-	cerr << "WARNING: too many protorootfile's defined. " 
-	     << " Will only use the first one." 
+	cerr << "WARNING: too many protorootfile's defined. "
+	     << " Will only use the first one."
 	     << endl;
 	continue;
       }
@@ -284,12 +288,22 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       if(!guicolor.IsNull()) {
-	cerr << "WARNING: too many guicolor's defined. " 
-	     << " Will only use the first one." 
+	cerr << "WARNING: too many guicolor's defined. "
+	     << " Will only use the first one."
 	     << endl;
 	continue;
       }
       guicolor = sConfFile[i][1];
+    }
+    if(sConfFile[i][0] == "canvassize") {
+      if(sConfFile[i].size() != 3) {
+	cerr << "WARNING: canvassize command does not have the "
+	     << "correct number of arguments (needs 2)"
+	     << endl;
+	continue;
+      }
+      canvaswidth = UInt_t(atoi(sConfFile[i][1]));
+      canvasheight = UInt_t(atoi(sConfFile[i][2]));
     }
     if(sConfFile[i][0] == "plotsdir") {
       if(sConfFile[i].size() != 2) {
@@ -299,8 +313,8 @@ Bool_t OnlineConfig::ParseConfig()
 	continue;
       }
       if(!plotsdir.IsNull()) {
-	cerr << "WARNING: too many plotdir's defined. " 
-	     << " Will only use the first one." 
+	cerr << "WARNING: too many plotdir's defined. "
+	     << " Will only use the first one."
 	     << endl;
 	continue;
       }
@@ -321,7 +335,7 @@ Bool_t OnlineConfig::ParseConfig()
 #ifdef NOISY
   for(UInt_t i=0; i<GetPageCount(); i++) {
     cout << "Page " << i << " (" << GetPageTitle(i) << ")"
-	 << " will draw " << GetDrawCount(i) 
+	 << " will draw " << GetDrawCount(i)
 	 << " histograms." << endl;
   }
 #endif
@@ -329,11 +343,11 @@ Bool_t OnlineConfig::ParseConfig()
   cout << "Number of pages defined = " << GetPageCount() << endl;
   cout << "Number of cuts defined = " << cutList.size() << endl;
 
-  if (fMonitor) 
+  if (fMonitor)
     cout << "Will periodically update plots" << endl;
   if(!goldenrootfilename.IsNull()) {
-    cout << "Will compare chosen histrograms with the golden rootfile: " 
-	 << endl 
+    cout << "Will compare chosen histrograms with the golden rootfile: "
+	 << endl
 	 << goldenrootfilename << endl;
   }
 
@@ -348,11 +362,11 @@ Bool_t OnlineConfig::ParseForMultiPlots() {
   vector < vector <TString> > newConfFile;
   for(UInt_t iter=0;iter<sConfFile.size();iter++) {
     if(sConfFile[iter][0]=="multiplot") {
-      // First argument is the low limit, 
+      // First argument is the low limit,
       // second argument is the high limit
       UInt_t lolimit = (UInt_t)sConfFile[iter][1].Atoi();
       UInt_t hilimit = (UInt_t)sConfFile[iter][2].Atoi();
-      
+
       // For the rest of the line, replace all of the XXXXX's
       // with an iteration from lolimit to hilimit.
       for(UInt_t imult=lolimit;imult<=hilimit;imult++) {
@@ -438,7 +452,7 @@ Bool_t OnlineConfig::IsLogx(UInt_t page) {
   UInt_t page_index = pageInfo[page].first;
   Int_t word_index = sConfFile[page_index].size()-1;
   if (word_index <= 0) return kFALSE;
-  TString option = sConfFile[page_index][word_index];  
+  TString option = sConfFile[page_index][word_index];
   if(option == "logx") return kTRUE;
   return kFALSE;
 
@@ -450,7 +464,7 @@ Bool_t OnlineConfig::IsLogy(UInt_t page) {
   UInt_t page_index = pageInfo[page].first;
   Int_t word_index = sConfFile[page_index].size()-1;
   if (word_index <= 0) return kFALSE;
-  TString option = sConfFile[page_index][word_index];  
+  TString option = sConfFile[page_index][word_index];
   if(option == "logy") return kTRUE;
   return kFALSE;
 
@@ -462,14 +476,14 @@ Bool_t OnlineConfig::IsLogz(UInt_t page) {
   UInt_t page_index = pageInfo[page].first;
   Int_t word_index = sConfFile[page_index].size()-1;
   if (word_index <= 0) return kFALSE;
-  TString option = sConfFile[page_index][word_index];  
+  TString option = sConfFile[page_index][word_index];
   if(option == "logz") return kTRUE;
   return kFALSE;
 
 }
 
 
-pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page) 
+pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
 {
   // If defined in the config, will return those dimensions
   //  for the indicated page.  Otherwise, will return the
@@ -479,10 +493,13 @@ pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
 
   // This is the page index in sConfFile.
   UInt_t page_index = pageInfo[page].first;
-  
+
   UInt_t size1 = 2;
+
+  if (IsLogx(page)) size1 = 3;  // last word is "logy"
   if (IsLogy(page)) size1 = 3;  // last word is "logy"
-  
+  if (IsLogz(page)) size1 = 3;  // last word is "logy"
+
   // If the dimensions are defined, return them.
   if(sConfFile[page_index].size()>size1-1) {
     if(sConfFile[page_index].size() == size1) {
@@ -499,16 +516,16 @@ pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
 	   << endl;
     }
   }
-  
+
   // If not defined, return the "default."
   UInt_t draw_count = GetDrawCount(page);
-  UInt_t dim = UInt_t(TMath::Nint(sqrt(Double_t(draw_count+1))));
+  UInt_t dim = UInt_t(TMath::Nint(sqrt(double(draw_count+1))));
   outDim = make_pair(dim,dim);
 
   return outDim;
 }
 
-TString OnlineConfig::GetPageTitle(UInt_t page) 
+TString OnlineConfig::GetPageTitle(UInt_t page)
 {
   // Returns the title of the page.
   //  if it is not defined in the config, then return "Page #"
@@ -518,7 +535,7 @@ TString OnlineConfig::GetPageTitle(UInt_t page)
   UInt_t iter_command = pageInfo[page].first+1;
 
   for(UInt_t i=0; i<pageInfo[page].second; i++) { // go through each command
-    if(sConfFile[iter_command+i][0] == "title") { 
+    if(sConfFile[iter_command+i][0] == "title") {
       // Combine the strings, and return it
       for (UInt_t j=1; j<sConfFile[iter_command+i].size(); j++) {
 	title += sConfFile[iter_command+i][j];
@@ -532,7 +549,7 @@ TString OnlineConfig::GetPageTitle(UInt_t page)
   return title;
 }
 
-vector <UInt_t> OnlineConfig::GetDrawIndex(UInt_t page) 
+vector <UInt_t> OnlineConfig::GetDrawIndex(UInt_t page)
 {
   // Returns an index of where to find the draw commands within a page
   //  within the sConfFile vector
@@ -549,7 +566,7 @@ vector <UInt_t> OnlineConfig::GetDrawIndex(UInt_t page)
   return index;
 }
 
-UInt_t OnlineConfig::GetDrawCount(UInt_t page) 
+UInt_t OnlineConfig::GetDrawCount(UInt_t page)
 {
   // Returns the number of histograms that have been request for this page
   UInt_t draw_count=0;
@@ -564,13 +581,13 @@ UInt_t OnlineConfig::GetDrawCount(UInt_t page)
 
 drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
 {
-  // Returns the vector of strings pertaining to a specific page, and 
+  // Returns the vector of strings pertaining to a specific page, and
   //   draw command from the config.
   // Return vector of TStrings:
   //  0: variable
   //  1: cut - only for Tree variables
   //  2: type
-  //  3: title 
+  //  3: title
   //  4: treename - only for Tree variables
   //  5: nostat
   //  6: noshowgolden  - only for Histograms
@@ -581,7 +598,7 @@ drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
   UInt_t index = command_vector[nCommand];
 
 #ifdef DEBUG
-  cout << "OnlineConfig::GetDrawCommand(" << page << "," 
+  cout << "OnlineConfig::GetDrawCommand(" << page << ","
        << nCommand << ")" << endl;
 #endif
 
@@ -594,14 +611,13 @@ drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
        (sConfFile[index][1] != "-title") &&
        (sConfFile[index][1] != "-tree") &&
        (sConfFile[index][1] != "-noshowgolden") &&
-       (sConfFile[index][1] != "-nostat"))
-      {
-    if(out_command.variable=="macro") {
-      out_command.macro = sConfFile[index][1];
-    } else {
-      out_command.cut = sConfFile[index][1];
-    }
+       (sConfFile[index][1] != "-nostat")) {
+      if(out_command.variable=="macro") {
+	out_command.macro = sConfFile[index][1];
+      } else {
+	out_command.cut = sConfFile[index][1];
       }
+    }
   }
 
   // Now go through the rest of that line..
@@ -643,7 +659,7 @@ drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
     } else if(sConfFile[index][i]=="-noshowgolden") {
       out_command.noshowgolden = "noshowgolden";
     }
-    
+
 
 #ifdef DEBUG
     cout << endl;
@@ -659,7 +675,7 @@ drawcommand OnlineConfig::GetDrawCommand(UInt_t page, UInt_t nCommand)
   return out_command;
 }
 
-vector <TString> OnlineConfig::SplitString(TString instring,TString delim) 
+vector <TString> OnlineConfig::SplitString(TString instring,TString delim)
 {
   // Utility to split up a string on the deliminator.
   //  returns a vector of strings.
@@ -689,13 +705,13 @@ vector <TString> OnlineConfig::SplitString(TString instring,TString delim)
   while(tempstring.EndsWith(delim)) {
     tempstring.Chop();
   }
-  
+
   if(!tempstring.IsNull()) v.push_back(tempstring);
 
   return v;
 }
 
-void OnlineConfig::OverrideRootFile(UInt_t runnumber) 
+void OnlineConfig::OverrideRootFile(UInt_t runnumber)
 {
   // Override the ROOT file defined in the cfg file If
   // protorootfile is used, construct filename using it, otherwise
@@ -720,7 +736,7 @@ void OnlineConfig::OverrideRootFile(UInt_t runnumber)
 //
 //
 
-OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly,UInt_t RunNum):
+OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly, Bool_t rootonly,UInt_t RunNum):
   runNumber(RunNum),
   timer(0),
   fFileAlive(kFALSE)
@@ -729,7 +745,7 @@ OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly,UInt_t RunNum):
 
   fConfig = &config;
 
-  if(printonly) {
+  if(printonly || rootonly) {
     fPrintOnly=kTRUE;
     PrintPages();
   } else {
@@ -738,9 +754,9 @@ OnlineGUI::OnlineGUI(OnlineConfig& config, Bool_t printonly,UInt_t RunNum):
   }
 }
 
-void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h) 
+void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
 {
-  
+
   // Open the RootFile.  Die if it doesn't exist.
   //  unless we're watching a file.
   fRootFile.RootFile = new TFile(fConfig->GetRootFile(),"READ");
@@ -806,7 +822,10 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   gClient->GetColorByName("lightblue",lightblue);
   gClient->GetColorByName("red",red);
 
-  Bool_t good_color=kFALSE; 
+  UInt_t canvas_width = fConfig->GetCanvasWidth();
+  UInt_t canvas_height = fConfig->GetCanvasHeight();
+
+  Bool_t good_color=kFALSE;
   TString usercolor = fConfig->GetGuiColor();
   if(!usercolor.IsNull()) {
     good_color = gClient->GetColorByName(usercolor,mainguicolor);
@@ -830,7 +849,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   // Top frame, to hold page buttons and canvas
   fTopframe = new TGHorizontalFrame(fMain,200,200);
   fTopframe->SetBackgroundColor(mainguicolor);
-  fMain->AddFrame(fTopframe, new TGLayoutHints(kLHintsExpandX 
+  fMain->AddFrame(fTopframe, new TGLayoutHints(kLHintsExpandX
                                               | kLHintsExpandY,10,10,10,1));
 
   // Create a verticle frame widget with radio buttons
@@ -848,18 +867,18 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   current_page = 0;
 
   for (UInt_t i=0; i<fConfig->GetPageCount(); i++) {
-    vframe->AddFrame(fRadioPage[i], 
+    vframe->AddFrame(fRadioPage[i],
 		     new TGLayoutHints(kLHintsLeft |
 				       kLHintsCenterY,5,5,3,4));
     fRadioPage[i]->Connect("Pressed()", "OnlineGUI", this, "DoRadio()");
   }
   if(!fConfig->IsMonitor()) {
-    wile = 
+    wile =
       new TGPictureButton(vframe,
-			  gClient->GetPicture(guiDirectory+"/defaultPic.xpm"));
+			  gClient->GetPicture(guiDirectory+"/hcsmall.png"));
     wile->Connect("Pressed()","OnlineGUI", this,"DoDraw()");
   } else {
-    wile = 
+    wile =
       new TGPictureButton(vframe,
 			  gClient->GetPicture(guiDirectory+"/panguin.xpm"));
     wile->Connect("Pressed()","OnlineGUI", this,"DoDrawClear(&fRootFile)");
@@ -873,20 +892,20 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   fTopframe->AddFrame(vframe,
 		      new TGLayoutHints(kLHintsCenterX|
 					kLHintsCenterY,2,2,2,2));
-  
+
   // Create canvas widget
-  fEcanvas = new TRootEmbeddedCanvas("Ecanvas", fTopframe, 800, 600);
+  fEcanvas = new TRootEmbeddedCanvas("Ecanvas", fTopframe, canvas_width, canvas_height);
   fEcanvas->SetBackgroundColor(mainguicolor);
   fTopframe->AddFrame(fEcanvas, new TGLayoutHints(kLHintsExpandY,10,10,10,1));
   fCanvas = fEcanvas->GetCanvas();
 
   // Create the bottom frame.  Contains control buttons
-  fBottomFrame = new TGHorizontalFrame(fMain,1200,200);
+  fBottomFrame = new TGHorizontalFrame(fMain,canvas_width+400,200);
   fBottomFrame->SetBackgroundColor(mainguicolor);
   fMain->AddFrame(fBottomFrame, new TGLayoutHints(kLHintsExpandX,10,10,10,10));
-  
+
   // Create a horizontal frame widget with buttons
-  hframe = new TGHorizontalFrame(fBottomFrame,1200,40);
+  hframe = new TGHorizontalFrame(fBottomFrame,canvas_width+400,40);
   hframe->SetBackgroundColor(mainguicolor);
   fBottomFrame->AddFrame(hframe,new TGLayoutHints(kLHintsExpandX,200,20,2,2));
 
@@ -905,7 +924,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
   fExit->Connect("Clicked()","OnlineGUI",this,"CloseGUI()");
 
   hframe->AddFrame(fExit, new TGLayoutHints(kLHintsCenterX,5,5,1,1));
-  
+
   TString Buff;
   if(runNumber==0) {
     Buff = "";
@@ -914,7 +933,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
     Buff += runNumber;
   }
   TGString labelBuff(Buff);
-  
+
   fRunNumber = new TGLabel(hframe,Buff);
   fRunNumber->SetBackgroundColor(mainguicolor);
   hframe->AddFrame(fRunNumber,new TGLayoutHints(kLHintsCenterX,5,5,1,1));
@@ -934,10 +953,10 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
 
   // Map all sub windows to main frame
   fMain->MapSubwindows();
-  
+
   // Initialize the layout algorithm
   fMain->Resize(fMain->GetDefaultSize());
-  
+
   // Map main frame
   fMain->MapWindow();
 
@@ -959,7 +978,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
 
 }
 
-void OnlineGUI::DoDraw() 
+void OnlineGUI::DoDraw()
 {
   // The main Drawing Routine.
 
@@ -1008,9 +1027,9 @@ void OnlineGUI::DoDraw()
   pair <UInt_t,UInt_t> dim = fConfig->GetPageDim(current_page);
 
 #ifdef DEBUG
-  cout << "Dimensions: " << dim.first << "X" 
+  cout << "Dimensions: " << dim.first << "X"
        << dim.second << endl;
-#endif  
+#endif
 
   // Create a nice clean canvas.
   fCanvas->Clear();
@@ -1018,7 +1037,7 @@ void OnlineGUI::DoDraw()
 
   drawcommand thiscommand;
   // Draw the histograms.
-  for(UInt_t i=0; i<draw_count; i++) {    
+  for(UInt_t i=0; i<draw_count; i++) {
     thiscommand = fConfig->GetDrawCommand(current_page,i);
     thiscommand = fileObject2command(thiscommand,&fRootFile);
     fCanvas->cd(i+1);
@@ -1034,7 +1053,7 @@ void OnlineGUI::DoDraw()
       TreeDraw(thiscommand);
     }
   }
-      
+
   fCanvas->cd();
   fCanvas->Update();
 
@@ -1050,7 +1069,7 @@ void OnlineGUI::DrawNext()
   fRadioPage[current_page]->SetState(kButtonUp);
   // The following line triggers DoRadio()
   fRadioPage[current_page+1]->SetState(kButtonDown,true);
-  
+
 }
 
 void OnlineGUI::DrawPrev()
@@ -1059,7 +1078,7 @@ void OnlineGUI::DrawPrev()
   fRadioPage[current_page]->SetState(kButtonUp);
   // The following line triggers DoRadio()
   fRadioPage[current_page-1]->SetState(kButtonDown,true);
-  
+
 }
 
 void OnlineGUI::DoRadio()
@@ -1074,8 +1093,8 @@ void OnlineGUI::DoRadio()
   UInt_t pagecount = fConfig->GetPageCount();
   TGButton *btn = (TGButton *) gTQSender;
   UInt_t id = btn->WidgetId();
-  
-  if (id <= pagecount) {  
+
+  if (id <= pagecount) {
     fRadioPage[current_page]->SetState(kButtonUp);
   }
 
@@ -1084,7 +1103,7 @@ void OnlineGUI::DoRadio()
 
 }
 
-void OnlineGUI::CheckPageButtons() 
+void OnlineGUI::CheckPageButtons()
 {
   // Checks the current page to see if it's the first or last page.
   //  If so... turn off the appropriate button.
@@ -1108,7 +1127,7 @@ void OnlineGUI::GetFileObjects(RootFileObject* fLocalRootFileObj)
 {
   // Utility to find all of the objects within a File (TTree, TH1F, etc).
   //  The pair stored in the vector is <ObjName, ObjType>
-  //  For histograms, the title is also stored 
+  //  For histograms, the title is also stored
   //    (in case the the name is not very descriptive... like when
   //    using h2root)
   //  If there's no good keys.. do nothing.
@@ -1130,7 +1149,7 @@ void OnlineGUI::GetFileObjects(RootFileObject* fLocalRootFileObj)
   // Do the search
   while((key=(TKey*)next())!=0) {
 #ifdef DEBUGGETFILEOBJECTS
-    cout << "Key = " << key << endl;    
+    cout << "Key = " << key << endl;
 #endif
     TString objname = key->GetName();
     TString objtype = key->GetClassName();
@@ -1166,13 +1185,13 @@ void OnlineGUI::GetFileObjects(RootFileObject* fLocalRootFileObj)
       thisObject.directory = "";
       fLocalRootFileObj->vfileObjects.push_back(thisObject);
     }
-      
+
   }
   fLocalRootFileObj->fUpdate = kTRUE;
   delete key;
 }
 
-void OnlineGUI::GetTreeVars(RootFileObject* fLocalRootFileObj) 
+void OnlineGUI::GetTreeVars(RootFileObject* fLocalRootFileObj)
 {
   // Utility to find all of the variables (leaf's/branches) within a
   // Specified TTree and put them within the TreeVars vector.
@@ -1226,20 +1245,20 @@ void OnlineGUI::GetRootTree(RootFileObject* fLocalRootFileObj ) {
   for(UInt_t i=0; i<nTrees; i++) {
     fLocalRootFileObj->RootTree.push_back( (TTree*) fLocalRootFileObj->RootFile->Get(found.front()) );
     found.pop_front();
-  }  
+  }
   // Initialize the TreeEntries vector
   fLocalRootFileObj->TreeEntries.clear();
   for(UInt_t i=0;i<fLocalRootFileObj->RootTree.size();i++) {
     fLocalRootFileObj->TreeEntries.push_back(0);
   }
-  
+
 }
 
 UInt_t OnlineGUI::GetTreeIndex(TString var, RootFileObject* fLocalRootFileObj ) {
   // Utility to find out which Tree (in fRootFile.RootTree) has the specified
   // variable "var".  If the variable is a collection of Tree
   // variables (e.g. bcm1:lumi1), will only check the first
-  // (e.g. bcm1).  
+  // (e.g. bcm1).
   // Returns the correct index.  if not found returns an index 1
   // larger than fRootFile.RootTree.size()
 
@@ -1289,12 +1308,12 @@ void OnlineGUI::MacroDraw(drawcommand command) {
 
   if(doGolden) fRootFile.RootFile->cd();
   gROOT->Macro(command.macro);
-  
+
 }
 
 void OnlineGUI::CanvasDraw(drawcommand command,UInt_t padnum) {
   // Called by DoDraw(), this will draw the TCanvas in the current Canvas
-  
+
   TString rootversion = gROOT->GetVersion();
   TString slash = "/";
   TString rootversion_cut = (fConfig->SplitString(rootversion,slash))[0];
@@ -1311,19 +1330,19 @@ void OnlineGUI::CanvasDraw(drawcommand command,UInt_t padnum) {
   } else {
     fDir = (TDirectory*)fRootFile.RootFile->Get(command.directory);
   }
-  
+
   if(fDir) fDir->cd();
   fRootFile.RootFile->cd();
   TCanvas *tcanv = (TCanvas*)fRootFile.RootFile->Get(command.objname);
   fCanvas->cd(padnum);
   tcanv->DrawClonePad();
   delete tcanv;
-  
+
 }
 
 void OnlineGUI::GraphDraw(drawcommand command) {
   // Called by DoDraw(), this will draw the TCanvas in the current Canvas
-  
+
   TString rootversion = gROOT->GetVersion();
   fRootFile.RootFile->cd();
   TDirectory *fDir;
@@ -1332,14 +1351,14 @@ void OnlineGUI::GraphDraw(drawcommand command) {
   } else {
     fDir = (TDirectory*)fRootFile.RootFile->Get(command.directory);
   }
-  
+
   if(fDir) fDir->cd();
   TGraph *thisgraph = (TGraph*)fRootFile.RootFile->Get(command.objname);
   TString drawopt = command.type;
   if(drawopt.IsNull()) drawopt = "AP";
   if(!command.title.IsNull()) thisgraph->SetTitle(command.title);
   thisgraph->Draw(drawopt);
-  
+
 }
 
 
@@ -1350,7 +1369,7 @@ void OnlineGUI::DoDrawClear(RootFileObject* fLocalRootFileObj) {
   for(UInt_t i=0; i<fLocalRootFileObj->TreeEntries.size(); i++) {
     fLocalRootFileObj->TreeEntries[i] = (Int_t) fLocalRootFileObj->RootTree[i]->GetEntries();
   }
-  
+
 
 }
 
@@ -1399,7 +1418,7 @@ void OnlineGUI::BadDraw(TString errMessage) {
 void OnlineGUI::CheckRootFile() {
   // Check the path to the rootfile (should follow symbolic links)
   // ... If found:
-  //   Reopen new root file, 
+  //   Reopen new root file,
   //   Reconnect the timer to TimerUpdate()
 
   if(gSystem->AccessPathName(fConfig->GetRootFile())==0) {
@@ -1468,7 +1487,7 @@ void OnlineGUI::HistDraw(drawcommand command) {
   Bool_t showStat=kTRUE;
   TString htitle;
 
-  if(command.noshowgolden=="noshowgolden") 
+  if(command.noshowgolden=="noshowgolden")
     showGolden = kFALSE;
   if(command.nostat=="nostat")
       showStat=kFALSE;
@@ -1476,13 +1495,13 @@ void OnlineGUI::HistDraw(drawcommand command) {
 
   TString type=command.type;
   TDirectory *fDir;
-  
+
   if(command.directory.IsNull()) {
     fDir = 0;
   } else {
     fDir = (TDirectory*)fRootFile.RootFile->Get(command.directory);
   }
-  
+
   // Determine dimensionality of histogram, then draw it
   if(command.objtype.Contains("TH1")) {
     // Operation for TH1
@@ -1538,6 +1557,7 @@ void OnlineGUI::HistDraw(drawcommand command) {
 	fRootFile.mytemp2d->SetStats(showStat);
 	if(!htitle.IsNull()) fGoldenFile.mytemp2d->SetTitle(htitle);
 	fRootFile.mytemp2d->Draw(type);
+	fRootFile.mytemp2d->Draw("colz");
       }
     }
     return;
@@ -1570,7 +1590,7 @@ void OnlineGUI::HistDraw(drawcommand command) {
     }
     return;
   }
-  
+
 }
 
 drawcommand OnlineGUI::fileObject2command(drawcommand command, RootFileObject* fLocalRootFileObj) {
@@ -1585,16 +1605,16 @@ drawcommand OnlineGUI::fileObject2command(drawcommand command, RootFileObject* f
       command.objtype = fLocalRootFileObj->vfileObjects[i].type;
       command.directory = fLocalRootFileObj->vfileObjects[i].directory;
 #ifdef DEBUGf2command
-      cout << command.directory << " " 
-	   << command.objtype  << " " 
-	   << command.objname 
+      cout << command.directory << " "
+	   << command.objtype  << " "
+	   << command.objname
 	   << endl;
 #endif
       return command;
     }
   }
   return command;
-  
+
 
 }
 
@@ -1720,7 +1740,7 @@ void OnlineGUI::ObtainRunNumber()
 {
   // Utility to obtain the runnumber through a helper macro
   //  "GetRunNumber.C"
-  
+
   if (runNumber==0) runNumber = GetRunNumber();
 #ifdef DEBUG
   cout << "Runnumber from file: " << runNumber << endl;
@@ -1733,26 +1753,28 @@ void OnlineGUI::PrintToFile()
   //  A file dialog pop's up to request the file name.
   fCanvas = fEcanvas->GetCanvas();
   gStyle->SetPaperSize(20,24);
-  static TString dir("printouts");
+  static TString dir(".");
   TGFileInfo fi;
-  const char *myfiletypes[] = 
+  const char *myfiletypes[] =
     { "All files","*",
-      "PostScript files","*.ps",
-      "Encapsulated PostScript files","*.eps",
+      "PDF files","*.pdf",
+      "PNG files","*.png",
       "GIF files","*.gif",
       "JPG files","*.jpg",
       0,               0 };
   fi.fFileTypes = myfiletypes;
   fi.fIniDir    = StrDup(dir.Data());
-
+  cout << " INitiail = " << fi.fIniDir << endl;
   new TGFileDialog(gClient->GetRoot(), fMain, kFDSave, &fi);
-  if(fi.fFilename!=NULL) fCanvas->Print(fi.fFilename);
+  if(fi.fFilename!=NULL) {
+    fCanvas->Print(fi.fFilename);
+  }
 }
 
 void OnlineGUI::PrintPages() {
-  // Routine to go through each defined page, and print the output to 
+  // Routine to go through each defined page, and print the output to
   // a postscript file. (good for making sample histograms).
-  
+
   // Open the RootFile
     //  unless we're watching a file.
   fRootFile.RootFile = new TFile(fConfig->GetRootFile(),"READ");
@@ -1777,7 +1799,7 @@ void OnlineGUI::PrintPages() {
 	fRootFile.RootTree.erase(fRootFile.RootTree.begin() + i);
       }
     }
-    
+
   }
   TString goldenfilename=fConfig->GetGoldenFile();
   if(!goldenfilename.IsNull()) {
@@ -1815,7 +1837,12 @@ void OnlineGUI::PrintPages() {
   Bool_t useJPG = kFALSE;
   if(!plotsdir.IsNull()) useJPG = kTRUE;
 
-  TString filename = "summaryplots";
+  //  TString filename = "summaryplots";
+  TString ConfigStartAll=fConfig->GetConfigStart();
+  TObjArray *tx= ConfigStartAll.Tokenize("/");
+  TString temp=((TObjString *)(tx->At(tx->GetEntries()-1)))->String();
+  Ssiz_t pos=temp.Index(".cfg");
+  TString filename=temp(0,pos);
   if(runNumber!=0) {
     filename += "_";
     filename += runNumber;
@@ -1824,7 +1851,7 @@ void OnlineGUI::PrintPages() {
     filename.Prepend(plotsdir+"/");
     filename += "_pageXXXX.jpg";
   }
-  else filename += ".ps";
+  else filename += ".pdf";
 
   TString pagehead = "Summary Plots";
   if(runNumber!=0) {
@@ -1835,11 +1862,12 @@ void OnlineGUI::PrintPages() {
   pagehead += ": ";
 
   gStyle->SetPalette(1);
-  gStyle->SetTitleX(0.15);
-  gStyle->SetTitleY(0.9);
+  gStyle->SetTitleX(0.5);
+  gStyle->SetTitleY(0.95);
   gStyle->SetPadBorderMode(0);
   gStyle->SetHistLineColor(1);
   gStyle->SetHistFillColor(1);
+  cout << filename << endl;
   if(!useJPG) fCanvas->Print(filename+"[");
   TString origFilename = filename;
   for(UInt_t i=0; i<fConfig->GetPageCount(); i++) {
@@ -1851,13 +1879,48 @@ void OnlineGUI::PrintPages() {
     if(useJPG) {
       filename = origFilename;
       filename.ReplaceAll("XXXX",Form("%d",current_page));
-      cout << "Printing page " << current_page 
+      cout << "Printing page " << current_page
 	   << " to file = " << filename << endl;
     }
     fCanvas->Print(filename);
   }
   if(!useJPG) fCanvas->Print(filename+"]");
-  
+  //
+
+  cout << "Writing histograms to root file '" << filename << "'." << endl;
+
+  filename.Resize(filename.Last('.'));
+  filename += ".root";
+  TFile* hroot = new TFile(filename,"recreate");
+
+  UInt_t pageCount = fConfig->GetPageCount();
+  for (UInt_t iPage=0; iPage<pageCount; ++iPage) {
+    UInt_t drawCount = fConfig->GetDrawCount(iPage);
+    for (UInt_t iDraw=0; iDraw<drawCount; ++iDraw) {
+      TString macro = fConfig->GetDrawCommand(iPage, iDraw).macro;
+      if (macro != "") {
+        TString histName = macro.Remove(0, macro.First('\"')+1);
+        histName.Resize(macro.First('\"'));
+
+        fRootFile.RootFile->cd();
+        TH1F* h1f = dynamic_cast<TH1F*>(gDirectory->Get(histName));
+        TH2F* h2f = dynamic_cast<TH2F*>(gDirectory->Get(histName));
+        hroot->cd();
+
+        if (h1f) h1f->Write();
+        else if (h2f) h2f->Write();
+        else cout << histName << " not found!" << endl;
+      }
+    }
+  }
+
+  hroot->Write();
+  hroot->Close();
+  delete hroot;
+
+  cout << "Root file '" << filename << "' done." << endl;
+
+  //
 #ifdef STANDALONE
   gApplication->Terminate();
 #endif
@@ -1877,7 +1940,7 @@ void OnlineGUI::MyCloseWindow()
   delete fPrev;
   delete fNext;
   delete wile;
-  for(UInt_t i=0; i<fConfig->GetPageCount(); i++) 
+  for(UInt_t i=0; i<fConfig->GetPageCount(); i++)
     delete fRadioPage[i];
   delete hframe;
   delete fEcanvas;
@@ -1894,7 +1957,7 @@ void OnlineGUI::MyCloseWindow()
 #endif
 }
 
-void OnlineGUI::CloseGUI() 
+void OnlineGUI::CloseGUI()
 {
   // Routine to take care of the Exit GUI button
   fMain->SendCloseMessage();
@@ -1913,7 +1976,7 @@ OnlineGUI::~OnlineGUI()
   delete fPrev;
   delete fNext;
   delete wile;
-  for(UInt_t i=0; i<fConfig->GetPageCount(); i++) 
+  for(UInt_t i=0; i<fConfig->GetPageCount(); i++)
     delete fRadioPage[i];
   delete hframe;
   delete fEcanvas;
@@ -1926,11 +1989,11 @@ OnlineGUI::~OnlineGUI()
   delete fConfig;
 }
 
-void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE) 
+void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE,Bool_t rootonly=kFALSE)
 {
   // "main" routine.  Run this at the ROOT commandline.
 
-  if(printonly) {
+  if(printonly || rootonly) {
     if(!gROOT->IsBatch()) {
 #ifdef STANDALONE
       gROOT->SetBatch();
@@ -1955,7 +2018,7 @@ void online(TString type="standard",UInt_t run=0,Bool_t printonly=kFALSE)
 
   if(run!=0) fconfig->OverrideRootFile(run);
 
-  new OnlineGUI(*fconfig,printonly,run);
+  new OnlineGUI(*fconfig,printonly,rootonly,run);
 
 }
 
@@ -1968,6 +2031,7 @@ void Usage()
   cerr << "  -r : runnumber" << endl;
   cerr << "  -f : configuration file" << endl;
   cerr << "  -P : Only Print Summary Plots" << endl;
+  cerr << "  -R : Only Rootfile " << endl;
   cerr << endl;
 
 }
@@ -1977,6 +2041,7 @@ int main(int argc, char **argv)
   TString type="default";
   UInt_t run=0;
   Bool_t printonly=kFALSE;
+  Bool_t rootonly=kFALSE;
   Bool_t showedUsage=kFALSE;
 
   TApplication theApp("App",&argc,argv,NULL,-1);
@@ -1995,6 +2060,9 @@ int main(int argc, char **argv)
       } else if (sArg=="-P") {
 	printonly = kTRUE;
 	cout <<  " PrintOnly" << endl;
+      } else if (sArg=="-R") {
+	rootonly = kTRUE;
+	cout <<  " RootOnly" << endl;
       } else if (sArg=="-h") {
 	if(!showedUsage) Usage();
 	showedUsage=kTRUE;
@@ -2006,7 +2074,7 @@ int main(int argc, char **argv)
       }
     }
 
-  online(type,run,printonly);
+  online(type,run,printonly,rootonly);
   theApp.Run();
 
   return 0;

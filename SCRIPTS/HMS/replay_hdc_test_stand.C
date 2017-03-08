@@ -16,8 +16,8 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/test_%d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/test_%d.root";
+  const char* RunFileNamePattern = "raw/hms_all_%05d.dat";
+  const char* ROOTFileNamePattern = "ROOTfiles/hdc_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
@@ -31,27 +31,34 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load params for HMS DC test stand configuration
   gHcParms->Load("PARAM/HMS/DC/hdc_test_stand.param");
+  gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hdc_htrig.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
-  // Add HMS drift chambers
-  HMS->AddDetector(new THcDC("dc", "Drift Chambers"));
+  // Add drift chambers to HMS apparatus
+  THcDC* dc = new THcDC("dc", "Drift Chambers");
+  HMS->AddDetector(dc);
+  // Add hodoscope to HMS apparatus
+  // THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  // HMS->AddDetector(hod);
 
-  // Additional detectors:
-  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
-  //HMS->AddDetector(new THcShower("cal", "Shower"));
-  //
-  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  //HMS->AddDetector(cherenkov);
-  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  //HMS->AddDetector(aerogel);
-  //
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
+
+  // Add handler for prestart event 125.
+  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
+  gHaEvtHandlers->Add(ev125);
+
   //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
   //hscaler->SetDebugFile("HScaler.txt");
   //gHaEvtHandlers->Add(hscaler);
