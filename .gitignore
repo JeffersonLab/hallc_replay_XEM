@@ -4,4 +4,6 @@ ROOTfiles/*
 hcana
 raw
 .root_history
+data_files/*
+root_files/*
 REPORT_OUTPUT/*
