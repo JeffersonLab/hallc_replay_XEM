@@ -24,13 +24,31 @@ void UserScript() {
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
 
-  static const Double_t pshwr_adc2GeV = 0.001;
+  // static const Double_t pshwr_adc2GeV = 0.001; 
+  static const Double_t pshwr_neg_adc2GeV[nneg_pshwr_blks] = {1.0/466.2, 1.0/514.7, 1.0/325.5, 1.0/247.8, 
+							      1.0/322.0, 1.0/176.2, 1.0/161.9, 1.0/197.7, 
+							      1.0/269.9, 1.0/241.6, 1.0/193.7, 1.0/337.5, 
+							      1.0/237.3, 1.0/82.0};
+  
+  static const Double_t pshwr_pos_adc2GeV[npos_pshwr_blks] = {1.0/411.2, 1.0/378.6, 1.0/357.9, 1.0/254.8, 
+							      1.0/315.6, 1.0/331.0, 1.0/264.6, 1.0/305.4, 
+							      1.0/149.8, 1.0/380.6, 1.0/183.1, 1.0/206.5, 
+							      1.0/139.8, 1.0/163.1};
+
   static const Double_t shwr_adc2GeV  = 0.0005;
 
-  static const Double_t hgc_adc2npe = 1./205.;
-  static const Double_t ngc_adc2npe = 1./150.;
+  // static const Double_t hgc_adc2npe = 1./205.;
+  static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/8895., 1.0/5293., 1.0/8000., 1.0/10000.};
 
-  static const Double_t aero_adc2npe = 1./500.;
+  // static const Double_t ngc_adc2npe = 1./150.;
+  static const Double_t ngc_adc2npe[nngc_pmts] = {1.0/5000., 1.0/5000., 1.0/5000., 1.0/5000.};
+
+  static const Double_t aero_neg_adc2npe[nneg_aero_pmts] = {1./586.8, 1./536.5, 1./690.5, 1./563.1, 
+							    1./574.4, 1./432.7, 1./601.5};
+  
+  // static const Double_t aero_adc2npe = 1./500.;
+  static const Double_t aero_pos_adc2npe[npos_aero_pmts] = {1./496.7, 1./467.5, 1./554.3, 1./766.1, 
+							    1./412.1, 1./517.9, 1./435.6};
 
   static const UInt_t maxNumTracks = 10;
 
@@ -576,13 +594,13 @@ void UserScript() {
       h2_paero_negPulseTime_pT1_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_paero_negPulseTime_pT2_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_paero_negPulseTime_pT3_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
-      paero_sum += paero_negPulseInt[iaerohit]*aero_adc2npe;
+      paero_sum += paero_negPulseInt[iaerohit]*aero_neg_adc2npe[iaerohit];
     }
     for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++) {
       h2_paero_posPulseTime_pT1_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_paero_posPulseTime_pT2_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_paero_posPulseTime_pT3_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
-      paero_sum += paero_posPulseInt[iaerohit]*aero_adc2npe;
+      paero_sum += paero_posPulseInt[iaerohit]*aero_pos_adc2npe[iaerohit];
     }
     if (paero_sum != 0.0) h_paero_sum->Fill(paero_sum);
 
@@ -593,13 +611,13 @@ void UserScript() {
       h2_ppshwr_negPulseTime_pT1_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_ppshwr_negPulseTime_pT2_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_ppshwr_negPulseTime_pT3_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
-      ppshwr_sum += ppshwr_negPulseInt[ipshwrhit]*pshwr_adc2GeV;
+      ppshwr_sum += ppshwr_negPulseInt[ipshwrhit]*pshwr_neg_adc2GeV[ipshwrhit];
     }
     for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_posHits; ipshwrhit++) {
       h2_ppshwr_posPulseTime_pT1_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_ppshwr_posPulseTime_pT2_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_ppshwr_posPulseTime_pT3_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
-      ppshwr_sum += ppshwr_posPulseInt[ipshwrhit]*pshwr_adc2GeV;
+      ppshwr_sum += ppshwr_posPulseInt[ipshwrhit]*pshwr_pos_adc2GeV[ipshwrhit];
     }
     if (ppshwr_sum != 0.0) h_ppshwr_sum->Fill(ppshwr_sum);
 
@@ -629,7 +647,7 @@ void UserScript() {
       h2_phgc_pulseTime_pT1_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_phgc_pulseTime_pT2_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_phgc_pulseTime_pT3_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT3_tdcTime*clk2tdc);
-      phgc_sum += phgc_pulseInt[ihgchit]*hgc_adc2npe;
+      phgc_sum += phgc_pulseInt[ihgchit]*hgc_adc2npe[ihgchit];
     }
     if (phgc_sum != 0.0) h_phgc_sum->Fill(phgc_sum);
     if (phgc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_phgcer->Fill(phgc_sum, ppshwr_sum + pshwr_sum);
@@ -641,7 +659,7 @@ void UserScript() {
       h2_pngc_pulseTime_pT1_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT1_tdcTime*clk2tdc);
       h2_pngc_pulseTime_pT2_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT2_tdcTime*clk2tdc);
       h2_pngc_pulseTime_pT3_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT3_tdcTime*clk2tdc);
-      pngc_sum += pngc_pulseInt[ingchit]*ngc_adc2npe;
+      pngc_sum += pngc_pulseInt[ingchit]*ngc_adc2npe[ingchit];
     }
     if (pngc_sum != 0.0) h_pngc_sum->Fill(pngc_sum);
     if (pngc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_pngcer->Fill(pngc_sum, ppshwr_sum + pshwr_sum);
