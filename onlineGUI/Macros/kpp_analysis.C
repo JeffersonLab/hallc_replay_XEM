@@ -38,10 +38,12 @@ void UserScript() {
   static const Double_t shwr_adc2GeV  = 0.0005;
 
   // static const Double_t hgc_adc2npe = 1./205.;
-  static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/8895., 1.0/5293., 1.0/8000., 1.0/10000.};
+  //static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/8895., 1.0/5293., 1.0/8000., 1.0/10000.};
+  static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/1750., 1.0/1750., 1.0/1750., 1.0/1750.};
 
   // static const Double_t ngc_adc2npe = 1./150.;
-  static const Double_t ngc_adc2npe[nngc_pmts] = {1.0/5000., 1.0/5000., 1.0/5000., 1.0/5000.};
+  static const Double_t ngc_adc2npe[nngc_pmts] = {1.0/500., 1.0/500., 1.0/500., 1.0/500.};
+  //static const Double_t ngc_adc2npe[nngc_pmts] = {1.0/5000., 1.0/5000., 1.0/5000., 1.0/5000.};
 
   static const Double_t aero_neg_adc2npe[nneg_aero_pmts] = {1./586.8, 1./536.5, 1./690.5, 1./563.1, 
 							    1./574.4, 1./432.7, 1./601.5};
@@ -125,6 +127,7 @@ void UserScript() {
   // Tracking information
   Int_t ntracks;
   Double_t trk_pmag[maxNumTracks];
+  Double_t trk_beta[maxNumTracks];
 
   Long64_t nentries;
 
@@ -329,6 +332,7 @@ void UserScript() {
 
   T->SetBranchAddress("Ndata.P.tr.p", &ntracks);
   T->SetBranchAddress("P.tr.p", trk_pmag);
+  T->SetBranchAddress("P.tr.beta", trk_beta);
 
   // =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
@@ -457,218 +461,224 @@ void UserScript() {
 
     T->GetEntry(ievent);
 
-    // cout << "========================" << endl;
-    // cout << "Event Number = " << ievent << endl;
-    // cout << "========================" << endl;
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    // Fill "good" hit histos
-    for (UInt_t igoodhit = 0; igoodhit < p1X_nGoodHodoHits; igoodhit++) {
-      h2_p1X_negTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodNegTdcTimeCorr[igoodhit]);
-      h2_p1X_posTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit]);
-      h2_p1X_tdcCorrDiff->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]);
-      if (TMath::Abs(p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
-      h_p1X_plTime->Fill(p1X_goodPosTdcTimeCorr[igoodhit]);
-    }
-    for (UInt_t igoodhit = 0; igoodhit < p1Y_nGoodHodoHits; igoodhit++) {
-      h2_p1Y_negTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodNegTdcTimeCorr[igoodhit]);
-      h2_p1Y_posTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit]);
-      h2_p1Y_tdcCorrDiff->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]);
-      if (TMath::Abs(p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
-      h_p1Y_plTime->Fill(p1Y_goodPosTdcTimeCorr[igoodhit]);
-    }
-    for (UInt_t igoodhit = 0; igoodhit < p2X_nGoodHodoHits; igoodhit++) {
-      h2_p2X_negTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodNegTdcTimeCorr[igoodhit]);
-      h2_p2X_posTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit]);
-      h2_p2X_tdcCorrDiff->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]);
-      if (TMath::Abs(p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
-      h_p2X_plTime->Fill(p2X_goodPosTdcTimeCorr[igoodhit]);
-    }
-    for (UInt_t igoodhit = 0; igoodhit < p2Y_nGoodHodoHits; igoodhit++) {
-      h2_p2Y_negTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodNegTdcTimeCorr[igoodhit]);
-      h2_p2Y_posTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit]);
-      h2_p2Y_tdcCorrDiff->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]);
-      if (TMath::Abs(p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
-      h_p2Y_plTime->Fill(p2Y_goodPosTdcTimeCorr[igoodhit]);
-    }
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    // Fill pulse/tdc time difference histos
-
-    // cout << "Num of ADC Hits = " << p1X_negAdcHits << endl;
-    // cout << "ADC Paddle Number = " << p1X_negAdcPaddle[iadchit] << endl;
-    // cout << "Num of TDC Hits = " << p1X_negTdcHits << endl;
-    // cout << "TDC Paddle Number = " << p1X_negTdcPaddle[itdchit] << endl;
-
-    for (UInt_t iadchit = 0; iadchit < p1X_negAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p1X_negTdcHits; itdchit++) {
-	if (p1X_negAdcPaddle[iadchit] != p1X_negTdcPaddle[itdchit]) continue;
-	h2_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPaddle[iadchit], p1X_negAdcPulseTime[iadchit]*clk2adc - p1X_negTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p1Y_negAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p1Y_negTdcHits; itdchit++) {
-	if (p1Y_negAdcPaddle[iadchit] != p1Y_negTdcPaddle[itdchit]) continue;
-	h2_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPaddle[iadchit], p1Y_negAdcPulseTime[iadchit]*clk2adc - p1Y_negTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p2X_negAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p2X_negTdcHits; itdchit++) {
-	if (p2X_negAdcPaddle[iadchit] != p2X_negTdcPaddle[itdchit]) continue;
-	h2_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPaddle[iadchit], p2X_negAdcPulseTime[iadchit]*clk2adc - p2X_negTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p2Y_negAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p2Y_negTdcHits; itdchit++) {
-	if (p2Y_negAdcPaddle[iadchit] != p2Y_negTdcPaddle[itdchit]) continue;
-	h2_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPaddle[iadchit], p2Y_negAdcPulseTime[iadchit]*clk2adc - p2Y_negTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p1X_posAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p1X_posTdcHits; itdchit++) {
-	if (p1X_posAdcPaddle[iadchit] != p1X_posTdcPaddle[itdchit]) continue;
-	h2_p1Xpos_pt_tt_diff->Fill(p1X_posAdcPaddle[iadchit], p1X_posAdcPulseTime[iadchit]*clk2adc - p1X_posTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p1Y_posAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p1Y_posTdcHits; itdchit++) {
-	if (p1Y_nGoodHodoHits < 1) continue;
-	if (p1Y_posAdcPaddle[iadchit] != p1Y_posTdcPaddle[itdchit]) continue;
-	h2_p1Ypos_pt_tt_diff->Fill(p1Y_posAdcPaddle[iadchit], p1Y_posAdcPulseTime[iadchit]*clk2adc - p1Y_posTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p2X_posAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p2X_posTdcHits; itdchit++) {
-	if (p2X_posAdcPaddle[iadchit] != p2X_posTdcPaddle[itdchit]) continue;
-	h2_p2Xpos_pt_tt_diff->Fill(p2X_posAdcPaddle[iadchit], p2X_posAdcPulseTime[iadchit]*clk2adc - p2X_posTdcTime[itdchit]*clk2tdc);
-      }
-    }
-    for (UInt_t iadchit = 0; iadchit < p2Y_posAdcHits; iadchit++) {
-      for (UInt_t itdchit = 0; itdchit < p2Y_posTdcHits; itdchit++) {
-	if (p2Y_posAdcPaddle[iadchit] != p2Y_posTdcPaddle[itdchit]) continue;
-	h2_p2Ypos_pt_tt_diff->Fill(p2Y_posAdcPaddle[iadchit], p2Y_posAdcPulseTime[iadchit]*clk2adc - p2Y_posTdcTime[itdchit]*clk2tdc);
-      }
-    }
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    // Fill trigger time histos
-    if (p1X_tdcTime != 0.0) h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc);
-    if (p1Y_tdcTime != 0.0) h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc);
-    if (p2Y_tdcTime != 0.0) h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc);
-    if (p2T_tdcTime != 0.0) h_p2T_tdc->Fill(p2T_tdcTime*clk2tdc);
-
-    h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc);
-    h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc);
-    h_pT3_tdc->Fill(pT3_tdcTime*clk2tdc);
-
-    for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
-      h_pDCREF_tdc[iref]->Fill(pDCREF_tdcTime[iref]*clk2tdc);
-
-    if (p1X_tdcTime != 0.0) h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc);
-    if (p1Y_tdcTime != 0.0) h_p1YmpT2_tdc->Fill((pT2_tdcTime - p1Y_tdcTime)*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc);
-    if (p2Y_tdcTime != 0.0) h_p2YmpT2_tdc->Fill((pT2_tdcTime - p2Y_tdcTime)*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc);
-    if (p2T_tdcTime != 0.0) h_p2TmpT2_tdc->Fill((pT2_tdcTime - p2T_tdcTime)*clk2tdc);
-
-    if (p1X_tdcTime != 0.0) h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc);
-    if (p1Y_tdcTime != 0.0) h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
-    if (p2X_tdcTime != 0.0) h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc);
-    if (p2Y_tdcTime != 0.0) h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
-    if (p1T_tdcTime != 0.0) h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc);
-    if (p2T_tdcTime != 0.0) h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    h_p1X_fpTime->Fill(p1X_fpTime); h_p1Y_fpTime->Fill(p1Y_fpTime);
-    h_p2X_fpTime->Fill(p2X_fpTime); h_p2Y_fpTime->Fill(p2Y_fpTime);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    Double_t paero_sum = 0.0;
-    for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++) {
-      h2_paero_negPulseTime_pT1_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_paero_negPulseTime_pT2_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_paero_negPulseTime_pT3_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
-      paero_sum += paero_negPulseInt[iaerohit]*aero_neg_adc2npe[iaerohit];
-    }
-    for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++) {
-      h2_paero_posPulseTime_pT1_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_paero_posPulseTime_pT2_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_paero_posPulseTime_pT3_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
-      paero_sum += paero_posPulseInt[iaerohit]*aero_pos_adc2npe[iaerohit];
-    }
-    if (paero_sum != 0.0) h_paero_sum->Fill(paero_sum);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    Double_t ppshwr_sum = 0.0;
-    for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_negHits; ipshwrhit++) {
-      h2_ppshwr_negPulseTime_pT1_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_ppshwr_negPulseTime_pT2_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_ppshwr_negPulseTime_pT3_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
-      ppshwr_sum += ppshwr_negPulseInt[ipshwrhit]*pshwr_neg_adc2GeV[ipshwrhit];
-    }
-    for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_posHits; ipshwrhit++) {
-      h2_ppshwr_posPulseTime_pT1_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_ppshwr_posPulseTime_pT2_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_ppshwr_posPulseTime_pT3_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
-      ppshwr_sum += ppshwr_posPulseInt[ipshwrhit]*pshwr_pos_adc2GeV[ipshwrhit];
-    }
-    if (ppshwr_sum != 0.0) h_ppshwr_sum->Fill(ppshwr_sum);
-
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    Double_t pshwr_sum = 0.0;
-    for (UInt_t ishwrhit = 0; ishwrhit < pshwr_hits; ishwrhit++) {
-      h2_pshwr_pulseTime_pT1_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_pshwr_pulseTime_pT2_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_pshwr_pulseTime_pT3_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
-      pshwr_sum += pshwr_pulseInt[ishwrhit]*shwr_adc2GeV;
-    }
-    if (pshwr_sum != 0.0) h_pshwr_sum->Fill(pshwr_sum);
-    if ((ppshwr_sum + pshwr_sum) != 0.0) h_ptotshwr_sum->Fill(ppshwr_sum + pshwr_sum);
-    if (ppshwr_sum != 0.0 && pshwr_sum != 0.0) {
-      h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);   
-    }
-    
-    for (UInt_t itrack = 0; itrack < ntracks; itrack++)
-      if (trk_pmag != 0.0 && ntracks == 1) h2_EdivP_vs_P->Fill(trk_pmag[0], (ppshwr_sum + pshwr_sum)/trk_pmag[0]);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    Double_t phgc_sum = 0.0;
-    for (UInt_t ihgchit = 0; ihgchit < phgc_hits; ihgchit++) {
-      h2_phgc_pulseTime_pT1_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_phgc_pulseTime_pT2_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_phgc_pulseTime_pT3_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT3_tdcTime*clk2tdc);
-      phgc_sum += phgc_pulseInt[ihgchit]*hgc_adc2npe[ihgchit];
-    }
-    if (phgc_sum != 0.0) h_phgc_sum->Fill(phgc_sum);
-    if (phgc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_phgcer->Fill(phgc_sum, ppshwr_sum + pshwr_sum);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
-    Double_t pngc_sum = 0.0;
-    for (UInt_t ingchit = 0; ingchit < pngc_hits; ingchit++) {
-      h2_pngc_pulseTime_pT1_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT1_tdcTime*clk2tdc);
-      h2_pngc_pulseTime_pT2_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT2_tdcTime*clk2tdc);
-      h2_pngc_pulseTime_pT3_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT3_tdcTime*clk2tdc);
-      pngc_sum += pngc_pulseInt[ingchit]*ngc_adc2npe[ingchit];
-    }
-    if (pngc_sum != 0.0) h_pngc_sum->Fill(pngc_sum);
-    if (pngc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_pngcer->Fill(pngc_sum, ppshwr_sum + pshwr_sum);
-
-    // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
-
     if ((ievent)%1000 == 0)
       cout << "ievent = " << ievent << endl;
 
+    if (ntracks != 1) continue;
+    for (UInt_t itrack = 0; itrack < ntracks; itrack++) {
+      
+      if (TMath::Abs(trk_beta[itrack] - 1.) > 0.2) continue; 
+
+      // cout << "========================" << endl;
+      // cout << "Event Number = " << ievent << endl;
+      // cout << "========================" << endl;
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      // Fill "good" hit histos
+      for (UInt_t igoodhit = 0; igoodhit < p1X_nGoodHodoHits; igoodhit++) {
+	h2_p1X_negTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodNegTdcTimeCorr[igoodhit]);
+	h2_p1X_posTdcCorr->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit]);
+	h2_p1X_tdcCorrDiff->Fill(p1X_goodPaddle[igoodhit], p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]);
+	if (TMath::Abs(p1X_goodPosTdcTimeCorr[igoodhit] - p1X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+	h_p1X_plTime->Fill(p1X_goodPosTdcTimeCorr[igoodhit]);
+      }
+      for (UInt_t igoodhit = 0; igoodhit < p1Y_nGoodHodoHits; igoodhit++) {
+	h2_p1Y_negTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodNegTdcTimeCorr[igoodhit]);
+	h2_p1Y_posTdcCorr->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit]);
+	h2_p1Y_tdcCorrDiff->Fill(p1Y_goodPaddle[igoodhit], p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]);
+	if (TMath::Abs(p1Y_goodPosTdcTimeCorr[igoodhit] - p1Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+	h_p1Y_plTime->Fill(p1Y_goodPosTdcTimeCorr[igoodhit]);
+      }
+      for (UInt_t igoodhit = 0; igoodhit < p2X_nGoodHodoHits; igoodhit++) {
+	h2_p2X_negTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodNegTdcTimeCorr[igoodhit]);
+	h2_p2X_posTdcCorr->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit]);
+	h2_p2X_tdcCorrDiff->Fill(p2X_goodPaddle[igoodhit], p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]);
+	if (TMath::Abs(p2X_goodPosTdcTimeCorr[igoodhit] - p2X_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+	h_p2X_plTime->Fill(p2X_goodPosTdcTimeCorr[igoodhit]);
+      }
+      for (UInt_t igoodhit = 0; igoodhit < p2Y_nGoodHodoHits; igoodhit++) {
+	h2_p2Y_negTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodNegTdcTimeCorr[igoodhit]);
+	h2_p2Y_posTdcCorr->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit]);
+	h2_p2Y_tdcCorrDiff->Fill(p2Y_goodPaddle[igoodhit], p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]);
+	if (TMath::Abs(p2Y_goodPosTdcTimeCorr[igoodhit] - p2Y_goodNegTdcTimeCorr[igoodhit]) > 0.1) continue;
+	h_p2Y_plTime->Fill(p2Y_goodPosTdcTimeCorr[igoodhit]);
+      }
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      // Fill pulse/tdc time difference histos
+
+      // cout << "Num of ADC Hits = " << p1X_negAdcHits << endl;
+      // cout << "ADC Paddle Number = " << p1X_negAdcPaddle[iadchit] << endl;
+      // cout << "Num of TDC Hits = " << p1X_negTdcHits << endl;
+      // cout << "TDC Paddle Number = " << p1X_negTdcPaddle[itdchit] << endl;
+
+      for (UInt_t iadchit = 0; iadchit < p1X_negAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p1X_negTdcHits; itdchit++) {
+	  if (p1X_negAdcPaddle[iadchit] != p1X_negTdcPaddle[itdchit]) continue;
+	  h2_p1Xneg_pt_tt_diff->Fill(p1X_negAdcPaddle[iadchit], p1X_negAdcPulseTime[iadchit]*clk2adc - p1X_negTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p1Y_negAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p1Y_negTdcHits; itdchit++) {
+	  if (p1Y_negAdcPaddle[iadchit] != p1Y_negTdcPaddle[itdchit]) continue;
+	  h2_p1Yneg_pt_tt_diff->Fill(p1Y_negAdcPaddle[iadchit], p1Y_negAdcPulseTime[iadchit]*clk2adc - p1Y_negTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p2X_negAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p2X_negTdcHits; itdchit++) {
+	  if (p2X_negAdcPaddle[iadchit] != p2X_negTdcPaddle[itdchit]) continue;
+	  h2_p2Xneg_pt_tt_diff->Fill(p2X_negAdcPaddle[iadchit], p2X_negAdcPulseTime[iadchit]*clk2adc - p2X_negTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p2Y_negAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p2Y_negTdcHits; itdchit++) {
+	  if (p2Y_negAdcPaddle[iadchit] != p2Y_negTdcPaddle[itdchit]) continue;
+	  h2_p2Yneg_pt_tt_diff->Fill(p2Y_negAdcPaddle[iadchit], p2Y_negAdcPulseTime[iadchit]*clk2adc - p2Y_negTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p1X_posAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p1X_posTdcHits; itdchit++) {
+	  if (p1X_posAdcPaddle[iadchit] != p1X_posTdcPaddle[itdchit]) continue;
+	  h2_p1Xpos_pt_tt_diff->Fill(p1X_posAdcPaddle[iadchit], p1X_posAdcPulseTime[iadchit]*clk2adc - p1X_posTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p1Y_posAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p1Y_posTdcHits; itdchit++) {
+	  if (p1Y_nGoodHodoHits < 1) continue;
+	  if (p1Y_posAdcPaddle[iadchit] != p1Y_posTdcPaddle[itdchit]) continue;
+	  h2_p1Ypos_pt_tt_diff->Fill(p1Y_posAdcPaddle[iadchit], p1Y_posAdcPulseTime[iadchit]*clk2adc - p1Y_posTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p2X_posAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p2X_posTdcHits; itdchit++) {
+	  if (p2X_posAdcPaddle[iadchit] != p2X_posTdcPaddle[itdchit]) continue;
+	  h2_p2Xpos_pt_tt_diff->Fill(p2X_posAdcPaddle[iadchit], p2X_posAdcPulseTime[iadchit]*clk2adc - p2X_posTdcTime[itdchit]*clk2tdc);
+	}
+      }
+      for (UInt_t iadchit = 0; iadchit < p2Y_posAdcHits; iadchit++) {
+	for (UInt_t itdchit = 0; itdchit < p2Y_posTdcHits; itdchit++) {
+	  if (p2Y_posAdcPaddle[iadchit] != p2Y_posTdcPaddle[itdchit]) continue;
+	  h2_p2Ypos_pt_tt_diff->Fill(p2Y_posAdcPaddle[iadchit], p2Y_posAdcPulseTime[iadchit]*clk2adc - p2Y_posTdcTime[itdchit]*clk2tdc);
+	}
+      }
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      // Fill trigger time histos
+      if (p1X_tdcTime != 0.0) h_p1X_tdc->Fill(p1X_tdcTime*clk2tdc);
+      if (p1Y_tdcTime != 0.0) h_p1Y_tdc->Fill(p1Y_tdcTime*clk2tdc);
+      if (p2X_tdcTime != 0.0) h_p2X_tdc->Fill(p2X_tdcTime*clk2tdc);
+      if (p2Y_tdcTime != 0.0) h_p2Y_tdc->Fill(p2Y_tdcTime*clk2tdc);
+      if (p1T_tdcTime != 0.0) h_p1T_tdc->Fill(p1T_tdcTime*clk2tdc);
+      if (p2T_tdcTime != 0.0) h_p2T_tdc->Fill(p2T_tdcTime*clk2tdc);
+
+      h_pT1_tdc->Fill(pT1_tdcTime*clk2tdc);
+      h_pT2_tdc->Fill(pT2_tdcTime*clk2tdc);
+      h_pT3_tdc->Fill(pT3_tdcTime*clk2tdc);
+
+      for (UInt_t iref = 0; iref < ndcRefTimes; iref++)
+	h_pDCREF_tdc[iref]->Fill(pDCREF_tdcTime[iref]*clk2tdc);
+
+      if (p1X_tdcTime != 0.0) h_p1XmpT2_tdc->Fill((pT2_tdcTime - p1X_tdcTime)*clk2tdc);
+      if (p1Y_tdcTime != 0.0) h_p1YmpT2_tdc->Fill((pT2_tdcTime - p1Y_tdcTime)*clk2tdc);
+      if (p2X_tdcTime != 0.0) h_p2XmpT2_tdc->Fill((pT2_tdcTime - p2X_tdcTime)*clk2tdc);
+      if (p2Y_tdcTime != 0.0) h_p2YmpT2_tdc->Fill((pT2_tdcTime - p2Y_tdcTime)*clk2tdc);
+      if (p1T_tdcTime != 0.0) h_p1TmpT2_tdc->Fill((pT2_tdcTime - p1T_tdcTime)*clk2tdc);
+      if (p2T_tdcTime != 0.0) h_p2TmpT2_tdc->Fill((pT2_tdcTime - p2T_tdcTime)*clk2tdc);
+
+      if (p1X_tdcTime != 0.0) h_p1XmpT3_tdc->Fill((pT3_tdcTime - p1X_tdcTime)*clk2tdc);
+      if (p1Y_tdcTime != 0.0) h_p1YmpT3_tdc->Fill((pT3_tdcTime - p1Y_tdcTime)*clk2tdc);
+      if (p2X_tdcTime != 0.0) h_p2XmpT3_tdc->Fill((pT3_tdcTime - p2X_tdcTime)*clk2tdc);
+      if (p2Y_tdcTime != 0.0) h_p2YmpT3_tdc->Fill((pT3_tdcTime - p2Y_tdcTime)*clk2tdc);
+      if (p1T_tdcTime != 0.0) h_p1TmpT3_tdc->Fill((pT3_tdcTime - p1T_tdcTime)*clk2tdc);
+      if (p2T_tdcTime != 0.0) h_p2TmpT3_tdc->Fill((pT3_tdcTime - p2T_tdcTime)*clk2tdc);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      h_p1X_fpTime->Fill(p1X_fpTime); h_p1Y_fpTime->Fill(p1Y_fpTime);
+      h_p2X_fpTime->Fill(p2X_fpTime); h_p2Y_fpTime->Fill(p2Y_fpTime);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      Double_t paero_sum = 0.0;
+      for (UInt_t iaerohit = 0; iaerohit < paero_negHits; iaerohit++) {
+	h2_paero_negPulseTime_pT1_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_paero_negPulseTime_pT2_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_paero_negPulseTime_pT3_diff->Fill(paero_negPmt[iaerohit], paero_negPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+	paero_sum += paero_negPulseInt[iaerohit]*aero_neg_adc2npe[iaerohit];
+      }
+      for (UInt_t iaerohit = 0; iaerohit < paero_posHits; iaerohit++) {
+	h2_paero_posPulseTime_pT1_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_paero_posPulseTime_pT2_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_paero_posPulseTime_pT3_diff->Fill(paero_posPmt[iaerohit], paero_posPulseTime[iaerohit]*clk2adc - pT3_tdcTime*clk2tdc);
+	paero_sum += paero_posPulseInt[iaerohit]*aero_pos_adc2npe[iaerohit];
+      }
+      if (paero_sum != 0.0) h_paero_sum->Fill(paero_sum);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      Double_t ppshwr_sum = 0.0;
+      for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_negHits; ipshwrhit++) {
+	h2_ppshwr_negPulseTime_pT1_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_ppshwr_negPulseTime_pT2_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_ppshwr_negPulseTime_pT3_diff->Fill(ppshwr_negPmt[ipshwrhit], ppshwr_negPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+	ppshwr_sum += ppshwr_negPulseInt[ipshwrhit]*pshwr_neg_adc2GeV[ipshwrhit];
+      }
+      for (UInt_t ipshwrhit = 0; ipshwrhit < ppshwr_posHits; ipshwrhit++) {
+	h2_ppshwr_posPulseTime_pT1_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_ppshwr_posPulseTime_pT2_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_ppshwr_posPulseTime_pT3_diff->Fill(ppshwr_posPmt[ipshwrhit], ppshwr_posPulseTime[ipshwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+	ppshwr_sum += ppshwr_posPulseInt[ipshwrhit]*pshwr_pos_adc2GeV[ipshwrhit];
+      }
+      if (ppshwr_sum != 0.0) h_ppshwr_sum->Fill(ppshwr_sum);
+
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      Double_t pshwr_sum = 0.0;
+      for (UInt_t ishwrhit = 0; ishwrhit < pshwr_hits; ishwrhit++) {
+	h2_pshwr_pulseTime_pT1_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_pshwr_pulseTime_pT2_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_pshwr_pulseTime_pT3_diff->Fill(pshwr_pmt[ishwrhit], pshwr_pulseTime[ishwrhit]*clk2adc - pT3_tdcTime*clk2tdc);
+	pshwr_sum += pshwr_pulseInt[ishwrhit]*shwr_adc2GeV;
+      }
+      if (pshwr_sum != 0.0) h_pshwr_sum->Fill(pshwr_sum);
+      if ((ppshwr_sum + pshwr_sum) != 0.0) h_ptotshwr_sum->Fill(ppshwr_sum + pshwr_sum);
+      if (ppshwr_sum != 0.0 && pshwr_sum != 0.0) {
+	h2_pshwr_vs_ppshwr->Fill(ppshwr_sum, pshwr_sum);   
+      }
+    
+      for (UInt_t itrack = 0; itrack < ntracks; itrack++)
+	if (trk_pmag != 0.0 && ntracks == 1) h2_EdivP_vs_P->Fill(trk_pmag[0], (ppshwr_sum + pshwr_sum)/trk_pmag[0]);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      Double_t phgc_sum = 0.0;
+      for (UInt_t ihgchit = 0; ihgchit < phgc_hits; ihgchit++) {
+	h2_phgc_pulseTime_pT1_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_phgc_pulseTime_pT2_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_phgc_pulseTime_pT3_diff->Fill(phgc_pmt[ihgchit], phgc_pulseTime[ihgchit]*clk2adc - pT3_tdcTime*clk2tdc);
+	phgc_sum += phgc_pulseInt[ihgchit]*hgc_adc2npe[ihgchit];
+      }
+      if (phgc_sum != 0.0) h_phgc_sum->Fill(phgc_sum);
+      if (phgc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_phgcer->Fill(phgc_sum, ppshwr_sum + pshwr_sum);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+      Double_t pngc_sum = 0.0;
+      for (UInt_t ingchit = 0; ingchit < pngc_hits; ingchit++) {
+	h2_pngc_pulseTime_pT1_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT1_tdcTime*clk2tdc);
+	h2_pngc_pulseTime_pT2_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT2_tdcTime*clk2tdc);
+	h2_pngc_pulseTime_pT3_diff->Fill(pngc_pmt[ingchit], pngc_pulseTime[ingchit]*clk2adc - pT3_tdcTime*clk2tdc);
+	pngc_sum += pngc_pulseInt[ingchit]*ngc_adc2npe[ingchit];
+      }
+      if (pngc_sum != 0.0) h_pngc_sum->Fill(pngc_sum);
+      if (pngc_sum != 0.0 && (ppshwr_sum + pshwr_sum) != 0.0) h2_pshwr_vs_pngcer->Fill(pngc_sum, ppshwr_sum + pshwr_sum);
+
+      // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
+
+    }
   }  // Entries loop
 }  // UserScript function
 
