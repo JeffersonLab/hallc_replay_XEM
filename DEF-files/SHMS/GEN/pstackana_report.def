@@ -16,14 +16,16 @@ TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Num
 TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
-TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.adc_p[0] 1000 0. 100000. P.ngcer.adc_hit[0]==1
-TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.adc_p[1] 1000 0. 100000. P.ngcer.adc_hit[1]==1
-TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.adc_p[2] 1000 0. 100000. P.ngcer.adc_hit[2]==1
-TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.adc_p[3] 1000 0. 100000. P.ngcer.adc_hit[3]==1
-TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 500 0. 100. P.ngcer.adc_hit[0]==1
-TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 500 0. 100. P.ngcer.adc_hit[1]==1
-TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 500 0. 100. P.ngcer.adc_hit[2]==1
-TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 500 0. 100. P.ngcer.adc_hit[3]==1
+TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.adc_p[0] 1000 0. 50000. P.ngcer.adc_hit[0]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.adc_p[1] 1000 0. 50000. P.ngcer.adc_hit[1]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.adc_p[2] 1000 0. 50000. P.ngcer.adc_hit[2]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.adc_p[3] 1000 0. 50000. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 50 0. 50. P.ngcer.adc_hit[0]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 50 0. 50. P.ngcer.adc_hit[1]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 50 0. 50. P.ngcer.adc_hit[2]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 50 0. 50. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
+
+TH1F pngcer_nphe  'SHMS NG Cherenkov ; N_Phe ; Counts' P.ngcer.npe 50 0. 50. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
 
 # Drift Chambers
 TH1F pdc_ref1  'SHMS DC Reference Time Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF1_tdcTime  200 12000 14000
@@ -140,14 +142,14 @@ TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Num
 TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
-TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.adc_p[0] 1000 0. 100000. P.hgcer.adc_hit[0]==1
-TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.adc_p[1] 1000 0. 100000. P.hgcer.adc_hit[1]==1
-TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.adc_p[2] 1000 0. 100000. P.hgcer.adc_hit[2]==1
-TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.adc_p[3] 1000 0. 100000. P.hgcer.adc_hit[3]==1
-TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 500 0. 100. P.hgcer.adc_hit[0]==1
-TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 500 0. 100. P.hgcer.adc_hit[1]==1
-TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 500 0. 100. P.hgcer.adc_hit[2]==1
-TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 500 0. 100. P.hgcer.adc_hit[3]==1
+TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.adc_p[0] 1000 0. 100000. P.hgcer.adc_hit[0]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.adc_p[1] 1000 0. 100000. P.hgcer.adc_hit[1]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.adc_p[2] 1000 0. 100000. P.hgcer.adc_hit[2]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.adc_p[3] 1000 0. 100000. P.hgcer.adc_hit[3]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 500 0. 100. P.hgcer.adc_hit[0]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 500 0. 100. P.hgcer.adc_hit[1]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 500 0. 100. P.hgcer.adc_hit[2]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 500 0. 100. P.hgcer.adc_hit[3]==1&&P.gtr.beta>0.5
 
 # Aerogel
 TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
