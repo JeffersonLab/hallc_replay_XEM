@@ -24,6 +24,8 @@ void UserScript() {
   static const UInt_t maxTdcHits = 128;
   static const UInt_t maxAdcHits = 4;
 
+  // static const UInt_t adc_timeOffset = 175;
+
   // static const Double_t pshwr_adc2GeV = 0.001; 
   static const Double_t pshwr_neg_adc2GeV[nneg_pshwr_blks] = {1.0/466.2, 1.0/514.7, 1.0/325.5, 1.0/247.8, 
 							      1.0/322.0, 1.0/176.2, 1.0/161.9, 1.0/197.7, 
@@ -38,8 +40,8 @@ void UserScript() {
   static const Double_t shwr_adc2GeV  = 0.0005;
 
   // static const Double_t hgc_adc2npe = 1./205.;
-  //static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/8895., 1.0/5293., 1.0/8000., 1.0/10000.};
-  static const Double_t hgc_adc2npe[nhgc_pmts] = {1.0/1750., 1.0/1750., 1.0/1750., 1.0/1750.};
+  static const Double_t hgc_adc2npe[nhgc_pmts] = {1./218., 1./196., 1./182., 1./186.};
+  
 
   // static const Double_t ngc_adc2npe = 1./150.;
   static const Double_t ngc_adc2npe[nngc_pmts] = {1.0/500., 1.0/500., 1.0/500., 1.0/500.};
