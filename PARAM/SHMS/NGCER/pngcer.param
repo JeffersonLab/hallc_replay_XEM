@@ -3,7 +3,7 @@ pngcer_tot_pmts = 4
 
 pngcer_width = 50, 50,50, 50
 
-pngcer_adc_to_npe = 1/5000., 1/5000., 1/5000., 1/5000.
+pngcer_adc_to_npe = 1/1000., 1/1000., 1/1000., 1/1000.
 
 
 pngcer_chi2max = 50.
