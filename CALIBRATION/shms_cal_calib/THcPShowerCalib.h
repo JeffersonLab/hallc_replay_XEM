@@ -16,6 +16,8 @@
 #include "TFile.h"
 #include "TTree.h"
 
+#include <time.h>
+
 #define D_CALO_FP 275.    //distance from FP to the Preshower
 
 //Whole calorimeter
@@ -74,6 +76,41 @@ class THcPShowerCalib {
 
   TTree* fTree;
   UInt_t fNentries;
+
+  // Declaration of leaves types
+
+  // Preshower and Shower ADC signals.
+
+  ////Double_t        P_pr_a_p[THcPShTrack::fNrows_pr][THcPShTrack::fNcols_pr];
+  ////Double_t        P_sh_a_p[THcPShTrack::fNrows_sh][THcPShTrack::fNcols_sh];
+  Double_t        P_pr_apos_p[THcPShTrack::fNrows_pr];
+  Double_t        P_pr_aneg_p[THcPShTrack::fNrows_pr];
+  Double_t        P_sh_a_p[THcPShTrack::fNcols_sh][THcPShTrack::fNrows_sh];
+
+  // Track parameters.
+
+  double          P_tr_n;
+  Double_t        P_tr_p;
+  Double_t        P_tr_x;   //X FP
+  Double_t        P_tr_xp;
+  Double_t        P_tr_y;   //Y FP
+  Double_t        P_tr_yp;
+
+  Double_t        P_tr_tg_dp;
+
+  Double_t        P_hgcer_npe[4];
+
+  TBranch* b_P_tr_p;
+  TBranch* b_P_pr_apos_p;
+  TBranch* b_P_pr_aneg_p;
+  TBranch* b_P_sh_a_p;
+  TBranch* b_P_tr_n;
+  TBranch* b_P_tr_x;
+  TBranch* b_P_tr_y;
+  TBranch* b_P_tr_xp;
+  TBranch* b_P_tr_yp;
+  TBranch* b_P_tr_tg_dp;
+  TBranch* b_P_hgcer_npe;
 
   // Quantities for calculations of the calibration constants.
 
@@ -150,6 +187,37 @@ void THcPShowerCalib::Init() {
 
   fNentries = fTree->GetEntries();
   cout << "THcPShowerCalib::Init: fNentries= " << fNentries << endl;
+  /*
+  fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p);
+  fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p);
+  fTree->SetBranchAddress("P.cal.fly.a_p",P_sh_a_p);
+
+  fTree->SetBranchAddress("P.tr.n", &P_tr_n);
+  fTree->SetBranchAddress("P.tr.x", &P_tr_x);
+  fTree->SetBranchAddress("P.tr.y", &P_tr_y);
+  fTree->SetBranchAddress("P.tr.th",&P_tr_xp);
+  fTree->SetBranchAddress("P.tr.ph",&P_tr_yp);
+  fTree->SetBranchAddress("P.tr.p", &P_tr_p);
+
+  fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp);
+ 
+  fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe);
+  */
+
+  fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p,&b_P_pr_apos_p);
+  fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p,&b_P_pr_aneg_p);
+  fTree->SetBranchAddress("P.cal.fly.a_p",  P_sh_a_p,   &b_P_sh_a_p);
+
+  fTree->SetBranchAddress("P.tr.n", &P_tr_n,&b_P_tr_n);
+  fTree->SetBranchAddress("P.tr.x", &P_tr_x,&b_P_tr_x);
+  fTree->SetBranchAddress("P.tr.y", &P_tr_y,&b_P_tr_y);
+  fTree->SetBranchAddress("P.tr.th",&P_tr_xp,&b_P_tr_xp);
+  fTree->SetBranchAddress("P.tr.ph",&P_tr_yp,&b_P_tr_yp);
+  fTree->SetBranchAddress("P.tr.p", &P_tr_p,&b_P_tr_p);
+
+  fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp,&b_P_tr_tg_dp);
+ 
+  fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe,&b_P_hgcer_npe);
 
   // Histogram declarations.
 
@@ -272,6 +340,7 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 
   ////Double_t        P_pr_a_p[THcPShTrack::fNrows_pr][THcPShTrack::fNcols_pr];
   ////Double_t        P_sh_a_p[THcPShTrack::fNrows_sh][THcPShTrack::fNcols_sh];
+  /*
   Double_t        P_pr_apos_p[THcPShTrack::fNrows_pr];
   Double_t        P_pr_aneg_p[THcPShTrack::fNrows_pr];
   Double_t        P_sh_a_p[THcPShTrack::fNcols_sh][THcPShTrack::fNrows_sh];
@@ -290,9 +359,9 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   Double_t        P_hgcer_npe[4];
  
   ////  const Double_t adc_thr = 15.;   //Low threshold on the ADC signals.
-
+  */
   // Set branch addresses.
-
+  /*
   fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p);
   fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p);
   fTree->SetBranchAddress("P.cal.fly.a_p",P_sh_a_p);
@@ -307,6 +376,7 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp);
  
   fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe);
+  */
 
   fTree->GetEntry(ientry);
 

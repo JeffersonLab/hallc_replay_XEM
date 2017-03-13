@@ -10,6 +10,9 @@
 
 ////void pcal_calib(Int_t RunNumber) {
 void pcal_calib(string RunNumber) {
+
+  // Initialize the analysis clock
+  clock_t t = clock();
  
  cout << "Calibrating run " << RunNumber << endl;
 
@@ -56,4 +59,7 @@ void pcal_calib(string RunNumber) {
  Canvas->cd(4);
  theShowerCalib.hDPvsEcal->Draw();
 
+ // Calculate the analysis rate
+ t = clock() - t;
+ printf ("The analysis took %.1f seconds \n", ((float) t) / CLOCKS_PER_SEC);
 }
