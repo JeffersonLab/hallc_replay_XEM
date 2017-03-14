@@ -154,7 +154,7 @@ public :
    Double_t        H_dc_stubtest;
    Double_t        H_dc_tnhit;
    Double_t        H_dc_trawhit;
- 
+
  //THaEvent        *Event_Branch;
    ULong64_t       fEvtHdr_fEvtTime;
    UInt_t          fEvtHdr_fEvtNum;
@@ -327,11 +327,11 @@ wire_drift_times::wire_drift_times(TTree *tree) : fChain(0)
      int run_NUM;
      TString f0 = "input_RUN.txt";
      ifstream infile(f0);
-     infile >> run_NUM;         
-     
-     TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("../../../ROOTfiles/test_%d.root", run_NUM));
+     infile >> run_NUM;
+
+     TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(Form("../../../ROOTfiles/hms_replay_%d.root", run_NUM));
      if (!f || !f->IsOpen()) {
-       f = new TFile(Form("../../../ROOTfiles/test_%d.root", run_NUM));
+       f = new TFile(Form("../../../ROOTfiles/hms_replay_%d.root", run_NUM));
      }
      f->GetObject("T",tree);
 

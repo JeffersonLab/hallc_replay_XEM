@@ -1,6 +1,6 @@
 hcer_width = 50, 50
 
-hcer_adc_to_npe = 1/6353., 1/8116.
+hcer_adc_to_npe = 1/323., 1/327.
 
 
 hcer_chi2max = 50.
