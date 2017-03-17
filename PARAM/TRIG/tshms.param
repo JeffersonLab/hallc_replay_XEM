@@ -1,5 +1,7 @@
 t_shms_numAdc = 3
 t_shms_numTdc = 22
+t_shms_tdcoffset=-300.
+t_shms_tdcchanperns=0.1
 
 ; bar num:            1       2       3
 t_shms_adcNames = "pAERSUM pHGCSUM pNGCSUM"

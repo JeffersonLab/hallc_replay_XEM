@@ -1,4 +1,4 @@
-hcosmicflag=1
+hcosmicflag=0
 ; for now manually set hte FADC mode
 ;  1 == Use the pulse int - pulse ped
 ;  2 == Use the sample integral - known ped
