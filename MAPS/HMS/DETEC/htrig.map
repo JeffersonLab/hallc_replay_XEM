@@ -22,6 +22,7 @@ SLOT=17
 
 !CAEN1190 module
 SLOT=2
+REFINDEX=0
 ! A0
 ! chan    plane     bar    sig
      0,       2,      1,     1!  h1X
@@ -30,7 +31,7 @@ SLOT=2
      3,       2,      4,     1!  h2Y
      4,       2,      5,     1!  h1T
      5,       2,      6,     1!  h2T
-     6,       2,      7,     1!  hT1
+     6,   1000,   0,   0  ! hTref
      7,       2,      8,     1!  hASUM
      8,       2,      9,     1!  hBSUM
      9,       2,     10,     1!  hCSUM
