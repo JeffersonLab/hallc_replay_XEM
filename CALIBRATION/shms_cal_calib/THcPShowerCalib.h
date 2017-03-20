@@ -29,8 +29,10 @@
 #define DELTA_MIN -10   //SHMS nominal acceptance
 #define DELTA_MAX  22
 
-#define PR_ADC_THR 250
-#define SH_ADC_THR 250
+//#define PR_ADC_THR 250
+//#define SH_ADC_THR 250
+#define PR_ADC_THR 0
+#define SH_ADC_THR 0
 
 //#define MAX_TRACKS 10
 
