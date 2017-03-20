@@ -7,7 +7,7 @@ block H.tr.*
 block H.hod.*
 block H.cer.*
 block H.cal.*
-#block H.gtr.*
+block H.gtr.*
 
 # Drift Chambers
 TH1F hdc_ref1 'HMS DC Reference Time Slot 5 Channel 111; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 3000 12000 15000 
@@ -66,6 +66,22 @@ TH1F hdc2y2_dist_cut 'HDC CUT 2Y2 Drift Distance' H.dc.2y2.dist 50 -0.1 0.6 time
 TH1F hdc2x2_dist 'HDC 2X2 Drift Distance' H.dc.2x2.dist 50 -0.1 0.6
 TH1F hdc2x2_dist_cut 'HDC CUT 2X2 Drift Distance' H.dc.2x2.dist 50 -0.1 0.6 time_cut12
 
+#HMS Chambers drift velocities
+TH2F hdc1x1_dist_vs_time 'HMS DC 1X1 Drift Distance vs. Drift Time' H.dc.1x1.time H.dc.1x1.dist 600 -10 250 600 0 0.55 
+TH2F hdc1y1_dist_vs_time 'HMS DC 1Y1 Drift Distance vs. Drift Time' H.dc.1y1.time H.dc.1y1.dist 600 -10 250 600 0 0.55
+TH2F hdc1u1_dist_vs_time 'HMS DC 1U1 Drift Distance vs. Drift Time' H.dc.1u1.time H.dc.1u1.dist 600 -10 250 600 0 0.55
+TH2F hdc1v1_dist_vs_time 'HMS DC 1V1 Drift Distance vs. Drift Time' H.dc.1v1.time H.dc.1v1.dist 600 -10 250 600 0 0.55
+TH2F hdc1y2_dist_vs_time 'HMS DC 1Y2 Drift Distance vs. Drift Time' H.dc.1y2.time H.dc.1y2.dist 600 -10 250 600 0 0.55
+TH2F hdc1x2_dist_vs_time 'HMS DC 1X2 Drift Distance vs. Drift Time' H.dc.1x2.time H.dc.1x2.dist 600 -10 250 600 0 0.55
+
+TH2F hdc2x1_dist_vs_time 'HMS DC 2X1 Drift Distance vs. Drift Time' H.dc.2x1.time H.dc.2x1.dist 600 -10 250 600 0 0.55
+TH2F hdc2y1_dist_vs_time 'HMS DC 2Y1 Drift Distance vs. Drift Time' H.dc.2y1.time H.dc.2y1.dist 600 -10 250 600 0 0.55
+TH2F hdc2u1_dist_vs_time 'HMS DC 2U1 Drift Distance vs. Drift Time' H.dc.2u1.time H.dc.2u1.dist 600 -10 250 600 0 0.55
+TH2F hdc2v1_dist_vs_time 'HMS DC 2V1 Drift Distance vs. Drift Time' H.dc.2v1.time H.dc.2v1.dist 600 -10 250 600 0 0.55
+TH2F hdc2y2_dist_vs_time 'HMS DC 2Y2 Drift Distance vs. Drift Time' H.dc.2y2.time H.dc.2y2.dist 600 -10 250 600 0 0.55
+TH2F hdc2x2_dist_vs_time 'HMS DC 2X2 Drift Distance vs. Drift Time' H.dc.2x2.time H.dc.2x2.dist 600 -10 250 600 0 0.55
+
+
 
 TH2F hdc1x1_wirenum_vs_tdc 'HMS DC 1X1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1x1.wirenum H.dc.1x1.time 113 0.5 113.5 2000 -500 1500
 TH2F hdc1y1_wirenum_vs_tdc 'HMS DC 1Y1 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.1y1.wirenum H.dc.1y1.time 52  0.5  52.5 2000 -500 1500
@@ -95,19 +111,19 @@ TH2F hdc2v1_wirenum_vs_ddist 'HMS DC 2V1 Wiremap; Wire Number; Drift Distance (c
 TH2F hdc2y2_wirenum_vs_ddist 'HMS DC 2Y2 Wiremap; Wire Number; Drift Distance (cm)' H.dc.2y2.wirenum H.dc.2y2.dist 52  0.5  52.5 300 -0.1 0.6
 TH2F hdc2x2_wirenum_vs_ddist 'HMS DC 2X2 Wiremap; Wire Number; Drift Distance (cm)' H.dc.2x2.wirenum H.dc.2x2.dist 113 0.5 113.5 300 -0.1 0.6
 
-TH2F hdc1x1_wirenum_vs_resid 'HMS DC 1X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x1.wirenum H.dc.residual[0] 113 0.5 113.5 200 -1.0 1.0
-TH2F hdc1y1_wirenum_vs_resid 'HMS DC 1Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y1.wirenum H.dc.residual[1] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc1u1_wirenum_vs_resid 'HMS DC 1U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1u1.wirenum H.dc.residual[2] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc1v1_wirenum_vs_resid 'HMS DC 1V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1v1.wirenum H.dc.residual[3] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc1y2_wirenum_vs_resid 'HMS DC 1Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y2.wirenum H.dc.residual[4] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc1x2_wirenum_vs_resid 'HMS DC 1X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x2.wirenum H.dc.residual[5] 113 0.5 113.5 200 -1.0 1.0
+TH2F hdc1x1_wirenum_vs_resid 'HMS DC 1X1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1x1.wirenum H.dc.residual[0] 113 0.5 113.5 200 -0.3 0.3
+TH2F hdc1y1_wirenum_vs_resid 'HMS DC 1Y1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1y1.wirenum H.dc.residual[1] 52  0.5  52.5 200 -0.3 0.3
+TH2F hdc1u1_wirenum_vs_resid 'HMS DC 1U1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1u1.wirenum H.dc.residual[2] 107 0.5 107.5 200 -0.3 0.3
+TH2F hdc1v1_wirenum_vs_resid 'HMS DC 1V1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1v1.wirenum H.dc.residual[3] 107 0.5 107.5 200 -0.3 0.3
+TH2F hdc1y2_wirenum_vs_resid 'HMS DC 1Y2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1y2.wirenum H.dc.residual[4] 52  0.5  52.5 200 -0.3 0.3
+TH2F hdc1x2_wirenum_vs_resid 'HMS DC 1X2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1x2.wirenum H.dc.residual[5] 113 0.5 113.5 200 -0.3 0.3
 
-TH2F hdc2x1_wirenum_vs_resid 'HMS DC 2X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x1.wirenum H.dc.residual[6] 113 0.5 113.5 200 -1.0 1.0
-TH2F hdc2y1_wirenum_vs_resid 'HMS DC 2Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y1.wirenum H.dc.residual[7] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc2u1_wirenum_vs_resid 'HMS DC 2U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2u1.wirenum H.dc.residual[8] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc2v1_wirenum_vs_resid 'HMS DC 2V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2v1.wirenum H.dc.residual[9] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc2y2_wirenum_vs_resid 'HMS DC 2Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y2.wirenum H.dc.residual[10] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc2x2_wirenum_vs_resid 'HMS DC 2X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x2.wirenum H.dc.residual[11] 113 0.5 113.5 200 -1.0 1.0
+TH2F hdc2x1_wirenum_vs_resid 'HMS DC 2X1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2x1.wirenum H.dc.residual[6] 113 0.5 113.5 200 -0.3 0.3
+TH2F hdc2y1_wirenum_vs_resid 'HMS DC 2Y1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2y1.wirenum H.dc.residual[7] 52  0.5  52.5 200 -0.3 0.3
+TH2F hdc2u1_wirenum_vs_resid 'HMS DC 2U1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2u1.wirenum H.dc.residual[8] 107 0.5 107.5 200 -0.3 0.3
+TH2F hdc2v1_wirenum_vs_resid 'HMS DC 2V1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2v1.wirenum H.dc.residual[9] 107 0.5 107.5 200 -0.3 0.3
+TH2F hdc2y2_wirenum_vs_resid 'HMS DC 2Y2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2y2.wirenum H.dc.residual[10] 52  0.5  52.5 200 -0.3 0.3
+TH2F hdc2x2_wirenum_vs_resid 'HMS DC 2X2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2x2.wirenum H.dc.residual[11] 113 0.5 113.5 200 -0.3 0.3
 
 TH1F hdc_trk_mom 'HMS DC Track Momentum; P (GeV); Number of Entires / 10 MeV' P.tr.p 600 0 6
 TH1F hdc_trk_beta 'HMS DC Track Beta; Beta (GeV); Number of Entires' P.tr.beta 300 -1.5 1.5
