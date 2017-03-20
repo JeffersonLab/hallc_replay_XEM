@@ -34,6 +34,9 @@
 #define PR_ADC_THR 0
 #define SH_ADC_THR 0
 
+#define BETA_MIN 0.5
+#define BETA_MAX 1.5
+
 //#define MAX_TRACKS 10
 
 using namespace std;
@@ -101,6 +104,7 @@ class THcPShowerCalib {
   Double_t        P_tr_tg_dp;
 
   Double_t        P_hgcer_npe[4];
+  Double_t        P_tr_beta;
 
   TBranch* b_P_tr_p;
   TBranch* b_P_pr_apos_p;
@@ -113,6 +117,7 @@ class THcPShowerCalib {
   TBranch* b_P_tr_yp;
   TBranch* b_P_tr_tg_dp;
   TBranch* b_P_hgcer_npe;
+  TBranch* b_P_tr_beta;
 
   // Quantities for calculations of the calibration constants.
 
@@ -220,6 +225,8 @@ void THcPShowerCalib::Init() {
   fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp,&b_P_tr_tg_dp);
  
   fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe,&b_P_hgcer_npe);
+
+  fTree->SetBranchAddress("P.tr.beta", &P_tr_beta,&b_P_tr_beta);
 
   // Histogram declarations.
 
@@ -407,6 +414,10 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 		    P_hgcer_npe[2] > 2 ||
 		    P_hgcer_npe[3] > 2  ;
   if(!good_hgcer) return 0;
+
+  bool good_beta = P_tr_beta > BETA_MIN &&
+                   P_tr_beta < BETA_MAX ;
+  if(!good_beta) return 0;
 
   //  cout << "    Track is good." << endl << endl;
   //  getchar();

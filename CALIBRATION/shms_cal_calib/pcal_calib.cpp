@@ -8,7 +8,6 @@
 // A steering Root script for the SHMS calorimeter calibration.
 //
 
-////void pcal_calib(Int_t RunNumber) {
 void pcal_calib(string RunNumber) {
 
   // Initialize the analysis clock
