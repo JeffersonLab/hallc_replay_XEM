@@ -27,11 +27,13 @@
 #define DELTA_MIN -10   //HMS nominal acceptance
 #define DELTA_MAX  10
 
-#define PR_ADC_THR 0
-#define SH_ADC_THR 0
+//#define PR_ADC_THR 0
+//#define SH_ADC_THR 0
 
 #define BETA_MIN 0.5
 #define BETA_MAX 1.5
+
+#define CER_MIN 1.5
 
 using namespace std;
 
@@ -419,8 +421,8 @@ TBranch ("H.tr.beta", &H_tr_beta);
 		    H_tr_y + H_tr_yp*D_CALO_FP < YMAX ;
   if (!good_trk) return 0;
 
-  bool good_cer = H_cer_npe[0] > 0.125 ||
-                  H_cer_npe[1] > 0.125 ;
+  bool good_cer = H_cer_npe[0] > CER_MIN ||
+                  H_cer_npe[1] > CER_MIN ;
   if(!good_cer) return 0;
 
   bool good_beta = H_tr_beta > BETA_MIN &&
