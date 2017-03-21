@@ -50,6 +50,8 @@ class THcShTrack {
   void SetEs(Double_t* alpha);
 
   Double_t Enorm();
+  Double_t EPRnorm();
+  Double_t ETAnorm();
 
   Double_t GetP() {return P*1000.;}      //MeV
 
@@ -206,6 +208,45 @@ Double_t THcShTrack::Enorm() {
   };
 
   return sum/P/1000.;
+}
+
+//------------------------------------------------------------------------------
+
+Double_t THcShTrack::EPRnorm() {
+
+  // Normalized to the track momentum energy depostion in Preshower.
+
+  Double_t sum = 0;
+
+  for (THcShHitIt iter = Hits.begin(); iter != Hits.end(); iter++) {
+    UInt_t nblk = (*iter)->GetBlkNumber();
+    Int_t ncol=(nblk-1)/fNrows+1;
+    if (ncol==1) {
+      sum += (*iter)->GetEpos();
+      sum += (*iter)->GetEneg();
+    }
+  }
+
+  return sum/P/1000.;         //Momentum in MeV.
+}
+//------------------------------------------------------------------------------
+
+Double_t THcShTrack::ETAnorm() {
+
+  // Normalized to the track momentum energy depostion in Preshower.
+
+  Double_t sum = 0;
+
+  for (THcShHitIt iter = Hits.begin(); iter != Hits.end(); iter++) {
+    UInt_t nblk = (*iter)->GetBlkNumber();
+    Int_t ncol=(nblk-1)/fNrows+1;
+    if (ncol!=1) {
+      sum += (*iter)->GetEpos();
+      sum += (*iter)->GetEneg();
+    }
+  }
+
+  return sum/P/1000.;         //Momentum in MeV.
 }
 
 //------------------------------------------------------------------------------

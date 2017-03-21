@@ -40,6 +40,11 @@ void hcal_calib(string RunNumber) {
  theShowerCalib.hEuncSel->SetFillColor(kGreen);
  theShowerCalib.hEuncSel->DrawCopy("same");
 
+ // E(Tail)%E(Preshower).
+
+ Canvas->cd(2);
+ theShowerCalib.hETAvsEPR->Draw();
+
  // Normalized energy deposition after calibration.
 
  Canvas->cd(3);
