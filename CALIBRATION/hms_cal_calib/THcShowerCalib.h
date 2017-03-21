@@ -74,6 +74,60 @@ class THcShowerCalib {
   TTree* fTree;
   UInt_t fNentries;
 
+  // Declaration of leaves types
+
+  // Calorimeter ADC signals.
+
+  Double_t        H_cal_1pr_aneg_p[THcShTrack::fNrows];
+  Double_t        H_cal_1pr_apos_p[THcShTrack::fNrows];
+
+  Double_t        H_cal_2ta_aneg_p[THcShTrack::fNrows];
+  Double_t        H_cal_2ta_apos_p[THcShTrack::fNrows];
+
+  Double_t        H_cal_3ta_aneg_p[THcShTrack::fNrows];
+  Double_t        H_cal_3ta_apos_p[THcShTrack::fNrows];
+
+  Double_t        H_cal_4ta_aneg_p[THcShTrack::fNrows];
+  Double_t        H_cal_4ta_apos_p[THcShTrack::fNrows];
+
+  // Track parameters.
+
+  double          H_tr_n;
+  Double_t        H_tr_p;
+  Double_t        H_tr_x;   //X FP
+  Double_t        H_tr_xp;
+  Double_t        H_tr_y;   //Y FP
+  Double_t        H_tr_yp;
+
+  Double_t        H_tr_tg_dp;
+
+  Double_t        H_cer_npe[2];
+  Double_t        H_tr_beta;
+
+  TBranch* b_H_cal_1pr_aneg_p;
+  TBranch* b_H_cal_1pr_apos_p;
+
+  TBranch* b_H_cal_2ta_aneg_p;
+  TBranch* b_H_cal_2ta_apos_p;
+
+  TBranch* b_H_cal_3ta_aneg_p;
+  TBranch* b_H_cal_3ta_apos_p;
+
+  TBranch* b_H_cal_4ta_aneg_p;
+  TBranch* b_H_cal_4ta_apos_p;
+
+  TBranch* b_H_tr_n;
+  TBranch* b_H_tr_x;
+  TBranch* b_H_tr_y;
+  TBranch* b_H_tr_xp;
+  TBranch* b_H_tr_yp;
+  TBranch* b_H_tr_p;
+
+  TBranch* b_H_tr_tg_dp;
+ 
+  TBranch* b_H_cer_npe;
+  TBranch* b_H_tr_beta;
+
   // Quantities for calculations of the calibration constants.
 
   Double_t fe0;
@@ -150,6 +204,40 @@ void THcShowerCalib::Init() {
   fNentries = fTree->GetEntries();
   cout << "THcShowerCalib::Init: fNentries= " << fNentries << endl;
 
+  // Set branch addresses.
+
+  fTree->SetBranchAddress("H.cal.1pr.aneg_p",H_cal_1pr_aneg_p,
+			  &b_H_cal_1pr_aneg_p);
+fTree->SetBranchAddress("H.cal.1pr.apos_p",H_cal_1pr_apos_p,
+			&b_H_cal_1pr_apos_p);
+
+fTree->SetBranchAddress("H.cal.2ta.aneg_p",H_cal_2ta_aneg_p,
+			&b_H_cal_2ta_aneg_p);
+fTree->SetBranchAddress("H.cal.2ta.apos_p",H_cal_2ta_apos_p,
+			&b_H_cal_2ta_apos_p);
+
+fTree->SetBranchAddress("H.cal.3ta.aneg_p",H_cal_3ta_aneg_p,
+			&b_H_cal_3ta_aneg_p);
+fTree->SetBranchAddress("H.cal.3ta.apos_p",H_cal_3ta_apos_p,
+			&b_H_cal_3ta_apos_p);
+
+fTree->SetBranchAddress("H.cal.4ta.aneg_p",H_cal_4ta_aneg_p,
+			&b_H_cal_4ta_aneg_p);
+fTree->SetBranchAddress("H.cal.4ta.apos_p",H_cal_4ta_apos_p,
+			&b_H_cal_4ta_apos_p);
+
+fTree->SetBranchAddress("H.tr.n", &H_tr_n,&b_H_tr_n);
+fTree->SetBranchAddress("H.tr.x",&H_tr_x,&b_H_tr_x);
+fTree->SetBranchAddress("H.tr.y",&H_tr_y,&b_H_tr_y);
+fTree->SetBranchAddress("H.tr.th",&H_tr_xp,&b_H_tr_xp);
+fTree->SetBranchAddress("H.tr.ph",&H_tr_yp,&b_H_tr_yp);
+fTree->SetBranchAddress("H.tr.p",&H_tr_p,&b_H_tr_p);
+
+fTree->SetBranchAddress("H.tr.tg_dp", &H_tr_tg_dp,&b_H_tr_tg_dp);
+ 
+fTree->SetBranchAddress("H.cer.npe", H_cer_npe,&b_H_cer_npe);
+fTree->SetBranchAddress("H.tr.beta", &H_tr_beta,&b_H_tr_beta);
+
   // Histogram declarations.
 
   hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 5.);
@@ -158,7 +246,6 @@ void THcShowerCalib::Init() {
 		       150,0.,1.5, 250,-12.5,12.5);
   hETAvsEPR = new TH2F("hETAvsEPR", "E_{TA} versus E_{PR}",
 		       300,0.,1.5, 300,0.,1.5);
-
 
   // Initialize qumulative quantities.
   
@@ -265,7 +352,7 @@ bool THcShowerCalib::ReadShRawTrack(THcShTrack &trk, UInt_t ientry) {
   // Declaration of leaves types
 
   // Calorimeter ADC signals.
-
+  /*
   Double_t        H_cal_1pr_aneg_p[THcShTrack::fNrows];
   Double_t        H_cal_1pr_apos_p[THcShTrack::fNrows];
 
@@ -291,33 +378,33 @@ bool THcShowerCalib::ReadShRawTrack(THcShTrack &trk, UInt_t ientry) {
 
   Double_t        H_cer_npe[2];
   Double_t        H_tr_beta;
- 
+  */
   // Set branch addresses.
+  /*
+TBranch ("H.cal.1pr.aneg_p",H_cal_1pr_aneg_p);
+TBranch ("H.cal.1pr.apos_p",H_cal_1pr_apos_p);
 
-  fTree->SetBranchAddress("H.cal.1pr.aneg_p",H_cal_1pr_aneg_p);
-  fTree->SetBranchAddress("H.cal.1pr.apos_p",H_cal_1pr_apos_p);
+TBranch ("H.cal.2ta.aneg_p",H_cal_2ta_aneg_p);
+TBranch ("H.cal.2ta.apos_p",H_cal_2ta_apos_p);
 
-  fTree->SetBranchAddress("H.cal.2ta.aneg_p",H_cal_2ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.2ta.apos_p",H_cal_2ta_apos_p);
+TBranch ("H.cal.3ta.aneg_p",H_cal_3ta_aneg_p);
+TBranch ("H.cal.3ta.apos_p",H_cal_3ta_apos_p);
 
-  fTree->SetBranchAddress("H.cal.3ta.aneg_p",H_cal_3ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.3ta.apos_p",H_cal_3ta_apos_p);
+TBranch ("H.cal.4ta.aneg_p",H_cal_4ta_aneg_p);
+TBranch ("H.cal.4ta.apos_p",H_cal_4ta_apos_p);
 
-  fTree->SetBranchAddress("H.cal.4ta.aneg_p",H_cal_4ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.4ta.apos_p",H_cal_4ta_apos_p);
+TBranch ("H.tr.n", &H_tr_n);
+TBranch ("H.tr.x",&H_tr_x);
+TBranch ("H.tr.y",&H_tr_y);
+TBranch ("H.tr.th",&H_tr_xp);
+TBranch ("H.tr.ph",&H_tr_yp);
+TBranch ("H.tr.p",&H_tr_p);
 
-  fTree->SetBranchAddress("H.tr.n", &H_tr_n);
-  fTree->SetBranchAddress("H.tr.x",&H_tr_x);
-  fTree->SetBranchAddress("H.tr.y",&H_tr_y);
-  fTree->SetBranchAddress("H.tr.th",&H_tr_xp);
-  fTree->SetBranchAddress("H.tr.ph",&H_tr_yp);
-  fTree->SetBranchAddress("H.tr.p",&H_tr_p);
-
-  fTree->SetBranchAddress("H.tr.tg_dp", &H_tr_tg_dp);
+TBranch ("H.tr.tg_dp", &H_tr_tg_dp);
  
-  fTree->SetBranchAddress("H.cer.npe", H_cer_npe);
-  fTree->SetBranchAddress("H.tr.beta", &H_tr_beta);
-
+TBranch ("H.cer.npe", H_cer_npe);
+TBranch ("H.tr.beta", &H_tr_beta);
+  */
   fTree->GetEntry(ientry);
 
   if (ientry%100000 == 0) cout << "   ReadShRawTrack: " << ientry << endl;
