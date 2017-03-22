@@ -12,7 +12,6 @@
   hhodo_min_peds = 500
   hcal_min_peds  = 500
   hcer_min_peds  = 500
-  haero_min_peds  = 500
   hmisc_min_peds  = 500
 
 ; DEBUGGING OUTPUT FLAGS
