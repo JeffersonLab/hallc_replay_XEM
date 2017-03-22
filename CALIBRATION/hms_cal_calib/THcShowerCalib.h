@@ -106,6 +106,8 @@ class THcShowerCalib {
   Double_t        H_cer_npe[2];
   Double_t        H_tr_beta;
 
+  Double_t        H_cal_nclust;
+
   TBranch* b_H_cal_1pr_aneg_p;
   TBranch* b_H_cal_1pr_apos_p;
 
@@ -129,6 +131,8 @@ class THcShowerCalib {
  
   TBranch* b_H_cer_npe;
   TBranch* b_H_tr_beta;
+
+  TBranch* b_H_cal_nclust;
 
   // Quantities for calculations of the calibration constants.
 
@@ -239,6 +243,8 @@ fTree->SetBranchAddress("H.tr.tg_dp", &H_tr_tg_dp,&b_H_tr_tg_dp);
  
 fTree->SetBranchAddress("H.cer.npe", H_cer_npe,&b_H_cer_npe);
 fTree->SetBranchAddress("H.tr.beta", &H_tr_beta,&b_H_tr_beta);
+
+fTree->SetBranchAddress("H.cal.nclust", &H_cal_nclust,&b_H_cal_nclust);
 
   // Histogram declarations.
 
@@ -412,6 +418,8 @@ TBranch ("H.tr.beta", &H_tr_beta);
   if (ientry%100000 == 0) cout << "   ReadShRawTrack: " << ientry << endl;
 
   if (H_tr_n != 1) return 0;
+
+  if (H_cal_nclust != 1) return 0;
 
   bool good_trk =   H_tr_tg_dp > DELTA_MIN &&
 		    H_tr_tg_dp < DELTA_MAX &&
