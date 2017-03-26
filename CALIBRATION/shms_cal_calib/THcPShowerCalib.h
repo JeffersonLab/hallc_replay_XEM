@@ -20,7 +20,7 @@
 
 #define D_CALO_FP 275.    //distance from FP to the Preshower
 
-//Whole calorimeter
+//Whole calorimeter fid. limits
 #define XMIN -60.
 #define XMAX  60.
 #define YMIN -58.
@@ -29,15 +29,13 @@
 #define DELTA_MIN -10   //SHMS nominal acceptance
 #define DELTA_MAX  22
 
-//#define PR_ADC_THR 250
-//#define SH_ADC_THR 250
 #define PR_ADC_THR 0
 #define SH_ADC_THR 0
 
 #define BETA_MIN 0.5
 #define BETA_MAX 1.5
 
-//#define MAX_TRACKS 10
+#define MIN_HIT_COUNT 5   //Minimum number of hits for a PMT to be calibrated.
 
 using namespace std;
 
@@ -70,14 +68,10 @@ class THcPShowerCalib {
 
  private:
 
-  ////  Int_t fRunNumber;
   string fRunNumber;
   Double_t fLoThr;     // Low and high thresholds on the normalized uncalibrated
   Double_t fHiThr;     // energy deposition.
   UInt_t fNev;         // Number of processed events.
-
-  static const UInt_t fMinHitCount = 5;     // Minimum number of hits for a PMT
-                                            // to be calibrated.
 
   TTree* fTree;
   UInt_t fNentries;
@@ -86,8 +80,6 @@ class THcPShowerCalib {
 
   // Preshower and Shower ADC signals.
 
-  ////Double_t        P_pr_a_p[THcPShTrack::fNrows_pr][THcPShTrack::fNcols_pr];
-  ////Double_t        P_sh_a_p[THcPShTrack::fNrows_sh][THcPShTrack::fNcols_sh];
   Double_t        P_pr_apos_p[THcPShTrack::fNrows_pr];
   Double_t        P_pr_aneg_p[THcPShTrack::fNrows_pr];
   Double_t        P_sh_a_p[THcPShTrack::fNcols_sh][THcPShTrack::fNrows_sh];
@@ -140,7 +132,6 @@ THcPShowerCalib::THcPShowerCalib() {};
 
 //------------------------------------------------------------------------------
 
-////THcPShowerCalib::THcPShowerCalib(Int_t RunNumber) {
 THcPShowerCalib::THcPShowerCalib(string RunNumber) {
   fRunNumber = RunNumber;
 };
@@ -185,7 +176,6 @@ void THcPShowerCalib::Init() {
 
   gROOT->Reset();
 
-  //  char* fname = Form("Root_files/Pcal_calib_%d.root",fRunNumber);
   char* fname = Form("ROOTfiles/shms_replay_%s.root",fRunNumber.c_str());
   cout << "THcPShowerCalib::Init: Root file name = " << fname << endl;
 
@@ -194,22 +184,6 @@ void THcPShowerCalib::Init() {
 
   fNentries = fTree->GetEntries();
   cout << "THcPShowerCalib::Init: fNentries= " << fNentries << endl;
-  /*
-  fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p);
-  fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p);
-  fTree->SetBranchAddress("P.cal.fly.a_p",P_sh_a_p);
-
-  fTree->SetBranchAddress("P.tr.n", &P_tr_n);
-  fTree->SetBranchAddress("P.tr.x", &P_tr_x);
-  fTree->SetBranchAddress("P.tr.y", &P_tr_y);
-  fTree->SetBranchAddress("P.tr.th",&P_tr_xp);
-  fTree->SetBranchAddress("P.tr.ph",&P_tr_yp);
-  fTree->SetBranchAddress("P.tr.p", &P_tr_p);
-
-  fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp);
- 
-  fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe);
-  */
 
   fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p,&b_P_pr_apos_p);
   fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p,&b_P_pr_aneg_p);
@@ -230,17 +204,12 @@ void THcPShowerCalib::Init() {
 
   // Histogram declarations.
 
-  //  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 5.);
-  //  hEcal = new TH1F("hEcal", "Edep/P calibrated", 150, 0., 1.5);
-  //  hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
-  //		       350,0.,1.5, 250,-12.5,22.5);
   hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 10.);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 200, 0., 2.);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
 		       400,0.,2., 250,-12.5,22.5);
   hESHvsEPR = new TH2F("hESHvsEPR", "E_{SH} versus E_{PR}",
 		       300,0.,1.5, 300,0.,1.5);
-
 
   // Initialize cumulative quantities.
   
@@ -313,8 +282,6 @@ void THcPShowerCalib::CalcThresholds() {
 
   fLoThr = mean - 3.*rms;
   fHiThr = mean + 3.*rms;
-  //  fLoThr = 0.;              // Wide open thrsholds, for
-  //  fHiThr = 1.e+8;           // comparison with the old code.
 
   cout << "CalcThreshods: fLoThr=" << fLoThr << "  fHiThr=" << fHiThr 
        << "  nev=" << nev << endl;
@@ -343,61 +310,12 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   // Set a Shower track event from ntuple ientry.
   //
 
-  // Declaration of leaves types
-
-  // Preshower and Shower ADC signals.
-
-  ////Double_t        P_pr_a_p[THcPShTrack::fNrows_pr][THcPShTrack::fNcols_pr];
-  ////Double_t        P_sh_a_p[THcPShTrack::fNrows_sh][THcPShTrack::fNcols_sh];
-  /*
-  Double_t        P_pr_apos_p[THcPShTrack::fNrows_pr];
-  Double_t        P_pr_aneg_p[THcPShTrack::fNrows_pr];
-  Double_t        P_sh_a_p[THcPShTrack::fNcols_sh][THcPShTrack::fNrows_sh];
-
-  // Track parameters.
-
-  double          P_tr_n;
-  Double_t        P_tr_p;
-  Double_t        P_tr_x;   //X FP
-  Double_t        P_tr_xp;
-  Double_t        P_tr_y;   //Y FP
-  Double_t        P_tr_yp;
-
-  Double_t        P_tr_tg_dp;
-
-  Double_t        P_hgcer_npe[4];
- 
-  ////  const Double_t adc_thr = 15.;   //Low threshold on the ADC signals.
-  */
-  // Set branch addresses.
-  /*
-  fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p);
-  fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p);
-  fTree->SetBranchAddress("P.cal.fly.a_p",P_sh_a_p);
-
-  fTree->SetBranchAddress("P.tr.n", &P_tr_n);
-  fTree->SetBranchAddress("P.tr.x", &P_tr_x);
-  fTree->SetBranchAddress("P.tr.y", &P_tr_y);
-  fTree->SetBranchAddress("P.tr.th",&P_tr_xp);
-  fTree->SetBranchAddress("P.tr.ph",&P_tr_yp);
-  fTree->SetBranchAddress("P.tr.p", &P_tr_p);
-
-  fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp);
- 
-  fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe);
-  */
-
   fTree->GetEntry(ientry);
 
   if (ientry%100000 == 0) cout << "   ReadShRawTrack: " << ientry << endl;
 
-  ////
-  //  cout << "   ReadShRawTrack: tracks " << P_tr_n << endl;
-  //  cout << "      delta = " << P_tr_tg_dp << endl;
-  //  cout << "      x, y = " << P_tr_x + P_tr_xp*D_CALO_FP << " " 
-  //       << P_tr_y + P_tr_yp*D_CALO_FP << endl;
-  //  cout << "      Cer: " << P_hgcer_npe[0] << " " <<  P_hgcer_npe[1] << " "
-  //       << P_hgcer_npe[2] << " " << P_hgcer_npe[3] << endl;
+  // Request single electron track in calorimeter's fid. volume.
+  //
 
   if (P_tr_n != 1) return 0;
 
@@ -444,20 +362,6 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
     }
   }
 
-  ////  for (UInt_t k=0; k<THcPShTrack::fNcols_pr; k++) {
-  ////    for (UInt_t j=0; j<THcPShTrack::fNrows_pr; j++) {
-  ////
-  ////      Double_t adc = P_pr_a_p[j][k];
-  ////
-  ////      if (adc > adc_thr) {
-  ////    if (adc > PR_ADC_THR) {
-  ////	UInt_t nb = j+1 + k*THcPShTrack::fNrows_pr;
-  ////	trk.AddHit(adc, 0., nb);
-  ////      }
-  ////
-  ////    }
-  ////  }
-
   // Set Shower hits.
 
   for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
@@ -469,19 +373,6 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
       }
     }
   }
-
-  ////  for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
-  ////    for (UInt_t j=0; j<THcPShTrack::fNrows_sh; j++) {
-  ////
-  ////      Double_t adc = P_sh_a_p[j][k];
-  ////
-  ////      if (adc > SH_ADC_THR) {
-  ////	UInt_t nb = THcPShTrack::fNpmts_pr + j+1 + k*THcPShTrack::fNrows_sh;
-  ////	trk.AddHit(adc, 0., nb);
-  ////      }
-  ////
-  ////    }
-  ////  }
 
   return 1;
 }
@@ -687,13 +578,13 @@ void THcPShowerCalib::SolveAlphas() {
   // correspondent elements 0, except self-correlation Q(i,i)=1.
 
   cout << endl;
-  cout << "Channels with hit number less than " << fMinHitCount 
+  cout << "Channels with hit number less than " << MIN_HIT_COUNT 
        << " will not be calibrated." << endl;
   cout << endl;
 
   for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) {
 
-    if (fHitCount[i] < fMinHitCount) {
+    if (fHitCount[i] < MIN_HIT_COUNT) {
       cout << "Channel " << i << ", " << fHitCount[i]
 	   << " hits, will not be calibrated." << endl;
       q0[i] = 0.;
@@ -766,9 +657,6 @@ void THcPShowerCalib::FillHEcal() {
 
   THcPShTrack trk;
 
-  //  Double_t delta;
-  //  fTree->SetBranchAddress("P.tr.tg_dp",&delta);
-
   for (UInt_t ientry=0; ientry<fNentries; ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
@@ -808,7 +696,6 @@ void THcPShowerCalib::SaveAlphas() {
   //
 
   ofstream output;
-  ////  char* fname = Form("pcal.param.%d",fRunNumber);
   char* fname = Form("pcal.param.%s",fRunNumber.c_str());
   cout << "SaveAlphas: fname=" << fname << endl;
 

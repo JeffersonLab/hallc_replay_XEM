@@ -54,7 +54,7 @@ class THcPShTrack {
 
   Double_t GetP() {return P*1000.;}     //MeV
 
-  Double_t GetDp() {return Dp;}     //MeV
+  Double_t GetDp() {return Dp;}
 
   Double_t GetX() {return X;}
   Double_t GetY() {return Y;}
@@ -63,8 +63,6 @@ class THcPShTrack {
 
   // Coordinate correction constants for Preshower blocks
   //
-  //  static const Double_t fAcor = 106.73;
-  //  static const Double_t fBcor = 2.329;
   static constexpr Double_t fAcor = 106.73;
   static constexpr Double_t fBcor = 2.329;
 
@@ -240,8 +238,7 @@ Float_t THcPShTrack::Ycor(Double_t yhit, UInt_t ncol) {
 
   // Check if the hit coordinate matches the fired block's column.
   //
-  //if ((yhit < 0. && ncol == 1) || (yhit > 0. && ncol == 2)) //Vardan's MC data
-  if ((yhit < 0. && ncol == 2) || (yhit > 0. && ncol == 1))   //Simon's MC data
+  if ((yhit < 0. && ncol == 2) || (yhit > 0. && ncol == 1))
     cor = 1./(1. + TMath::Power(TMath::Abs(yhit)/fAcor, fBcor));
   else
     cor = 1.;
