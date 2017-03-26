@@ -40,7 +40,7 @@ void hcal_calib(string RunNumber) {
  theShowerCalib.hEuncSel->SetFillColor(kGreen);
  theShowerCalib.hEuncSel->DrawCopy("same");
 
- // E(Tail)%E(Preshower).
+ // E(Tail) vs E(Preshower) plot.
 
  Canvas->cd(2);
  theShowerCalib.hETAvsEPR->Draw();

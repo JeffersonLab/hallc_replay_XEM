@@ -65,10 +65,6 @@ class THcShTrack {
 
   // Coordinate correction constants from hcana.param.
   //
-  ////  static const Double_t fAcor = 200.;
-  ////  static const Double_t fBcor = 8000.;
-  ////  static const Double_t fCcor = 64.36;
-  ////  static const Double_t fDcor = 1.66;
   static constexpr Double_t fAcor = 200.;
   static constexpr Double_t fBcor = 8000.;
   static constexpr Double_t fCcor = 64.36;
@@ -76,12 +72,6 @@ class THcShTrack {
 
   // Calorimeter geometry constants.
   //
-  ////  static const Double_t fZbl = 10;   //cm, block transverse size
-  ////  static const UInt_t fNrows = 13;
-  ////  static const UInt_t fNcols =  4;
-  ////static const UInt_t fNnegs = 26;  // number of blocks with neg. side PMTs.
-  ////  static const UInt_t fNpmts = 78;   // total number of PMTs.
-  ////  static const UInt_t fNblks = fNrows*fNcols;
   static constexpr Double_t fZbl = 10;   //cm, block transverse size
   static constexpr UInt_t fNrows = 13;
   static constexpr UInt_t fNcols =  4;
