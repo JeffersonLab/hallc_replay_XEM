@@ -1,0 +1,31 @@
+How to calibrate SHMS calorimeter with real electrons.
+
+The calibration scripts reside in
+hallc_replay/CALIBRATION/shms_cal_calib directory. They consist of 3
+header files called THcPShHit.h,THcPShTrack.h, THcPShowerCalib.h, and
+a steering script pcal_calib.cpp.
+
+The scripts work on root files from hcana analysis and make use of
+quantities pertained to tracking, heavy gas Cherenkov, and TOF from
+hodoscopes. Hence it is convenient to calibrate on root files from
+full SHMS analysis. The root files are assumed in a linked ROOTfiles
+directory, under names shms_replay_<run_number>.root.
+
+Once your hcana, hallc_replay and Root are set up, you can compile and
+run pcal_calib under hcana, by issuing command
+
+.x pcal_calib.cpp+("run number").
+
+For instance, for calibration on shms_replay_464_50000.root file in
+ROOTfiles, the correct commad would be
+
+.x pcal_calib.cpp+("464_50000") .
+
+Upon calibration, a canvas with representative plots will pop up. The
+calibration constants will be written in output file
+pcal.param.<run_number>, in a format suitable for plugging them into
+your pcal.param file for subsequent use.
+
+If you want to modify selection cuts used in calibration (cuts on
+delta, beta, gas Cherenkov signals), you can find them at the
+beginning of THcPShowerCalib.h file, in the #define directives.
