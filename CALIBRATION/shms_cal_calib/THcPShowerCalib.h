@@ -35,6 +35,8 @@
 #define BETA_MIN 0.5
 #define BETA_MAX 1.5
 
+#define HGCER_NPE_MIN 2
+
 #define MIN_HIT_COUNT 5   //Minimum number of hits for a PMT to be calibrated.
 
 using namespace std;
@@ -327,10 +329,10 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 		    P_tr_y + P_tr_yp*D_CALO_FP < YMAX ;
   if (!good_trk) return 0;
 
-  bool good_hgcer = P_hgcer_npe[0] > 2 ||
-		    P_hgcer_npe[1] > 2 ||
-		    P_hgcer_npe[2] > 2 ||
-		    P_hgcer_npe[3] > 2  ;
+  bool good_hgcer = P_hgcer_npe[0] > HGCER_NPE_MIN ||
+		    P_hgcer_npe[1] > HGCER_NPE_MIN ||
+		    P_hgcer_npe[2] > HGCER_NPE_MIN ||
+		    P_hgcer_npe[3] > HGCER_NPE_MIN  ;
   if(!good_hgcer) return 0;
 
   bool good_beta = P_tr_beta > BETA_MIN &&
