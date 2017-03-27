@@ -522,7 +522,7 @@ void THcShowerCalib::ComposeVMs() {
       fQ[i][j] /= fNev;
 
   // Output vectors and matrixes, for debug purposes.
-
+  /*
   ofstream q0out;
   q0out.open("q0.deb",ios::out);
   for (UInt_t i=0; i<THcShTrack::fNpmts; i++)
@@ -541,7 +541,7 @@ void THcShowerCalib::ComposeVMs() {
     for (UInt_t j=0; j<THcShTrack::fNpmts; j++)
       Qout << fQ[i][j] << " " << i << " " << j << endl;
   Qout.close();
-
+  */
 };
 
 //------------------------------------------------------------------------------
