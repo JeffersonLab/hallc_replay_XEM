@@ -12,7 +12,8 @@ phgcer_beta_max = 1.2
 phgcer_et_min = 0.95
 phgcer_et_max = 5.0
 
-phgcer_mirror_zpos = 230
+; Guess from Dwg. 67165-E-00001 R0
+phgcer_mirror_zpos = 175.1
 
 ; phgcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.

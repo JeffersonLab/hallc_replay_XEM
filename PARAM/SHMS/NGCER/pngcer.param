@@ -11,7 +11,8 @@ pngcer_beta_max = 1.2
 pngcer_et_min = 0.95
 pngcer_et_max = 5.0
 
-pngcer_mirror_zpos = 230
+; Guess from Dwg. 67165-E-00001 R0
+pngcer_mirror_zpos = -89.1 
 
 ; pngcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
