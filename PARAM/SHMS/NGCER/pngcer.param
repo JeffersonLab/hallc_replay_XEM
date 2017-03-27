@@ -1,27 +1,25 @@
 ; Number of noble gas Cherenkov PMT's
 pngcer_tot_pmts = 4
 
-pngcer_width = 50, 50,50, 50
-
 pngcer_adc_to_npe = 1/1000., 1/1000., 1/1000., 1/1000.
 
-
 pngcer_chi2max = 50.
+
 pngcer_beta_min = 0.8
 pngcer_beta_max = 1.2
+
 pngcer_et_min = 0.95
 pngcer_et_max = 5.0
+
 pngcer_mirror_zpos = 230
+
 ; pngcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
 pngcer_region =   30,  -30,   0,
-                 0,    0,   0,
-                 0,    0,   0,
-                 0,    0,   0,
-                20,   20,  60,
-                30,   30,  30,
-                .1,   .1,  .1,
-                .1,   .1,  .1
-
-pngcer_ped_limit =  1000,1000, 1000,1000
-	       
+                   0,    0,   0,
+                   0,    0,   0,
+                   0,    0,   0,
+                  20,   20,  60,
+                  30,   30,  30,
+                  .1,   .1,  .1,
+                  .1,   .1,  .1

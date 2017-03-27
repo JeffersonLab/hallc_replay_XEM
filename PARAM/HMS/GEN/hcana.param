@@ -11,7 +11,7 @@ href_offset = 0.0
 hcal_num_layers = 4
 
 rraster_num_signals = 4
- hcer_tot_pmts = 2
+
 # Exclusion band width for the calorimeter's fiducial volume.
 hcal_fv_delta = 5.
 
