@@ -100,6 +100,8 @@ class THcPShowerCalib {
   Double_t        P_hgcer_npe[4];
   Double_t        P_tr_beta;
 
+  Double_t        P_cal_nclust;
+
   TBranch* b_P_tr_p;
   TBranch* b_P_pr_apos_p;
   TBranch* b_P_pr_aneg_p;
@@ -112,6 +114,8 @@ class THcPShowerCalib {
   TBranch* b_P_tr_tg_dp;
   TBranch* b_P_hgcer_npe;
   TBranch* b_P_tr_beta;
+
+  TBranch* b_P_cal_nclust;
 
   // Quantities for calculations of the calibration constants.
 
@@ -203,6 +207,8 @@ void THcPShowerCalib::Init() {
   fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe,&b_P_hgcer_npe);
 
   fTree->SetBranchAddress("P.tr.beta", &P_tr_beta,&b_P_tr_beta);
+
+  fTree->SetBranchAddress("P.cal.nclust", &P_cal_nclust,&b_P_cal_nclust);
 
   // Histogram declarations.
 
@@ -320,6 +326,8 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   //
 
   if (P_tr_n != 1) return 0;
+
+  if (P_cal_nclust != 1) return 0;
 
   bool good_trk =   P_tr_tg_dp > DELTA_MIN &&
 		    P_tr_tg_dp < DELTA_MAX &&
