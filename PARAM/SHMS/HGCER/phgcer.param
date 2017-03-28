@@ -4,25 +4,36 @@ phgcer_tot_pmts = 4
 ; Garth H. gain calibration from run 486, March 9 2017
 phgcer_adc_to_npe = 1/436., 1/393., 1/364., 1/372.
 
-phgcer_chi2max = 50.
+phgcer_red_chi2_min = 0.0
+phgcer_red_chi2_max = 25.0
 
-phgcer_beta_min = 0.8
+phgcer_beta_min = 0.0
 phgcer_beta_max = 1.2
 
-phgcer_et_min = 0.95
-phgcer_et_max = 5.0
+phgcer_enorm_min = 0.0
+phgcer_enorm_max = 1.5
 
 phgcer_adcTimeWindowMin = 500.
 phgcer_adcTimeWindowMax = 2500.
 
+; Threshold for good hit (for measureing effic.)
+phgcer_npe_thresh = 0.5
+
 ; Guess from Dwg. 67165-E-00001 R0
 phgcer_mirror_zpos = 175.1
 
+phgcer_num_regions = 4;
+
 ; phgcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
-phgcer_region =   30,  -30,   0,   0,    
-	      	   0,    0,   0,   0,
-		   0,    0,   0,   0,
-                  20,   20,  60,  30, 
-		  30,   30,  .1,  .1,
-		  .1,   .1,  .1,  .1
+; Defined in clomuns, region 1, region 2, region 3, region 4...
+; Assumes rectangular volume with x = 55 cm and y = 50 cm
+; FIX ME! Waiting for numbers from detector
+phgcer_region =   27.5,    27.5,  -27.5,  -27.5,   
+                  25.0,   -25.0,   25.0,  -25.0,
+                   0.0,     0.0,    0.0,    0.0,
+                   0.0,     0.0,    0.0,    0.0,
+                  27.5,    27.5,   27.5,   27.5,
+                  25.0,    25.0,   25.0,   25.0,
+	          0.15,    0.15,   0.15,   0.15,
+	           0.1,     0.1,    0.1,    0.1
