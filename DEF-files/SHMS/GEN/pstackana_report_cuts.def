@@ -9,20 +9,19 @@ HMS_event         g.evtyp==1
 SHMS_event         g.evtyp==1
 coin_event        g.evtyp==3
 misc_event        g.evtyp>=5
-hmscoin_event     g.evtyp==1||g.evtyp==3
-shmscoin_event     g.evtyp==2||g.evtyp==3
-all_event         g.evtyp==1||g.evtyp==2||g.evtyp==3
+hmscoin_event     HMS_event||coin_event
+shmscoin_event    SHMS_event||coin_event
+all_event         HMS_event||SHMS_event||coin_event
 RawDecode_master  1
 
 Block: Decode
-Decode_master     HMS_event
+Decode_master     SHMS_event
 
 Block: CoarseTracking
-CoarseTracking_master HMS_event
+CoarseTracking_master SHMS_event
 
-all_trigs             g.evtyp==1 || g.evtyp==2 || g.evtyp==3
-hms_shms_trig          g.evtyp==1 || g.evtyp==2
-hms_coin_trig         g.evtyp==1 || g.evtyp==3
+all_trigs             HMS_event||SHMS_event||coin_event
+shms_coin_trig        SHMS_event||coin_event
 
 
 shmsDC1Planes_large  (P.dc.1x1.nhit+P.dc.1u2.nhit+P.dc.1u1.nhit+P.dc.1v1.nhit+P.dc.1x2.nhit+P.dc.1v2.nhit) >20
@@ -118,6 +117,17 @@ Tracking_master  SHMS_event
 Block: Reconstruct
 Reconstruct_master SHMS_event
 
+cer_ng_elec    P.ngcer.npesum>0.5
+cer_ng_pi      P.ngcer.npesum<0.5
+cer_hg_elec    P.hgcer.npesum>0.5
+cer_hg_pi      P.hgcer.npesum<0.5
+cer_pi_both         cer_ng_pi&&cer_hg_pi
+cer_elec_both         cer_ng_elec&&cer_hg_elec
+cal_elec             P.cal.fly.nhits>=2
+cal_pi              P.cal.fly.nhits<2
+cer_elec_all        cer_ng_elec&&cer_hg_elec&&cal_elec
+
+
 shmsScinGood           P.hod.goodscinhit == 1
 
 shmsScinShould         shmsScinGood && P.cal.etotnorm > 0.7 && P.hgcer.npesum > 2.0
@@ -161,6 +171,7 @@ realhdc2v1            goodHDC2v1 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)
 realhdc2v2            goodHDC2v2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
 realhdc2x2            goodHDC2x2 && ((P.dc.Ch1.spacepoints+P.dc.Ch2.spacepoints)>0)
 
+
 hFound1Track          P.dc.ntrack == 1
 hFound2Track          P.dc.ntrack == 2
 hFound3Track          P.dc.ntrack == 3
@@ -171,6 +182,11 @@ hCleanTrack           P.gtr.index > -1
 2hCleanTrack          P.gtr.index == 1
 3hCleanTrack          P.gtr.index == 2
 4hCleanTrack          P.gtr.index == 3
+
+hCleanTrack_cer_elec           (P.gtr.index>-1)&&cer_elec_both
+h1hit1_cer_elec           h1hit1&&cer_elec_both
+hCleanTrack_cal_elec           (P.gtr.index>-1)&&cal_elec
+h1hit1_cal_elec           h1hit1&&cal_elec
 
 anyhs1x               P.hod.1x.nhits > 0
 anyhs1y               P.hod.1y.nhits > 0

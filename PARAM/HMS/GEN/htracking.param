@@ -64,7 +64,7 @@ hstub_max_xpdiff = .05
 ; hsel_using_scin         uses scintillator for track selection
   hsel_using_scin = 0
 ; hsel_using_prune         using prune
-  hsel_using_prune = 0
+  hsel_using_prune = 1
 ; hstat_slop              distance from center of scin. to count as expecting hit
   hstat_slop = 2.
 ; hstat_mineff            warning level for scin. effic.
