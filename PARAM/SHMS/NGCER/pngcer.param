@@ -11,6 +11,9 @@ pngcer_beta_max = 1.2
 pngcer_et_min = 0.95
 pngcer_et_max = 5.0
 
+pngcer_adcTimeWindowMin = 500.
+pngcer_adcTimeWindowMax = 2500.
+
 ; Guess from Dwg. 67165-E-00001 R0
 pngcer_mirror_zpos = -89.1 
 

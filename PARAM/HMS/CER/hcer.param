@@ -13,6 +13,9 @@ hcer_et_max = 5.0
 
 hcer_mirror_zpos = 230.0
 
+hcer_adcTimeWindowMin = 1500.
+hcer_adcTimeWindowMax = 3500.
+
 ; hcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
 hcer_region =   30,  -30,    0,    0,    
