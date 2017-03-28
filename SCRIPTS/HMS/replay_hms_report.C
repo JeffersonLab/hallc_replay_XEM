@@ -37,7 +37,7 @@ void replay_hms_report(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   if ( RunNumber > 243) {
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack_spring17_current_run.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack.map");
   } else {
   gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack_spring17_run_00001_00243.map");
   }
