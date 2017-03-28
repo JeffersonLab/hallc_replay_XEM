@@ -11,6 +11,30 @@ block H.gtr.*
 
 TH1F hev_typ " HMS evtype ' g.evtyp 200 0 200
 
+TH1F hcal_ene 'HMS Cal energy' H.cal.etot 1000 0. 5.
+TH1F hcal_xclusttrack 'HMS Cal X pos' H.cal.xclusttrack 200 -100. 100. H.cal.nclusttrack>-1
+TH1F hcal_xdiff 'HMS Cal X pos - X track' H.cal.xclusttrack-H.cal.xtrack 200 -20. 20. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH2F hcal_xdiff_v_xtr 'HMS Cal X pos - X track v Xtr' H.cal.xtrack H.cal.xclusttrack-H.cal.xtrack 200 -100. 100. 200 -20. 20. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH1F hcal_xtrack 'HMS Cal X pos of track' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH1F hcal_xtrack1 'HMS Cal X pos of track no matching clust' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+TH1F hcal_xtrack2 'HMS Cal X pos of track no matching clust number of cluster=1' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+TH1F hcal_enenorm 'HMS Cal energy normalized by Central MOM' H.cal.etotnorm 300 0. 1.5
+TH1F hcal_ene_track 'HMS Cal energy (best track)' H.cal.etrack 1000 0. 5. H.dc.ntrack>0
+TH1F hcal_enenorm_track 'HMS Cal energy normalized by best track mom' H.cal.etracknorm 1000 0. 1.5 H.dc.ntrack>0
+TH1F hcal_enenorm_track_elec 'HMS Cal energy/p (npesum > .5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH1F hcal_enenorm_track_pion 'HMS Cal energy/p (npesum <.5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH2F hcal_ene_2dtrack 'HMS Cal energy v energy track' H.cal.etrack H.cal.etot 1000 0. 5. 1000 0. 5. H.dc.ntrack>0
+TH2F hcal_delta_etrack 'HMS Delta v Cal energy/p ' H.cal.etracknorm H.gtr.dp 300 0. 1.5 600 -15. 15. H.dc.ntrack>0
+TH2F hcal_npe_etrack 'HMS Cer Npe v Cal energy/p' H.cal.etracknorm H.cer.npesum 300 0. 1.5 60 0. 15. H.dc.ntrack>0
+TH1F hcer_pmt1 'HMS GAS Cher PMT1; ADC ; Counts' H.cer.adc_p[0] 200 0 10000 
+TH1F hcer_pmt2 'HMS GAS Cher PMT2; ADC ; Counts' H.cer.adc_p[1] 200 0 10000 
+TH1F hcer_pmt1_nphe 'HMS GAS Cher PMT1; Number of PE ; Counts' H.cer.npe[0] 80 0 20
+TH1F hcer_pmt2_nphe 'HMS GAS Cher PMT2;  Number of PE ; Counts' H.cer.npe[1] 80 0 20 
+TH1F hcer_sum_nphe 'HMS GAS Cher;  Total Number of PE ; Counts' H.cer.npesum 80 0 20 
+TH2F hcer_sum_nphe_x 'HMS GAS Cher;  Total Number of PE ; X_fp' H.cer.npesum H.dc.x_fp 80 0 20 80 -60. 60.
+TH2F hcer_sum_nphe_dp 'HMS GAS Cher;  Total Number of PE ; Delta (%) ' H.cer.npesum H.gtr.dp 80 0 20 120 -15. 20.
+TH1F hbeta 'HMS beta' H.hod.beta 240 -1.2 1.2
+TH1F hbetanotrack 'HMS beta' H.hod.betanotrack 240 -1.2 1.2
 TH1F htr_x 'HMS x' H.tr.x 80 -40. 40.
 TH1F hgtr_dp 'HMS Gold track delta' H.gtr.dp 120 -15. 15.
 TH1F hgtr_x 'HMS Gold track x_tg' H.gtr.x 80 -40. 40.
@@ -22,14 +46,9 @@ TH1F htr_y_fp 'HMS Y_fp (cm)' H.dc.y_fp 80 -40. 40.
 TH1F htr_xp_fp 'HMS Xp_fp (radians)' H.dc.xp_fp 80 -.1 .1
 TH1F htr_yp_fp 'HMS Yp_fp (radians)' H.dc.yp_fp 80 -.1 .1
 TH2F htr_x_y_fp 'HMS X Y focal plane; Y_fp (cm) ;X_fp (cm)' H.dc.y_fp H.dc.x_fp  80 -40. 40. 80 -60. 60.  cer_elec
+TH2F htr_x_y_fp1 'HMS X Y focal plane; Y_fp (cm) ;X_fp (cm)' H.dc.y_fp H.dc.x_fp  80 -10. 10. 80 -10. 10.  cer_elec
+TH1F htr_x_fp1 'HMS X_fp (cm)' H.dc.x_fp 80 -10. 10.
 #
-TH1F hcer_pmt1 'HMS GAS Cher PMT1; ADC ; Counts' H.cer.adc_p[0] 200 0 10000 
-TH1F hcer_pmt2 'HMS GAS Cher PMT2; ADC ; Counts' H.cer.adc_p[1] 200 0 10000 
-TH1F hcer_pmt1_nphe 'HMS GAS Cher PMT1; Number of PE ; Counts' H.cer.npe[0] 80 0 20
-TH1F hcer_pmt2_nphe 'HMS GAS Cher PMT2;  Number of PE ; Counts' H.cer.npe[1] 80 0 20 
-TH1F hcer_sum_nphe 'HMS GAS Cher;  Total Number of PE ; Counts' H.cer.npesum 80 0 20 
-TH2F hcer_sum_nphe_x 'HMS GAS Cher;  Total Number of PE ; X_fp' H.cer.npesum H.dc.x_fp 80 0 20 80 -60. 60.
-TH2F hcer_sum_nphe_dp 'HMS GAS Cher;  Total Number of PE ; Delta (%) ' H.cer.npesum H.gtr.dp 80 0 20 120 -15. 20.
 # Drift Chambers
 TH1F hdc_ref1 'HMS DC Reference Time Slot 5 Channel 111; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 3000 12000 15000 
 TH1F hdc_ref2 'HMS DC Reference Time Slot 8 Channel 127; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime 3000 12000 15000
