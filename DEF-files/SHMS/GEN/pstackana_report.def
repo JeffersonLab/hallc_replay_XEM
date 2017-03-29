@@ -10,22 +10,38 @@ block P.aero.*
 block P.cal.*
 block P.gtr.*
 
+TH1F pcal_ene 'SHMS Cal energy' P.cal.etot 1000 0. 5.
+TH1F pcal_xclusttrack 'SHMS Cal X pos' P.cal.xclusttrack 200 -100. 100. P.cal.nclusttrack>-1
+TH1F pcal_xdiff 'SHMS Cal X pos - X track' P.cal.xclusttrack-P.cal.xtrack 200 -20. 20. P.cal.nclusttrack>-1&&P.dc.ntrack>0
+TH2F pcal_xdiff_v_xtr 'SHMS Cal X pos - X track v Xtr' P.cal.xtrack P.cal.xclusttrack-P.cal.xtrack 200 -100. 100. 200 -20. 20. P.cal.nclusttrack>-1&&P.dc.ntrack>0
+TH1F pcal_xtrack 'SHMS Cal X pos of track' P.cal.xtrack 200 -100. 100. P.cal.nclusttrack>-1&&P.dc.ntrack>0
+TH1F pcal_xtrack1 'SHMS Cal X pos of track no matching clust' P.cal.xtrack 200 -100. 100. P.cal.nclusttrack==-1&&P.gtr.dp>-8.&&P.gtr.dp<8.&&P.dc.ntrack>0
+TH1F pcal_xtrack2 'SHMS Cal X pos of track no matching clust number of cluster=1' P.cal.xtrack 200 -100. 100. P.cal.nclusttrack==-1&&P.cal.nclust==0&&P.gtr.dp>-8.&&P.gtr.dp<8.&&P.dc.ntrack>0
+TH1F pcal_enenorm 'SHMS Cal energy normalized by Central MOM' P.cal.etotnorm 300 0. 1.5
+TH1F pcal_ene_track 'SHMS Cal energy (best track)' P.cal.etrack 1000 0. 5. P.dc.ntrack>0
+TH1F pcal_enenorm_track 'SHMS Cal energy normalized by best track mom' P.cal.etracknorm 1000 0. 1.5 P.dc.ntrack>0
+TH1F pcal_enenorm_track_elec 'SHMS Cal energy/p (npesum > .5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npesum>.5&&P.hgcer.npesum>.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+TH1F pcal_enenorm_track_pion 'SHMS Cal energy/p (npesum <.5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npesum<.5&&P.hgcer.npesum<.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+TH2F pcal_ene_2dtrack 'SHMS Cal energy v energy track' P.cal.etrack P.cal.etot 1000 0. 5. 1000 0. 5. P.dc.ntrack>0
+TH2F pcal_delta_etrack 'SHMS Delta v Cal energy/p ' P.cal.etracknorm P.gtr.dp 300 0. 1.5 600 -15. 15. P.dc.ntrack>0
+TH2F pcal_npe_etrack 'SHMS Cer Npe v Cal energy/p' P.cal.etracknorm P.cer.npesum 300 0. 1.5 60 0. 15. P.dc.ntrack>0
+
+
 # Noble Gas Cherenkov
 TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
 TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 1000
 TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
-TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.adc_p[0] 1000 0. 50000. P.ngcer.adc_hit[0]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.adc_p[1] 1000 0. 50000. P.ngcer.adc_hit[1]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.adc_p[2] 1000 0. 50000. P.ngcer.adc_hit[2]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.adc_p[3] 1000 0. 50000. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 50 0. 50. P.ngcer.adc_hit[0]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 50 0. 50. P.ngcer.adc_hit[1]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 50 0. 50. P.ngcer.adc_hit[2]==1&&P.gtr.beta>0.5
-TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 50 0. 50. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
-
-TH1F pngcer_nphe  'SHMS NG Cherenkov ; N_Phe ; Counts' P.ngcer.npe 50 0. 50. P.ngcer.adc_hit[3]==1&&P.gtr.beta>0.5
+TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.adc_p[0] 1000 0. 100000. P.ngcer.adc_hit[0]==1
+TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.adc_p[1] 1000 0. 100000. P.ngcer.adc_hit[1]==1
+TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.adc_p[2] 1000 0. 100000. P.ngcer.adc_hit[2]==1
+TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.adc_p[3] 1000 0. 100000. P.ngcer.adc_hit[3]==1
+TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 80 0. 20. P.ngcer.adc_hit[0]==1
+TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 80 0. 20. P.ngcer.adc_hit[1]==1
+TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 80 0. 20. P.ngcer.adc_hit[2]==1
+TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 80 0. 20. P.ngcer.adc_hit[3]==1
+TH1F pngcer_ nphe 'SHMS NG Cherenkov Sum ; N_Phe ; Counts' P.ngcer.npesum 80 0. 20. P.ngcer.adc_hit[3]==1
 
 # Drift Chambers
 TH1F pdc_ref1  'SHMS DC Reference Time Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF1_tdcTime  200 12000 14000
@@ -67,22 +83,40 @@ TH2F pdc2x1_wirenum_vs_tdc 'SHMS DC 2X1 Wire Number vs. TDC; Wire Number; TDC Ti
 TH2F pdc2u2_wirenum_vs_tdc 'SHMS DC 2U2 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 500 0 500
 TH2F pdc2u1_wirenum_vs_tdc 'SHMS DC 2U1 Wire Number vs. TDC; Wire Number; TDC Time (ns) / 1 ns' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 500 0 500
 
-TH2F pdc1u1_wirenum_vs_resid 'SHMS 1U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u1.wirenum P.dc.residual[0] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc1u2_wirenum_vs_resid 'SHMS 1U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u2.wirenum P.dc.residual[1] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc1x1_wirenum_vs_resid 'SHMS 1X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x1.wirenum P.dc.residual[2] 79 0.5  79.5 200 -1.0 1.0
-TH2F pdc1x2_wirenum_vs_resid 'SHMS 1X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x2.wirenum P.dc.residual[3] 79 0.5  79.5 200 -1.0 1.0
-TH2F pdc1v1_wirenum_vs_resid 'SHMS 1V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v1.wirenum P.dc.residual[4] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc1v2_wirenum_vs_resid 'SHMS 1V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v2.wirenum P.dc.residual[5] 107 0.5 107.5 200 -1.0 1.0
+TH1F pdc1u1_resid 'SHMS 1U1 DC Residual ; Residuals (cm)' P.dc.residual[0] 600 -.3 .3
+TH1F pdc1u2_resid 'SHMS 1U2 DC Residual ; Residuals (cm)' P.dc.residual[1] 600 -.3 .3
+TH1F pdc1x1_resid 'SHMS 1X1 DC Residual ; Residuals (cm)' P.dc.residual[2] 600 -.3 .3
+TH1F pdc1x2_resid 'SHMS 1X2 DC Residual ; Residuals (cm)' P.dc.residual[3] 600 -.3 .3
+TH1F pdc1v1_resid 'SHMS 1V1 DC Residual ; Residuals (cm)' P.dc.residual[4] 600 -.3 .3
+TH1F pdc1v2_resid 'SHMS 1V2 DC Residual ; Residuals (cm)' P.dc.residual[5] 600 -.3 .3
 
-TH2F pdc2v2_wirenum_vs_resid 'SHMS 2V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v2.wirenum P.dc.residual[6] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc2v1_wirenum_vs_resid 'SHMS 2V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v1.wirenum P.dc.residual[7] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc2x2_wirenum_vs_resid 'SHMS 2X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x2.wirenum P.dc.residual[8] 79 0.5  79.5 200 -1.0 1.0
-TH2F pdc2x1_wirenum_vs_resid 'SHMS 2X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x1.wirenum P.dc.residual[9] 79 0.5  79.5 200 -1.0 1.0
-TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 200 -1.0 1.0
-TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 200 -1.0 1.0
+TH1F pdc2u1_resid 'SHMS 2U1 DC Residual ; Residuals (cm)' P.dc.residual[6] 600 -.3 .3
+TH1F pdc2u2_resid 'SHMS 2U2 DC Residual ; Residuals (cm)' P.dc.residual[7] 600 -.3 .3
+TH1F pdc2x1_resid 'SHMS 2X1 DC Residual ; Residuals (cm)' P.dc.residual[8] 600 -.3 .3
+TH1F pdc2x2_resid 'SHMS 2X2 DC Residual ; Residuals (cm)' P.dc.residual[9] 600 -.3 .3
+TH1F pdc2v1_resid 'SHMS 2V1 DC Residual ; Residuals (cm)' P.dc.residual[10] 600 -.3 .3
+TH1F pdc2v2_resid 'SHMS 2V2 DC Residual ; Residuals (cm)' P.dc.residual[11] 600 -.3 .3
+
+TH2F pdc1u1_wirenum_vs_resid 'SHMS 1U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u1.wirenum P.dc.residual[0] 107 0.5 107.5 600 -.3 .3
+TH2F pdc1u2_wirenum_vs_resid 'SHMS 1U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1u2.wirenum P.dc.residual[1] 107 0.5 107.5 600 -.3 .3
+TH2F pdc1x1_wirenum_vs_resid 'SHMS 1X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x1.wirenum P.dc.residual[2] 79 0.5  79.5 600 -.3 .3
+TH2F pdc1x2_wirenum_vs_resid 'SHMS 1X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1x2.wirenum P.dc.residual[3] 79 0.5  79.5 600 -.3 .3
+TH2F pdc1v1_wirenum_vs_resid 'SHMS 1V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v1.wirenum P.dc.residual[4] 107 0.5 107.5 600 -.3 .3
+TH2F pdc1v2_wirenum_vs_resid 'SHMS 1V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.1v2.wirenum P.dc.residual[5] 107 0.5 107.5 600 -.3 .3
+
+TH2F pdc2v2_wirenum_vs_resid 'SHMS 2V2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v2.wirenum P.dc.residual[6] 107 0.5 107.5 600 -.3 .3
+TH2F pdc2v1_wirenum_vs_resid 'SHMS 2V1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2v1.wirenum P.dc.residual[7] 107 0.5 107.5 600 -.3 .3
+TH2F pdc2x2_wirenum_vs_resid 'SHMS 2X2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x2.wirenum P.dc.residual[8] 79 0.5  79.5 600 -.3 .3
+TH2F pdc2x1_wirenum_vs_resid 'SHMS 2X1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2x1.wirenum P.dc.residual[9] 79 0.5  79.5 600 -.3 .3
+TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 600 -.3 .3
+TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 600 -.3 .3
 
 TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yxp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' P.dc.y P.dc.x 100 -50 50 100 -50 50
 TH2F pdc_xfpp_vs_yxpp 'SHMS DC Xfpp vs Yxpp; Yfpp; Xfpp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1
+TH2F pdc_xfp_vs_yxp_1 'SHMS DC Y_fp vs X_fp; Xfp (cm); Yfp (cm)'  P.dc.y_fp P.dc.x_fp 100 -50 50 100 -50 50 
+TH2F pdc_xfpp_vs_yxpp_1 'SHMS DC Yp_fp vs Xp_fp; Xp_fp (radians); Yp_fp (radians)' P.dc.yp_fp P.dc.xp_fp 100 -1 1 100 -1 1 
+TH2F pdc_xfp_vs_yxp_1 'SHMS DC Yp_fp vs X_fp; Xfp (cm); Yp_fp (radians)'  P.dc.x_fp P.dc.yp_fp 100 -50 50 100 .1 .1 
+TH2F pdc_xfpp_vs_yxpp_1 'SHMS DC Xp_fp vs X_fp; X_fp (radians); Xp_fp (radians)' P.dc.x_fp P.dc.xp_fp 100 -1 1 100 -.1 .1 
 
 # Hodoscopes (Positive/Left) 
 TH1F phodo_1x_pos_adc_occu 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5
@@ -93,6 +127,22 @@ TH1F phodo_1x_pos_tdc_occu 'SHMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Num
 TH1F phodo_1y_pos_tdc_occu 'SHMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posTdcCounter 13 0.5 13.5 
 TH1F phodo_2x_pos_tdc_occu 'SHMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posTdcCounter 14 0.5 14.5
 TH1F phodo_2y_pos_tdc_occu 'SHMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posTdcCounter 21 0.5 21.5
+TH1F phodo_1x_pos_adctrack 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5 P.tr.n>0
+TH1F phodo_1y_pos_adctrack 'SHMS Hodoscope 1Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posAdcCounter 13 0.5 13.5  P.tr.n>0
+TH1F phodo_2x_pos_adctrack 'SHMS Hodoscope 2X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posAdcCounter 14 0.5 14.5 P.tr.n>0
+TH1F phodo_2y_pos_adctrack 'SHMS Hodoscope 2Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posAdcCounter 21 0.5 21.5 P.tr.n>0
+TH1F phodo_1x_pos_tdctrack 'SHMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posTdcCounter 13 0.5 13.5 P.tr.n>0
+TH1F phodo_1y_pos_tdctrack 'SHMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posTdcCounter 13 0.5 13.5  P.tr.n>0
+TH1F phodo_2x_pos_tdctrack 'SHMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posTdcCounter 14 0.5 14.5 P.tr.n>0
+TH1F phodo_2y_pos_tdctrack 'SHMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posTdcCounter 21 0.5 21.5 P.tr.n>0
+TH1F phodo_1x_pos_adc__notrack 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5 P.tr.n==0
+TH1F phodo_1y_pos_adc__notrack 'SHMS Hodoscope 1Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posAdcCounter 13 0.5 13.5  P.tr.n==0
+TH1F phodo_2x_pos_adc__notrack 'SHMS Hodoscope 2X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posAdcCounter 14 0.5 14.5 P.tr.n==0
+TH1F phodo_2y_pos_adc__notrack 'SHMS Hodoscope 2Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posAdcCounter 21 0.5 21.5 P.tr.n==0
+TH1F phodo_1x_pos_tdc__notrack 'SHMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posTdcCounter 13 0.5 13.5 P.tr.n==0
+TH1F phodo_1y_pos_tdc__notrack 'SHMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posTdcCounter 13 0.5 13.5  P.tr.n==0
+TH1F phodo_2x_pos_tdc__notrack 'SHMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posTdcCounter 14 0.5 14.5 P.tr.n==0
+TH1F phodo_2y_pos_tdc__notrack 'SHMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posTdcCounter 21 0.5 21.5 P.tr.n==0
 TH2F phodo_1x_pos_ped_vs_pad 'SHMS Hodoscope 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPed 13 0.5 13.5 1000 0 1000
 TH2F phodo_1y_pos_ped_vs_pad 'SHMS Hodoscope 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPed 13 0.5 13.5 1000 0 1000
 TH2F phodo_2x_pos_ped_vs_pad 'SHMS Hodoscope 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPed 14 0.5 14.5 1000 0 1000
@@ -142,14 +192,15 @@ TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Num
 TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
-TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.adc_p[0] 1000 0. 100000. P.hgcer.adc_hit[0]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.adc_p[1] 1000 0. 100000. P.hgcer.adc_hit[1]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.adc_p[2] 1000 0. 100000. P.hgcer.adc_hit[2]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.adc_p[3] 1000 0. 100000. P.hgcer.adc_hit[3]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 500 0. 100. P.hgcer.adc_hit[0]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 500 0. 100. P.hgcer.adc_hit[1]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 500 0. 100. P.hgcer.adc_hit[2]==1&&P.gtr.beta>0.5
-TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 500 0. 100. P.hgcer.adc_hit[3]==1&&P.gtr.beta>0.5
+TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.adc_p[0] 1000 0. 100000. P.hgcer.adc_hit[0]==1
+TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.adc_p[1] 1000 0. 100000. P.hgcer.adc_hit[1]==1
+TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.adc_p[2] 1000 0. 100000. P.hgcer.adc_hit[2]==1
+TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.adc_p[3] 1000 0. 100000. P.hgcer.adc_hit[3]==1
+TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 80 0. 20. 
+TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 80 0. 20. 
+TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 80 0. 20. 
+TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 80 0. 20. 
+TH1F phgcer_sum_nphe  'SHMS HG Cherenkov Sum ; N_Phe ; Counts' P.hgcer.npesum 40 0. 40. 
 
 # Aerogel
 TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
@@ -177,6 +228,23 @@ TH2F pcal_shwr_ped_blk 'SHMS Shower Pulse Pedestal vs. Block Number; Block Numbe
 TH2F pcal_shwr_pi_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseInt 224 0.5 224.5 4000 0 40000
 TH2F pcal_shwr_amp_blk 'SHMS Shower Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPulseAmp 224 0.5 224.5 4100 0 4100 
 
+TH1F ptrig_multhodo_ch1xy 'SHMS Hodoscope Trig Mult 1X and 1Y ' T.shms.p1T_tdcMultiplicity 11 0 11 
+TH1F ptrig_multhodo_ch1x 'SHMS Hodoscope Trig Mult 1X ' T.shms.p1X_tdcMultiplicity 11 0 11 
+TH1F ptrig_multhodo_ch1y 'SHMS Hodoscope Trig Mult 1Y ' T.shms.p1Y_tdcMultiplicity 11 0 11
+TH1F ptrig_multhodo_ch2xy 'SHMS Hodoscope Trig Mult 2X and 2Y ' T.shms.p2T_tdcMultiplicity 11 0 11 
+TH1F ptrig_multhodo_ch2x 'SHMS Hodoscope Trig Mult 2X ' T.shms.p2X_tdcMultiplicity 11 0 11 
+TH1F ptrig_multhodo_ch2y 'SHMS Hodoscope Trig Mult 2Y ' T.shms.p2Y_tdcMultiplicity 11 0 11 
+
+TH1F ptrig_hodo_ch1xy 'SHMS Hodoscope Trig 1X and 1Y (ns)' T.shms.p1T_tdcTime 200 100 300 T.shms.p1T_tdcMultiplicity==1
+TH1F ptrig_hodo_ch1x 'SHMS Hodoscope Trig 1X (ns)' T.shms.p1X_tdcTime 200 100 300 T.shms.p1X_tdcMultiplicity==1
+TH1F ptrig_hodo_ch1y 'SHMS Hodoscope Trig 1Y (ns)' T.shms.p1Y_tdcTime 200 100 300 T.shms.p1Y_tdcMultiplicity==1
+TH1F ptrig_hodo_ch2xy 'SHMS Hodoscope Trig 2X and 2Y (ns)' T.shms.p2T_tdcTime 200 100 300 T.shms.p2T_tdcMultiplicity==1
+TH1F ptrig_hodo_ch2x 'SHMS Hodoscope Trig 2X (ns)' T.shms.p2X_tdcTime 200 100 300 T.shms.p2X_tdcMultiplicity==1
+TH1F ptrig_hodo_ch2y 'SHMS Hodoscope Trig 2Y (ns)' T.shms.p2Y_tdcTime 200 100 300 T.shms.p2Y_tdcMultiplicity==1
+TH2F ptrig_ch1xy_ch2x 'SHMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.shms.p1T_tdcTime  T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1T_tdcMultiplicity==1
+TH2F ptrig_ch1x_ch2x 'SHMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)' T.shms.p1X_tdcTime  T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
+TH2F ptrig_ch1y_ch2x 'SHMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.shms.p1Y_tdcTime  T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1Y_tdcMultiplicity==1
+TH2F ptrig_ch1ych1x 'SHMS Hodo Trig ;Trig 1X (ns);Trig 1Y (ns)' T.shms.p1X_tdcTime  T.shms.p1Y_tdcTime 200 100 300 250 100 300 T.shms.p1Y_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
 # Trigger Apparatus
 TH1F ptrig_pngc_sum_pped 'SHMS Noble Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Units' T.shms.pNGCSUM_adcPed 2000 0 2000
 TH1F ptrig_pngc_sum_pint 'SHMS Noble Gas Sum FADC Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.shms.pNGCSUM_adcPulseInt 4000 0 40000

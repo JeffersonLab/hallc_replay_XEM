@@ -9,6 +9,46 @@ block H.cer.*
 block H.cal.*
 block H.gtr.*
 
+TH1F hev_typ " HMS evtype ' g.evtyp 200 0 200
+
+TH1F hcal_ene 'HMS Cal energy' H.cal.etot 1000 0. 5.
+TH1F hcal_xclusttrack 'HMS Cal X pos' H.cal.xclusttrack 200 -100. 100. H.cal.nclusttrack>-1
+TH1F hcal_xdiff 'HMS Cal X pos - X track' H.cal.xclusttrack-H.cal.xtrack 200 -20. 20. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH2F hcal_xdiff_v_xtr 'HMS Cal X pos - X track v Xtr' H.cal.xtrack H.cal.xclusttrack-H.cal.xtrack 200 -100. 100. 200 -20. 20. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH1F hcal_xtrack 'HMS Cal X pos of track' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+TH1F hcal_xtrack1 'HMS Cal X pos of track no matching clust' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+TH1F hcal_xtrack2 'HMS Cal X pos of track no matching clust number of cluster=1' H.cal.xtrack 200 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+TH1F hcal_enenorm 'HMS Cal energy normalized by Central MOM' H.cal.etotnorm 300 0. 1.5
+TH1F hcal_ene_track 'HMS Cal energy (best track)' H.cal.etrack 1000 0. 5. H.dc.ntrack>0
+TH1F hcal_enenorm_track 'HMS Cal energy normalized by best track mom' H.cal.etracknorm 1000 0. 1.5 H.dc.ntrack>0
+TH1F hcal_enenorm_track_elec 'HMS Cal energy/p (npesum > .5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH1F hcal_enenorm_track_pion 'HMS Cal energy/p (npesum <.5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH2F hcal_ene_2dtrack 'HMS Cal energy v energy track' H.cal.etrack H.cal.etot 1000 0. 5. 1000 0. 5. H.dc.ntrack>0
+TH2F hcal_delta_etrack 'HMS Delta v Cal energy/p ' H.cal.etracknorm H.gtr.dp 300 0. 1.5 600 -15. 15. H.dc.ntrack>0
+TH2F hcal_npe_etrack 'HMS Cer Npe v Cal energy/p' H.cal.etracknorm H.cer.npesum 300 0. 1.5 60 0. 15. H.dc.ntrack>0
+TH1F hcer_pmt1 'HMS GAS Cher PMT1; ADC ; Counts' H.cer.adc_p[0] 200 0 10000 
+TH1F hcer_pmt2 'HMS GAS Cher PMT2; ADC ; Counts' H.cer.adc_p[1] 200 0 10000 
+TH1F hcer_pmt1_nphe 'HMS GAS Cher PMT1; Number of PE ; Counts' H.cer.npe[0] 80 0 20
+TH1F hcer_pmt2_nphe 'HMS GAS Cher PMT2;  Number of PE ; Counts' H.cer.npe[1] 80 0 20 
+TH1F hcer_sum_nphe 'HMS GAS Cher;  Total Number of PE ; Counts' H.cer.npesum 80 0 20 
+TH2F hcer_sum_nphe_x 'HMS GAS Cher;  Total Number of PE ; X_fp' H.cer.npesum H.dc.x_fp 80 0 20 80 -60. 60.
+TH2F hcer_sum_nphe_dp 'HMS GAS Cher;  Total Number of PE ; Delta (%) ' H.cer.npesum H.gtr.dp 80 0 20 120 -15. 20.
+TH1F hbeta 'HMS beta' H.hod.beta 240 -1.2 1.2
+TH1F hbetanotrack 'HMS beta' H.hod.betanotrack 240 -1.2 1.2
+TH1F htr_x 'HMS x' H.tr.x 80 -40. 40.
+TH1F hgtr_dp 'HMS Gold track delta' H.gtr.dp 120 -15. 15.
+TH1F hgtr_x 'HMS Gold track x_tg' H.gtr.x 80 -40. 40.
+TH1F hgtr_y 'HMS Gold track y_tg (cm)' H.gtr.y 80 -40. 40.
+TH1F hgtr_xp 'HMS Gold track xp_tg' H.gtr.th 80 -.1 .1
+TH1F hgtr_yp 'HMS Gold track yp_tg' H.gtr.ph 80 -.1 .1
+TH1F htr_x_fp 'HMS X_fp (cm)' H.dc.x_fp 80 -60. 60.
+TH1F htr_y_fp 'HMS Y_fp (cm)' H.dc.y_fp 80 -40. 40.
+TH1F htr_xp_fp 'HMS Xp_fp (radians)' H.dc.xp_fp 80 -.1 .1
+TH1F htr_yp_fp 'HMS Yp_fp (radians)' H.dc.yp_fp 80 -.1 .1
+TH2F htr_x_y_fp 'HMS X Y focal plane; Y_fp (cm) ;X_fp (cm)' H.dc.y_fp H.dc.x_fp  80 -40. 40. 80 -60. 60.  cer_elec
+TH2F htr_x_y_fp1 'HMS X Y focal plane; Y_fp (cm) ;X_fp (cm)' H.dc.y_fp H.dc.x_fp  80 -10. 10. 80 -10. 10.  cer_elec
+TH1F htr_x_fp1 'HMS X_fp (cm)' H.dc.x_fp 80 -10. 10.
+#
 # Drift Chambers
 TH1F hdc_ref1 'HMS DC Reference Time Slot 5 Channel 111; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime 3000 12000 15000 
 TH1F hdc_ref2 'HMS DC Reference Time Slot 8 Channel 127; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime 3000 12000 15000
@@ -43,19 +83,35 @@ TH2F hdc2v1_wirenum_vs_tdc 'HMS DC 2V1 Wire Number vs. TDC; Wire Number; TDC Tim
 TH2F hdc2y2_wirenum_vs_tdc 'HMS DC 2Y2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2y2.wirenum H.dc.2y2.time 52  0.5  52.5 2000 -500 1500
 TH2F hdc2x2_wirenum_vs_tdc 'HMS DC 2X2 Wire Number vs. TDC; Wire Number; TDC Time (ns)' H.dc.2x2.wirenum H.dc.2x2.time 113 0.5 113.5 2000 -500 1500
 
-TH2F hdc1x1_wirenum_vs_resid 'HMS DC 1X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x1.wirenum H.dc.residual[0] 113 0.5 113.5 200 -1.0 1.0
-TH2F hdc1y1_wirenum_vs_resid 'HMS DC 1Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y1.wirenum H.dc.residual[1] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc1u1_wirenum_vs_resid 'HMS DC 1U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1u1.wirenum H.dc.residual[2] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc1v1_wirenum_vs_resid 'HMS DC 1V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1v1.wirenum H.dc.residual[3] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc1y2_wirenum_vs_resid 'HMS DC 1Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1y2.wirenum H.dc.residual[4] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc1x2_wirenum_vs_resid 'HMS DC 1X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.1x2.wirenum H.dc.residual[5] 113 0.5 113.5 200 -1.0 1.0
+TH1F hdc1x1_resid 'HMS DC 1X1 Residuals; Residuals (cm)'  H.dc.residual[0]  200 -.3 .3  cer_elec
+TH1F hdc1y1_resid 'HMS DC 1Y1 Residuals; Residuals (cm)'  H.dc.residual[1]  200 -.3 .3 cer_elec
+TH1F hdc1u1_resid 'HMS DC 1U1 Residuals; Residuals (cm)'  H.dc.residual[2]  200 -.3 .3 cer_elec
+TH1F hdc1v1_resid 'HMS DC 1V1 Residuals; Residuals (cm)'  H.dc.residual[3]  200 -.3 .3 cer_elec
+TH1F hdc1y2_resid 'HMS DC 1Y2 Residuals; Residuals (cm)'  H.dc.residual[4]  200 -.3 .3 cer_elec
+TH1F hdc1x2_resid 'HMS DC 1X2 Residuals; Residuals (cm)'  H.dc.residual[5]  200 -.3 .3 cer_elec
 
-TH2F hdc2x1_wirenum_vs_resid 'HMS DC 2X1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x1.wirenum H.dc.residual[6] 113 0.5 113.5 200 -1.0 1.0
-TH2F hdc2y1_wirenum_vs_resid 'HMS DC 2Y1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y1.wirenum H.dc.residual[7] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc2u1_wirenum_vs_resid 'HMS DC 2U1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2u1.wirenum H.dc.residual[8] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc2v1_wirenum_vs_resid 'HMS DC 2V1 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2v1.wirenum H.dc.residual[9] 107 0.5 107.5 200 -1.0 1.0
-TH2F hdc2y2_wirenum_vs_resid 'HMS DC 2Y2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2y2.wirenum H.dc.residual[10] 52  0.5  52.5 200 -1.0 1.0
-TH2F hdc2x2_wirenum_vs_resid 'HMS DC 2X2 Wire Number vs. Residuals; Wire Number; Residuals (mm)' H.dc.2x2.wirenum H.dc.residual[11] 113 0.5 113.5 200 -1.0 1.0
+TH2F hdc1y1_y2_resid 'HMS DC Residuals ;  Y1 wire ;Y1 resid - Y2 Residuals (cm)' H.dc.1y1.wirenum H.dc.residual[1]-H.dc.residual[4] 52  0.5  52.5  200 -.3 .3  cer_elec
+
+TH1F hdc2x1_resid 'HMS DC 2X1 Residuals; Residuals (cm)'  H.dc.residual[6]  200 -.3 .3 cer_elec
+TH1F hdc2y1_resid 'HMS DC 2Y1 Residuals; Residuals (cm)'  H.dc.residual[7]  200 -.3 .3 cer_elec
+TH1F hdc2u1_resid 'HMS DC 2U1 Residuals; Residuals (cm)'  H.dc.residual[8]  200 -.3 .3 cer_elec
+TH1F hdc2v1_resid 'HMS DC 2V1 Residuals; Residuals (cm)'  H.dc.residual[9]  200 -.3 .3 cer_elec
+TH1F hdc2y2_resid 'HMS DC 2Y2 Residuals; Residuals (cm)'  H.dc.residual[10] 200 -.3 .3 cer_elec
+TH1F hdc2x2_resid 'HMS DC 2X2 Residuals; Residuals (cm)'  H.dc.residual[11] 200 -.3 .3 cer_elec
+
+TH2F hdc1x1_wirenum_vs_resid 'HMS DC 1X1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1x1.wirenum H.dc.residual[0] 113 0.5 113.5 200 -.3 .3  cer_elec
+TH2F hdc1y1_wirenum_vs_resid 'HMS DC 1Y1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1y1.wirenum H.dc.residual[1] 52  0.5  52.5 200 -.3 .3 cer_elec
+TH2F hdc1u1_wirenum_vs_resid 'HMS DC 1U1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1u1.wirenum H.dc.residual[2] 107 0.5 107.5 200 -.3 .3 cer_elec
+TH2F hdc1v1_wirenum_vs_resid 'HMS DC 1V1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1v1.wirenum H.dc.residual[3] 107 0.5 107.5 200 -.3 .3 cer_elec
+TH2F hdc1y2_wirenum_vs_resid 'HMS DC 1Y2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1y2.wirenum H.dc.residual[4] 52  0.5  52.5 200 -.3 .3 cer_elec
+TH2F hdc1x2_wirenum_vs_resid 'HMS DC 1X2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.1x2.wirenum H.dc.residual[5] 113 0.5 113.5 200 -.3 .3 cer_elec
+
+TH2F hdc2x1_wirenum_vs_resid 'HMS DC 2X1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2x1.wirenum H.dc.residual[6] 113 0.5 113.5 200 -.3 .3 cer_elec
+TH2F hdc2y1_wirenum_vs_resid 'HMS DC 2Y1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2y1.wirenum H.dc.residual[7] 52  0.5  52.5 200 -.3 .3 cer_elec
+TH2F hdc2u1_wirenum_vs_resid 'HMS DC 2U1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2u1.wirenum H.dc.residual[8] 107 0.5 107.5 200 -.3 .3 cer_elec
+TH2F hdc2v1_wirenum_vs_resid 'HMS DC 2V1 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2v1.wirenum H.dc.residual[9] 107 0.5 107.5 200 -.3 .3 cer_elec
+TH2F hdc2y2_wirenum_vs_resid 'HMS DC 2Y2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2y2.wirenum H.dc.residual[10] 52  0.5  52.5 200 -.3 .3 cer_elec
+TH2F hdc2x2_wirenum_vs_resid 'HMS DC 2X2 Wire Number vs. Residuals; Wire Number; Residuals (cm)' H.dc.2x2.wirenum H.dc.residual[11] 113 0.5 113.5 200 -.3 .3 cer_elec
 
 TH2F hdc_xfp_vs_yxp 'HMS DC Xfp vs Yxp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' H.dc.y H.dc.x 100 -50 50 100 -50 50
 TH2F hdc_xfpp_vs_yxpp 'HMS DC Xfpp vs Yxpp; Yfpp; Xfpp' H.dc.yp H.dc.xp 100 -1 1 100 -1 1
@@ -156,6 +212,27 @@ TH1F hcal_hD_occu 'HMS hD+ ADC Occupancy; Block Number; Number of ADC Hits' H.ca
 TH2F hcal_hD_ped_blk 'HMS hD+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPed 13 0.5 13.5 1000 0 1000
 TH2F hcal_hD_pi_blk 'HMS hD+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseInt 13 0.5 13.5 4000 0 40000
 TH2F hcal_hD_pamp_blk 'HMS hD+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmp 13 0.5 13.5 4100 0 4100
+TH1F htrig_multhodo_ch1xy 'HMS Hodoscope Trig Mult 1X and 1Y ' T.hms.h1T_tdcMultiplicity 11 0 11 
+TH1F htrig_multhodo_ch1x 'HMS Hodoscope Trig Mult 1X ' T.hms.h1X_tdcMultiplicity 11 0 11 
+TH1F htrig_multhodo_ch1y 'HMS Hodoscope Trig Mult 1Y ' T.hms.h1Y_tdcMultiplicity 11 0 11
+TH1F htrig_multhodo_ch2xy 'HMS Hodoscope Trig Mult 2X and 2Y ' T.hms.h2T_tdcMultiplicity 11 0 11 
+TH1F htrig_multhodo_ch2x 'HMS Hodoscope Trig Mult 2X ' T.hms.h2X_tdcMultiplicity 11 0 11 
+TH1F htrig_multhodo_ch2y 'HMS Hodoscope Trig Mult 2Y ' T.hms.h2Y_tdcMultiplicity 11 0 11 
+
+TH1F htrig_hodo_ch1xy 'HMS Hodoscope Trig 1X and 1Y (ns)' T.hms.h1T_tdcTime 200 0 400 T.hms.h1T_tdcMultiplicity==1
+TH1F htrig_hodo_ch1x 'HMS Hodoscope Trig 1X (ns)' T.hms.h1X_tdcTime 200 0 400 T.hms.h1X_tdcMultiplicity==1
+TH1F htrig_hodo_ch1y 'HMS Hodoscope Trig 1Y (ns)' T.hms.h1Y_tdcTime 200 0 400 T.hms.h1Y_tdcMultiplicity==1
+TH1F htrig_hodo_ch2xy 'HMS Hodoscope Trig 2X and 2Y (ns)' T.hms.h2T_tdcTime 200 0 400 T.hms.h2T_tdcMultiplicity==1
+TH1F htrig_hodo_ch2x 'HMS Hodoscope Trig 2X (ns)' T.hms.h2X_tdcTime 200 0 400 T.hms.h2X_tdcMultiplicity==1
+TH1F htrig_hodo_ch2y 'HMS Hodoscope Trig 2Y (ns)' T.hms.h2Y_tdcTime 200 0 400 T.hms.h2Y_tdcMultiplicity==1
+
+TH2F htrig_ch1xy_ch2xy 'HMS Hodo Trig; 1X1Y Trig (ns); 2X2Y Trig (ns)' T.hms.h1T_tdcTime  T.hms.h2T_tdcTime 200 200 350 200 200 350 T.hms.h2T_tdcMultiplicity==1&&T.hms.h1T_tdcMultiplicity==1
+TH2F htrig_ch1x_ch2x 'hms Hodo Trig ;Trig 1X (ns);Trig 2X (ns)' T.hms.h1X_tdcTime  T.hms.h2X_tdcTime 200 200 350 200 200 350 T.hms.h2X_tdcMultiplicity==1&&T.hms.h1X_tdcMultiplicity==1
+TH2F htrig_ch1x_ch2y 'hms Hodo Trig ;Trig 1X (ns);Trig 2Y (ns)' T.hms.h1X_tdcTime  T.hms.h2Y_tdcTime 200 200 350 200 200 350 T.hms.h2Y_tdcMultiplicity==1&&T.hms.h1X_tdcMultiplicity==1
+TH2F htrig_ch1y_ch1x 'hms Hodo Trig ;Trig 1X (ns);Trig 1Y (ns)' T.hms.h1X_tdcTime  T.hms.h1Y_tdcTime 200 200 350 200 200 350 T.hms.h1Y_tdcMultiplicity==1&&T.hms.h1X_tdcMultiplicity==1
+TH2F htrig_ch1y_ch2x 'hms Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.hms.h1Y_tdcTime  T.hms.h2X_tdcTime 200 200 350 200 200 350 T.hms.h2X_tdcMultiplicity==1&&T.hms.h1Y_tdcMultiplicity==1
+TH2F htrig_ch1y_ch2y 'hms Hodo Trig; 1Y Trig (ns); 2Y Trig (ns)' T.hms.h1Y_tdcTime  T.hms.h2Y_tdcTime 200 200 350 200 200 350 T.hms.h2Y_tdcMultiplicity==1&&T.hms.h1Y_tdcMultiplicity==1
+TH2F htrig_ch2y_ch2x 'HMS Hodo Trig; 2Y Trig (ns); 2X Trig (ns)' T.hms.h2Y_tdcTime  T.hms.h2X_tdcTime 200 200 350 200 200 350 T.hms.h2X_tdcMultiplicity==1&&T.hms.h2Y_tdcMultiplicity==1
 
 # Trigger Apparatus
 TH1F htrig_hCERsum_pped 'HMS Cherenkov Sum Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Unit' T.hms.hCERSUM_adcPed 1000 0 1000
