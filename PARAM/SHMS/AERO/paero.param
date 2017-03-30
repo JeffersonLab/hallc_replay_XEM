@@ -7,22 +7,26 @@ paero_pos_gain = 1./496.7, 1./467.5, 1./554.3, 1./766.1, 1./412.1, 1./517.9, 1./
 ; Negative aerogel gain factors
 paero_neg_gain = 1./586.8, 1./536.5, 1./690.5, 1./563.1, 1./574.4, 1./432.7, 1./601.5
 
+; Track matching reduced chi2 cut values
 paero_red_chi2_min = 0.0
 paero_red_chi2_max = 25.0
 
+; Track matching beta cut values
 paero_beta_min = 0.0
 paero_beta_max = 1.2
 
+; Track matching normailized energy (E/p) cut values
 paero_enorm_min = 0.0
 paero_enorm_max = 1.5
 
+; ADC time window cut values used to select "good" ADC events
 paero_adcTimeWindowMin = 500.
 paero_adcTimeWindowMax = 2500.
 
-; Threshold for good hit (for measureing effic.)
+; NPE Threshold for "good" hit (for measureing effic.)
 paero_npe_thresh = 0.5
 
-; Value cited by Hamlet M. 03/29/2017
+; Value of zpos for diffusion box cited by Hamlet M. 03/29/2017
 paero_diff_box_zpos = 231.0
 
 ; Number of regions in which tracks can be matched to
@@ -32,7 +36,6 @@ paero_num_regions = 1;
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
 ; Defined in clomuns, region 1, region 2, region 3, region 4...
 ; Assumes rectangular volume with x = 103.0 cm and y = 113.0 cm
-; FIX ME! Waiting for numbers from detector
 paero_region =  0.0,
                 0.0,
                 0.0,
@@ -41,6 +44,3 @@ paero_region =  0.0,
                56.5,
 	       0.15,
 	        0.1
-
-paero_debug_adc = 1
-
