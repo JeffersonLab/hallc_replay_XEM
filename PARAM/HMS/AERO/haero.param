@@ -30,7 +30,7 @@ haero_npe_thresh = 0.5
 ; FIX ME! This value is for the SHMS!
 haero_diff_box_zpos = 231.0
 
-; Number of regions in which tracks can be matched to
+; Number of regions in which tracks can be matched too
 haero_num_regions = 1;
 
 ; phgcer_region: 8 values for each region
