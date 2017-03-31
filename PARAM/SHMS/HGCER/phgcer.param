@@ -4,19 +4,23 @@ phgcer_tot_pmts = 4
 ; Garth H. gain calibration from run 486, March 9 2017
 phgcer_adc_to_npe = 1/436., 1/393., 1/364., 1/372.
 
+; Track matching reduced chi2 cut values
 phgcer_red_chi2_min = 0.0
 phgcer_red_chi2_max = 25.0
 
+; Track matching beta cut values
 phgcer_beta_min = 0.0
 phgcer_beta_max = 1.2
 
+; Track matching normailized energy (E/p) cut values
 phgcer_enorm_min = 0.0
 phgcer_enorm_max = 1.5
 
+; ADC time window cut values used to select "good" ADC events
 phgcer_adcTimeWindowMin = 500.
 phgcer_adcTimeWindowMax = 2500.
 
-; Threshold for good hit (for measureing effic.)
+; ; NPE Threshold for "good" hit (for measureing effic.)
 phgcer_npe_thresh = 0.5
 
 ; Guess from Dwg. 67165-E-00001 R0
@@ -24,6 +28,7 @@ phgcer_mirror_zpos = 175.1
 
 phgcer_num_regions = 4;
 
+; Number of regions in which tracks can be matched too
 ; phgcer_region: 8 values for each region (1 per mirror + sum)
 ; central x,y,dx,dy values and x,y,dx,dy half widths.
 ; Defined in clomuns, region 1, region 2, region 3, region 4...
