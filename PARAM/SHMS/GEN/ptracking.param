@@ -71,12 +71,8 @@ pntracks_max_fp = 10
   pstat_cal_slop = 2.
 ; phgcer_min_eff            warning level for cerenkov effic.
   phgcer_min_eff = .98
-; phgcer_threshold          threshold for good hit (for measureing effic.)
-  phgcer_threshold = 0.5
 ; pngcer_min_eff            warning level for cerenkov effic.
   pngcer_min_eff = .98
-; pngcer_threshold          threshold for good hit (for measureing effic.)
-  pngcer_threshold = 0.5
 ; pdc_min_eff             warning level for dc raw effic.(1 per plane)
   pdc_min_eff = .96,.98,.96,.98,.98,.94
                 .96,.98,.98,.98,.98,.96
