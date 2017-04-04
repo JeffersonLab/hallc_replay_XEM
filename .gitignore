@@ -16,3 +16,14 @@ full_hms.sh
 full_shms.sh
 onlineGUI/Config/kpp_*
 run_*
+*.d
+*.so
+*Auto*
+CALIBRATION/shms_cal_calib/pcal.param*
+CALIBRATION/hms_cal_calib/hcal.param*
+CALIBRATION/shms_cal_calib/calibrated.deb
+CALIBRATION/hms_cal_calib/calibrated.deb
+CALIBRATION/hms_cal_calib/hcal_calib_cpp_ACLiC_dict_rdict.pcm
+CALIBRATION/shms_cal_calib/pcal_calib_cpp_ACLiC_dict_rdict.pcm
+
+
