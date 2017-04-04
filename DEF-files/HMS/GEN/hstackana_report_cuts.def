@@ -121,16 +121,16 @@ Tracking_master  HMS_event
 
 Block: Reconstruct
 Reconstruct_master HMS_event
-cer_pmt1_elec        H.cer.npe[0]>.25
-cer_pmt2_elec        H.cer.npe[0]>.25
-cer_elec       H.cer.npesum>.25
-cer_pi       H.cer.npesum<.25
+cer_pmt1_elec        H.cer.npe[0]>.5
+cer_pmt2_elec        H.cer.npe[0]>.5
+cer_elec       H.cer.npeSum>.5
+cer_pi       H.cer.npeSum<.5
 
 HMSScinGood           H.hod.goodscinhit == 1
 
-HMSScinShould         HMSScinGood && H.cal.etotnorm > 0.7 && H.cer.npesum > 2.0
-HMSScinShoulde        HMSScinGood && H.cer.npesum > 2.0
-HMSScinShouldh        H.hod.goodscinhit == 1 && g.evtyp == 1
+HMSScinShould         HMSScinGood 
+HMSScinShoulde        HMSScinGood && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
+HMSScinShouldh        HMSScinGood && H.cal.etotnorm <0.6&& H.cal.etotnorm>0.0&& H.cer.npeSum < 0.5
 
 HMSScinDid            HMSScinShould && H.dc.ntrack > 0
 HMSScinDide           HMSScinShoulde && H.dc.ntrack > 0

@@ -21,18 +21,18 @@ TH1F hcal_xtrack2 'HMS Cal X pos of track no matching clust number of cluster=1'
 TH1F hcal_enenorm 'HMS Cal energy normalized by Central MOM' H.cal.etotnorm 300 0. 1.5
 TH1F hcal_ene_track 'HMS Cal energy (best track)' H.cal.etrack 1000 0. 5. H.dc.ntrack>0
 TH1F hcal_enenorm_track 'HMS Cal energy normalized by best track mom' H.cal.etracknorm 1000 0. 1.5 H.dc.ntrack>0
-TH1F hcal_enenorm_track_elec 'HMS Cal energy/p (npesum > .5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
-TH1F hcal_enenorm_track_pion 'HMS Cal energy/p (npesum <.5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npesum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH1F hcal_enenorm_track_elec 'HMS Cal energy/p (npeSum > .5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+TH1F hcal_enenorm_track_pion 'HMS Cal energy/p (npeSum <.5 && abs(del)<8)' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
 TH2F hcal_ene_2dtrack 'HMS Cal energy v energy track' H.cal.etrack H.cal.etot 1000 0. 5. 1000 0. 5. H.dc.ntrack>0
 TH2F hcal_delta_etrack 'HMS Delta v Cal energy/p ' H.cal.etracknorm H.gtr.dp 300 0. 1.5 600 -15. 15. H.dc.ntrack>0
-TH2F hcal_npe_etrack 'HMS Cer Npe v Cal energy/p' H.cal.etracknorm H.cer.npesum 300 0. 1.5 60 0. 15. H.dc.ntrack>0
-TH1F hcer_pmt1 'HMS GAS Cher PMT1; ADC ; Counts' H.cer.adc_p[0] 200 0 10000 
-TH1F hcer_pmt2 'HMS GAS Cher PMT2; ADC ; Counts' H.cer.adc_p[1] 200 0 10000 
+TH2F hcal_npe_etrack 'HMS Cer Npe v Cal energy/p' H.cal.etracknorm H.cer.npeSum 300 0. 1.5 60 0. 15. H.dc.ntrack>0
+TH1F hcer_pmt1 'HMS GAS Cher PMT1; ADC ; Counts' H.cer.goodAdcPulseInt[0] 200 0 10000 
+TH1F hcer_pmt2 'HMS GAS Cher PMT2; ADC ; Counts' H.cer.goodAdcPulseInt[1] 200 0 10000 
 TH1F hcer_pmt1_nphe 'HMS GAS Cher PMT1; Number of PE ; Counts' H.cer.npe[0] 80 0 20
 TH1F hcer_pmt2_nphe 'HMS GAS Cher PMT2;  Number of PE ; Counts' H.cer.npe[1] 80 0 20 
-TH1F hcer_sum_nphe 'HMS GAS Cher;  Total Number of PE ; Counts' H.cer.npesum 80 0 20 
-TH2F hcer_sum_nphe_x 'HMS GAS Cher;  Total Number of PE ; X_fp' H.cer.npesum H.dc.x_fp 80 0 20 80 -60. 60.
-TH2F hcer_sum_nphe_dp 'HMS GAS Cher;  Total Number of PE ; Delta (%) ' H.cer.npesum H.gtr.dp 80 0 20 120 -15. 20.
+TH1F hcer_sum_nphe 'HMS GAS Cher;  Total Number of PE ; Counts' H.cer.npeSum 80 0 20 
+TH2F hcer_sum_nphe_x 'HMS GAS Cher;  Total Number of PE ; X_fp' H.cer.npeSum H.dc.x_fp 80 0 20 80 -60. 60.
+TH2F hcer_sum_nphe_dp 'HMS GAS Cher;  Total Number of PE ; Delta (%) ' H.cer.npeSum H.gtr.dp 80 0 20 120 -15. 20.
 TH1F hbeta 'HMS beta' H.hod.beta 240 -1.2 1.2
 TH1F hbetanotrack 'HMS beta' H.hod.betanotrack 240 -1.2 1.2
 TH1F htr_x 'HMS x' H.tr.x 80 -40. 40.
@@ -170,15 +170,15 @@ TH2F hhodo_2y_neg_tdc_time_vs_pad 'HMS Hodoscope 2Y- TDC Time vs. Paddle Number;
 
 # Cherenkov
 TH1F hgcer_occu 'HMS Cherenkov ADC Occupancy; PMT Number; Number of ADC Hits' H.cer.adcCounter 2 0.5 2.5
-TH2F hgcer_ped_vs_cntr 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPed 2 0.5 2.5 1000 0 1000
-TH2F hgcer_pi_vs_cntr 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 4000 0 40000
-TH2F hgcer_pamp_vs_cntr 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 4100 0 4100
+TH2F hgcer_ped_vs_cntr 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal / 1 ADC Units' [I] H.cer.goodAdcPed 3 0 3 1000 0 1000
+TH2F hgcer_pi_vs_cntr 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' [I] H.cer.goodAdcPulseInt 3 0 3 4000 0 40000
+TH2F hgcer_pamp_vs_cntr 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 1 ADC Units' [I] H.cer.goodAdcPulseAmp 3 0 3 4100 0 4100
 
 #
-TH1F hgcer_pmt1_adc  'HMS Cherenkov PMT 1 ; ADC (chan) ; Counts' H.cer.adc_p[0] 1000 0. 100000. H.cer.adc_hit[0]==1
-TH1F hgcer_pmt2_adc  'HMS Cherenkov PMT 2 ; ADC (chan) ; Counts' H.cer.adc_p[1] 1000 0. 100000. H.cer.adc_hit[1]==1
-TH1F hgcer_pmt1_nphe 'HMS Cherenkov PMT 1 ; N_Phe ; Counts' H.cer.npe[0] 500 0. 100. H.cer.adc_hit[0]==1
-TH1F hgcer_pmt2_nphe 'HMS Cherenkov PMT 2 ; N_Phe ; Counts' H.cer.npe[1] 500 0. 100. H.cer.adc_hit[1]==1
+TH1F hgcer_pmt1_adc  'HMS Cherenkov PMT 1 ; ADC (chan) ; Counts' H.cer.goodAdcPulseInt[0] 1000 0. 100000. 
+TH1F hgcer_pmt2_adc  'HMS Cherenkov PMT 2 ; ADC (chan) ; Counts' H.cer.goodAdcPulseInt[1] 1000 0. 100000. 
+TH1F hgcer_pmt1_nphe 'HMS Cherenkov PMT 1 ; N_Phe ; Counts' H.cer.npe[0] 500 0. 100. 
+TH1F hgcer_pmt2_nphe 'HMS Cherenkov PMT 2 ; N_Phe ; Counts' H.cer.npe[1] 500 0. 100. 
 
 
 # Pre-Shower

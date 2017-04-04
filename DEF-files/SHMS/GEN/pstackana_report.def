@@ -20,28 +20,27 @@ TH1F pcal_xtrack2 'SHMS Cal X pos of track no matching clust number of cluster=1
 TH1F pcal_enenorm 'SHMS Cal energy normalized by Central MOM' P.cal.etotnorm 300 0. 1.5
 TH1F pcal_ene_track 'SHMS Cal energy (best track)' P.cal.etrack 1000 0. 5. P.dc.ntrack>0
 TH1F pcal_enenorm_track 'SHMS Cal energy normalized by best track mom' P.cal.etracknorm 1000 0. 1.5 P.dc.ntrack>0
-TH1F pcal_enenorm_track_elec 'SHMS Cal energy/p (npesum > .5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npesum>.5&&P.hgcer.npesum>.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
-TH1F pcal_enenorm_track_pion 'SHMS Cal energy/p (npesum <.5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npesum<.5&&P.hgcer.npesum<.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+TH1F pcal_enenorm_track_elec 'SHMS Cal energy/p (npeSum > .5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npeSum>.5&&P.hgcer.npeSum>.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+TH1F pcal_enenorm_track_pion 'SHMS Cal energy/p (npeSum <.5 && abs(del)<8)' P.cal.etracknorm 300 0. 1.5 P.dc.ntrack>0&&P.ngcer.npeSum<.5&&P.hgcer.npeSum<.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
 TH2F pcal_ene_2dtrack 'SHMS Cal energy v energy track' P.cal.etrack P.cal.etot 1000 0. 5. 1000 0. 5. P.dc.ntrack>0
-TH2F pcal_delta_etrack 'SHMS Delta v Cal energy/p ' P.cal.etracknorm P.gtr.dp 300 0. 1.5 600 -15. 15. P.dc.ntrack>0
-TH2F pcal_npe_etrack 'SHMS Cer Npe v Cal energy/p' P.cal.etracknorm P.cer.npesum 300 0. 1.5 60 0. 15. P.dc.ntrack>0
+TH2F pcal_delta_etrack 'SHMS Delta v Cal energy/p ' P.cal.etracknorm P.gtr.dp 60 0. 1.5 80 -15. 25. P.dc.ntrack>0
+TH2F pcal_ngnpe_etrack 'SHMS NG Cer Npe v Cal energy/p' P.cal.etracknorm P.ngcer.npeSum 300 0. 1.5 60 0. 15. P.dc.ntrack>0
+TH2F pcal_hgnpe_etrack 'SHMS HG Cer Npe v Cal energy/p' P.cal.etracknorm P.hgcer.npeSum 300 0. 1.5 60 0. 15. P.dc.ntrack>0
 
 
 # Noble Gas Cherenkov
 TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
-TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 1000
-TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
-TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
+TH1F pngcer_occu_elec 'SHMS Noble Gas Cherenkov Occupancy ( cut sum npe ; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5 P.ngcer.npeSum>0.5
 
-TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.adc_p[0] 1000 0. 100000. P.ngcer.adc_hit[0]==1
-TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.adc_p[1] 1000 0. 100000. P.ngcer.adc_hit[1]==1
-TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.adc_p[2] 1000 0. 100000. P.ngcer.adc_hit[2]==1
-TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.adc_p[3] 1000 0. 100000. P.ngcer.adc_hit[3]==1
-TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 80 0. 20. P.ngcer.adc_hit[0]==1
-TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 80 0. 20. P.ngcer.adc_hit[1]==1
-TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 80 0. 20. P.ngcer.adc_hit[2]==1
-TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 80 0. 20. P.ngcer.adc_hit[3]==1
-TH1F pngcer_ nphe 'SHMS NG Cherenkov Sum ; N_Phe ; Counts' P.ngcer.npesum 80 0. 20. P.ngcer.adc_hit[3]==1
+TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[0] 1000 0. 100000.
+TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[1] 1000 0. 100000.
+TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[2] 1000 0. 100000.
+TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[3] 1000 0. 100000.
+TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 80 0. 20.
+TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 80 0. 20.
+TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 80 0. 20.
+TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 80 0. 20.
+TH1F pngcer_sumnphe 'SHMS NG Cherenkov; Sum of N_Phe ; Counts' P.ngcer.npeSum 80 0. 20. 
 
 # Drift Chambers
 TH1F pdc_ref1  'SHMS DC Reference Time Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks;' T.shms.pDCREF1_tdcTime  200 12000 14000
@@ -112,11 +111,9 @@ TH2F pdc2u2_wirenum_vs_resid 'SHMS 2U2 DC Wire Number vs. Residuals; Wire Number
 TH2F pdc2u1_wirenum_vs_resid 'SHMS 2U1 DC Wire Number vs. Residuals; Wire Number; Residuals (mm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 600 -.3 .3
 
 TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yxp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' P.dc.y P.dc.x 100 -50 50 100 -50 50
-TH2F pdc_xfpp_vs_yxpp 'SHMS DC Xfpp vs Yxpp; Yfpp; Xfpp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1
-TH2F pdc_xfp_vs_yxp_1 'SHMS DC Y_fp vs X_fp; Xfp (cm); Yfp (cm)'  P.dc.y_fp P.dc.x_fp 100 -50 50 100 -50 50 
-TH2F pdc_xfpp_vs_yxpp_1 'SHMS DC Yp_fp vs Xp_fp; Xp_fp (radians); Yp_fp (radians)' P.dc.yp_fp P.dc.xp_fp 100 -1 1 100 -1 1 
-TH2F pdc_xfp_vs_yxp_1 'SHMS DC Yp_fp vs X_fp; Xfp (cm); Yp_fp (radians)'  P.dc.x_fp P.dc.yp_fp 100 -50 50 100 .1 .1 
-TH2F pdc_xfpp_vs_yxpp_1 'SHMS DC Xp_fp vs X_fp; X_fp (radians); Xp_fp (radians)' P.dc.x_fp P.dc.xp_fp 100 -1 1 100 -.1 .1 
+TH2F pdc_xpfp_vs_ypfp 'SHMS DC Xp_fp vs Yp_xp; Yp_fp; Xp_fp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1
+TH2F pdc_xfp_vs_ypfp 'SHMS DC Yp_fp vs X_fp; Xfp (cm); Yp_fp (radians)'  P.dc.x_fp P.dc.yp_fp 100 -50 50 100 .1 .1 
+TH2F pdc_xfp_vs_xpfp_1 'SHMS DC Xp_fp vs X_fp; X_fp (cm); Xp_fp (radians)' P.dc.x_fp P.dc.xp_fp 100 -1 1 100 -.1 .1 
 
 # Hodoscopes (Positive/Left) 
 TH1F phodo_1x_pos_adc_occu 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5
@@ -188,29 +185,18 @@ TH2F phodo_2y_neg_tdc_time_vs_pad 'SHMS Hodoscope 2Y- TDC Time vs. Paddle Number
 
 # Heavy Gas Cherenkov
 TH1F phgcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.hgcer.adcCounter 4 0.5 4.5
-TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 1000 0 10000
-TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
-TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
+TH1F phgcer_occu_elec 'SHMS Heavy Gas Cherenkov Occupancy (sum npe>0.5); Counter Number; Number of Entries' P.hgcer.adcCounter 4 0.5 4.5 P.hgcer.npeSum>0.5
 
-TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.adc_p[0] 1000 0. 100000. P.hgcer.adc_hit[0]==1
-TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.adc_p[1] 1000 0. 100000. P.hgcer.adc_hit[1]==1
-TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.adc_p[2] 1000 0. 100000. P.hgcer.adc_hit[2]==1
-TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.adc_p[3] 1000 0. 100000. P.hgcer.adc_hit[3]==1
+TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[0] 1000 0. 100000. 
+TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[1] 1000 0. 100000. 
+TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[2] 1000 0. 100000. 
+TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[3] 1000 0. 100000. 
 TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 80 0. 20. 
 TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 80 0. 20. 
 TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 80 0. 20. 
 TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 80 0. 20. 
-TH1F phgcer_sum_nphe  'SHMS HG Cherenkov Sum ; N_Phe ; Counts' P.hgcer.npesum 40 0. 40. 
+TH1F phgcer_sum_nphe  'SHMS HG Cherenkov Sum ; N_Phe ; Counts' P.hgcer.npeSum 40 0. 40. 
 
-# Aerogel
-TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
-TH2F paero_pos_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 1000 0 1000
-TH2F paero_pos_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero_pos_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 4100 0 4100
-TH1F paero_neg_occu 'SHMS Aero- Occupancy; Counter Number; Number of Entries' P.aero.negAdcCounter 7 0.5 7.5
-TH2F paero_neg_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 1000 0 1000
-TH2F paero_neg_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 4000 0 40000
-TH2F paero_neg_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 4100 0 4100
 
 # Pre-Shower Calorimeter
 TH1F pcal_prshwr_pos_occu 'SHMS Preshower+ Occupancy; Block Number; Number of Entries' P.cal.pr.posAdcCounter 14 0.5 14.5

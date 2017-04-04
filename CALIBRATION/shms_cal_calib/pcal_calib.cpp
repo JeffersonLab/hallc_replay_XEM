@@ -41,7 +41,7 @@ void pcal_calib(string RunNumber) {
   theShowerCalib.hEuncSel->DrawCopy("same");
 
   Canvas->cd(2);
-  theShowerCalib.hESHvsEPR->Draw();
+  theShowerCalib.hESHvsEPR->Draw("colz");
 
   // Normalized energy deposition after calibration.
 
@@ -56,7 +56,7 @@ void pcal_calib(string RunNumber) {
   // SHMS delta(P) versus the calibrated energy deposition.
 
   Canvas->cd(4);
-  theShowerCalib.hDPvsEcal->Draw();
+  theShowerCalib.hDPvsEcal->Draw("colz");
 
   // Calculate the analysis rate
   t = clock() - t;

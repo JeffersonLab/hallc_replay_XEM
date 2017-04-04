@@ -19,7 +19,7 @@ run hcal_calib under hcana, by issuing command
 For instance, for calibration on hms_replay_303.root file in
 ROOTfiles, the correct commad would be
 
-.x pcal_calib.cpp+("303") .
+.x hcal_calib.cpp+("303") .
 
 Upon calibration, a canvas with representative plots will pop up. The
 calibration constants will be written in output file
