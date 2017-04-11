@@ -29,9 +29,9 @@ void replay_pngcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
 
-  // Load params for HMS trigger configuration
+  // Load params for SHMS trigger configuration
   gHcParms->Load("PARAM/TRIG/tshms.param");
-
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/pngcer_ptrig.map");
