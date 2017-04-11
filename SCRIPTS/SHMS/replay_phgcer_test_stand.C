@@ -31,7 +31,7 @@ void replay_phgcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/tshms.param");
-
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/phgcer_ptrig.map");
