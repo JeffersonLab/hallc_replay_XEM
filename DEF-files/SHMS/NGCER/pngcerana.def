@@ -3,21 +3,25 @@
 block P.ngcer.*
 block T.shms.*
 
-#1D HISTOS
-TH1F pngcer_goodadchits 'SHMS Noble Gas Cherenkov Number of Good ADC Hits Per PMT; Number of Good ADC Hits / PMT; Number of Entries' P.ngcer.numGoodAdcHits 4 0.5 4.5
-TH1F pngcer_tot_goodadchits 'SHMS Noble Gas Cherenkov Total Number of ADC Hits; Total Number of ADC Hits; Number of Entries' P.ngcer.totNumGoodAdcHits 4 0.5 4.5
+#1D HISTOGRAMS
+TH1F pngcer_raw_occ 'SHMS Noble Gas Cherenkov Raw Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
+TH1F pngcer_adcErrFlg 'SHMS Noble Gas Cherenkov Error Flag for When FPGA Fails; Error Flag; Number of Entries' P.ngcer.adcErrorFlag 22 -0.1 1.2
+TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Number of Good ADC Hits Per PMT; Number of Good ADC Hits / PMT; Number of Entries' P.ngcer.numGoodAdcHits 4 0.5 4.5
+TH1F pngcer_good_mult 'SHMS Noble Gas Cherenkov Total Number of Good ADC Hits; Total Number of Good ADC Hits; Number of Entries' P.ngcer.totNumGoodAdcHits 4 0.5 4.5
+TH1F pngcer_npe 'SHMS Noble Gas Cherenkov Number of Photoelectrons Per PMT; Number of Photoelectrons / PMT; Number of Entries' P.ngcer.npe 4 0.5 4.5 
+TH1F pngcer_tot_npe 'SHMS Noble Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries' P.ngcer.npeSum 4 0.5 4.5 
 
-#2D HISTOS
-TH2F pngcer_goodped_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.goodAdcPed 4 0.5 4.5 1000 0 10000
-TH2F pngcer_goodpi_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.goodAdcPulseInt 4 0.5 4.5 4000 0 40000
-TH2F pngcer_goodrawpi_vs_cntr 'SHMS Noble Gas Cherenkov Good Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.goodAdcPulseIntRaw 4 0.5 4.5 4000 0 40000
-TH2F pngcer_goodamp_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.ngcer.adcCounter P.ngcer.goodAdcPulseAmp 4 0.5 4.5 410 0 4100
-TH2F pngcer_goodptime_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.ngcer.adcCounter P.ngcer.goodAdcPulseTime 4 0.5 4.5 1000 0 10000
+#2D HISTOGRAMS
+TH2F pngcer_goodped_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' [I] P.ngcer.goodAdcPed 4 -0.5 3.5 1000 0 10000
+TH2F pngcer_goodpi_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' [I] P.ngcer.goodAdcPulseInt 4 -0.5 3.5 4000 0 40000
+TH2F pngcer_goodrawpi_vs_cntr 'SHMS Noble Gas Cherenkov Good Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' [I] P.ngcer.goodAdcPulseIntRaw 4 -0.5 3.5 4000 0 40000
+TH2F pngcer_goodamp_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' [I] P.ngcer.goodAdcPulseAmp 4 -0.5 3.5 410 0 4100
+TH2F pngcer_goodptime_vs_cntr 'SHMS Noble Gas Cherenkov Good Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' [I] P.ngcer.goodAdcPulseTime 4 -0.5 3.5 1000 0 10000
 
 
 #1D Histos for Debugging 
-TH1F pngcer_adchits 'SHMS Noble Gas Cherenkov ADC Hits Per PMT; Number of ADC Hits / PMT; Number of Entries' P.ngcer.numAdcHits 4 0.5 4.5
-TH1F pngcer_tot_adchits 'SHMS Noble Gas Cherenkov Total Number of ADC Hits; Total Number of ADC Hits; Number of Entries' P.ngcer.totNumAdcHits 4 0.5 4.5
+TH1F pngcer_occ 'SHMS Noble Gas Cherenkov ADC Hits Per PMT; Number of ADC Hits / PMT; Number of Entries' P.ngcer.numAdcHits 4 0.5 4.5
+TH1F pngcer_mult 'SHMS Noble Gas Cherenkov Total Number of ADC Hits; Total Number of ADC Hits; Number of Entries' P.ngcer.totNumAdcHits 4 0.5 4.5
 
 #2d Histos for Debugging 
 TH2F pngcer_rawped_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPedRaw 4 0.5 4.5 1000 0 10000
@@ -27,3 +31,4 @@ TH2F pngcer_rawptime_vs_cntr 'SHMS Noble Gas Cherenkov Raw Pulse Time vs. Counte
 TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Units' P.ngcer.adcCounter P.ngcer.adcPed 4 0.5 4.5 1000 0 1000
 TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseInt 4 0.5 4.5 4000 0 40000
 TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Units' P.ngcer.adcCounter P.ngcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
+
