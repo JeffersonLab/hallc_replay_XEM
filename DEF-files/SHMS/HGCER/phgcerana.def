@@ -8,27 +8,26 @@ TH1F phgcer_raw_occ 'SHMS Heavy Gas Cherenkov Raw Occupancy; Counter Number; Num
 TH1F phgcer_adcErrFlg 'SHMS Heavy Gas Cherenkov Error Flag for When FPGA Fails; Error Flag; Number of Entries' P.hgcer.adcErrorFlag 22 -0.1 1.2
 TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; Number of Good ADC Hits / PMT; Number of Entries' P.hgcer.numGoodAdcHits 4 0.5 4.5
 TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Total Number of Good ADC Hits; Number of Entries' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
-TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries' P.hgcer.npeSum 4 0.5 4.5 
+TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries' P.hgcer.npeSum 80 0.5 80.5 
 
 #2D HISTOGRAMS
-TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons Per PMT vs. Counter Number; Counter Number; Number of Photoelectrons / PMT' [I] P.hgcer.npe 4 -0.5 3.5 20 0 200 
-TH2F phgcer_goodped_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' [I] P.hgcer.goodAdcPed 4 -0.5 3.5 1000 0 10000
-TH2F phgcer_goodpi_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' [I] P.hgcer.goodAdcPulseInt 4 -0.5 3.5 4000 0 40000
-TH2F phgcer_goodrawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Good Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' [I] P.hgcer.goodAdcPulseIntRaw 4 -0.5 3.5 4000 0 40000
-TH2F phgcer_goodamp_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' [I] P.hgcer.goodAdcPulseAmp 4 -0.5 3.5 410 0 4100
-TH2F phgcer_goodptime_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' [I] P.hgcer.goodAdcPulseTime 4 -0.5 3.5 1000 0 10000
+TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons Per PMT vs. Counter Number; Counter Number; Number of Photoelectrons / PMT' [I] P.hgcer.npe 4 -0.5 3.5 80 0.5 80.5 
+TH2F phgcer_goodped_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 1 ADC Units' [I] P.hgcer.goodAdcPed 4 -0.5 3.5 1000 0 1000
+TH2F phgcer_goodpi_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 1 ADC Units' [I] P.hgcer.goodAdcPulseInt 4 -0.5 3.5 40000 0 40000
+TH2F phgcer_goodrawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Good Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 1 ADC Units' [I] P.hgcer.goodAdcPulseIntRaw 4 -0.5 3.5 40000 0 40000
+TH2F phgcer_goodamp_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 1 ADC Units' [I] P.hgcer.goodAdcPulseAmp 4 -0.5 3.5 4100 0 4100
+TH2F phgcer_goodptime_vs_cntr 'SHMS Heavy Gas Cherenkov Good Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 1 ADC Units' [I] P.hgcer.goodAdcPulseTime 4 -0.5 3.5 2600 0 2600
 
 
 #1D Histos for Debugging 
-TH1F phgcer_occ 'SHMS Heavy Gas Cherenkov Raw Occupancy; Number of ADC Hits / PMT; Number of Entries' P.hgcer.numAdcHits 4 0.5 4.5
 TH1F phgcer_mult 'SHMS Heavy Gas Cherenkov Raw Multiplicity; Total Number of ADC Hits; Number of Entries' P.hgcer.totNumAdcHits 4 0.5 4.5
 
 #2d Histos for Debugging 
-TH2F phgcer_rawped_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPedRaw 4 0.5 4.5 1000 0 10000
-TH2F phgcer_rawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseIntRaw 4 0.5 4.5 4000 0 40000
-TH2F phgcer_rawamp_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmpRaw 4 0.5 4.5 410 0 4100
-TH2F phgcer_rawptime_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseTimeRaw 4 0.5 4.5 1000 0 10000
+TH2F phgcer_rawped_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. Counter Number; Counter Number; Raw Pulse Pedestal / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPedRaw 4 0.5 4.5 10000 0 10000
+TH2F phgcer_rawpi_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Integral vs. Counter Number; Counter Number; Raw Pulse Integral / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseIntRaw 4 0.5 4.5 40000 0 40000
+TH2F phgcer_rawamp_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. Counter Number; Counter Number; Raw Pulse Amplitude / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmpRaw 4 0.5 4.5 4100 0 4100
+TH2F phgcer_rawptime_vs_cntr 'SHMS Heavy Gas Cherenkov Raw Pulse Time vs. Counter Number; Counter Number;  Raw Pulse Time / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseTimeRaw 4 0.5 4.5 10000 0 10000
 TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 1000 0 1000
-TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 4000 0 40000
+TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 40000 0 40000
 TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 4100 0 4100
 
