@@ -56,27 +56,31 @@ SLOT=17
  127,   2,  21,   1  ! hDCREF4
 
 
+! HDC_ID=11        ::  TDC
+
+
 DETECTOR=11  ! HMS chambers
 
 ROC=3
 
+
 SLOT=4
 REFINDEX=1
-96,3,1 ! Plane U, wire 1
-97,3,2 ! Plane U, wire 2
-98,3,3 ! Plane U, wire 3
-99,3,4 ! Plane U, wire 4
-100,3,5 ! Plane U, wire 5
-101,3,6 ! Plane U, wire 6
-102,3,7 ! Plane U, wire 7
-103,3,8 ! Plane U, wire 8
-104,3,9 ! Plane U, wire 9
-105,3,10 ! Plane U, wire 10
-106,3,11 ! Plane U, wire 11
-107,3,12 ! Plane U, wire 12
-108,3,13 ! Plane U, wire 13
-109,3,14 ! Plane U, wire 14
-110,1,113  ! Plane X, wire 113
+98,3,1 ! Plane U, wire 1
+99,3,2 ! Plane U, wire 2
+100,3,3 ! Plane U, wire 3
+101,3,4 ! Plane U, wire 4
+102,3,5 ! Plane U, wire 5
+103,3,6 ! Plane U, wire 6
+104,3,7 ! Plane U, wire 7
+105,3,8 ! Plane U, wire 8
+106,3,9 ! Plane U, wire 9
+107,3,10 ! Plane U, wire 10
+108,3,11 ! Plane U, wire 11
+109,3,12 ! Plane U, wire 12
+110,3,13 ! Plane U, wire 13
+111,3,14 ! Plane U, wire 14
+96,1,113  ! Plane X, wire 113
 
 SLOT=5
 REFINDEX=1
@@ -177,21 +181,21 @@ REFINDEX=1
 
 SLOT=7
 REFINDEX=1
-96,4,1 ! Plane V, wire 1
-97,4,2 ! Plane V, wire 2
-98,4,3 ! Plane V, wire 3
-99,4,4 ! Plane V, wire 4
-100,4,5 ! Plane V, wire 5
-101,4,6 ! Plane V, wire 6
-102,4,7 ! Plane V, wire 7
-103,4,8 ! Plane V, wire 8
-104,4,9 ! Plane V, wire 9
-105,4,10 ! Plane V, wire 10
-106,4,11 ! Plane V, wire 11
-107,4,12 ! Plane V, wire 12
-108,4,13 ! Plane V, wire 13
-109,4,14 ! Plane V, wire 14
-110,6,113! Plane X', wire 113
+98,4,1 ! Plane V, wire 1
+99,4,2 ! Plane V, wire 2
+100,4,3 ! Plane V, wire 3
+101,4,4 ! Plane V, wire 4
+102,4,5 ! Plane V, wire 5
+103,4,6 ! Plane V, wire 6
+104,4,7 ! Plane V, wire 7
+105,4,8 ! Plane V, wire 8
+106,4,9 ! Plane V, wire 9
+107,4,10 ! Plane V, wire 10
+108,4,11 ! Plane V, wire 11
+109,4,12 ! Plane V, wire 12
+110,4,13 ! Plane V, wire 13
+111,4,14 ! Plane V, wire 14
+96,6,113! Plane X', wire 113
 112,4,15 ! Plane V, wire 15
 113,4,16 ! Plane V, wire 16
 114,4,17 ! Plane V, wire 17
@@ -626,37 +630,37 @@ REFINDEX=1
 42,5,37 ! Plane Y', wire 37
 43,5,38 ! Plane Y', wire 38
 44,5,39 ! Plane Y', wire 39
-0,5,40 ! Plane Y', wire 40
-1,5,41 ! Plane Y', wire 41
-2,5,42 ! Plane Y', wire 42
-3,5,43 ! Plane Y', wire 43
-4,5,44 ! Plane Y', wire 44
-5,5,45 ! Plane Y', wire 45
-6,5,46 ! Plane Y', wire 46
-7,5,47 ! Plane Y', wire 47
-8,5,48 ! Plane Y', wire 48
-9,5,49 ! Plane Y', wire 49
-10,5,50 ! Plane Y', wire 50
-11,5,51 ! Plane Y', wire 51
-12,5,52 ! Plane Y', wire 52
+2,5,40 ! Plane Y', wire 40
+3,5,41 ! Plane Y', wire 41
+4,5,42 ! Plane Y', wire 42
+5,5,43 ! Plane Y', wire 43
+6,5,44 ! Plane Y', wire 44
+7,5,45 ! Plane Y', wire 45
+8,5,46 ! Plane Y', wire 46
+9,5,47 ! Plane Y', wire 47
+10,5,48 ! Plane Y', wire 48
+11,5,49 ! Plane Y', wire 49
+12,5,50 ! Plane Y', wire 50
+13,5,51 ! Plane Y', wire 51
+14,5,52 ! Plane Y', wire 52
 
 SLOT=16
 REFINDEX=1
-  96,   9,   1  ! Plane U, wire 1
-  97,   9,   2  ! Plane U, wire 2
-  98,   9,   3  ! Plane U, wire 3
-  99,   9,   4  ! Plane U, wire 4
- 100,   9,   5  ! Plane U, wire 5
- 101,   9,   6  ! Plane U, wire 6
- 102,   9,   7  ! Plane U, wire 7
- 103,   9,   8  ! Plane U, wire 8
- 104,   9,   9  ! Plane U, wire 9
- 105,   9,  10  ! Plane U, wire 10
- 106,   9,  11  ! Plane U, wire 11
- 107,   9,  12  ! Plane U, wire 12
- 108,   9,  13  ! Plane U, wire 13
- 109,   9,  14  ! Plane U, wire 14
- 110,   7, 113  ! Plane X, wire 113
+  98,   9,   1  ! Plane U, wire 1
+  99,   9,   2  ! Plane U, wire 2
+ 100,   9,   3  ! Plane U, wire 3
+ 101,   9,   4  ! Plane U, wire 4
+ 102,   9,   5  ! Plane U, wire 5
+ 103,   9,   6  ! Plane U, wire 6
+ 104,   9,   7  ! Plane U, wire 7
+ 105,   9,   8  ! Plane U, wire 8
+ 106,   9,   9  ! Plane U, wire 9
+ 107,   9,  10  ! Plane U, wire 10
+ 108,   9,  11  ! Plane U, wire 11
+ 109,   9,  12  ! Plane U, wire 12
+ 110,   9,  13  ! Plane U, wire 13
+ 111,   9,  14  ! Plane U, wire 14
+ 96,   7, 113  ! Plane X, wire 113
  112,   9,  15  ! Plane U, wire 15
  113,   9,  16  ! Plane U, wire 16
  114,   9,  17  ! Plane U, wire 17
@@ -756,21 +760,21 @@ REFINDEX=1
 
 SLOT=16
 REFINDEX=1
-  80,  10,   1  ! Plane V, wire 1
-  81,  10,   2  ! Plane V, wire 2
-  82,  10,   3  ! Plane V, wire 3
-  83,  10,   4  ! Plane V, wire 4
-  84,  10,   5  ! Plane V, wire 5
-  85,  10,   6  ! Plane V, wire 6
-  86,  10,   7  ! Plane V, wire 7
-  87,  10,   8  ! Plane V, wire 8
-  88,  10,   9  ! Plane V, wire 9
-  89,  10,  10  ! Plane V, wire 10
-  90,  10,  11  ! Plane V, wire 11
-  91,  10,  12  ! Plane V, wire 12
-  92,  10,  13  ! Plane V, wire 13
-  93,  10,  14  ! Plane V, wire 14
-  94,  12, 113  ! Plane X', wire 113
+  82,  10,   1  ! Plane V, wire 1
+  83,  10,   2  ! Plane V, wire 2
+  84,  10,   3  ! Plane V, wire 3
+  85,  10,   4  ! Plane V, wire 4
+  86,  10,   5  ! Plane V, wire 5
+  87,  10,   6  ! Plane V, wire 6
+  88,  10,   7  ! Plane V, wire 7
+  89,  10,   8  ! Plane V, wire 8
+  90,  10,   9  ! Plane V, wire 9
+  91,  10,  10  ! Plane V, wire 10
+  92,  10,  11  ! Plane V, wire 11
+  93,  10,  12  ! Plane V, wire 12
+  94,  10,  13  ! Plane V, wire 13
+  95,  10,  14  ! Plane V, wire 14
+  80,  12, 113  ! Plane X', wire 113
 
 SLOT=14
 REFINDEX=1
