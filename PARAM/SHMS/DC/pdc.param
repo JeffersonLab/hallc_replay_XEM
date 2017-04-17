@@ -17,3 +17,5 @@ pdc_chamber_planes = 1, 1, 1, 1, 1, 1
 ; Should be 109 and 80, but edge sense wire were not strung.
 pdc_nrwire = 107, 107, 79, 79, 107, 107
              107, 107, 79, 79, 107, 107
+; 1 means true
+p_using_tzero_per_wire =0

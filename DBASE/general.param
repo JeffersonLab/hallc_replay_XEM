@@ -42,6 +42,7 @@ cminch=2.54
 #include "PARAM/SHMS/NGCER/pngcer.param"
 #include "PARAM/SHMS/DC/pdc.param"
 #include "PARAM/SHMS/DC/pdc.pos"
+#include "PARAM/SHMS/DC/pdc_tzero_per_wire.param"
 #include "PARAM/SHMS/DC/pdc_tracking.param"
 #include "PARAM/SHMS/DC/pdriftmap.param"
 #include "PARAM/SHMS/HODO/phodo.pos"
