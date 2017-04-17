@@ -5,19 +5,30 @@ pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
             0.02, 0.02, 0.02, 0.02, 0.02, 0.02
 
 ; TDC window limits for each plane.
-pdc_tdc_min_win = -55000, -55000, -55000, -55000, -55000, -55000  ; TODO - wide limits for now
-                  -55000, -55000, -55000, -55000, -55000, -55000
-pdc_tdc_max_win = 55000, 55000, 55000, 55000, 55000, 55000  ; TODO - wide limits for now
-                  55000, 55000, 55000, 55000, 55000, 55000
+;pdc_tdc_min_win = -55000, -55000, -55000, -55000, -55000, -55000  ; TODO - wide limits for now
+;                  -55000, -55000, -55000, -55000, -55000, -55000
+;pdc_tdc_max_win = 55000, 55000, 55000, 55000, 55000, 55000  ; TODO - wide limits for now
+;                  55000, 55000, 55000, 55000, 55000, 55000
+
+
+; TDC window limits for each plane.
+pdc_tdc_min_win = -13000, -13000, -13000, -13000, -13000, -13000  ; TODO - wide limits for now
+                  -13000, -13000, -13000, -13000, -13000, -13000
+pdc_tdc_max_win = -10000, -10000, -10000, -10000, -10000, -10000  ; TODO - wide limits for now
+                  -10000, -10000, -10000, -10000, -10000, -10000
+
+
 
 ; Conversion factor from TDC clicks to ns.
 pdc_tdc_time_per_channel = -0.10
 
 ; Zero time correction for each plane in ns that is added to TDC time.
-pdc_plane_time_zero = 1296.17,1296.19,1292.81,1297.11,1292.95,1296.88
-                      1292.59,1291.74,1293.42,1292.14,1295.85,1292.09 
+;pdc_plane_time_zero = 1283.82, 1283.30, 1286.73, 1283.56, 1282.57, 1284.30
+;                      1283.94, 1283.34, 1286.95, 1286.46, 1286.37, 1284.47
 
-
+;Zero time correction for each plane in ns that is added to TDC time.
+pdc_plane_time_zero = 1293.66, 1293.5, 1286.86, 1294.36, 1291.36, 1293.05
+                      1289.26, 1290.03, 1287.02, 1286.41, 1290.52, 1288.88
 
 
 ; For wire velocity corrections.
