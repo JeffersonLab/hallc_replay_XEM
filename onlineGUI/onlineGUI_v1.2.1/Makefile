@@ -10,12 +10,13 @@ ifdef INSURE
   GLD=insure
 endif
 
+ROOTCFLAGS   := $(shell root-config --cflags)
 ROOTMVERSION  = $(shell root-config --version | cut -f1 -d.)
 ROOTLIBS      = $(shell root-config --libs)
 ROOTGLIBS     = $(shell root-config --glibs)
 INCLUDES      = -I$(ROOTSYS)/include
 CXX           = $(GCC)
-CXXFLAGS      = -Wall -fno-exceptions -fPIC $(INCLUDES) -fpermissive
+CXXFLAGS      = $(ROOTCFLAGS) $(INCLUDES) -Wall -fno-exceptions -fPIC -fpermissive
 LD            = $(GLD)
 LDFLAGS       =
 SOFLAGS       = -shared

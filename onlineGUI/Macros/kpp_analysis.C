@@ -652,7 +652,7 @@ void UserScript() {
       }
     
       for (UInt_t itrack = 0; itrack < ntracks; itrack++)
-	if (trk_pmag != 0.0 && ntracks == 1) h2_EdivP_vs_P->Fill(trk_pmag[0], (ppshwr_sum + pshwr_sum)/trk_pmag[0]);
+	if (trk_pmag[itrack] != 0 && ntracks == 1) h2_EdivP_vs_P->Fill(trk_pmag[0], (ppshwr_sum + pshwr_sum)/trk_pmag[0]);
 
       // ==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==//==
 
