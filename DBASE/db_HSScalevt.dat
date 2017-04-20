@@ -1,0 +1,309 @@
+map 3801 5 6 00000620 ffffffff 12
+map 3801 5 7 00200720 ffffffff 12
+map 3801 5 8 00400820 ffffffff 12
+map 3801 5 9 00600920 ffffffff 12
+map 3801 5 10 00800a20 ffffffff 12
+map 3801 5 11 00a00b20 ffffffff 12
+map 3801 5 12 00c00c20 ffffffff 12 31 1000000
+variable 3 3 1 hhod2y7P HMS 2Y+ paddle 7
+variable 3 3 2 hhod2y7Pr HMS 2Y+ paddle 7
+variable 0 8 1 hhod1x9P HMS 1X+ paddle 9
+variable 0 8 2 hhod1x9Pr HMS 1X+ paddle 9
+variable 0 24 1 hhod1x9M HMS 1X- paddle 9
+variable 0 24 2 hhod1x9Mr HMS 1X- paddle 9
+variable 3 19 1 hhod2y7M HMS 2Y- paddle 7
+variable 3 19 2 hhod2y7Mr HMS 2Y- paddle 7
+variable 6 4 1 h1Xh1y h1T
+variable 6 4 2 h1Xh1yr h1T
+variable 2 22 1 hhod2x6M HMS 2X- paddle 6
+variable 2 22 2 hhod2x6Mr HMS 2X- paddle 6
+variable 6 5 1 h2Xh2Y h2T
+variable 6 5 2 h2Xh2Yr h2T
+variable 2 6 1 hhod2x6P HMS 2X+ paddle 6
+variable 2 6 2 hhod2x6Pr HMS 2X+ paddle 6
+variable 2 27 1 hhod2x15M HMS 2X- paddle 15
+variable 2 27 2 hhod2x15Mr HMS 2X- paddle 15
+variable 3 26 1 Empty_20 Empty
+variable 3 26 2 Empty_20r Empty
+variable 1 2 1 hhod1y5P HMS 1Y+ paddle 5
+variable 1 2 2 hhod1y5Pr HMS 1Y+ paddle 5
+variable 3 29 1 Empty_22 Empty
+variable 3 29 2 Empty_22r Empty
+variable 1 18 1 hhod1y5M HMS 1Y- paddle 5
+variable 1 18 2 hhod1y5Mr HMS 1Y- paddle 5
+variable 3 31 1 Empty_24 Empty
+variable 3 31 2 Empty_24r Empty
+variable 2 11 1 hhod2x15P HMS 2X+ paddle 15
+variable 2 11 2 hhod2x15Pr HMS 2X+ paddle 15
+variable 6 13 1 hSHWR hSHWR
+variable 6 13 2 hSHWRr hSHWR
+variable 1 20 1 hhod1y2M HMS 1Y- paddle 2
+variable 1 20 2 hhod1y2Mr HMS 1Y- paddle 2
+variable 1 4 1 hhod1y2P HMS 1Y+ paddle 2
+variable 1 4 2 hhod1y2Pr HMS 1Y+ paddle 2
+variable 0 13 1 hhod1x12P HMS 1X+ paddle 12
+variable 0 13 2 hhod1x12Pr HMS 1X+ paddle 12
+variable 0 29 1 hhod1x12M HMS 1X- paddle 12
+variable 0 29 2 hhod1x12Mr HMS 1X- paddle 12
+variable 2 0 1 hhod2x1P HMS 2X+ paddle 1
+variable 2 0 2 hhod2x1Pr HMS 2X+ paddle 1
+variable 2 16 1 hhod2x1M HMS 2X- paddle 1
+variable 2 16 2 hhod2x1Mr HMS 2X- paddle 1
+variable 3 21 1 hhod2y4M HMS 2Y- paddle 4
+variable 3 21 2 hhod2y4Mr HMS 2Y- paddle 4
+variable 3 5 1 hhod2y4P HMS 2Y+ paddle 4
+variable 3 5 2 hhod2y4Pr HMS 2Y+ paddle 4
+variable 6 30 1 Unser Unser
+variable 6 30 2 Unserr Unser
+variable 1 5 1 hhod1y4P HMS 1Y+ paddle 4
+variable 1 5 2 hhod1y4Pr HMS 1Y+ paddle 4
+variable 2 8 1 hhod2x9P HMS 2X+ paddle 9
+variable 2 8 2 hhod2x9Pr HMS 2X+ paddle 9
+variable 2 24 1 hhod2x9M HMS 2X- paddle 9
+variable 2 24 2 hhod2x9Mr HMS 2X- paddle 9
+variable 1 21 1 hhod1y4M HMS 1Y- paddle 4
+variable 1 21 2 hhod1y4Mr HMS 1Y- paddle 4
+variable 0 0 1 hhod1x1P HMS 1X+ paddle 1
+variable 0 0 2 hhod1x1Pr HMS 1X+ paddle 1
+variable 0 16 1 hhod1x1M HMS 1X- paddle 1
+variable 0 16 2 hhod1x1Mr HMS 1X- paddle 1
+variable 0 18 1 hhod1x5M HMS 1X- paddle 5
+variable 0 18 2 hhod1x5Mr HMS 1X- paddle 5
+variable 0 27 1 hhod1x15M HMS 1X- paddle 15
+variable 0 27 2 hhod1x15Mr HMS 1X- paddle 15
+variable 0 11 1 hhod1x15P HMS 1X+ paddle 15
+variable 0 11 2 hhod1x15Pr HMS 1X+ paddle 15
+variable 3 27 1 Empty_21 Empty
+variable 3 27 2 Empty_21r Empty
+variable 3 2 1 hhod2y5P HMS 2Y+ paddle 5
+variable 3 2 2 hhod2y5Pr HMS 2Y+ paddle 5
+variable 3 18 1 hhod2y5M HMS 2Y- paddle 5
+variable 3 18 2 hhod2y5Mr HMS 2Y- paddle 5
+variable 2 7 1 hhod2x8P HMS 2X+ paddle 8
+variable 2 7 2 hhod2x8Pr HMS 2X+ paddle 8
+variable 1 19 1 hhod1y7M HMS 1Y- paddle 7
+variable 1 19 2 hhod1y7Mr HMS 1Y- paddle 7
+variable 0 2 1 hhod1x5P HMS 1X+ paddle 5
+variable 0 2 2 hhod1x5Pr HMS 1X+ paddle 5
+variable 1 3 1 hhod1y7P HMS 1Y+ paddle 7
+variable 1 3 2 hhod1y7Pr HMS 1Y+ paddle 7
+variable 3 30 1 Empty_23 Empty
+variable 3 30 2 Empty_23r Empty
+variable 2 23 1 hhod2x8M HMS 2X- paddle 8
+variable 2 23 2 hhod2x8Mr HMS 2X- paddle 8
+variable 0 22 1 hhod1x6M HMS 1X- paddle 6
+variable 0 22 2 hhod1x6Mr HMS 1X- paddle 6
+variable 2 15 1 hhod2x16P HMS 2X+ paddle 16
+variable 2 15 2 hhod2x16Pr HMS 2X+ paddle 16
+variable 6 11 1 hPSHWRLO hPSHWRLO
+variable 6 11 2 hPSHWRLOr hPSHWRLO
+variable 2 31 1 hhod2x16M HMS 2X- paddle 16
+variable 2 31 2 hhod2x16Mr HMS 2X- paddle 16
+variable 0 6 1 hhod1x6P HMS 1X+ paddle 6
+variable 0 6 2 hhod1x6Pr HMS 1X+ paddle 6
+variable 0 30 1 hhod1x14M HMS 1X- paddle 14
+variable 0 30 2 hhod1x14Mr HMS 1X- paddle 14
+variable 6 2 1 h2X h2X
+variable 6 2 2 h2Xr h2X
+variable 6 3 1 h2Y h2Y
+variable 6 3 2 h2Yr h2Y
+variable 6 27 1 BCM1 bcm1
+variable 6 27 2 BCM1r bcm1
+variable 0 14 1 hhod1x14P HMS 1X+ paddle 14
+variable 0 14 2 hhod1x14Pr HMS 1X+ paddle 14
+variable 2 17 1 hhod2x3M HMS 2X- paddle 3
+variable 2 17 2 hhod2x3Mr HMS 2X- paddle 3
+variable 2 1 1 hhod2x3P HMS 2X+ paddle 3
+variable 2 1 2 hhod2x3Pr HMS 2X+ paddle 3
+variable 1 29 1 Empty_10 Empty
+variable 1 29 2 Empty_10r Empty
+variable 1 30 1 Empty_11 Empty
+variable 1 30 2 Empty_11r Empty
+variable 1 31 1 Empty_12 Empty
+variable 1 31 2 Empty_12r Empty
+variable 3 9 1 Empty_13 Empty
+variable 3 9 2 Empty_13r Empty
+variable 3 10 1 Empty_14 Empty
+variable 3 10 2 Empty_14r Empty
+variable 3 11 1 Empty_15 Empty
+variable 3 11 2 Empty_15r Empty
+variable 3 4 1 hhod2y2P HMS 2Y+ paddle 2
+variable 3 4 2 hhod2y2Pr HMS 2Y+ paddle 2
+variable 2 28 1 hhod2x10M HMS 2X- paddle 10
+variable 2 28 2 hhod2x10Mr HMS 2X- paddle 10
+variable 3 15 1 Empty_18 Empty
+variable 3 15 2 Empty_18r Empty
+variable 3 25 1 Empty_19 Empty
+variable 3 25 2 Empty_19r Empty
+variable 6 8 1 hBSUM hBSUM
+variable 6 8 2 hBSUMr hBSUM
+variable 3 20 1 hhod2y2M HMS 2Y- paddle 2
+variable 3 20 2 hhod2y2Mr HMS 2Y- paddle 2
+variable 0 19 1 hhod1x7M HMS 1X- paddle 7
+variable 0 19 2 hhod1x7Mr HMS 1X- paddle 7
+variable 0 3 1 hhod1x7P HMS 1X+ paddle 7
+variable 0 3 2 hhod1x7Pr HMS 1X+ paddle 7
+variable 2 12 1 hhod2x10P HMS 2X+ paddle 10
+variable 2 12 2 hhod2x10Pr HMS 2X+ paddle 10
+variable 6 7 1 hASUM hASUM
+variable 6 7 2 hASUMr hASUM
+variable 6 1 1 h1Y h1Y
+variable 6 1 2 h1Yr h1Y
+variable 6 0 1 h1X h1X
+variable 6 0 2 h1Xr h1X
+variable 6 25 1 BCM4A bcm4a
+variable 6 25 2 BCM4Ar bcm4a
+variable 0 31 1 hhod1x16M HMS 1X- paddle 16
+variable 0 31 2 hhod1x16Mr HMS 1X- paddle 16
+variable 0 15 1 hhod1x16P HMS 1X+ paddle 16
+variable 0 15 2 hhod1x16Pr HMS 1X+ paddle 16
+variable 3 13 1 Empty_16 Empty
+variable 3 13 2 Empty_16r Empty
+variable 1 24 1 hhod1y9M HMS 1Y- paddle 9
+variable 1 24 2 hhod1y9Mr HMS 1Y- paddle 9
+variable 2 4 1 hhod2x2P HMS 2X+ paddle 2
+variable 2 4 2 hhod2x2Pr HMS 2X+ paddle 2
+variable 2 20 1 hhod2x2M HMS 2X- paddle 2
+variable 2 20 2 hhod2x2Mr HMS 2X- paddle 2
+variable 1 8 1 hhod1y9P HMS 1Y+ paddle 9
+variable 1 8 2 hhod1y9Pr HMS 1Y+ paddle 9
+variable 2 9 1 hhod2x11P HMS 2X+ paddle 11
+variable 2 9 2 hhod2x11Pr HMS 2X+ paddle 11
+variable 3 17 1 hhod2y3M HMS 2Y- paddle 3
+variable 3 17 2 hhod2y3Mr HMS 2Y- paddle 3
+variable 2 25 1 hhod2x11M HMS 2X- paddle 11
+variable 2 25 2 hhod2x11Mr HMS 2X- paddle 11
+variable 3 1 1 hhod2y3P HMS 2Y+ paddle 3
+variable 3 1 2 hhod2y3Pr HMS 2Y+ paddle 3
+variable 6 29 1 BCM17 bcm17
+variable 6 29 2 BCM17r bcm17
+variable 3 14 1 Empty_17 Empty
+variable 3 14 2 Empty_17r Empty
+variable 1 6 1 hhod1y6P HMS 1Y+ paddle 6
+variable 1 6 2 hhod1y6Pr HMS 1Y+ paddle 6
+variable 1 22 1 hhod1y6M HMS 1Y- paddle 6
+variable 1 22 2 hhod1y6Mr HMS 1Y- paddle 6
+variable 6 15 1 hCERSUM hCERSUM
+variable 6 15 2 hCERSUMr hCERSUM
+variable 0 5 1 hhod1x4P HMS 1X+ paddle 4
+variable 0 5 2 hhod1x4Pr HMS 1X+ paddle 4
+variable 0 21 1 hhod1x4M HMS 1X- paddle 4
+variable 0 21 2 hhod1x4Mr HMS 1X- paddle 4
+variable 6 12 1 hPSHWRHI hPSHWRHI
+variable 6 12 2 hPSHWRHIr hPSHWRHI
+variable 3 7 1 hhod2y8P HMS 2Y+ paddle 8
+variable 3 7 2 hhod2y8Pr HMS 2Y+ paddle 8
+variable 3 23 1 hhod2y8M HMS 2Y- paddle 8
+variable 3 23 2 hhod2y8Mr HMS 2Y- paddle 8
+variable 2 18 1 hhod2x5M HMS 2X- paddle 5
+variable 2 18 2 hhod2x5Mr HMS 2X- paddle 5
+variable 1 23 1 hhod1y8M HMS 1Y- paddle 8
+variable 1 23 2 hhod1y8Mr HMS 1Y- paddle 8
+variable 1 7 1 hhod1y8P HMS 1Y+ paddle 8
+variable 1 7 2 hhod1y8Pr HMS 1Y+ paddle 8
+variable 2 2 1 hhod2x5P HMS 2X+ paddle 5
+variable 2 2 2 hhod2x5Pr HMS 2X+ paddle 5
+variable 2 29 1 hhod2x12M HMS 2X- paddle 12
+variable 2 29 2 hhod2x12Mr HMS 2X- paddle 12
+variable 2 13 1 hhod2x12P HMS 2X+ paddle 12
+variable 2 13 2 hhod2x12Pr HMS 2X+ paddle 12
+variable 6 6 1 hTrig hT1
+variable 6 6 2 hTrigr hT1
+variable 0 4 1 hhod1x2P HMS 1X+ paddle 2
+variable 0 4 2 hhod1x2Pr HMS 1X+ paddle 2
+variable 0 20 1 hhod1x2M HMS 1X- paddle 2
+variable 0 20 2 hhod1x2Mr HMS 1X- paddle 2
+variable 1 16 1 hhod1y1M HMS 1Y- paddle 1
+variable 1 16 2 hhod1y1Mr HMS 1Y- paddle 1
+variable 1 26 1 Empty_8 Empty
+variable 1 26 2 Empty_8r Empty
+variable 1 27 1 Empty_9 Empty
+variable 1 27 2 Empty_9r Empty
+variable 1 0 1 hhod1y1P HMS 1Y+ paddle 1
+variable 1 0 2 hhod1y1Pr HMS 1Y+ paddle 1
+variable 1 10 1 Empty_2 Empty
+variable 1 10 2 Empty_2r Empty
+variable 1 11 1 Empty_3 Empty
+variable 1 11 2 Empty_3r Empty
+variable 1 15 1 Empty_6 Empty
+variable 1 15 2 Empty_6r Empty
+variable 1 25 1 Empty_7 Empty
+variable 1 25 2 Empty_7r Empty
+variable 1 13 1 Empty_4 Empty
+variable 1 13 2 Empty_4r Empty
+variable 1 14 1 Empty_5 Empty
+variable 1 14 2 Empty_5r Empty
+variable 0 9 1 hhod1x11P HMS 1X+ paddle 11
+variable 0 9 2 hhod1x11Pr HMS 1X+ paddle 11
+variable 1 9 1 Empty Empty
+variable 1 9 2 Emptyr Empty
+variable 0 25 1 hhod1x11M HMS 1X- paddle 11
+variable 0 25 2 hhod1x11Mr HMS 1X- paddle 11
+variable 1 28 1 hhod1y10M HMS 1Y- paddle 10
+variable 1 28 2 hhod1y10Mr HMS 1Y- paddle 10
+variable 1 12 1 hhod1y10P HMS 1Y+ paddle 10
+variable 1 12 2 hhod1y10Pr HMS 1Y+ paddle 10
+variable 3 24 1 hhod2y9M HMS 2Y- paddle 9
+variable 3 24 2 hhod2y9Mr HMS 2Y- paddle 9
+variable 6 10 1 hDSUM hDSUM
+variable 6 10 2 hDSUMr hDSUM
+variable 3 8 1 hhod2y9P HMS 2Y+ paddle 9
+variable 3 8 2 hhod2y9Pr HMS 2Y+ paddle 9
+variable 2 21 1 hhod2x4M HMS 2X- paddle 4
+variable 2 21 2 hhod2x4Mr HMS 2X- paddle 4
+variable 2 5 1 hhod2x4P HMS 2X+ paddle 4
+variable 2 5 2 hhod2x4Pr HMS 2X+ paddle 4
+variable 3 16 1 hhod2y1M HMS 2Y- paddle 1
+variable 3 16 2 hhod2y1Mr HMS 2Y- paddle 1
+variable 2 10 1 hhod2x13P HMS 2X+ paddle 13
+variable 2 10 2 hhod2x13Pr HMS 2X+ paddle 13
+variable 0 1 1 hhod1x3P HMS 1X+ paddle 3
+variable 0 1 2 hhod1x3Pr HMS 1X+ paddle 3
+variable 6 26 1 BCM4B bcm4b
+variable 6 26 2 BCM4Br bcm4b
+variable 2 26 1 hhod2x13M HMS 2X- paddle 13
+variable 2 26 2 hhod2x13Mr HMS 2X- paddle 13
+variable 0 17 1 hhod1x3M HMS 1X- paddle 3
+variable 0 17 2 hhod1x3Mr HMS 1X- paddle 3
+variable 6 31 1 1Mhz 1MHz
+variable 6 31 2 1Mhzr 1MHz
+variable 0 12 1 hhod1x10P HMS 1X+ paddle 10
+variable 0 12 2 hhod1x10Pr HMS 1X+ paddle 10
+variable 0 28 1 hhod1x10M HMS 1X- paddle 10
+variable 0 28 2 hhod1x10Mr HMS 1X- paddle 10
+variable 3 0 1 hhod2y1P HMS 2Y+ paddle 1
+variable 3 0 2 hhod2y1Pr HMS 2Y+ paddle 1
+variable 6 9 1 hCSUM hCSUM
+variable 6 9 2 hCSUMr hCSUM
+variable 3 28 1 hhod2y10M HMS 2Y- paddle 10
+variable 3 28 2 hhod2y10Mr HMS 2Y- paddle 10
+variable 0 23 1 hhod1x8M HMS 1X- paddle 8
+variable 0 23 2 hhod1x8Mr HMS 1X- paddle 8
+variable 0 7 1 hhod1x8P HMS 1X+ paddle 8
+variable 0 7 2 hhod1x8Pr HMS 1X+ paddle 8
+variable 3 12 1 hhod2y10P HMS 2Y+ paddle 10
+variable 3 12 2 hhod2y10Pr HMS 2Y+ paddle 10
+variable 6 28 1 BCM2 bcm2
+variable 6 28 2 BCM2r bcm2
+variable 3 6 1 hhod2y6P HMS 2Y+ paddle 6
+variable 3 6 2 hhod2y6Pr HMS 2Y+ paddle 6
+variable 3 22 1 hhod2y6M HMS 2Y- paddle 6
+variable 3 22 2 hhod2y6Mr HMS 2Y- paddle 6
+variable 2 3 1 hhod2x7P HMS 2X+ paddle 7
+variable 2 3 2 hhod2x7Pr HMS 2X+ paddle 7
+variable 6 14 1 hAERSUM hAERSUM
+variable 6 14 2 hAERSUMr hAERSUM
+variable 2 19 1 hhod2x7M HMS 2X- paddle 7
+variable 2 19 2 hhod2x7Mr HMS 2X- paddle 7
+variable 2 30 1 hhod2x14M HMS 2X- paddle 14
+variable 2 30 2 hhod2x14Mr HMS 2X- paddle 14
+variable 2 14 1 hhod2x14P HMS 2X+ paddle 14
+variable 2 14 2 hhod2x14Pr HMS 2X+ paddle 14
+variable 1 1 1 hhod1y3P HMS 1Y+ paddle 3
+variable 1 1 2 hhod1y3Pr HMS 1Y+ paddle 3
+variable 1 17 1 hhod1y3M HMS 1Y- paddle 3
+variable 1 17 2 hhod1y3Mr HMS 1Y- paddle 3
+variable 0 26 1 hhod1x13M HMS 1X- paddle 13
+variable 0 26 2 hhod1x13Mr HMS 1X- paddle 13
+variable 0 10 1 hhod1x13P HMS 1X+ paddle 13
+variable 0 10 2 hhod1x13Pr HMS 1X+ paddle 13
