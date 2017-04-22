@@ -35,6 +35,7 @@ void replay_paero_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/paero_ptrig.map");
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
 
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
