@@ -3,13 +3,30 @@
 block H.cer.*
 block T.hms.*
 
-TH1F hcer_occu 'HMS Cherenkov ADC Occupancy; PMT Number; Number of ADC Hits' H.cer.adcCounter 2 0.5 2.5
+#1D HISTOGRAMS
+TH1F hgcer_raw_occ 'HMS Cherenkov Raw Occupancy; PMT Number; Number of Entries' H.cer.adcCounter 2 0.5 2.5
+TH1F hgcer_adcErrFlg 'HMS Cherenkov FPGA Error Flag; Error Flag; Number of Entries' H.cer.adcErrorFlag 2 -0.5 1.5
+TH1F hgcer_good_occ 'HMS Cherenkov Good Occupancy; PMT Number; Number of Entries' H.cer.numGoodAdcHits 2 0.5 2.5
+TH1F hgcer_good_mult 'HMS Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cer.totNumGoodAdcHits 2 0.5 2.5
+TH1F hgcer_tot_npe 'HMS Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.cer.npeSum 200 0 100 H.cer.npeSum>0.0 
 
-TH2F hcer_rawped 'HMS Cherenkov Raw Pulse Pedestal; PMT Number; Raw Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPedRaw 2 0.5 2.5 400 0 4000
-TH2F hcer_rawpint 'HMS Cherenkov Raw Pulse Integral; PMT Number; Raw Pulse Integral / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseIntRaw 2 0.5 2.5 4000 0 40000
-TH2F hcer_rawpamp 'HMS Cherenkov Raw Pulse Amplitude; PMT Number; Raw Pulse Amplitude / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseAmpRaw 2 0.5 2.5 410 0 4100
-TH2F hcer_rawptime 'HMS Cherenkov Raw Pulse Time; PMT Number; Raw Pulse Time / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseTimeRaw 2 0.5 2.5 400 0 4000
+#2D HISTOGRAMS  
+TH2F hgcer_npe 'HMS Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] H.cer.npe 2 0.5 2.5 200 0 100 H.cer.npe>0.0 
+TH2F hgcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' [I+1] H.cer.goodAdcPed 2 0.5 2.5 400 300 700
+TH2F hgcer_good_pi_vs_pmt 'HMS Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' [I+1] H.cer.goodAdcPulseInt 2 0.5 2.5 600 0 30000 H.cer.goodAdcPulseInt>0.0
+TH2F hgcer_good_rawpi_vs_pmt 'HMS Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.cer.goodAdcPulseIntRaw 2 0.5 2.5 600 0 30000 H.cer.goodAdcPulseIntRaw>0.0
+TH2F hgcer_good_pamp_vs_pmt 'HMS Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' [I+1] H.cer.goodAdcPulseAmp 2 0.5 2.5 200 0 4000 H.cer.goodAdcPulseAmp>0.0
+TH2F hgcer_good_ptime_vs_pmt 'HMS Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.cer.goodAdcPulseTime 2 0.5 2.5 350 0 3500 H.cer.goodAdcPulseTime>0.0
 
-TH2F hcer_ped 'HMS Cherenkov Pulse Pedestal; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPed 2 0.5 2.5 400 0 4000
-TH2F hcer_pint 'HMS Cherenkov Pulse Integral; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 4000 0 40000
-TH2F hcer_pamp 'HMS Cherenkov Pulse Amplitude; PMT Number; Pulse Pedestal / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 410 0 4100
+
+#1D Histos for Debugging 
+TH1F hgcer_raw_mult 'HMS Cherenkov Raw Multiplicity; Number of PMTs Hit; Total Number of Raw ADC Hits / PMT' H.cer.totNumAdcHits 2 0.5 2.5
+
+#2d Histos for Debugging 
+TH2F hgcer_raw_pped_vs_pmt 'HMS Cherenkov Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPedRaw 2 0.5 2.5 10000 0 10000
+TH2F hgcer_raw_pi_vs_pmt 'HMS Cherenkov Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' H.cer.adcCounter H.cer.adcPulseIntRaw 2 0.5 2.5 650 0 32500
+TH2F hgcer_raw_pamp_vs_pmt 'HMS Cherenkov Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' H.cer.adcCounter H.cer.adcPulseAmpRaw 2 0.5 2.5 410 0 8200
+TH2F hgcer_raw_ptime_vs_pmt 'HMS Cherenkov Raw Pulse Time vs. PMT Number; PMT Number;  Raw Pulse Time / 10 ADC Units' H.cer.adcCounter H.cer.adcPulseTimeRaw 2 0.5 2.5 650 0 6500
+TH2F hgcer_pped_vs_pmt 'HMS Cherenkov Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' H.cer.adcCounter H.cer.adcPed 2 0.5 2.5 400 300 700
+TH2F hgcer_pi_vs_pmt 'HMS Cherenkov Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' H.cer.adcCounter H.cer.adcPulseInt 2 0.5 2.5 600 0 30000
+TH2F hgcer_pamp_vs_pmt 'HMS Cherenkov Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' H.cer.adcCounter H.cer.adcPulseAmp 2 0.5 2.5 400 0 8000

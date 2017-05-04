@@ -31,7 +31,7 @@ void replay_hcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms.param");
-
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/HMS/DETEC/hcer_htrig.map");
