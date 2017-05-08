@@ -23,8 +23,9 @@ phgcer_adcTimeWindowMax = 2500.
 ; ; NPE Threshold for "good" hit (for measureing effic.)
 phgcer_npe_thresh = 0.5
 
-; Guess from Dwg. 67165-E-00001 R0
-phgcer_mirror_zpos = 175.1
+; Guess from Dwg. 67165-E-00001 R0 -> 175.1 cm
+; Updated on 5-8-17 by Univ. of Regina Group
+phgcer_mirror_zpos = 156.27
 
 phgcer_num_regions = 4;
 
