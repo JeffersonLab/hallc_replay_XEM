@@ -10,8 +10,8 @@ TH1F pcal_prshwr_adcErrFlg_pos 'SHMS PreShower+ FPGA Error Flag; Error Flag; Num
 TH1F pcal_prshwr_adcErrFlg_neg 'SHMS PreShower- FPGA Error Flag; Error Flag; Number of Entries' P.cal.pr.negAdcErrorFlag 2 -0.5 1.5
 
 #RAW OCCUPANCY
-TH1F pcal_prshwr_raw_occ_neg 'SHMS PreShower- Raw Occupancy; Block Number; Number of Entries' P.cal.pr.negAdcCounter 14 0.5 14.5
-TH1F pcal_prshwr_raw_occ_pos 'SHMS PreShower+ Raw Occupancy; Block Number; Number of Entries' P.cal.pr.posAdcCounter 14 0.5 14.5
+TH1F pcal_prshwr_raw_occ_pos 'SHMS PreShower+ Raw Occupancy; PMT Number; Number of Entries' P.cal.pr.posAdcCounter 14 0.5 14.5
+TH1F pcal_prshwr_raw_occ_neg 'SHMS PreShower- Raw Occupancy; PMT Number; Number of Entries' P.cal.pr.negAdcCounter 14 0.5 14.5
 
 #RAW MULTIPLICITY
 TH1F pcal_prshwr_raw_mult_pos 'SHMS PreShower+ Raw Multiplicity; Number of PMTs Hit; Total Number of Raw +ADC Hits / PMT' P.cal.pr.totNumPosAdcHits 14 0.5 14.5
@@ -29,26 +29,28 @@ TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit
 
 
 #RAW PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_prshwr_raw_pped_vs_blk_neg 'SHMS PreShower- Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPedRaw 14 0.5 14.5 1000 0 10000
-TH2F pcal_prshwr_raw_pi_vs_blk_neg 'SHMS PreShower- Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseIntRaw 14 0.5 14.5 650 0 32500
-TH2F pcal_prshwr_raw_pamp_vs_blk_neg 'SHMS PreShower- Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
-TH2F pcal_prshwr_raw_ptime_vs_blk_neg 'SHMS PreShower- Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
+TH2F pcal_prshwr_raw_pped_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPedRaw 14 0.5 14.5 1000 0 10000
+TH2F pcal_prshwr_raw_pi_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseIntRaw 14 0.5 14.5 650 0 32500
+TH2F pcal_prshwr_raw_pamp_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
+TH2F pcal_prshwr_raw_ptime_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
 
-TH2F pcal_prshwr_raw_pped_vs_blk_pos 'SHMS PreShower+ Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPedRaw 14 0.5 14.5 1000 0 10000
-TH2F pcal_prshwr_raw_pi_vs_blk_pos 'SHMS PreShower+ Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseIntRaw 14 0.5 14.5 650 0 32500
-TH2F pcal_prshwr_raw_pamp_vs_blk_pos 'SHMS PreShower+ Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
-TH2F pcal_prshwr_raw_ptime_vs_blk_pos 'SHMS PreShower+ Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
+TH2F pcal_prshwr_raw_pped_vs_pmt_neg 'SHMS PreShower- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPedRaw 14 0.5 14.5 1000 0 10000
+TH2F pcal_prshwr_raw_pi_vs_pmt_neg 'SHMS PreShower- Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseIntRaw 14 0.5 14.5 650 0 32500
+TH2F pcal_prshwr_raw_pamp_vs_pmt_neg 'SHMS PreShower- Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
+TH2F pcal_prshwr_raw_ptime_vs_pmt_neg 'SHMS PreShower- Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
 
-# PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_prshwr_pped_vs_blk_neg 'SHMS PreShower- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPed 14 0.5 14.5 400 300 700
-TH2F pcal_prshwr_pi_vs_blk_neg 'SHMS PreShower- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 50 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseInt 14 0.5 14.5 600 0 30000
-TH2F pcal_prshwr_pamp_vs_blk_neg 'SHMS PreShower- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 20 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmp 14 0.5 14.5 400 0 8000 
 
-TH2F pcal_prshwr_pped_vs_blk_pos 'SHMS PreShower+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPed 14 0.5 14.5 400 300 700
-TH2F pcal_prshwr_pi_vs_blk_pos 'SHMS PreShower+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 50 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseInt 14 0.5 14.5 600 0 30000
-TH2F pcal_prshwr_pamp_vs_blk_pos 'SHMS PreShower+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 20 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmp 14 0.5 14.5 400 0 8000
+#PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
+TH2F pcal_prshwr_pped_vs_pmt_pos 'SHMS PreShower+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPed 14 0.5 14.5 400 300 700
+TH2F pcal_prshwr_pi_vs_pmt_pos 'SHMS PreShower+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseInt 14 0.5 14.5 600 0 30000
+TH2F pcal_prshwr_pamp_vs_pmt_pos 'SHMS PreShower+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmp 14 0.5 14.5 400 0 8000
 
-# GOOD PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
+TH2F pcal_prshwr_pped_vs_pmt_neg 'SHMS PreShower- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPed 14 0.5 14.5 400 300 700
+TH2F pcal_prshwr_pi_vs_pmt_neg 'SHMS PreShower- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseInt 14 0.5 14.5 600 0 30000
+TH2F pcal_prshwr_pamp_vs_pmt_neg 'SHMS PreShower- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmp 14 0.5 14.5 400 0 8000 
+
+
+#GOOD PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
 TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 400 300 700  P.cal.pr.goodPosAdcPed>0.0
 TH2F pcal_prshwr_good_pi_vs_pmt_pos 'SHMS PreShower+ Good Pulse Integral vs. PMT Number; PMT Number; Good  Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseInt 14 0.5 14.5 600 0 30000 P.cal.pr.goodPosAdcPulseInt>0.0
 TH2F pcal_prshwr_good_pamp_vs_pmt_pos 'SHMS PreShower+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good  Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodPosAdcPulseAmp>0.0
@@ -59,19 +61,19 @@ TH2F pcal_prshwr_good_pi_vs_pmt_neg 'SHMS PreShower- Good Pulse Integral vs. PMT
 TH2F pcal_prshwr_good_pamp_vs_pmt_neg 'SHMS PreShower- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodNegAdcPulseAmp>0.0
 TH2F pcal_prshwr_good_ptime_vs_pmt_neg 'SHMS PreShower- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseTime 14 0.5 14.5 350 0 3500 P.cal.pr.goodNegAdcPulseTime>0.0
 
-#Good Raw Pulse Integrals 
-TH2F pcal_prshwr_good_raw_pi_vs_pmt_neg 'SHMS PreShower- Good Raw Pulse Integral vs. Block Number; Block Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodNegAdcPulseIntRaw>0.0
-TH2F pcal_prshwr_good_raw_pi_vs_pmt_pos 'SHMS PreShower+ Good Raw Pulse Integral vs. Block Number; Block Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseIntRaw 14 0.5 14.5 650 0 32500   P.cal.pr.goodPosAdcPulseIntRaw>0.0
+#GOOD RAW PULSE INTEGRALS 
+TH2F pcal_prshwr_good_raw_pi_vs_pmt_pos 'SHMS PreShower+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodPosAdcPulseIntRaw>0.0
+TH2F pcal_prshwr_good_raw_pi_vs_pmt_neg 'SHMS PreShower- Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodNegAdcPulseIntRaw>0.0
 
 #PRE-SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS (calib consts (GAIN) are in GeV/ADC units )
-TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition 0.01 GeV/ADC Units' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
-TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition 0.01 GeV/ADC Units' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
-TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition 0.01 GeV/ADC Units' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
+TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
+TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
+TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
 
 #ENERGY DEPOSITION in PreShower PLANE
-TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposition 0.01 GeV/ADC Units; Number of Entries' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
-TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposition 0.01 GeV/ADC Units; Number of Entries' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
-TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition;Total Energy Deposition 0.01 GeV/ADC Units; Number of Entries' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
+TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
+TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
+TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
 
 ###########################################################################################
 
@@ -81,7 +83,7 @@ TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition;Total Energy Dep
 TH1F pcal_shwr_adcErrFlg_pos 'SHMS Shower FPGA Error Flag; Error Flag; Number of Entries' P.cal.fly.adcErrorFlag 2 -0.5 1.5
 
 #RAW OCCUPANCY
-TH1F pcal_shwr_raw_occ 'SHMS Shower Raw Occupancy; Block Number; Number of Entries' P.cal.fly.adcCounter 224 0.5 224.5
+TH1F pcal_shwr_raw_occ 'SHMS Shower Raw Occupancy; PMT Number; Number of Entries' P.cal.fly.adcCounter 224 0.5 224.5
 
 #RAW MULTIPLICITY
 TH1F pcal_shwr_raw_mult 'SHMS Shower Raw Multiplicity; Number of PMTs Hit; Total Number of Raw ADC Hits / PMT' P.cal.fly.totNumAdcHits 224 0.5 224.5
@@ -90,31 +92,31 @@ TH1F pcal_shwr_raw_mult 'SHMS Shower Raw Multiplicity; Number of PMTs Hit; Total
 TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Entries' P.cal.fly.numGoodAdcHits 224 0.5 224.5
 
 #GOOD MULTIPLICITY
-TH1F pcal_shwr_occu 'SHMS Shower Occupancy; Block Number; Number of Entries' P.cal.fly.totNumGoodAdcHits 224 0.5 224.5
+TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; PMT Number; Number of Entries' P.cal.fly.totNumGoodAdcHits 224 0.5 224.5
 
 #RAW PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_shwr_raw_pped_vs_blk 'SHMS Shower Raw Pulse Pedestal vs. Block Number; Block Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPedRaw 224 0.5 224.5 1000 0 10000
-TH2F pcal_shwr_raw_pi_vs_blk 'SHMS Shower Raw Pulse Integral vs. Block Number; Block Number; Raw Pulse Integral / 50 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseIntRaw 224 0.5 224.5 650 0 32500
-TH2F pcal_shwr_raw_pamp_vs_blk 'SHMS Shower Raw Pulse Amplitude vs. Block Number; Block Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseAmpRaw 224 0.5 224.5 225 0 4500 
-TH2F pcal_shwr_raw_ptime_vs_blk 'SHMS Shower Raw Pulse Time vs. Block Number; Block Number; Raw Pulse Time / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseTimeRaw 224 0.5 224.5 650 0 6500
+TH2F pcal_shwr_raw_pped_vs_pmt 'SHMS Shower Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPedRaw 224 0.5 224.5 1000 0 10000
+TH2F pcal_shwr_raw_pi_vs_pmt 'SHMS Shower Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseIntRaw 224 0.5 224.5 650 0 32500
+TH2F pcal_shwr_raw_pamp_vs_pmt 'SHMS Shower Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseAmpRaw 224 0.5 224.5 225 0 4500 
+TH2F pcal_shwr_raw_ptime_vs_pmt 'SHMS Shower Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseTimeRaw 224 0.5 224.5 650 0 6500
 
 # PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_shwr_pped_vs_blk 'SHMS Shower Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPed 224 0.5 224.5 700 300 1000
-TH2F pcal_shwr_pi_vs_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 50 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseInt 224 0.5 224.5 600 0 30000
-TH2F pcal_shwr_pamp_vs_blk 'SHMS Shower Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 20 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseAmp 224 0.5 224.5 200 0 4000 
+TH2F pcal_shwr_pped_vs_pmt 'SHMS Shower Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPed 224 0.5 224.5 700 300 1000
+TH2F pcal_shwr_pi_vs_pmt 'SHMS Shower Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseInt 224 0.5 224.5 600 0 30000
+TH2F pcal_shwr_pamp_vs_pmt 'SHMS Shower Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseAmp 224 0.5 224.5 200 0 4000 
 
 #GOOD PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_shwr_good_pped_vs_blk 'SHMS Shower Good Pulse Pedestal vs. Block Number; Block Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 700 300 1000 P.cal.fly.goodAdcPed>0.0
-TH2F pcal_shwr_good_pi_vs_blk 'SHMS Shower Good Pulse Integral vs. Block Number; Block Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseInt 224 0.5 224.5 600 0 30000 P.cal.fly.goodAdcPulseInt>0.0
-TH2F pcal_shwr_good_pamp_vs_blk 'SHMS Shower Good Pulse Amplitude vs. Block Number; Block Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.fly.goodAdcPulseAmp 224 0.5 224.5 200 0 4000 P.cal.fly.goodAdcPulseAmp>0.0
-TH2F pcal_shwr_good_ptime_vs_blk 'SHMS Shower Good Pulse Time vs. Block Number; Block Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 350 0 3500 P.cal.fly.goodAdcPulseTime>0.0
+TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 700 300 1000 P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pi_vs_pmt 'SHMS Shower Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseInt 224 0.5 224.5 600 0 30000 P.cal.fly.goodAdcPulseInt>0.0
+TH2F pcal_shwr_good_pamp_vs_pmt 'SHMS Shower Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.fly.goodAdcPulseAmp 224 0.5 224.5 200 0 4000 P.cal.fly.goodAdcPulseAmp>0.0
+TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 350 0 3500 P.cal.fly.goodAdcPulseTime>0.0
 
 #Good Raw Pulse Integrals 
-TH2F pcal_shwr_good_raw_pi_vs_pmt 'SHMS Shower Good Raw Pulse Integral vs. Block Number; Block Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseIntRaw 224 0.5 224.5 650 0 32500  P.cal.fly.goodAdcPulseIntRaw>0.0
+TH2F pcal_shwr_good_raw_pi_vs_pmt 'SHMS Shower Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseIntRaw 224 0.5 224.5 650 0 32500  P.cal.fly.goodAdcPulseIntRaw>0.0
 
 #SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS (calib consts (GAIN) are in GeV/ADC units )
-TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposition 0.01 GeV/ADC Units' [I+1] P.cal.fly.e 224 0.5 224.5 200 0 2 P.cal.fly.e>0.0
+TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.fly.e 224 0.5 224.5 300 0 3 P.cal.fly.e>0.0
 
 #TOTAL ENERGY DEPOSITION IN THE SHOWER ARRAY
-TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposition 0.01 GeV/ADC Units; Number of Entries' P.cal.fly.earray 500 0 5 P.cal.fly.earray>0.0
+TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
 
