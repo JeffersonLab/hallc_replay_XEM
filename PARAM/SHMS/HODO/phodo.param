@@ -6,9 +6,15 @@ pcosmicflag=0
 ; if not set then defaults to use the raw pulse integral
 phodo_adc_mode=1
 ; 
-; hhodo_tdc_offset is array of time offsets for all paddles in a plane
+; phodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc to between 0 and 4000 channels.
   phodo_tdc_offset = 1860, 2000, 2060, 2000
+
+;phodo set min and max fADC time window for all paddles in a plane in 'Channel' units
+; the conversion is 0.0625 ns / channel for flash ADC 250
+phodo_AdcTimeWindowMin = 0., 0., 0., 640.
+phodo_AdcTimeWindowMax = 3200., 3200., 3200., 1760.
+
 ; pstart_time_center  center of allowed time window                             
    pstart_time_center = 32.                                                     
 ; hstart_time_slop    1/2 width of time window                                  
