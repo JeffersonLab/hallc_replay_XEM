@@ -24,17 +24,17 @@ TH1F pcal_prshwr_good_occ_neg 'SHMS PreShower- Good Occupancy; PMT Number; Numbe
 
 #GOOD MULTIPLICITY
 TH1F pcal_prshwr_good_mult_pos 'SHMS PreShower+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' P.cal.pr.totNumGoodPosAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT; Number of Entries' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
 TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' P.cal.pr.totnumGoodAdcHits 28 0.5 28.5
 
 
 #RAW PULSE PEDESTALS/AMPLITUDES/INTEGRALS/TIMES
-TH2F pcal_prshwr_raw_pped_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPedRaw 14 0.5 14.5 1000 0 10000
+TH2F pcal_prshwr_raw_pped_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPedRaw 14 0.5 14.5 10000 0 10000
 TH2F pcal_prshwr_raw_pi_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseIntRaw 14 0.5 14.5 650 0 32500
 TH2F pcal_prshwr_raw_pamp_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
 TH2F pcal_prshwr_raw_ptime_vs_pmt_pos 'SHMS PreShower+ Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
 
-TH2F pcal_prshwr_raw_pped_vs_pmt_neg 'SHMS PreShower- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPedRaw 14 0.5 14.5 1000 0 10000
+TH2F pcal_prshwr_raw_pped_vs_pmt_neg 'SHMS PreShower- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPedRaw 14 0.5 14.5 10000 0 10000
 TH2F pcal_prshwr_raw_pi_vs_pmt_neg 'SHMS PreShower- Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseIntRaw 14 0.5 14.5 650 0 32500
 TH2F pcal_prshwr_raw_pamp_vs_pmt_neg 'SHMS PreShower- Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmpRaw 14 0.5 14.5 410 0 8200 
 TH2F pcal_prshwr_raw_ptime_vs_pmt_neg 'SHMS PreShower- Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseTimeRaw 14 0.5 14.5 650 0 6500
