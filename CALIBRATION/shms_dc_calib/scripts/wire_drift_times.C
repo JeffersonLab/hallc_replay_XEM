@@ -66,6 +66,9 @@ void wire_drift_times::Loop()
 	
     //If specific planes are encountered, treat them as follows:
 
+    //variable declarations
+    int wirenum;
+
     /*PLANE 1U1, 1V1, 2U1, 2V1*/				
     //If specific planes are encountered, treat them as follows:
     if(ip == 0 || ip == 1 || ip == 4 || ip == 5 || ip == 6 || ip == 7 || ip == 10 || ip == 11) {
@@ -74,7 +77,7 @@ void wire_drift_times::Loop()
       TH2F *wire_vs_dt = new TH2F("wire_vs_dt", "", 200., -50., 350., 107., 0.,107.);
     
       //Initialize wire drift time histograms
-      for (int wirenum=1; wirenum<=total_wires_uv; wirenum++){
+      for (wirenum=1; wirenum<=total_wires_uv; wirenum++){
 	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
       }
 	

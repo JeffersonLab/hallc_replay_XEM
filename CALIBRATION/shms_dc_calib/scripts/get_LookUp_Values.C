@@ -98,7 +98,7 @@ void get_LookUp_Values() {
       lookup_value[ip] = binSUM[ip] / binContent_TOTAL[ip];
       bin_count = bin_count + 1;
      
-      if (bin_count < = 8 ) {
+      if (bin_count <= 8 ) {
 	ofs << setprecision(5) << lookup_value[ip] << fixed << ",";
       }
      

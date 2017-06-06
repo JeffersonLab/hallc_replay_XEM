@@ -5,7 +5,7 @@
 a certain number of bins and this fit is extrapolated to y=0(x-axis). The extrapolated value is take to be t0*/
 
 #include <vector>
-#include <TMath>
+#include "TMath.h"
 
 #define NPLANES 12
 
@@ -34,7 +34,7 @@ void get_wire_tzero()
  TString root_file;
  TFile *f[NPLANES];
    
- int total_wires;  //integer to store total sense wires for a plane chosen by the user
+ // int total_wires;  //integer to store total sense wires for a plane chosen by the user
         
  //Loop over all planes
  for (int ip = 0; ip < NPLANES; ip++){
@@ -57,40 +57,61 @@ void get_wire_tzero()
 
    f[ip]->cd();  //change to file containing the wire drift times histos
  
-   int total_wires;  //integer to store total sense wires for a plane chosen by the user
-   
+   //   int total_wires;  //integer to store total sense wires for a plane chosen by the user
+
+   //INITIALIZE VARIABLES
+   int total_wires;
+   int sensewire;
+   TH1F *cell_dt[107];
+   Int_t *bin_max;
+   Int_t *bin_maxContent;
+   Double_t *time_max;
+   Double_t *twenty_perc_maxContent;
+   Double_t *ref_time;
+
+
+
+     //Declarations
+     int time_init;           //start fit value 
+     int time_final;          //end fit value
+     int t_zero;
+     int entries;             //entries for each wire
+     
+     double m;                //slope
+     double y_int;            //y-intercept
+     double m_err;
+     double y_int_err;
+     double t_zero_err;
+
    //Set variables depending on which plane is being studied
    if(ip == 0 || ip == 1 || ip == 4 || ip == 5 || ip == 6 || ip == 7 || ip == 10 || ip == 11) {
-     TH1F *cell_dt[107]; //declare array of histos to store drift times     
+     //declare array of histos to store drift times     
      total_wires=107; 
 
      //Declare bin properties for given sense wires in a plane
 
-     int bin_max[107];                    /*Array to store the bin number corresponding to the drift time distribution peak*/
-     int bin_maxContent[107];             /*Array to store the content (# events) corresponding to the bin with maximum content*/
-     double time_max[107];                /*Array to store the x-axis(drift time (ns)) corresponding to bin_max*/
-     double twenty_perc_maxContent[107];  /*Array to store 20% of maximum bin content (peak)*/						     
-     double ref_time[107];               /*Array to store reference times for each sense wire*/
+     bin_max = new Int_t[total_wires];                    /*Array to store the bin number corresponding to the drift time distribution peak*/
+     bin_maxContent= new Int_t[total_wires];             /*Array to store the content (# events) corresponding to the bin with maximum content*/
+     time_max= new Double_t[total_wires];                /*Array to store the x-axis(drift time (ns)) corresponding to bin_max*/
+     twenty_perc_maxContent= new Double_t[total_wires];  /*Array to store 20% of maximum bin content (peak)*/						     
+     ref_time= new Double_t[total_wires];               /*Array to store reference times for each sense wire*/
 
    }
-
-   else if(ip == 2 || ip == 3 || ip == 8 || ip == 9) {
-     TH1F *cell_dt[79];
-     total_wires=79;      
    
-     int bin_max[79];                                 
-     int bin_maxContent[79];                           
-     double time_max[79];                               
-     double twenty_perc_maxContent[79];                
-     double ref_time[79];          
-
+   else if(ip == 2 || ip == 3 || ip == 8 || ip == 9) {
+     total_wires=79;      
+     bin_max = new Int_t[total_wires];                               
+     bin_maxContent= new Int_t[total_wires]; 
+     time_max= new Double_t[total_wires];
+     twenty_perc_maxContent= new Double_t[total_wires];
+     ref_time= new Double_t[total_wires];
    }	   
    
  	
    /*Get wire histos from root file and loop over each 
      sense wire of a plane in shms Drift Chambers (DC1 or DC2)*/
  
-   for (int sensewire=1; sensewire<=total_wires; sensewire++){
+   for (sensewire=1; sensewire<=total_wires; sensewire++){
 
      //Get title of histos in root file
      TString drift_time_histo = Form("wire_%d", sensewire); 
@@ -153,7 +174,7 @@ void get_wire_tzero()
 	 // Loop over 2 bin contents stored in array content
 	 for (j=0; j<2; j++){
 	   
-	   if(content[j] > =  twenty_perc_maxContent[sensewire-1]){
+	   if(content[j] >=  twenty_perc_maxContent[sensewire-1]){
 	     counts = counts+1;
              
 	     if(counts >= 2) { goto stop;}
@@ -184,17 +205,7 @@ void get_wire_tzero()
      //*******Extract the "t0" Using a Fitting Procedure********//
      //*********************************************************//
      
-     //Declarations
-     int time_init;           //start fit value 
-     int time_final;          //end fit value
-     int t_zero;
-     int entries;             //entries for each wire
-     
-     double m;                //slope
-     double y_int;            //y-intercept
-     double m_err;
-     double y_int_err;
-     double t_zero_err;
+
      
      //Get time corresponding to bin (fit range) 
      time_init = cell_dt[sensewire-1] -> GetXaxis() -> GetBinCenter(bin_num[0]-5); //choose bin range over which to fit

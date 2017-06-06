@@ -14,14 +14,16 @@ void get_pdc_time_histo()
 
   TString file_name = "../../../ROOTfiles/shms_replay_%d.root";
 
+  /*
   //Create RUN Directories if they dont exist
-  char *dir0 = Form("mkdir -p ../root_files/run%d", run_NUM);
+    char *dir0 = Form("mkdir -p ../root_files/run%d", run_NUM);
   char *dir1 = Form("mkdir -p ../data_files/run%d", run_NUM);
 
   if (system(dir0 || dir1) != 0) {
     system(dir0);
     system(dir1);
   }
+  */
 
   //open file
   TFile *f = new TFile(Form(file_name.Data(), run_NUM), "READ");
