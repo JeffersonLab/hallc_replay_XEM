@@ -8,10 +8,10 @@ a certain number of bins and this fit is extrapolated to y=0(x-axis). The extrap
 #include "TMath.h"
 
 #define NPLANES 12
-
+  using namespace std;
 void get_wire_tzero()
 {
-  using namespace std;
+ 
 
   int run_NUM;
   TString f0 = "input_RUN.txt";
@@ -297,8 +297,8 @@ void get_wire_tzero()
    sum_NUM = 0.0;
    sum_DEN = 0.0;
    
-   weighted_AVG;
-   weighted_AVG_err; 
+   weighted_AVG =0.0 ;
+   weighted_AVG_err= 0.0; 
    
    //read line bt line the t_zero_file
    while(getline(ifs, line)) {
@@ -327,6 +327,8 @@ void get_wire_tzero()
        
        
      }
+     
+     else { ofs << sensewire << "        " << 0.0 << "       " << 0.0 << "        " << entries << endl;}
      
    }
    

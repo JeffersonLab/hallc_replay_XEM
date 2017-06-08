@@ -60,6 +60,9 @@ void run_Cal()
  
   //execute code to update pdc parameter file
   // gSystem->Exec("root -l -q update_pdcparam.C");
+  
+  //execute code to update parameter file with new t0 values per wire
+  gSystem->Exec("root -l -q get_tzero_param.C");
 
   //execute code to get t0 corrected drift times
   gSystem->Exec("root -l -q get_pdc_time_histo_tzero_corrected.C");
