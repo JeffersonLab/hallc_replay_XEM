@@ -92,7 +92,7 @@ for (ip=0; ip<NPLANES; ip++){
   dc_group_max[ip] = new Int_t[group_size[ip]];
 }
 
-//Fill the 2d array with 1st sensewire corresponding to each group in a given plane
+//Fill the 2d array with last sensewire corresponding to each group in a given plane
  for (ip=0; ip<NPLANES; ip++) {
 
    
@@ -234,8 +234,12 @@ for (ip=0; ip<NPLANES; ip++){
  } //end loop over planes
 
 
+  //create output file stream to write tzero values to a data file
+  ofstream out;
+  TString tzero_file = "../data_files/"+run+"/tzero_group.dat";
+  out.open(tzero_file);
     
-  //Create an output file to store tzero values values 
+  //Create an output parameter file to store tzero values 
   ofstream ofs;
   TString wire_tzero = Form("./pdc_tzero_per_wire_run%d.param", run_NUM);
   ofs.open (wire_tzero);
@@ -245,17 +249,18 @@ for (ip=0; ip<NPLANES; ip++){
     {
       //write plane headers
       ofs << "ptzero"+planes[ip] << "=" << endl;
-      
+      out << "#PLANE: " << planes[ip] << endl;
       //loop over group
       for (group = 0; group < group_size[ip]; group++)
 	{
-	  
+	  out << "#GROUP: " << group+1 << endl;
+
 	  //loop over sensewires
 	  for (sw = 1; sw<=fNWires[ip]; sw++) {
 	    
 	    if (sw >= dc_group_min[ip][group] && sw <= dc_group_max[ip][group]) 
 	      {
-	       
+	       out << setprecision(7) << weighted_avg[ip][group] << endl;
 		if (sw<fNWires[ip])
 		  {
 		    ofs << setprecision(7) << weighted_avg[ip][group] << ((sw+1) % 16 ? ", " : "\n") << fixed;
@@ -271,6 +276,11 @@ for (ip=0; ip<NPLANES; ip++){
 	}// end loop over groups 
     
     }//end loop over planes
+
+  //close files
+  ofs.close();
+  out.close();
+
 }
 
 
