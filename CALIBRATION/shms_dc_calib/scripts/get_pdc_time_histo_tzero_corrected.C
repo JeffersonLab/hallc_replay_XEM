@@ -4,6 +4,13 @@ using namespace std;
 void get_pdc_time_histo_tzero_corrected()
 {
   
+  
+  int run_NUM;
+  TString f0 = "input_RUN.txt";
+  ifstream infile(f0);
+  infile >> run_NUM;   
+
+  TString run = Form("run%d", run_NUM);
 
   //this script reads all tzero values inside tzero_group.dat and assigns them to their corresponding planes. 
   //these values will then be used to shift the drift time histos, wire by wire (t0-correction wire-by-wire)
@@ -23,7 +30,7 @@ void get_pdc_time_histo_tzero_corrected()
 
   //open and read tzero data file 
   ifstream file;
-  file.open("../data_files/run484/tzero_group.dat");
+  file.open("../data_files/"+run+"/tzero_group.dat");
   
   string line;
   int counter;
@@ -86,13 +93,6 @@ void get_pdc_time_histo_tzero_corrected()
   //THIS SCRIPT WILL READ the drift times array tzero[ip][sw] on a wire basis and apply the tzero correction.
 
 
-  
-  int run_NUM;
-  TString f0 = "input_RUN.txt";
-  ifstream infile(f0);
-  infile >> run_NUM;   
-
-  TString run = Form("run%d", run_NUM);
 
   int i;
  

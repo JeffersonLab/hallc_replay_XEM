@@ -27,8 +27,14 @@ pdc_tdc_time_per_channel = -0.10
 ;                      1283.94, 1283.34, 1286.95, 1286.46, 1286.37, 1284.47
 
 ;Zero time correction for each plane in ns that is added to TDC time.
-pdc_plane_time_zero = 1293.66, 1293.5, 1286.86, 1294.36, 1291.36, 1293.05
-                      1289.26, 1290.03, 1287.02, 1286.41, 1290.52, 1288.88
+;pdc_plane_time_zero = 1293.66, 1293.5, 1286.86, 1294.36, 1291.36, 1293.05
+;                      1289.26, 1290.03, 1287.02, 1286.41, 1290.52, 1288.88
+
+;Zero time correction for each plane in ns that is added to TDC time.
+pdc_plane_time_zero = 1290.00, 1290.00, 1290.00, 1290.00, 1290.00, 1290.00
+                      1290.00, 1290.00, 1290.00, 1290.00, 1290.00, 1290.00
+
+
 
 
 ; For wire velocity corrections.
