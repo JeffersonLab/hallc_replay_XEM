@@ -58,7 +58,7 @@ void get_pdc_time_histo()
     TString title = "pdc"+plane_names[ip]+"_drifttime";
      
     //Set Branch Address
-    tree->SetBranchAddress(drift_time, &pdc_time[ip][0]);   
+    tree->SetBranchAddress(drift_time, pdc_time[ip]);   
     tree->SetBranchAddress(ndata_name, &Ndata[ip]);  /* Ndata represents number of triggers vs number of hits that each trigger produced.
 							A hit is refer to as when a trigger(traversing particle), ionizes the WC gas and ionized
 							electrons reach the rearest sense wire, producing a detectable signal in the O'scope */
@@ -67,7 +67,7 @@ void get_pdc_time_histo()
     h[ip] = new TH1F(drift_time_histo, title, 200, -50, 350);  //set time to 400 ns/200 bins = 2ns/bin
   }
  
- 
+
   //Declare number of entries in the tree
   Long64_t nentries = tree->GetEntries(); //number of triggers (particles that passed through all 4 hodo planes)
  
@@ -75,10 +75,10 @@ void get_pdc_time_histo()
   for(Long64_t i=0; i<nentries; i++)
     {
       tree->GetEntry(i);
-    
+      //  cout << i << endl;
     
       //Loop over number of hits for each trigger in each DC plane 
-      for(ip=0; ip<NPLANES; ip++){
+      for(Int_t ip=0; ip<NPLANES; ip++){
        
     
 	for(Int_t j=0; j<Ndata[ip]; j++){
@@ -89,7 +89,9 @@ void get_pdc_time_histo()
       }
 
     }
-
+ 
   //Write histograms to file
+  
   g->Write();
+  
 }

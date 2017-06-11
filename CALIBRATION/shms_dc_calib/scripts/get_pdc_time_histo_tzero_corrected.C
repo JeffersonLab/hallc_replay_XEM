@@ -1,12 +1,92 @@
-//Script to add t0 correction to SHMS DC drift times
-
 #define NPLANES 12
 
+using namespace std;
 void get_pdc_time_histo_tzero_corrected()
 {
+  
 
-	  
-  //read run number from input file
+  //this script reads all tzero values inside tzero_group.dat and assigns them to their corresponding planes. 
+  //these values will then be used to shift the drift time histos, wire by wire (t0-correction wire-by-wire)
+
+  int ip;  //to loop over planes
+  int sw;  //to loop over sensewires
+
+
+  int tot_wires[NPLANES] = {107, 107, 79, 79, 107, 107, 107, 107, 79, 79, 107, 107};
+
+  //sum over all wires in both DC
+  static int wire_sum = 0;
+  for (ip=0; ip<NPLANES; ip++) {
+    wire_sum = wire_sum + tot_wires[ip];
+  }
+  
+
+  //open and read tzero data file 
+  ifstream file;
+  file.open("../data_files/run484/tzero_group.dat");
+  
+  string line;
+  int counter;
+  Double_t value;
+  Double_t tzero_offset[wire_sum];
+   
+
+  counter = 0;
+    
+  while (getline(file, line)) {
+    
+    if (line[0]!='#' ) 
+      {
+	sscanf(line.c_str(), "%lf", &value);  //pass data in file to variable 'value'
+	tzero_offset[counter] = value;  //write all tzero values for all wires in both DC to an array
+	//	cout << tzero_offset[counter] << endl;
+	counter++;
+      }
+  }
+
+
+  //***************************************************************
+  
+  //pass all tzero values into their corresponding planes
+  
+  //declare a 2d dynamic array to store tzero values to be used for t0-correction
+  Double_t **tzero = new Double_t*[NPLANES];
+    
+  for (ip = 0; ip < NPLANES; ip++) 
+    {
+      tzero[ip] = new Double_t[tot_wires[ip]];
+    }
+  
+  //initialize 2d dynamic array to 0.0
+  for (ip = 0; ip<NPLANES; ip++) {
+    for (sw = 0; sw<tot_wires[ip]; sw++) {
+      tzero[ip][sw] = 0.0;
+ 
+    }
+  }
+    
+  counter = 0;
+  for (ip = 0; ip<NPLANES; ip++) {
+   
+    for (sw = 0; sw < tot_wires[ip]; sw++) {
+      
+      tzero[ip][sw] = tzero_offset[counter];   //tzero corrections that must be added wire by wire
+      //cout << tzero[ip][sw] << endl;
+      //cout <<  tzero[ip][sw] << " :: "<<tzero_offset[counter] << endl;
+	   counter++;
+    }
+  }
+
+
+
+
+
+  //*****************************************************************************************
+
+  //THIS SCRIPT WILL READ the drift times array tzero[ip][sw] on a wire basis and apply the tzero correction.
+
+
+  
   int run_NUM;
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
@@ -14,94 +94,112 @@ void get_pdc_time_histo_tzero_corrected()
 
   TString run = Form("run%d", run_NUM);
 
-
-	  //open file
-	  TFile *f = new TFile(Form("../../../ROOTfiles/shms_replay_%d.root", run_NUM), "READ");
-
-	  //updates file
-	  TFile *g = new TFile(Form("../root_files/run%d/shms_dc_t0_corrected_%d.root", run_NUM, run_NUM), "UPDATE"); // create new file to store histo
-
-      f->cd();
-
-     //Get the tree
-     TTree *tree = (TTree*)f->Get("T");
-
-	TString SPECTROMETER="P";
-	TString DETECTOR="dc";
-	TString plane_names[NPLANES]={"1u1", "1u2", "1x1", "1x2", "1v1", "1v2", "2v2", "2v1", "2x2", "2x1", "2u2", "2u1"};
-
-    //Declare Variables to Loop Over
-    Int_t Ndata[NPLANES];
-    Double_t pdc_time[NPLANES][1000];
-    
-    //Declare Histogram array to store AVG drift times per plane
-    TH1F* h[NPLANES];
-	
-	g->cd();
-	
-	//Loop over each plane
-	for(Int_t ip=0; ip<NPLANES; ip++){
-		TString base_name = SPECTROMETER+"."+DETECTOR+"."+plane_names[ip];
-		TString ndata_name = "Ndata."+base_name+".time";
-		TString drift_time = base_name+".time";
-
-		TString drift_time_histo = "pdc"+plane_names[ip]+"_time: t0_corr"; 
-        TString title = "pdc"+plane_names[ip]+"_drifttime: t0-corrected";
-     
-     //Set Branch Address
-     tree->SetBranchAddress(drift_time, pdc_time[ip]);   
-     tree->SetBranchAddress(ndata_name, &Ndata[ip]);  /* Ndata represents number of triggers vs number of hits that each trigger produced.
-                                                      A hit is refer to as when a trigger(traversing particle), ionizes the WC gas and ionized
-                                                      electrons reach the rearest sense wire, producing a detectable signal in the O'scope */
-	
-     //Create Histograms
-     h[ip] = new TH1F(drift_time_histo, title, 200, -50, 350);  //set time to 400 ns/200 bins = 2ns/bin
-}
-	
-	
-	//open and read tzero data file
-    ifstream ifs;
-    ifs.open("../data_files/" + run + "/tzero.dat");
-    
-	double t_zero_offsets[NPLANES];
-
-     for (ip=0; ip < 12; ip++) {	 
-	 ifs >> t_zero_offsets[ip];  //add tzero offsets to array
-   }
-   
-    //Declare number of entries in the tree
-    Long64_t nentries = tree->GetEntries(); //number of triggers (particles that passed through all 4 hodo planes)
-
-    //Loop over all entries
-    for(Long64_t i=0; i<nentries; i++)
-    {
-	tree->GetEntry(i);
-    
-    
-    //Loop over number of hits for each trigger in each DC plane 
-    for(ip=0; ip<NPLANES; ip++){
-   
+  int i;
  
+  int nbins = 200; // set number of bins in histos
+  int bin_width = 2; 
+  int bin_Content;
+  Double_t shift;  //will be the t0 offset
+
+  //Declare plane names to loop over
+  
+  TString plane_names[NPLANES]={"1u1", "1u2", "1x1", "1x2", "1v1", "1v2", "2v2", "2v1", "2x2", "2x1", "2u2", "2u1"};
+  
+  //Declare a root file to read individual DC cell drift times
+  TString root_file;
+  TFile *f[NPLANES];
+
+  //Declare root file were NEW tzero corrected histograms will be added
+  TString file_name =  Form("../root_files/run%d/shms_tzero_corr_histos.root", run_NUM);
+  TFile *g = new TFile(file_name, "RECREATE");
     
-    for(Int_t j=0; j<Ndata[ip]; j++){
-	
-	h[ip]->Fill(pdc_time[ip][j] - t_zero_offsets[ip]); //add t0 offset correction 
-       }
-      
-      
 
-			
-	
-	}
+  TH1F *h_add[NPLANES]; //t0-corrected plane drift times 
 
-}
+ 
+ 
+
+ //Loop over all planes
+ for (ip = 0; ip < NPLANES; ip++){
+
+   //READ wire drift time root file per plane
+   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d.root",run_NUM);
+   f[ip] = new TFile(root_file, "READ");
+   
+
+   h_add[ip] =new TH1F("all_wires_"+plane_names[ip], "", nbins, -50, 350);
+
+
+   TH1F *cell_dt[tot_wires[ip]];
+   TH1F *cell_dt_corr[tot_wires[ip]];
+ 
+ 	
+   //Get wire histos from root file and loop over each 
+   //  sense wire of a plane in shms Drift Chambers (DC1 or DC2)
+   
+   f[ip]->cd(); //change to file containing uncorrected wire drift times
+   
+   for (sw=1; sw<=tot_wires[ip]; sw++){
+
+    
+
+     //set title of histos in root file
+     TString drift_time_histo = Form("wire_%d", sw); 
+ 
+     //Get drift time histograms from root file
+     cell_dt[sw-1] = (TH1F*)f[ip]->Get(drift_time_histo);  
+
+     //Create corrected wire histos
+     cell_dt_corr[sw-1] = new TH1F(plane_names[ip]+Form("_wire_%d_corr", sw), "", nbins, -50, 350);
+
+     shift = tzero[ip][sw-1];  //the shift represents how much the drift time histo needs to be offset
+
+     //cout << "sw: " << sw << " :: " << "offset: " << shift << endl;
+    
+     //************APPLY TZERO OFFSET ON A WIRE-BY-WIRE BASIS TO ALL WIRES IN ALL PLANES***************
+
+
+     //INCLUDE the code 'shift.C ', which shifts a histogram 
+
+     for (i=1; i<=nbins; i++) {
+       
+       bin_Content = cell_dt[sw-1]->GetBinContent(i);
+       
+       
+       cell_dt_corr[sw-1]->SetBinContent(i-shift/bin_width, bin_Content);  //apply the t0 correction
+       
+     }
 
 
 
-		
-//Write histograms to file
-g->Write();
 
+     //*************************************************************************************************
+     
+
+
+     //write wire drift times (after tzero corrections) to file
+     g->cd();
+     cell_dt_corr[sw-1]->Write(plane_names[ip]+Form("_wire_%d", sw), TObject::kWriteDelete); 
+     
+     
+     //add all cell drift times into a single plane
+     h_add[ip]->Add(cell_dt_corr[sw-1]);
+     
+     
+     
+     
+   } // end loop over sense wires
+   
+   
+   //Wire combined wire drift times (t0 -corrected) for each plane to file, 
+   g->cd();
+   h_add[ip]->Write();
+   
+
+ } // end loop over planes
+ 
+ 
+ 
 
 
 }

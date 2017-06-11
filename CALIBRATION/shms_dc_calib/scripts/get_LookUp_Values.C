@@ -15,7 +15,7 @@ void get_LookUp_Values() {
   infile >> run_NUM;
  
   //Open root file containing drift time histos
-  TFile *f = new TFile(Form("../root_files/run%d/shms_dc_t0_corrected_%d.root", run_NUM, run_NUM),"READ");
+  TFile *f = new TFile(Form("../root_files/run%d/shms_tzero_corr_histos.root", run_NUM),"READ");
  
   //Define histogram array
   TH1F *h[NPLANES];
@@ -41,9 +41,9 @@ void get_LookUp_Values() {
  
   //Set headers for subsequent columns of data
   ofs << Form("; Lookup Table: RUN %d", run_NUM) << "\n";
-  ofs << "; number of bins in Carlos's time to distance lookup table" << "\n";
+  ofs << "; number of bins in time to distance lookup table" << "\n";
   ofs << Form("pdriftbins = %d", TOTAL_BINS+1) << "\n";
-  ofs << "; number of 1st bin in Carlos's table in ns" << "\n";
+  ofs << "; number of 1st bin in table in ns" << "\n";
   ofs << "pdrift1stbin=0" << "\n";
   ofs << "; bin size in ns" << "\n";
   ofs << "pdriftbinsz=2" << "\n";
@@ -54,7 +54,7 @@ void get_LookUp_Values() {
 
   for (int ip=0; ip<NPLANES; ip++){
    
-    TString drift_time_histo = "pdc"+plane_names[ip]+"_time: t0_corr"; 
+    TString drift_time_histo = "all_wires_"+plane_names[ip]; 
 
     //Get drift time histograms from root file
     h[ip] = (TH1F*)f->Get(drift_time_histo);
