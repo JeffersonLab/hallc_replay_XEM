@@ -18,6 +18,8 @@
 
 #include <time.h>
 
+#include <vector>
+
 #define D_CALO_FP 275.    //distance from FP to the Preshower
 
 //Whole calorimeter fid. limits
@@ -36,6 +38,8 @@
 #define BETA_MAX 1.5
 
 #define HGCER_NPE_MIN 2
+//#define NGCER_NPE_MIN 2
+#define NGCER_NPE_MIN 0.   //
 
 #define MIN_HIT_COUNT 5   //Minimum number of hits for a PMT to be calibrated.
 
@@ -84,7 +88,7 @@ class THcPShowerCalib {
 
   Double_t        P_pr_apos_p[THcPShTrack::fNrows_pr];
   Double_t        P_pr_aneg_p[THcPShTrack::fNrows_pr];
-  Double_t        P_sh_a_p[THcPShTrack::fNcols_sh][THcPShTrack::fNrows_sh];
+  Double_t        P_sh_a_p[THcPShTrack::fNcols_sh*THcPShTrack::fNrows_sh];
 
   // Track parameters.
 
@@ -98,9 +102,13 @@ class THcPShowerCalib {
   Double_t        P_tr_tg_dp;
 
   Double_t        P_hgcer_npe[4];
+  Double_t        P_ngcer_npe[4];
   Double_t        P_tr_beta;
 
-  Double_t        P_cal_nclust;
+  Double_t        P_cal_nclust;          //Preshower
+  Double_t        P_cal_ntracks;         //Preshower
+  Double_t        P_cal_fly_nclust;      //Shower
+  Double_t        P_cal_fly_ntracks;     //Shower
 
   TBranch* b_P_tr_p;
   TBranch* b_P_pr_apos_p;
@@ -113,9 +121,13 @@ class THcPShowerCalib {
   TBranch* b_P_tr_yp;
   TBranch* b_P_tr_tg_dp;
   TBranch* b_P_hgcer_npe;
+  TBranch* b_P_ngcer_npe;
   TBranch* b_P_tr_beta;
 
   TBranch* b_P_cal_nclust;
+  TBranch* b_P_cal_ntracks;
+  TBranch* b_P_cal_fly_nclust;
+  TBranch* b_P_cal_fly_ntracks;
 
   // Quantities for calculations of the calibration constants.
 
@@ -191,9 +203,12 @@ void THcPShowerCalib::Init() {
   fNentries = fTree->GetEntries();
   cout << "THcPShowerCalib::Init: fNentries= " << fNentries << endl;
 
-  fTree->SetBranchAddress("P.cal.pr.apos_p",P_pr_apos_p,&b_P_pr_apos_p);
-  fTree->SetBranchAddress("P.cal.pr.aneg_p",P_pr_aneg_p,&b_P_pr_aneg_p);
-  fTree->SetBranchAddress("P.cal.fly.a_p",  P_sh_a_p,   &b_P_sh_a_p);
+  fTree->SetBranchAddress("P.cal.pr.goodPosAdcPulseInt", P_pr_apos_p,
+			  &b_P_pr_apos_p);
+  fTree->SetBranchAddress("P.cal.pr.goodNegAdcPulseInt", P_pr_aneg_p, 
+			  &b_P_pr_aneg_p);
+  fTree->SetBranchAddress("P.cal.fly.goodAdcPulseInt",  P_sh_a_p,
+			  &b_P_sh_a_p);
 
   fTree->SetBranchAddress("P.tr.n", &P_tr_n,&b_P_tr_n);
   fTree->SetBranchAddress("P.tr.x", &P_tr_x,&b_P_tr_x);
@@ -205,17 +220,23 @@ void THcPShowerCalib::Init() {
   fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp,&b_P_tr_tg_dp);
  
   fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe,&b_P_hgcer_npe);
+  fTree->SetBranchAddress("P.ngcer.npe", P_ngcer_npe,&b_P_ngcer_npe);
 
   fTree->SetBranchAddress("P.tr.beta", &P_tr_beta,&b_P_tr_beta);
 
   fTree->SetBranchAddress("P.cal.nclust", &P_cal_nclust,&b_P_cal_nclust);
+  fTree->SetBranchAddress("P.cal.ntracks", &P_cal_ntracks,&b_P_cal_ntracks);
+  fTree->SetBranchAddress("P.cal.fly.nclust", &P_cal_fly_nclust,
+			  &b_P_cal_fly_nclust);
+  fTree->SetBranchAddress("P.cal.fly.ntracks", &P_cal_fly_ntracks,
+			  &b_P_cal_fly_ntracks);
 
   // Histogram declarations.
 
   hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 10.);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 200, 0., 2.);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
-		       400,0.,2., 250,-12.5,22.5);
+		       400,0.,2., 440,DELTA_MIN-1.,DELTA_MAX+1.);
   hESHvsEPR = new TH2F("hESHvsEPR", "E_{SH} versus E_{PR}",
 		       300,0.,1.5, 300,0.,1.5);
 
@@ -327,7 +348,8 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 
   if (P_tr_n != 1) return 0;
 
-  if (P_cal_nclust != 1) return 0;
+  //  if (P_cal_nclust != 1) return 0;
+  //  if (P_cal_fly_nclust != 1) return 0;
 
   bool good_trk =   P_tr_tg_dp > DELTA_MIN &&
 		    P_tr_tg_dp < DELTA_MAX &&
@@ -336,6 +358,12 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
                     P_tr_y + P_tr_yp*D_CALO_FP > YMIN &&
 		    P_tr_y + P_tr_yp*D_CALO_FP < YMAX ;
   if (!good_trk) return 0;
+
+  bool good_ngcer = P_ngcer_npe[0] > NGCER_NPE_MIN ||
+		    P_ngcer_npe[1] > NGCER_NPE_MIN ||
+		    P_ngcer_npe[2] > NGCER_NPE_MIN ||
+		    P_ngcer_npe[3] > NGCER_NPE_MIN  ;
+  if(!good_ngcer) return 0;
 
   bool good_hgcer = P_hgcer_npe[0] > HGCER_NPE_MIN ||
 		    P_hgcer_npe[1] > HGCER_NPE_MIN ||
@@ -346,9 +374,6 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   bool good_beta = P_tr_beta > BETA_MIN &&
                    P_tr_beta < BETA_MAX ;
   if(!good_beta) return 0;
-
-  //  cout << "    Track is good." << endl << endl;
-  //  getchar();
 
   // Set track coordinates and slopes at the face of Preshower.
 
@@ -377,7 +402,7 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
     for (UInt_t j=0; j<THcPShTrack::fNrows_sh; j++) {
       nb++;
-      Double_t adc = P_sh_a_p[k][j];
+      Double_t adc = P_sh_a_p[k*THcPShTrack::fNrows_sh + j];
       if (adc > SH_ADC_THR) {
 	trk.AddHit(adc, 0., nb);
       }
@@ -500,6 +525,27 @@ void THcPShowerCalib::ComposeVMs() {
     for (UInt_t j=0; j<THcPShTrack::fNpmts; j++)
       Qout << setprecision(20) << fQ[i][j] << " " << i << " " << j << endl;
   Qout.close();
+
+  ofstream sout;
+  sout.open("signal.deb",ios::out);
+  for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) {
+    double sig_sum = fq0[i] * fNev;
+    double sig2_sum = fQ[i][i] * fNev;
+    int nhit = fHitCount[i];
+    double sig = 0.;
+    double err = 0.;
+    if (nhit != 0) {
+      sig = sig_sum/nhit;
+      double rms2 = sig2_sum/nhit - (sig_sum/nhit)*(sig_sum/nhit);
+      if (rms2 > 0.) {
+	double rms = TMath::Sqrt(rms2);
+	err = rms/TMath::Sqrt(double(nhit));
+      }
+    }
+
+    sout << sig << " " << err << " " << nhit << " " << i << endl;
+  }
+  sout.close();
   */
 };
 
