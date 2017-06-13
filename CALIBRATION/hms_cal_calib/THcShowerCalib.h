@@ -205,24 +205,24 @@ void THcShowerCalib::Init() {
 
   // Set branch addresses.
 
-  fTree->SetBranchAddress("H.cal.1pr.aneg_p",H_cal_1pr_aneg_p,
+  fTree->SetBranchAddress("H.cal.1pr.goodNegAdcPulseInt", H_cal_1pr_aneg_p,
 			  &b_H_cal_1pr_aneg_p);
-  fTree->SetBranchAddress("H.cal.1pr.apos_p",H_cal_1pr_apos_p,
+  fTree->SetBranchAddress("H.cal.1pr.goodPosAdcPulseInt", H_cal_1pr_apos_p,
 			  &b_H_cal_1pr_apos_p);
 
-  fTree->SetBranchAddress("H.cal.2ta.aneg_p",H_cal_2ta_aneg_p,
+  fTree->SetBranchAddress("H.cal.2ta.goodNegAdcPulseInt", H_cal_2ta_aneg_p,
 			  &b_H_cal_2ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.2ta.apos_p",H_cal_2ta_apos_p,
+  fTree->SetBranchAddress("H.cal.2ta.goodPosAdcPulseInt", H_cal_2ta_apos_p,
 			  &b_H_cal_2ta_apos_p);
 
-  fTree->SetBranchAddress("H.cal.3ta.aneg_p",H_cal_3ta_aneg_p,
+  fTree->SetBranchAddress("H.cal.3ta.goodNegAdcPulseInt", H_cal_3ta_aneg_p,
 			  &b_H_cal_3ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.3ta.apos_p",H_cal_3ta_apos_p,
+  fTree->SetBranchAddress("H.cal.3ta.goodPosAdcPulseInt", H_cal_3ta_apos_p,
 			  &b_H_cal_3ta_apos_p);
 
-  fTree->SetBranchAddress("H.cal.4ta.aneg_p",H_cal_4ta_aneg_p,
+  fTree->SetBranchAddress("H.cal.4ta.goodNegAdcPulseInt", H_cal_4ta_aneg_p,
 			  &b_H_cal_4ta_aneg_p);
-  fTree->SetBranchAddress("H.cal.4ta.apos_p",H_cal_4ta_apos_p,
+  fTree->SetBranchAddress("H.cal.4ta.goodPosAdcPulseInt", H_cal_4ta_apos_p,
 			  &b_H_cal_4ta_apos_p);
 
   fTree->SetBranchAddress("H.tr.n", &H_tr_n,&b_H_tr_n);
