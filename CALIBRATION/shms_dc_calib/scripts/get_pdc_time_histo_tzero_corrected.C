@@ -30,7 +30,7 @@ void get_pdc_time_histo_tzero_corrected()
 
   //open and read tzero data file 
   ifstream file;
-  file.open("../data_files/"+run+"/tzero_group.dat");
+  file.open("../data_files/"+run+"/tzero_wire_NEW.dat");
   
   string line;
   int counter;
@@ -46,11 +46,11 @@ void get_pdc_time_histo_tzero_corrected()
       {
 	sscanf(line.c_str(), "%lf", &value);  //pass data in file to variable 'value'
 	tzero_offset[counter] = value;  //write all tzero values for all wires in both DC to an array
-	//	cout << tzero_offset[counter] << endl;
+	//cout << tzero_offset[counter] << endl;
 	counter++;
       }
   }
-
+  
 
   //***************************************************************
   
@@ -154,7 +154,7 @@ void get_pdc_time_histo_tzero_corrected()
 
      shift = tzero[ip][sw-1];  //the shift represents how much the drift time histo needs to be offset
 
-     //cout << "sw: " << sw << " :: " << "offset: " << shift << endl;
+	//cout << "sw: " << sw << " :: " << "offset: " << shift << endl;
     
      //************APPLY TZERO OFFSET ON A WIRE-BY-WIRE BASIS TO ALL WIRES IN ALL PLANES***************
 
@@ -200,6 +200,6 @@ void get_pdc_time_histo_tzero_corrected()
  
  
  
-
+  
 
 }
