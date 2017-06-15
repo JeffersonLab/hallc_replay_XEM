@@ -8,25 +8,17 @@ void get_pdc_time_histo()
 
   //Read Run Number from txt file
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
+
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;
+  infile >> input_file >> run_NUM >> num_evts;
 
-  TString file_name = "../../../ROOTfiles/shms_replay_%d.root";
-
-  /*
-  //Create RUN Directories if they dont exist
-    char *dir0 = Form("mkdir -p ../root_files/run%d", run_NUM);
-  char *dir1 = Form("mkdir -p ../data_files/run%d", run_NUM);
-
-  if (system(dir0 || dir1) != 0) {
-    system(dir0);
-    system(dir1);
-  }
-  */
-
+  TString file_name = "../../../ROOTfiles/"+input_file;
+  
   //open file
-  TFile *f = new TFile(Form(file_name.Data(), run_NUM), "READ");
+  TFile *f = new TFile(file_name, "READ");
 
   //create new file
   TFile *g = new TFile(Form("../root_files/run%d/shms_dc_time_%d.root", run_NUM, run_NUM), "RECREATE"); // create new file to store histo
@@ -59,23 +51,27 @@ void get_pdc_time_histo()
      
     //Set Branch Address
     tree->SetBranchAddress(drift_time, pdc_time[ip]);   
-    tree->SetBranchAddress(ndata_name, &Ndata[ip]);  /* Ndata represents number of triggers vs number of hits that each trigger produced.
-							A hit is refer to as when a trigger(traversing particle), ionizes the WC gas and ionized
-							electrons reach the rearest sense wire, producing a detectable signal in the O'scope */
+    tree->SetBranchAddress(ndata_name, &Ndata[ip]);  // Ndata represents number of triggers vs number of hits that each trigger produced.
+						     // A hit is refer to as when a trigger(traversing particle), ionizes the WC gas and ionized
+						     //	electrons reach the rearest sense wire, producing a detectable signal in the O'scope 
+  
   
     //Create Histograms
     h[ip] = new TH1F(drift_time_histo, title, 200, -50, 350);  //set time to 400 ns/200 bins = 2ns/bin
+    h[ip]->GetXaxis()->SetTitle("Drift Time (ns)");
+    h[ip]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
   }
  
 
   //Declare number of entries in the tree
   Long64_t nentries = tree->GetEntries(); //number of triggers (particles that passed through all 4 hodo planes)
- 
+   
+
   //Loop over all entries
-  for(Long64_t i=0; i<nentries; i++)
+  for(Long64_t i=0; i<num_evts; i++)
     {
       tree->GetEntry(i);
-      //  cout << i << endl;
+       
     
       //Loop over number of hits for each trigger in each DC plane 
       for(Int_t ip=0; ip<NPLANES; ip++){

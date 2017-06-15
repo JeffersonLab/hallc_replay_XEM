@@ -6,9 +6,12 @@ void get_pdc_time_histo_tzero_corrected()
   
   
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
+
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;   
+  infile >> input_file >> run_NUM >> num_evts;   
 
   TString run = Form("run%d", run_NUM);
 
@@ -30,7 +33,7 @@ void get_pdc_time_histo_tzero_corrected()
 
   //open and read tzero data file 
   ifstream file;
-  file.open("../data_files/"+run+"/tzero_wire_NEW.dat");
+  file.open("../data_files/"+run+"/tzero_values_per_wire.dat");
   
   string line;
   int counter;
@@ -123,12 +126,14 @@ void get_pdc_time_histo_tzero_corrected()
  for (ip = 0; ip < NPLANES; ip++){
 
    //READ wire drift time root file per plane
-   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d.root",run_NUM);
+   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_wire_histos.root",run_NUM);
    f[ip] = new TFile(root_file, "READ");
    
 
-   h_add[ip] =new TH1F("all_wires_"+plane_names[ip], "", nbins, -50, 350);
-
+   h_add[ip] =new TH1F("plane_"+plane_names[ip]+"drifttime", "", nbins, -50, 350);
+   
+   h_add[ip]->GetXaxis()->SetTitle("Drift Time (ns)");
+   h_add[ip]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
 
    TH1F *cell_dt[tot_wires[ip]];
    TH1F *cell_dt_corr[tot_wires[ip]];
@@ -148,9 +153,14 @@ void get_pdc_time_histo_tzero_corrected()
  
      //Get drift time histograms from root file
      cell_dt[sw-1] = (TH1F*)f[ip]->Get(drift_time_histo);  
+     
 
      //Create corrected wire histos
      cell_dt_corr[sw-1] = new TH1F(plane_names[ip]+Form("_wire_%d_corr", sw), "", nbins, -50, 350);
+     
+     cell_dt_corr[sw-1]->GetXaxis()->SetTitle("Drift Time (ns)");
+     cell_dt_corr[sw-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+
 
      shift = tzero[ip][sw-1];  //the shift represents how much the drift time histo needs to be offset
 

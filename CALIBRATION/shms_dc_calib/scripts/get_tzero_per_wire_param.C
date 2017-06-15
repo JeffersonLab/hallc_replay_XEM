@@ -12,9 +12,11 @@ void get_tzero_per_wire_param()
 
  //read run number from input file
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;   
+  infile >> input_file >> run_NUM >> num_evts;   
 
   TString run = Form("run%d", run_NUM);
 
@@ -57,7 +59,7 @@ Double_t **t0 = new Double_t*[NPLANES];
     //open and read each wire tzero file
     string line;
     ifstream input;
-    input.open(Form("../data_files/run%d/hdc_"+planes[ip]+"tzero_run%d_updated.txt", run_NUM, run_NUM ) );
+    input.open(Form("../data_files/run%d/shms_dc_"+planes[ip]+"tzero_run%d_updated.dat", run_NUM, run_NUM ) );
     
     
      sw = 0;  //se wire counter to 0
@@ -85,7 +87,7 @@ Double_t **t0 = new Double_t*[NPLANES];
  
 //create output file stream to write tzero values to a data file
  ofstream out;
- TString tzero_file = "../data_files/"+run+"/tzero_wire_NEW.dat";
+ TString tzero_file = "../data_files/"+run+"/tzero_values_per_wire.dat";
  out.open(tzero_file);
  
  //Create an output parameter file to store tzero values 
@@ -120,6 +122,11 @@ Double_t **t0 = new Double_t*[NPLANES];
 
    }
  }
+
+ //close files
+ ofs.close();
+ out.close();
+
 }
  
  

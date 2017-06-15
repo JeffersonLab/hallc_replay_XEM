@@ -14,15 +14,18 @@ void get_wire_tzero()
  
 
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
+
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;   
+  infile >> input_file >> run_NUM >> num_evts;   //read the input file (added)   
 
   //check if tzero_weighted_avg text file exists (if it does, DELETE IT, otherwise new values will be appended to it, in addition to pre-existing tzero values)
-  std::ifstream stream(Form("../data_files/run%d/tzero_weighted_avg_run%d.txt",run_NUM, run_NUM));
+  std::ifstream stream(Form("../data_files/run%d/tzero_weighted_avg_run%d.dat",run_NUM, run_NUM));
  if (stream.good())
   {
-  gSystem->Exec(Form("rm ../data_files/run%d/tzero_weighted_avg_run%d.txt",run_NUM, run_NUM));
+  gSystem->Exec(Form("rm ../data_files/run%d/tzero_weighted_avg_run%d.dat",run_NUM, run_NUM));
   }
 
  TString run = Form("run%d", run_NUM);
@@ -41,19 +44,19 @@ void get_wire_tzero()
  for (int ip = 0; ip < NPLANES; ip++){
 
    //READ root file
-   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d.root",run_NUM);
+   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_wire_histos.root",run_NUM);
    f[ip] = new TFile(root_file, "READ");
 
    //Create a file output file stream object to write t0 values to data file
    ofstream ofs;
-   TString t_zero_file = "../data_files/" + run + "/hdc_"+plane_names[ip]+Form("tzero_run%d.dat", run_NUM);
+   TString t_zero_file = "../data_files/" + run + "/shms_dc_"+plane_names[ip]+Form("tzero_run%d.dat", run_NUM);
    ofs.open (t_zero_file);
 
    //Set headers for subsequent columns of data
    ofs << "#WIRE " << "   "  << "t0" << "   " << "t0_err" << "   " << " entries " << endl;
 
    //Create root file to store fitted wire drift times histos and "t0 vs. wirenum"
-   TString output_root_file = "../root_files/"+run+"/shmsDC_"+plane_names[ip]+Form("run%d_fitted_histos.root", run_NUM);
+   TString output_root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_fitted_histos.root", run_NUM);
    TFile *g = new TFile(output_root_file,"RECREATE");
 
    f[ip]->cd();  //change to file containing the wire drift times histos
@@ -244,7 +247,7 @@ void get_wire_tzero()
      
    }
    
-   /*    // Make Plot of t0 versus Wire Number 
+       // Make Plot of t0 versus Wire Number 
    
    TCanvas *t = new TCanvas("t", "", 2000,500);
    t->SetGrid();
@@ -267,12 +270,12 @@ void get_wire_tzero()
    t->Write(title);   //write to a root file
    
    //close dat file
-   
+   ofs.close();
    //save plots
    //TString tzero_plots = "plots/"+run_NUM +"/hdc"+plane_names[ip]+Form("TESTING_tzero_v_wire_%d.eps", run);
    //t->SaveAs(tzero_plots);
-   */
-   ofs.close();
+   
+   
    //*****************************************************************************************//
    //        CALCULATE THE "t0s" WEIGHTED AVERAGE FOR WIRE DRIFT TIMES WITH ENTRIES > = 300   //
    //*****************************************************************************************//
@@ -284,7 +287,7 @@ void get_wire_tzero()
    string line;
    
    //open new data file to write updated t0 values
-   TString t_zero_file_corr = "../data_files/" + run + "/hdc_"+plane_names[ip]+Form("tzero_run%d_updated.txt", run_NUM);
+   TString t_zero_file_corr = "../data_files/" + run + "/shms_dc_"+plane_names[ip]+Form("tzero_run%d_updated.dat", run_NUM);
    ofs.open(t_zero_file_corr);
    ofs << " #Wire " << "     " << " t_zero " << "     " << " t_zero_err " << "     " << " entries " << endl; 
    
@@ -352,7 +355,7 @@ void get_wire_tzero()
    
    //open new data file to write weighted average of updated t_zero values
    
-   TString t_zero_AVG = Form("../data_files/run%d/tzero_weighted_avg_run%d.txt", run_NUM, run_NUM);
+   TString t_zero_AVG = Form("../data_files/run%d/tzero_weighted_avg_run%d.dat", run_NUM, run_NUM);
    
    ofstream ofile;
    ofile.open(t_zero_AVG, std::ofstream::out | std::ofstream::app); //open file in and output and append mode
@@ -367,14 +370,14 @@ void get_wire_tzero()
    ifs.close();
 
     // Make Plot of t0 versus Wire Number for entries > 300 events
-   /*
+   
    TCanvas *t1 = new TCanvas("t1", "", 2000,500);
    t1->SetGrid();
 
    //TString mygraph = "hdc"+plane_names[ip]+Form("_t_zero_run%d.txt", run);
    TGraphErrors *graph1 = new TGraphErrors(t_zero_file_corr, "%lg %lg %lg");
    graph1->SetName("graph1");
-   TString title1 = "hdc"+plane_names[ip]+": t0 versus sensewire_corrected";
+   TString title1 = "shms_dc"+plane_names[ip]+": t0 versus sensewire_corrected";
    graph1->SetTitle(title1);
    graph1->SetMarkerStyle(20);
    graph1->SetMarkerColor(1);
@@ -399,7 +402,6 @@ void get_wire_tzero()
    ltx1->DrawLatex(t1->GetUxmax()*0.75,40, Form("Weighted Average = %lf #pm %lf ns", weighted_AVG, weighted_AVG_err) );
    
    t1->Write(title1);   //write canvas to a root file
-   */
    ofs.close();  //close data file
    
    

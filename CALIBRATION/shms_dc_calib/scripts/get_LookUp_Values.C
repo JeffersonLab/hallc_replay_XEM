@@ -10,9 +10,12 @@ void get_LookUp_Values() {
    
   //Read Run Number from txt file
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
+
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;
+  infile >> input_file >> run_NUM >> num_evts;
  
   //Open root file containing drift time histos
   TFile *f = new TFile(Form("../root_files/run%d/shms_tzero_corr_histos.root", run_NUM),"READ");
@@ -54,7 +57,7 @@ void get_LookUp_Values() {
 
   for (int ip=0; ip<NPLANES; ip++){
    
-    TString drift_time_histo = "all_wires_"+plane_names[ip]; 
+    TString drift_time_histo = "plane_"+plane_names[ip]+"drifttime"; 
 
     //Get drift time histograms from root file
     h[ip] = (TH1F*)f->Get(drift_time_histo);

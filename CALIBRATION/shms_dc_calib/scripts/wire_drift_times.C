@@ -36,9 +36,11 @@ void wire_drift_times::Loop()
 
   //Read Run Number from txt file
   int run_NUM;
+  Long64_t num_evts;        //added
+  string input_file;   //added
   TString f0 = "input_RUN.txt";
   ifstream infile(f0);
-  infile >> run_NUM;
+  infile >> input_file >> run_NUM >> num_evts;
 
   TString run = Form("run%d", run_NUM);
   //Declare plane names to loop over
@@ -58,7 +60,7 @@ void wire_drift_times::Loop()
   for (int ip = 0; ip < NPLANES; ip++){
 
     //Initialize a root file array to store individual DC cell drift times
-    root_file[ip] = "../root_files/" + run + "/shms_DC_"+plane_names[ip]+Form("_%d.root", run_NUM);
+    root_file[ip] = "../root_files/" + run + "/shms_DC_"+plane_names[ip]+Form("_%d_wire_histos.root", run_NUM);
     g[ip] = new TFile(root_file[ip], "RECREATE");
     g[ip]->cd();
 
@@ -74,15 +76,23 @@ void wire_drift_times::Loop()
     if(ip == 0 || ip == 1 || ip == 4 || ip == 5 || ip == 6 || ip == 7 || ip == 10 || ip == 11) {
 
       TH1F *cell_dt[total_wires_uv];    
-      TH2F *wire_vs_dt = new TH2F("wire_vs_dt", "", 200., -50., 350., 107., 0.,107.);
+      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 107., 0.,107., 200., -50., 350.);
+      
+     
     
+      drifttime_vs_wire->GetXaxis()->SetTitle("Wire Number");
+      drifttime_vs_wire->GetYaxis()->SetTitle("Drift Time (ns)");
+
       //Initialize wire drift time histograms
       for (wirenum=1; wirenum<=total_wires_uv; wirenum++){
 	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
+                
+      cell_dt[wirenum-1]->GetXaxis()->SetTitle("Wire Number");
+      cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
       }
 	
       //Loop over all entries (triggers or events)   
-      for (Long64_t jentry=0; jentry<nentries; jentry++) {
+      for (Long64_t jentry=0; jentry<num_evts; jentry++) {
 	Long64_t ientry = LoadTree(jentry);
 	if (ientry < 0) break;
 	nb = fChain->GetEntry(jentry);   nbytes += nb;
@@ -96,7 +106,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1u1_time[i]);
-	    wire_vs_dt->Fill(P_dc_1u1_time[i], P_dc_1u1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1u1_wirenum[i], P_dc_1u1_time[i]);
 
 	  }
 	}
@@ -109,7 +119,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1u2_time[i]);
-	    wire_vs_dt->Fill(P_dc_1u2_time[i], P_dc_1u2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1u2_wirenum[i], P_dc_1u2_time[i]);
 
 	  }
 	}						
@@ -122,7 +132,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1v1_time[i]);
-	    wire_vs_dt->Fill(P_dc_1v1_time[i], P_dc_1v1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1v1_wirenum[i], P_dc_1v1_time[i]);
 
 	  }
 	}		
@@ -135,7 +145,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1v2_time[i]);
-	    wire_vs_dt->Fill(P_dc_1v2_time[i], P_dc_1v2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1v2_wirenum[i], P_dc_1v2_time[i]);
 
 	  }
 	}
@@ -148,7 +158,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2v2_time[i]);
-	    wire_vs_dt->Fill(P_dc_2v2_time[i], P_dc_2v2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2v2_wirenum[i], P_dc_2v2_time[i]);
 
 	  }
 	}
@@ -161,7 +171,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2v1_time[i]);
-	    wire_vs_dt->Fill(P_dc_2v1_time[i], P_dc_2v1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2v1_wirenum[i], P_dc_2v1_time[i]);
 
 	  }
 	}
@@ -174,7 +184,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2u2_time[i]);
-	    wire_vs_dt->Fill(P_dc_2u2_time[i], P_dc_2u2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2u2_wirenum[i], P_dc_2u2_time[i]);
 
 	  }
 	}
@@ -187,7 +197,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2u1_time[i]);
-	    wire_vs_dt->Fill(P_dc_2u1_time[i], P_dc_2u1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2u1_wirenum[i], P_dc_2u1_time[i]);
 
 	  }
 	}						
@@ -200,15 +210,25 @@ void wire_drift_times::Loop()
     if(ip == 2 || ip == 3 || ip == 8 || ip == 9) {
 
       TH1F *cell_dt[total_wires_x];    
-      TH2F *wire_vs_dt = new TH2F("wire_vs_dt", "", 200., -50., 350., 79., 0., 79.);
-    
+      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 79., 0., 79., 200., -50., 350.);
+ 
+            
+  
+      drifttime_vs_wire->GetXaxis()->SetTitle("Wire Number");
+      drifttime_vs_wire->GetYaxis()->SetTitle("Drift Time (ns)");    
+
       //Initialize wire drift time histograms
       for (int wirenum=1; wirenum<=total_wires_x; wirenum++){
 	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
+  
+	cell_dt[wirenum-1]->GetXaxis()->SetTitle("Wire Number");
+	cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+
+
       }
 	
       //Loop over all entries (triggers or events)   
-      for (Long64_t jentry=0; jentry<nentries; jentry++) {
+      for (Long64_t jentry=0; jentry<num_evts; jentry++) {
 	Long64_t ientry = LoadTree(jentry);
 	if (ientry < 0) break;
 	nb = fChain->GetEntry(jentry);   nbytes += nb;
@@ -222,7 +242,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1x1_time[i]);
-	    wire_vs_dt->Fill(P_dc_1x1_time[i], P_dc_1x1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1x1_wirenum[i], P_dc_1x1_time[i]);
 
 	  }
 	}
@@ -235,7 +255,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_1x2_time[i]);
-	    wire_vs_dt->Fill(P_dc_1x2_time[i], P_dc_1x2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_1x2_wirenum[i], P_dc_1x2_time[i]);
 
 	  }
 	}						
@@ -248,7 +268,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2x2_time[i]);
-	    wire_vs_dt->Fill(P_dc_2x2_time[i], P_dc_2x2_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2x2_wirenum[i], P_dc_2x2_time[i]);
 
 	  }
 	}		
@@ -261,7 +281,7 @@ void wire_drift_times::Loop()
 
 	    //Fill the Histograms
 	    cell_dt[wirenum-1]->Fill(P_dc_2x1_time[i]);
-	    wire_vs_dt->Fill(P_dc_2x1_time[i], P_dc_2x1_wirenum[i]);
+	    drifttime_vs_wire->Fill(P_dc_2x1_wirenum[i], P_dc_2x1_time[i]);
 
 	  }
 	}						
