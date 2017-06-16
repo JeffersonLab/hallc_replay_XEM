@@ -319,7 +319,7 @@ void get_wire_tzero()
 
        //  if(sensewire<=fNWires[ip]){
 	
-       cout << sensewire << endl;
+       //cout << sensewire << endl;
      //Check if entries for each sensewire exceeds a certain number of events
      
        if (entries>300 && abs(t0)<30) 

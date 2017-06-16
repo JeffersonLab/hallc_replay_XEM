@@ -1,5 +1,5 @@
 #define NPLANES 12
-
+#define NBINS 400
 using namespace std;
 void get_pdc_time_histo_tzero_corrected()
 {
@@ -100,8 +100,7 @@ void get_pdc_time_histo_tzero_corrected()
 
   int i;
  
-  int nbins = 200; // set number of bins in histos
-  int bin_width = 2; 
+  int bin_width = 1; 
   int bin_Content;
   Double_t shift;  //will be the t0 offset
 
@@ -131,10 +130,10 @@ void get_pdc_time_histo_tzero_corrected()
     f[ip] = new TFile(root_file, "READ");
     
 
-   h_add[ip] =new TH1F("plane_"+plane_names[ip]+"drifttime", "", nbins, -50, 350);
+   h_add[ip] =new TH1F("plane_"+plane_names[ip]+"drifttime", "", NBINS, -50, 350);
    
    h_add[ip]->GetXaxis()->SetTitle("Drift Time (ns)");
-   h_add[ip]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+   h_add[ip]->GetYaxis()->SetTitle("Number of Entries / 1 ns");
 
 
    TH1F *cell_dt[107];
@@ -159,10 +158,10 @@ void get_pdc_time_histo_tzero_corrected()
      
 
      //Create corrected wire histos
-     cell_dt_corr[sw-1] = new TH1F(plane_names[ip]+Form("_wire_%d_corr", sw), "", nbins, -50, 350);
+     cell_dt_corr[sw-1] = new TH1F(plane_names[ip]+Form("_wire_%d_corr", sw), "", NBINS, -50, 350);
      
      cell_dt_corr[sw-1]->GetXaxis()->SetTitle("Drift Time (ns)");
-     cell_dt_corr[sw-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+     cell_dt_corr[sw-1]->GetYaxis()->SetTitle("Number of Entries / 1 ns");
 
 
      shift = tzero[ip][sw-1];  //the shift represents how much the drift time histo needs to be offset
@@ -174,7 +173,7 @@ void get_pdc_time_histo_tzero_corrected()
 
      //INCLUDE the code 'shift.C ', which shifts a histogram   
 
-     for (i=1; i<=nbins; i++) {
+     for (i=1; i<=NBINS; i++) {
        
        bin_Content = cell_dt[sw-1]->GetBinContent(i);
        

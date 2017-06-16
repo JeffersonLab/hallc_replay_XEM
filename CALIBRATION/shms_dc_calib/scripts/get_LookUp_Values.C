@@ -3,8 +3,7 @@
 */
 
 #define NPLANES 12
-#define TOTAL_BINS 137
-
+#define TOTAL_BINS 274
 void get_LookUp_Values() {
 
    
@@ -49,7 +48,7 @@ void get_LookUp_Values() {
   ofs << "; number of 1st bin in table in ns" << "\n";
   ofs << "pdrift1stbin=0" << "\n";
   ofs << "; bin size in ns" << "\n";
-  ofs << "pdriftbinsz=2" << "\n";
+  ofs << "pdriftbinsz=1" << "\n";
  
  
  
@@ -101,12 +100,12 @@ void get_LookUp_Values() {
       lookup_value[ip] = binSUM[ip] / binContent_TOTAL[ip];
       bin_count = bin_count + 1;
      
-      if (bin_count <= 8 ) {
+      if (bin_count <= 16 ) {
 	ofs << setprecision(5) << lookup_value[ip] << fixed << ",";
       }
      
-      else if (bin_count >8 && bin_count < 138) {
-	ofs << setprecision(5) << lookup_value[ip] << ((bin_count+1) % 10 ? "," : "\n") << fixed; 
+      else if (bin_count >16 && bin_count < 274) {
+	ofs << setprecision(5) << lookup_value[ip] << ((bin_count+1) % 20 ? "," : "\n") << fixed; 
       }
       else {
 	ofs << setprecision(5) << lookup_value[ip] << fixed << endl;	  

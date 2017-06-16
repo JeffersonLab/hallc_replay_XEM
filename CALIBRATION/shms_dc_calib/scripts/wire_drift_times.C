@@ -4,7 +4,7 @@
 #include <TStyle.h>
 #include <TCanvas.h>
 #define NPLANES 12
-
+#define NBINS 400
 void wire_drift_times::Loop()
 {
   //   In a ROOT session, you can do:
@@ -76,7 +76,7 @@ void wire_drift_times::Loop()
     if(ip == 0 || ip == 1 || ip == 4 || ip == 5 || ip == 6 || ip == 7 || ip == 10 || ip == 11) {
 
       TH1F *cell_dt[total_wires_uv];    
-      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 107., 0.,107., 200., -50., 350.);
+      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 107., 0.,107., NBINS, -50., 350.);
       
      
     
@@ -85,10 +85,10 @@ void wire_drift_times::Loop()
 
       //Initialize wire drift time histograms
       for (wirenum=1; wirenum<=total_wires_uv; wirenum++){
-	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
+	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", NBINS, -50., 350.);
                 
       cell_dt[wirenum-1]->GetXaxis()->SetTitle("Drift Time (ns)");
-      cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+      cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 1 ns");
       }
 	
       //Loop over all entries (triggers or events)   
@@ -210,7 +210,7 @@ void wire_drift_times::Loop()
     if(ip == 2 || ip == 3 || ip == 8 || ip == 9) {
 
       TH1F *cell_dt[total_wires_x];    
-      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 79., 0., 79., 200., -50., 350.);
+      TH2F *drifttime_vs_wire = new TH2F("drifttime_vs_wire", "", 79., 0., 79., NBINS, -50., 350.);
  
             
   
@@ -219,10 +219,10 @@ void wire_drift_times::Loop()
 
       //Initialize wire drift time histograms
       for (int wirenum=1; wirenum<=total_wires_x; wirenum++){
-	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
+	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", NBINS, -50., 350.);
   
 	cell_dt[wirenum-1]->GetXaxis()->SetTitle("Drift Time (ns)");
-	cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
+	cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 1 ns");
 
 
       }
