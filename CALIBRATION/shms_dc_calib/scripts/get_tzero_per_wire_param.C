@@ -69,15 +69,16 @@ Double_t **t0 = new Double_t*[NPLANES];
 	  // cout << line << endl;
 	  if (line[0]!='#')
 	    {	  
-	      if(!input.good()) {break;}
+	      // if(!input.good()) {break;}
 	      sscanf(line.c_str(), "%d %lf", &nwire, &nt0);
 	     
-	      if(sw>0) {
-	      
-	       t0[ip][nwire-1] = nt0;
-	    
-	      }
-	      sw++;
+	     
+	      // if(sw>0) {
+	     
+	      t0[ip][nwire-1] = nt0;
+	       
+	       // }
+	       // sw++;
 	    
 	    }
 	  
@@ -111,18 +112,18 @@ Double_t **t0 = new Double_t*[NPLANES];
 
    for (sw=0; sw<fNWires[ip]; sw++) {
 
-     out << setprecision(3) << t0[ip][sw] << endl;
+     out << setprecision(6) << t0[ip][sw] << endl;
      
      if (sw <= 10) 
        { 
-	 ofs << setprecision(3) << t0[ip][sw] << fixed << ",";
+	 ofs << setprecision(6) << t0[ip][sw] << fixed << ",";
        }
      else if (sw>10 && sw <(fNWires[ip]-1))
        {
-	 ofs << setprecision(3) << t0[ip][sw] << ((sw+1) % 16 ? ", " : "\n") << fixed;
+	 ofs << setprecision(6) << t0[ip][sw] << ((sw+1) % 16 ? ", " : "\n") << fixed;
        }
      else if (sw==78 || sw == 106) {
-       ofs << setprecision(3) << t0[ip][sw] << fixed << endl;
+       ofs << setprecision(6) << t0[ip][sw] << fixed << endl;
       }
 
     
