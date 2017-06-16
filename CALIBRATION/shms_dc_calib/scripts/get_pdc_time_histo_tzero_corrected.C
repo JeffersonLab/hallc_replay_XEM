@@ -25,7 +25,7 @@ void get_pdc_time_histo_tzero_corrected()
   int tot_wires[NPLANES] = {107, 107, 79, 79, 107, 107, 107, 107, 79, 79, 107, 107};
 
   //sum over all wires in both DC
-  static int wire_sum = 0;
+  int wire_sum = 0;
   for (ip=0; ip<NPLANES; ip++) {
     wire_sum = wire_sum + tot_wires[ip];
   }
@@ -38,8 +38,9 @@ void get_pdc_time_histo_tzero_corrected()
   string line;
   int counter;
   Double_t value;
-  Double_t tzero_offset[wire_sum];
-   
+  Double_t *tzero_offset;
+  tzero_offset = new Double_t[wire_sum];
+  
 
   counter = 0;
     
@@ -116,29 +117,31 @@ void get_pdc_time_histo_tzero_corrected()
   TString file_name =  Form("../root_files/run%d/shms_tzero_corr_histos.root", run_NUM);
   TFile *g = new TFile(file_name, "RECREATE");
     
-
   TH1F *h_add[NPLANES]; //t0-corrected plane drift times 
 
- 
- 
 
+  
+ 
+  
  //Loop over all planes
  for (ip = 0; ip < NPLANES; ip++){
-
-   //READ wire drift time root file per plane
-   root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_wire_histos.root",run_NUM);
-   f[ip] = new TFile(root_file, "READ");
    
+   //READ wire drift time root file per plane
+    root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_wire_histos.root",run_NUM);
+    f[ip] = new TFile(root_file, "READ");
+    
 
    h_add[ip] =new TH1F("plane_"+plane_names[ip]+"drifttime", "", nbins, -50, 350);
    
    h_add[ip]->GetXaxis()->SetTitle("Drift Time (ns)");
    h_add[ip]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
 
-   TH1F *cell_dt[tot_wires[ip]];
-   TH1F *cell_dt_corr[tot_wires[ip]];
+
+   TH1F *cell_dt[107];
+   TH1F *cell_dt_corr[107];
  
- 	
+  
+  	
    //Get wire histos from root file and loop over each 
    //  sense wire of a plane in shms Drift Chambers (DC1 or DC2)
    
@@ -146,8 +149,8 @@ void get_pdc_time_histo_tzero_corrected()
    
    for (sw=1; sw<=tot_wires[ip]; sw++){
 
-    
-
+     
+     
      //set title of histos in root file
      TString drift_time_histo = Form("wire_%d", sw); 
  
@@ -169,7 +172,7 @@ void get_pdc_time_histo_tzero_corrected()
      //************APPLY TZERO OFFSET ON A WIRE-BY-WIRE BASIS TO ALL WIRES IN ALL PLANES***************
 
 
-     //INCLUDE the code 'shift.C ', which shifts a histogram 
+     //INCLUDE the code 'shift.C ', which shifts a histogram   
 
      for (i=1; i<=nbins; i++) {
        
@@ -185,7 +188,7 @@ void get_pdc_time_histo_tzero_corrected()
 
      //*************************************************************************************************
      
-
+    
 
      //write wire drift times (after tzero corrections) to file
      g->cd();
@@ -195,21 +198,22 @@ void get_pdc_time_histo_tzero_corrected()
      //add all cell drift times into a single plane
      h_add[ip]->Add(cell_dt_corr[sw-1]);
      
-     
-     
+           
      
    } // end loop over sense wires
    
    
    //Wire combined wire drift times (t0 -corrected) for each plane to file, 
-   g->cd();
-   h_add[ip]->Write();
+    g->cd();
+    h_add[ip]->Write();
    
+
+     
 
  } // end loop over planes
  
  
  
-  
+    
 
 }

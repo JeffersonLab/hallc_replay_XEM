@@ -52,11 +52,6 @@
 	system(dir_data);
       }
     
-    if (std::system(dir_data) != 0) 
-      {
-	  
-      }
-    
     
     
     //Create run Directories if they dont exist

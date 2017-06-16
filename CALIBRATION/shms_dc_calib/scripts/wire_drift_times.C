@@ -87,7 +87,7 @@ void wire_drift_times::Loop()
       for (wirenum=1; wirenum<=total_wires_uv; wirenum++){
 	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
                 
-      cell_dt[wirenum-1]->GetXaxis()->SetTitle("Wire Number");
+      cell_dt[wirenum-1]->GetXaxis()->SetTitle("Drift Time (ns)");
       cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
       }
 	
@@ -221,7 +221,7 @@ void wire_drift_times::Loop()
       for (int wirenum=1; wirenum<=total_wires_x; wirenum++){
 	cell_dt[wirenum-1] = new TH1F(Form("wire_%d", wirenum), "", 200., -50., 350.);
   
-	cell_dt[wirenum-1]->GetXaxis()->SetTitle("Wire Number");
+	cell_dt[wirenum-1]->GetXaxis()->SetTitle("Drift Time (ns)");
 	cell_dt[wirenum-1]->GetYaxis()->SetTitle("Number of Entries / 2 ns");
 
 

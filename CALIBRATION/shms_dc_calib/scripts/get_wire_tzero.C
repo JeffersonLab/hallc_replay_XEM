@@ -6,6 +6,8 @@ a certain number of bins and this fit is extrapolated to y=0(x-axis). The extrap
 
 #include <vector>
 #include "TMath.h"
+#include <iomanip>
+#include <iostream>
 
 #define NPLANES 12
   using namespace std;
@@ -53,7 +55,7 @@ void get_wire_tzero()
    ofs.open (t_zero_file);
 
    //Set headers for subsequent columns of data
-   ofs << "#WIRE " << "   "  << "t0" << "   " << "t0_err" << "   " << " entries " << endl;
+   ofs << "#WIRE " << setw(15)  << "t0" << setw(15) << "t0_err" << setw(15) << "entries" << endl;
 
    //Create root file to store fitted wire drift times histos and "t0 vs. wirenum"
    TString output_root_file = "../root_files/"+run+"/shms_DC_"+plane_names[ip]+Form("_%d_fitted_histos.root", run_NUM);
@@ -239,7 +241,7 @@ void get_wire_tzero()
      entries = cell_dt[sensewire-1]->GetEntries();  //number of entries (triggers) per wire
      //cout << "y_int: " << y_int << " :: " << "m: " << m << " :: " << "t0: " << setprecision(6) << -y_int/m << endl;
      //Write "t0" values to file
-     ofs << sensewire << "          " << setprecision(6) << -y_int/m << "          " <<  t_zero_err << "          " << entries << endl;
+     ofs << sensewire << setw(15) << setprecision(6) << -y_int/m << setw(15) <<  t_zero_err << setw(15) << entries << endl;
      
      //Change to output root file and write fitted histos to file
      g->cd();
@@ -268,13 +270,10 @@ void get_wire_tzero()
    graph->Draw("AP");
    t->Update();
    t->Write(title);   //write to a root file
+  
    
    //close dat file
    ofs.close();
-   //save plots
-   //TString tzero_plots = "plots/"+run_NUM +"/hdc"+plane_names[ip]+Form("TESTING_tzero_v_wire_%d.eps", run);
-   //t->SaveAs(tzero_plots);
-   
    
    //*****************************************************************************************//
    //        CALCULATE THE "t0s" WEIGHTED AVERAGE FOR WIRE DRIFT TIMES WITH ENTRIES > = 300   //
@@ -289,7 +288,7 @@ void get_wire_tzero()
    //open new data file to write updated t0 values
    TString t_zero_file_corr = "../data_files/" + run + "/shms_dc_"+plane_names[ip]+Form("tzero_run%d_updated.dat", run_NUM);
    ofs.open(t_zero_file_corr);
-   ofs << " #Wire " << "     " << " t_zero " << "     " << " t_zero_err " << "     " << " entries " << endl; 
+   ofs << "#Wire" << setw(15)  << "t_zero" << setw(15) << "t_zero_err" << setw(15) << "entries" << endl; 
    
    //Initialize variables related to weighted avg
    double sum_NUM;  //numerator of weighted avg
@@ -298,9 +297,12 @@ void get_wire_tzero()
    double weighted_AVG_err; 
   
     int counter;
-    double t0_corr;
-    double t0_corr_err;
-   //set them to zero to start sum inside while loop 
+    // double t0_corr; 
+    //double t0_corr_err;
+    Double_t t0;
+    Double_t t0_err;
+
+    //set them to zero to start sum inside while loop 
    sum_NUM = 0.0;
    sum_DEN = 0.0;
    
@@ -311,38 +313,40 @@ void get_wire_tzero()
    //read line bt line the t_zero_file
    while(getline(ifs, line)) {
 
-     if(line!='#') {
+     if(line[0]!='#') {
        
-       sscanf(line.c_str(), "%d %lf %lf %d", &sensewire, &t0_corr, &t0_corr_err, &entries); //assign each of the variables above a data in the t_zero_file
- 
-       if(sensewire<=fNWires[ip]){
-	
+       sscanf(line.c_str(), "%d %lf %lf %d", &sensewire, &t0, &t0_err, &entries); //assign each of the variables above a data in the t_zero_file
 
+       //  if(sensewire<=fNWires[ip]){
+	
+       cout << sensewire << endl;
      //Check if entries for each sensewire exceeds a certain number of events
      
-     if (entries>300 && t_zero < 30) 
-{
+       if (entries>300 && abs(t0)<30) 
+       {
 
-	
-     	
-       //Calculate the weighted average of t0s
-       sum_NUM = sum_NUM + t0_corr/(t0_corr_err*t0_corr_err);
-       sum_DEN = sum_DEN + 1.0/(t0_corr_err*t0_corr_err);      
-       
-       //cout << "sum_NUM : " << sum_NUM << endl;  
-       //cout << "sum_DEN : " << sum_DEN << endl;  
-       
-    
+	 //cout << ip << "::" << sensewire << "::" << t0 << endl;
+	 //Calculate the weighted average of t0s
+	 sum_NUM = sum_NUM + t0/(t0_err*t0_err);
+	 sum_DEN = sum_DEN + 1.0/(t0_err*t0_err);      
+	 
+	 //cout << "sum_NUM : " << sum_NUM << endl;  
+	 //cout << "sum_DEN : " << sum_DEN << endl;  
+	 
+	 
 
+	 
+	 ofs << sensewire << setw(15) << t0 << setw(15) << t0_err << setw(15) << entries << endl;
+	 //cout << "TZERO: " << t0 << endl;
+	 
+	 
 
-       ofs << sensewire << "        " << t0_corr << "        " << t0_corr_err << "        " << entries << endl;
-       //cout << "TZERO: " << t_zero << endl;
-       
-       
-     }
-     
-     else { ofs << sensewire << "        " << 0.0 << "       " << 0.0 << "        " << entries << endl;}
        }
+     
+     else { ofs << sensewire << setw(15) << 0.0 << setw(15) << 0.0 << setw(15) << entries << endl;}
+     
+     //}
+     
      } //end if statement
    }
    
@@ -362,10 +366,7 @@ void get_wire_tzero()
    
    ofile << " #weighted_AVG " << "     " << " DC plane: " <<  plane_names[ip] << endl; 
    ofile << weighted_AVG << endl;
-   
-  
-   
-   
+     
    
    ifs.close();
 
@@ -402,9 +403,9 @@ void get_wire_tzero()
    ltx1->DrawLatex(t1->GetUxmax()*0.75,40, Form("Weighted Average = %lf #pm %lf ns", weighted_AVG, weighted_AVG_err) );
    
    t1->Write(title1);   //write canvas to a root file
-   ofs.close();  //close data file
-   
-   
+ 
+      ofs.close();  //close data file
+
 
 
 
