@@ -8,7 +8,7 @@ block P.hod.*
 block P.hgcer.*
 block P.aero.*
 block P.cal.*
-#block P.gtr.*
+block P.gtr.*
 
 # Noble Gas Cherenkov
 TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
