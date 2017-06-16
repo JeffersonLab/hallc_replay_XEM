@@ -26,7 +26,7 @@ Running code
 
 * From the calibration results, two parameter files will be produced in:
   * hallc_replay/PARAM/SHMS/DC/pdc_tzero_per_wire_run%d_NEW.param. %d=run_number
-  * hallc_replay/PARAM/SHMS/DC/pdriftmap_new.param
+  * hallc_replay/PARAM/SHMS/DC/pdriftmap_run%d_NEW.param
 
 * Rename the new parameter files as follows:
   * copy: pdc_tzero_per_wire_run%d_NEW.param to pdc_tzero_per_wire.param

@@ -38,7 +38,7 @@ void get_LookUp_Values() {
   
   //Create an output file to store lookup values  
   ofstream ofs;
-  TString lookup_table = "../../../PARAM/SHMS/DC/pdriftmap_new.param";
+  TString lookup_table = Form("../../../PARAM/SHMS/DC/pdriftmap_run%d_NEW.param", run_NUM);
   ofs.open (lookup_table);
  
  
