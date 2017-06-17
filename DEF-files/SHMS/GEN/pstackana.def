@@ -72,19 +72,19 @@ TH2F pdc2u1_raw_tdc_vs_wirenum 'PDC 2U1 Raw TDC vs. Wire Number; Wire Number; Ra
 
 
 #SHMS DC DRIFT TIME PER PLANE 
-TH1F pdc1u1_drifttime 'SHMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1u1.time 200 -50 350
-TH1F pdc1u2_drifttime 'SHMS DC 1U2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1u2.time 200 -50 350
-TH1F pdc1x1_drifttime 'SHMS DC 1X1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1x1.time 200 -50 350
-TH1F pdc1x2_drifttime 'SHMS DC 1X2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1x2.time 200 -50 350
-TH1F pdc1v1_drifttime 'SHMS DC 1V1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1v1.time 200 -50 350
-TH1F pdc1v2_drifttime 'SHMS DC 1V2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.1v2.time 200 -50 350
+TH1F pdc1u1_drifttime 'SHMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u1.time 400 -50 350
+TH1F pdc1u2_drifttime 'SHMS DC 1U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u2.time 400 -50 350
+TH1F pdc1x1_drifttime 'SHMS DC 1X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1x1.time 400 -50 350
+TH1F pdc1x2_drifttime 'SHMS DC 1X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1x2.time 400 -50 350
+TH1F pdc1v1_drifttime 'SHMS DC 1V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1v1.time 400 -50 350
+TH1F pdc1v2_drifttime 'SHMS DC 1V2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1v2.time 400 -50 350
 
-TH1F pdc2v2_drifttime 'SHMS DC 2V2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2v2.time 200 -50 350
-TH1F pdc2v1_drifttime 'SHMS DC 2V1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2v1.time 200 -50 350
-TH1F pdc2x2_drifttime 'SHMS DC 2X2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2x2.time 200 -50 350
-TH1F pdc2x1_drifttime 'SHMS DC 2X1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2x1.time 200 -50 350
-TH1F pdc2u2_drifttime 'SHMS DC 2U2 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2u2.time 200 -50 350
-TH1F pdc2u1_drifttime 'SHMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 2 ns' P.dc.2u1.time 200 -50 350
+TH1F pdc2v2_drifttime 'SHMS DC 2V2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2v2.time 400 -50 350
+TH1F pdc2v1_drifttime 'SHMS DC 2V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2v1.time 400 -50 350
+TH1F pdc2x2_drifttime 'SHMS DC 2X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2x2.time 400 -50 350
+TH1F pdc2x1_drifttime 'SHMS DC 2X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2x1.time 400 -50 350
+TH1F pdc2u2_drifttime 'SHMS DC 2U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u2.time 400 -50 350
+TH1F pdc2u1_drifttime 'SHMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u1.time 400 -50 350
 
 #SHMS DC DRIFT TIME VS. WIRENUMBER 
 TH2F pdc1u1_drifttime_vs_wirenum 'SHMS DC 1U1Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 500 0 500
