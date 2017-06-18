@@ -17,7 +17,7 @@ void get_LookUp_Values() {
   infile >> input_file >> run_NUM >> num_evts;
  
   //Open root file containing drift time histos
-  TFile *f = new TFile(Form("../root_files/run%d/shms_tzero_corr_histos.root", run_NUM),"READ");
+  TFile *f = new TFile(Form("../root_files/run%d/shms_tzero_corr_histo.root", run_NUM),"READ");
  
   //Define histogram array
   TH1F *h[NPLANES];
@@ -56,7 +56,7 @@ void get_LookUp_Values() {
 
   for (int ip=0; ip<NPLANES; ip++){
    
-    TString drift_time_histo = "plane_"+plane_names[ip]+"drifttime"; 
+    TString drift_time_histo = "pdc"+plane_names[ip]+"_time"; 
 
     //Get drift time histograms from root file
     h[ip] = (TH1F*)f->Get(drift_time_histo);
