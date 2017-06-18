@@ -3,7 +3,8 @@
 
 #define NPLANES 12
 #define NBINS 400
-
+#define bin_min -50.5
+#define bin_max 349.5
 void get_pdc_time_histo()
 {
 
@@ -58,7 +59,7 @@ void get_pdc_time_histo()
   
   
     //Create Histograms
-    h[ip] = new TH1F(drift_time_histo, title, NBINS, -50, 350);  //set time to 400 ns/200 bins = 2ns/bin
+    h[ip] = new TH1F(drift_time_histo, title, NBINS, bin_min, bin_max);  //set time to 400 ns/200 bins = 2ns/bin
     h[ip]->GetXaxis()->SetTitle("Drift Time (ns)");
     h[ip]->GetYaxis()->SetTitle("Number of Entries / 1 ns");
   }
