@@ -99,7 +99,7 @@
     gSystem->Exec("root -l -q get_tzero_per_wire_param.C"); 
     
     //execute code to get t0 corrected drift times
-    gSystem->Exec("root -l -q get_pdc_time_histo_tzero_corrected.C");
+    gSystem->Exec("root -l -q get_pdc_time_histo_tzero_corrected_v2.C");
     
     //execute code to update LookUp Table
     gSystem->Exec("root -l -q get_LookUp_Values.C");
