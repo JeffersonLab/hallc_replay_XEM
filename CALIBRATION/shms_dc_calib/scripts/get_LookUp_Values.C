@@ -104,11 +104,11 @@ void get_LookUp_Values() {
 	ofs << setprecision(5) << lookup_value[ip] << fixed << ",";
       }
      
-      else if (bin_count >16 && bin_count < 274) {
+      else if (bin_count >16 && bin_count <= 274) {
 	ofs << setprecision(5) << lookup_value[ip] << ((bin_count+1) % 20 ? "," : "\n") << fixed; 
       }
       else {
-	ofs << setprecision(5) << lookup_value[ip] << fixed << endl;	  
+	ofs  << setprecision(5) << lookup_value[ip] <<  fixed << endl;	  
       }
      
     }

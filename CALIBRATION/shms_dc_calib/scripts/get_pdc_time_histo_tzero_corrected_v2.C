@@ -116,7 +116,7 @@ void get_pdc_time_histo_tzero_corrected_v2()
   TFile *f = new TFile(file_name, "READ");
 
   //create new file
-  TFile *g = new TFile(Form("shms_tzero_corr_histo.root", run_NUM), "RECREATE"); // create new file to store histo
+  TFile *g = new TFile(Form("../root_files/"+run+"/shms_tzero_corr_histo.root", run_NUM), "RECREATE"); // create new file to store histo
 
   f->cd();
 
