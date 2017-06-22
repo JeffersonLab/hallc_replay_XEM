@@ -8,14 +8,15 @@
 // A steering Root script for the SHMS calorimeter calibration.
 //
 
-void pcal_calib(string RunNumber) {
+void pcal_calib(string RunNumber, int nstart=0, int nstop=999999999) {
 
   // Initialize the analysis clock
   clock_t t = clock();
  
-  cout << "Calibrating run " << RunNumber << endl;
+  cout << "Calibrating run " << RunNumber << ", events "
+       << nstart << " -- " << nstop << endl;
 
-  THcPShowerCalib theShowerCalib(RunNumber);
+  THcPShowerCalib theShowerCalib(RunNumber, nstart, nstop);
 
   theShowerCalib.Init();            // Initialize constants and variables
   theShowerCalib.CalcThresholds();  // Thresholds on the uncalibrated Edep/P
@@ -41,7 +42,7 @@ void pcal_calib(string RunNumber) {
   theShowerCalib.hEuncSel->DrawCopy("same");
 
   Canvas->cd(2);
-  theShowerCalib.hESHvsEPR->Draw("colz");
+  theShowerCalib.hESHvsEPR->Draw();
 
   // Normalized energy deposition after calibration.
 
@@ -56,7 +57,21 @@ void pcal_calib(string RunNumber) {
   // SHMS delta(P) versus the calibrated energy deposition.
 
   Canvas->cd(4);
-  theShowerCalib.hDPvsEcal->Draw("colz");
+  theShowerCalib.hDPvsEcal->Draw();
+
+  // Save canvas in a pdf format.
+  Canvas->Print(Form("%s_%d-%d.pdf",RunNumber.c_str(),nstart,nstop));
+
+  // Save histograms in root file.
+
+  //TFile* froot=new TFile(Form("%s_%d-%d.root",RunNumber.c_str(),nstart,nstop),
+  //			   "RECREATE");
+  //  theShowerCalib.hEunc->Write();
+  //  theShowerCalib.hEuncSel->Write();
+  //  theShowerCalib.hESHvsEPR->Write();
+  //  theShowerCalib.hEcal->Write();
+  //  theShowerCalib.hDPvsEcal->Write();
+  //  froot->Close();
 
   // Calculate the analysis rate
   t = clock() - t;
