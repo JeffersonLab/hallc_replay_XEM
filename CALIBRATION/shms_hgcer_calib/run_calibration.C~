@@ -1,0 +1,24 @@
+//Script to run over all SHMS HGCER calibration scripts ar once and update the necessary parameter files
+
+void run_calibration()
+{
+
+  //User Input Run
+  Int_t run_NUM;
+  cout << "Enter run number: ";
+  cin >> run_NUM;
+
+  //Create root and data file directories if they don't exist
+  gROOT->ProcessLine(".! mkdir root_files");
+
+  //Execute histogram creator & cutting script
+  gROOT->ProcessLine(Form(".x scripts/analysis.C(%d)", run_NUM));
+
+  cout << "I got here!" << endl;
+
+  //Take those histograms and determine the calibration constants
+  gROOT->ProcessLine(Form(".x scripts/calib_const.C(%d)", run_NUM));
+
+  cout << "To choose correct calibration constant, verify which plot is more linear." << endl;
+  cout << "Something went wrong? Consult the README!" << endl;
+}

@@ -7,15 +7,12 @@ bck/*
 hcana
 raw
 .root_history
-CALIBRATION/*/data_files/*
-CALIBRATION/*/root_files/*
 HISTOGRAMS/*
 REPORT_OUTPUT/*
 log/*
 full_hms.sh
 full_shms.sh
 onlineGUI/Config/kpp_*
-run_*
 *.d
 *.so
 *Auto*
