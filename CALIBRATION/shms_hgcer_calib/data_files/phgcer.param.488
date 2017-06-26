@@ -1,6 +1,0 @@
-; Calibration constants for run488
-
-phgcer_gain_calib =531,
-                   440,
-                   376,
-                   495,

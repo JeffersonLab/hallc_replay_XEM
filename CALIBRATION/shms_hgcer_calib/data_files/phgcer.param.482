@@ -1,6 +1,0 @@
-; Calibration constants for run482
-
-phgcer_gain_calib =745,
-              1.18e+03,
-                   420,
-                   495,
