@@ -4,16 +4,15 @@ block P.hod.*
 block T.shms.*
 
 #SHMS Hodo Error Flags
-TH1F phodo_1x_pos_adcErrFlg 'SHMS 1X+ FPGA Error Flag; Error Flag; Number of Entries' P.hod.1x.posAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_1y_pos_adcErrFlg 'SHMS 1Y+ FPGA Error Flag; Error Flag; Number of Entries' P.hod.1y.posAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_2x_pos_adcErrFlg 'SHMS 2X+ FPGA Error Flag; Error Flag; Number of Entries' P.hod.2x.posAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_2y_pos_adcErrFlg 'SHMS 2Y+ FPGA Error Flag; Error Flag; Number of Entries' P.hod.2y.posAdcErrorFlag 2 -0.5 1.5
+TH2F phodo_1x_pos_adcErrFlg2D 'SHMS 1X+ FPGA Error Flag; PMT Number; Error Flag' P.hod.1x.posAdcCounter P.hod.1x.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F phodo_1y_pos_adcErrFlg2D 'SHMS 1Y+ FPGA Error Flag; PMT Number; Error Flag' P.hod.1y.posAdcCounter P.hod.1y.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F phodo_2x_pos_adcErrFlg2D 'SHMS 2X+ FPGA Error Flag; PMT Number; Error Flag' P.hod.2x.posAdcCounter P.hod.2x.posAdcErrorFlag 14 0.5 14.5 2 -0.5 1.5
+TH2F phodo_2y_pos_adcErrFlg2D 'SHMS 2Y+ FPGA Error Flag; PMT Number; Error Flag' P.hod.2y.posAdcCounter P.hod.2y.posAdcErrorFlag 21 0.5 21.5 2 -0.5 1.5
 
-TH1F phodo_1x_neg_adcErrFlg 'SHMS 1X- FPGA Error Flag; Error Flag; Number of Entries' P.hod.1x.negAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_1y_neg_adcErrFlg 'SHMS 1Y- FPGA Error Flag; Error Flag; Number of Entries' P.hod.1y.negAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_2x_neg_adcErrFlg 'SHMS 2X- FPGA Error Flag; Error Flag; Number of Entries' P.hod.2x.negAdcErrorFlag 2 -0.5 1.5
-TH1F phodo_2y_neg_adcErrFlg 'SHMS 2Y- FPGA Error Flag; Error Flag; Number of Entries' P.hod.2y.negAdcErrorFlag 2 -0.5 1.5
-
+TH2F phodo_1x_neg_adcErrFlg2D 'SHMS 1X- FPGA Error Flag; PMT Number; Error Flag' P.hod.1x.negAdcCounter P.hod.1x.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F phodo_1y_neg_adcErrFlg2D 'SHMS 1Y- FPGA Error Flag; PMT Number; Error Flag' P.hod.1y.negAdcCounter P.hod.1y.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F phodo_2x_neg_adcErrFlg2D 'SHMS 2X- FPGA Error Flag; PMT Number; Error Flag' P.hod.2x.negAdcCounter P.hod.2x.negAdcErrorFlag 14 0.5 14.5 2 -0.5 1.5
+TH2F phodo_2y_neg_adcErrFlg2D 'SHMS 2Y- FPGA Error Flag; PMT Number; Error Flag' P.hod.2y.negAdcCounter P.hod.2y.negAdcErrorFlag 21 0.5 21.5 2 -0.5 1.5
 
 #SHMS Hodo Raw ADC Multiplicities
 TH1F phodo_1x_raw_adc_mult_pos 'SHMS 1X+ Raw ADC Multiplicity; Number of PMTs Hit; Total Number of Raw +ADC Hits' P.hod.1x.totNumPosAdcHits 13 0.5 13.5

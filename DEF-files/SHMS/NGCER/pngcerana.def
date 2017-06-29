@@ -4,7 +4,8 @@ block P.ngcer.*
 block T.shms.*
 
 #SHMS FPGA Error Flag
-TH1F pngcer_adcErrFlg 'SHMS Noble Gas Cherenkov FPGA Error Flag; Error Flag; Number of Entries' P.ngcer.adcErrorFlag 2 -0.5 1.5
+#TH1F pngcer_adcErrFlg 'SHMS Noble Gas Cherenkov FPGA Error Flag; Error Flag; Number of Entries' P.ngcer.adcErrorFlag 2 -0.5 1.5
+TH2F pngcer_adcErrFlg2D 'SHMS Noble Gas Cherenkov FPGA Error Flag; PMT Number; Error Flag' P.ngcer.adcCounter P.ngcer.adcErrorFlag 4 0.5 4.5 2 -0.5 1.5
 
 #SHMS NGC RAW Occupancy and Multiplicity
 TH1F pngcer_raw_occ 'SHMS Noble Gas Cherenkov Raw Occupancy; PMT Number; Number of Raw ADC Hits' P.ngcer.adcCounter 4 0.5 4.5

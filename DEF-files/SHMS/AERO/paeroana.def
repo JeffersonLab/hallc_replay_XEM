@@ -4,9 +4,8 @@ block P.aero.*
 block T.shms.*
 
 #SHMS AERO FPGA Error Flag
-TH1F paero_adcErrFlg_pos 'SHMS Aero+ FPGA Error Flag; Error Flag; Number of Entries' P.aero.posAdcErrorFlag 2 -0.5 1.5
-TH1F paero_adcErrFlg_neg 'SHMS Aero- FPGA Error Flag; Error Flag; Number of Entries' P.aero.negAdcErrorFlag 2 -0.5 1.5
-
+TH2F paero_adcErrFlg2D_pos 'SHMS Aero+ FPGA Error Flag; PMT Number; Error Flag' P.aero.posAdcCounter P.aero.posAdcErrorFlag 7 0.5 7.5 2 -0.5 1.5
+TH2F paero_adcErrFlg2D_neg 'SHMS Aero- FPGA Error Flag; PMT Number; Error Flag' P.aero.negAdcCounter P.aero.negAdcErrorFlag 7 0.5 7.5 2 -0.5 1.5
 
 #SHMS AERO RAW Occupancy and Multiplicity
 TH1F paero_raw_occ_pos 'SHMS Aero+ Raw Occupancy; PMT Number; Number of Raw +ADC Hits' P.aero.posAdcCounter 7 0.5 7.5

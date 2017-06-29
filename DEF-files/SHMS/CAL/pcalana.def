@@ -6,8 +6,12 @@ block T.shms.*
 #SHMS PRE-SHOWER HISTOGRAMS
 
 #SHMS PreSH FPGA Error Flags
-TH1F pcal_prshwr_adcErrFlg_pos 'SHMS PreShower+ FPGA Error Flag; Error Flag; Number of Entries' P.cal.pr.posAdcErrorFlag 2 -0.5 1.5
-TH1F pcal_prshwr_adcErrFlg_neg 'SHMS PreShower- FPGA Error Flag; Error Flag; Number of Entries' P.cal.pr.negAdcErrorFlag 2 -0.5 1.5
+#TH1F pcal_prshwr_adcErrFlg_pos 'SHMS PreShower+ FPGA Error Flag; Error Flag; Number of Entries' P.cal.pr.posAdcErrorFlag 2 -0.5 1.5
+#TH1F pcal_prshwr_adcErrFlg_neg 'SHMS PreShower- FPGA Error Flag; Error Flag; Number of Entries' P.cal.pr.negAdcErrorFlag 2 -0.5 1.5
+
+TH2F pcal_prshwr_adcErrFlg2D_pos 'SHMS PreShower+ FPGA Error Flag; PMT Number; Error Flag' P.cal.pr.posAdcCounter P.cal.pr.posAdcErrorFlag 14 0.5 14.5 2 -0.5 1.5
+TH2F pcal_prshwr_adcErrFlg2D_neg 'SHMS PreShower- FPGA Error Flag; PMT Number; Error Flag' P.cal.pr.negAdcCounter P.cal.pr.negAdcErrorFlag 14 0.5 14.5 2 -0.5 1.5
+
 
 #SHMS PreSH RAW Occupancy and Multiplicity
 TH1F pcal_prshwr_raw_occ_pos 'SHMS PreShower+ Raw Occupancy; PMT Number; Number of Raw +ADC Hits' P.cal.pr.posAdcCounter 14 0.5 14.5
@@ -76,7 +80,7 @@ TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy De
 #SHMS SHOWER HISTOGRAMS
 
 #SHMS Shower FPGA Error Flags
-TH1F pcal_shwr_adcErrFlg_pos 'SHMS Shower FPGA Error Flag; Error Flag; Number of Entries' P.cal.fly.adcErrorFlag 2 -0.5 1.5
+TH2F pcal_shwr_adcErrFlg2D_pos 'SHMS Shower FPGA Error Flag; PMT Number; Error Flag' P.cal.fly.adcCounter P.cal.fly.adcErrorFlag 224 0.5 224.5 2 -0.5 1.5
 
 #SHMS Shower RAW Occupancy and Multiplicity
 TH1F pcal_shwr_raw_occ 'SHMS Shower Raw Occupancy; PMT Number; Number of Raw ADC Hits' P.cal.fly.adcCounter 224 0.5 224.5

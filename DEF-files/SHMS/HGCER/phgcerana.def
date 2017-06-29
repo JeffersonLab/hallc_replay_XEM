@@ -4,7 +4,7 @@ block P.hgcer.*
 block T.shms.*
 
 #SHMS FPGA Error Flag
-TH1F phgcer_adcErrFlg 'SHMS Heavy Gas Cherenkov FPGA Error Flag; Error Flag; Number of Entries' P.hgcer.adcErrorFlag 2 -0.5 1.5
+TH2F phgcer_adcErrFlg2D 'SHMS Heavy Gas Cherenkov FPGA Error Flag; PMT Number; Error Flag' P.hgcer.adcCounter P.hgcer.adcErrorFlag 4 0.5 4.5 2 -0.5 1.5
 
 #SHMS HGC RAW Occupancy and Multiplicity
 TH1F phgcer_raw_occ 'SHMS Heavy Gas Cherenkov Raw Occupancy; PMT Number; Number of Raw ADC Hits' P.hgcer.adcCounter 4 0.5 4.5
