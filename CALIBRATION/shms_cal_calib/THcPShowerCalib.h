@@ -53,7 +53,7 @@ class THcPShowerCalib {
 
  public:
 
-  THcPShowerCalib(string);
+  THcPShowerCalib(string, int, int);
   THcPShowerCalib();
   ~THcPShowerCalib();
 
@@ -81,6 +81,8 @@ class THcPShowerCalib {
 
   TTree* fTree;
   UInt_t fNentries;
+  UInt_t fNstart;
+  UInt_t fNstop;
 
   // Declaration of leaves types
 
@@ -150,8 +152,10 @@ THcPShowerCalib::THcPShowerCalib() {};
 
 //------------------------------------------------------------------------------
 
-THcPShowerCalib::THcPShowerCalib(string RunNumber) {
+THcPShowerCalib::THcPShowerCalib(string RunNumber, int nstart, int nstop) {
   fRunNumber = RunNumber;
+  fNstart = nstart;
+  fNstop = nstop;
 };
 
 //------------------------------------------------------------------------------
@@ -173,7 +177,9 @@ void THcPShowerCalib::SaveRawData() {
 
   THcPShTrack trk;
 
-  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
+       ientry<TMath::Min(fNstop,fNentries); ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
       trk.SetEs(falphaC);
@@ -281,12 +287,16 @@ void THcPShowerCalib::CalcThresholds() {
   // Histogram uncalibrated energy depositions, get mean and RMS from the
   // histogram, establish +/-3 * RMS thresholds.
 
-  cout << "THcPShowerCalib::CalcThresholds: FNentries = " << fNentries << endl;
+  //cout<< "THcPShowerCalib::CalcThresholds: FNentries = " << fNentries << endl;
+  cout << "THcPShowerCalib::CalcThresholds: fNstart = " << fNstart << " "
+       << "  fNstop = " << fNstop << endl;
 
   Int_t nev = 0;
   THcPShTrack trk;
 
-  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
+       ientry<TMath::Min(fNstop,fNentries); ientry++) {
 
     if ( ReadShRawTrack(trk, ientry)) {
 
@@ -425,7 +435,9 @@ void THcPShowerCalib::ComposeVMs() {
 
   // Loop over the shower track events in the ntuples.
 
-  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
+       ientry<TMath::Min(fNstop,fNentries); ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
 
@@ -706,14 +718,16 @@ void THcPShowerCalib::FillHEcal() {
   // Output event by event energy depositions and momenta for debug purposes.
   //
 
-  ofstream output;
-  output.open("calibrated.deb",ios::out);
+  //  ofstream output;
+  //  output.open("calibrated.deb",ios::out);
 
   Int_t nev = 0;
 
   THcPShTrack trk;
 
-  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
+  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
+       ientry<TMath::Min(fNstop,fNentries); ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
       //    trk.Print(cout);
@@ -729,15 +743,15 @@ void THcPShowerCalib::FillHEcal() {
 
       hESHvsEPR->Fill(trk.EPRnorm(), trk.ESHnorm());
 
-      output << Enorm*P/1000. << " " << P/1000. << " " << delta << " "
-	     << trk.GetX() << " " << trk.GetY() << endl;
+      //      output << Enorm*P/1000. << " " << P/1000. << " " << delta << " "
+      //	     << trk.GetX() << " " << trk.GetY() << endl;
 
       nev++;
     }
 
   };
 
-  output.close();
+  //  output.close();
 
   cout << "FillHEcal: " << nev << " events filled" << endl;
 };
@@ -752,7 +766,7 @@ void THcPShowerCalib::SaveAlphas() {
   //
 
   ofstream output;
-  char* fname = Form("pcal.param.%s",fRunNumber.c_str());
+  char* fname = Form("pcal.param.%s_%d-%d",fRunNumber.c_str(),fNstart,fNstop);
   cout << "SaveAlphas: fname=" << fname << endl;
 
   output.open(fname,ios::out);
