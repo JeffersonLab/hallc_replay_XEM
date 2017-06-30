@@ -10,22 +10,43 @@ block P.aero.*
 block P.cal.*
 block P.gtr.*
 
-# Noble Gas Cherenkov
-TH1F pngcer_occu 'SHMS Noble Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.ngcer.adcCounter 4 0.5 4.5
-TH2F pngcer_ped_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' [I] P.ngcer.goodAdcPed 4 0 4 1000 0 1000
-TH2F pngcer_pi_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' [I] P.ngcer.goodAdcPulseInt 4 0 4 4000 0 40000
-TH2F pngcer_amp_vs_cntr 'SHMS Noble Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' [I] P.ngcer.goodAdcPulseAmp 4 0 4 4100 0 4100
-TH1F pngcer_pmt1_adc  'SHMS NG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[0] 2000 0. 20000. 
-TH1F pngcer_pmt2_adc  'SHMS NG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[1] 2000 0. 20000. 
-TH1F pngcer_pmt3_adc  'SHMS NG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[2] 2000 0. 20000. 
-TH1F pngcer_pmt4_adc  'SHMS NG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.ngcer.goodAdcPulseInt[3] 2000 0. 20000. 
-TH1F pngcer_pmt1_nphe 'SHMS NG Cherenkov PMT 1 ; N_Phe ; Counts' P.ngcer.npe[0] 80 0. 40. 
-TH1F pngcer_pmt2_nphe 'SHMS NG Cherenkov PMT 2 ; N_Phe ; Counts' P.ngcer.npe[1] 80 0. 40. 
-TH1F pngcer_pmt3_nphe 'SHMS NG Cherenkov PMT 3 ; N_Phe ; Counts' P.ngcer.npe[2] 80 0. 40. 
-TH1F pngcer_pmt4_nphe 'SHMS NG Cherenkov PMT 4 ; N_Phe ; Counts' P.ngcer.npe[3] 80 0. 40. 
+#**********************
+# Noble Gas Cherenkov *
+#**********************
 
-# Drift Chambers
+#------------------------------------------
+#SHMS NGC GOOD Occupancy and Multiplicity 
+#------------------------------------------
+TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Good Occupancy; PMT Number; Number of Good ADC Hits' P.ngcer.numGoodAdcHits 4 0.5 4.5
+TH1F pngcer_good_mult 'SHMS Noble Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.ngcer.totNumGoodAdcHits 4 0.5 4.5
+
+#------------------------------------------
+#SHMS NGC TOTAL NUMBER OF P.E.
+#------------------------------------------
+TH1F pngcer_tot_npe 'SHMS Noble Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.ngcer.npeSum 200 0 100 P.ngcer.npeSum>0.0 
+
+#------------------------------------------
+#SHMS NGC Number of P.E. / PMT
+#------------------------------------------
+TH2F pngcer_npe 'SHMS Noble Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.ngcer.npe 4 0.5 4.5 200 0 100 P.ngcer.npe>0.0 
+
+#-------------------------------------------------------------------------
+#SHMS NGC GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time 
+# GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
+#-------------------------------------------------------------------------
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 400 300 700
+TH2F pngcer_good_pi_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' [I+1] P.ngcer.goodAdcPulseInt 4 0.5 4.5 600 0 30000 P.ngcer.goodAdcPulseInt>0.0
+TH2F pngcer_good_rawpi_vs_pmt 'SHMS Noble Gas Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.ngcer.goodAdcPulseIntRaw 4 0.5 4.5 600 0 30000 P.ngcer.goodAdcPulseIntRaw>0.0
+TH2F pngcer_good_pamp_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' [I+1] P.ngcer.goodAdcPulseAmp 4 0.5 4.5 200 0 4000 P.ngcer.goodAdcPulseAmp>0.0
+TH2F pngcer_good_ptime_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.ngcer.goodAdcPulseTime 4 0.5 4.5 350 0 3500 P.ngcer.goodAdcPulseTime>0.0
+
+#*****************
+# Drift Chambers *
+#*****************
+
+#------------------
 #SHMS DC WIRE MAP
+#------------------
 TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
 TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
 TH1F pdc1x1_wirenum 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.1x1.wirenum  79 0.5  79.5
@@ -40,38 +61,9 @@ TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.2
 TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
 TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
 
-#SHMS DC RAW TDC PER PLANE 
-TH1F pdc1u1_raw_tdc 'PDC 1U1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1u1.rawtdc 5000 -25000 25000
-TH1F pdc1u2_raw_tdc 'PDC 1U2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1u2.rawtdc 5000 -25000 25000
-TH1F pdc1x1_raw_tdc 'PDC 1X1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1x1.rawtdc 5000 -25000 25000
-TH1F pdc1x2_raw_tdc 'PDC 1X2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1x2.rawtdc 5000 -25000 25000
-TH1F pdc1v1_raw_tdc 'PDC 1V1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1v1.rawtdc 5000 -25000 25000
-TH1F pdc1v2_raw_tdc 'PDC 1V2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.1v2.rawtdc 5000 -25000 25000
-
-TH1F pdc2v2_raw_tdc 'PDC 2V2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2v2.rawtdc 5000 -25000 25000
-TH1F pdc2v1_raw_tdc 'PDC 2V1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2v1.rawtdc 5000 -25000 25000
-TH1F pdc2x2_raw_tdc 'PDC 2X2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2x2.rawtdc 5000 -25000 25000
-TH1F pdc2x1_raw_tdc 'PDC 2X1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2x1.rawtdc 5000 -25000 25000
-TH1F pdc2u2_raw_tdc 'PDC 2U2 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2u2.rawtdc 5000 -25000 25000
-TH1F pdc2u1_raw_tdc 'PDC 2U1 Raw TDC; Raw TDC Value / 10 TDC Units; Number of Entries' P.dc.2u1.rawtdc 5000 -25000 25000
-
-#SHMS DC RAW TDC VS. WIRENUMBER  
-TH2F pdc1u1_raw_tdc_vs_wirenum 'PDC 1U1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1u1.wirenum P.dc.1u1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1u2_raw_tdc_vs_wirenum 'PDC 1U2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1u2.wirenum P.dc.1u2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1x1_raw_tdc_vs_wirenum 'PDC 1X1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1x1.wirenum P.dc.1x1.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1x2_raw_tdc_vs_wirenum 'PDC 1X2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1x2.wirenum P.dc.1x2.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc1v1_raw_tdc_vs_wirenum 'PDC 1V1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1v1.wirenum P.dc.1v1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc1v2_raw_tdc_vs_wirenum 'PDC 1V2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.1v2.wirenum P.dc.1v2.rawtdc 107 0.5 107.5 5000 -25000 25000
-
-TH2F pdc2v2_raw_tdc_vs_wirenum 'PDC 2V2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2v2.wirenum P.dc.2v2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2v1_raw_tdc_vs_wirenum 'PDC 2V1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2v1.wirenum P.dc.2v1.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2x2_raw_tdc_vs_wirenum 'PDC 2X2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2x2.wirenum P.dc.2x2.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2x1_raw_tdc_vs_wirenum 'PDC 2X1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2x1.wirenum P.dc.2x1.rawtdc  79 0.5  79.5 5000 -25000 25000
-TH2F pdc2u2_raw_tdc_vs_wirenum 'PDC 2U2 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2u2.wirenum P.dc.2u2.rawtdc 107 0.5 107.5 5000 -25000 25000
-TH2F pdc2u1_raw_tdc_vs_wirenum 'PDC 2U1 Raw TDC vs. Wire Number; Wire Number; Raw TDC Value / 10 TDC Units' P.dc.2u1.wirenum P.dc.2u1.rawtdc 107 0.5 107.5 5000 -25000 25000
-
-
+#-----------------------------
 #SHMS DC DRIFT TIME PER PLANE 
+#-----------------------------
 TH1F pdc1u1_drifttime 'SHMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u1.time 400 -50 350
 TH1F pdc1u2_drifttime 'SHMS DC 1U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u2.time 400 -50 350
 TH1F pdc1x1_drifttime 'SHMS DC 1X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1x1.time 400 -50 350
@@ -86,7 +78,9 @@ TH1F pdc2x1_drifttime 'SHMS DC 2X1 Drift Time; Drift Time (ns); Number of Entrie
 TH1F pdc2u2_drifttime 'SHMS DC 2U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u2.time 400 -50 350
 TH1F pdc2u1_drifttime 'SHMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u1.time 400 -50 350
 
+#----------------------------------
 #SHMS DC DRIFT TIME VS. WIRENUMBER 
+#----------------------------------
 TH2F pdc1u1_drifttime_vs_wirenum 'SHMS DC 1U1Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.1u1.wirenum P.dc.1u1.time 107 0.5 107.5 500 0 500
 TH2F pdc1u2_drifttime_vs_wirenum 'SHMS DC 1U2Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.1u2.wirenum P.dc.1u2.time 107 0.5 107.5 500 0 500
 TH2F pdc1x1_drifttime_vs_wirenum 'SHMS DC 1X1Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.1x1.wirenum P.dc.1x1.time  79 0.5  79.5 500 0 500
@@ -101,8 +95,9 @@ TH2F pdc2x1_drifttime_vs_wirenum 'SHMS DC 2X1Drift Time vs. Wire Number; Wire Nu
 TH2F pdc2u2_drifttime_vs_wirenum 'SHMS DC 2U2Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.2u2.wirenum P.dc.2u2.time 107 0.5 107.5 500 0 500
 TH2F pdc2u1_drifttime_vs_wirenum 'SHMS DC 2U1Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' P.dc.2u1.wirenum P.dc.2u1.time 107 0.5 107.5 500 0 500
 
-
-#SHMS DC Drift Distance Per Plane  
+#---------------------------------
+#SHMS DC Drift Distance Per Plane 
+#--------------------------------- 
 TH1F pdc1u1_ddist 'SHMS 1U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1u1.dist 50 -0.1 0.6
 TH1F pdc1u1_ddist_cut 'SHMS 1U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1u1.dist 50 -0.1 0.6   time_cut1
 
@@ -139,8 +134,9 @@ TH1F pdc2u2_ddist_cut 'SHMS 2U2 Drift Distance; Drift Distance (cm); Number of E
 TH1F pdc2u1_ddist 'SHMS 2U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2u1.dist 50 -0.1 0.6
 TH1F pdc2u1_ddist_cut 'SHMS 2U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2u1.dist 50 -0.1 0.6   time_cut12
 
-
+#---------------------------------------
 #SHMS DC Drift Distance vs. Wire number 
+#---------------------------------------
 TH2F pdc1u1_wirenum_vs_ddist 'SHMS 1U1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u1.wirenum P.dc.1u1.dist 107 0.5 107.5 300 -0.1 0.6
 TH2F pdc1u2_wirenum_vs_ddist 'SHMS 1U2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1u2.wirenum P.dc.1u2.dist 107 0.5 107.5 300 -0.1 0.6
 TH2F pdc1x1_wirenum_vs_ddist 'SHMS 1X1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.1x1.wirenum P.dc.1x1.dist  79 0.5  79.5 300 -0.1 0.6
@@ -155,7 +151,9 @@ TH2F pdc2x1_wirenum_vs_ddist 'SHMS 2X1 Wiremap vs. Drift Distance; Wire Number; 
 TH2F pdc2v2_wirenum_vs_ddist 'SHMS 2V2 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v2.wirenum P.dc.2v2.dist 107 0.5 107.5 300 -0.1 0.6
 TH2F pdc2v1_wirenum_vs_ddist 'SHMS 2V1 Wiremap vs. Drift Distance; Wire Number; Drift Distance (cm)' P.dc.2v1.wirenum P.dc.2v1.dist 107 0.5 107.5 300 -0.1 0.6
 
-#SHMS DC RESIDUALS PER PLANE  
+#----------------------------
+#SHMS DC RESIDUALS PER PLANE 
+#---------------------------- 
 TH1F pdc1u1_residuals 'SHMS 1U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' P.dc.residual[0]  200 -1.0 1.0
 TH1F pdc1u2_residuals 'SHMS 1U2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' P.dc.residual[1]  200 -1.0 1.0
 TH1F pdc1x1_residuals 'SHMS 1X1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' P.dc.residual[2]  200 -1.0 1.0
@@ -170,9 +168,9 @@ TH1F pdc2x1_residuals 'SHMS 2X1 DC Residuals; Residuals (cm); Number of Entries 
 TH1F pdc2u2_residuals 'SHMS 2U2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' P.dc.residual[10] 200 -1.0 1.0
 TH1F pdc2u1_residuals 'SHMS 2U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' P.dc.residual[11] 200 -1.0 1.0
 
-
-
-#RESIDUALS vs. Wire Number
+#----------------------------------
+#SHMS DC RESIDUALS vs. Wire Number
+#----------------------------------
 TH2F pdc1u1_residuals_vs_wirenum 'SHMS 1U1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' P.dc.1u1.wirenum P.dc.residual[0] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc1u2_residuals_vs_wirenum 'SHMS 1U2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' P.dc.1u2.wirenum P.dc.residual[1] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc1x1_residuals_vs_wirenum 'SHMS 1X1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' P.dc.1x1.wirenum P.dc.residual[2] 79 0.5  79.5 200 -1.0 1.0
@@ -187,107 +185,332 @@ TH2F pdc2x1_residuals_vs_wirenum 'SHMS 2X1 DC Residuals vs. Wire Number; Wire Nu
 TH2F pdc2u2_residuals_vs_wirenum 'SHMS 2U2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' P.dc.2u2.wirenum P.dc.residual[10] 107 0.5 107.5 200 -1.0 1.0
 TH2F pdc2u1_residuals_vs_wirenum 'SHMS 2U1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' P.dc.2u1.wirenum P.dc.residual[11] 107 0.5 107.5 200 -1.0 1.0
 
-
+#------------------------------------------
+#SHMS DC TRACKING VARIABLES AT FOCAL PLANE
+#------------------------------------------
 TH1F pdc_trk_mom 'SHMS DC Track Momentum; P (GeV); Number of Entires / 10 MeV' P.tr.p 600 0 6
 TH1F pdc_trk_beta 'SHMS DC Track Beta; Beta (GeV); Number of Entires' P.tr.beta 300 -1.5 1.5
-TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yxp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' P.dc.y P.dc.x 100 -50 50 100 -50 50
-TH2F pdc_xfpp_vs_yxpp 'SHMS DC Xfpp vs Yxpp; Yfpp; Xfpp' P.dc.yp P.dc.xp 100 -1 1 100 -1 1    
+TH2F pdc_xfp_vs_yxp 'SHMS DC Xfp vs Yfp; Yfp (cm) / 1 cm; Xfp (cm) / 1 cm' P.dc.y P.dc.x 100 -50 50 100 -50 50
+TH2F pdc_xfpp_vs_yfpp 'SHMS DC X'fp vs Y'fp; Y'fp (rad) / 0.02 rad; X'fp (rad) / 0.02 rad' P.dc.yp P.dc.xp 100 -1 1 100 -1 1    
 
-# Hodoscopes (Positive/Left) 
-TH1F phodo_1x_pos_adc_occu 'SHMS Hodoscope 1X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posAdcCounter 13 0.5 13.5
-TH1F phodo_1y_pos_adc_occu 'SHMS Hodoscope 1Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posAdcCounter 13 0.5 13.5 
-TH1F phodo_2x_pos_adc_occu 'SHMS Hodoscope 2X+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posAdcCounter 14 0.5 14.5
-TH1F phodo_2y_pos_adc_occu 'SHMS Hodoscope 2Y+ ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posAdcCounter 21 0.5 21.5
-TH1F phodo_1x_pos_tdc_occu 'SHMS Hodoscope 1X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.posTdcCounter 13 0.5 13.5
-TH1F phodo_1y_pos_tdc_occu 'SHMS Hodoscope 1Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.posTdcCounter 13 0.5 13.5 
-TH1F phodo_2x_pos_tdc_occu 'SHMS Hodoscope 2X+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.posTdcCounter 14 0.5 14.5
-TH1F phodo_2y_pos_tdc_occu 'SHMS Hodoscope 2Y+ TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.posTdcCounter 21 0.5 21.5
-TH2F phodo_1x_pos_ped_vs_pad 'SHMS Hodoscope 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPed 13 0.5 13.5 1000 0 1000
-TH2F phodo_1y_pos_ped_vs_pad 'SHMS Hodoscope 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPed 13 0.5 13.5 1000 0 1000
-TH2F phodo_2x_pos_ped_vs_pad 'SHMS Hodoscope 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPed 14 0.5 14.5 1000 0 1000
-TH2F phodo_2y_pos_ped_vs_pad 'SHMS Hodoscope 2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPed 21 0.5 21.5 1000 0 1000
-TH2F phodo_1x_pos_pi_vs_pad 'SHMS Hodoscope 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1x.GoodPaddle  P.hod.1x.GoodPosAdcPulseInt 13 0.5 13.5 4000 0 40000
-TH2F phodo_1y_pos_pi_vs_pad 'SHMS Hodoscope 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1y.GoodPaddle  P.hod.1y.GoodPosAdcPulseInt 13 0.5 13.5 4000 0 40000
-TH2F phodo_2x_pos_pi_vs_pad 'SHMS Hodoscope 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2x.GoodPaddle  P.hod.2x.GoodPosAdcPulseInt 14 0.5 14.5 4000 0 40000
-TH2F phodo_2y_pos_pi_vs_pad 'SHMS Hodoscope 2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2y.GoodPaddle  P.hod.2y.GoodPosAdcPulseInt 21 0.5 21.5 4000 0 40000
-TH2F phodo_1x_pos_pamp_vs_pad 'SHMS Hodoscope 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.1x.GoodPaddle  P.hod.1x.GoodPosAdcPulseAmp 13 0.5 13.5 4100 0 4100
-TH2F phodo_1y_pos_pamp_vs_pad 'SHMS Hodoscope 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.1y.GoodPaddle  P.hod.1y.GoodPosAdcPulseAmp 13 0.5 13.5 4100 0 4100
-TH2F phodo_2x_pos_pamp_vs_pad 'SHMS Hodoscope 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.2x.GoodPaddle  P.hod.2x.GoodPosAdcPulseAmp 14 0.5 14.5 4100 0 4100
-TH2F phodo_2y_pos_pamp_vs_pad 'SHMS Hodoscope 2Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.2y.GoodPaddle  P.hod.2y.GoodPosAdcPulseAmp 21 0.5 21.5 4100 0 4100
-TH2F phodo_1x_pos_tdc_time_vs_pad 'SHMS Hodoscope 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.1x.GoodPaddle  P.hod.1x.GoodPosTdcChan 13 0.5 13.5 3500 -500 3000
-TH2F phodo_1y_pos_tdc_time_vs_pad 'SHMS Hodoscope 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.1y.GoodPaddle  P.hod.1y.GoodPosTdcChan 13 0.5 13.5 3500 -500 3000
-TH2F phodo_2x_pos_tdc_time_vs_pad 'SHMS Hodoscope 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.2x.GoodPaddle  P.hod.2x.GoodPosTdcChan 14 0.5 14.5 3500 -500 3000
-TH2F phodo_2y_pos_tdc_time_vs_pad 'SHMS Hodoscope 2Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.2y.GoodPaddle  P.hod.2y.GoodPosTdcChan 21 0.5 21.5 3500 -500 3000
 
-# Hodoscopes (Negative/Right)
-TH1F phodo_1x_neg_adc_occu 'SHMS Hodoscope 1X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negAdcCounter 13 0.5 13.5
-TH1F phodo_1y_neg_adc_occu 'SHMS Hodoscope 1Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negAdcCounter 13 0.5 13.5 
-TH1F phodo_2x_neg_adc_occu 'SHMS Hodoscope 2X- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negAdcCounter 14 0.5 14.5
-TH1F phodo_2y_neg_adc_occu 'SHMS Hodoscope 2Y- ADC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negAdcCounter 21 0.5 21.5
-TH1F phodo_1x_neg_tdc_occu 'SHMS Hodoscope 1X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1x.negTdcCounter 13 0.5 13.5
-TH1F phodo_1y_neg_tdc_occu 'SHMS Hodoscope 1Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.1y.negTdcCounter 13 0.5 13.5 
-TH1F phodo_2x_neg_tdc_occu 'SHMS Hodoscope 2X- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2x.negTdcCounter 14 0.5 14.5
-TH1F phodo_2y_neg_tdc_occu 'SHMS Hodoscope 2Y- TDC Occupancy; Paddle Number; Number of Hits' P.hod.2y.negTdcCounter 21 0.5 21.5
-TH2F phodo_1x_neg_ped_vs_pad 'SHMS Hodoscope 1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPed 13 0.5 13.5 1000 0 1000
-TH2F phodo_1y_neg_ped_vs_pad 'SHMS Hodoscope 1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPed 13 0.5 13.5 1000 0 1000
-TH2F phodo_2x_neg_ped_vs_pad 'SHMS Hodoscope 2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPed 14 0.5 14.5 1000 0 1000
-TH2F phodo_2y_neg_ped_vs_pad 'SHMS Hodoscope 2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPed 21 0.5 21.5 1000 0 1000
-TH2F phodo_1x_neg_pi_vs_pad 'SHMS Hodoscope 1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1x.GoodPaddle  P.hod.1x.GoodNegAdcPulseInt 13 0.5 13.5 4000 0 40000
-TH2F phodo_1y_neg_pi_vs_pad 'SHMS Hodoscope 1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.1y.GoodPaddle  P.hod.1y.GoodNegAdcPulseInt 13 0.5 13.5 4000 0 40000
-TH2F phodo_2x_neg_pi_vs_pad 'SHMS Hodoscope 2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2x.GoodPaddle  P.hod.2x.GoodNegAdcPulseInt 14 0.5 14.5 4000 0 40000
-TH2F phodo_2y_neg_pi_vs_pad 'SHMS Hodoscope 2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 10 ADC Units' P.hod.2y.GoodPaddle  P.hod.2y.GoodNegAdcPulseInt 21 0.5 21.5 4000 0 40000
-TH2F phodo_1x_neg_pamp_vs_pad 'SHMS Hodoscope 1X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.1x.GoodPaddle  P.hod.1x.GoodNegAdcPulseAmp 13 0.5 13.5 4100 0 4100
-TH2F phodo_1y_neg_pamp_vs_pad 'SHMS Hodoscope 1Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.1y.GoodPaddle  P.hod.1y.GoodNegAdcPulseAmp 13 0.5 13.5 4100 0 4100
-TH2F phodo_2x_neg_pamp_vs_pad 'SHMS Hodoscope 2X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.2x.GoodPaddle  P.hod.2x.GoodNegAdcPulseAmp 14 0.5 14.5 4100 0 4100
-TH2F phodo_2y_neg_pamp_vs_pad 'SHMS Hodoscope 2Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 1 ADC Unit' P.hod.2y.GoodPaddle  P.hod.2y.GoodNegAdcPulseAmp 21 0.5 21.5 4100 0 4100
-TH2F phodo_1x_neg_tdc_time_vs_pad 'SHMS Hodoscope 1X- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.1x.GoodPaddle  P.hod.1x.GoodNegTdcChan 13 0.5 13.5 3500 -500 3000
-TH2F phodo_1y_neg_tdc_time_vs_pad 'SHMS Hodoscope 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.1y.GoodPaddle  P.hod.1y.GoodNegTdcChan 13 0.5 13.5 3500 -500 3000
-TH2F phodo_2x_neg_tdc_time_vs_pad 'SHMS Hodoscope 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.2x.GoodPaddle  P.hod.2x.GoodNegTdcChan 14 0.5 14.5 3500 -500 3000
-TH2F phodo_2y_neg_tdc_time_vs_pad 'SHMS Hodoscope 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time (ns) / 1 ns' P.hod.2y.GoodPaddle  P.hod.2y.GoodNegTdcChan 21 0.5 21.5 3500 -500 3000
+#****************
+#SHMS HODOSCOPES
+#****************
 
-# Heavy Gas Cherenkov
-TH1F phgcer_occu 'SHMS Heavy Gas Cherenkov Occupancy; Counter Number; Number of Entries' P.hgcer.adcCounter 4 0.5 4.5
-TH2F phgcer_ped_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' [I] P.hgcer.goodAdcPed 4 0 4 1000 0 1000
-TH2F phgcer_pi_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' [I] P.hgcer.goodAdcPulseInt 4 0 4 4000 0 40000
-TH2F phgcer_amp_vs_cntr 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' [I] P.hgcer.goodAdcPulseAmp 4 0 4 4100 0 4100
+#------------------------------------------
+#SHMS HODO GOOD ADC Multiplicities 
+#------------------------------------------
+TH1F phodo_1x_good_adc_mult_pos 'SHMS 1X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1x.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_pos 'SHMS 1Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1y.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_pos 'SHMS 2X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2x.totNumGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_pos 'SHMS 2Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2y.totNumGoodPosAdcHits 21 0.5 21.5
 
-TH1F phgcer_pmt1_adc  'SHMS HG Cherenkov PMT 1 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[0] 2000 0. 20000. 
-TH1F phgcer_pmt2_adc  'SHMS HG Cherenkov PMT 2 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[1] 2000 0. 20000. 
-TH1F phgcer_pmt3_adc  'SHMS HG Cherenkov PMT 3 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[2] 2000 0. 20000. 
-TH1F phgcer_pmt4_adc  'SHMS HG Cherenkov PMT 4 ; ADC (chan) ; Counts' P.hgcer.goodAdcPulseInt[3] 2000 0. 20000. 
-TH1F phgcer_pmt1_nphe 'SHMS HG Cherenkov PMT 1 ; N_Phe ; Counts' P.hgcer.npe[0] 80 0. 40. 
-TH1F phgcer_pmt2_nphe 'SHMS HG Cherenkov PMT 2 ; N_Phe ; Counts' P.hgcer.npe[1] 80 0. 40.
-TH1F phgcer_pmt3_nphe 'SHMS HG Cherenkov PMT 3 ; N_Phe ; Counts' P.hgcer.npe[2] 80 0. 40.
-TH1F phgcer_pmt4_nphe 'SHMS HG Cherenkov PMT 4 ; N_Phe ; Counts' P.hgcer.npe[3] 80 0. 40.
-TH1F phgcer_nphe 'SHMS HG Cherenkov Sum ; N_Phe ; Counts' P.hgcer.npeSum 80 0. 40.  
+TH1F phodo_1x_good_adc_mult_neg 'SHMS 1X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1x.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_neg 'SHMS 1Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1y.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_neg 'SHMS 2X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2x.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_neg 'SHMS 2Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2y.totNumGoodNegAdcHits 21 0.5 21.5
 
-# Aerogel
-TH1F paero_pos_occu 'SHMS Aero+ Occupancy; Counter Number; Number of Entries' P.aero.posAdcCounter 7 0.5 7.5
-TH2F paero_pos_ped_vs_cntr 'SHMS Aero+ Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' [I] P.aero.goodPosAdcPed 7 0 7 1000 0 1000
-TH2F paero_pos_pi_vs_cntr 'SHMS Aero+ Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' [I] P.aero.goodPosAdcPulseInt 7 0 7 4000 0 40000
-TH2F paero_pos_amp_vs_cntr 'SHMS Aero+ Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' [I] P.aero.goodPosAdcPulseAmp 7 0 7 4100 0 4100
-TH1F paero_neg_occu 'SHMS Aero- Occupancy; Counter Number; Number of Entries' P.aero.negAdcCounter 7 0.5 7.5
-TH2F paero_neg_ped_vs_cntr 'SHMS Aero- Pulse Pedestal vs. Counter Number; Counter Number;  Pulse Pedestal / 1 ADC Unit' [I] P.aero.goodNegAdcPed 7 0 7 1000 0 1000
-TH2F paero_neg_pi_vs_cntr 'SHMS Aero- Pulse Integral vs. Counter Number; Counter Number;  Pulse Integral / 10 ADC Units' [I] P.aero.goodNegAdcPulseInt 7 0 7 4000 0 40000
-TH2F paero_neg_amp_vs_cntr 'SHMS Aero- Pulse Amplitude vs. Counter Number; Counter Number;  Pulse Amplitude / 1 ADC Unit' [I] P.aero.goodNegAdcPulseAmp 7 0 7 4100 0 4100
+TH1F phodo_1x_good_adc_mult 'SHMS 1X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.1x.totNumGoodAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult 'SHMS 1Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.1y.totNumGoodAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult 'SHMS 2X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.2x.totNumGoodAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult 'SHMS 2Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.2y.totNumGoodAdcHits 21 0.5 21.5
 
-# Pre-Shower Calorimeter
-TH1F pcal_prshwr_pos_occu 'SHMS Preshower+ Occupancy; Block Number; Number of Entries' P.cal.pr.posAdcCounter 14 0.5 14.5
-TH2F pcal_prshwr_pos_ped_blk 'SHMS Preshower+ Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPed 14 0.5 14.5 1000 0 1000
-TH2F pcal_prshwr_pos_pi_blk 'SHMS Preshower+ Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseInt 14 0.5 14.5 4000 0 40000
-TH2F pcal_prshwr_pos_amp_blk 'SHMS Preshower+ Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Unit' P.cal.pr.posAdcCounter P.cal.pr.posAdcPulseAmp 14 0.5 14.5 4100 0 4100
-TH1F pcal_prshwr_neg_occu 'SHMS Preshower- Occupancy; Block Number; Number of Entries' P.cal.pr.negAdcCounter 14 0.5 14.5
-TH2F pcal_prshwr_neg_ped_blk 'SHMS Preshower- Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPed 14 0.5 14.5 1000 0 1000
-TH2F pcal_prshwr_neg_pi_blk 'SHMS Preshower- Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseInt 14 0.5 14.5 4000 0 40000
-TH2F pcal_prshwr_neg_amp_blk 'SHMS Preshower- Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Unit' P.cal.pr.negAdcCounter P.cal.pr.negAdcPulseAmp 14 0.5 14.5 4100 0 4100 
+#------------------------------------------
+#SHMS HODO Good TDC Multiplicities
+#------------------------------------------
+TH1F phodo_1x_good_tdc_mult_pos 'SHMS 1X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1x.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_pos 'SHMS 1Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1y.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_pos 'SHMS 2X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2x.totNumGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_pos 'SHMS 2Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2y.totNumGoodPosTdcHits 21 0.5 21.5
 
-# Shower Calorimeter
-TH1F pcal_shwr_occu 'SHMS Shower Occupancy; Block Number; Number of Entries' P.cal.fly.adcCounter 224 0.5 224.5
-TH2F pcal_shwr_ped_blk 'SHMS Shower Pulse Pedestal vs. Block Number; Block Number; Pulse Pedestal / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPed 224 0.5 224.5 1000 0 1000
-TH2F pcal_shwr_pi_blk 'SHMS Shower Pulse Integral vs. Block Number; Block Number; Pulse Integral / 10 ADC Units' P.cal.fly.adcCounter P.cal.fly.adcPulseInt 224 0.5 224.5 4000 0 40000
-TH2F pcal_shwr_amp_blk 'SHMS Shower Pulse Amplitude vs. Block Number; Block Number; Pulse Amplitude / 1 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPulseAmp 224 0.5 224.5 4100 0 4100 
+TH1F phodo_1x_good_tdc_mult_neg 'SHMS 1X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1x.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_neg 'SHMS 1Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1y.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_neg 'SHMS 2X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2x.totNumGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_neg 'SHMS 2Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2y.totNumGoodNegTdcHits 21 0.5 21.5
 
-# Trigger Apparatus
+TH1F phodo_1x_good_tdc_mult 'SHMS 1X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.1x.totNumGoodTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult 'SHMS 1Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.1y.totNumGoodTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult 'SHMS 2X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.2x.totNumGoodTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult 'SHMS 2Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.2y.totNumGoodTdcHits 21 0.5 21.5
+
+#------------------------------------------
+#SHMS HODO GOOD ADC OCCUPANCIES
+#------------------------------------------
+TH1F phodo_1x_good_adc_occ_pos 'SHMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1x.numGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_pos 'SHMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1y.numGoodPosAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_pos 'SHMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2x.numGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_pos 'SHMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2y.numGoodPosAdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_adc_occ_neg 'SHMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1x.numGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_neg 'SHMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1y.numGoodNegAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_neg 'SHMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2x.numGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_neg 'SHMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2y.numGoodNegAdcHits 21 0.5 21.5
+
+#------------------------------------------
+#SHMS HODO GOOD TDC OCCUPANCIES
+#------------------------------------------
+TH1F phodo_1x_good_tdc_occ_pos 'SHMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1x.numGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_pos 'SHMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1y.numGoodPosTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_pos 'SHMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2x.numGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_pos 'SHMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2y.numGoodPosTdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_tdc_occ_neg 'SHMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1x.numGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_neg 'SHMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1y.numGoodNegTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_neg 'SHMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2x.numGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_neg 'SHMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2y.numGoodNegTdcHits 21 0.5 21.5
+
+#------------------------------------------
+#GOOD PULSE PEDESTAL
+#------------------------------------------
+TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 400 300 700 P.hod.1x.GoodPosAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 400 300 700 P.hod.1y.GoodPosAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 400 300 700 P.hod.2x.GoodPosAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 400 300 700 P.hod.2y.GoodPosAdcPed>0.0
+
+TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 400 300 700 P.hod.1x.GoodNegAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 400 300 700 P.hod.1y.GoodNegAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 400 300 700 P.hod.2x.GoodNegAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 400 300 700 P.hod.2y.GoodNegAdcPed>0.0
+
+#------------------------------------------
+#GOOD PULSE INTEGRAL
+#------------------------------------------
+TH2F phodo_1x_good_pi_vs_pmt_pos 'SHMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1x.GoodPosAdcPulseInt>0.0
+TH2F phodo_1y_good_pi_vs_pmt_pos 'SHMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1y.GoodPosAdcPulseInt>0.0
+TH2F phodo_2x_good_pi_vs_pmt_pos 'SHMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseInt 14 0.5 14.5 600 0 30000 P.hod.2x.GoodPosAdcPulseInt>0.0
+TH2F phodo_2y_good_pi_vs_pmt_pos 'SHMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseInt 21 0.5 21.5 600 0 30000 P.hod.2y.GoodPosAdcPulseInt>0.0
+
+TH2F phodo_1x_good_pi_vs_pmt_neg 'SHMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1x.GoodNegAdcPulseInt>0.0
+TH2F phodo_1y_good_pi_vs_pmt_neg 'SHMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1y.GoodNegAdcPulseInt>0.0
+TH2F phodo_2x_good_pi_vs_pmt_neg 'SHMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseInt 14 0.5 14.5 600 0 30000 P.hod.2x.GoodNegAdcPulseInt>0.0
+TH2F phodo_2y_good_pi_vs_pmt_neg 'SHMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseInt 21 0.5 21.5 600 0 30000 P.hod.2y.GoodNegAdcPulseInt>0.0
+
+#------------------------------------------
+#GOOD PULSE AMPLITUDE 
+#------------------------------------------
+TH2F phodo_1x_good_pamp_vs_pmt_pos 'SHMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1x.GoodPosAdcPulseAmp>0.0
+TH2F phodo_1y_good_pamp_vs_pmt_pos 'SHMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1y.GoodPosAdcPulseAmp>0.0
+TH2F phodo_2x_good_pamp_vs_pmt_pos 'SHMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseAmp 14 0.5 14.5 205 0 4100 P.hod.2x.GoodPosAdcPulseAmp>0.0
+TH2F phodo_2y_good_pamp_vs_pmt_pos 'SHMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseAmp 21 0.5 21.5 205 0 4100 P.hod.2y.GoodPosAdcPulseAmp>0.0
+
+TH2F phodo_1x_good_pamp_vs_pmt_neg 'SHMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1x.GoodNegAdcPulseAmp>0.0
+TH2F phodo_1y_good_pamp_vs_pmt_neg 'SHMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1y.GoodNegAdcPulseAmp>0.0
+TH2F phodo_2x_good_pamp_vs_pmt_neg 'SHMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseAmp 14 0.5 14.5 205 0 4100 P.hod.2x.GoodNegAdcPulseAmp>0.0
+TH2F phodo_2y_good_pamp_vs_pmt_neg 'SHMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseAmp 21 0.5 21.5 205 0 4100 P.hod.2y.GoodNegAdcPulseAmp>0.0
+
+#------------------------------------------
+#GOOD ADC PULSE TIME
+#------------------------------------------
+TH2F phodo_1x_good_ptime_vs_pmt_pos 'SHMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1x.GoodPosAdcPulseTime>0.0
+TH2F phodo_1y_good_ptime_vs_pmt_pos 'SHMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1y.GoodPosAdcPulseTime>0.0
+TH2F phodo_2x_good_ptime_vs_pmt_pos 'SHMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseTime 14 0.5 14.5 410 0 4100 P.hod.2x.GoodPosAdcPulseTime>0.0
+TH2F phodo_2y_good_ptime_vs_pmt_pos 'SHMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseTime 21 0.5 21.5 410 0 4100 P.hod.2y.GoodPosAdcPulseTime>0.0
+
+TH2F phodo_1x_good_ptime_vs_pmt_neg 'SHMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1x.GoodNegAdcPulseTime>0.0
+TH2F phodo_1y_good_ptime_vs_pmt_neg 'SHMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1y.GoodNegAdcPulseTime>0.0
+TH2F phodo_2x_good_ptime_vs_pmt_neg 'SHMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseTime 14 0.5 14.5 410 0 4100 P.hod.2x.GoodNegAdcPulseTime>0.0
+TH2F phodo_2y_good_ptime_vs_pmt_neg 'SHMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseTime 21 0.5 21.5 410 0 4100 P.hod.2y.GoodNegAdcPulseTime>0.0
+
+#--------------------------------------------------------
+#GOOD TDC TIME UNCORRECTED (uncorrected for time offsets)
+#--------------------------------------------------------
+TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeUnCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeUnCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeUnCorr>0.0
+
+TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeUnCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeUnCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeUnCorr>0.0
+
+#-----------------------------------------------------
+#GOOD TDC TIME CORRECTED (corrected for time offsets)
+#-----------------------------------------------------
+TH2F phodo_1x_good_tdctime_corr_vs_pmt_pos 'SHMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeCorr>0.0
+TH2F phodo_1y_good_tdctime_corr_vs_pmt_pos 'SHMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeCorr>0.0
+TH2F phodo_2x_good_tdctime_corr_vs_pmt_pos 'SHMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeCorr>0.0
+TH2F phodo_2y_good_tdctime_corr_vs_pmt_pos 'SHMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeCorr>0.0
+
+TH2F phodo_1x_good_tdctime_corr_vs_pmt_neg 'SHMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeCorr>0.0
+TH2F phodo_1y_good_tdctime_corr_vs_pmt_neg 'SHMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeCorr>0.0
+TH2F phodo_2x_good_tdctime_corr_vs_pmt_neg 'SHMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeCorr>0.0
+TH2F phodo_2y_good_tdctime_corr_vs_pmt_neg 'SHMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeCorr>0.0
+
+#-----------------------------------------------------------
+#GOOD TDC TIME TOF CORRECTED (corrected for time of flight) 
+#-----------------------------------------------------------
+TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeTOFCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeTOFCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeTOFCorr>0.0
+
+TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeTOFCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeTOFCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeTOFCorr>0.0
+
+
+#**********************
+# Heavy Gas Cherenkov *
+#**********************
+
+#-----------------------------------------
+#SHMS HGC GOOD Occupancy and Multiplicity
+#-----------------------------------------
+TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; PMT Number; Number Good ADC Hits' P.hgcer.numGoodAdcHits 4 0.5 4.5
+TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
+
+#------------------------------
+#SHMS HGC TOTAL NUMBER OF P.E.
+#------------------------------
+TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 200 0 100 P.hgcer.npeSum>0.0 
+
+#------------------------------
+#SHMS HGC Number of P.E. / PMT
+#------------------------------
+TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.hgcer.npe 4 0.5 4.5 200 0 100 P.hgcer.npe>0.0 
+
+#---------------------------------------------------------------------------
+#SHMS HGC GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time 
+#:: GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
+#---------------------------------------------------------------------------
+TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 400 300 700
+TH2F phgcer_good_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' [I+1] P.hgcer.goodAdcPulseInt 4 0.5 4.5 600 0 30000 P.hgcer.goodAdcPulseInt>0.0
+TH2F phgcer_good_rawpi_vs_pmt 'SHMS Heavy Gas Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.hgcer.goodAdcPulseIntRaw 4 0.5 4.5 600 0 30000 P.hgcer.goodAdcPulseIntRaw>0.0
+TH2F phgcer_good_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' [I+1] P.hgcer.goodAdcPulseAmp 4 0.5 4.5 200 0 4000 P.hgcer.goodAdcPulseAmp>0.0
+TH2F phgcer_good_ptime_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.hgcer.goodAdcPulseTime 4 0.5 4.5 350 0 3500 P.hgcer.goodAdcPulseTime>0.0
+
+
+
+#***************
+# SHMS AEROGEL *
+#***************
+
+#---------------------------------------------
+#SHMS AEROGEL GOOD Occupancy and Multiplicity
+#---------------------------------------------
+TH1F paero_good_occ_pos 'SHMS Aero+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.aero.numGoodPosAdcHits 7 0.5 7.5
+TH1F paero_good_occ_neg 'SHMS Aero- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.aero.numGoodNegAdcHits 7 0.5 7.5
+TH1F paero_good_mult_pos 'SHMS Aero+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.aero.totNumGoodPosAdcHits 7 0.5 7.5
+TH1F paero_good_mult_neg 'SHMS Aero- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.aero.totNumGoodNegAdcHits 7 0.5 7.5
+TH1F paero_good_mult 'SHMS Aero Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.aero.totnumGoodAdcHits 14 0.5 14.5
+
+#------------------------------
+#SHMS AERO TOTAL NUMBER OF P.E.
+#------------------------------
+TH1F paero_tot_npe_pos 'SHMS Aero+ Total Number of Photoelectrons; Total Number of Pos Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.posNpeSum 200 0 100 P.aero.posNpeSum>0.0 
+TH1F paero_tot_npe_neg 'SHMS Aero- Total Number of Photoelectrons; Total Number of Neg Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.negNpeSum 200 0 100 P.aero.negNpeSum>0.0 
+TH1F paero_tot_npe 'SHMS Aero Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.npeSum 200 0 100 P.aero.npeSum>0.0 
+
+#-------------------------------
+#SHMS AERO Number of P.E. / PMT
+#-------------------------------
+TH2F paero_npe_pos 'SHMS Aero+ Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.aero.posNpe 7 0.5 7.5 200 0 100 P.aero.posNpe>0.0 
+TH2F paero_npe_neg 'SHMS Aero- Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.aero.negNpe 7 0.5 7.5 200 0 100 P.aero.negNpe>0.0 
+
+#---------------------------------------------------------------------------
+#SHMS AERO GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time 
+#:: GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
+#---------------------------------------------------------------------------
+TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 400 300 700  P.aero.goodPosAdcPed>0.0
+TH2F paero_good_pi_vs_pmt_pos 'SHMS Aero+ Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] P.aero.goodPosAdcPulseInt 7 0.5 7.5 600 0 30000 P.aero.goodPosAdcPulseInt>0.0
+TH2F paero_good_raw_pi_vs_pmt_pos 'SHMS Aero+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.aero.goodPosAdcPulseIntRaw 7 0.5 7.5 600 0 30000 P.aero.goodPosAdcPulseIntRaw>0.0
+TH2F paero_good_pamp_vs_pmt_pos 'SHMS Aero+ Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] P.aero.goodPosAdcPulseAmp 7 0.5 7.5 200 0 4000 P.aero.goodPosAdcPulseAmp>0.0
+TH2F paero_good_ptime_vs_pmt_pos 'SHMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.aero.goodPosAdcPulseTime 7 0.5 7.5 350 0 3500 P.aero.goodPosAdcPulseTime>0.0
+
+TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 400 300 700 P.aero.goodNegAdcPed>0.0
+TH2F paero_good_pi_vs_pmt_neg 'SHMS Aero- Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] P.aero.goodNegAdcPulseInt 7 0.5 7.5 600 0 30000 P.aero.goodNegAdcPulseInt>0.0
+TH2F paero_good_raw_pi_vs_pmt_neg 'SHMS Aero- Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.aero.goodNegAdcPulseIntRaw 7 0.5 7.5 600 0 30000 P.aero.goodNegAdcPulseIntRaw>0.0
+TH2F paero_good_pamp_vs_pmt_neg 'SHMS Aero- Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] P.aero.goodNegAdcPulseAmp 7 0.5 7.5 200 0 4000 P.aero.goodNegAdcPulseAmp>0.0
+TH2F paero_good_ptime_vs_pmt_neg 'SHMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.aero.goodNegAdcPulseTime 7 0.5 7.5 350 0 3500 P.aero.goodNegAdcPulseTime>0.0
+
+
+#******************************
+# SHMS PRE-SHOWER CALORIMETER *
+#******************************
+
+#-------------------------------------------
+#SHMS PreSH GOOD Occupancy and Multiplicity
+#-------------------------------------------
+TH1F pcal_prshwr_good_occ_pos 'SHMS PreShower+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.cal.pr.numGoodPosAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_occ_neg 'SHMS PreShower- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.cal.pr.numGoodNegAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_mult_pos 'SHMS PreShower+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.cal.pr.totNumGoodPosAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.cal.pr.totnumGoodAdcHits 28 0.5 28.5
+
+#--------------------------------------------------
+#GOOD PULSE PEDESTALS/INTEGRALS/AMPLITUDES/TIMES 
+#:: GOOD --> (passed errorFlag cut, pulsetime cuts oN Min/Max ADC Time Window, and ADC threshold cut)
+#--------------------------------------------------
+TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 400 300 700  P.cal.pr.goodPosAdcPed>0.0
+TH2F pcal_prshwr_good_pi_vs_pmt_pos 'SHMS PreShower+ Good Pulse Integral vs. PMT Number; PMT Number; Good  Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseInt 14 0.5 14.5 600 0 30000 P.cal.pr.goodPosAdcPulseInt>0.0
+TH2F pcal_prshwr_good_pamp_vs_pmt_pos 'SHMS PreShower+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good  Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodPosAdcPulseAmp>0.0
+TH2F pcal_prshwr_good_ptime_vs_pmt_pos 'SHMS PreShower+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseTime 14 0.5 14.5 350 0 3500 P.cal.pr.goodPosAdcPulseTime>0.0
+
+TH2F pcal_prshwr_good_pped_vs_pmt_neg 'SHMS PreShower- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.pr.goodNegAdcPed 14 0.5 14.5 400 300 700  P.cal.pr.goodNegAdcPed>0.0
+TH2F pcal_prshwr_good_pi_vs_pmt_neg 'SHMS PreShower- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseInt 14 0.5 14.5 600 0 30000 P.cal.pr.goodNegAdcPulseInt>0.0
+TH2F pcal_prshwr_good_pamp_vs_pmt_neg 'SHMS PreShower- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodNegAdcPulseAmp>0.0
+TH2F pcal_prshwr_good_ptime_vs_pmt_neg 'SHMS PreShower- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseTime 14 0.5 14.5 350 0 3500 P.cal.pr.goodNegAdcPulseTime>0.0
+
+#-------------------------------------
+#SHMS PreSH GOOD RAW PULSE INTEGRALS 
+#-------------------------------------
+TH2F pcal_prshwr_good_raw_pi_vs_pmt_pos 'SHMS PreShower+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodPosAdcPulseIntRaw>0.0
+TH2F pcal_prshwr_good_raw_pi_vs_pmt_neg 'SHMS PreShower- Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodNegAdcPulseIntRaw>0.0
+
+#------------------------------------------------------
+#SHMS PRE-SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS 
+#(calib consts (GAIN) are in GeV/ADC units )
+#------------------------------------------------------
+TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
+TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
+TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
+
+#------------------------------------------
+#SHMS ENERGY DEPOSITION in PreShower PLANE
+#------------------------------------------
+TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
+TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
+TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
+
+#**************************
+# SHMS SHOWER CALORIMETER *
+#**************************
+
+#--------------------------------------------
+#SHMS Shower GOOD Occupancy and Multiplicity
+#--------------------------------------------
+TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Good ADC Hits' P.cal.fly.numGoodAdcHits 224 0.5 224.5
+TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; PMT Number; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 224 0.5 224.5
+
+#SHMS Shower GOOD PULSE PEDESTALS/INTEGRALS/AMPLITUDES/TIMES
+TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 700 300 1000 P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pi_vs_pmt 'SHMS Shower Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseInt 224 0.5 224.5 600 0 30000 P.cal.fly.goodAdcPulseInt>0.0
+TH2F pcal_shwr_good_pamp_vs_pmt 'SHMS Shower Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.fly.goodAdcPulseAmp 224 0.5 224.5 200 0 4000 P.cal.fly.goodAdcPulseAmp>0.0
+TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 350 0 3500 P.cal.fly.goodAdcPulseTime>0.0
+
+#-------------------------
+#Good Raw Pulse Integrals 
+#-------------------------
+TH2F pcal_shwr_good_raw_pi_vs_pmt 'SHMS Shower Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseIntRaw 224 0.5 224.5 650 0 32500  P.cal.fly.goodAdcPulseIntRaw>0.0
+
+#--------------------------------------------------
+#SHMS SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS 
+#(calib consts (GAIN) are in GeV/ADC units )
+#--------------------------------------------------
+TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.fly.e 224 0.5 224.5 300 0 3 P.cal.fly.e>0.0
+
+#-------------------------------------------------
+#TOTAL ENERGY DEPOSITION IN THE SHMS SHOWER ARRAY
+#-------------------------------------------------
+TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
+
+
+#********************
+# Trigger Apparatus *
+#********************
 TH1F ptrig_pngc_sum_pped 'SHMS Noble Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Units' T.shms.pNGCSUM_adcPed 2000 0 2000
 TH1F ptrig_pngc_sum_pint 'SHMS Noble Gas Sum FADC Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.shms.pNGCSUM_adcPulseInt 4000 0 40000
 TH1F ptrig_pngc_sum_pamp 'SHMS Noble Gas Sum FADC Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Units' T.shms.pNGCSUM_adcPulseAmp 4100 0 4100
