@@ -80,7 +80,7 @@ TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy De
 #SHMS SHOWER HISTOGRAMS
 
 #SHMS Shower FPGA Error Flags
-TH2F pcal_shwr_adcErrFlg2D_pos 'SHMS Shower FPGA Error Flag; PMT Number; Error Flag' P.cal.fly.adcCounter P.cal.fly.adcErrorFlag 224 0.5 224.5 2 -0.5 1.5
+TH2F pcal_shwr_adcErrFlg2D 'SHMS Shower FPGA Error Flag; PMT Number; Error Flag' P.cal.fly.adcCounter P.cal.fly.adcErrorFlag 224 0.5 224.5 2 -0.5 1.5
 
 #SHMS Shower RAW Occupancy and Multiplicity
 TH1F pcal_shwr_raw_occ 'SHMS Shower Raw Occupancy; PMT Number; Number of Raw ADC Hits' P.cal.fly.adcCounter 224 0.5 224.5
