@@ -116,3 +116,7 @@ TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Numbe
 #TOTAL ENERGY DEPOSITION IN THE SHMS SHOWER ARRAY
 TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
 
+#TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
+TH1F pcal_etot 'SHMS Calorimeter Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.etot 500 0 5 P.cal.etot>0.0
+TH1F pcal_etot_norm 'SHMS Calorimeter Total Normalized Energy Deposition; Total Energy Deposition (GeV) / P0 (GeV); Number of Entries / 0.01' P.cal.etotnorm 500 0 5 P.cal.etotnorm>0.0
+
