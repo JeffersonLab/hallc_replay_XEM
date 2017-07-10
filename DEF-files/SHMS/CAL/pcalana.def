@@ -66,14 +66,14 @@ TH2F pcal_prshwr_good_raw_pi_vs_pmt_pos 'SHMS PreShower+ Good Raw Pulse Integral
 TH2F pcal_prshwr_good_raw_pi_vs_pmt_neg 'SHMS PreShower- Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseIntRaw 14 0.5 14.5 650 0 32500  P.cal.pr.goodNegAdcPulseIntRaw>0.0
 
 #SHMS PRE-SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS (calib consts (GAIN) are in GeV/ADC units )
-TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
-TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
-TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
+TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposited (0.01 GeV / ADC Units)' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
+TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposited (0.01 GeV / ADC Units)' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
+TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposited (0.01 GeV / ADC Units)' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
 
 #SHMS ENERGY DEPOSITION in PreShower PLANE
-TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
-TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
-TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
+TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposited (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
+TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposited (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
+TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy Deposited (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
 
 ###########################################################################################
 
@@ -111,12 +111,12 @@ TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PM
 TH2F pcal_shwr_good_raw_pi_vs_pmt 'SHMS Shower Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseIntRaw 224 0.5 224.5 650 0 32500  P.cal.fly.goodAdcPulseIntRaw>0.0
 
 #SHMS SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS (calib consts (GAIN) are in GeV/ADC units )
-TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.fly.e 224 0.5 224.5 300 0 3 P.cal.fly.e>0.0
+TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposited (0.01 GeV / ADC Units)' [I+1] P.cal.fly.e 224 0.5 224.5 300 0 3 P.cal.fly.e>0.0
 
 #TOTAL ENERGY DEPOSITION IN THE SHMS SHOWER ARRAY
-TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
+TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Tot. Energy Dep. (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
 
 #TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
-TH1F pcal_etot 'SHMS Calorimeter Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.etot 500 0 5 P.cal.etot>0.0
-TH1F pcal_etot_norm 'SHMS Calorimeter Total Normalized Energy Deposition; Total Energy Deposition (GeV) / P0 (GeV); Number of Entries / 0.01' P.cal.etotnorm 500 0 5 P.cal.etotnorm>0.0
+TH1F pcal_etot 'SHMS Calorimeter Total Energy Deposition; Tot. Energy Dep. (GeV); Number of Entries / 0.01 GeV' P.cal.etot 500 0 5 P.cal.etot>0.0
+TH1F pcal_etot_norm 'SHMS Calorimeter Total Normalized Energy Deposition; Tot. Energy Dep. (GeV) / P0 (GeV); Number of Entries / 0.01' P.cal.etotnorm 500 0 5 P.cal.etotnorm>0.0
 
