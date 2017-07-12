@@ -15,13 +15,17 @@ all_event         HMS_event||SHMS_event||coin_event
 RawDecode_master  1
 
 Block: Decode
+all_trigs             HMS_event||SHMS_event||coin_event
+shms_coin_trig        SHMS_event||coin_event
+
+good_S1_time          T.shms.p1T_tdcTime>241&&T.shms.p1T_tdcTime<243
+good_S2X_time         T.shms.p2X_tdcTime>180&&T.shms.p2X_tdcTime<220
+good_S1_S2X_time      good_S1_time&&good_S2X_time
 Decode_master     SHMS_event
+
 
 Block: CoarseTracking
 CoarseTracking_master SHMS_event
-
-all_trigs             HMS_event||SHMS_event||coin_event
-shms_coin_trig        SHMS_event||coin_event
 
 
 shmsDC1Planes_large  (P.dc.1x1.nhit+P.dc.1u2.nhit+P.dc.1u1.nhit+P.dc.1v1.nhit+P.dc.1x2.nhit+P.dc.1v2.nhit) >20
@@ -36,6 +40,17 @@ shms_ch1_gt0_noch2                   P.dc.Ch1.nhit>0&&P.dc.Ch2.nhit==0
 shms_noch1_noch2                   P.dc.Ch1.nhit==0&&P.dc.Ch2.nhit==0
 shms_ch_gt0_track               shms_ch_gt0&&P.dc.ntrack>0
 shms_ch_gt4_track               shms_ch_gt4&&P.dc.ntrack>0
+
+
+shms_ch1_gt0_gtime                       P.dc.Ch1.nhit>0&&good_S1_S2X_time
+shms_ch2_gt0_gtime                       P.dc.Ch2.nhit>0&&good_S1_S2X_time
+shms_ch_gt0_gtime                      P.dc.Ch2.nhit>0&&P.dc.Ch1.nhit>0&&good_S1_S2X_time
+shms_ch_gt4_gtime                      P.dc.Ch2.nhit>3&&P.dc.Ch1.nhit>3&&good_S1_S2X_time
+shms_ch2_gt0_noch1_gtime                  P.dc.Ch2.nhit>0&&P.dc.Ch1.nhit==0&&good_S1_S2X_time
+shms_ch1_gt0_noch2_gtime                   P.dc.Ch1.nhit>0&&P.dc.Ch2.nhit==0&&good_S1_S2X_time
+shms_noch1_noch2_gtime                   P.dc.Ch1.nhit==0&&P.dc.Ch2.nhit==0&&good_S1_S2X_time
+shms_ch_gt0_track_gtime               shms_ch_gt0&&P.dc.ntrack>0&&good_S1_S2X_time
+shms_ch_gt4_track_gtime               shms_ch_gt4&&P.dc.ntrack>0&&good_S1_S2X_time
 
 shmsDC1_1hit_x1                P.dc.1x1.nhit == 1
 shmsDC1_1hit_u1                P.dc.1u1.nhit == 1
