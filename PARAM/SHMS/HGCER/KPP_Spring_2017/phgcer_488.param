@@ -2,7 +2,7 @@
 phgcer_tot_pmts = 4
 
 ; Garth H. gain calibration from run 488, June 20 2017
-phgcer_adc_to_npe = 1/546., 1/430., 1/376., 1/477.
+phgcer_adc_to_npe = 1/546., 1/430., 1/376., 1/477.  
 
 ; Track matching reduced chi2 cut values
 phgcer_red_chi2_min = 0.0

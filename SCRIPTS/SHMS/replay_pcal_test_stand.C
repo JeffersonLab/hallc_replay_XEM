@@ -15,12 +15,12 @@ void replay_pcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
     }
   }
 
-  // Create file name patterns.
+  // Create file name patterns
   const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/pcal_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
 
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);

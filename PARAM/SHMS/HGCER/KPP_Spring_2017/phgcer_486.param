@@ -1,8 +1,8 @@
 ; Number of heavy gas Cherenkov PMT's
 phgcer_tot_pmts = 4
 
-; Garth H. gain calibration from run 488, June 20 2017
-phgcer_adc_to_npe = 1/546., 1/430., 1/376., 1/477.
+; Garth H. gain calibration for run 486, June 20 2017
+phgcer_adc_to_npe = 1./551., 1./426., 1./376., 1./488.		
 
 ; Track matching reduced chi2 cut values
 phgcer_red_chi2_min = 0.0

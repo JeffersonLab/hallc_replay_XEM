@@ -20,7 +20,7 @@ void replay_ptrig_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   const char* ROOTFileNamePattern = "ROOTfiles/ptrig_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
 
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
