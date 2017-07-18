@@ -1,0 +1,21 @@
+; Number of noble gas Cherenkov PMT's
+pngcer_tot_pmts = 4
+
+; Guess from Dwg. 67165-E-00001 R0
+pngcer_mirror_zpos = -89.1 
+
+; Number of regions in which tracks can be matched too
+pngcer_num_regions = 4;
+
+; pngcer_region: 8 values for each region (1 per mirror + sum)
+; central x,y,dx,dy values and x,y,dx,dy half widths.
+; Defined in clomuns, region 1, region 2, region 3, region 4...
+; Assumes rectangular volume with x = 43 cm and y = 43 cm
+pngcer_region =   21.5,    21.5,  -21.5,  -21.5,   
+                  21.5,   -21.5,   21.5,  -21.5,
+                   0.0,     0.0,    0.0,    0.0,
+                   0.0,     0.0,    0.0,    0.0,
+                  21.5,    21.5,   21.5,   21.5,
+                  21.5,    21.5,   21.5,   21.5,
+	          0.15,    0.15,   0.15,   0.15,
+	           0.1,     0.1,    0.1,    0.1

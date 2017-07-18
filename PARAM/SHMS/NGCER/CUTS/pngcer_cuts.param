@@ -1,0 +1,18 @@
+; Track matching reduced chi2 cut values
+pngcer_red_chi2_min = 0.0
+pngcer_red_chi2_max = 25.0
+
+; Track matching beta cut values
+pngcer_beta_min = 0.0
+pngcer_beta_max = 1.2
+
+; Track matching normailized energy (E/p) cut values
+pngcer_enorm_min = 0.0
+pngcer_enorm_max = 1.5
+
+; ADC time window cut values used to select "good" ADC events
+pngcer_adcTimeWindowMin = 500.
+pngcer_adcTimeWindowMax = 2500.
+
+; ; NPE Threshold for "good" hit (for measureing effic.)
+pngcer_npe_thresh = 0.5

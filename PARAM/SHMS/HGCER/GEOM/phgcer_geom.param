@@ -1,0 +1,23 @@
+; Number of heavy gas Cherenkov PMT's
+phgcer_tot_pmts = 4
+
+; Guess from Dwg. 67165-E-00001 R0 -> 175.1 cm
+; Updated on 5-8-17 by Univ. of Regina Group
+phgcer_mirror_zpos = 156.27
+
+phgcer_num_regions = 4;
+
+; Number of regions in which tracks can be matched too
+; phgcer_region: 8 values for each region (1 per mirror + sum)
+; central x,y,dx,dy values and x,y,dx,dy half widths.
+; Defined in clomuns, region 1, region 2, region 3, region 4...
+; Assumes rectangular volume with x = 55 cm and y = 50 cm
+; FIX ME! Waiting for numbers from detector
+phgcer_region =   27.5,    27.5,  -27.5,  -27.5,   
+                  25.0,   -25.0,   25.0,  -25.0,
+                   0.0,     0.0,    0.0,    0.0,
+                   0.0,     0.0,    0.0,    0.0,
+                  27.5,    27.5,   27.5,   27.5,
+                  25.0,    25.0,   25.0,   25.0,
+	          0.15,    0.15,   0.15,   0.15,
+	           0.1,     0.1,    0.1,    0.1

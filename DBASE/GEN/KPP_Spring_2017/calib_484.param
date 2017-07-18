@@ -1,0 +1,3 @@
+; SHMS calibration files for run 484
+#include "PARAM/SHMS/DC/CALIB/KPP_Spring_2017/pdc_calib_484.param"
+#include "PARAM/SHMS/HGCER/CALIB/KPP_Spring_2017/phgcer_calib_484.param"

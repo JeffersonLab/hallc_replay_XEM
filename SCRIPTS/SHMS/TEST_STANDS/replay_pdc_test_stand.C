@@ -28,7 +28,7 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // g_ctp_parm_filename and g_decode_map_filename should now be defined.
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-
+  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
   // Load params for HMS DC test stand configuration
   gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
 

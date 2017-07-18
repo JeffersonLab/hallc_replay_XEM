@@ -1,0 +1,2 @@
+; Garth H. gain calibration for run 483, June 20 2017
+phgcer_adc_to_npe = 1./273., 1./460., 1./582., 1./378.

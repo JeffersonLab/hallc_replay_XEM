@@ -1,0 +1,20 @@
+; Utilize per wire tzero offsets, 1 means true
+p_using_tzero_per_wire = 1
+
+; TEST-STAND PARAMETERS
+; Custom parameter file which should be loaded when aiming to analyze HMS DC
+; data with no tracking.
+psel_using_scin = 0
+
+; TDC window limits for each plane.
+pdc_tdc_min_win = -13000, -13000, -13000, -13000, -13000, -13000
+                  -13000, -13000, -13000, -13000, -13000, -13000
+pdc_tdc_max_win = -10000, -10000, -10000, -10000, -10000, -10000
+                  -10000, -10000, -10000, -10000, -10000, -10000
+
+pdc_fix_lr = 1
+pdc_fix_propcorr = 1
+
+; Zero time correction for each plane in ns that is added to TDC time.
+pdc_plane_time_zero = 1290.00, 1290.00, 1290.00, 1290.00, 1290.00, 1290.00
+                      1290.00, 1290.00, 1290.00, 1290.00, 1290.00, 1290.00

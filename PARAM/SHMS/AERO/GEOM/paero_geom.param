@@ -1,0 +1,21 @@
+; Number of aerogel pairs of pmt's
+paero_num_pairs = 7
+
+; Value of zpos for diffusion box cited by Hamlet M. 03/29/2017
+paero_diff_box_zpos = 231.0
+
+; Number of regions in which tracks can be matched to
+paero_num_regions = 1;
+
+; phgcer_region: 8 values for each region
+; central x,y,dx,dy values and x,y,dx,dy half widths.
+; Defined in clomuns, region 1, region 2, region 3, region 4...
+; Assumes rectangular volume with x = 103.0 cm and y = 113.0 cm
+paero_region =  0.0,
+                0.0,
+                0.0,
+                0.0,
+               51.5,
+               56.5,
+	       0.15,
+	        0.1
