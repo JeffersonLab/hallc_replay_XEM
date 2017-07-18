@@ -1,8 +1,8 @@
-SHMS/DETEC/ptrig.map
-SHMS/DETEC/pdc.map
-SHMS/DETEC/phodo.map
-SHMS/DETEC/phgcer.map
-SHMS/DETEC/pngcer.map
-SHMS/DETEC/pcal.map
-SHMS/DETEC/paero.map
+SHMS/DETEC/TRIG/ptrig.map
+SHMS/DETEC/DC/pdc.map
+SHMS/DETEC/HODO/phodo.map
+SHMS/DETEC/HGCER/phgcer.map
+SHMS/DETEC/NGCER/pngcer.map
+SHMS/DETEC/CAL/pcal.map
+SHMS/DETEC/AERO/paero.map
 
