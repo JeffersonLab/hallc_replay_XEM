@@ -1,0 +1,14 @@
+# See $ANALYZER/examples/output_example.def for examples
+
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
+
+

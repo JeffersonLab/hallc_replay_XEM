@@ -1,0 +1,9 @@
+Run #{gen_run_number}
+
+Run Time  : {PS1Mhz}  {PS1Mhz/1000000.} sec
+
+BCM1  : {(PSBCM1r-250000)/(4673)} uA      Total charge = {(PSBCM1r-250000) / (4673)*PS1Mhz/1000000.} uC
+BCM2  : {(PSBCM2r-250000)/(3954)} uA      Total charge = {(PSBCM2r-250000) / (3954)*PS1Mhz/1000000.} uC 
+Unser : {(PSUnserr-393000)/(4000)} uA     Total charge = {(PSUnserr-393000) / (4000)*PS1Mhz/1000000.} uC
+
+All triggers  :  {all_trigs.npassed}

@@ -1,0 +1,86 @@
+
+Run #{gen_run_number}
+
+Run Time: {PS1Mhz}  {PS1Mhz/1000000.} sec
+
+BCM1  : {(PSBCM1r-250000)/(4673)} uA      Total charge = {(PSBCM1r-250000) / (4673)*PS1Mhz/1000000.} uC
+BCM2  : {(PSBCM2r-250000)/(3954)} uA      Total charge = {(PSBCM2r-250000) / (3954)*PS1Mhz/1000000.} uC 
+Unser : {(PSUnserr-393000)/(4000)} uA     Total charge = {(PSUnserr-393000) / (4000)*PS1Mhz/1000000.} uC
+
+All triggers:  {all_trigs.npassed}
+
+good_S1_time         Counts: {good_S1_time.npassed}     / all_trigs : {good_S1_time.npassed / all_trigs.npassed}       
+good_S2X_time        Counts: {good_S2X_time.npassed}    / all_trigs : {good_S2X_time.npassed / all_trigs.npassed}    
+good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / all_trigs : {good_S1_S2X_time.npassed / all_trigs.npassed}
+
+Chamber 1 hits > 0                        Counts: {shms_ch1_gt0.npassed} / all_trigs : {shms_ch1_gt0.npassed / all_trigs.npassed}         
+Chamber 2 hits > 0                   	  Counts: {shms_ch2_gt0.npassed} / all_trigs : { shms_ch2_gt0.npassed / all_trigs.npassed}        
+Chamber 2 hits > 0 & Ch 1 hits = 0    	  Counts: {shms_ch2_gt0_noch1.npassed} / all_trigs : { shms_ch2_gt0_noch1.npassed / all_trigs.npassed}  
+Chamber 1 hits > 0 & Ch 2 hits = 0    	  Counts: {shms_ch1_gt0_noch2.npassed} / all_trigs : {shms_ch1_gt0_noch2.npassed / all_trigs.npassed}  
+Chamber 1 hits = 0 & Ch 2 hits = 0    	  Counts: {shms_noch1_noch2.npassed} / all_trigs : {shms_noch1_noch2.npassed / all_trigs.npassed}  
+Chamber 1 > 0 & Ch 2 hits > 0             Counts: {shms_ch_gt0.npassed} / all_trigs : { shms_ch_gt0.npassed / all_trigs.npassed}        
+Ch 1 hits > 0 & Ch 2 hits > 0 & track     Counts: {shms_ch_gt0_track.npassed} / all_trigs : { shms_ch_gt0_track.npassed / all_trigs.npassed}
+Chamber 1 > 3 & Ch 2 hits > 3             Counts: {shms_ch_gt4.npassed} / all_trigs : { shms_ch_gt4.npassed / all_trigs.npassed}        
+Ch 1 hits > 3 & Ch 2 hits > 3 & track     Counts: {shms_ch_gt4_track.npassed} / all_trigs : { shms_ch_gt4_track.npassed / all_trigs.npassed}
+
+Add cut on good_S1_S2X_time 
+
+Chamber 1 hits > 0                        Counts: {shms_ch1_gt0_gtime.npassed} / all_trigs : {shms_ch1_gt0_gtime.npassed / all_trigs.npassed}         
+Chamber 2 hits > 0                   	  Counts: {shms_ch2_gt0_gtime.npassed} / all_trigs : { shms_ch2_gt0_gtime.npassed / all_trigs.npassed}        
+Chamber 2 hits > 0 & Ch 1 hits = 0    	  Counts: {shms_ch2_gt0_noch1_gtime.npassed} / all_trigs : { shms_ch2_gt0_noch1_gtime.npassed / all_trigs.npassed}  
+Chamber 1 hits > 0 & Ch 2 hits = 0    	  Counts: {shms_ch1_gt0_noch2_gtime.npassed} / all_trigs : {shms_ch1_gt0_noch2_gtime.npassed / all_trigs.npassed}  
+Chamber 1 hits = 0 & Ch 2 hits = 0    	  Counts: {shms_noch1_noch2_gtime.npassed} / all_trigs : {shms_noch1_noch2_gtime.npassed / all_trigs.npassed}  
+Chamber 1 > 0 & Ch 2 hits > 0             Counts: {shms_ch_gt0_gtime.npassed} / all_trigs : { shms_ch_gt0_gtime.npassed / all_trigs.npassed}        
+Ch 1 hits > 0 & Ch 2 hits > 0 & track     Counts: {shms_ch_gt0_track_gtime.npassed} / all_trigs : { shms_ch_gt0_track_gtime.npassed / all_trigs.npassed}
+Chamber 1 > 3 & Ch 2 hits > 3             Counts: {shms_ch_gt4_gtime.npassed} / all_trigs : { shms_ch_gt4_gtime.npassed / all_trigs.npassed}        
+Ch 1 hits > 3 & Ch 2 hits > 3 & track     Counts: {shms_ch_gt4_track_gtime.npassed} / all_trigs : { shms_ch_gt4_track_gtime.npassed / all_trigs.npassed}
+
+shmsDC1Planes_large     Counts: {shmsDC1Planes_large.npassed} / all_trigs : {shmsDC1Planes_large.npassed / all_trigs.npassed}
+shmsDC2Planes_large     Counts: {shmsDC2Planes_large.npassed} / all_trigs : {shmsDC2Planes_large.npassed / all_trigs.npassed}  
+
+shmsDC1Planes6     Counts: {shmsDC1Planes6hits.npassed} / all_trigs : {shmsDC1Planes6hits.npassed / all_trigs.npassed}
+shmsDC2Planes6     Counts: {shmsDC2Planes6hits.npassed} / all_trigs : {shmsDC2Planes6hits.npassed / all_trigs.npassed}  
+
+shmsDC1x1Planes5     Counts: {shmsDC1_5hits_x1.npassed} eff : {shmsDC1_6hits_x1.npassed / shmsDC1_5hits_x1.npassed}
+shmsDC1u1Planes5     Counts: {shmsDC1_5hits_u1.npassed} eff : {shmsDC1_6hits_u1.npassed / shmsDC1_5hits_u1.npassed}
+shmsDC1u2Planes5     Counts: {shmsDC1_5hits_u2.npassed} eff : {shmsDC1_6hits_u2.npassed / shmsDC1_5hits_u2.npassed}
+shmsDC1v1Planes5     Counts: {shmsDC1_5hits_v1.npassed} eff : {shmsDC1_6hits_v1.npassed / shmsDC1_5hits_v1.npassed}
+shmsDC1v2Planes5     Counts: {shmsDC1_5hits_v2.npassed} eff : {shmsDC1_6hits_v2.npassed / shmsDC1_5hits_v2.npassed}
+shmsDC1x2Planes5     Counts: {shmsDC1_5hits_x2.npassed} eff : {shmsDC1_6hits_x2.npassed / shmsDC1_5hits_x2.npassed}
+
+shmsDC2x1Planes5     Counts: {shmsDC2_5hits_x1.npassed} eff : {shmsDC2_6hits_x1.npassed / shmsDC2_5hits_x1.npassed}
+shmsDC2u1Planes5     Counts: {shmsDC2_5hits_u1.npassed} eff : {shmsDC2_6hits_u1.npassed / shmsDC2_5hits_u1.npassed}
+shmsDC2u2Planes5     Counts: {shmsDC2_5hits_u2.npassed} eff : {shmsDC2_6hits_u2.npassed / shmsDC2_5hits_u2.npassed}
+shmsDC2v1Planes5     Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.npassed / shmsDC2_5hits_v1.npassed}
+shmsDC2v2Planes5     Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
+shmsDC2x2Planes5     Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
+	       	   	       
+******************************
+* SHMS TRACKING EFFICIENCIES *
+******************************
+ptrig                          : {shmscoin_event.npassed}
+phitslt = passed hits/cham     : {shmsHitsLt.npassed}
+phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
+phitsplanessps = + sps         : {pSpacePoints.npassed}
+phitsplanesspsstubs +stub      : {pSpacePointsStub.npassed}
+psfoundtrack                   : {pFoundTrack.npassed}
+pscleantrack                   : {pCleanTrack.npassed}
+pstublt = passed stub tests    : {pStubLT.npassed}
+p1hitslt                       : {shms1HitsLt.npassed}
+p2hitslt                       : {shms2HitsLt.npassed}
+p1planesgt                     : {shmsDC1PlanesGT.npassed}
+p2planesgt                     : {shmsDC2PlanesGT.npassed}
+pplanesgt = gt 5 planes/cham   : {shmsPlanesGT.npassed}
+f1pspacepoints                 : {f1PSpacePoints.npassed}
+f2pspacepoints                 : {f2PSpacePoints.npassed}
+ptest1=p hits/planes, f sp     : {pTest1.npassed}
+ptest2=p sp, f stubs           : {pTest2.npassed}
+pdid                           : {shmsScinDid.npassed}
+pdide                          : {shmsScinDide.npassed}
+pdidh                          : {shmsScinDidh.npassed}
+pscinshould                    : {shmsScinShould.npassed}
+pscinshoulde                   : {shmsScinShoulde.npassed}
+pscinshouldh                   : {shmsScinShouldh.npassed}
+SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShould.npassed-shmsScinDid.npassed) / (shmsScinShould.npassed+.0001)):%8.4f}
+E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
+HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}

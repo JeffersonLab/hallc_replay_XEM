@@ -1,0 +1,37 @@
+# Report file for SHMS stack
+
+Block: RawDecode
+
+Pedestal_event     g.evtyp == 4
+scalar_event       g.evtyp == 0
+HMS_event          g.evtyp == 1
+SHMS_event         g.evtyp == 1
+coin_event         g.evtyp == 3
+misc_event         g.evtyp >= 5
+hmscoin_event      HMS_event || coin_event
+shmscoin_event     SHMS_event || coin_event
+all_event          HMS_event || SHMS_event || coin_event
+
+RawDecode_master  1
+
+Block: Decode
+
+all_trigs          HMS_event || SHMS_event || coin_event
+shms_coin_trig     SHMS_event || coin_event
+
+Decode_master     SHMS_event
+
+Block: CoarseTracking
+CoarseTracking_master SHMS_event
+
+Block: CoarseReconstruct
+CoarseReconstruct_master SHMS_event
+
+Block: Tracking
+Tracking_master  SHMS_event
+
+Block: Reconstruct
+Reconstruct_master SHMS_event
+
+Block: Physics
+Physics_master SHMS_event
