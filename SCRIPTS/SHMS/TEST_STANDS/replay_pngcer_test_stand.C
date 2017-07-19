@@ -88,8 +88,8 @@ void replay_pngcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/SHMS/NGCER/pngcerana.def");
- analyzer->SetCutFile("DEF-files/SHMS/NGCER/pngcerana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/SHMS/TEST_STANDS/NGCER/pngcerana.def");
+ analyzer->SetCutFile("DEF-files/SHMS/TEST_STANDS/NGCER/pngcerana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional

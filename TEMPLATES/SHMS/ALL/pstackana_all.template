@@ -1,13 +1,17 @@
+Run #: {gen_run_number}
 
-Run #{gen_run_number}
+Run Time  : {PS1Mhz}  {PS1Mhz/1000000.} sec
 
-Run Time: {PS1Mhz}  {PS1Mhz/1000000.} sec
+BCM1  : {(PSBCM1r-250000)/(4673):%3.3f} uA      Total charge = {(PSBCM1r-250000) / (4673)*PS1Mhz/1000000.:%7.3f} uC
+BCM2  : {(PSBCM2r-250000)/(3954):%3.3f} uA      Total charge = {(PSBCM2r-250000) / (3954)*PS1Mhz/1000000.:%7.3f} uC 
+Unser : {(PSUnserr-393000)/(4000):%3.3f} uA     Total charge = {(PSUnserr-393000) / (4000)*PS1Mhz/1000000.:%7.3f} uC
 
-BCM1  : {(PSBCM1r-250000)/(4673)} uA      Total charge = {(PSBCM1r-250000) / (4673)*PS1Mhz/1000000.} uC
-BCM2  : {(PSBCM2r-250000)/(3954)} uA      Total charge = {(PSBCM2r-250000) / (3954)*PS1Mhz/1000000.} uC 
-Unser : {(PSUnserr-393000)/(4000)} uA     Total charge = {(PSUnserr-393000) / (4000)*PS1Mhz/1000000.} uC
+All triggers  :  {all_trigs.npassed}
 
-All triggers:  {all_trigs.npassed}
+Rate  :  {PSsTrigr/1000.:%7.3f} kHz
+
+Live Time : {(all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
+Dead Time : {100.0 - (all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
 
 good_S1_time         Counts: {good_S1_time.npassed}     / all_trigs : {good_S1_time.npassed / all_trigs.npassed}       
 good_S2X_time        Counts: {good_S2X_time.npassed}    / all_trigs : {good_S2X_time.npassed / all_trigs.npassed}    

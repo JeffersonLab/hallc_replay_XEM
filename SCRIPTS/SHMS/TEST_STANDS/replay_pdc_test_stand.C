@@ -93,8 +93,8 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/SHMS/DC/pdcana.def");
- analyzer->SetCutFile("DEF-files/SHMS/DC/pdcana_cuts.def");    // optional
+ analyzer->SetOdefFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana.def");
+ analyzer->SetCutFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana_cuts.def");    // optional
 
  // File to record cuts accounting information
  //analyzer->SetSummaryFile("summary_example.log");    // optional
