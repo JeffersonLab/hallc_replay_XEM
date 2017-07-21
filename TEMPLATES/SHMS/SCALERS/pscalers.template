@@ -13,259 +13,263 @@ Rate  :  {PSsTrigr/1000.:%7.3f} kHz
 Live Time : {(all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
 Dead Time : {100.0 - (all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
 
-Hodoscope scaler formatting:
-shod1x1P : {shod1x1P:%15d}
-shod1x2P : {shod1x2P:%15d}
-shod1x3P : {shod1x3P:%15d}
-shod1x4P : {shod1x4P:%15d}
-shod1x5P : {shod1x5P:%15d}
-shod1x6P : {shod1x6P:%15d}
-shod1x7P : {shod1x7P:%15d}
-shod1x8P : {shod1x8P:%15d}
-shod1x9P : {shod1x9P:%15d}
-shod1x10P : {shod1x10P:%15d}
-shod1x11P : {shod1x11P:%15d}
-shod1x12P : {shod1x12P:%15d}
-shod1x13P : {shod1x13P:%15d}
+******HARDWARE SCALERS******
 
-shod1x1M : {shod1x1M:%15d}
-shod1x2M : {shod1x2M:%15d}
-shod1x3M : {shod1x3M:%15d}
-shod1x4M : {shod1x4M:%15d}
-shod1x5M : {shod1x5M:%15d}
-shod1x6M : {shod1x6M:%15d}
-shod1x7M : {shod1x7M:%15d}
-shod1x8M : {shod1x8M:%15d}
-shod1x9M : {shod1x9M:%15d}
-shod1x10M : {shod1x10M:%15d}
-shod1x11M : {shod1x11M:%15d}
-shod1x12M : {shod1x12M:%15d}
-shod1x13M : {shod1x13M:%15d}
+*HODOSCOPES COUNTS*
+PSshod1x1P  : {PSshod1x1P:%15d}
+PSshod1x2P  : {PSshod1x2P:%15d}
+PSshod1x3P  : {PSshod1x3P:%15d}
+PSshod1x4P  : {PSshod1x4P:%15d}
+PSshod1x5P  : {PSshod1x5P:%15d}
+PSshod1x6P  : {PSshod1x6P:%15d}
+PSshod1x7P  : {PSshod1x7P:%15d}
+PSshod1x8P  : {PSshod1x8P:%15d}
+PSshod1x9P  : {PSshod1x9P:%15d}
+PSshod1x10P : {PSshod1x10P:%15d}
+PSshod1x11P : {PSshod1x11P:%15d}
+PSshod1x12P : {PSshod1x12P:%15d}
+PSshod1x13P : {PSshod1x13P:%15d}
 
-shod2x1P : {shod2x1P:%15d}
-shod2x2P : {shod2x2P:%15d}
-shod2x3P : {shod2x3P:%15d}
-shod2x4P : {shod2x4P:%15d}
-shod2x5P : {shod2x5P:%15d}
-shod2x6P : {shod2x6P:%15d}
-shod2x7P : {shod2x7P:%15d}
-shod2x8P : {shod2x8P:%15d}
-shod2x9P : {shod2x9P:%15d}
-shod2x10P : {shod2x10P:%15d}
-shod2x11P : {shod2x11P:%15d}
-shod2x12P : {shod2x12P:%15d}
-shod2x13P : {shod2x13P:%15d}
-shod2x14P : {shod2x14P:%15d}
+PSshod1x1M  : {PSshod1x1M:%15d}
+PSshod1x2M  : {PSshod1x2M:%15d}
+PSshod1x3M  : {PSshod1x3M:%15d}
+PSshod1x4M  : {PSshod1x4M:%15d}
+PSshod1x5M  : {PSshod1x5M:%15d}
+PSshod1x6M  : {PSshod1x6M:%15d}
+PSshod1x7M  : {PSshod1x7M:%15d}
+PSshod1x8M  : {PSshod1x8M:%15d}
+PSshod1x9M  : {PSshod1x9M:%15d}
+PSshod1x10M : {PSshod1x10M:%15d}
+PSshod1x11M : {PSshod1x11M:%15d}
+PSshod1x12M : {PSshod1x12M:%15d}
+PSshod1x13M : {PSshod1x13M:%15d}
 
-shod2x1M : {shod2x1M:%15d}
-shod2x2M : {shod2x2M:%15d}
-shod2x3M : {shod2x3M:%15d}
-shod2x4M : {shod2x4M:%15d}
-shod2x5M : {shod2x5M:%15d}
-shod2x6M : {shod2x6M:%15d}
-shod2x7M : {shod2x7M:%15d}
-shod2x8M : {shod2x8M:%15d}
-shod2x9M : {shod2x9M:%15d}
-shod2x10M : {shod2x10M:%15d}
-shod2x11M : {shod2x11M:%15d}
-shod2x12M : {shod2x12M:%15d}
-shod2x13M : {shod2x13M:%15d}
-shod2x14M : {shod2x14M:%15d}
+PSshod2x1P  : {PSshod2x1P:%15d}
+PSshod2x2P  : {PSshod2x2P:%15d}
+PSshod2x3P  : {PSshod2x3P:%15d}
+PSshod2x4P  : {PSshod2x4P:%15d}
+PSshod2x5P  : {PSshod2x5P:%15d}
+PSshod2x6P  : {PSshod2x6P:%15d}
+PSshod2x7P  : {PSshod2x7P:%15d}
+PSshod2x8P  : {PSshod2x8P:%15d}
+PSshod2x9P  : {PSshod2x9P:%15d}
+PSshod2x10P : {PSshod2x10P:%15d}
+PSshod2x11P : {PSshod2x11P:%15d}
+PSshod2x12P : {PSshod2x12P:%15d}
+PSshod2x13P : {PSshod2x13P:%15d}
+PSshod2x14P : {PSshod2x14P:%15d}
 
-shod1y1P : {shod1y1P:%15d}
-shod1y2P : {shod1y2P:%15d}
-shod1y3P : {shod1y3P:%15d}
-shod1y4P : {shod1y4P:%15d}
-shod1y5P : {shod1y5P:%15d}
-shod1y6P : {shod1y6P:%15d}
-shod1y7P : {shod1y7P:%15d}
-shod1y8P : {shod1y8P:%15d}
-shod1y9P : {shod1y9P:%15d}
-shod1y10P : {shod1y10P:%15d}
-shod1y11P : {shod1y11P:%15d}
-shod1y12P : {shod1y12P:%15d}
-shod1y13P : {shod1y13P:%15d}
+PSshod2x1M  : {PSshod2x1M:%15d}
+PSshod2x2M  : {PSshod2x2M:%15d}
+PSshod2x3M  : {PSshod2x3M:%15d}
+PSshod2x4M  : {PSshod2x4M:%15d}
+PSshod2x5M  : {PSshod2x5M:%15d}
+PSshod2x6M  : {PSshod2x6M:%15d}
+PSshod2x7M  : {PSshod2x7M:%15d}
+PSshod2x8M  : {PSshod2x8M:%15d}
+PSshod2x9M  : {PSshod2x9M:%15d}
+PSshod2x10M : {PSshod2x10M:%15d}
+PSshod2x11M : {PSshod2x11M:%15d}
+PSshod2x12M : {PSshod2x12M:%15d}
+PSshod2x13M : {PSshod2x13M:%15d}
+PSshod2x14M : {PSshod2x14M:%15d}
 
-shod1y1M : {shod1y1M:%15d}
-shod1y2M : {shod1y2M:%15d}
-shod1y3M : {shod1y3M:%15d}
-shod1y4M : {shod1y4M:%15d}
-shod1y5M : {shod1y5M:%15d}
-shod1y6M : {shod1y6M:%15d}
-shod1y7M : {shod1y7M:%15d}
-shod1y8M : {shod1y8M:%15d}
-shod1y9M : {shod1y9M:%15d}
-shod1y10M : {shod1y10M:%15d}
-shod1y11M : {shod1y11M:%15d}
-shod1y12M : {shod1y12M:%15d}
-shod1y13M : {shod1y13M:%15d}
+PSshod1y1P  : {PSshod1y1P:%15d}
+PSshod1y2P  : {PSshod1y2P:%15d}
+PSshod1y3P  : {PSshod1y3P:%15d}
+PSshod1y4P  : {PSshod1y4P:%15d}
+PSshod1y5P  : {PSshod1y5P:%15d}
+PSshod1y6P  : {PSshod1y6P:%15d}
+PSshod1y7P  : {PSshod1y7P:%15d}
+PSshod1y8P  : {PSshod1y8P:%15d}
+PSshod1y9P  : {PSshod1y9P:%15d}
+PSshod1y10P : {PSshod1y10P:%15d}
+PSshod1y11P : {PSshod1y11P:%15d}
+PSshod1y12P : {PSshod1y12P:%15d}
+PSshod1y13P : {PSshod1y13P:%15d}
 
-shod2y1P : {shod2y1P:%15d}
-shod2y2P : {shod2y2P:%15d}
-shod2y3P : {shod2y3P:%15d}
-shod2y4P : {shod2y4P:%15d}
-shod2y5P : {shod2y5P:%15d}
-shod2y6P : {shod2y6P:%15d}
-shod2y7P : {shod2y7P:%15d}
-shod2y8P : {shod2y8P:%15d}
-shod2y9P : {shod2y9P:%15d}
-shod2y10P : {shod2y10P:%15d}
-shod2y11P : {shod2y11P:%15d}
-shod2y12P : {shod2y12P:%15d}
-shod2y13P : {shod2y13P:%15d}
-shod2y14P : {shod2y14P:%15d}
-shod2y15P : {shod2y15P:%15d}
-shod2y16P : {shod2y16P:%15d}
+PSshod1y1M  : {PSshod1y1M:%15d}
+PSshod1y2M  : {PSshod1y2M:%15d}
+PSshod1y3M  : {PSshod1y3M:%15d}
+PSshod1y4M  : {PSshod1y4M:%15d}
+PSshod1y5M  : {PSshod1y5M:%15d}
+PSshod1y6M  : {PSshod1y6M:%15d}
+PSshod1y7M  : {PSshod1y7M:%15d}
+PSshod1y8M  : {PSshod1y8M:%15d}
+PSshod1y9M  : {PSshod1y9M:%15d}
+PSshod1y10M : {PSshod1y10M:%15d}
+PSshod1y11M : {PSshod1y11M:%15d}
+PSshod1y12M : {PSshod1y12M:%15d}
+PSshod1y13M : {PSshod1y13M:%15d}
 
-shod2y1M : {shod2y1M:%15d}
-shod2y2M : {shod2y2M:%15d}
-shod2y3M : {shod2y3M:%15d}
-shod2y4M : {shod2y4M:%15d}
-shod2y5M : {shod2y5M:%15d}
-shod2y6M : {shod2y6M:%15d}
-shod2y7M : {shod2y7M:%15d}
-shod2y8M : {shod2y8M:%15d}
-shod2y9M : {shod2y9M:%15d}
-shod2y10M : {shod2y10M:%15d}
-shod2y11M : {shod2y11M:%15d}
-shod2y12M : {shod2y12M:%15d}
-shod2y13M : {shod2y13M:%15d}
-shod2y14M : {shod2y14M:%15d}
-shod2y15M : {shod2y15M:%15d}
-shod2y16M : {shod2y16M:%15d}
+PSshod2y1P  : {PSshod2y1P:%15d}
+PSshod2y2P  : {PSshod2y2P:%15d}
+PSshod2y3P  : {PSshod2y3P:%15d}
+PSshod2y4P  : {PSshod2y4P:%15d}
+PSshod2y5P  : {PSshod2y5P:%15d}
+PSshod2y6P  : {PSshod2y6P:%15d}
+PSshod2y7P  : {PSshod2y7P:%15d}
+PSshod2y8P  : {PSshod2y8P:%15d}
+PSshod2y9P  : {PSshod2y9P:%15d}
+PSshod2y10P : {PSshod2y10P:%15d}
+PSshod2y11P : {PSshod2y11P:%15d}
+PSshod2y12P : {PSshod2y12P:%15d}
+PSshod2y13P : {PSshod2y13P:%15d}
+PSshod2y14P : {PSshod2y14P:%15d}
+PSshod2y15P : {PSshod2y15P:%15d}
+PSshod2y16P : {PSshod2y16P:%15d}
 
-Hodoscope Rates:
-sS1X1+: {shod1x1P:%8d} [ {shodo1x1Pr:%7.1f} ]
-sS1X2+: {shod1x2P:%8d} [ {shodo1x2Pr:%7.1f} ]
-sS1X3+: {shod1x3P:%8d} [ {shodo1x3Pr:%7.1f} ]
-sS1X4+: {shod1x4P:%8d} [ {shodo1x4Pr:%7.1f} ]
-sS1X5+: {shod1x5P:%8d} [ {shodo1x5Pr:%7.1f} ]
-sS1X6+: {shod1x6P:%8d} [ {shodo1x6Pr:%7.1f} ]
-sS1X7+: {shod1x7P:%8d} [ {shodo1x7Pr:%7.1f} ]
-sS1X8+: {shod1x8P:%8d} [ {shodo1x8Pr:%7.1f} ]
-sS1X9+: {shod1x9P:%8d} [ {shodo1x9Pr:%7.1f} ]
-sS1X10+: {shod1x10P:%8d} [ {shodo10x1Pr:%7.1f} ]
-sS1X11+: {shod1x11P:%8d} [ {shodo11x1Pr:%7.1f} ] 
-sS1X12+: {shod1x12P:%8d} [ {shodo12x1Pr:%7.1f} ]
-sS1X13+: {shod1x13P:%8d} [ {shodo13x1Pr:%7.1f} ]
+PSshod2y1M  : {PSshod2y1M:%15d}
+PSshod2y2M  : {PSshod2y2M:%15d}
+PSshod2y3M  : {PSshod2y3M:%15d}
+PSshod2y4M  : {PSshod2y4M:%15d}
+PSshod2y5M  : {PSshod2y5M:%15d}
+PSshod2y6M  : {PSshod2y6M:%15d}
+PSshod2y7M  : {PSshod2y7M:%15d}
+PSshod2y8M  : {PSshod2y8M:%15d}
+PSshod2y9M  : {PSshod2y9M:%15d}
+PSshod2y10M : {PSshod2y10M:%15d}
+PSshod2y11M : {PSshod2y11M:%15d}
+PSshod2y12M : {PSshod2y12M:%15d}
+PSshod2y13M : {PSshod2y13M:%15d}
+PSshod2y14M : {PSshod2y14M:%15d}
+PSshod2y15M : {PSshod2y15M:%15d}
+PSshod2y16M : {PSshod2y16M:%15d}
 
-sS1X1-: {shod1x1M:%8d} [ {shodo1x1Mr:%7.1f} ]
-sS1X2-: {shod1x2M:%8d} [ {shodo1x2Mr:%7.1f} ]
-sS1X3-: {shod1x3M:%8d} [ {shodo1x3Mr:%7.1f} ]
-sS1X4-: {shod1x4M:%8d} [ {shodo1x4Mr:%7.1f} ]
-sS1X5-: {shod1x5M:%8d} [ {shodo1x5Mr:%7.1f} ]
-sS1X6-: {shod1x6M:%8d} [ {shodo1x6Mr:%7.1f} ]
-sS1X7-: {shod1x7M:%8d} [ {shodo1x7Mr:%7.1f} ]
-sS1X8-: {shod1x8M:%8d} [ {shodo1x8Mr:%7.1f} ]
-sS1X9-: {shod1x9M:%8d} [ {shodo1x9Mr:%7.1f} ]
-sS1X10-: {shod1x10M:%8d} [ {shodo1x10Mr:%7.1f} ]
-sS1X11-: {shod1x11M:%8d} [ {shodo1x11Mr:%7.1f} ]
-sS1X12-: {shod1x12M:%8d} [ {shodo1x12Mr:%7.1f} ]
-sS1X13-: {shod1x13M:%8d} [ {shodo1x13Mr:%7.1f} ]
+*HODOSCOPE RATES*
+sS1X1+:  {PSshod1x1P:%8d}  [ {PSshod1x1Pr:%7.1f} ]
+sS1X2+:  {PSshod1x2P:%8d}  [ {PSshod1x2Pr:%7.1f} ]
+sS1X3+:  {PSshod1x3P:%8d}  [ {PSshod1x3Pr:%7.1f} ]
+sS1X4+:  {PSshod1x4P:%8d}  [ {PSshod1x4Pr:%7.1f} ]
+sS1X5+:  {PSshod1x5P:%8d}  [ {PSshod1x5Pr:%7.1f} ]
+sS1X6+:  {PSshod1x6P:%8d}  [ {PSshod1x6Pr:%7.1f} ]
+sS1X7+:  {PSshod1x7P:%8d}  [ {PSshod1x7Pr:%7.1f} ]
+sS1X8+:  {PSshod1x8P:%8d}  [ {PSshod1x8Pr:%7.1f} ]
+sS1X9+:  {PSshod1x9P:%8d}  [ {PSshod1x9Pr:%7.1f} ]
+sS1X10+: {PSshod1x10P:%8d} [ {PSshod1x10Pr:%7.1f} ]
+sS1X11+: {PSshod1x11P:%8d} [ {PSshod1x11Pr:%7.1f} ] 
+sS1X12+: {PSshod1x12P:%8d} [ {PSshod1x12Pr:%7.1f} ]
+sS1X13+: {PSshod1x13P:%8d} [ {PSshod1x13Pr:%7.1f} ]
+
+sS1X1-:  {PSshod1x1M:%8d}  [ {PSshod1x1Mr:%7.1f} ]
+sS1X2-:  {PSshod1x2M:%8d}  [ {PSshod1x2Mr:%7.1f} ]
+sS1X3-:  {PSshod1x3M:%8d}  [ {PSshod1x3Mr:%7.1f} ]
+sS1X4-:  {PSshod1x4M:%8d}  [ {PSshod1x4Mr:%7.1f} ]
+sS1X5-:  {PSshod1x5M:%8d}  [ {PSshod1x5Mr:%7.1f} ]
+sS1X6-:  {PSshod1x6M:%8d}  [ {PSshod1x6Mr:%7.1f} ]
+sS1X7-:  {PSshod1x7M:%8d}  [ {PSshod1x7Mr:%7.1f} ]
+sS1X8-:  {PSshod1x8M:%8d}  [ {PSshod1x8Mr:%7.1f} ]
+sS1X9-:  {PSshod1x9M:%8d}  [ {PSshod1x9Mr:%7.1f} ]
+sS1X10-: {PSshod1x10M:%8d} [ {PSshod1x10Mr:%7.1f} ]
+sS1X11-: {PSshod1x11M:%8d} [ {PSshod1x11Mr:%7.1f} ]
+sS1X12-: {PSshod1x12M:%8d} [ {PSshod1x12Mr:%7.1f} ]
+sS1X13-: {PSshod1x13M:%8d} [ {PSshod1x13Mr:%7.1f} ]
  
-sS2X1+: {shod2x1P:%8d} [ {shodo2x1Pr:%7.1f} ]
-sS2X2+: {shod2x2P:%8d} [ {shodo2x2Pr:%7.1f} ]
-sS2X3+: {shod2x3P:%8d} [ {shodo2x3Pr:%7.1f} ]
-sS2X4+: {shod2x4P:%8d} [ {shodo2x4Pr:%7.1f} ]
-sS2X5+: {shod2x5P:%8d} [ {shodo2x5Pr:%7.1f} ]
-sS2X6+: {shod2x6P:%8d} [ {shodo2x6Pr:%7.1f} ]
-sS2X7+: {shod2x7P:%8d} [ {shodo2x7Pr:%7.1f} ]
-sS2X8+: {shod2x8P:%8d} [ {shodo2x8Pr:%7.1f} ]
-sS2X9+: {shod2x9P:%8d} [ {shodo2x9Pr:%7.1f} ]
-sS2X10+: {shod2x10P:%8d} [ {shodo2x10Pr:%7.1f} ]
-sS2X11+: {shod2x11P:%8d} [ {shodo2x11Pr:%7.1f} ]
-sS2X12+: {shod2x12P:%8d} [ {shodo2x12Pr:%7.1f} ]
-sS2X13+: {shod2x13P:%8d} [ {shodo2x13Pr:%7.1f} ]
-sS2X14+: {shod2x14P:%8d} [ {shodo2x14Pr:%7.1f} ]
+sS2X1+:  {PSshod2x1P:%8d}  [ {PSshod2x1Pr:%7.1f} ]
+sS2X2+:  {PSshod2x2P:%8d}  [ {PSshod2x2Pr:%7.1f} ]
+sS2X3+:  {PSshod2x3P:%8d}  [ {PSshod2x3Pr:%7.1f} ]
+sS2X4+:  {PSshod2x4P:%8d}  [ {PSshod2x4Pr:%7.1f} ]
+sS2X5+:  {PSshod2x5P:%8d}  [ {PSshod2x5Pr:%7.1f} ]
+sS2X6+:  {PSshod2x6P:%8d}  [ {PSshod2x6Pr:%7.1f} ]
+sS2X7+:  {PSshod2x7P:%8d}  [ {PSshod2x7Pr:%7.1f} ]
+sS2X8+:  {PSshod2x8P:%8d}  [ {PSshod2x8Pr:%7.1f} ]
+sS2X9+:  {PSshod2x9P:%8d}  [ {PSshod2x9Pr:%7.1f} ]
+sS2X10+: {PSshod2x10P:%8d} [ {PSshod2x10Pr:%7.1f} ]
+sS2X11+: {PSshod2x11P:%8d} [ {PSshod2x11Pr:%7.1f} ]
+sS2X12+: {PSshod2x12P:%8d} [ {PSshod2x12Pr:%7.1f} ]
+sS2X13+: {PSshod2x13P:%8d} [ {PSshod2x13Pr:%7.1f} ]
+sS2X14+: {PSshod2x14P:%8d} [ {PSshod2x14Pr:%7.1f} ]
 
-sS2X1-: {shod2x1M:%8d} [ {shodo2x1Mr:%7.1f} ]
-sS2X2-: {shod2x2M:%8d} [ {shodo2x2Mr:%7.1f} ]
-sS2X3-: {shod2x3M:%8d} [ {shodo2x3Mr:%7.1f} ]
-sS2X4-: {shod2x4M:%8d} [ {shodo2x4Mr:%7.1f} ]
-sS2X5-: {shod2x5M:%8d} [ {shodo2x5Mr:%7.1f} ]
-sS2X6-: {shod2x6M:%8d} [ {shodo2x6Mr:%7.1f} ]
-sS2X7-: {shod2x7M:%8d} [ {shodo2x7Mr:%7.1f} ]
-sS2X8-: {shod2x8M:%8d} [ {shodo2x8Mr:%7.1f} ]
-sS2X9-: {shod2x9M:%8d} [ {shodo2x9Mr:%7.1f} ]
-sS2X10-: {shod2x10M:%8d} [ {shodo2x10Mr:%7.1f} ]
-sS2X11-: {shod2x11M:%8d} [ {shodo2x11Mr:%7.1f} ]
-sS2X12-: {shod2x12M:%8d} [ {shodo2x12Mr:%7.1f} ]
-sS2X13-: {shod2x13M:%8d} [ {shodo2x13Mr:%7.1f} ]
-sS2X14-: {shod2x14M:%8d} [ {shodo2x14Mr:%7.1f} ]
+sS2X1-:  {PSshod2x1M:%8d}  [ {PSshod2x1Mr:%7.1f} ]
+sS2X2-:  {PSshod2x2M:%8d}  [ {PSshod2x2Mr:%7.1f} ]
+sS2X3-:  {PSshod2x3M:%8d}  [ {PSshod2x3Mr:%7.1f} ]
+sS2X4-:  {PSshod2x4M:%8d}  [ {PSshod2x4Mr:%7.1f} ]
+sS2X5-:  {PSshod2x5M:%8d}  [ {PSshod2x5Mr:%7.1f} ]
+sS2X6-:  {PSshod2x6M:%8d}  [ {PSshod2x6Mr:%7.1f} ]
+sS2X7-:  {PSshod2x7M:%8d}  [ {PSshod2x7Mr:%7.1f} ]
+sS2X8-:  {PSshod2x8M:%8d}  [ {PSshod2x8Mr:%7.1f} ]
+sS2X9-:  {PSshod2x9M:%8d}  [ {PSshod2x9Mr:%7.1f} ]
+sS2X10-: {PSshod2x10M:%8d} [ {PSshod2x10Mr:%7.1f} ]
+sS2X11-: {PSshod2x11M:%8d} [ {PSshod2x11Mr:%7.1f} ]
+sS2X12-: {PSshod2x12M:%8d} [ {PSshod2x12Mr:%7.1f} ]
+sS2X13-: {PSshod2x13M:%8d} [ {PSshod2x13Mr:%7.1f} ]
+sS2X14-: {PSshod2x14M:%8d} [ {PSshod2x14Mr:%7.1f} ]
 
-sS1Y1+: {shod2y1P:%8d} [ {shodo2y1Pr:%7.1f} ]
-sS1Y2+: {shod2y2P:%8d} [ {shodo2y2Pr:%7.1f} ]
-sS1Y3+: {shod2y3P:%8d} [ {shodo2y3Pr:%7.1f} ]
-sS1Y4+: {shod2y4P:%8d} [ {shodo2y4Pr:%7.1f} ]
-sS1Y5+: {shod2y5P:%8d} [ {shodo2y5Pr:%7.1f} ]
-sS1Y6+: {shod2y6P:%8d} [ {shodo2y6Pr:%7.1f} ]
-sS1Y7+: {shod2y7P:%8d} [ {shodo2y7Pr:%7.1f} ]
-sS1Y8+: {shod2y8P:%8d} [ {shodo2y8Pr:%7.1f} ]
-sS1Y9+: {shod2y9P:%8d} [ {shodo2y9Pr:%7.1f} ]
-sS1Y10+: {shod2y10P:%8d} [ {shodo2y10Pr:%7.1f} ]
-sS1Y11+: {shod2y11P:%8d} [ {shodo2y11Pr:%7.1f} ]
-sS1Y12+: {shod2y12P:%8d} [ {shodo2y12Pr:%7.1f} ]
-sS1Y13+: {shod2y13P:%8d} [ {shodo2y13Pr:%7.1f} ]
+sS1Y1+:  {PSshod1y1P:%8d}  [ {PSshod1y1Pr:%7.1f} ]
+sS1Y2+:  {PSshod1y2P:%8d}  [ {PSshod1y2Pr:%7.1f} ]
+sS1Y3+:  {PSshod1y3P:%8d}  [ {PSshod1y3Pr:%7.1f} ]
+sS1Y4+:  {PSshod1y4P:%8d}  [ {PSshod1y4Pr:%7.1f} ]
+sS1Y5+:  {PSshod1y5P:%8d}  [ {PSshod1y5Pr:%7.1f} ]
+sS1Y6+:  {PSshod1y6P:%8d}  [ {PSshod1y6Pr:%7.1f} ]
+sS1Y7+:  {PSshod1y7P:%8d}  [ {PSshod1y7Pr:%7.1f} ]
+sS1Y8+:  {PSshod1y8P:%8d}  [ {PSshod1y8Pr:%7.1f} ]
+sS1Y9+:  {PSshod1y9P:%8d}  [ {PSshod1y9Pr:%7.1f} ]
+sS1Y10+: {PSshod1y10P:%8d} [ {PSshod1y10Pr:%7.1f} ]
+sS1Y11+: {PSshod1y11P:%8d} [ {PSshod1y11Pr:%7.1f} ]
+sS1Y12+: {PSshod1y12P:%8d} [ {PSshod1y12Pr:%7.1f} ]
+sS1Y13+: {PSshod1y13P:%8d} [ {PSshod1y13Pr:%7.1f} ]
 
-sS1Y1-: {shod1y1M:%8d} [ {shodo1y1Mr:%7.1f} ]
-sS1Y2-: {shod1y2M:%8d} [ {shodo1y2Mr:%7.1f} ]
-sS1Y3-: {shod1y3M:%8d} [ {shodo1y3Mr:%7.1f} ]
-sS1Y4-: {shod1y4M:%8d} [ {shodo1y4Mr:%7.1f} ]
-sS1Y5-: {shod1y5M:%8d} [ {shodo1y5Mr:%7.1f} ]
-sS1Y6-: {shod1y6M:%8d} [ {shodo1y6Mr:%7.1f} ]
-sS1Y7-: {shod1y7M:%8d} [ {shodo1y7Mr:%7.1f} ]
-sS1Y8-: {shod1y8M:%8d} [ {shodo1y8Mr:%7.1f} ]
-sS1Y9-: {shod1y9M:%8d} [ {shodo1y19r:%7.1f} ]
-sS1Y10-: {shod1y10M:%8d} [ {shodo1y10Mr:%7.1f} ]
-sS1Y11-: {shod1y11M:%8d} [ {shodo1y11Mr:%7.1f} ]
-sS1Y12-: {shod1y12M:%8d} [ {shodo1y12Mr:%7.1f} ]
-sS1Y13-: {shod1y13M:%8d} [ {shodo1y13Mr:%7.1f} ]
+sS1Y1-:  {PSshod1y1M:%8d}  [ {PSshod1y1Mr:%7.1f} ]
+sS1Y2-:  {PSshod1y2M:%8d}  [ {PSshod1y2Mr:%7.1f} ]
+sS1Y3-:  {PSshod1y3M:%8d}  [ {PSshod1y3Mr:%7.1f} ]
+sS1Y4-:  {PSshod1y4M:%8d}  [ {PSshod1y4Mr:%7.1f} ]
+sS1Y5-:  {PSshod1y5M:%8d}  [ {PSshod1y5Mr:%7.1f} ]
+sS1Y6-:  {PSshod1y6M:%8d}  [ {PSshod1y6Mr:%7.1f} ]
+sS1Y7-:  {PSshod1y7M:%8d}  [ {PSshod1y7Mr:%7.1f} ]
+sS1Y8-:  {PSshod1y8M:%8d}  [ {PSshod1y8Mr:%7.1f} ]
+sS1Y9-:  {PSshod1y9M:%8d}  [ {PSshod1y9Mr:%7.1f} ]
+sS1Y10-: {PSshod1y10M:%8d} [ {PSshod1y10Mr:%7.1f} ]
+sS1Y11-: {PSshod1y11M:%8d} [ {PSshod1y11Mr:%7.1f} ]
+sS1Y12-: {PSshod1y12M:%8d} [ {PSshod1y12Mr:%7.1f} ]
+sS1Y13-: {PSshod1y13M:%8d} [ {PSshod1y13Mr:%7.1f} ]
 
-sS2Y1+: {shod2y1P:%8d} [ {shodo2y1Pr:%7.1f} ]
-sS2Y2+: {shod2y2P:%8d} [ {shodo2y2Pr:%7.1f} ]
-sS2Y3+: {shod2y3P:%8d} [ {shodo2y3Pr:%7.1f} ]	
-sS2Y4+: {shod2y4P:%8d} [ {shodo2y4Pr:%7.1f} ]
-sS2Y5+: {shod2y5P:%8d} [ {shodo2y5Pr:%7.1f} ]
-sS2Y6+: {shod2y6P:%8d} [ {shodo2y6Pr:%7.1f} ]
-sS2Y7+: {shod2y7P:%8d} [ {shodo2y7Pr:%7.1f} ]
-sS2Y8+: {shod2y8P:%8d} [ {shodo2y8Pr:%7.1f} ]
-sS2Y9+: {shod2y9P:%8d} [ {shodo2y9Pr:%7.1f} ]
-sS2Y10+: {shod2y10P:%8d} [ {shodo2y10Pr:%7.1f} ]
-sS2Y11+: {shod2y11P:%8d} [ {shodo2y11Pr:%7.1f} ]
-sS2Y12+: {shod2y12P:%8d} [ {shodo2y12Pr:%7.1f} ]
-sS2Y13+: {shod2y13P:%8d} [ {shodo2y13Pr:%7.1f} ]
-sS2Y14+: {shod2y14P:%8d} [ {shodo2y14Pr:%7.1f} ]
-sS2Y15+: {shod2y15P:%8d} [ {shodo2y15Pr:%7.1f} ]
-sS2Y16+: {shod2y16P:%8d} [ {shodo2y16Pr:%7.1f} ]
+sS2Y1+:  {PSshod2y1P:%8d}  [ {PSshod2y1Pr:%7.1f} ]
+sS2Y2+:  {PSshod2y2P:%8d}  [ {PSshod2y2Pr:%7.1f} ]
+sS2Y3+:  {PSshod2y3P:%8d}  [ {PSshod2y3Pr:%7.1f} ] 
+sS2Y4+:  {PSshod2y4P:%8d}  [ {PSshod2y4Pr:%7.1f} ]
+sS2Y5+:  {PSshod2y5P:%8d}  [ {PSshod2y5Pr:%7.1f} ]
+sS2Y6+:  {PSshod2y6P:%8d}  [ {PSshod2y6Pr:%7.1f} ]
+sS2Y7+:  {PSshod2y7P:%8d}  [ {PSshod2y7Pr:%7.1f} ]
+sS2Y8+:  {PSshod2y8P:%8d}  [ {PSshod2y8Pr:%7.1f} ]
+sS2Y9+:  {PSshod2y9P:%8d}  [ {PSshod2y9Pr:%7.1f} ]
+sS2Y10+: {PSshod2y10P:%8d} [ {PSshod2y10Pr:%7.1f} ]
+sS2Y11+: {PSshod2y11P:%8d} [ {PSshod2y11Pr:%7.1f} ]
+sS2Y12+: {PSshod2y12P:%8d} [ {PSshod2y12Pr:%7.1f} ]
+sS2Y13+: {PSshod2y13P:%8d} [ {PSshod2y13Pr:%7.1f} ]
+sS2Y14+: {PSshod2y14P:%8d} [ {PSshod2y14Pr:%7.1f} ]
+sS2Y15+: {PSshod2y15P:%8d} [ {PSshod2y15Pr:%7.1f} ]
+sS2Y16+: {PSshod2y16P:%8d} [ {PSshod2y16Pr:%7.1f} ]
 
-sS2Y1-: {shod2y1M:%8d} [ {shodo2y1Mr:%7.1f} ]
-sS2Y2-: {shod2y2M:%8d} [ {shodo2y2Mr:%7.1f} ]
-sS2Y3-: {shod2y3M:%8d} [ {shodo2y3Mr:%7.1f} ]
-sS2Y4-: {shod2y4M:%8d} [ {shodo2y4Mr:%7.1f} ]
-sS2Y5-: {shod2y5M:%8d} [ {shodo2y5Mr:%7.1f} ]
-sS2Y6-: {shod2y6M:%8d} [ {shodo2y6Mr:%7.1f} ]
-sS2Y7-: {shod2y7M:%8d} [ {shodo2y7Mr:%7.1f} ]
-sS2Y8-: {shod2y8M:%8d} [ {shodo2y8Mr:%7.1f} ]
-sS2Y9-: {shod2y9M:%8d} [ {shodo2y9Mr:%7.1f} ]
-sS2Y10-: {shod2y10M:%8d} [ {shodo2y10Mr:%7.1f} ]
-sS2Y11-: {shod2y11M:%8d} [ {shodo2y11Mr:%7.1f} ]
-sS2Y12-: {shod2y12M:%8d} [ {shodo2y12Mr:%7.1f} ]
-sS2Y13-: {shod2y13M:%8d} [ {shodo2y13Mr:%7.1f} ]
-sS2Y14-: {shod2y14M:%8d} [ {shodo2y14Mr:%7.1f} ]
-sS2Y15-: {shod2y15M:%8d} [ {shodo2y15Mr:%7.1f} ]
-sS2Y16-: {shod2y16M:%8d}  [ {shodo2y16Mr:%7.1f} ]
+sS2Y1-:  {PSshod2y1M:%8d}  [ {PSshod2y1Mr:%7.1f} ]
+sS2Y2-:  {PSshod2y2M:%8d}  [ {PSshod2y2Mr:%7.1f} ]
+sS2Y3-:  {PSshod2y3M:%8d}  [ {PSshod2y3Mr:%7.1f} ]
+sS2Y4-:  {PSshod2y4M:%8d}  [ {PSshod2y4Mr:%7.1f} ]
+sS2Y5-:  {PSshod2y5M:%8d}  [ {PSshod2y5Mr:%7.1f} ]
+sS2Y6-:  {PSshod2y6M:%8d}  [ {PSshod2y6Mr:%7.1f} ]
+sS2Y7-:  {PSshod2y7M:%8d}  [ {PSshod2y7Mr:%7.1f} ]
+sS2Y8-:  {PSshod2y8M:%8d}  [ {PSshod2y8Mr:%7.1f} ]
+sS2Y9-:  {PSshod2y9M:%8d}  [ {PSshod2y9Mr:%7.1f} ]
+sS2Y10-: {PSshod2y10M:%8d} [ {PSshod2y10Mr:%7.1f} ]
+sS2Y11-: {PSshod2y11M:%8d} [ {PSshod2y11Mr:%7.1f} ]
+sS2Y12-: {PSshod2y12M:%8d} [ {PSshod2y12Mr:%7.1f} ]
+sS2Y13-: {PSshod2y13M:%8d} [ {PSshod2y13Mr:%7.1f} ]
+sS2Y14-: {PSshod2y14M:%8d} [ {PSshod2y14Mr:%7.1f} ]
+sS2Y15-: {PSshod2y15M:%8d} [ {PSshod2y15Mr:%7.1f} ]
+sS2Y16-: {PSshod2y16M:%8d} [ {PSshod2y16Mr:%7.1f} ]
 
 Extras
-sTrig: {sTrig.scaler:%8d} ( {sTrigr.scaler:%7.1f} )
 
-sS1X:     = {gscaler(337):%8d} [ {gscaler(337)/g_run_time:%7.1f} ] {smisc_scaler(1):%11d} ( {smisc_scaler(3)/(strig.scaler+.0001):%5.3f} )
-sS1Y:     = {gscaler(338):%8d} [ {gscaler(338)/g_run_time:%7.1f} ] {smisc_scaler(2):%11d} ( {smisc_scaler(4)/(strig.scaler+.0001):%5.3f} )
-sS2X:     = {gscaler(339):%8d} [ {gscaler(339)/g_run_time:%7.1f} ] {smisc_scaler(3):%11d} ( {smisc_scaler(5)/(strig.scaler+.0001):%5.3f} )
-sS2Y:     = {gscaler(340):%8d} [ {gscaler(340)/g_run_time:%7.1f} ] {smisc_scaler(4):%11d} ( {smisc_scaler(6)/(strig.scaler+.0001):%5.3f} )
-sS1XS1Y:
-sS2XS2Y:
+sTrig: {PSsTrig:%8d} [{PSsTrigr:%7.1f}]
 
-sAERSUM:
-cAERSUM:
-sPSHWRLO:
-sPSHWRHI:
+sS1X: {PSs1X:%8d} [ {PSs1Xr:%7.1f} ] 
+sS1Y: {PSs1Y:%8d} [ {PSs1Yr:%7.1f} ] 
+sS2X: {PSs2X:%8d} [ {PSs2Xr:%7.1f} ] 
+sS2Y: {PSs2Y:%8d} [ {PSs2Yr:%7.1f} ]
+
+sS1XS1Y: {PSs1Xs1y:%8d} [{PSs1Xs1yr:%7.1f}]
+sS2XS2Y: {PSs2Xs2Y:%8d} [{PSs2Xs2Yr:%7.1f}]                                                   
+
+sAERSUM: {PSsAERSUM:%8d}  [{PSsAERSUMr:%7.1f}]
+sPSHWRLO:{PSsPSHWRLO:%8d} [{PSsPSHWRLOr:%7.1f}]
+sPSHWRHI:{PSsPSHWRHI:%8d} [{PSsPSHWRHIr:%7.1f}]
+
