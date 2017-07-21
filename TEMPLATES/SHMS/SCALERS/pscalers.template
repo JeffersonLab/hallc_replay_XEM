@@ -1,14 +1,14 @@
 Run #: {gen_run_number}
 
-Run Time  : {PS1Mhz}  {PS1Mhz/1000000.} sec
+Run Time  : {P.1Mhz.scaler}  {P.1Mhz.scaler/1000000.} sec
 
-BCM1  : {(PSBCM1r-250000)/(4673):%3.3f} uA      Total charge = {(PSBCM1r-250000) / (4673)*PS1Mhz/1000000.:%7.3f} uC
-BCM2  : {(PSBCM2r-250000)/(3954):%3.3f} uA      Total charge = {(PSBCM2r-250000) / (3954)*PS1Mhz/1000000.:%7.3f} uC 
-Unser : {(PSUnserr-393000)/(4000):%3.3f} uA     Total charge = {(PSUnserr-393000) / (4000)*PS1Mhz/1000000.:%7.3f} uC
+BCM1  : {(P.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(P.BCM1.scalerRate-250000) / (4673)*P.1Mhz.scaler/1000000.:%7.3f} uC
+BCM2  : {(P.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(P.BCM2.scalerRate-250000) / (3954)*P.1Mhz.scaler/1000000.:%7.3f} uC 
+Unser : {(P.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%7.3f} uC
 
 All triggers  :  {all_trigs.npassed}
 
-Rate  :  {PSsTrigr/1000.:%7.3f} kHz
+Rate  :  {P.Trig.scalerRate/1000.:%7.3f} kHz
 
-Live Time : {(all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
-Dead Time : {100.0 - (all_trigs.npassed / PSsTrig)*100.0:%3.2f} %
+Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
+Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %

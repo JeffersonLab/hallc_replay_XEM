@@ -76,7 +76,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
-  THcScalerEvtHandler *pscaler = new THcScalerEvtHandler("PS","Hall C scaler event type 1");
+  THcScalerEvtHandler *pscaler = new THcScalerEvtHandler("P","Hall C scaler event type 1");
   pscaler->AddEventType(1);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add (pscaler);
