@@ -44,7 +44,7 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   gHaEvtHandlers->Add (new THaEpicsEvtHandler("epics","HC EPICS event type 180"));
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS","Hall C scaler event type 1");
-  hscaler->AddEventType(1);
+  hscaler->AddEvtType(1);
   hscaler->SetUseFirstEvent(kTRUE);
   // hscaler->SetDebugFile("REPORT_OUTPUT/hms_scaler_debug.txt");
   gHaEvtHandlers->Add(hscaler);
