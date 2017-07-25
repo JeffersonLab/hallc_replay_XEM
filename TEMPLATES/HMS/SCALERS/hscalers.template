@@ -1,0 +1,14 @@
+Run #: {gen_run_number}
+
+Run Time  : {H.1Mhz.scaler}  {H.1Mhz.scaler/1000000.} sec
+
+BCM1  : {(H.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(H.BCM1.scalerRate-250000) / (4673)*H.1Mhz.scaler/1000000.:%7.3f} uC
+BCM2  : {(H.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(H.BCM2.scalerRate-250000) / (3954)*H.1Mhz.scaler/1000000.:%7.3f} uC 
+Unser : {(H.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(H.Unser.scalerRate-393000) / (4000)*H.1Mhz.scaler/1000000.:%7.3f} uC
+
+All triggers  :  {all_trigs.npassed}
+
+Rate  :  {H.Trig.scalerRate/1000.:%7.3f} kHz
+
+Live Time : {(all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
+Dead Time : {100.0 - (all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %

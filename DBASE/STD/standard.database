@@ -2,6 +2,9 @@
 g_ctp_parm_filename ="DBASE/GEN/general.param"
 g_ctp_kinematics_filename ="DBASE/STD/standard.kinematics"
 
+303-303
+g_ctp_calib_filename ="DBASE/GEN/KPP_Spring_2017/calib_303.param"
+
 464-464
 g_ctp_calib_filename ="DBASE/GEN/KPP_Spring_2017/calib_464.param"
 
