@@ -1,0 +1,11 @@
+
+#***********************************************
+# SHMS Single arm Primary (Scattered Beam)
+# Kinematics Quantities
+#***********************************************
+
+TH1F p_q2 'SHMS Q2 ; Q2 (GeV2) ' P.kin.Q2 100 0 5
+TH1F p_omega 'SHMS omega ; Ebeam-Escat (GeV)' P.kin.omega 100 0 5
+TH1F p_w2 'SHMS W2 ; W2 (GeV2)' P.kin.W2 100 0 10
+TH1F p_w  'SHMS W  ; W  (GeV)' P.kin.W 100 0 5
+TH1F p_thscat 'SHMS Scattering angle ; SHMS scattering angle (deg)' P.kin.scat_ang_deg 100 12 18

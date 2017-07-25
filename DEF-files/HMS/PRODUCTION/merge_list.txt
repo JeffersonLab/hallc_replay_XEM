@@ -1,4 +1,5 @@
 BLOCK/hblock_vars.def
+elec_KIN/h_elec_kin_histos.def
 CER/hcer_histos.def
 DC/hdc_6gev_histos.def
 HODO/hhodo_histos.def

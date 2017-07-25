@@ -71,6 +71,14 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
   gHaPhysics->Add(gtr);
 
+  //Add Ideal Beam Apparatus
+  THaApparatus* BEAM = new THaIdealBeam("IB","Ideal Beamline");
+  gHaApps->Add( BEAM );
+
+  //Add Physics Module to calculate primary (scattered beam - usually electron) kinematics
+  THcPrimaryKine* hkine_elec = new THcPrimaryKine("H.ekin", "HMS single arm e- kinematics", "H", "IB");
+  gHaPhysics->Add(hkine_elec);
+
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
@@ -101,6 +109,10 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   sprintf(RunFileName, RunFileNamePattern, RunNumber);
   THaRun* run = new THaRun(RunFileName);
 
+  // Set to read in Hall C run database parameters
+  run->SetRunParamClass("THcRunParameters");
+  
+
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
   run->SetEventRange(1, MaxEvent);    // Physics Event number, does not
@@ -110,7 +122,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   run->Print();
 
   // Define the analysis parameters
-  TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber);
+  TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   analyzer->SetCountMode(2);    // 0 = counter is # of physics triggers
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number

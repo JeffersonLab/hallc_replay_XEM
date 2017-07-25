@@ -1,4 +1,5 @@
 BLOCK/pblock_vars.def
+elec_KIN/p_elec_kin_histos.def 
 NGCER/pngcer_histos.def
 DC/pdc_histos.def
 HODO/phodo_histos.def

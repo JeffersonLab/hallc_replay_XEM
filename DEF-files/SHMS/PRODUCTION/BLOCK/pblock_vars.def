@@ -11,3 +11,4 @@ block P.hgcer.*
 block P.aero.*
 block P.cal.*
 block P.gtr.*
+block P.ekin.*
