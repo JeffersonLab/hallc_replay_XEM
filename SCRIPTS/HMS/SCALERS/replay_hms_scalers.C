@@ -23,26 +23,19 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
-
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-
   // g_ctp_parm_filename and g_decode_map_filename should now be defined.
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  if ( RunNumber > 243) {
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack.map");
-  } else {
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/hms_stack_spring17_run_00001_00243.map");
-  }
-
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
+  
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);

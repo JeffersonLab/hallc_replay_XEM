@@ -355,7 +355,7 @@ S1X          0    5     7    0     1     SHMS S1X
 S1Y          0    5     7    1     1     SHMS S1Y                                           
 S2X          0    5     7    2     1     SHMS S2X                                           
 S2Y          0    5     7    3     1     SHMS S2Y                                           
-S1XS1y       0    5     7    4     1     SHMS S1T                                           
+S1XS1Y       0    5     7    4     1     SHMS S1T                                           
 S2XS2Y       0    5     7    5     1     SHMS S2T                                           
 Trig         0    5     7    6     1     SHMS T1                                           
 ASUM         0    5     7    7     1     SHMS ASUM                                         

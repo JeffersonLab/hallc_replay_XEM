@@ -89,6 +89,5 @@ with open(xscalerMapName, 'r') as fi:
                         print >>fo, 'variable', slot, chan, 1, printHodoName, comment
                         print >>fo, 'variable', slot, chan, 2, printHodoName+'Rate', comment
                     else:    
-                        print(printname)
                         print >>fo, 'variable', slot, chan, 1, printname, comment
                         print >>fo, 'variable', slot, chan, 2, printname+'Rate', comment
