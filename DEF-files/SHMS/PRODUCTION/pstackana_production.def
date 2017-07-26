@@ -13,20 +13,7 @@ block P.hgcer.*
 block P.aero.*
 block P.cal.*
 block P.gtr.*
-block P.ekin.*
-
-
-
-#***********************************************
-# SHMS Single arm Primary (Scattered Beam)
-# Kinematics Quantities
-#***********************************************
-
-TH1F p_q2 'SHMS Q2 ; Q2 (GeV2) ' P.kin.Q2 100 0 5
-TH1F p_omega 'SHMS omega ; Ebeam-Escat (GeV)' P.kin.omega 100 0 5
-TH1F p_w2 'SHMS W2 ; W2 (GeV2)' P.kin.W2 100 0 10
-TH1F p_w  'SHMS W  ; W  (GeV)' P.kin.W 100 0 5
-TH1F p_thscat 'SHMS Scattering angle ; SHMS scattering angle (deg)' P.kin.scat_ang_deg 100 12 18
+block P.kin.*
 
 
 #**********************
@@ -696,6 +683,19 @@ TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' T.shms.pFRYB_adcPulseIntRaw 
 TH1F pFRYB_V 'SHMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
 TH2F pFRA_XvsY 'HMSFRA_XvsY; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
 TH2F pFRB_XvsY 'HMSFRB_XvsY; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0
+
+
+#*****************************************
+# SHMS Single Arm Primary (Scattered Beam)
+# Kinematic Quantities
+#*****************************************
+
+TH1F pkin_q2 'SHMS Q2; Q2 (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 100 0 5
+TH1F pkin_omega 'SHMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 100 0 5
+TH1F pkin_w2 'SHMS W2; W2 (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10
+TH1F pkin_w  'SHMS W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 100 0 5
+TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 100 12 18
+
 
 #******************
 # EPICS VARIABLES *

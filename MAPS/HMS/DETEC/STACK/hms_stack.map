@@ -20,6 +20,13 @@ SLOT=17
   14,   1,   7,   0  ! hAERSUM
   15,   1,   8,   0  ! hCERSUM
 
+SLOT=18
+! chan    plane     bar    sig
+     12,      1,      9,     0!  hFRXA
+     13,      1,     10,     0!  hFRYA
+     14,      1,     11,     0!  hFRXB
+     15,      1,     12,     0!  hFRYB 
+
 SLOT=2
 REFINDEX=0
    0,   2,   1,   1  ! h1X

@@ -68,23 +68,21 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
   gHaPhysics->Add(gtr);
-
-  //Add Ideal Beam Apparatus
-  THaApparatus* BEAM = new THaIdealBeam("IB","Ideal Beamline");
-  gHaApps->Add( BEAM );
-
+  // Add Ideal Beam Apparatus
+  THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
+  gHaApps->Add(beam);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
-  THcPrimaryKine* pkine_elec = new THcPrimaryKine("P.ekin","SHMS single arm e- kinematics","P","IB");
-  gHaPhysics->Add(pkine_elec);
+  THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "IB");
+  gHaPhysics->Add(kin);
 
-  // // Add handler for prestart event 125.
+  // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
-  // Add handler for EPICS events
-  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
+  // Add event handler for EPICS events
+  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
-  // Add handler for scaler events
-  THcScalerEvtHandler *pscaler = new THcScalerEvtHandler("P","Hall C scaler event type 1");
+  // Add event handler for scaler events
+  THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
   pscaler->AddEvtType(1);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);

@@ -23,19 +23,16 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
-
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-
   // g_ctp_parm_filename and g_decode_map_filename should now be defined.
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms.param");
 
-  // Load the Hall C style detector map
+  // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
 
@@ -58,11 +55,9 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add Cherenkov to HMS apparatus
   THcCherenkov* cer = new THcCherenkov("cer", "Heavy Gas Cherenkov");
   HMS->AddDetector(cer);
-  
   // Add Aerogel Cherenkov to HMS apparatus
   //THcAerogel* aero = new THcAerogel("aero", "Aerogel");
   //HMS->AddDetector(aero);
-  
   // Add calorimeter to HMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
@@ -70,14 +65,12 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
   gHaPhysics->Add(gtr);
-
-  //Add Ideal Beam Apparatus
-  THaApparatus* BEAM = new THaIdealBeam("IB","Ideal Beamline");
-  gHaApps->Add( BEAM );
-
-  //Add Physics Module to calculate primary (scattered beam - usually electron) kinematics
-  THcPrimaryKine* hkine_elec = new THcPrimaryKine("H.ekin", "HMS single arm e- kinematics", "H", "IB");
-  gHaPhysics->Add(hkine_elec);
+  // Add Ideal Beam Apparatus
+  THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
+  gHaApps->Add(beam);
+  // Add Physics Module to calculate primary (scattered beam - usually electron) kinematics
+  THcPrimaryKine* hkin = new THcPrimaryKine("H.kin", "HMS single arm e- kinematics", "H", "IB");
+  gHaPhysics->Add(hkin);
 
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
@@ -86,7 +79,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
-  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H","Hall C scaler event type 1");  
+  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 1");  
   hscaler->AddEvtType(1);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
@@ -112,7 +105,6 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");
   
-
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
   run->SetEventRange(1, MaxEvent);    // Physics Event number, does not

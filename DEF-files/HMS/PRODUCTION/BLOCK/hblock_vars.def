@@ -10,4 +10,4 @@ block H.hod.*
 block H.aero.*
 block H.cal.*
 block H.gtr.*
-block H.ekin.*
+block H.kin.*
