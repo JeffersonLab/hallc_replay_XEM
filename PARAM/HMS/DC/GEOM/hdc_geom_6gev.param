@@ -130,4 +130,3 @@ hdc_gamma_angle = pdc_1_yaw*raddeg
                   pdc_2_yaw*raddeg
                   pdc_2_yaw*raddeg
 
-; TZERO PER WIRE CORRECTIONS (when hms dc calibration script is ready  :) 
