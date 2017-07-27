@@ -20,8 +20,8 @@ Compiling code
 Running code
 -----------
 * First replay data by adding  either line to replay script
-** HMS:   gHcParms->Load("PARAM/HMS/HODO/CALIB/htofcal.param");
-** SHMS:   gHcParms->Load("PARAM/SHMS/HODO/CALIB/ptofcal.param");
+** HMS:   gHcParms->Load("PARAM/HMS/HODO/CALIB/htofcalib.param");
+** SHMS:   gHcParms->Load("PARAM/SHMS/HODO/CALIB/ptofcalib.param");
 * The replay will put the new file : hfort.37 or pfort.37 in the CALIBRATION/hodo_calib directory
 * Copy either hmstofcal.inp or shmstofcal.inp to tofcal.inp
 * Execute ./tofcal
