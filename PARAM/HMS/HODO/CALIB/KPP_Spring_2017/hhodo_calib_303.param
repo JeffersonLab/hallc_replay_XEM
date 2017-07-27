@@ -1,7 +1,5 @@
 ;HMS Hodo Calibration paramters
 
-hdumptof=1
-hdumptof_filename="CALIBRATION/hodo_calib/hfort.37"
  
 ; new param from KPP HMS run 303                 
 hhodo_pos_invadc_offset =   -0.00,   -0.00,   -0.70,   -0.00

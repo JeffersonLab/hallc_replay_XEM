@@ -1,0 +1,3 @@
+; set hdumptof =1 to write out the calibration file
+hdumptof=1
+hdumptof_filename="CALIBRATION/hodo_calib/hfort.37"
