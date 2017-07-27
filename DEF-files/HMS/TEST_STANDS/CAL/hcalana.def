@@ -5,12 +5,12 @@ block H.cal.*
 #HMS CALORIMETER HISTOGRAMS
 
 #FPGA Error Flags
-TH1F hcal_hA_adcErrFlg2D_pos 'HMS hA+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
-TH1F hcal_hA_adcErrFlg2D_neg 'HMS hA- FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
-TH1F hcal_hB_adcErrFlg2D_pos 'HMS hB+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
-TH1F hcal_hB_adcErrFlg2D_neg 'HMS hB- FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
-TH1F hcal_hC_adcErrFlg2D_pos 'HMS hC+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
-TH1F hcal_hD_adcErrFlg2D_pos 'HMS hD+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hA_adcErrFlg2D_pos 'HMS hA+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hA_adcErrFlg2D_neg 'HMS hA- FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hB_adcErrFlg2D_pos 'HMS hB+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hB_adcErrFlg2D_neg 'HMS hB- FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hC_adcErrFlg2D_pos 'HMS hC+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
+TH2F hcal_hD_adcErrFlg2D_pos 'HMS hD+ FPGA Error Flag; Error Flag; PMT Number; Error Flag' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcErrorFlag 13 0.5 13.5 2 -0.5 1.5
 
 #Raw Occupancy
 TH1F hcal_hA_raw_occ_pos 'HMS hA+ Raw Occupancy; PMT Number; Number of Entries' H.cal.1pr.posAdcCounter 13 0.5 13.5

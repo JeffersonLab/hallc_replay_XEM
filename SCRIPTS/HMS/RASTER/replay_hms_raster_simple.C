@@ -20,16 +20,14 @@ void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
   const char* ROOTFileNamePattern = "ROOTfiles/hms_raster_simple_%d_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
-
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/STD/standard.database");
   //Load global parameters
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-
   // g_ctp_parm_filename and g_decode_map_filename should now be defined.
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-
+  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
   // Load params for HMS trigger configuration
   gHcParms->Load("PARAM/TRIG/thms_raster.param");
 
