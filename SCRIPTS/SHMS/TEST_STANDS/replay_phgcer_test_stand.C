@@ -39,7 +39,7 @@ void replay_phgcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
-  // Add hodoscope to HMS apparatus
+  // Add Cherenkov to HMS apparatus
   THcCherenkov* hgcer = new THcCherenkov("hgcer", "Heavy Gas Cherenkov");
   SHMS->AddDetector(hgcer);
 

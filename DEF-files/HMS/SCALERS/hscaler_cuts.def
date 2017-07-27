@@ -1,0 +1,41 @@
+#Report file for HMS Stack
+
+Block: RawDecode
+
+Pedestal_event     g.evtyp==4
+scalar_event       g.evtyp==0
+HMS_event          g.evtyp==1
+#SHMS_event        g.evtyp==2
+#coin_event        g.evtyp==3
+tr4_event          g.evtyp==4
+tr5_event          g.evtyp==5
+tr6_event          g.evtyp==6
+misc_event         g.evtyp>=10
+#hmscoin_event     g.evtyp==1||g.evtyp==3
+#shmscoin_event    g.evtyp==2||g.evtyp==3
+#all_event         g.evtyp==1||g.evtyp==2||g.evtyp==3
+
+RawDecode_master  1
+
+Block: Decode
+
+#all_trigs            g.evtyp==1 || g.evtyp==2 || g.evtyp==3
+#hms_shms_trig        g.evtyp==1 || g.evtyp==2
+#hms_coin_trig        g.evtyp==1 || g.evtyp==3
+
+Decode_master     HMS_event
+
+Block: CoarseTracking
+CoarseTracking_master HMS_event
+
+Block: CoarseReconstruct
+CoarseReconstruct_master HMS_event
+
+Block: Tracking
+Tracking_master  HMS_event
+
+Block: Reconstruct
+Reconstruct_master HMS_event
+
+Block: Physics
+Physics_master HMS_event

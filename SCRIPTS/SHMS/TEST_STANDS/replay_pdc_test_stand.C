@@ -29,9 +29,11 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
+  
   // Load params for HMS DC test stand configuration
-  gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
+  //gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
 
+  // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/DC/pdc.map");
@@ -46,18 +48,6 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
 
-  // Additional detectors:
-  //HMS->AddDetector(new THcHodoscope("hod", "Hodoscope"));
-  //HMS->AddDetector(new THcShower("cal", "Shower"));
-  //
-  //THcCherenkov* cherenkov = new THcCherenkov("cher", "Gas Cerenkov");
-  //HMS->AddDetector(cherenkov);
-  //THcAerogel* aerogel = new THcAerogel("aero", "Aerogel Cerenkov");
-  //HMS->AddDetector(aerogel);
-  //
-  //THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("HS", "HC scaler event type 0");
-  //hscaler->SetDebugFile("HScaler.txt");
-  //gHaEvtHandlers->Add(hscaler);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.

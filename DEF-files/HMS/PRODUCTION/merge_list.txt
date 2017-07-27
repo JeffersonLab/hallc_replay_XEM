@@ -1,0 +1,8 @@
+BLOCK/hblock_vars.def
+CER/hcer_histos.def
+DC/hdc_6gev_histos.def
+HODO/hhodo_histos.def
+CAL/hcal_histos.def
+TRIG/htrig_histos.def
+KIN/hkin_histos.def
+EPICS/hepics_vars.def

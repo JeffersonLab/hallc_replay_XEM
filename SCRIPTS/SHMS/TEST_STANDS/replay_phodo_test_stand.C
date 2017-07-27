@@ -37,8 +37,6 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/HODO/phodo_ptrig.map");
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
 
-
-
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);

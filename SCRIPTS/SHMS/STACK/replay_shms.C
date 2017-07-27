@@ -58,7 +58,7 @@ void replay_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add Heavy Gas Cherenkov to SHMS apparatus
   THcCherenkov* hgcer = new THcCherenkov("hgcer", "Heavy Gas Cherenkov");
   SHMS->AddDetector(hgcer);
-  // Add Heavy Gas Cherenkov to SHMS apparatus
+  // Add Aerogel Cherenkov to SHMS apparatus
   THcAerogel* aero = new THcAerogel("aero", "Aerogel");
   SHMS->AddDetector(aero);
   // Add calorimeter to SHMS apparatus

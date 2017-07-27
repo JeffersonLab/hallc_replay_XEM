@@ -6,4 +6,5 @@ HGCER/phgcer_histos.def
 AERO/paero_histos.def
 CAL/pcal_histos.def
 TRIG/ptrig_histos.def
+KIN/pkin_histos.def
 EPICS/pepics_vars.def

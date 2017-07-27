@@ -100,7 +100,7 @@ Double_t **t0 = new Double_t*[NPLANES];
  
  //Create an output parameter file to store tzero values 
  ofstream ofs;
- TString wire_tzero = Form("../../../PARAM/SHMS/DC/pdc_tzero_per_wire_run%d_NEW.param", run_NUM);
+ TString wire_tzero = Form("../../../PARAM/SHMS/DC/CALIB/pdc_tzero_per_wire_%d.param", run_NUM);
  ofs.open (wire_tzero);
  
 

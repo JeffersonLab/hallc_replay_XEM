@@ -17,20 +17,20 @@ Directory structure
 Running code
 ---------------
 * First set the parameter 'p_using_tzero_per_wire = 0' in the 
-  parameter file located at: hallc_replay/PARAM/SHMS/DC/pdc.param
+  parameter file located at: hallc_replay/PARAM/SHMS/DC/CUTS/pdc_cuts.param
 
 * Replay the data to produce the uncalibrated root file to be used as input in the calibration
-  * From the hallc_replay execute: ./hcana SCRIPTS/SHMS/replay_shms.C
+  * From the hallc_replay execute: ./hcana SCRIPTS/SHMS/STACK/replay_shms.C
 
-* From THIS! directory execute: root -l run_Cal.C
+* From the directory where this README file is: execute: root -l run_Cal.C
 
 * From the calibration results, two parameter files will be produced in:
-  * hallc_replay/PARAM/SHMS/DC/pdc_tzero_per_wire_run%d_NEW.param. %d=run_number
-  * hallc_replay/PARAM/SHMS/DC/pdriftmap_run%d_NEW.param
+  * hallc_replay/PARAM/SHMS/DC/CALIB/pdc_tzero_per_wire_run#.param
+  * hallc_replay/PARAM/SHMS/DC/CALIB/pdc_calib_run#.param
 
 * Rename the new parameter files as follows:
-  * copy: pdc_tzero_per_wire_run%d_NEW.param to pdc_tzero_per_wire.param
-  * copy: pdriftmap_run%d_NEW.param to pdriftmap.param
+  * copy: pdc_tzero_per_wire_run#.param to pdc_tzero_per_wire.param
+  * copy: pdc_calib_run#.param to pdc_calib.param
 
 * Before replaying the data again, set the parameter 'p_using_tzero_per_wire = 1' to 
   allow the source code (hcana) to read the parameter values during the replay.
@@ -75,14 +75,14 @@ Brief decription of code
 		-- outputs data_file: 'tzero_values_per_wire.dat'
 		-- contains list of tzero values for all wires in all planes 
 
-		-- outputs param_file: /hallc_replay/PARAM/SHMS/DC/pdc_tzero_per_wire_run%d_NEW.param, where %d=run_number
+		-- outputs param_file: /hallc_replay/PARAM/SHMS/DC/CALIB/pdc_tzero_per_wire_run#.param
                 -- contains tzero values for all wires in all planes, but the file is formatted so that the values may be read by the source code (hcana)
 	  
-	** get_pdc_time_histo_tzero_corrected_v2.C  	  	
+	** get_pdc_time_histo_tzero_corrected.C  	  	
 	   	-- outputs root_file: 'shms_tzero_corr_histo.root'
 		-- contains list of "t0-corrected" wire drift times, and their respective plane drift times.
 
 	** get_LookUp_Values.C
-	        -- outputs param_file: /hallc_replay/PARAM/SHMS/DC/pdriftmap_run%d_NEW.param
+	        -- outputs param_file: /hallc_replay/PARAM/SHMS/DC/CALIB/pdc_calib_run#.param
  		-- contains scaling factors calculated from the corrected plane drift times on a bin-by-in basis. These values get read by the source code
 		   which will be used to scale the drift distance histograms. 
