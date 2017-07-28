@@ -1,0 +1,17 @@
+!SHMS:
+! PRASTER_ID=27    ADC
+
+! Plane = 1 >> ADC Only
+
+detector=27
+
+ROC=2
+
+!F250 module
+SLOT=14
+! chan    plane     bar    sig
+     12,      1,      1,     0!  FR-XA
+     13,      1,      2,     0!  FR-XB
+     14,      1,      3,     0!  FR-YA
+     15,      1,      4,     0!  FR-YB
+

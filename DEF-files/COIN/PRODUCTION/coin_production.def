@@ -1,0 +1,33 @@
+#********************
+# Block Definitions *
+#********************
+
+block T.coin.*
+
+block H.cer.*
+block H.dc.*
+block H.tr.*
+block H.hod.*
+block H.cal.*
+block H.gtr.*
+block H.kin.*
+
+block P.ngcer.*
+block P.dc.*
+block P.tr.*
+block P.hod.*
+block P.hgcer.*
+block P.aero.*
+block P.cal.*
+block P.gtr.*
+block P.kin.*
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
