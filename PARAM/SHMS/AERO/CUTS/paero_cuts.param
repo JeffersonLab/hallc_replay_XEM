@@ -10,6 +10,10 @@ paero_beta_max = 1.2
 paero_enorm_min = 0.0
 paero_enorm_max = 1.5
 
+; Track matching delta p (dp) cut values
+paero_dp_min = -20.0
+paero_dp_max = 25.0
+
 ; ADC time window cut values used to select "good" ADC events
 paero_adcTimeWindowMin = 500.
 paero_adcTimeWindowMax = 2500.
