@@ -4,19 +4,28 @@ phodo_plane_names = "1x 1y 2x 2y"
 
 ppathlength_central = 1800
 
-; Z positions of hodoscopes
-pscin_1x_zpos =  56.35-4.8
-pscin_1y_zpos =  56.35+4.8
-pscin_2x_zpos =  276.35-9.5
-pscin_2y_zpos =  276.35+9.5
-pscin_1x_dzpos = 2.12
-pscin_1y_dzpos = 2.12
-pscin_2x_dzpos = 2.12
-pscin_2y_dzpos = 5.19
+; Many dimensions were updated on 7/28/17 by hcf from construction drawings.
+
+; Z positions of odd-numbered hodoscope paddle centers
+; These are based upon a tape-measure survey by hcf on 7/28/17
+pscin_1x_zpos =  56.9-4.8
+pscin_1y_zpos =  56.9+4.8
+pscin_2x_zpos =  267.7+3.7
+pscin_2y_zpos =  267.7+14.7
+
+; delta-Z from odd-numbered to even-numbered paddles
+pscin_1x_dzpos =  2.12
+pscin_1y_dzpos = -2.12
+pscin_2x_dzpos = -2.12
+pscin_2y_dzpos = -5.4
+
+; hodoscope paddle widths
 pscin_1x_size = 8.0
 pscin_1y_size = 8.0
 pscin_2x_size = 10.0
 pscin_2y_size = 5.5
+
+; pitch of hodoscope elements
 pscin_1x_spacing = 7.5
 pscin_1y_spacing = 7.5
 pscin_2x_spacing = 9.5
@@ -27,7 +36,7 @@ pscin_1x_nr = 13
 pscin_1y_nr = 13
 pscin_2x_nr = 14
 pscin_2y_nr = 21
-                        
+
 ; X,Y positions of hodoscope paddles
 pscin_1x_left  =  50.
 pscin_1x_right = -50
@@ -45,6 +54,7 @@ pscin_1x_center= -45.0
                   30.0
                   37.5
                   45.0
+
 pscin_1y_top   = -45
 pscin_1y_bot   =  45
 pscin_1y_offset=  0.0
@@ -61,12 +71,13 @@ pscin_1y_center= +45.0
                  -30.0
                  -37.5
                  -45.0
+
 pscin_2x_left  =  55.
 pscin_2x_right = -55.
 pscin_2x_offset=  0.0
 pscin_2x_center= -61.75
-	         -52.25
-                 -42.75
+		 -52.25
+		 -42.75
 		 -33.25
 		 -23.75
 		 -14.25
@@ -76,8 +87,9 @@ pscin_2x_center= -61.75
 		  23.75
 		  33.25
 		  42.75
-		  52.25
+	          52.25
 		  61.75
+
 pscin_2y_top   = -62.5
 pscin_2y_bot   =  62.5
 pscin_2y_offset=  0.0
@@ -102,3 +114,4 @@ pscin_2y_center=  50.
                  -40.
                  -45.
                  -50.
+                        
