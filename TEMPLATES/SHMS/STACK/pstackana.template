@@ -1,7 +1,19 @@
-Run #{gen_run_number}
+Run #: {gen_run_number}
+
+Run Time  : {P.1Mhz.scaler}  {P.1Mhz.scaler/1000000.} sec
+
+BCM1  : {(P.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(P.BCM1.scalerRate-250000) / (4673)*P.1Mhz.scaler/1000000.:%7.3f} uC
+BCM2  : {(P.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(P.BCM2.scalerRate-250000) / (3954)*P.1Mhz.scaler/1000000.:%7.3f} uC 
+Unser : {(P.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%7.3f} uC
 
 All triggers  :  {all_trigs.npassed}
 
+Rate  :  {P.Trig.scalerRate/1000.:%7.3f} kHz
+
+Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
+Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
+
+**DRIFT CHAMBER** 
 good_S1_time         Counts: {good_S1_time.npassed}     / all_trigs : {good_S1_time.npassed / all_trigs.npassed}       
 good_S2X_time        Counts: {good_S2X_time.npassed}    / all_trigs : {good_S2X_time.npassed / all_trigs.npassed}    
 good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / all_trigs : {good_S1_S2X_time.npassed / all_trigs.npassed}
@@ -47,7 +59,97 @@ shmsDC2u2Planes5     Counts: {shmsDC2_5hits_u2.npassed} eff : {shmsDC2_6hits_u2.
 shmsDC2v1Planes5     Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.npassed / shmsDC2_5hits_v1.npassed}
 shmsDC2v2Planes5     Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
 shmsDC2x2Planes5     Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
-	       	   	       
+
+shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed}
+shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}
+shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}
+shmsDC1_1hit_v1: {shmsDC1_1hit_v1.npassed}
+shmsDC1_1hit_v2: {shmsDC1_1hit_v2.npassed}
+shmsDC1_1hit_x2: {shmsDC1_1hit_x2.npassed}
+
+shmsDC2_1hit_x1: {shmsDC2_1hit_x1.npassed}
+shmsDC2_1hit_u1: {shmsDC2_1hit_u1.npassed}
+shmsDC2_1hit_u2: {shmsDC2_1hit_u2.npassed}
+shmsDC2_1hit_v1: {shmsDC2_1hit_v1.npassed}
+shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}
+shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}
+
+goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+
+goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+
+goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(P.Trig.scaler+.0001):%5.3f}
+bothgood:	     {bothgood.npassed}	eff : {bothgood.npassed/(P.Trig.scaler+.0001):%5.3f}
+
+realhdc1x1:	     {realhdc1x1.npassed}
+realhdc1u2:	     {realhdc1u2.npassed}
+realhdc1u1:          {realhdc1u1.npassed}
+realhdc1v1:	     {realhdc1v1.npassed}
+realhdc1v2:	     {realhdc1v2.npassed}
+realhdc1x2:	     {realhdc1x2.npassed}
+
+realhdc2x1:	     {realhdc2x1.npassed}
+realhdc2u2:	     {realhdc2u2.npassed}
+realhdc2u1:	     {realhdc2u1.npassed}
+realhdc2v1:	     {realhdc2v1.npassed}
+realhdc2v2:	     {realhdc2v2.npassed}
+realhdc2x2:	     {realhdc2x2.npassed}
+    	   	       
+**HODOSCOPE**
+anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(P.Trig.scaler+.0001):%5.3f}	BAD = 0.99
+anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(P.Trig.scaler+.0001):%5.3f}
+anyhs2x : {anyhs2x.npassed}		 eff: {anyhs2x.npassed/(P.Trig.scaler+.0001):%5.3f}
+anyhs2y : {anyhs2y.npassed}		 eff: {anyhs2y.npassed/(P.Trig.scaler+.0001):%5.3f} 
+
+goodps1x : {goodps1x.npassed}		 eff: {goodps1x.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps1y : {goodps1y.npassed}		 eff: {goodps1y.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps1  : {goodps1.npassed}		 eff: {goodps1.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/P.Trig.scaler+.0001):%5.3f}
+
+**CHERENKOVS AND CAL**
+cer_ng_elec   :	  {cer_ng_elec.npassed}
+cer_ng_pi     :	  {cer_ng_pi.npassed}
+cer_hg_elec   :	  {cer_hg_elec.npassed}
+cer_hg_pi     :	  {cer_hg_pi.npassed}
+cer_pi_both   :	  {cer_pi_both.npassed}
+cer_elec_both :   {cer_elec_both.npassed}
+cal_elec      :   {cal_elec.npassed}
+cal_pi        :   {cal_pi.npassed}
+elec_all      :	  {elec_all.npassed}
+pi_all        :   {pi_all.npassed} 
+
+pCleanTrack_cer_elec : {pCleanTrack_cer_elec.npassed} 
+p1hit1_cer_elec	     : {p1hit1_cer_elec.npassed}
+pCleanTrack_cal_elec : {pCleanTrack_cal_elec.npassed} 
+p1hit1_cal_elec	     : {p1hit1_cal_elec.npassed}
+
+**TRACKING**
+pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(P.Trig.scaler+.0001):%5.3f} BAD = .95
+pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+pFound2Track :{pFound2Track.npassed}	 eff: {pFound2Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+pFound3Track :{pFound3Track.npassed}	 eff: {pFound3Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+pFound4Track :{pFound4Track.npassed}	 eff: {pFound4Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+
+pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}	 BAD = 0.95
+1pCleanTrack:{1pCleanTrack.npassed}	 eff: {1pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f} 
+2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
+3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
+4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
+
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************

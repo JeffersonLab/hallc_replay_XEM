@@ -152,7 +152,7 @@ P1Y: {P.S1Y.scaler:%8d} [ {P.S1Y.scalerRate:%7.1f} ] AND between + and - sides o
 P2X: {P.S2X.scaler:%8d} [ {P.S2X.scalerRate:%7.1f} ] AND between + and - sides of P2X
 P2Y: {P.S2Y.scaler:%8d} [ {P.S2Y.scalerRate:%7.1f} ] AND between + and - sides of P2Y
 
-P1XP1Y: {P.S1XS1y.scaler:%8d} [{P.S1XS1y.scalerRate:%7.1f}] AND between P1X and P1Y planes 
+P1XP1Y: {P.S1XS1Y.scaler:%8d} [{P.S1XS1Y.scalerRate:%7.1f}] AND between P1X and P1Y planes 
 P2XP2Y: {P.S2XS2Y.scaler:%8d} [{P.S2XS2Y.scalerRate:%7.1f}] OR between P2X and P2Y planes (just for kpp, will be AND)                                                
 
 *AEROGEL AND PRESHOWER*
