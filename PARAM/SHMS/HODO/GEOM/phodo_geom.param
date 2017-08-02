@@ -4,23 +4,32 @@ phodo_plane_names = "1x 1y 2x 2y"
 
 ppathlength_central = 1800
 
-; Z positions of hodoscopes
-pscin_1x_zpos =  56.3-9.5
-pscin_1y_zpos =  56.3+9.5
-pscin_2x_zpos =  276.35-9.5
-pscin_2y_zpos =  276.35+9.5
-pscin_1x_dzpos = 1.0
-pscin_1y_dzpos = 1.0
-pscin_2x_dzpos = 1.0
-pscin_2y_dzpos = 1.0
+; Many dimensions were updated on 7/28/17 by hcf from construction drawings.
+
+; Z positions of odd-numbered hodoscope paddle centers
+; These are based upon a tape-measure survey by hcf on 7/28/17
+pscin_1x_zpos =  56.9-4.8
+pscin_1y_zpos =  56.9+4.8
+pscin_2x_zpos =  267.7+3.7
+pscin_2y_zpos =  267.7+14.7
+
+; delta-Z from odd-numbered to even-numbered paddles
+pscin_1x_dzpos =  2.12
+pscin_1y_dzpos = -2.12
+pscin_2x_dzpos = -2.12
+pscin_2y_dzpos = -5.4
+
+; hodoscope paddle widths
 pscin_1x_size = 8.0
 pscin_1y_size = 8.0
-pscin_2x_size = 8.0
-pscin_2y_size = 8.0
+pscin_2x_size = 10.0
+pscin_2y_size = 5.5
+
+; pitch of hodoscope elements
 pscin_1x_spacing = 7.5
 pscin_1y_spacing = 7.5
-pscin_2x_spacing = 7.5
-pscin_2y_spacing = 7.5
+pscin_2x_spacing = 9.5
+pscin_2y_spacing = 5.0
 
 ; Number of hodoscope paddles per layer
 pscin_1x_nr = 13
@@ -29,80 +38,80 @@ pscin_2x_nr = 14
 pscin_2y_nr = 21
 
 ; X,Y positions of hodoscope paddles
-pscin_1x_left   =  50.
-pscin_1x_right  = -50
-pscin_1x_offset =  0.0
-pscin_1x_center = -42.
-                  -35.
-                  -28.
-                  -21.
-                  -14.
-                  -7.
-                   0.0
-                   7.
-                   14.
-                   21.
-                   28.
-                   35.
-                   42.
+pscin_1x_left  =  50.
+pscin_1x_right = -50
+pscin_1x_offset=  0.0
+pscin_1x_center= -45.0
+                 -37.5
+                 -30.0
+                 -22.5
+                 -15.0
+                 -7.5
+                  0.0
+                  7.5
+                  145.0
+                  22.5
+                  30.0
+                  37.5
+                  45.0
 
-pscin_1y_top    = -50
-pscin_1y_bot    =  50
-pscin_1y_offset =  0.0
-pscin_1y_center = +42.
-                  +35.
-                  +28.
-                  +21.
-                  +14.
-                  +7.
-                   0.0
-                  -7.
-                  -14.
-                  -21.
-                  -28.
-                  -35.
-                  -42. 
+pscin_1y_top   = -45
+pscin_1y_bot   =  45
+pscin_1y_offset=  0.0
+pscin_1y_center= +45.0
+                 +37.5
+                 +30.0
+                 +22.5
+                 +15.0
+                 +7.5
+                  0.0
+                 -7.5
+                 -15.0
+                 -22.5
+                 -30.0
+                 -37.5
+                 -45.0
 
-pscin_2x_left   = 55.
-pscin_2x_right  = -55.
-pscin_2x_offset = 0.0
-pscin_2x_center = -58.5
-                  -49.5
-                  -40.5
-                  -31.5
-                  -22.5
-                  -13.5
-                  -4.5
-                   4.5
-                   13.5
-                   22.5
-                   31.5
-                   40.5 
-                   49.5
-                   58.5
+pscin_2x_left  =  55.
+pscin_2x_right = -55.
+pscin_2x_offset=  0.0
+pscin_2x_center= -61.75
+		 -52.25
+		 -42.75
+		 -33.25
+		 -23.75
+		 -14.25
+		 -4.75
+		  4.75
+		  14.25
+		  23.75
+		  33.25
+		  42.75
+	          52.25
+		  61.75
 
-pscin_2y_top    = -55
-pscin_2y_bot    =  55
-pscin_2y_offset =  0.0
-pscin_2y_center =  50.
-                   45.
-                   40.
-                   35.
-                   30.
-                   25.
-                   20.
-                   15.
-                   10.
-                    5.
-                    0.
-                   -5.
-                  -10.
-                  -15.
-                  -20.
-                  -25.
-                  -30.
-                  -35.
-                  -40.
-                  -45.
-                  -50.
+pscin_2y_top   = -62.5
+pscin_2y_bot   =  62.5
+pscin_2y_offset=  0.0
+pscin_2y_center=  50.
+                  45.
+                  40.
+                  35.
+                  30.
+                  25.
+                  20.
+                  15.
+                  10.
+                  5.
+                  0.
+                 -5.
+                 -10.
+                 -15.
+                 -20.
+                 -25.
+                 -30.
+                 -35.
+                 -40.
+                 -45.
+                 -50.
                         

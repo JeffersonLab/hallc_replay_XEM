@@ -20,7 +20,7 @@ void replay_shms_raster_simple (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_raster_simple_%d_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/STD/standard.database");
 
   // Load global parameters
   // Add varibles to global list.

@@ -10,6 +10,10 @@ pngcer_beta_max = 1.2
 pngcer_enorm_min = 0.0
 pngcer_enorm_max = 1.5
 
+; Track matching delta p (dp) cut values
+pngcer_dp_min = -20.0
+pngcer_dp_max = 25.0
+
 ; ADC time window cut values used to select "good" ADC events
 pngcer_adcTimeWindowMin = 500.
 pngcer_adcTimeWindowMax = 2500.

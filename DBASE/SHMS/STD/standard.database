@@ -1,0 +1,39 @@
+0-99999
+g_ctp_parm_filename ="DBASE/SHMS/GEN/general.param"
+g_ctp_kinematics_filename ="DBASE/SHMS/STD/standard.kinematics"
+
+464-464
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_464.param"
+
+469-469
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_469.param"
+
+475-475
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_475.param"
+
+478-478
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_478.param"
+
+479-479
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_479.param"
+
+480-480
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_480.param"
+
+481-481
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_481.param"
+
+483-483
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_483.param"
+
+484-484
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_484.param"
+
+486-486
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_486.param"
+
+487-487
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_487.param"
+
+488-488
+g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_488.param"

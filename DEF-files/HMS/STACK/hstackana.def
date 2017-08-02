@@ -537,7 +537,6 @@ TH1F htrig_hdsum_tdc 'HMS hDsum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC
 TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hPSHWR_adcPed 5000 0 5000
 TH1F htrig_hpreShwr_adc_pi 'HMS Pre-Shower Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hPSHWR_adcPulseInt 800 0 40000
 TH1F htrig_hpreShwr_adc_pamp 'HMS Pre-Shower Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hPSHWR_adcPulseAmp 205 0 4100
-TH1F htrig_hpreShwr_tdc 'HMS Pre-Shower TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWR_tdcTime 4000 0 40000
 
 #-----------------------------
 # HMS PreShower TRIG LOW/HIGH  
@@ -583,18 +582,18 @@ TH1F htrig_haersum_tdc 'HMS Aerogel Sum TDC Time;  TDC Time (TDC Units); Counts 
 # Assume FADC range is set to 1V and the integration is 25 channels
 # Offset in the FADC is about 0.122V or 500 channels.
 
-formula FRXA_V T.hms.pFRXA_adcPulseIntRaw*(1./4096.)/25.
-formula FRXB_V T.hms.pFRXB_adcPulseIntRaw*(1./4096.)/25.
-formula FRYA_V T.hms.pFRYA_adcPulseIntRaw*(1./4096.)/25.
-formula FRYB_V T.hms.pFRYB_adcPulseIntRaw*(1./4096.)/25.
+formula FRXA_V T.hms.hFRXA_adcPulseIntRaw*(1./4096.)/25.
+formula FRXB_V T.hms.hFRXB_adcPulseIntRaw*(1./4096.)/25.
+formula FRYA_V T.hms.hFRYA_adcPulseIntRaw*(1./4096.)/25.
+formula FRYB_V T.hms.hFRYB_adcPulseIntRaw*(1./4096.)/25.
 
-TH1F hFRXA 'HMS FRXA; FRXA RAW ADC (chan); Counts' T.hms.pFRXA_adcPulseIntRaw 1000 0 100000
+TH1F hFRXA 'HMS FRXA; FRXA RAW ADC (chan); Counts' T.hms.hFRXA_adcPulseIntRaw 1000 0 100000
 TH1F hFRXA_V 'HMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
-TH1F hFRXB 'HMS FRXB; FRXB RAW ADC (chan); Counts' T.hms.pFRXB_adcPulseIntRaw 1000 0 100000
+TH1F hFRXB 'HMS FRXB; FRXB RAW ADC (chan); Counts' T.hms.hFRXB_adcPulseIntRaw 1000 0 100000
 TH1F hFRXB_V 'HMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0
-TH1F hFRYA 'HMS FRYA; FRYA RAW ADC (chan); Counts' T.hms.pFRYA_adcPulseIntRaw 1000 0 100000
+TH1F hFRYA 'HMS FRYA; FRYA RAW ADC (chan); Counts' T.hms.hFRYA_adcPulseIntRaw 1000 0 100000
 TH1F hFRYA_V 'HMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0
-TH1F hFRYB 'HMS FRYB; FRYB RAW ADC (chan); Counts' T.hms.pFRYB_adcPulseIntRaw 1000 0 100000
+TH1F hFRYB 'HMS FRYB; FRYB RAW ADC (chan); Counts' T.hms.hFRYB_adcPulseIntRaw 1000 0 100000
 TH1F hFRYB_V 'HMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
 TH2F hFRA_XvsY 'HMSFRA_XvsY; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
 TH2F hFRB_XvsY 'HMSFRB_XvsY; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0

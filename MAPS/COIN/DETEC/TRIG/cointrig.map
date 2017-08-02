@@ -1,0 +1,136 @@
+! TCOIN_ID=30     ::  ADC
+
+DETECTOR=30
+
+!=:=:=:
+! HMS
+!=:=:=:
+
+ROC=1
+
+!F250 module
+SLOT=17
+! chan    plane     bar    sig
+     8,       1,      1,     0!  hASUM
+     9,       1,      2,     0!  hBSUM
+     10,      1,      3,     0!  hCSUM
+     11,      1,      4,     0!  hDSUM
+     12,      1,      5,     0!  hPSHWR
+     13,      1,      6,     0!  hSHWR
+     14,      1,      7,     0!  hAERSUM
+     15,      1,      8,     0!  hCERSUM
+
+SLOT=18
+! chan    plane     bar    sig
+     12,      1,      9,     0!  hFRXA
+     13,      1,     10,     0!  hFRYA
+     14,      1,     11,     0!  hFRXB
+     15,      1,     12,     0!  hFRYB 
+
+!CAEN1190 module
+SLOT=2
+REFINDEX=0
+! A0
+! chan    plane     bar    sig
+     0,       2,      1,     1!  h1X
+     1,       2,      2,     1!  h1Y
+     2,       2,      3,     1!  h2X
+     3,       2,      4,     1!  h2Y
+     4,       2,      5,     1!  h1T
+     5,       2,      6,     1!  h2T
+     6,   1000,   0,   0  ! hTref
+     7,       2,      8,     1!  hASUM
+     8,       2,      9,     1!  hBSUM
+     9,       2,     10,     1!  hCSUM
+    10,       2,     11,     1!  hDSUM
+    11,       2,     12,     1!  hPSHWRLO
+    12,       2,     13,     1!  hPSHWRHI
+    13,       2,     14,     1!  hSHWR
+    14,       2,     15,     1!  hAERSUM
+    15,       2,     16,     1!  hCERSUM
+!CAEN1190 module
+SLOT=20
+! D1
+! chan    plane     bar    sig
+     127,     2,     17,      1!  hT2
+
+ROC=3
+
+!CAEN1190 module
+SLOT=5
+! chan    plane     bar    sig
+     111,     2,     18,      1!  hDCREF1
+SLOT=8
+! chan    plane     bar    sig
+     127,     2,     19,      1!  hDCREF2
+SLOT=10
+! chan    plane     bar    sig
+     127,     2,     20,      1!  hDCREF3
+SLOT=17
+! chan    plane     bar    sig
+     127,     2,     21,      1!  hDCREF4
+
+!=:=:=:
+! SHMS
+!=:=:=:
+
+ROC=2
+
+SLOT=14
+   0,   1,   1,   0  ! pAERSUM
+   1,   1,   2,   0  ! pHGCERSUM
+   2,   1,   3,   0  ! pNGCERSUM
+  12,   1,   4,   0  ! FR-XA
+  13,   1,   5,   0  ! FR-YA
+  14,   1,   6,   0  ! FR-XB
+  15,   1,   7,   0  ! FR-YB
+
+
+SLOT=20
+  15,   2,   1,   1  ! pT1
+
+SLOT=19
+REFINDEX=0
+  31,   1000,   0,   0  ! pTRef
+  32,   2,   3,   1  ! p1X
+  33,   2,   4,   1  ! p1Y
+  34,   2,   5,   1  ! p2X
+  35,   2,   6,   1  ! p2Y
+  36,   2,   7,   1  ! p1T
+  37,   2,   8,   1  ! p2T
+  38,   2,   9,   1  ! pT3
+  39,   2,  10,   1  ! pAERSUM
+  40,   2,  11,   1  ! pHGCERSUM
+  41,   2,  12,   1  ! pNGCERSUM
+
+ROC=6
+
+SLOT=6
+  79,   2,  13,   1  ! pDCREF1
+
+SLOT=7
+  79,   2,  14,   1  ! pDCREF2
+
+SLOT=8
+  79,   2,  15,   1  ! pDCREF3
+
+SLOT=9
+  79,   2,  16,   1  ! pDCREF4
+
+SLOT=10
+  79,   2,  17,   1  ! pDCREF5
+
+SLOT=11
+  47,   2,  18,   1  ! pDCREF6
+
+SLOT=12
+  47,   2,  19,   1  ! pDCREF7
+
+SLOT=13
+  47,   2,  20,   1  ! pDCREF8
+
+SLOT=14
+  15,   2,  21,   1  ! pDCREF9
+
+SLOT=15
+  47,   2,  22,   1  ! pDCREF10

@@ -1,0 +1,11 @@
+0-99999
+gpbeam = 6.4
+gtarg_num = 1
+htheta_lab = 15.
+ptheta_lab = 15.
+hpcentral = 3.
+ppcentral = 3.
+hpartmass = 0.00051099
+ppartmass = 0.00051099
+htargmass_amu = 12.0
+ptargmass_amu = 12.0

@@ -22,7 +22,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   //Load Global parameters
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/STD/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/STD/standard.database");
   // Load varibles from files to global list.
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   // g_ctp_parm_filename and g_decode_map_filename should now be defined.
@@ -68,8 +68,8 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add Ideal Beam Apparatus
   THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
   gHaApps->Add(beam);
-  // Add Physics Module to calculate primary (scattered beam - usually electron) kinematics
-  THcPrimaryKine* hkin = new THcPrimaryKine("H.kin", "HMS single arm e- kinematics", "H", "IB");
+  // Add Physics Module to calculate primary (scattered) beam kinematics
+  THcPrimaryKine* hkin = new THcPrimaryKine("H.kin", "HMS Single Arm Kinematics", "H", "IB");
   gHaPhysics->Add(hkin);
 
   // Add handler for prestart event 125.

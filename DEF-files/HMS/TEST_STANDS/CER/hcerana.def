@@ -4,7 +4,7 @@ block H.cer.*
 block T.hms.*
 
 # HMS CER Error FPGA Error Flag
-TH2F hcer_adcErrFlg2D_pos 'HMS Cherenkov FPGA Error Flag; Number of Entries' H.cer.posAdcCounter H.cer.posAdcErrorFlag 2 0.5 2.5 2 -0.5 1.5
+TH2F hcer_adcErrFlg2D 'HMS Cherenkov FPGA Error Flag; Number of Entries' H.cer.adcCounter H.cer.adcErrorFlag 2 0.5 2.5 2 -0.5 1.5
 
 # HMS CER Raw Occupancy and Multiplicity
 TH1F hcer_raw_occ 'HMS Cherenkov Raw Occupancy; PMT Number; Number of Entries' H.cer.adcCounter 2 0.5 2.5

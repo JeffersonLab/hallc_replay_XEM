@@ -1,0 +1,6 @@
+0-99999
+g_ctp_parm_filename ="DBASE/HMS/GEN/general.param"
+g_ctp_kinematics_filename ="DBASE/HMS/STD/standard.kinematics"
+
+303-303
+g_ctp_calib_filename ="DBASE/HMS/GEN/KPP_Spring_2017/calib_303.param"
