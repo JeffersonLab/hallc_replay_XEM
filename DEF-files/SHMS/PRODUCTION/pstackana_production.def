@@ -14,6 +14,7 @@ block P.aero.*
 block P.cal.*
 block P.gtr.*
 block P.kin.*
+block P.rb.*
 
 
 #**********************
@@ -396,7 +397,6 @@ TH1F phodo_beta 'SHMS Hodo Beta; Beta; Number of Entries / 0.02' P.hod.beta 100 
 TH1F phodo_fpHitsTime 'SHMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' P.hod.fpHitsTime 90 0 90 
 TH1F phodo_starttime 'SHMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' P.hod.starttime 90 0 90
 TH1F phodo_good_startime 'SHMS Hodo Good Start Time (ns); Good Start Time (ns); Number of Entries / 1ns' P.hod.goodstarttime 90 0 90
-TH2F phodo_xhod_vs_yhod 'SHMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' P.hod.y_hodo P.hod.x_hodo 1000 -50 50 1000 -50 50
 
 #**********************
 # Heavy Gas Cherenkov *
@@ -668,18 +668,18 @@ TH1F ptrig_pdc_ref10 'SHMS DC Reference Time Slot 15 Channel 47; Raw TDC Time (T
 # Assume FADC range is set to 1V and the integration is 25 channels
 # Offset in the FADC is about 0.122V or 500 channels.
 
-formula FRXA_V T.shms.pFRXA_adcPulseIntRaw*(1./4096.)/25.
-formula FRXB_V T.shms.pFRXB_adcPulseIntRaw*(1./4096.)/25.
-formula FRYA_V T.shms.pFRYA_adcPulseIntRaw*(1./4096.)/25.
-formula FRYB_V T.shms.pFRYB_adcPulseIntRaw*(1./4096.)/25.
+formula FRXA_V P.rb.raster.frxaRawAdc*(1./4096.)/25.
+formula FRXB_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
+formula FRYA_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
+formula FRYB_V P.rb.raster.frybRawAdc*(1./4096.)/25.
 
-TH1F pFRXA 'SHMS FRXA; FRXA RAW ADC (chan); Counts' T.shms.pFRXA_adcPulseIntRaw 1000 0 100000
+TH1F pFRXA 'SHMS FRXA; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 1000 0 100000
 TH1F pFRXA_V 'SHMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
-TH1F pFRXB 'SHMS FRXB; FRXB RAW ADC (chan); Counts' T.shms.pFRXB_adcPulseIntRaw 1000 0 100000
+TH1F pFRXB 'SHMS FRXB; FRXB RAW ADC (chan); Counts' P.rb.raster.frxbRawAdc 1000 0 100000
 TH1F pFRXB_V 'SHMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0
-TH1F pFRYA 'SHMS FRYA; FRYA RAW ADC (chan); Counts' T.shms.pFRYA_adcPulseIntRaw 1000 0 100000
+TH1F pFRYA 'SHMS FRYA; FRYA RAW ADC (chan); Counts' P.rb.raster.fryaRawAdc 1000 0 100000
 TH1F pFRYA_V 'SHMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0
-TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' T.shms.pFRYB_adcPulseIntRaw 1000 0 100000
+TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 1000 0 100000
 TH1F pFRYB_V 'SHMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
 TH2F pFRA_XvsY 'HMSFRA_XvsY; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
 TH2F pFRB_XvsY 'HMSFRB_XvsY; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0

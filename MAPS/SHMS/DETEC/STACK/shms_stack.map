@@ -5,7 +5,17 @@
 ! PHGCER_ID=24     ::  ADC
 ! PAERO_ID=25      ::  ,ADC+,ADC-
 ! PCAL_ID=26       ::  ADC
+! PRASTER_ID=28       ::  ADC
 
+DETECTOR=28
+
+ROC=2
+! chan,plane,counter,sig=0 means Pos ADC
+SLOT=14
+  12,   1,   1,   0  ! FR-XA
+  13,   1,   2,   0  ! FR-XB
+  14,   1,   3,   0  ! FR-YA
+  15,   1,   4,   0  ! FR-YB
 
 DETECTOR=20
 
@@ -15,10 +25,6 @@ SLOT=14
    0,   1,   1,   0  ! pAERSUM
    1,   1,   2,   0  ! pHGCERSUM
    2,   1,   3,   0  ! pNGCERSUM
-  12,   1,   4,   0  ! FR-XA
-  13,   1,   5,   0  ! FR-XB
-  14,   1,   6,   0  ! FR-YA
-  15,   1,   7,   0  ! FR-YB
 
 SLOT=20
   15,   2,   1,   1  ! pT1
