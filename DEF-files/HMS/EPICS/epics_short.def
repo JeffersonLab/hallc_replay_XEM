@@ -1,5 +1,4 @@
-# See $ANALYZER/examples/output_example.def for examples
-
+block T.hms.*
 
 begin epics
 IBC3H00CRCUR4

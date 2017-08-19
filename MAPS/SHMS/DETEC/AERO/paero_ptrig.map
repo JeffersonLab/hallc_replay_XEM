@@ -26,6 +26,7 @@ SLOT=19
   39,   2,  10,   1  ! pAERSUM
   40,   2,  11,   1  ! pHGCSUM
   41,   2,  12,   1  ! pNGCSUM
+  42,   2,  23,   1  ! pHODO_EDTM
 
 ROC=6
 
