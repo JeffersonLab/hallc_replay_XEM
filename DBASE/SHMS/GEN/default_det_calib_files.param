@@ -1,0 +1,8 @@
+; SHMS default calibration parameter files
+#include "PARAM/SHMS/NGCER/CALIB/pngcer_calib.param"
+#include "PARAM/SHMS/DC/CALIB/pdc_calib.param"
+#include "PARAM/SHMS/DC/CALIB/pdc_tzero_per_wire.param"
+#include "PARAM/SHMS/HODO/CALIB/phodo_calib.param"
+#include "PARAM/SHMS/HGCER/CALIB/phgcer_calib.param"
+#include "PARAM/SHMS/AERO/CALIB/paero_calib.param"
+#include "PARAM/SHMS/CAL/CALIB/pcal_calib.param"

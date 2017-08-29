@@ -1,9 +1,11 @@
 !HMS:
-! HRASTER_ID=16    ADC
+! HRASTER_ID=18    ADC
+! channel is physics channel in ADC
+! Plane = 1 is not used
+! sig = 0  means data in Positive ADC
+! bar will be a counter
 
-! Plane = 1 >> ADC Only
-
-detector=16
+detector=18
 
 ROC=1
 
