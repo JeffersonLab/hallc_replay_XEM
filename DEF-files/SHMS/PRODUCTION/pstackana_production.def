@@ -661,9 +661,22 @@ TH1F ptrig_pdc_ref8  'SHMS DC Reference Time Slot 13 Channel 47; Raw TDC Time (T
 TH1F ptrig_pdc_ref9  'SHMS DC Reference Time Slot 14 Channel 15; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF9_tdcTime  200 12000 14000
 TH1F ptrig_pdc_ref10 'SHMS DC Reference Time Slot 15 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF10_tdcTime 200 12000 14000
 
-#-------------
+
+#*****************************************
+# SHMS Single Arm Primary (Scattered Beam)
+# Kinematic Quantities
+#*****************************************
+
+TH1F pkin_q2 'SHMS Q2; Q2 (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 100 0 5
+TH1F pkin_omega 'SHMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 100 0 5
+TH1F pkin_w2 'SHMS W2; W2 (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10
+TH1F pkin_w  'SHMS W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 100 0 5
+TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 100 12 18
+
+
+#*************
 # Fast Raster 
-#-------------
+#*************
 
 # Assume FADC range is set to 1V and the integration is 25 channels
 # Offset in the FADC is about 0.122V or 500 channels.
@@ -683,18 +696,6 @@ TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 1000 
 TH1F pFRYB_V 'SHMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
 TH2F pFRA_XvsY 'HMSFRA_XvsY; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
 TH2F pFRB_XvsY 'HMSFRB_XvsY; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0
-
-
-#*****************************************
-# SHMS Single Arm Primary (Scattered Beam)
-# Kinematic Quantities
-#*****************************************
-
-TH1F pkin_q2 'SHMS Q2; Q2 (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 100 0 5
-TH1F pkin_omega 'SHMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 100 0 5
-TH1F pkin_w2 'SHMS W2; W2 (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10
-TH1F pkin_w  'SHMS W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 100 0 5
-TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 100 12 18
 
 
 #******************
