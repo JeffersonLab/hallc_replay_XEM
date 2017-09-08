@@ -46,7 +46,7 @@ REFINDEX=0
     11,       2,     12,     1!  hPSHWRLO
     12,       2,     13,     1!  hPSHWRHI
     13,       2,     14,     1!  hSHWR
-    14,       2,     15,     1!  hAERSUM
+    14,       2,     15,     1!  hHODO_EDTM
     15,       2,     16,     1!  hCERSUM
 !CAEN1190 module
 SLOT=20
@@ -102,6 +102,7 @@ REFINDEX=0
   39,   2,  10,   1  ! pAERSUM
   40,   2,  11,   1  ! pHGCERSUM
   41,   2,  12,   1  ! pNGCERSUM
+  42,   2,  23,   1  ! pHODO_EDTM
 
 ROC=6
 

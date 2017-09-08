@@ -32,7 +32,7 @@ REFINDEX=0
   11,   2,  12,   1  ! hPSHWRLO
   12,   2,  13,   1  ! hPSHWRHI
   13,   2,  14,   1  ! hSHWR
-  14,   2,  15,   1  ! hAERSUM
+  14,   2,  15,   1  ! hHODO_EDTM
   15,   2,  16,   1  ! hCERSUM
 
 SLOT=20

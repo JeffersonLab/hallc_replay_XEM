@@ -4,3 +4,6 @@ online
 *#
 onlineDict.C
 .root_history
+*.root
+*.pdf
+

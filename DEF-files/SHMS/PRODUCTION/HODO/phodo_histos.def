@@ -175,4 +175,3 @@ TH1F phodo_beta 'SHMS Hodo Beta; Beta; Number of Entries / 0.02' P.hod.beta 100 
 TH1F phodo_fpHitsTime 'SHMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' P.hod.fpHitsTime 90 0 90 
 TH1F phodo_starttime 'SHMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' P.hod.starttime 90 0 90
 TH1F phodo_good_startime 'SHMS Hodo Good Start Time (ns); Good Start Time (ns); Number of Entries / 1ns' P.hod.goodstarttime 90 0 90
-TH2F phodo_xhod_vs_yhod 'SHMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' P.hod.y_hodo P.hod.x_hodo 1000 -50 50 1000 -50 50
