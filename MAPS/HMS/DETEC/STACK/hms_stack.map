@@ -2,8 +2,8 @@
 ! HDC_ID=11        ::  TDC
 ! HAERO_ID=12      ::  (TDC),ADC
 ! HSCIN_ID=13      ::  ADC+,ADC-,TDC+,TDC-
-! HCER_ID=14       ::  (TDC),ADC
 ! HCAL_ID=15       ::  ADC
+! HRASTER_ID=18    ::  ADC
 
 
 DETECTOR=10
@@ -19,13 +19,6 @@ SLOT=17
   13,   1,   6,   0  ! hSHWR
   14,   1,   7,   0  ! hAERSUM
   15,   1,   8,   0  ! hCERSUM
-
-SLOT=18
-! chan    plane     bar    sig
-     12,      1,      9,     0!  hFRXA
-     13,      1,     10,     0!  hFRYA
-     14,      1,     11,     0!  hFRXB
-     15,      1,     12,     0!  hFRYB 
 
 SLOT=2
 REFINDEX=0
@@ -45,6 +38,12 @@ REFINDEX=0
   13,   2,  14,   1  ! hSHWR
   14,   2,  15,   1  ! hHODO_EDTM
   15,   2,  16,   1  ! hCERSUM
+  26,   2,  22,   1  ! hTRIG1
+  27,   2,  23,   1  ! hTRIG2
+  28,   2,  24,   1  ! hTRIG3
+  29,   2,  25,   1  ! hTRIG4
+  30,   2,  26,   1  ! hTRIG5
+  31,   2,  27,   1  ! hTRIG6
 
 SLOT=20
  127,   2,  17,   1  ! hT2
@@ -1481,15 +1480,6 @@ REFINDEX=0
  124,   4,  10,   3  ! h2y10T-
 
 
-DETECTOR=14
-
-ROC=1
-
-SLOT=7
-  14,   1,   1,   0  ! hCER01
-  15,   1,   2,   0  ! hCER02
-
-
 DETECTOR=15
 
 ROC=1
@@ -1581,3 +1571,14 @@ SLOT=7
   11,   4,  11,   0  ! hD11+
   12,   4,  12,   0  ! hD12+
   13,   4,  13,   0  ! hD13+
+
+
+DETECTOR=18
+
+ROC=1
+
+SLOT=18
+  12,   1,   1,   0  ! FR-XA
+  13,   1,   2,   0  ! FR-XB
+  14,   1,   3,   0  ! FR-YA
+  15,   1,   4,   0  ! FR-YB

@@ -1,10 +1,10 @@
 t_hms_numAdc = 12
-t_hms_numTdc = 21
+t_hms_numTdc = 27
 t_hms_tdcoffset=-300.
 t_hms_tdcchanperns=0.1
 
 ; bar num:        1     2     3     4     5      6     7       8       9     10    11    12
 t_hms_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAERSUM hCERSUM hFRXA hFRYA hFRXB hFRYB"
 
-; bar num:        1   2   3   4   5   6   7   8     9     10    11    12       13       14    15         16      17  18      19      20      21
-t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPSHWRLO hPSHWRHI hSHWR hHODO_EDTM hCERSUM hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4"
+; bar num:         1   2   3   4   5   6   7    8     9     10    11     12       13      14      15       16    17    18      19      20      21      22     23     24     25     26     27
+t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPSHWRLO hPSHWRHI hSHWR hHODO_EDTM hCERSUM hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6"
