@@ -47,7 +47,12 @@ shmsDC2u2Planes5     Counts: {shmsDC2_5hits_u2.npassed} eff : {shmsDC2_6hits_u2.
 shmsDC2v1Planes5     Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.npassed / shmsDC2_5hits_v1.npassed}
 shmsDC2v2Planes5     Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
 shmsDC2x2Planes5     Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
-	       	   	       
+
+SHMS Calorimeter Efficiencies
+
+shmsPreShower	     Counts: {P.cal.stat_trksum1} eff : {P.cal.stat_hitsum1 / P.cal.stat_trksum1}
+shmsShowerArray	     Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_array / P.cal.stat_trksum_array}
+
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************
