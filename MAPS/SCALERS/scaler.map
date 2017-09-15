@@ -14,30 +14,32 @@ DATE 4 1 2017
 
 # Setup for Hall C testing HMS hodoscopes, etc.
 
-xscaler-tabs     HMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig 
-xscaler-layout   HMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4  
-xscaler-pageslot HMS 0:slot0   1:slot1   2:slot2   3:slot3   4:slot6 
+xscaler-tabs     HMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig   5:Triggers
+xscaler-layout   HMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4    5:8x4
+xscaler-pageslot HMS 0:slot0   1:slot1   2:slot2   3:slot3   4:slot6  5:slot5
 
 xscaler-pagename HMS 0:'HMS Hodoscope X1'
 xscaler-pagename HMS 1:'HMS Hodoscope Y1'
 xscaler-pagename HMS 2:'HMS Hodoscope X2'
 xscaler-pagename HMS 3:'HMS Hodoscope Y2'
 xscaler-pagename HMS 4:'HMS Trigger,BCM and clock'
+xscaler-pagename HMS 4:'HMS Triggers'
 
 xscaler-clock HMS slot:7 chan:1 rate:60 
 #####################################################################
 
 # Setup for Hall C testing SHMS hodoscopes, etc.
 
-xscaler-tabs     SHMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig 
-xscaler-layout   SHMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4  
-xscaler-pageslot SHMS 0:slot0   1:slot1   2:slot2   3:slot3   4:slot7 
+xscaler-tabs     SHMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig   5:Triggers
+xscaler-layout   SHMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4    5:8x4
+xscaler-pageslot SHMS 0:slot0   1:slot1   2:slot2   3:slot3   4:slot7  5:slot6
 
 xscaler-pagename SHMS 0:'SHMS Hodoscope X1'
 xscaler-pagename SHMS 1:'SHMS Hodoscope Y1'
 xscaler-pagename SHMS 2:'SHMS Hodoscope X2'
 xscaler-pagename SHMS 3:'SHMS Hodoscope Y2'
 xscaler-pagename SHMS 4:'SHMS Trigger,BCM and clock'
+xscaler-pagename SHMS 5:'SHMS Triggers'
 
 xscaler-clock SHMS slot:9 chan:1 rate:60
 #####################################################################
@@ -189,6 +191,14 @@ hhod2y10-    0    4     3    28    1     HMS 2Y- paddle 10
 Empty	     0    4     3    29    1     Empty
 Empty        0    4     3    30    1     Empty
 Empty        0    4     3    31    1     Empty
+
+# desc      hel crate slot start nchan  long-description
+hTRIG1       0    4     5    10    1     HMS TRIG1
+hTRIG2       0    4     5    11    1     HMS TRIG2
+hTRIG3       0    4     5    12    1     HMS TRIG3
+hTRIG4       0    4     5    13    1     HMS TRIG4
+hTRIG5       0    4     5    14    1     HMS TRIG5
+hTRIG6       0    4     5    15    1     HMS TRIG6
 
 # desc      hel crate slot start nchan  long-description                            
 S1X          0    4     6    0     1     HMS S1X                                           
@@ -349,6 +359,14 @@ phod2y10-    0    5     3    28    1     SHMS 2y- paddle 10
 phod2y12-    0    5     3    29    1     SHMS 2y- paddle 12
 phod2y14-    0    5     3    30    1     SHMS 2y- paddle 14
 phod2y16-    0    5     3    31    1     SHMS 2y- paddle 16
+
+# desc      hel crate slot start nchan  long-description
+pTRIG1       0    5     6    0     1     SHMS TRIG1
+pTRIG2       0    5     6    1     1     SHMS TRIG2
+pTRIG3       0    5     6    2     1     SHMS TRIG3
+pTRIG4       0    5     6    3     1     SHMS TRIG4
+pTRIG5       0    5     6    4     1     SHMS TRIG5
+pTRIG6       0    5     6    5     1     SHMS TRIG6
 
 # desc      hel crate slot start nchan  long-description                            
 S1X          0    5     7    0     1     SHMS S1X                                           

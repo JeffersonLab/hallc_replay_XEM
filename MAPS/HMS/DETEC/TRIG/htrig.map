@@ -20,13 +20,6 @@ SLOT=17
      14,      1,      7,     0!  hAERSUM
      15,      1,      8,     0!  hCERSUM
 
-SLOT=18
-! chan    plane     bar    sig
-     12,      1,      9,     0!  hFRXA
-     13,      1,     10,     0!  hFRYA
-     14,      1,     11,     0!  hFRXB
-     15,      1,     12,     0!  hFRYB 
-
 !CAEN1190 module
 SLOT=2
 REFINDEX=0
@@ -38,7 +31,7 @@ REFINDEX=0
      3,       2,      4,     1!  h2Y
      4,       2,      5,     1!  h1T
      5,       2,      6,     1!  h2T
-     6,   1000,   0,   0  ! hTref
+     6,    1000,      0,     0!  hTref
      7,       2,      8,     1!  hASUM
      8,       2,      9,     1!  hBSUM
      9,       2,     10,     1!  hCSUM
@@ -48,6 +41,14 @@ REFINDEX=0
     13,       2,     14,     1!  hSHWR
     14,       2,     15,     1!  hHODO_EDTM
     15,       2,     16,     1!  hCERSUM
+! A1
+    26,       2,     22,     1!  hTRIG1
+    27,       2,     23,     1!  hTRIG2
+    28,       2,     24,     1!  hTRIG3
+    29,       2,     25,     1!  hTRIG4
+    30,       2,     26,     1!  hTRIG5
+    31,       2,     27,     1!  hTRIG6
+
 !CAEN1190 module
 SLOT=20
 ! D1

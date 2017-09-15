@@ -34,6 +34,12 @@ REFINDEX=0
   13,   2,  14,   1  ! hSHWR
   14,   2,  15,   1  ! hHODO_EDTM
   15,   2,  16,   1  ! hCERSUM
+  26,   2,  22,   1  ! hTRIG1
+  27,   2,  23,   1  ! hTRIG2
+  28,   2,  24,   1  ! hTRIG3
+  29,   2,  25,   1  ! hTRIG4
+  30,   2,  26,   1  ! hTRIG5
+  31,   2,  27,   1  ! hTRIG6
 
 SLOT=20
  127,   2,  17,   1  ! hT2
