@@ -60,6 +60,41 @@ shmsDC2v1Planes5     Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.
 shmsDC2v2Planes5     Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
 shmsDC2x2Planes5     Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
 
+SHMS Calorimeter Efficiencies
+
+shmsPreShower	     Counts: {P.cal.stat_trksum1} eff : {P.cal.stat_hitsum1 / P.cal.stat_trksum1}
+shmsShowerArray	     Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_array / P.cal.stat_trksum_array}
+
+******************************
+* SHMS TRACKING EFFICIENCIES *
+******************************
+ptrig                          : {shmscoin_event.npassed}
+phitslt = passed hits/cham     : {shmsHitsLt.npassed}
+phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
+phitsplanessps = + sps         : {pSpacePoints.npassed}
+phitsplanesspsstubs +stub      : {pSpacePointsStub.npassed}
+psfoundtrack                   : {pFoundTrack.npassed}
+pscleantrack                   : {pCleanTrack.npassed}
+pstublt = passed stub tests    : {pStubLT.npassed}
+p1hitslt                       : {shms1HitsLt.npassed}
+p2hitslt                       : {shms2HitsLt.npassed}
+p1planesgt                     : {shmsDC1PlanesGT.npassed}
+p2planesgt                     : {shmsDC2PlanesGT.npassed}
+pplanesgt = gt 5 planes/cham   : {shmsPlanesGT.npassed}
+f1pspacepoints                 : {f1PSpacePoints.npassed}
+f2pspacepoints                 : {f2PSpacePoints.npassed}
+ptest1=p hits/planes, f sp     : {pTest1.npassed}
+ptest2=p sp, f stubs           : {pTest2.npassed}
+pdid                           : {shmsScinDid.npassed}
+pdide                          : {shmsScinDide.npassed}
+pdidh                          : {shmsScinDidh.npassed}
+pscinshould                    : {shmsScinShould.npassed}
+pscinshoulde                   : {shmsScinShoulde.npassed}
+pscinshouldh                   : {shmsScinShouldh.npassed}
+SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShould.npassed-shmsScinDid.npassed) / (shmsScinShould.npassed+.0001)):%8.4f}
+E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
+HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}
+
 shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed}
 shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}
 shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}
@@ -149,33 +184,3 @@ pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(P.Trig.scaler+.00
 2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
 3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
 4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
-
-******************************
-* SHMS TRACKING EFFICIENCIES *
-******************************
-ptrig                          : {shmscoin_event.npassed}
-phitslt = passed hits/cham     : {shmsHitsLt.npassed}
-phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
-phitsplanessps = + sps         : {pSpacePoints.npassed}
-phitsplanesspsstubs +stub      : {pSpacePointsStub.npassed}
-psfoundtrack                   : {pFoundTrack.npassed}
-pscleantrack                   : {pCleanTrack.npassed}
-pstublt = passed stub tests    : {pStubLT.npassed}
-p1hitslt                       : {shms1HitsLt.npassed}
-p2hitslt                       : {shms2HitsLt.npassed}
-p1planesgt                     : {shmsDC1PlanesGT.npassed}
-p2planesgt                     : {shmsDC2PlanesGT.npassed}
-pplanesgt = gt 5 planes/cham   : {shmsPlanesGT.npassed}
-f1pspacepoints                 : {f1PSpacePoints.npassed}
-f2pspacepoints                 : {f2PSpacePoints.npassed}
-ptest1=p hits/planes, f sp     : {pTest1.npassed}
-ptest2=p sp, f stubs           : {pTest2.npassed}
-pdid                           : {shmsScinDid.npassed}
-pdide                          : {shmsScinDide.npassed}
-pdidh                          : {shmsScinDidh.npassed}
-pscinshould                    : {shmsScinShould.npassed}
-pscinshoulde                   : {shmsScinShoulde.npassed}
-pscinshouldh                   : {shmsScinShouldh.npassed}
-SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShould.npassed-shmsScinDid.npassed) / (shmsScinShould.npassed+.0001)):%8.4f}
-E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
-HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}

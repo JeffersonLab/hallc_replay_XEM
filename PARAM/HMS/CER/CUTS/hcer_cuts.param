@@ -16,7 +16,6 @@ hcer_enorm_max = 1.5
 hcer_dp_min = -20.0
 hcer_dp_max = 25.0
 
-
 ; ADC time window cut values used to select "good" ADC events
 hcer_adcTimeWindowMin = 1500.
 hcer_adcTimeWindowMax = 3500.

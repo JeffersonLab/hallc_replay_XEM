@@ -21,7 +21,7 @@ pcal_c_cor = 64.36, 64.36	# for positive and negative sides
 pcal_d_cor =  1.66,  1.66
 
 ; Parameters copied from HMS
-; Slop in x possitino.  Allowed distance between track and edge of block
+; Slope in x position.  Allowed distance between track and edge of block
 pcal_slop = 7.5 
 
 pcal_pr_thick = 10.0
@@ -29,8 +29,8 @@ pcal_pr_thick = 10.0
 ; Z Position of from of preshower
 pcal_pr_zpos = 292.64
 
-pcal_pr_left  =  35.0
-pcal_pr_right = -35.0
+pcal_pr_left  =  70.0
+pcal_pr_right = -70.0
 pcal_pr_top   = (-69.0-1.4)
                  (-59.0-1.4)
                  (-49.0-1.4)

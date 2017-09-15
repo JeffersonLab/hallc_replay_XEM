@@ -29,8 +29,13 @@ hmsDC2y2Planes5	  Counts: {hmsDC2_5hits_y2.npassed} eff : {hmsDC2_6hits_y2.npass
 hmsDC2v1Planes5	  Counts: {hmsDC2_5hits_v1.npassed} eff : {hmsDC2_6hits_v1.npassed/hmsDC2_5hits_v1.npassed}
 hmsDC2y1Planes5	  Counts: {hmsDC2_5hits_y1.npassed} eff : {hmsDC2_6hits_y1.npassed/hmsDC2_5hits_y1.npassed}
 hmsDC2x2Planes5	  Counts: {hmsDC2_5hits_x2.npassed} eff : {hmsDC2_6hits_x2.npassed/hmsDC2_5hits_x2.npassed}
-	       	                      	       
-	       	   	       
+
+HMS Calorimeter Efficiencies
+
+hA	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
+hB	     Counts: {H.cal.stat_trksum2} eff : {H.cal.stat_hitsum2 / H.cal.stat_trksum2}
+hC	     Counts: {H.cal.stat_trksum3} eff : {H.cal.stat_hitsum3 / H.cal.stat_trksum3}
+hD	     Counts: {H.cal.stat_trksum4} eff : {H.cal.stat_hitsum4 / H.cal.stat_trksum4}
 
 *****************************
 *HMS TRACKING EFFICIENCIES *
