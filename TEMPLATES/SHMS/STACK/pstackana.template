@@ -1,19 +1,7 @@
-Run #: {gen_run_number}
-
-Run Time  : {P.1Mhz.scaler}  {P.1Mhz.scaler/1000000.} sec
-
-BCM1  : {(P.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(P.BCM1.scalerRate-250000) / (4673)*P.1Mhz.scaler/1000000.:%7.3f} uC
-BCM2  : {(P.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(P.BCM2.scalerRate-250000) / (3954)*P.1Mhz.scaler/1000000.:%7.3f} uC 
-Unser : {(P.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%7.3f} uC
+Run #{gen_run_number}
 
 All triggers  :  {all_trigs.npassed}
 
-Rate  :  {P.Trig.scalerRate/1000.:%7.3f} kHz
-
-Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
-
-**DRIFT CHAMBER** 
 good_S1_time         Counts: {good_S1_time.npassed}     / all_trigs : {good_S1_time.npassed / all_trigs.npassed}       
 good_S2X_time        Counts: {good_S2X_time.npassed}    / all_trigs : {good_S2X_time.npassed / all_trigs.npassed}    
 good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / all_trigs : {good_S1_S2X_time.npassed / all_trigs.npassed}
@@ -95,37 +83,39 @@ SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+
 E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
 HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}
 
-shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed}
-shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}
-shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}
-shmsDC1_1hit_v1: {shmsDC1_1hit_v1.npassed}
-shmsDC1_1hit_v2: {shmsDC1_1hit_v2.npassed}
-shmsDC1_1hit_x2: {shmsDC1_1hit_x2.npassed}
+I'm pretty sure that these are the "raw" number of counts. "Raw" means one or more hits per dc plane.
+shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed} 		;eff:
+shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}		;eff:
+shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}		;eff:
+shmsDC1_1hit_v1: {shmsDC1_1hit_v1.npassed}		;eff:
+shmsDC1_1hit_v2: {shmsDC1_1hit_v2.npassed}		;eff:
+shmsDC1_1hit_x2: {shmsDC1_1hit_x2.npassed}		;eff:
 
-shmsDC2_1hit_x1: {shmsDC2_1hit_x1.npassed}
-shmsDC2_1hit_u1: {shmsDC2_1hit_u1.npassed}
-shmsDC2_1hit_u2: {shmsDC2_1hit_u2.npassed}
-shmsDC2_1hit_v1: {shmsDC2_1hit_v1.npassed}
-shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}
-shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}
+shmsDC2_1hit_x1: {shmsDC2_1hit_x1.npassed}		;eff:
+shmsDC2_1hit_u1: {shmsDC2_1hit_u1.npassed}		;eff:
+shmsDC2_1hit_u2: {shmsDC2_1hit_u2.npassed}		;eff:
+shmsDC2_1hit_v1: {shmsDC2_1hit_v1.npassed}		;eff:
+shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}		;eff:
+shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}		;eff:
 
-goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+"Good" means one or two hits per dc plane.
+goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
 
-goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
 
-goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(P.Trig.scaler+.0001):%5.3f}
-bothgood:	     {bothgood.npassed}	eff : {bothgood.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(shmscoin_event.npassed+.0001):%5.3f}
 
 realhdc1x1:	     {realhdc1x1.npassed}
 realhdc1u2:	     {realhdc1u2.npassed}
@@ -142,18 +132,35 @@ realhdc2v2:	     {realhdc2v2.npassed}
 realhdc2x2:	     {realhdc2x2.npassed}
     	   	       
 **HODOSCOPE**
-anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(P.Trig.scaler+.0001):%5.3f}	BAD = 0.99
-anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(P.Trig.scaler+.0001):%5.3f}
-anyhs2x : {anyhs2x.npassed}		 eff: {anyhs2x.npassed/(P.Trig.scaler+.0001):%5.3f}
-anyhs2y : {anyhs2y.npassed}		 eff: {anyhs2y.npassed/(P.Trig.scaler+.0001):%5.3f} 
 
-goodps1x : {goodps1x.npassed}		 eff: {goodps1x.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps1y : {goodps1y.npassed}		 eff: {goodps1y.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps1  : {goodps1.npassed}		 eff: {goodps1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/P.Trig.scaler+.0001):%5.3f}
+"Any" means one or more hits per scint plane.
+anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(shmscoin_event.npassed+.0001):%5.3f}	BAD = ??
+anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+anyhs2x : {anyhs2x.npassed}		 eff: {anyhs2x.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+anyhs2y : {anyhs2y.npassed}		 eff: {anyhs2y.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+
+"Good" means one or two hits per scint plane.
+goodps1x : {goodps1x.npassed}		 eff: {goodps1x.npassed/(shmscoin_event.npassed+.0001):%5.3f}	BAD = ??
+goodps1y : {goodps1y.npassed}		 eff: {goodps1y.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodps1  : {goodps1.npassed}		 eff: {goodps1.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+
+**TRACKING**
+
+pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f} BAD = ??
+pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+pFound2Track :{pFound2Track.npassed}	 eff: {pFound2Track.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+pFound3Track :{pFound3Track.npassed}	 eff: {pFound3Track.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+pFound4Track :{pFound4Track.npassed}	 eff: {pFound4Track.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+
+pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f}	 BAD = ??
+1pCleanTrack:{1pCleanTrack.npassed}	 eff: {1pCleanTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f} 
+2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f}
+4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(shmscoin_event.npassed+.0001):%5.3f}
 
 **CHERENKOVS AND CAL**
 cer_ng_elec   :	  {cer_ng_elec.npassed}
@@ -161,6 +168,7 @@ cer_ng_pi     :	  {cer_ng_pi.npassed}
 cer_hg_elec   :	  {cer_hg_elec.npassed}
 cer_hg_pi     :	  {cer_hg_pi.npassed}
 cer_pi_both   :	  {cer_pi_both.npassed}
+
 cer_elec_both :   {cer_elec_both.npassed}
 cal_elec      :   {cal_elec.npassed}
 cal_pi        :   {cal_pi.npassed}
@@ -172,15 +180,201 @@ p1hit1_cer_elec	     : {p1hit1_cer_elec.npassed}
 pCleanTrack_cal_elec : {pCleanTrack_cal_elec.npassed} 
 p1hit1_cal_elec	     : {p1hit1_cal_elec.npassed}
 
-**TRACKING**
-pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(P.Trig.scaler+.0001):%5.3f} BAD = .95
-pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound2Track :{pFound2Track.npassed}	 eff: {pFound2Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound3Track :{pFound3Track.npassed}	 eff: {pFound3Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound4Track :{pFound4Track.npassed}	 eff: {pFound4Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+************
+* Cerenkov *
+************
 
-pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}	 BAD = 0.95
-1pCleanTrack:{1pCleanTrack.npassed}	 eff: {1pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f} 
-2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
-3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
-4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
+Good Track Requirements:
+   1. Only one track found in the focal plane
+   2. chisq/dof < {phgcer_red_chi2_max:%5.1f}
+   3. {phgcer_beta_min:%5.3f} < beta < {phgcer_beta_max:%5.3f}
+   4. {phgcer_enorm_min:%5.3f} < calorimeter energy < {phgcer_enorm_max:%5.3f}
+Threshold set at {phgcer_npe_thresh:%4.1f}
+
+*HGC EFF* 4PMTs
+SHMS HGC Region 1 efficiency: {SHMS_hgcer_track_matched_region_1.npassed}/{SHMS_hgcer_track_fired_region_1.npassed} = {SHMS_hgcer_track_matched_region_1.npassed} of {SHMS_hgcer_track_fired_region_1.npassed} of good tracks.
+SHMS HGC Region 2 efficiency: {SHMS_hgcer_track_matched_region_2.npassed}/{SHMS_hgcer_track_fired_region_2.npassed} = {SHMS_hgcer_track_matched_region_2.npassed} of {SHMS_hgcer_track_fired_region_2.npassed} of good tracks.
+SHMS HGC Region 3 efficiency: {SHMS_hgcer_track_matched_region_3.npassed}/{SHMS_hgcer_track_fired_region_3.npassed} = {SHMS_hgcer_track_matched_region_3.npassed} of {SHMS_hgcer_track_fired_region_3.npassed} of good tracks.
+SHMS HGC Region 4 efficiency: {SHMS_hgcer_track_matched_region_4.npassed}/{SHMS_hgcer_track_fired_region_4.npassed} = {SHMS_hgcer_track_matched_region_4.npassed} of {SHMS_hgcer_track_fired_region_4.npassed} of good tracks.
+Overall HGC Efficiency: {SHMS_hgcer_track_matched_tot.npassed}/{SHMS_hgcer_track_fired_tot.npassed} = {SHMS_hgcer_track_matched_tot.npassed} of {SHMS_hgcer_track_fired_tot.npassed} of good tracks.
+
+***************************
+* NGC and AEROGEL DET need more beginning info:
+***************************
+*NGC EFF* 4PMTs
+SHMS NGC Region 1 efficiency: {SHMS_ngcer_track_matched_region_1.npassed}/{SHMS_ngcer_track_fired_region_1.npassed} = {SHMS_ngcer_track_matched_region_1.npassed} of {SHMS_ngcer_track_fired_region_1.npassed} of good tracks.
+SHMS NGC Region 2 efficiency: {SHMS_ngcer_track_matched_region_2.npassed}/{SHMS_ngcer_track_fired_region_2.npassed} = {SHMS_ngcer_track_matched_region_2.npassed} of {SHMS_ngcer_track_fired_region_2.npassed} of good tracks.
+SHMS NGC Region 3 efficiency: {SHMS_ngcer_track_matched_region_3.npassed}/{SHMS_ngcer_track_fired_region_3.npassed} = {SHMS_ngcer_track_matched_region_3.npassed} of {SHMS_ngcer_track_fired_region_3.npassed} of good tracks.
+SHMS NGC Region 4 efficiency: {SHMS_ngcer_track_matched_region_4.npassed}/{SHMS_ngcer_track_fired_region_4.npassed} = {SHMS_ngcer_track_matched_region_4.npassed} of {SHMS_ngcer_track_fired_region_4.npassed} of good tracks.
+Overall NGC Efficiency: {SHMS_ngcer_track_matched_tot.npassed}/{SHMS_ngcer_track_fired_tot.npassed} = {SHMS_ngcer_track_matched_tot.npassed} of {SHMS_ngcer_track_fired_tot.npassed} of good tracks.
+
+*AEROGEL EFF* 7 PMT pairs
+SHMS AERO Region 1 efficiency: {SHMS_aero_track_matched_region_1.npassed}/{SHMS_aero_track_fired_region_1.npassed} = {SHMS_aero_track_matched_region_1.npassed} of {SHMS_aero_track_fired_region_1.npassed} of good tracks.
+SHMS AERO Region 2 efficiency: {SHMS_aero_track_matched_region_2.npassed}/{SHMS_aero_track_fired_region_2.npassed} = {SHMS_aero_track_matched_region_2.npassed} of {SHMS_aero_track_fired_region_2.npassed} of good tracks.
+SHMS AERO Region 3 efficiency: {SHMS_aero_track_matched_region_3.npassed}/{SHMS_aero_track_fired_region_3.npassed} = {SHMS_aero_track_matched_region_3.npassed} of {SHMS_aero_track_fired_region_3.npassed} of good tracks.
+SHMS AERO Region 4 efficiency: {SHMS_aero_track_matched_region_4.npassed}/{SHMS_aero_track_fired_region_4.npassed} = {SHMS_aero_track_matched_region_4.npassed} of {SHMS_aero_track_fired_region_4.npassed} of good tracks.
+SHMS AERO Region 5 efficiency: {SHMS_aero_track_matched_region_5.npassed}/{SHMS_aero_track_fired_region_5.npassed} = {SHMS_aero_track_matched_region_5.npassed} of {SHMS_aero_track_fired_region_5.npassed} of good tracks.
+SHMS AERO Region 6 efficiency: {SHMS_aero_track_matched_region_6.npassed}/{SHMS_aero_track_fired_region_6.npassed} = {SHMS_aero_track_matched_region_6.npassed} of {SHMS_aero_track_fired_region_6.npassed} of good tracks.
+SHMS AERO Region 7 efficiency: {SHMS_aero_track_matched_region_7.npassed}/{SHMS_aero_track_fired_region_7.npassed} = {SHMS_aero_track_matched_region_7.npassed} of {SHMS_aero_track_fired_region_7.npassed} of good tracks.
+Overall AERO Efficiency: {SHMS_aero_track_matched_tot.npassed}/{SHMS_aero_track_fired_tot.npassed} = {SHMS_aero_track_matched_tot.npassed} of {SHMS_aero_track_fired_tot.npassed} of good tracks.
+
+****************************
+* Calorimeter Efficiencies *
+****************************
+Efficiencies for calorimeter is the fraction of times block was hit when track
+with chisquared/dof < {pstat_cal_maxchisq:%5.1f} came within {pstat_cal_slop:%4.1f} cm of the center.
+and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
+
+Events examined = strig       = {shmscoin_event.npassed}
+Tracks found    = scleantrack = {pCleanTrack.npassed}
+Tracks passing chisquared cut = {pstat_cal_numevents:%7d} (fix here)
+
+Block		eff		Hits
+-------------------------------------------------------------------------------------------------------
+;Needs to be written inline.
+
+**************************
+* Hodoscope Efficiencies * 
+**************************
+Efficiencies for hodoscopes is the fraction of times scin. was hit when track
+with chisquared/dof < {pstat_maxchisq:%5.1f} came within {pstat_slop:%4.1f} cm of the center.
+
+Events examined = strig       = {shmscoin_event.npassed}
+Tracks found    = scleantrack = {pCleanTrack.npassed}
+Tracks passing chisquared cut = {pstat_numevents} (fix here)
+
+*HODO EFF* Need to checkout hodoeff module.
+Scint		Pos eff		Neg eff		OR eff		AND eff		 Hits
+-----------------------------------------------------------------------------------------------------
+P1X1+			 
+P1X2+
+P1X3+	
+P1X4+
+P1X5+
+P1X6+
+P1X7+
+P1X8+
+P1X9+
+P1X10+
+P1X11+
+P1X12+
+P1X13+
+
+P1X1-
+P1X2-
+P1X3-
+P1X4-
+P1X5-
+P1X6-
+P1X7-
+P1X8-
+P1X9-
+P1X10-
+P1X11-
+P1X12-
+P1X13-
+
+P1Y1+
+P1Y2+
+P1Y3+
+P1Y4+
+P1Y5+
+P1Y6+
+P1Y7+
+P1Y8+
+P1Y9+
+P1Y10+
+P1Y11+
+P1Y12+
+P1Y13+
+
+P1Y1-
+P1Y2-
+P1Y3-
+P1Y4-
+P1Y5-
+P1Y6-
+P1Y7-
+P1Y8-
+P1Y9-
+P1Y10-
+P1Y11-
+P1Y12-
+P1Y13-
+
+P2X1+
+P2X2+
+P2X3+
+P2X4+
+P2X5+
+P2X6+
+P2X7+
+P2X8+
+P2X9+
+P2X10+
+P2X11+
+P2X12+
+P2X13+
+P2X14+
+
+P2X1-
+P2X2-
+P2X3-
+P2X4-
+P2X5-
+P2X6-
+P2X7-
+P2X8-
+P2X9-
+P2X10-
+P2X11-
+P2X12-
+P2X13-
+P2X14-
+
+P2Y1+
+P2Y2+
+P2Y3+
+P2Y4+
+P2Y5+
+P2Y6+
+P2Y7+
+P2Y8+
+P2Y9+
+P2Y10+
+P2Y11+
+P2Y12+
+P2Y13+
+P2Y14+
+P2Y15+
+P2Y16+
+P2Y17+
+P2Y18+
+P2Y19+
+P2Y20+
+P2Y21+
+
+P2Y1-
+P2Y2-
+P2Y3-
+P2Y4-
+P2Y5-
+P2Y6-
+P2Y7-
+P2Y8-
+P2Y9-
+P2Y10-
+P2Y11-
+P2Y12-
+P2Y13-
+P2Y14-
+P2Y15-
+P2Y16-
+P2Y17-
+P2Y18-
+P2Y19-
+P2Y20-
+P2Y21-
+
+
+

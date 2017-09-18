@@ -7,16 +7,15 @@ BCM2  : {(P.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(P.BCM
 Unser : {(P.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%7.3f} uC
 
 All triggers  :  {all_trigs.npassed}
-sTrig         :  {P.Trig.scaler:%8d} [{P.Trig.scalerRate:%7.1f}]
+Trig         :  {P.Trig.scaler:%8d} [{P.Trig.scalerRate:%7.1f}]
 Rate  	      :  {P.Trig.scalerRate/1000.:%7.3f} kHz
 
 Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
 Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
 
 ******HARDWARE SCALERS******
-First column is the name, second column is the number of counts, third column is the rate.
-
 *HODOSCOPES*
+Scint	Counts				Rate
 P1X1+:  {P.hod.1x1.posScaler:%8d}  [ {P.hod.1x1.posScalerRate:%7.1f} ]
 P1X2+:  {P.hod.1x2.posScaler:%8d}  [ {P.hod.1x2.posScalerRate:%7.1f} ]
 P1X3+:  {P.hod.1x3.posScaler:%8d}  [ {P.hod.1x3.posScalerRate:%7.1f} ]
@@ -159,5 +158,7 @@ P2XP2Y: {P.S2XS2Y.scaler:%8d} [{P.S2XS2Y.scalerRate:%7.1f}] OR between P2X and P
 AERSUM: {P.AERSUM.scaler:%8d}  [{P.AERSUM.scalerRate:%7.1f}] Sum of aerogel signals that pass a discriminator threshold
 PSHWRLO:{P.PSHWRLO.scaler:%8d}  [{P.PSHWRLO.scalerRate:%7.1f}] Sum of preshower signals that pass a discriminator threshold
 PSHWRHI:{P.PSHWRHI.scaler:%8d}  [{P.PSHWRHI.scalerRate:%7.1f}] Sum of preshower signals that pass a slightly higher discriminator threshold
+
+*CHERENKOVS??*
 
 ******END HARDWARE SCALERS******

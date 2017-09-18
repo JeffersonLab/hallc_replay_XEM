@@ -230,5 +230,47 @@ goodps2y      P.hod.2y.nhits > 0 && P.hod.2y.nhits < 3
 goodps2       goodps2x && goodps2y
 goodps1s2     goodps1 && goodps2
 
+SHMS_hgcer_track_matched_region_1 P.hgcer.numTracksMatched[0]>0
+SHMS_hgcer_track_fired_region_1 P.hgcer.numTracksFired[0]>0
+SHMS_hgcer_track_matched_region_2 P.hgcer.numTracksMatched[1]>0
+SHMS_hgcer_track_fired_region_2 P.hgcer.numTracksFired[1]>0
+SHMS_hgcer_track_matched_region_3 P.hgcer.numTracksMatched[2]>0
+SHMS_hgcer_track_fired_region_3 P.hgcer.numTracksFired[2]>0
+SHMS_hgcer_track_matched_region_4 P.hgcer.numTracksMatched[3]>0
+SHMS_hgcer_track_fired_region_4 P.hgcer.numTracksFired[3]>0
+SHMS_hgcer_track_matched_tot P.hgcer.totNumTracksMatched>0
+SHMS_hgcer_track_fired_tot P.hgcer.totNumTracksFired>0
+
+SHMS_ngcer_track_matched_region_1 P.ngcer.numTracksMatched[0]>0
+SHMS_ngcer_track_fired_region_1 P.ngcer.numTracksFired[0]>0
+SHMS_ngcer_track_matched_region_2 P.ngcer.numTracksMatched[1]>0
+SHMS_ngcer_track_fired_region_2 P.ngcer.numTracksFired[1]>0
+SHMS_ngcer_track_matched_region_3 P.ngcer.numTracksMatched[2]>0
+SHMS_ngcer_track_fired_region_3 P.ngcer.numTracksFired[2]>0
+SHMS_ngcer_track_matched_region_4 P.ngcer.numTracksMatched[3]>0
+SHMS_ngcer_track_fired_region_4 P.ngcer.numTracksFired[3]>0
+SHMS_ngcer_track_matched_tot P.ngcer.totNumTracksMatched>0
+SHMS_ngcer_track_fired_tot P.ngcer.totNumTracksFired>0
+
+SHMS_aero_track_matched_region_1 P.aero.numTracksMatched[0]>0
+SHMS_aero_track_fired_region_1 P.aero.numTracksFired[0]>0
+SHMS_aero_track_matched_region_2 P.aero.numTracksMatched[1]>0
+SHMS_aero_track_fired_region_2 P.aero.numTracksFired[1]>0
+SHMS_aero_track_matched_region_3 P.aero.numTracksMatched[2]>0
+SHMS_aero_track_fired_region_3 P.aero.numTracksFired[2]>0
+SHMS_aero_track_matched_region_4 P.aero.numTracksMatched[3]>0
+SHMS_aero_track_fired_region_4 P.aero.numTracksFired[3]>0
+SHMS_aero_track_matched_region_5 P.aero.numTracksMatched[4]>0
+SHMS_aero_track_fired_region_5 P.aero.numTracksFired[4]>0
+SHMS_aero_track_matched_region_6 P.aero.numTracksMatched[5]>0
+SHMS_aero_track_fired_region_6 P.aero.numTracksFired[5]>0
+SHMS_aero_track_matched_region_7 P.aero.numTracksMatched[6]>0
+SHMS_aero_track_fired_region_7 P.aero.numTracksFired[6]>0
+SHMS_aero_track_matched_tot P.aero.totNumTracksMatched>0
+SHMS_aero_track_fired_tot P.aero.totNumTracksFired>0
+
+
+					
 Block: Physics
 Physics_master SHMS_event
+
