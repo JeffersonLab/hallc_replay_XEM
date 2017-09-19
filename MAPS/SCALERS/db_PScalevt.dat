@@ -30,6 +30,8 @@ variable 3 23 1 .hod.2y8.negScaler SHMS 2y- paddle 8
 variable 3 23 2 .hod.2y8.negScalerRate SHMS 2y- paddle 8
 variable 0 4 1 .hod.1x2.posScaler SHMS 1X+ paddle 2
 variable 0 4 2 .hod.1x2.posScalerRate SHMS 1X+ paddle 2
+variable 0 10 1 .hod.1x13.posScaler SHMS 1X+ paddle 13
+variable 0 10 2 .hod.1x13.posScalerRate SHMS 1X+ paddle 13
 variable 0 20 1 .hod.1x2.negScaler SHMS 1X- paddle 2
 variable 0 20 2 .hod.1x2.negScalerRate SHMS 1X- paddle 2
 variable 7 6 1 .Trig.scaler SHMS T1
@@ -66,8 +68,16 @@ variable 7 13 1 .SHWR.scaler SHMS SHWR
 variable 7 13 2 .SHWR.scalerRate SHMS SHWR
 variable 0 17 1 .hod.1x3.negScaler SHMS 1X- paddle 3
 variable 0 17 2 .hod.1x3.negScalerRate SHMS 1X- paddle 3
+variable 6 14 1 .hTRIG5.scaler HMS  TRIG5
+variable 6 14 2 .hTRIG5.scalerRate HMS  TRIG5
+variable 6 13 1 .hTRIG4.scaler HMS  TRIG4
+variable 6 13 2 .hTRIG4.scalerRate HMS  TRIG4
 variable 1 29 1 .hod.1y12.posScaler SHMS 1Y+ paddle 12
 variable 1 29 2 .hod.1y12.posScalerRate SHMS 1Y+ paddle 12
+variable 6 10 1 .hTRIG1.scaler HMS  TRIG1
+variable 6 10 2 .hTRIG1.scalerRate HMS  TRIG1
+variable 6 12 1 .hTRIG3.scaler HMS  TRIG3
+variable 6 12 2 .hTRIG3.scalerRate HMS  TRIG3
 variable 1 17 1 .hod.1y3.posScaler SHMS 1Y+ paddle 3
 variable 1 17 2 .hod.1y3.posScalerRate SHMS 1Y+ paddle 3
 variable 1 1 1 .hod.1y3.negScaler SHMS 1Y- paddle 3
@@ -108,14 +118,16 @@ variable 2 5 1 .hod.2x4.posScaler SHMS 2X+ paddle 4
 variable 2 5 2 .hod.2x4.posScalerRate SHMS 2X+ paddle 4
 variable 7 15 1 .CERSUM.scaler SHMS CERSUM
 variable 7 15 2 .CERSUM.scalerRate SHMS CERSUM
+variable 6 15 1 .hTRIG6.scaler HMS  TRIG6
+variable 6 15 2 .hTRIG6.scalerRate HMS  TRIG6
 variable 1 4 1 .hod.1y2.negScaler SHMS 1Y- paddle 2
 variable 1 4 2 .hod.1y2.negScalerRate SHMS 1Y- paddle 2
 variable 0 3 1 .hod.1x7.posScaler SHMS 1X+ paddle 7
 variable 0 3 2 .hod.1x7.posScalerRate SHMS 1X+ paddle 7
 variable 1 9 1 .hod.1y11.negScaler SHMS 1Y- paddle 11
 variable 1 9 2 .hod.1y11.negScalerRate SHMS 1Y- paddle 11
-variable 7 7 1 .ASUM.scaler SHMS ASUM
-variable 7 7 2 .ASUM.scalerRate SHMS ASUM
+variable 6 11 1 .hTRIG2.scaler HMS  TRIG2
+variable 6 11 2 .hTRIG2.scalerRate HMS  TRIG2
 variable 7 3 1 .S2Y.scaler SHMS S2Y
 variable 7 3 2 .S2Y.scalerRate SHMS S2Y
 variable 7 2 1 .S2X.scaler SHMS S2X
@@ -156,12 +168,14 @@ variable 7 14 1 .AERSUM.scaler SHMS AERSUM
 variable 7 14 2 .AERSUM.scalerRate SHMS AERSUM
 variable 0 26 1 .hod.1x13.negScaler SHMS 1X- paddle 13
 variable 0 26 2 .hod.1x13.negScalerRate SHMS 1X- paddle 13
-variable 0 10 1 .hod.1x13.posScaler SHMS 1X+ paddle 13
-variable 0 10 2 .hod.1x13.posScalerRate SHMS 1X+ paddle 13
+variable 0 28 1 .hod.1x10.negScaler SHMS 1X- paddle 10
+variable 0 28 2 .hod.1x10.negScalerRate SHMS 1X- paddle 10
 variable 6 4 1 .pTRIG5.scaler SHMS TRIG5
 variable 6 4 2 .pTRIG5.scalerRate SHMS TRIG5
 variable 6 3 1 .pTRIG4.scaler SHMS TRIG4
 variable 6 3 2 .pTRIG4.scalerRate SHMS TRIG4
+variable 7 7 1 .ASUM.scaler SHMS ASUM
+variable 7 7 2 .ASUM.scalerRate SHMS ASUM
 variable 1 23 1 .hod.1y8.posScaler SHMS 1Y+ paddle 8
 variable 1 23 2 .hod.1y8.posScalerRate SHMS 1Y+ paddle 8
 variable 0 13 1 .hod.1x12.posScaler SHMS 1X+ paddle 12
@@ -218,8 +232,6 @@ variable 6 5 1 .pTRIG6.scaler SHMS TRIG6
 variable 6 5 2 .pTRIG6.scalerRate SHMS TRIG6
 variable 7 1 1 .S1Y.scaler SHMS S1Y
 variable 7 1 2 .S1Y.scalerRate SHMS S1Y
-variable 0 28 1 .hod.1x10.negScaler SHMS 1X- paddle 10
-variable 0 28 2 .hod.1x10.negScalerRate SHMS 1X- paddle 10
 variable 3 14 1 .hod.2y14.posScaler SHMS 2y+ paddle 14
 variable 3 14 2 .hod.2y14.posScalerRate SHMS 2y+ paddle 14
 variable 1 8 1 .hod.1y9.negScaler SHMS 1Y- paddle 9

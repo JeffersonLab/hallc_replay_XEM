@@ -153,6 +153,8 @@ variable 0 15 1 .hod.1x16.posScaler HMS 1X+ paddle 16
 variable 0 15 2 .hod.1x16.posScalerRate HMS 1X+ paddle 16
 variable 3 13 1 .Empty_16.scaler Empty
 variable 3 13 2 .Empty_16.scalerRate Empty
+variable 5 3 1 .pTRIG4.scaler SHMS TRIG4
+variable 5 3 2 .pTRIG4.scalerRate SHMS TRIG4
 variable 1 24 1 .hod.1y9.negScaler HMS 1Y- paddle 9
 variable 1 24 2 .hod.1y9.negScalerRate HMS 1Y- paddle 9
 variable 2 4 1 .hod.2x2.posScaler HMS 2X+ paddle 2
@@ -179,12 +181,14 @@ variable 1 22 1 .hod.1y6.negScaler HMS 1Y- paddle 6
 variable 1 22 2 .hod.1y6.negScalerRate HMS 1Y- paddle 6
 variable 0 5 1 .hod.1x4.posScaler HMS 1X+ paddle 4
 variable 0 5 2 .hod.1x4.posScalerRate HMS 1X+ paddle 4
+variable 5 1 1 .pTRIG2.scaler SHMS TRIG2
+variable 5 1 2 .pTRIG2.scalerRate SHMS TRIG2
 variable 0 21 1 .hod.1x4.negScaler HMS 1X- paddle 4
 variable 0 21 2 .hod.1x4.negScalerRate HMS 1X- paddle 4
 variable 3 7 1 .hod.2y8.posScaler HMS 2Y+ paddle 8
 variable 3 7 2 .hod.2y8.posScalerRate HMS 2Y+ paddle 8
-variable 5 15 1 .hTRIG6.scaler HMS TRIG6
-variable 5 15 2 .hTRIG6.scalerRate HMS TRIG6
+variable 5 15 1 .hTRIG6.scaler HMS  TRIG6
+variable 5 15 2 .hTRIG6.scalerRate HMS  TRIG6
 variable 3 23 1 .hod.2y8.negScaler HMS 2Y- paddle 8
 variable 3 23 2 .hod.2y8.negScalerRate HMS 2Y- paddle 8
 variable 2 18 1 .hod.2x5.negScaler HMS 2X- paddle 5
@@ -235,24 +239,32 @@ variable 1 28 1 .hod.1y10.negScaler HMS 1Y- paddle 10
 variable 1 28 2 .hod.1y10.negScalerRate HMS 1Y- paddle 10
 variable 1 12 1 .hod.1y10.posScaler HMS 1Y+ paddle 10
 variable 1 12 2 .hod.1y10.posScalerRate HMS 1Y+ paddle 10
+variable 5 4 1 .pTRIG5.scaler SHMS TRIG5
+variable 5 4 2 .pTRIG5.scalerRate SHMS TRIG5
 variable 3 24 1 .hod.2y9.negScaler HMS 2Y- paddle 9
 variable 3 24 2 .hod.2y9.negScalerRate HMS 2Y- paddle 9
+variable 5 5 1 .pTRIG6.scaler SHMS TRIG6
+variable 5 5 2 .pTRIG6.scalerRate SHMS TRIG6
+variable 5 0 1 .pTRIG1.scaler SHMS TRIG1
+variable 5 0 2 .pTRIG1.scalerRate SHMS TRIG1
+variable 5 2 1 .pTRIG3.scaler SHMS TRIG3
+variable 5 2 2 .pTRIG3.scalerRate SHMS TRIG3
 variable 3 8 1 .hod.2y9.posScaler HMS 2Y+ paddle 9
 variable 3 8 2 .hod.2y9.posScalerRate HMS 2Y+ paddle 9
-variable 5 14 1 .hTRIG5.scaler HMS TRIG5
-variable 5 14 2 .hTRIG5.scalerRate HMS TRIG5
-variable 5 13 1 .hTRIG4.scaler HMS TRIG4
-variable 5 13 2 .hTRIG4.scalerRate HMS TRIG4
+variable 5 14 1 .hTRIG5.scaler HMS  TRIG5
+variable 5 14 2 .hTRIG5.scalerRate HMS  TRIG5
+variable 5 13 1 .hTRIG4.scaler HMS  TRIG4
+variable 5 13 2 .hTRIG4.scalerRate HMS  TRIG4
 variable 2 21 1 .hod.2x4.negScaler HMS 2X- paddle 4
 variable 2 21 2 .hod.2x4.negScalerRate HMS 2X- paddle 4
-variable 5 10 1 .hTRIG1.scaler HMS TRIG1
-variable 5 10 2 .hTRIG1.scalerRate HMS TRIG1
+variable 5 10 1 .hTRIG1.scaler HMS  TRIG1
+variable 5 10 2 .hTRIG1.scalerRate HMS  TRIG1
 variable 2 5 1 .hod.2x4.posScaler HMS 2X+ paddle 4
 variable 2 5 2 .hod.2x4.posScalerRate HMS 2X+ paddle 4
-variable 5 12 1 .hTRIG3.scaler HMS TRIG3
-variable 5 12 2 .hTRIG3.scalerRate HMS TRIG3
-variable 5 11 1 .hTRIG2.scaler HMS TRIG2
-variable 5 11 2 .hTRIG2.scalerRate HMS TRIG2
+variable 5 12 1 .hTRIG3.scaler HMS  TRIG3
+variable 5 12 2 .hTRIG3.scalerRate HMS  TRIG3
+variable 5 11 1 .hTRIG2.scaler HMS  TRIG2
+variable 5 11 2 .hTRIG2.scalerRate HMS  TRIG2
 variable 6 15 1 .CERSUM.scaler HMS CERSUM
 variable 6 15 2 .CERSUM.scalerRate HMS CERSUM
 variable 6 13 1 .SHWR.scaler HMS SHWR

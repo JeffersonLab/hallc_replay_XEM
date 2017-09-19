@@ -2,6 +2,7 @@
 ! HDC_ID=11        ::  TDC
 ! HAERO_ID=12      ::  (TDC),ADC
 ! HSCIN_ID=13      ::  ADC+,ADC-,TDC+,TDC-
+! HCER_ID=14       ::  (TDC),ADC
 ! HCAL_ID=15       ::  ADC
 ! HRASTER_ID=18    ::  ADC
 
@@ -44,6 +45,12 @@ REFINDEX=0
   29,   2,  25,   1  ! hTRIG4
   30,   2,  26,   1  ! hTRIG5
   31,   2,  27,   1  ! hTRIG6
+  16,   2,  28,   1  ! pTRIG1
+  17,   2,  29,   1  ! pTRIG2
+  18,   2,  30,   1  ! pTRIG3
+  19,   2,  31,   1  ! pTRIG4
+  20,   2,  32,   1  ! pTRIG5
+  21,   2,  33,   1  ! pTRIG6
 
 SLOT=20
  127,   2,  17,   1  ! hT2
@@ -1478,6 +1485,15 @@ REFINDEX=0
  119,   4,   8,   3  ! h2y08T-
  120,   4,   9,   3  ! h2y09T-
  124,   4,  10,   3  ! h2y10T-
+
+
+DETECTOR=14
+
+ROC=1
+
+SLOT=7
+  14,   1,   1,   0  ! hCER01
+  15,   1,   2,   0  ! hCER02
 
 
 DETECTOR=15
