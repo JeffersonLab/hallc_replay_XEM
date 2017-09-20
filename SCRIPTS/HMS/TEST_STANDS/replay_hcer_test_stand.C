@@ -16,7 +16,12 @@ void replay_hcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/hms_all_%05d.dat";
+  const char* RunFileNamePattern = "hms_all_%05d.dat";
+  vector<TString> pathList;
+    pathList.push_back(".");
+    pathList.push_back("./raw");
+    pathList.push_back("./cache");
+
   const char* ROOTFileNamePattern = "ROOTfiles/hcer_replay_%d.root";
 
   // Add variables to global list.
@@ -68,9 +73,7 @@ void replay_hcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  char RunFileName[100];
-  sprintf(RunFileName, RunFileNamePattern, RunNumber);
-  THaRun* run = new THaRun(RunFileName);
+  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events

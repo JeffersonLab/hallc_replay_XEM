@@ -1,4 +1,5 @@
 *~
+*.sw?
 ROOTfiles
 ROOTfiles/*
 ROOTfiles.old/*
