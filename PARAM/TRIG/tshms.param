@@ -1,11 +1,11 @@
-t_shms_numAdc = 3
+t_shms_numAdc = 4
 t_shms_numTdc = 35
 
 t_shms_tdcoffset = -300.
 t_shms_tdcchanperns = 0.1
 
-; bar num:            1       2       3    
-t_shms_adcNames = "pAERSUM pHGCSUM pNGCSUM"
+; bar num:            1       2       3           4
+t_shms_adcNames = "pAERSUM pHGCSUM pNGCSUM pFADC_TREF_ROC2"
 
 ; bar num:          1   2   3   4   5   6   7   8   9     10      11      12      13     14      15      16      17      18      19      20      21       22        23       24     25     26     27     28     29     30     31     32     33     34     35
 t_shms_tdcNames = "pT1 pT2 p1X p1Y p2X p2Y p1T p2T pT3 pAERSUM pHGCSUM pNGCSUM pDCREF1 pDCREF2 pDCREF3 pDCREF4 pDCREF5 pDCREF6 pDCREF7 pDCREF8 pDCREF9 pDCREF10 pHODO_EDTM pTRIG1 pTRIG2 pTRIG3 pTRIG4 pTRIG5 pTRIG6 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6"
