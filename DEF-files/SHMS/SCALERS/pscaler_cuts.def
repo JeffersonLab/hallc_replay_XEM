@@ -17,7 +17,12 @@ RawDecode_master  1
 Block: Decode
 
 all_trigs          HMS_event || SHMS_event || coin_event
+shms_trigs         SHMS_event
 shms_coin_trig     SHMS_event || coin_event
+
+edtm_accepted     T.shms.pHODO_EDTM_tdcTime != 0.0
+physics_accepted  T.shms.pHODO_EDTM_tdcTime == 0.0
+triggers_accepted T.shms.pT2_tdcTime == 0.0
 
 Decode_master     SHMS_event
 

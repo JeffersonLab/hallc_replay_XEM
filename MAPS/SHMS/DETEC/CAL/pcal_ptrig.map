@@ -18,61 +18,61 @@ SLOT=20
 SLOT=19
 REFINDEX=0
   31,1000,   0,   0  ! pTRef
-  32,   2,   3,   1  ! p1X
-  33,   2,   4,   1  ! p1Y
-  34,   2,   5,   1  ! p2X
-  35,   2,   6,   1  ! p2Y
-  36,   2,   7,   1  ! p1T
-  37,   2,   8,   1  ! p2T
-  38,   2,   9,   1  ! pT3
-  39,   2,  10,   1  ! pAERSUM
-  40,   2,  11,   1  ! pHGCERSUM
-  41,   2,  12,   1  ! pNGCERSUM
-  42,   2,  23,   1  ! pHODO_EDTM
-  48,   2,  24,   1  ! pTRIG1
-  49,   2,  25,   1  ! pTRIG2
-  50,   2,  26,   1  ! pTRIG3
-  51,   2,  27,   1  ! pTRIG4
-  52,   2,  28,   1  ! pTRIG5
-  53,   2,  29,   1  ! pTRIG6
-  58,   2,  30,   1  ! hTRIG1
-  59,   2,  31,   1  ! hTRIG2
-  60,   2,  32,   1  ! hTRIG3
-  61,   2,  33,   1  ! hTRIG4
-  62,   2,  34,   1  ! hTRIG5
-  63,   2,  35,   1  ! hTRIG6
+  32,   2,   2,   1  ! p1X
+  33,   2,   3,   1  ! p1Y
+  34,   2,   4,   1  ! p2X
+  35,   2,   5,   1  ! p2Y
+  36,   2,   6,   1  ! p1T
+  37,   2,   7,   1  ! p2T
+  38,   2,   8,   1  ! pT2
+  39,   2,   9,   1  ! pAERSUM
+  40,   2,  10,   1  ! pHGCERSUM
+  41,   2,  11,   1  ! pNGCERSUM
+  42,   2,  22,   1  ! pHODO_EDTM
+  48,   2,  23,   1  ! pTRIG1
+  49,   2,  24,   1  ! pTRIG2
+  50,   2,  25,   1  ! pTRIG3
+  51,   2,  26,   1  ! pTRIG4
+  52,   2,  27,   1  ! pTRIG5
+  53,   2,  28,   1  ! pTRIG6
+  58,   2,  29,   1  ! hTRIG1
+  59,   2,  30,   1  ! hTRIG2
+  60,   2,  31,   1  ! hTRIG3
+  61,   2,  32,   1  ! hTRIG4
+  62,   2,  33,   1  ! hTRIG5
+  63,   2,  34,   1  ! hTRIG6
 
 ROC=6
 
 SLOT=6
-  79,   2,  13,   1  ! pDCREF1
+  79,   2,  12,   1  ! pDCREF1
 
 SLOT=7
-  79,   2,  14,   1  ! pDCREF2
+  79,   2,  13,   1  ! pDCREF2
 
 SLOT=8
-  79,   2,  15,   1  ! pDCREF3
+  79,   2,  14,   1  ! pDCREF3
 
 SLOT=9
-  79,   2,  16,   1  ! pDCREF4
+  79,   2,  15,   1  ! pDCREF4
 
 SLOT=10
-  79,   2,  17,   1  ! pDCREF5
+  79,   2,  16,   1  ! pDCREF5
 
 SLOT=11
-  47,   2,  18,   1  ! pDCREF6
+  47,   2,  17,   1  ! pDCREF6
 
 SLOT=12
-  47,   2,  19,   1  ! pDCREF7
+  47,   2,  18,   1  ! pDCREF7
 
 SLOT=13
-  47,   2,  20,   1  ! pDCREF8
+  47,   2,  19,   1  ! pDCREF8
 
 SLOT=14
-  15,   2,  21,   1  ! pDCREF9
+  15,   2,  20,   1  ! pDCREF9
 
 SLOT=15
-  47,   2,  22,   1  ! pDCREF10
+  47,   2,  21,   1  ! pDCREF10
 
 
 DETECTOR=26

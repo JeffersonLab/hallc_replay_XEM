@@ -53,8 +53,12 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H","Hall C scaler event type 1");
-  hscaler->AddEvtType(1);
+  
   hscaler->SetUseFirstEvent(kTRUE);
+  hscaler->AddEvtType(129);
+  hscaler->SetDelayedType(129);
+  hscaler->SetOnlyBanks(kTRUE);
+
   gHaEvtHandlers->Add(hscaler);
 
   // Set up the analyzer - we use the standard one,
