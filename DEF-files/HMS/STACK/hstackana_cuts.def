@@ -1,29 +1,20 @@
-# Demo cuts for hodtest
-#
 
 Block: RawDecode
 
-Pedestal_event     g.evtyp==4
-scalar_event       g.evtyp==0
-HMS_event          g.evtyp==1
-SHMS_event         g.evtyp==1
-coin_event         g.evtyp==3
-tr4_event          g.evtyp==4
-tr5_event          g.evtyp==5
-tr6_event          g.evtyp==6
-misc_event         g.evtyp>=10
-hmscoin_event      g.evtyp==1||g.evtyp==3
-shmscoin_event     g.evtyp==2||g.evtyp==3
-all_event          g.evtyp==1||g.evtyp==2||g.evtyp==3
+Pedestal_event     g.evtyp == 99
 
+HMS_trig_1_event   g.evtyp == 1
+HMS_trig_2_event   g.evtyp == 2
+HMS_trig_3_event   g.evtyp == 3
+HMS_trig_4_event   g.evtyp == 4
+HMS_trig_5_event   g.evtyp == 5
+HMS_trig_6_event   g.evtyp == 6
+HMS_event          HMS_trig_1_event || HMS_trig_2_event || HMS_trig_3_event || HMS_trig_4_event || HMS_trig_5_event || HMS_trig_6_event
 RawDecode_master  1
 
 Block: Decode
 
-all_trigs             g.evtyp==1 || g.evtyp==2 || g.evtyp==3
-hms_shms_trig          g.evtyp==1 || g.evtyp==2
-hms_coin_trig         g.evtyp==1 || g.evtyp==3
-
+hms_trigs         HMS_event
 
 Decode_master     HMS_event
 

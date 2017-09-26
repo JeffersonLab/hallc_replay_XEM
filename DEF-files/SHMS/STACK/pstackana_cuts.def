@@ -2,22 +2,21 @@
 
 Block: RawDecode
 
-Pedestal_event     g.evtyp == 4
-scalar_event       g.evtyp == 0
-HMS_event          g.evtyp == 1
-SHMS_event         g.evtyp == 1
-coin_event         g.evtyp == 3
-misc_event         g.evtyp >= 5
-hmscoin_event      HMS_event || coin_event
-shmscoin_event     SHMS_event || coin_event
-all_event          HMS_event || SHMS_event || coin_event
+Pedestal_event     g.evtyp == 99
+
+SHMS_trig_1_event   g.evtyp == 1
+SHMS_trig_2_event   g.evtyp == 2
+SHMS_trig_3_event   g.evtyp == 3
+SHMS_trig_4_event   g.evtyp == 4
+SHMS_trig_5_event   g.evtyp == 5
+SHMS_trig_6_event   g.evtyp == 6
+SHMS_event          SHMS_trig_1_event || SHMS_trig_2_event || SHMS_trig_3_event || SHMS_trig_4_event || SHMS_trig_5_event || SHMS_trig_6_event
 
 RawDecode_master  1
 
 Block: Decode
 
-all_trigs          HMS_event || SHMS_event || coin_event
-shms_coin_trig     SHMS_event || coin_event
+shms_trigs        SHMS_event
 
 good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
 good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220

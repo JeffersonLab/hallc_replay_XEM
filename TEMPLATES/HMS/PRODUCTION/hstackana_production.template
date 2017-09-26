@@ -13,18 +13,18 @@ Chamber 1: {hdc_zpos[0]:%6.2f} {hdc_zpos[1]:%6.2f} {hdc_zpos[2]:%6.2f}
 Chamber 2: {hdc_zpos[6]:%6.2f} {hdc_zpos[7]:%6.2f} {hdc_zpos[8]:%6.2f} 
            {hdc_zpos[9]:%6.2f} {hdc_zpos[10]:%6.2f} {hdc_zpos[11]:%6.2f}
 
-All triggers:  {all_trigs.npassed}
+HMS triggers:  {hms_trigs.npassed}
 
 Rate  :  {H.Trig.scalerRate/1000.:%7.3f} kHz
 
-Live Time : {(all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
+Live Time : {(hms_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
+Dead Time : {100.0 - (hms_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
 
-hmsDC1Planes_large  Counts:       {hmsDC1Planes_large.npassed} /all_trigs : {hmsDC1Planes_large.npassed/all_trigs.npassed}
-hmsDC2Planes_large  Counts:	  {hmsDC2Planes_large.npassed}  /all_trigs : {hmsDC2Planes_large.npassed/all_trigs.npassed}  
+hmsDC1Planes_large  Counts:       {hmsDC1Planes_large.npassed} /hms_trigs : {hmsDC1Planes_large.npassed/hms_trigs.npassed}
+hmsDC2Planes_large  Counts:	  {hmsDC2Planes_large.npassed}  /hms_trigs : {hmsDC2Planes_large.npassed/hms_trigs.npassed}  
 
-hmsDC1Planes6     Counts: {hmsDC1Planes6hits.npassed} /all_trigs : {hmsDC1Planes6hits.npassed/all_trigs.npassed}
-hmsDC2Planes6  	  Counts: {hmsDC2Planes6hits.npassed} /all_trigs : {hmsDC2Planes6hits.npassed/all_trigs.npassed}  
+hmsDC1Planes6     Counts: {hmsDC1Planes6hits.npassed} /hms_trigs : {hmsDC1Planes6hits.npassed/hms_trigs.npassed}
+hmsDC2Planes6  	  Counts: {hmsDC2Planes6hits.npassed} /hms_trigs : {hmsDC2Planes6hits.npassed/hms_trigs.npassed}  
 
 hmsDC1x1Planes5	  Counts: {hmsDC1_5hits_x1.npassed} eff : {hmsDC1_6hits_x1.npassed/hmsDC1_5hits_x1.npassed}
 hmsDC1u1Planes5	  Counts: {hmsDC1_5hits_u1.npassed} eff : {hmsDC1_6hits_u1.npassed/hmsDC1_5hits_u1.npassed}

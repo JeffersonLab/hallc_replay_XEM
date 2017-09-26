@@ -1,13 +1,21 @@
 Block: RawDecode
 
-Pedestal_event 0
+HMS_trig_1_event   g.evtyp == 1
+HMS_trig_2_event   g.evtyp == 2
+HMS_trig_3_event   g.evtyp == 3
+HMS_trig_4_event   g.evtyp == 4
+HMS_trig_5_event   g.evtyp == 5
+HMS_trig_6_event   g.evtyp == 6
+HMS_event          HMS_trig_1_event || HMS_trig_2_event || HMS_trig_3_event || HMS_trig_4_event || HMS_trig_5_event || HMS_trig_6_event
+
 RawDecode_master 1
 
 Block: Decode
-Decode_master 1
+
+Decode_master HMS_event
 
 Block: CoarseTracking
-CoarseTracking_master 1
+CoarseTracking_master HMS_event
 
 Block: CoarseReconstruct
-CourseReconstruct 0
+CourseReconstruct HMS_event

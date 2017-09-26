@@ -1,14 +1,50 @@
 Run #: {gen_run_number}
 
-Run Time  : {H.1Mhz.scaler}  {H.1Mhz.scaler/1000000.} sec
+**************************
+* General Run Information
+**************************
 
-BCM1  : {(H.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(H.BCM1.scalerRate-250000) / (4673)*H.1Mhz.scaler/1000000.:%7.3f} uC
-BCM2  : {(H.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(H.BCM2.scalerRate-250000) / (3954)*H.1Mhz.scaler/1000000.:%7.3f} uC 
-Unser : {(H.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(H.Unser.scalerRate-393000) / (4000)*H.1Mhz.scaler/1000000.:%7.3f} uC
+1 MhZ Pulses : {H.1Mhz.scaler}
+Run Length   : {H.1Mhz.scaler/1000000.:%.3f} sec
 
-All triggers  :  {all_trigs.npassed}
+***********
+* Beamline
+***********
 
-Rate  :  {H.Trig.scalerRate/1000.:%7.3f} kHz
+BCM1  Current : {(H.BCM1.scalerRate-250000)/(4673):%.3f} uA      Total charge = {(H.BCM1.scalerRate-250000) / (4673)*H.1Mhz.scaler/1000000.:%.3f} uC
+BCM2  Current : {(H.BCM2.scalerRate-250000)/(3954):%.3f} uA      Total charge = {(H.BCM2.scalerRate-250000) / (3954)*H.1Mhz.scaler/1000000.:%.3f} uC 
+Unser Current : {(H.Unser.scalerRate-393000)/(4000):%.3f} uA     Total charge = {(H.Unser.scalerRate-393000) / (4000)*H.1Mhz.scaler/1000000.:%.3f} uC
 
-Live Time : {(all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (all_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
+***********
+* Triggers
+***********
+
+HMS Triggers           : {H.Trig.scaler}
+Estimated HMS Triggers : {H.Trig.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+HMS Trigger Rate       : {H.Trig.scalerRate/1000.:%.3f} kHz
+Accepted HMS Triggers  : {triggers_accepted.npassed}
+HMS Event Types        : {hms_trigs.npassed}
+
+HMS Computer Live Time : {(hms_trigs.npassed / H.Trig.scaler)*100.0:%3.4f} %
+HMS Computer Dead Time : {100.0 - (hms_trigs.npassed / H.Trig.scaler)*100.0:%3.4f} %
+
+*******
+* EDTM
+*******
+
+EDTM Triggers           : {H.HOD_EDTM.scaler}
+Estimated EDTM Triggers : {H.HOD_EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+EDTM Trigger Rate       : {H.HOD_EDTM.scalerRate/1000.:%.3f} kHz
+Accepted EDTM Triggers  : {edtm_accepted.npassed}
+
+Total Live Time (EDTM) : {(edtm_accepted.npassed / H.HOD_EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.HOD_EDTM.scaler)*100.0:%3.4f} %
+
+*******************
+* Physics Triggers
+*******************
+
+Physics Triggers           : {H.Trig.scaler - H.HOD_EDTM.scaler}
+Estimated Physics Triggers : {(H.Trig.scalerRate - H.HOD_EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
+Physics Trigger Rate       : {(H.Trig.scalerRate - H.HOD_EDTM.scalerRate)/1000.:%.3f} kHz
+Accepted Physics Triggers  : {physics_accepted.npassed}

@@ -1,13 +1,21 @@
 Block: RawDecode
 
-Pedestal_event 0
+SHMS_trig_1_event   g.evtyp == 1
+SHMS_trig_2_event   g.evtyp == 2
+SHMS_trig_3_event   g.evtyp == 3
+SHMS_trig_4_event   g.evtyp == 4
+SHMS_trig_5_event   g.evtyp == 5
+SHMS_trig_6_event   g.evtyp == 6
+SHMS_event          SHMS_trig_1_event || SHMS_trig_2_event || SHMS_trig_3_event || SHMS_trig_4_event || SHMS_trig_5_event || SHMS_trig_6_event
+
 RawDecode_master 1
 
 Block: Decode
-Decode_master 1
+
+Decode_master SHMS_event
 
 Block: CoarseTracking
-CoarseTracking_master 1
+CoarseTracking_master SHMS_event
 
 Block: CoarseReconstruct
-CourseReconstruct 0
+CourseReconstruct SHMS_event

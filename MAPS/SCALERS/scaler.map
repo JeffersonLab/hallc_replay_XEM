@@ -193,12 +193,18 @@ Empty        0    4     3    30    1     Empty
 Empty        0    4     3    31    1     Empty
 
 # desc      hel crate slot start nchan  long-description
-hTRIG1       0    4     5    10    1     HMS TRIG1
-hTRIG2       0    4     5    11    1     HMS TRIG2
-hTRIG3       0    4     5    12    1     HMS TRIG3
-hTRIG4       0    4     5    13    1     HMS TRIG4
-hTRIG5       0    4     5    14    1     HMS TRIG5
-hTRIG6       0    4     5    15    1     HMS TRIG6
+hTRIG1       0    4     5    10    1     HMS  TRIG1
+hTRIG2       0    4     5    11    1     HMS  TRIG2
+hTRIG3       0    4     5    12    1     HMS  TRIG3
+hTRIG4       0    4     5    13    1     HMS  TRIG4
+hTRIG5       0    4     5    14    1     HMS  TRIG5
+hTRIG6       0    4     5    15    1     HMS  TRIG6
+pTRIG1       0    4     5    0     1     SHMS TRIG1
+pTRIG2       0    4     5    1     1     SHMS TRIG2
+pTRIG3       0    4     5    2     1     SHMS TRIG3
+pTRIG4       0    4     5    3     1     SHMS TRIG4
+pTRIG5       0    4     5    4     1     SHMS TRIG5
+pTRIG6       0    4     5    5     1     SHMS TRIG6
 
 # desc      hel crate slot start nchan  long-description                            
 S1X          0    4     6    0     1     HMS S1X                                           
@@ -367,6 +373,12 @@ pTRIG3       0    5     6    2     1     SHMS TRIG3
 pTRIG4       0    5     6    3     1     SHMS TRIG4
 pTRIG5       0    5     6    4     1     SHMS TRIG5
 pTRIG6       0    5     6    5     1     SHMS TRIG6
+hTRIG1       0    5     6    10    1     HMS  TRIG1
+hTRIG2       0    5     6    11    1     HMS  TRIG2
+hTRIG3       0    5     6    12    1     HMS  TRIG3
+hTRIG4       0    5     6    13    1     HMS  TRIG4
+hTRIG5       0    5     6    14    1     HMS  TRIG5
+hTRIG6       0    5     6    15    1     HMS  TRIG6
 
 # desc      hel crate slot start nchan  long-description                            
 S1X          0    5     7    0     1     SHMS S1X                                           
@@ -376,15 +388,10 @@ S2Y          0    5     7    3     1     SHMS S2Y
 S1XS1Y       0    5     7    4     1     SHMS S1T                                           
 S2XS2Y       0    5     7    5     1     SHMS S2T                                           
 Trig         0    5     7    6     1     SHMS T1                                           
-ASUM         0    5     7    7     1     SHMS ASUM                                         
-BSUM         0    5     7    8     1     SHMS BSUM                                         
-CSUM         0    5     7    9     1     SHMS CSUM                                         
-HOD_EDTM     0    5     7    10    1     SHMS HODO EDTM                                          
-PSHWRLO      0    5     7    11    1     SHMS PSHWRLO                                      
-PSHWRHI      0    5     7    12    1     SHMS PSHWRHI                                      
-SHWR         0    5     7    13    1     SHMS SHWR                                         
-AERSUM       0    5     7    14    1     SHMS AERSUM                                       
-CERSUM       0    5     7    15    1     SHMS CERSUM                                       
+AERO         0	  5	7    7	   1	 SHMS AERO
+HGC	     0	  5	7    8	   1	 SHMS HGC
+NGC	     0	  5	7    9	   1	 SHMS NGC
+HOD_EDTM     0	  5	7    10	   1	 SHMS_HODO_EDTM					
 BCM4A        0    5     7    25    1     bcm4a                                           
 BCM4B        0    5     7    26    1     bcm4b                                           
 BCM1         0    5     7    27    1     bcm1                                           

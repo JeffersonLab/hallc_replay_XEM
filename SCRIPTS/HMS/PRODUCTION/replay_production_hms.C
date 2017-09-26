@@ -16,7 +16,12 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "raw/hms_all_%05d.dat";
+  const char* RunFileNamePattern = "hms_all_%05d.dat";
+  vector<TString> pathList;
+    pathList.push_back(".");
+    pathList.push_back("./raw");
+    pathList.push_back("./cache");
+
   const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_production_%d_%d.root";
 
   //Load Global parameters
@@ -98,9 +103,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  char RunFileName[100];
-  sprintf(RunFileName, RunFileNamePattern, RunNumber);
-  THaRun* run = new THaRun(RunFileName);
+  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");

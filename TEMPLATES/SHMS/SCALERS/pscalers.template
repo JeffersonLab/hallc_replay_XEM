@@ -1,10 +1,54 @@
 Run #: {gen_run_number}
 
-Run Time  : {P.1Mhz.scaler}  {P.1Mhz.scaler/1000000.} sec
+**************************
+* General Run Information
+**************************
 
-BCM1  : {(P.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(P.BCM1.scalerRate-250000) / (4673)*P.1Mhz.scaler/1000000.:%7.3f} uC
-BCM2  : {(P.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(P.BCM2.scalerRate-250000) / (3954)*P.1Mhz.scaler/1000000.:%7.3f} uC 
-Unser : {(P.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%7.3f} uC
+1 MhZ Pulses : {P.1Mhz.scaler}
+Run Length   : {P.1Mhz.scaler/1000000.:%.3f} sec
+
+***********
+* Beamline
+***********
+
+BCM1  Current : {(P.BCM1.scalerRate-250000)/(4673):%.3f} uA      Total charge = {(P.BCM1.scalerRate-250000) / (4673)*P.1Mhz.scaler/1000000.:%.3f} uC
+BCM2  Current : {(P.BCM2.scalerRate-250000)/(3954):%.3f} uA      Total charge = {(P.BCM2.scalerRate-250000) / (3954)*P.1Mhz.scaler/1000000.:%.3f} uC 
+Unser Current : {(P.Unser.scalerRate-393000)/(4000):%.3f} uA     Total charge = {(P.Unser.scalerRate-393000) / (4000)*P.1Mhz.scaler/1000000.:%.3f} uC
+
+***********
+* Triggers
+***********
+
+SHMS Triggers           : {P.Trig.scaler}
+Estimated SHMS Triggers : {P.Trig.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
+SHMS Trigger Rate       : {P.Trig.scalerRate/1000.:%.3f} kHz
+Accepted SHMS Triggers  : {triggers_accepted.npassed}
+SHMS Event Types        : {shms_trigs.npassed}
+
+SHMS Computer Live Time : {(shms_trigs.npassed / P.Trig.scaler)*100.0:%3.4f} %
+SHMS Computer Dead Time : {100.0 - (shms_trigs.npassed / P.Trig.scaler)*100.0:%3.4f} %
+
+*******
+* EDTM
+*******
+
+EDTM Triggers           : {P.HOD_EDTM.scaler}
+Estimated EDTM Triggers : {P.HOD_EDTM.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
+EDTM Trigger Rate       : {P.HOD_EDTM.scalerRate/1000.:%.3f} kHz
+Accepted EDTM Triggers  : {edtm_accepted.npassed}
+
+Total Live Time (EDTM) : {(edtm_accepted.npassed / P.HOD_EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / P.HOD_EDTM.scaler)*100.0:%3.4f} %
+
+*******************
+* Physics Triggers
+*******************
+
+Physics Triggers           : {P.Trig.scaler - P.HOD_EDTM.scaler}
+Estimated Physics Triggers : {(P.Trig.scalerRate - P.HOD_EDTM.scalerRate)*(P.1Mhz.scaler/1000000.):%.0f}
+Physics Trigger Rate       : {(P.Trig.scalerRate - P.HOD_EDTM.scalerRate)/1000.:%.3f} kHz
+Accepted Physics Triggers  : {physics_accepted.npassed}
+
 
 All triggers  :  {all_trigs.npassed}
 Trig         :  {P.Trig.scaler:%8d} [{P.Trig.scalerRate:%7.1f}]
@@ -13,7 +57,10 @@ Rate  	      :  {P.Trig.scalerRate/1000.:%7.3f} kHz
 Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
 Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
 
-******HARDWARE SCALERS******
+*******************
+* Hardware Scalers
+*******************
+
 *HODOSCOPES*
 Scint	Counts				Rate
 P1X1+:  {P.hod.1x1.posScaler:%8d}  [ {P.hod.1x1.posScalerRate:%7.1f} ]
@@ -159,6 +206,3 @@ AERSUM: {P.AERSUM.scaler:%8d}  [{P.AERSUM.scalerRate:%7.1f}] Sum of aerogel sign
 PSHWRLO:{P.PSHWRLO.scaler:%8d}  [{P.PSHWRLO.scalerRate:%7.1f}] Sum of preshower signals that pass a discriminator threshold
 PSHWRHI:{P.PSHWRHI.scaler:%8d}  [{P.PSHWRHI.scalerRate:%7.1f}] Sum of preshower signals that pass a slightly higher discriminator threshold
 
-*CHERENKOVS??*
-
-******END HARDWARE SCALERS******
