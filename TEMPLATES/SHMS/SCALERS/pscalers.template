@@ -49,20 +49,12 @@ Estimated Physics Triggers : {(P.Trig.scalerRate - P.HOD_EDTM.scalerRate)*(P.1Mh
 Physics Trigger Rate       : {(P.Trig.scalerRate - P.HOD_EDTM.scalerRate)/1000.:%.3f} kHz
 Accepted Physics Triggers  : {physics_accepted.npassed}
 
-
-All triggers  :  {all_trigs.npassed}
-Trig         :  {P.Trig.scaler:%8d} [{P.Trig.scalerRate:%7.1f}]
-Rate  	      :  {P.Trig.scalerRate/1000.:%7.3f} kHz
-
-Live Time : {(all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (all_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
-
 *******************
 * Hardware Scalers
 *******************
 
 *HODOSCOPES*
-Scint	Counts				Rate
+Scint	Counts		Rate
 P1X1+:  {P.hod.1x1.posScaler:%8d}  [ {P.hod.1x1.posScalerRate:%7.1f} ]
 P1X2+:  {P.hod.1x2.posScaler:%8d}  [ {P.hod.1x2.posScalerRate:%7.1f} ]
 P1X3+:  {P.hod.1x3.posScaler:%8d}  [ {P.hod.1x3.posScalerRate:%7.1f} ]
@@ -199,10 +191,9 @@ P2X: {P.S2X.scaler:%8d} [ {P.S2X.scalerRate:%7.1f} ] AND between + and - sides o
 P2Y: {P.S2Y.scaler:%8d} [ {P.S2Y.scalerRate:%7.1f} ] AND between + and - sides of P2Y
 
 P1XP1Y: {P.S1XS1Y.scaler:%8d} [{P.S1XS1Y.scalerRate:%7.1f}] AND between P1X and P1Y planes 
-P2XP2Y: {P.S2XS2Y.scaler:%8d} [{P.S2XS2Y.scalerRate:%7.1f}] OR between P2X and P2Y planes (just for kpp, will be AND)                                                
+P2XP2Y: {P.S2XS2Y.scaler:%8d} [{P.S2XS2Y.scalerRate:%7.1f}] OR between P2X and P2Y planes (just for kpp, will be AND)                                               
 
-*AEROGEL AND PRESHOWER*
-AERSUM: {P.AERSUM.scaler:%8d}  [{P.AERSUM.scalerRate:%7.1f}] Sum of aerogel signals that pass a discriminator threshold
-PSHWRLO:{P.PSHWRLO.scaler:%8d}  [{P.PSHWRLO.scalerRate:%7.1f}] Sum of preshower signals that pass a discriminator threshold
-PSHWRHI:{P.PSHWRHI.scaler:%8d}  [{P.PSHWRHI.scalerRate:%7.1f}] Sum of preshower signals that pass a slightly higher discriminator threshold
-
+*Aerogel, NGC, HGC*
+AERO: {P.AERO.scaler:%8d}  [{P.AERO.scalerRate:%7.1f}] 
+HGC:{P.HGC.scaler:%8d}  [{P.HGC.scalerRate:%7.1f}]
+NGC:{P.NGC.scaler:%8d}  [{P.NGC.scalerRate:%7.1f}]
