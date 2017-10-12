@@ -1,0 +1,2 @@
+block P.gem.*
+#include "DEF-files/SHMS/PRODUCTION/pstackana_production.def"

@@ -10,7 +10,7 @@ pdc_num_chambers = 2
 pdc_num_planes = 12
 
 ; Names of planes.
-pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1"  ; TODO
+pdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1";
 
 ; Chamber index for each plane.
 pdc_chamber_planes = 1, 1, 1, 1, 1, 1
@@ -26,29 +26,33 @@ pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
             0.02, 0.02, 0.02, 0.02, 0.02, 0.02
 
 ; Wire velocity corrections.
-pdc_wire_velocity  = 13.0  ; TODO
+pdc_wire_velocity  = 12.0;
 pdc_central_time   = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
                      0, 0, 0, 0, 0, 0
 pdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
                      0, 0, 0, 0, 0, 0
+;pdc_readoutLR = -1.0, 1.0, -1.0, -1.0, 1.0, -1.0
+;                 1.0, -1.0, 1.0, 1.0, -1.0, 1.0
+;pdc_readoutTB = 1.0, -1.0, 1.0, -1.0, 1.0, -1.0
+;                -1.0, 1.0, -1.0, 1.0, -1.0, 1.0             
 
 ; CHAMBER POSITION PARAMETERS
 
 ; x, y and z position of center for each wire chamber in cm.
 ; From survey C1771.
-pdc_xcenter = -0.036, 0.008  ; TODO - final survey
-pdc_ycenter =  0.019, 0.013  ; TODO - final survey
-pdc_1_zpos = -40 - 0.656  ; TODO - final survey
-pdc_2_zpos =  40 - 0.668  ; TODO - final survey
+pdc_xcenter = -0.036, 0.008 ;
+pdc_ycenter =  0.019, 0.013 ;
+pdc_1_zpos = -40 - 0.656 ;
+pdc_2_zpos =  40 - 0.668 ;
 
 ; Roll, pitch and yaw for each wire chamber in degrees.
 ; From survey C1771.
-pdc_1_roll = 180.0  ; TODO - survey
-pdc_2_roll = 180.0  ; TODO - survey
-pdc_1_pitch = -0.006  ; TODO - final survey
-pdc_2_pitch =  0.001  ; TODO - final survey
-pdc_1_yaw = -0.006  ; TODO - final survey
-pdc_2_yaw = -0.035  ; TODO - final survey
+pdc_1_roll = 180.0 ;
+pdc_2_roll = 180.0 ; 
+pdc_1_pitch = -0.006 ; 
+pdc_2_pitch =  0.001 ; 
+pdc_1_yaw = -0.006 ; 
+pdc_2_yaw = -0.035 ; 
 
 
 ; PLANE POSITION PARAMETERS
@@ -66,6 +70,35 @@ pdc_pitch = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
 ; Order in which wires are counted in each plane.
 pdc_wire_counting = 0, 0, 0, 0, 0, 0
                     0, 0, 0, 0, 0, 0
+
+; x position in cm defaults to global
+pdc_xpos = pdc_xcenter[0]-0.0045
+           pdc_xcenter[0]-0.028
+           pdc_xcenter[0]+0.0105
+           pdc_xcenter[0]+0.0085
+           pdc_xcenter[0]-0.007
+           pdc_xcenter[0]-0.035
+           pdc_xcenter[1]-0.036
+           pdc_xcenter[1]+0.036
+           pdc_xcenter[1]+0.0015
+           pdc_xcenter[1]-0.0025
+           pdc_xcenter[1]-0.0045
+           pdc_xcenter[1]+0.012
+           
+; y position in cm defaults to global
+pdc_ypos = pdc_ycenter[0]-0.007
+           pdc_ycenter[0]-0.0205
+           pdc_ycenter[0]
+           pdc_ycenter[0]
+           pdc_ycenter[0]+0.0045
+           pdc_ycenter[0]+0.022
+           pdc_ycenter[1]-0.019
+           pdc_ycenter[1]+0.0245
+           pdc_ycenter[1]
+           pdc_ycenter[1]
+           pdc_ycenter[1]+0.0035
+           pdc_ycenter[1]-0.006
+
 
 ; z position in cm of each plane measured from focal plane.
 ; From technical drawings.
