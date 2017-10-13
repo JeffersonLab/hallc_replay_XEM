@@ -26,22 +26,24 @@ pdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
             0.02, 0.02, 0.02, 0.02, 0.02, 0.02
 
 ; Wire velocity corrections.
-pdc_wire_velocity  = 12.0;
-pdc_central_time   = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
+pdc_wire_velocity  = 12.0; -this should be checked (old HMS value for now)
+pdc_central_time   = 0, 0, 0, 0, 0, 0  ; -not used in new SHMS chambers
                      0, 0, 0, 0, 0, 0
-pdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; TODO - no correction for now
+pdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; -not used in new SHMS chambers
                      0, 0, 0, 0, 0, 0
-;pdc_readoutLR = -1.0, 1.0, -1.0, -1.0, 1.0, -1.0
-;                 1.0, -1.0, 1.0, 1.0, -1.0, 1.0
-;pdc_readoutTB = 1.0, -1.0, 1.0, -1.0, 1.0, -1.0
-;                -1.0, 1.0, -1.0, 1.0, -1.0, 1.0             
+
+pdc_readoutLR = -1.0, 1.0, -1.0, -1.0, 1.0, -1.0
+                 1.0, -1.0, 1.0, 1.0, -1.0, 1.0
+pdc_readoutTB = 1.0, -1.0, 1.0, -1.0, 1.0, -1.0
+                -1.0, 1.0, -1.0, 1.0, -1.0, 1.0             
 
 ; CHAMBER POSITION PARAMETERS
 
 ; x, y and z position of center for each wire chamber in cm.
 ; From survey C1771.
 pdc_xcenter = -0.036, 0.008 ;
-pdc_ycenter =  0.019, 0.013 ;
+pdc_ycenter = 0.019, 0.013 ;
+
 pdc_1_zpos = -40 - 0.656 ;
 pdc_2_zpos =  40 - 0.668 ;
 
@@ -98,7 +100,6 @@ pdc_ypos = pdc_ycenter[0]-0.007
            pdc_ycenter[1]
            pdc_ycenter[1]+0.0035
            pdc_ycenter[1]-0.006
-
 
 ; z position in cm of each plane measured from focal plane.
 ; From technical drawings.
