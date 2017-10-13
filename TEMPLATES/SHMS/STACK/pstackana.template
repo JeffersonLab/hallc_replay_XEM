@@ -48,11 +48,6 @@ shmsDC2v1Planes5     Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hits_v1.
 shmsDC2v2Planes5     Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
 shmsDC2x2Planes5     Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
 
-SHMS Calorimeter Efficiencies
-
-shmsPreShower	     Counts: {P.cal.stat_trksum1} eff : {P.cal.stat_hitsum1 / P.cal.stat_trksum1}
-shmsShowerArray	     Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_array / P.cal.stat_trksum_array}
-
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************
@@ -83,20 +78,21 @@ SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+
 E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
 HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}
 
+**DRIFTCHAMBER**
 I'm pretty sure that these are the "raw" number of counts. "Raw" means one or more hits per dc plane.
-shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed} 		;eff:
-shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}		;eff:
-shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}		;eff:
-shmsDC1_1hit_v1: {shmsDC1_1hit_v1.npassed}		;eff:
-shmsDC1_1hit_v2: {shmsDC1_1hit_v2.npassed}		;eff:
-shmsDC1_1hit_x2: {shmsDC1_1hit_x2.npassed}		;eff:
+shmsDC1_1hit_x1: {shmsDC1_1hit_x1.npassed} 		
+shmsDC1_1hit_u1: {shmsDC1_1hit_u1.npassed}		
+shmsDC1_1hit_u2: {shmsDC1_1hit_u2.npassed}		
+shmsDC1_1hit_v1: {shmsDC1_1hit_v1.npassed}		
+shmsDC1_1hit_v2: {shmsDC1_1hit_v2.npassed}		
+shmsDC1_1hit_x2: {shmsDC1_1hit_x2.npassed}		
 
-shmsDC2_1hit_x1: {shmsDC2_1hit_x1.npassed}		;eff:
-shmsDC2_1hit_u1: {shmsDC2_1hit_u1.npassed}		;eff:
-shmsDC2_1hit_u2: {shmsDC2_1hit_u2.npassed}		;eff:
-shmsDC2_1hit_v1: {shmsDC2_1hit_v1.npassed}		;eff:
-shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}		;eff:
-shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}		;eff:
+shmsDC2_1hit_x1: {shmsDC2_1hit_x1.npassed}		
+shmsDC2_1hit_u1: {shmsDC2_1hit_u1.npassed}		
+shmsDC2_1hit_u2: {shmsDC2_1hit_u2.npassed}		
+shmsDC2_1hit_v1: {shmsDC2_1hit_v1.npassed}		
+shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}		
+shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}		
 
 "Good" means one or two hits per dc plane.
 goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(shms_trigs.npassed+.0001):%5.3f}
@@ -113,9 +109,9 @@ goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(shms_trigs.npas
 goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(shms_trigs.npassed+.0001):%5.3f}
 goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(shms_trigs.npassed+.0001):%5.3f}
 
-goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(shms_trigs.npassed+.0001):%5.3f}
+goodHDC1:	     {goodHDC1.npassed}		eff : {goodHDC1.npassed/(shms_trigs.npassed+.0001):%5.3f}
+goodHDC2:	     {goodHDC2.npassed}		eff : {goodHDC2.npassed/(shms_trigs.npassed+.0001):%5.3f}
+bothgood:	     {bothGood.npassed}		eff : {bothGood.npassed/(shms_trigs.npassed+.0001):%5.3f}
 
 realhdc1x1:	     {realhdc1x1.npassed}
 realhdc1u2:	     {realhdc1u2.npassed}
@@ -132,7 +128,6 @@ realhdc2v2:	     {realhdc2v2.npassed}
 realhdc2x2:	     {realhdc2x2.npassed}
     	   	       
 **HODOSCOPE**
-
 "Any" means one or more hits per scint plane.
 anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(shms_trigs.npassed+.0001):%5.3f}	BAD = ??
 anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(shms_trigs.npassed+.0001):%5.3f}
@@ -147,8 +142,6 @@ goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(shms_trigs.npassed+.0001
 goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(shms_trigs.npassed+.0001):%5.3f}
 goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(shms_trigs.npassed+.0001):%5.3f}
 goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-**TRACKING**
 
 pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(shms_trigs.npassed+.0001):%5.3f} BAD = ??
 pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(shms_trigs.npassed+.0001):%5.3f} 
@@ -181,7 +174,7 @@ pCleanTrack_cal_elec : {pCleanTrack_cal_elec.npassed}
 p1hit1_cal_elec	     : {p1hit1_cal_elec.npassed}
 
 ************
-* Cerenkov *
+* HGC Cerenkov *
 ************
 
 Good Track Requirements:
@@ -190,33 +183,41 @@ Good Track Requirements:
    3. {phgcer_beta_min:%5.3f} < beta < {phgcer_beta_max:%5.3f}
    4. {phgcer_enorm_min:%5.3f} < calorimeter energy < {phgcer_enorm_max:%5.3f}
 Threshold set at {phgcer_npe_thresh:%4.1f}
-
 *HGC EFF* 4PMTs
-SHMS HGC Region 1 efficiency: {SHMS_hgcer_track_matched_region_1.npassed}/{SHMS_hgcer_track_fired_region_1.npassed} = {SHMS_hgcer_track_matched_region_1.npassed} of {SHMS_hgcer_track_fired_region_1.npassed} of good tracks.
-SHMS HGC Region 2 efficiency: {SHMS_hgcer_track_matched_region_2.npassed}/{SHMS_hgcer_track_fired_region_2.npassed} = {SHMS_hgcer_track_matched_region_2.npassed} of {SHMS_hgcer_track_fired_region_2.npassed} of good tracks.
-SHMS HGC Region 3 efficiency: {SHMS_hgcer_track_matched_region_3.npassed}/{SHMS_hgcer_track_fired_region_3.npassed} = {SHMS_hgcer_track_matched_region_3.npassed} of {SHMS_hgcer_track_fired_region_3.npassed} of good tracks.
-SHMS HGC Region 4 efficiency: {SHMS_hgcer_track_matched_region_4.npassed}/{SHMS_hgcer_track_fired_region_4.npassed} = {SHMS_hgcer_track_matched_region_4.npassed} of {SHMS_hgcer_track_fired_region_4.npassed} of good tracks.
-Overall HGC Efficiency: {SHMS_hgcer_track_matched_tot.npassed}/{SHMS_hgcer_track_fired_tot.npassed} = {SHMS_hgcer_track_matched_tot.npassed} of {SHMS_hgcer_track_fired_tot.npassed} of good tracks.
+SHMS HGC Region 1 efficiency: {SHMS_hgcer_track_fired_region_1.npassed/SHMS_hgcer_track_matched_region_1.npassed} = {SHMS_hgcer_track_fired_region_1.npassed} of {SHMS_hgcer_track_matched_region_1.npassed} good tracks.
+SHMS HGC Region 2 efficiency: {SHMS_hgcer_track_fired_region_2.npassed/SHMS_hgcer_track_matched_region_2.npassed} = {SHMS_hgcer_track_fired_region_2.npassed} of {SHMS_hgcer_track_matched_region_2.npassed} good tracks.
+SHMS HGC Region 3 efficiency: {SHMS_hgcer_track_fired_region_3.npassed/SHMS_hgcer_track_matched_region_3.npassed} = {SHMS_hgcer_track_fired_region_3.npassed} of {SHMS_hgcer_track_matched_region_3.npassed} good tracks.
+SHMS HGC Region 4 efficiency: {SHMS_hgcer_track_fired_region_4.npassed/SHMS_hgcer_track_matched_region_4.npassed} = {SHMS_hgcer_track_fired_region_4.npassed} of {SHMS_hgcer_track_matched_region_4.npassed} good tracks.
+Overall HGC Efficiency: {SHMS_hgcer_track_fired_tot.npassed/SHMS_hgcer_track_matched_tot.npassed} = {SHMS_hgcer_track_fired_tot.npassed} of {SHMS_hgcer_track_matched_tot.npassed} good tracks.
 
-***************************
-* NGC and AEROGEL DET need more beginning info:
-***************************
+************
+* NGC Cerenkov *
+************
+Good Track Requirements:
+   1. Only one track found in the focal plane
+   2. chisq/dof < {pngcer_red_chi2_max:%5.1f}
+   3. {pngcer_beta_min:%5.3f} < beta < {pngcer_beta_max:%5.3f}
+   4. {pngcer_enorm_min:%5.3f} < calorimeter energy < {pngcer_enorm_max:%5.3f}
+Threshold set at {pngcer_npe_thresh:%4.1f}
 *NGC EFF* 4PMTs
-SHMS NGC Region 1 efficiency: {SHMS_ngcer_track_matched_region_1.npassed}/{SHMS_ngcer_track_fired_region_1.npassed} = {SHMS_ngcer_track_matched_region_1.npassed} of {SHMS_ngcer_track_fired_region_1.npassed} of good tracks.
-SHMS NGC Region 2 efficiency: {SHMS_ngcer_track_matched_region_2.npassed}/{SHMS_ngcer_track_fired_region_2.npassed} = {SHMS_ngcer_track_matched_region_2.npassed} of {SHMS_ngcer_track_fired_region_2.npassed} of good tracks.
-SHMS NGC Region 3 efficiency: {SHMS_ngcer_track_matched_region_3.npassed}/{SHMS_ngcer_track_fired_region_3.npassed} = {SHMS_ngcer_track_matched_region_3.npassed} of {SHMS_ngcer_track_fired_region_3.npassed} of good tracks.
-SHMS NGC Region 4 efficiency: {SHMS_ngcer_track_matched_region_4.npassed}/{SHMS_ngcer_track_fired_region_4.npassed} = {SHMS_ngcer_track_matched_region_4.npassed} of {SHMS_ngcer_track_fired_region_4.npassed} of good tracks.
-Overall NGC Efficiency: {SHMS_ngcer_track_matched_tot.npassed}/{SHMS_ngcer_track_fired_tot.npassed} = {SHMS_ngcer_track_matched_tot.npassed} of {SHMS_ngcer_track_fired_tot.npassed} of good tracks.
+SHMS NGC Region 1 efficiency: {SHMS_ngcer_track_fired_region_1.npassed/SHMS_ngcer_track_matched_region_1.npassed} = {SHMS_ngcer_track_fired_region_1.npassed} of {SHMS_ngcer_track_matched_region_1.npassed} good tracks.
+SHMS NGC Region 2 efficiency: {SHMS_ngcer_track_fired_region_2.npassed/SHMS_ngcer_track_matched_region_2.npassed} = {SHMS_ngcer_track_fired_region_2.npassed} of {SHMS_ngcer_track_matched_region_2.npassed} good tracks.
+SHMS NGC Region 3 efficiency: {SHMS_ngcer_track_fired_region_3.npassed/SHMS_ngcer_track_matched_region_3.npassed} = {SHMS_ngcer_track_fired_region_3.npassed} of {SHMS_ngcer_track_matched_region_3.npassed} good tracks.
+SHMS NGC Region 4 efficiency: {SHMS_ngcer_track_fired_region_4.npassed/SHMS_ngcer_track_matched_region_4.npassed} = {SHMS_ngcer_track_fired_region_4.npassed} of {SHMS_ngcer_track_matched_region_4.npassed} good tracks.
+Overall NGC Efficiency: {SHMS_ngcer_track_fired_tot.npassed/SHMS_ngcer_track_matched_tot.npassed} = {SHMS_ngcer_track_fired_tot.npassed} of {SHMS_ngcer_track_matched_tot.npassed} good tracks.
 
+************
+* Aerogel Cerenkov * Still need to add requirements for what constitutes a good track.
+************
 *AEROGEL EFF* 7 PMT pairs
-SHMS AERO Region 1 efficiency: {SHMS_aero_track_matched_region_1.npassed}/{SHMS_aero_track_fired_region_1.npassed} = {SHMS_aero_track_matched_region_1.npassed} of {SHMS_aero_track_fired_region_1.npassed} of good tracks.
-SHMS AERO Region 2 efficiency: {SHMS_aero_track_matched_region_2.npassed}/{SHMS_aero_track_fired_region_2.npassed} = {SHMS_aero_track_matched_region_2.npassed} of {SHMS_aero_track_fired_region_2.npassed} of good tracks.
-SHMS AERO Region 3 efficiency: {SHMS_aero_track_matched_region_3.npassed}/{SHMS_aero_track_fired_region_3.npassed} = {SHMS_aero_track_matched_region_3.npassed} of {SHMS_aero_track_fired_region_3.npassed} of good tracks.
-SHMS AERO Region 4 efficiency: {SHMS_aero_track_matched_region_4.npassed}/{SHMS_aero_track_fired_region_4.npassed} = {SHMS_aero_track_matched_region_4.npassed} of {SHMS_aero_track_fired_region_4.npassed} of good tracks.
-SHMS AERO Region 5 efficiency: {SHMS_aero_track_matched_region_5.npassed}/{SHMS_aero_track_fired_region_5.npassed} = {SHMS_aero_track_matched_region_5.npassed} of {SHMS_aero_track_fired_region_5.npassed} of good tracks.
-SHMS AERO Region 6 efficiency: {SHMS_aero_track_matched_region_6.npassed}/{SHMS_aero_track_fired_region_6.npassed} = {SHMS_aero_track_matched_region_6.npassed} of {SHMS_aero_track_fired_region_6.npassed} of good tracks.
-SHMS AERO Region 7 efficiency: {SHMS_aero_track_matched_region_7.npassed}/{SHMS_aero_track_fired_region_7.npassed} = {SHMS_aero_track_matched_region_7.npassed} of {SHMS_aero_track_fired_region_7.npassed} of good tracks.
-Overall AERO Efficiency: {SHMS_aero_track_matched_tot.npassed}/{SHMS_aero_track_fired_tot.npassed} = {SHMS_aero_track_matched_tot.npassed} of {SHMS_aero_track_fired_tot.npassed} of good tracks.
+SHMS AERO Region 1 efficiency: {SHMS_aero_track_fired_region_1.npassed/SHMS_aero_track_matched_region_1.npassed} = {SHMS_aero_track_fired_region_1.npassed} of {SHMS_aero_track_matched_region_1.npassed} good tracks.
+SHMS AERO Region 2 efficiency: {SHMS_aero_track_fired_region_2.npassed/SHMS_aero_track_matched_region_2.npassed} = {SHMS_aero_track_fired_region_2.npassed} of {SHMS_aero_track_matched_region_2.npassed} good tracks.
+SHMS AERO Region 3 efficiency: {SHMS_aero_track_fired_region_3.npassed/SHMS_aero_track_matched_region_3.npassed} = {SHMS_aero_track_fired_region_3.npassed} of {SHMS_aero_track_matched_region_3.npassed} good tracks.
+SHMS AERO Region 4 efficiency: {SHMS_aero_track_fired_region_4.npassed/SHMS_aero_track_matched_region_4.npassed} = {SHMS_aero_track_fired_region_4.npassed} of {SHMS_aero_track_matched_region_4.npassed} good tracks.
+SHMS AERO Region 5 efficiency: {SHMS_aero_track_fired_region_5.npassed/SHMS_aero_track_matched_region_5.npassed} = {SHMS_aero_track_fired_region_5.npassed} of {SHMS_aero_track_matched_region_5.npassed} good tracks.
+SHMS AERO Region 6 efficiency: {SHMS_aero_track_fired_region_6.npassed/SHMS_aero_track_matched_region_6.npassed} = {SHMS_aero_track_fired_region_6.npassed} of {SHMS_aero_track_matched_region_6.npassed} good tracks.
+SHMS AERO Region 7 efficiency: {SHMS_aero_track_fired_region_7.npassed/SHMS_aero_track_matched_region_7.npassed} = {SHMS_aero_track_fired_region_7.npassed} of {SHMS_aero_track_matched_region_7.npassed} good tracks.
+Overall AERO Efficiency: {SHMS_aero_track_fired_tot.npassed/SHMS_aero_track_matched_tot.npassed} = {SHMS_aero_track_matched_tot.npassed} of {SHMS_aero_track_matched_tot.npassed} good tracks.
 
 ****************************
 * Calorimeter Efficiencies *
@@ -227,11 +228,10 @@ and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
 
 Events examined = strig       = {shms_trigs.npassed}
 Tracks found    = scleantrack = {pCleanTrack.npassed}
-Tracks passing chisquared cut = {pstat_cal_numevents:%7d} (fix here)
+//Tracks passing chisquared cut = {pstat_cal_numevents:%7d} (in previous template, do we need this here?)
 
-Block		eff		Hits
--------------------------------------------------------------------------------------------------------
-;Needs to be written inline.
+shmsPreShower	     Counts: {P.cal.stat_trksum1} eff : {P.cal.stat_hitsum1 / P.cal.stat_trksum1}
+shmsShowerArray	     Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_array / P.cal.stat_trksum_array}
 
 **************************
 * Hodoscope Efficiencies * 
@@ -241,7 +241,7 @@ with chisquared/dof < {pstat_maxchisq:%5.1f} came within {pstat_slop:%4.1f} cm o
 
 Events examined = strig       = {shms_trigs.npassed}
 Tracks found    = scleantrack = {pCleanTrack.npassed}
-Tracks passing chisquared cut = {pstat_numevents} (fix here)
+//Tracks passing chisquared cut = {pstat_numevents} (in previous template, do we still need this?)
 
 *HODO EFF* Need to checkout hodoeff module.
 Scint		Pos eff		Neg eff		OR eff		AND eff		 Hits
