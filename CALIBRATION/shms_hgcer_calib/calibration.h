@@ -15,6 +15,11 @@
 #include <TH1.h>
 #include <TH2.h>
 
+const Int_t        fhgc_pmts = 4;
+const Int_t        fngc_pmts = 4;
+const Double_t     fhgc_zpos = 156.27;
+const Double_t     fngc_zpos = -89.1;
+
 // Header file for the classes stored in the TTree if any.
 
 // Fixed size dimensions of array or collections stored in the TTree if any.
@@ -22,7 +27,6 @@
 class calibration : public TSelector {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
-   Int_t           fNumberOfEvents;
    Bool_t          fFullRead;
    Bool_t          fFullShow;
    Bool_t          fNGC;
@@ -30,18 +34,12 @@ public :
    Bool_t          fCut;
    Bool_t          fPions;
 
-   // Declaration of detector specific constants
-   Int_t           fhgc_pmts;
-   Double_t        fhgc_zpos;
-   Int_t           fngc_pmts;
-   Double_t        fngc_zpos;
-
    // Declaration of histograms
-   TH1F *fPulseInt[4];
-   TH1F *fPulseInt_quad[4][4];
-   TH2F *fCut_everything;
-   TH2F *fCut_electron;
-   TH2F *fCut_pion;
+   TH1F          **fPulseInt;
+   TH1F         ***fPulseInt_quad;
+   TH2F           *fCut_everything;
+   TH2F           *fCut_electron;
+   TH2F           *fCut_pion;
 
    // Declaration of histograms used in fitting/analysis
    TH1F *fscaled[4];
@@ -756,6 +754,18 @@ public :
    Double_t        P_dc_xp_fp;
    Double_t        P_dc_y_fp;
    Double_t        P_dc_yp_fp;
+   Double_t        P_gtr_beta;
+   Double_t        P_gtr_dp;
+   Double_t        P_gtr_index;
+   Double_t        P_gtr_ok;
+   Double_t        P_gtr_p;
+   Double_t        P_gtr_ph;
+   Double_t        P_gtr_px;
+   Double_t        P_gtr_py;
+   Double_t        P_gtr_pz;
+   Double_t        P_gtr_th;
+   Double_t        P_gtr_x;
+   Double_t        P_gtr_y;
    Double_t        P_hgcer_npeSum;
    Double_t        P_hgcer_totNumGoodAdcHits;
    Double_t        P_hgcer_totNumTracksFired;
@@ -1571,6 +1581,18 @@ public :
    TBranch        *b_P_dc_xp_fp;   //!
    TBranch        *b_P_dc_y_fp;   //!
    TBranch        *b_P_dc_yp_fp;   //!
+   TBranch        *b_P_gtr_beta;   //!
+   TBranch        *b_P_gtr_dp;   //!
+   TBranch        *b_P_gtr_index;   //!
+   TBranch        *b_P_gtr_ok;   //!
+   TBranch        *b_P_gtr_p;   //!
+   TBranch        *b_P_gtr_ph;   //!
+   TBranch        *b_P_gtr_px;   //!
+   TBranch        *b_P_gtr_py;   //!
+   TBranch        *b_P_gtr_pz;   //!
+   TBranch        *b_P_gtr_th;   //!
+   TBranch        *b_P_gtr_x;   //!
+   TBranch        *b_P_gtr_y;   //!
    TBranch        *b_P_hgcer_npeSum;   //!
    TBranch        *b_P_hgcer_totNumGoodAdcHits;   //!
    TBranch        *b_P_hgcer_totNumTracksFired;   //!
@@ -1697,7 +1719,7 @@ public :
    TBranch        *b_Event_Branch_fEvtHdr_fTargetPol;   //!
    TBranch        *b_Event_Branch_fEvtHdr_fRun;   //!
    
- calibration(TTree * /*tree*/ =0) : fChain(0), fNumberOfEvents(0), fhgc_pmts(4), fhgc_zpos(156.27), fngc_pmts(4), fngc_zpos(-89.1) { }
+ calibration(TTree * /*tree*/ =0) : fChain(0) {fPulseInt = 0, fPulseInt_quad = 0, fCut_everything = 0, fCut_electron = 0, fCut_pion = 0, fFullRead = kFALSE, fFullShow = kFALSE, fNGC = kFALSE, fTrack = kFALSE, fCut = kFALSE, fPions = kFALSE;}
    virtual ~calibration() { }
    virtual Int_t   Version() const { return 2; }
    virtual void    Begin(TTree *tree);
@@ -2421,6 +2443,18 @@ void calibration::Init(TTree *tree)
    fChain->SetBranchAddress("P.dc.xp_fp", &P_dc_xp_fp, &b_P_dc_xp_fp);
    fChain->SetBranchAddress("P.dc.y_fp", &P_dc_y_fp, &b_P_dc_y_fp);
    fChain->SetBranchAddress("P.dc.yp_fp", &P_dc_yp_fp, &b_P_dc_yp_fp);
+   fChain->SetBranchAddress("P.gtr.beta", &P_gtr_beta, &b_P_gtr_beta);
+   fChain->SetBranchAddress("P.gtr.dp", &P_gtr_dp, &b_P_gtr_dp);
+   fChain->SetBranchAddress("P.gtr.index", &P_gtr_index, &b_P_gtr_index);
+   fChain->SetBranchAddress("P.gtr.ok", &P_gtr_ok, &b_P_gtr_ok);
+   fChain->SetBranchAddress("P.gtr.p", &P_gtr_p, &b_P_gtr_p);
+   fChain->SetBranchAddress("P.gtr.ph", &P_gtr_ph, &b_P_gtr_ph);
+   fChain->SetBranchAddress("P.gtr.px", &P_gtr_px, &b_P_gtr_px);
+   fChain->SetBranchAddress("P.gtr.py", &P_gtr_py, &b_P_gtr_py);
+   fChain->SetBranchAddress("P.gtr.pz", &P_gtr_pz, &b_P_gtr_pz);
+   fChain->SetBranchAddress("P.gtr.th", &P_gtr_th, &b_P_gtr_th);
+   fChain->SetBranchAddress("P.gtr.x", &P_gtr_x, &b_P_gtr_x);
+   fChain->SetBranchAddress("P.gtr.y", &P_gtr_y, &b_P_gtr_y);
    fChain->SetBranchAddress("P.hgcer.npeSum", &P_hgcer_npeSum, &b_P_hgcer_npeSum);
    fChain->SetBranchAddress("P.hgcer.totNumGoodAdcHits", &P_hgcer_totNumGoodAdcHits, &b_P_hgcer_totNumGoodAdcHits);
    fChain->SetBranchAddress("P.hgcer.totNumTracksFired", &P_hgcer_totNumTracksFired, &b_P_hgcer_totNumTracksFired);
@@ -2557,6 +2591,31 @@ Bool_t calibration::Notify()
    // user if needed. The return value is currently not used.
 
    return kTRUE;
+}
+
+
+//Poisson distribution is used to remove background from larger values of NPE
+Double_t poisson(Double_t *x, Double_t *par)
+{
+  Double_t result1 = (par[1]*pow(par[0],x[0])*exp(-par[0]))/(tgamma(x[0]+1));
+  return result1;
+}
+//Gaussian distribution is used to find the mean of the SPE and determine spacing between subsequent NPE
+Double_t gauss(Double_t *x, Double_t *par)
+{
+  Double_t result1 = par[0]*exp((-0.5)*(pow((x[0] - par[1]),2)/pow((par[2]),2)));
+  Double_t result2 = par[3]*exp((-0.5)*(pow((x[0] - par[4]),2)/pow((par[5]),2)));
+  Double_t result3 = par[6]*exp((-0.5)*(pow((x[0] - par[7]),2)/pow((par[8]),2)));
+  Double_t result4 = par[9]*exp((-0.5)*(pow((x[0] - par[10]),2)/pow((par[11]),2)));
+  Double_t result5 = par[12]*exp((-0.5)*(pow((x[0] - par[13]),2)/pow((par[14]),2)));
+  return result1 + result2 + result3 + result4 + result5;
+}
+
+//A simple linear equation is used to determine how linear the means of the NPE are
+Double_t linear(Double_t *x, Double_t *par)
+{
+  Double_t result1 = par[0]*x[0] + par[1];
+  return result1;
 }
 
 #endif // #ifdef calibration_cxx
