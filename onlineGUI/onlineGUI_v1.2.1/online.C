@@ -980,8 +980,13 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
 
 void OnlineGUI::DoDraw()
 {
+<<<<<<< Updated upstream
     // The main Drawing Routine.
 
+=======
+  // The main Drawing Routine.
+ 
+>>>>>>> Stashed changes
 #ifdef INTERNALSTYLE
     gStyle->SetOptStat(1110);
     gStyle->SetStatFontSize(0.1);
@@ -1002,6 +1007,7 @@ void OnlineGUI::DoDraw()
         gStyle->SetOptLogz(0);
     }
 #ifdef INTERNALSTYLE
+<<<<<<< Updated upstream
     gStyle->SetTitleH(0.10);
     gStyle->SetTitleW(0.40);
     //   gStyle->SetLabelSize(0.10,"X");
@@ -1013,6 +1019,21 @@ void OnlineGUI::DoDraw()
     gStyle->SetNdivisions(404,"Y");
     gStyle->SetPalette(1);
     gROOT->ForceStyle();
+=======
+  gStyle->SetTitleH(0.10);
+  gStyle->SetTitleW(0.40);
+  //gStyle->SetLabelSize(0.10,"X");
+  //gStyle->SetLabelSize(0.10,"Y");
+  gStyle->SetLabelSize(0.05,"X");
+  gStyle->SetLabelSize(0.05,"Y");
+  gStyle->SetTitleSize(0.045,"X");
+  gStyle->SetTitleSize(0.045,"Y");
+  gStyle->SetPadLeftMargin(0.14);
+  gStyle->SetNdivisions(505,"X");
+  gStyle->SetNdivisions(404,"Y");
+  gStyle->SetPalette(1);
+  gROOT->ForceStyle();
+>>>>>>> Stashed changes
 #endif
 
     // Determine the dimensions of the canvas..
