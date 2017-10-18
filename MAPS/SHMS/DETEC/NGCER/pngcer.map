@@ -6,7 +6,7 @@ DETECTOR=21
 ROC=2
 
 SLOT=13
-  12,   1,   1,   0  ! pNGCER01
-  13,   1,   2,   0  ! pNGCER02
-  14,   1,   3,   0  ! pNGCER03
-  15,   1,   4,   0  ! pNGCER04
+   8,   1,   1,   0  ! pNGCER01
+   9,   1,   2,   0  ! pNGCER02
+  10,   1,   3,   0  ! pNGCER03
+  11,   1,   4,   0  ! pNGCER04

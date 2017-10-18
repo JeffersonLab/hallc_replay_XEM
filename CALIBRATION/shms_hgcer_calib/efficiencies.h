@@ -12,8 +12,11 @@
 #include <TChain.h>
 #include <TFile.h>
 #include <TSelector.h>
+#include <TProofServ.h>
 #include <TH1.h>
 #include <TH2.h>
+
+const Int_t hgc_pmts = 4;
 
 // Header file for the classes stored in the TTree if any.
 
@@ -22,7 +25,6 @@
 class efficiencies : public TSelector {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
-   Int_t           fNumberOfEvents;
    Bool_t          fShowall;
    Bool_t          fChercut;
    Bool_t          fNGC;
@@ -30,12 +32,12 @@ public :
    Float_t         fNGC_cut;
 
    // Declaration of histograms
-   TH1F           *fNPE_eNoDet[4];
-   TH1F           *fNPE_eDet[4];
+   TH1F           **fNPE_eNoDet;
+   TH1F           **fNPE_eDet;
    TH1F           *fNPE_Full_eNoDet;
    TH1F           *fNPE_Full_eDet;
-   TH1F           *fNPE_piNoDet[4];
-   TH1F           *fNPE_piDet[4];
+   TH1F           **fNPE_piNoDet;
+   TH1F           **fNPE_piDet;
    TH1F           *fNPE_Full_piNoDet;
    TH1F           *fNPE_Full_piDet;
    TH1F           *fBeta_Cut;
@@ -45,9 +47,6 @@ public :
    TH2F           *fFly_Pr_Full;
    TH2F           *fFly_Pr_eCut;
    TH2F           *fFly_Pr_piCut;
-
-   // Declaration of detector specific constants
-   Int_t           fhgc_pmts;
 
    // Declaration of leaf types
    Int_t           Ndata_P_aero_goodNegAdcPed;
@@ -1702,7 +1701,7 @@ public :
    TBranch        *b_Event_Branch_fEvtHdr_fTargetPol;   //!
    TBranch        *b_Event_Branch_fEvtHdr_fRun;   //!
 
- efficiencies(TTree * /*tree*/ =0) : fChain(0), fNumberOfEvents(0), fhgc_pmts(4) { }
+ efficiencies(TTree *  =0) : fChain(0) {fNPE_eNoDet = 0, fNPE_eDet = 0, fNPE_piNoDet = 0, fNPE_piDet = 0, fNPE_Full_eNoDet = 0, fNPE_Full_eDet = 0, fNPE_Full_piNoDet = 0, fNPE_Full_piDet = 0, fBeta_Cut = 0, fBeta_Full = 0, fTiming_Cut = 0, fTiming_Full = 0, fFly_Pr_Full = 0, fFly_Pr_eCut = 0, fFly_Pr_piCut = 0, fShowall = kFALSE, fChercut = kFALSE, fNGC = kFALSE, fHGC_cut = 2.0, fNGC_cut = 2.0;}
    virtual ~efficiencies() { }
    virtual Int_t   Version() const { return 2; }
    virtual void    Begin(TTree *tree);
