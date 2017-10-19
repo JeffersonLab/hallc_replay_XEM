@@ -109,6 +109,8 @@ variable 6 7 1 .ASUM.scaler HMS ASUM
 variable 6 7 2 .ASUM.scalerRate HMS ASUM
 variable 6 27 1 .BCM1.scaler bcm1
 variable 6 27 2 .BCM1.scalerRate bcm1
+variable 6 27 3 .BCM1.scalerCurrent bcm1
+variable 6 27 4 .BCM1.scalerCharge bcm1
 variable 0 14 1 .hod.1x14.posScaler HMS 1X+ paddle 14
 variable 0 14 2 .hod.1x14.posScalerRate HMS 1X+ paddle 14
 variable 2 17 1 .hod.2x3.negScaler HMS 2X- paddle 3
@@ -147,6 +149,8 @@ variable 2 12 1 .hod.2x10.posScaler HMS 2X+ paddle 10
 variable 2 12 2 .hod.2x10.posScalerRate HMS 2X+ paddle 10
 variable 6 25 1 .BCM4A.scaler bcm4a
 variable 6 25 2 .BCM4A.scalerRate bcm4a
+variable 6 25 3 .BCM4A.scalerCurrent bcm4a
+variable 6 25 4 .BCM4A.scalerCharge bcm4a
 variable 0 31 1 .hod.1x16.negScaler HMS 1X- paddle 16
 variable 0 31 2 .hod.1x16.negScalerRate HMS 1X- paddle 16
 variable 0 15 1 .hod.1x16.posScaler HMS 1X+ paddle 16
@@ -173,6 +177,8 @@ variable 3 1 1 .hod.2y3.posScaler HMS 2Y+ paddle 3
 variable 3 1 2 .hod.2y3.posScalerRate HMS 2Y+ paddle 3
 variable 6 29 1 .BCM17.scaler bcm17
 variable 6 29 2 .BCM17.scalerRate bcm17
+variable 6 29 3 .BCM17.scalerCurrent bcm17
+variable 6 29 4 .BCM17.scalerCharge bcm17
 variable 3 14 1 .Empty_17.scaler Empty
 variable 3 14 2 .Empty_17.scalerRate Empty
 variable 1 6 1 .hod.1y6.posScaler HMS 1Y+ paddle 6
@@ -277,14 +283,19 @@ variable 0 1 1 .hod.1x3.posScaler HMS 1X+ paddle 3
 variable 0 1 2 .hod.1x3.posScalerRate HMS 1X+ paddle 3
 variable 6 26 1 .BCM4B.scaler bcm4b
 variable 6 26 2 .BCM4B.scalerRate bcm4b
+variable 6 26 3 .BCM4B.scalerCurrent bcm4b
+variable 6 26 4 .BCM4B.scalerCharge bcm4b
 variable 2 26 1 .hod.2x13.negScaler HMS 2X- paddle 13
 variable 2 26 2 .hod.2x13.negScalerRate HMS 2X- paddle 13
 variable 0 17 1 .hod.1x3.negScaler HMS 1X- paddle 3
 variable 0 17 2 .hod.1x3.negScalerRate HMS 1X- paddle 3
 variable 6 31 1 .1Mhz.scaler 1MHz
 variable 6 31 2 .1Mhz.scalerRate 1MHz
+variable 6 31 5 .1Mhz.scalerTime 1MHz
 variable 6 30 1 .Unser.scaler Unser
 variable 6 30 2 .Unser.scalerRate Unser
+variable 6 30 3 .Unser.scalerCurrent Unser
+variable 6 30 4 .Unser.scalerCharge Unser
 variable 6 10 1 .DSUM.scaler HMS DSUM
 variable 6 10 2 .DSUM.scalerRate HMS DSUM
 variable 0 12 1 .hod.1x10.posScaler HMS 1X+ paddle 10
@@ -305,6 +316,8 @@ variable 3 12 1 .hod.2y10.posScaler HMS 2Y+ paddle 10
 variable 3 12 2 .hod.2y10.posScalerRate HMS 2Y+ paddle 10
 variable 6 28 1 .BCM2.scaler bcm2
 variable 6 28 2 .BCM2.scalerRate bcm2
+variable 6 28 3 .BCM2.scalerCurrent bcm2
+variable 6 28 4 .BCM2.scalerCharge bcm2
 variable 3 6 1 .hod.2y6.posScaler HMS 2Y+ paddle 6
 variable 3 6 2 .hod.2y6.posScalerRate HMS 2Y+ paddle 6
 variable 3 22 1 .hod.2y6.negScaler HMS 2Y- paddle 6
