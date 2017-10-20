@@ -39,7 +39,7 @@ void replay_phgcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/HGC/phgcer_ptrig.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/HGCER/phgcer_ptrig.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");

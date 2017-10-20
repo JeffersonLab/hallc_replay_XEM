@@ -8,7 +8,7 @@
  * hszumila@jlab.org
  *******************************/
 
-void overlay2(TString hist1name, TString hist2name, TString label1="", TString label2="", Bool_t golden=false,TString samestr=""){
+void overlay2(TString hist1name, TString hist2name, TString label1="", TString label2="", TString htitle="", Bool_t golden=false,TString samestr=""){
   TH1F* H1;
   TH1F* H2;
   
@@ -31,8 +31,8 @@ void overlay2(TString hist1name, TString hist2name, TString label1="", TString l
     H2->SetStats(0);
     H1->SetMinimum(0);
     H2->SetMinimum(0);
-    H1->SetTitle("");
-    H2->SetTitle("");
+    H1->SetTitle(htitle);
+    H2->SetTitle(htitle);
     H1->GetXaxis()->SetTitleSize(0.05);
     H1->GetYaxis()->SetTitleSize(0.045);
     H2->GetXaxis()->SetTitleSize(0.05);
