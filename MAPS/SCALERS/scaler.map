@@ -32,7 +32,7 @@ xscaler-clock HMS slot:7 chan:1 rate:60
 
 xscaler-tabs     SHMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig   5:Triggers
 xscaler-layout   SHMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4    5:8x4
-xscaler-pageslot SHMS 0:slot0   1:slot1   2:slot2   3:slot3   4:slot7  5:slot6
+xscaler-pageslot SHMS 0:page0   1:page1   2:page2   3:page3   4:slot7  5:slot6
 
 xscaler-pagename SHMS 0:'SHMS Hodoscope X1'
 xscaler-pagename SHMS 1:'SHMS Hodoscope Y1'
@@ -41,14 +41,14 @@ xscaler-pagename SHMS 3:'SHMS Hodoscope Y2'
 xscaler-pagename SHMS 4:'SHMS Trigger,BCM and clock'
 xscaler-pagename SHMS 5:'SHMS Triggers'
 
-xscaler-clock SHMS slot:9 chan:1 rate:60
+xscaler-clock SHMS slot:8 chan:1 rate:60
 #####################################################################
 
 # HMS tabs
 # for HMS the crate is 4 
 # let hel=0 always
 
-# desc      hel crate slot start nchan  page long-description
+# desc      hel crate slot start nchan page long-description
 hhod1x1+     0    4     0    0     1    0   HMS 1X+ paddle 1
 hhod1x2+     0    4     0    4     1    0   HMS 1X+ paddle 2
 hhod1x3+     0    4     0    1     1    0   HMS 1X+ paddle 3
@@ -66,7 +66,7 @@ hhod1x14+    0    4     0    14    1    0   HMS 1X+ paddle 14
 hhod1x15+    0    4     0    11    1    0   HMS 1X+ paddle 15
 hhod1x16+    0    4     0    15    1    0   HMS 1X+ paddle 16
 
-# desc      hel crate slot start nchan  long-description
+# desc      hel crate slot start nchan page long-description
 hhod1x1-     0    4     0    16    1    0   HMS 1X- paddle 1
 hhod1x2-     0    4     0    20    1    0   HMS 1X- paddle 2
 hhod1x3-     0    4     0    17    1    0   HMS 1X- paddle 3
@@ -84,116 +84,116 @@ hhod1x14-    0    4     0    30    1    0   HMS 1X- paddle 14
 hhod1x15-    0    4     0    27    1    0   HMS 1X- paddle 15
 hhod1x16-    0    4     0    31    1    0   HMS 1X- paddle 16
 
-# desc      hel crate slot start nchan  long-description
-hhod1y1+     0    4     1    0     1    1  HMS 1Y+ paddle 1
-hhod1y2+     0    4     1    4     1    1  HMS 1Y+ paddle 2
-hhod1y3+     0    4     1    1     1    1  HMS 1Y+ paddle 3
-hhod1y4+     0    4     1    5     1    1  HMS 1Y+ paddle 4
-hhod1y5+     0    4     1    2     1    1  HMS 1Y+ paddle 5
-hhod1y6+     0    4     1    6     1    1  HMS 1Y+ paddle 6
-hhod1y7+     0    4     1    3     1    1  HMS 1Y+ paddle 7
-hhod1y8+     0    4     1    7     1    1  HMS 1Y+ paddle 8
-hhod1y9+     0    4     1    8     1    1  HMS 1Y+ paddle 9
-hhod1y10+    0    4     1    12    1    1  HMS 1Y+ paddle 10
-Empty	     0    4     1    9     1    1  Empty
-Empty        0    4     1    10    1    1  Empty
-Empty        0    4     1    11    1    1  Empty
-Empty	     0    4     1    13    1    1  Empty
-Empty        0    4     1    14    1    1  Empty
-Empty        0    4     1    15    1    1  Empty
+# desc      hel crate slot start nchan page long-description
+hhod1y1+     0    4     1    0     1    1   HMS 1Y+ paddle 1
+hhod1y2+     0    4     1    4     1    1   HMS 1Y+ paddle 2
+hhod1y3+     0    4     1    1     1    1   HMS 1Y+ paddle 3
+hhod1y4+     0    4     1    5     1    1   HMS 1Y+ paddle 4
+hhod1y5+     0    4     1    2     1    1   HMS 1Y+ paddle 5
+hhod1y6+     0    4     1    6     1    1   HMS 1Y+ paddle 6
+hhod1y7+     0    4     1    3     1    1   HMS 1Y+ paddle 7
+hhod1y8+     0    4     1    7     1    1   HMS 1Y+ paddle 8
+hhod1y9+     0    4     1    8     1    1   HMS 1Y+ paddle 9
+hhod1y10+    0    4     1    12    1    1   HMS 1Y+ paddle 10
+7/9	     0    4     1    9     1    1   Empty
+7/10         0    4     1    10    1    1   Empty
+7/11         0    4     1    11    1    1   Empty
+7/13         0    4     1    13    1    1   Empty
+7/14         0    4     1    14    1    1   Empty
+7/15         0    4     1    15    1    1   Empty
 
-# desc      hel crate slot start nchan  long-description
-hhod1y1-     0    4     1    16    1    1  HMS 1Y- paddle 1
-hhod1y2-     0    4     1    20    1    1  HMS 1Y- paddle 2
-hhod1y3-     0    4     1    17    1    1  HMS 1Y- paddle 3
-hhod1y4-     0    4     1    21    1    1  HMS 1Y- paddle 4
-hhod1y5-     0    4     1    18    1    1  HMS 1Y- paddle 5
-hhod1y6-     0    4     1    22    1    1  HMS 1Y- paddle 6
-hhod1y7-     0    4     1    19    1    1  HMS 1Y- paddle 7
-hhod1y8-     0    4     1    23    1    1  HMS 1Y- paddle 8
-hhod1y9-     0    4     1    24    1    1  HMS 1Y- paddle 9
-hhod1y10-    0    4     1    28    1    1  HMS 1Y- paddle 10
-Empty	     0    4     1    25    1    1  Empty
-Empty        0    4     1    26    1    1  Empty
-Empty        0    4     1    27    1    1  Empty
-Empty	     0    4     1    29    1    1  Empty
-Empty        0    4     1    30    1    1  Empty
-Empty        0    4     1    31    1    1  Empty
+# desc      hel crate slot start nchan page long-description
+hhod1y1-     0    4     1    16    1    1   HMS 1Y- paddle 1
+hhod1y2-     0    4     1    20    1    1   HMS 1Y- paddle 2
+hhod1y3-     0    4     1    17    1    1   HMS 1Y- paddle 3
+hhod1y4-     0    4     1    21    1    1   HMS 1Y- paddle 4
+hhod1y5-     0    4     1    18    1    1   HMS 1Y- paddle 5
+hhod1y6-     0    4     1    22    1    1   HMS 1Y- paddle 6
+hhod1y7-     0    4     1    19    1    1   HMS 1Y- paddle 7
+hhod1y8-     0    4     1    23    1    1   HMS 1Y- paddle 8
+hhod1y9-     0    4     1    24    1    1   HMS 1Y- paddle 9
+hhod1y10-    0    4     1    28    1    1   HMS 1Y- paddle 10
+7/25         0    4     1    25    1    1   Empty
+7/26         0    4     1    26    1    1   Empty
+7/27         0    4     1    27    1    1   Empty
+7/29         0    4     1    29    1    1   Empty
+7/30         0    4     1    30    1    1   Empty
+7/31         0    4     1    31    1    1   Empty
 
 
-# desc      hel crate slot start nchan  long-description
-hhod2x1+     0    4     2    0     1    2  HMS 2X+ paddle 1
-hhod2x2+     0    4     2    4     1    2  HMS 2X+ paddle 2
-hhod2x3+     0    4     2    1     1    2  HMS 2X+ paddle 3
-hhod2x4+     0    4     2    5     1    2  HMS 2X+ paddle 4
-hhod2x5+     0    4     2    2     1    2  HMS 2X+ paddle 5
-hhod2x6+     0    4     2    6     1    2  HMS 2X+ paddle 6
-hhod2x7+     0    4     2    3     1    2  HMS 2X+ paddle 7
-hhod2x8+     0    4     2    7     1    2  HMS 2X+ paddle 8
-hhod2x9+     0    4     2    8     1    2  HMS 2X+ paddle 9
-hhod2x10+    0    4     2    12    1    2  HMS 2X+ paddle 10
-hhod2x11+    0    4     2    9     1    2  HMS 2X+ paddle 11
-hhod2x12+    0    4     2    13    1    2  HMS 2X+ paddle 12
-hhod2x13+    0    4     2    10    1    2  HMS 2X+ paddle 13
-hhod2x14+    0    4     2    14    1    2  HMS 2X+ paddle 14
-hhod2x15+    0    4     2    11    1    2  HMS 2X+ paddle 15
-hhod2x16+    0    4     2    15    1    2  HMS 2X+ paddle 16
+# desc      hel crate slot start nchan page long-description
+hhod2x1+     0    4     2    0     1    2   HMS 2X+ paddle 1
+hhod2x2+     0    4     2    4     1    2   HMS 2X+ paddle 2
+hhod2x3+     0    4     2    1     1    2   HMS 2X+ paddle 3
+hhod2x4+     0    4     2    5     1    2   HMS 2X+ paddle 4
+hhod2x5+     0    4     2    2     1    2   HMS 2X+ paddle 5
+hhod2x6+     0    4     2    6     1    2   HMS 2X+ paddle 6
+hhod2x7+     0    4     2    3     1    2   HMS 2X+ paddle 7
+hhod2x8+     0    4     2    7     1    2   HMS 2X+ paddle 8
+hhod2x9+     0    4     2    8     1    2   HMS 2X+ paddle 9
+hhod2x10+    0    4     2    12    1    2   HMS 2X+ paddle 10
+hhod2x11+    0    4     2    9     1    2   HMS 2X+ paddle 11
+hhod2x12+    0    4     2    13    1    2   HMS 2X+ paddle 12
+hhod2x13+    0    4     2    10    1    2   HMS 2X+ paddle 13
+hhod2x14+    0    4     2    14    1    2   HMS 2X+ paddle 14
+hhod2x15+    0    4     2    11    1    2   HMS 2X+ paddle 15
+hhod2x16+    0    4     2    15    1    2   HMS 2X+ paddle 16
 
-# desc      hel crate slot start nchan  long-description
-hhod2x1-     0    4     2    16    1    2  HMS 2X- paddle 1
-hhod2x2-     0    4     2    20    1    2  HMS 2X- paddle 2
-hhod2x3-     0    4     2    17    1    2  HMS 2X- paddle 3
-hhod2x4-     0    4     2    21    1    2  HMS 2X- paddle 4
-hhod2x5-     0    4     2    18    1    2  HMS 2X- paddle 5
-hhod2x6-     0    4     2    22    1    2  HMS 2X- paddle 6
-hhod2x7-     0    4     2    19    1    2  HMS 2X- paddle 7
-hhod2x8-     0    4     2    23    1    2  HMS 2X- paddle 8
-hhod2x9-     0    4     2    24    1    2  HMS 2X- paddle 9
-hhod2x10-    0    4     2    28    1    2  HMS 2X- paddle 10
-hhod2x11-    0    4     2    25    1    2  HMS 2X- paddle 11
-hhod2x12-    0    4     2    29    1    2  HMS 2X- paddle 12
-hhod2x13-    0    4     2    26    1    2  HMS 2X- paddle 13
-hhod2x14-    0    4     2    30    1    2  HMS 2X- paddle 14
-hhod2x15-    0    4     2    27    1    2  HMS 2X- paddle 15
-hhod2x16-    0    4     2    31    1    2  HMS 2X- paddle 16 
+# desc      hel crate slot start nchan page long-description
+hhod2x1-     0    4     2    16    1    2   HMS 2X- paddle 1
+hhod2x2-     0    4     2    20    1    2   HMS 2X- paddle 2
+hhod2x3-     0    4     2    17    1    2   HMS 2X- paddle 3
+hhod2x4-     0    4     2    21    1    2   HMS 2X- paddle 4
+hhod2x5-     0    4     2    18    1    2   HMS 2X- paddle 5
+hhod2x6-     0    4     2    22    1    2   HMS 2X- paddle 6
+hhod2x7-     0    4     2    19    1    2   HMS 2X- paddle 7
+hhod2x8-     0    4     2    23    1    2   HMS 2X- paddle 8
+hhod2x9-     0    4     2    24    1    2   HMS 2X- paddle 9
+hhod2x10-    0    4     2    28    1    2   HMS 2X- paddle 10
+hhod2x11-    0    4     2    25    1    2   HMS 2X- paddle 11
+hhod2x12-    0    4     2    29    1    2   HMS 2X- paddle 12
+hhod2x13-    0    4     2    26    1    2   HMS 2X- paddle 13
+hhod2x14-    0    4     2    30    1    2   HMS 2X- paddle 14
+hhod2x15-    0    4     2    27    1    2   HMS 2X- paddle 15
+hhod2x16-    0    4     2    31    1    2   HMS 2X- paddle 16 
 
-# desc      hel crate slot start nchan  long-description
-hhod2y1+     0    4     3    0     1    3  HMS 2Y+ paddle 1
-hhod2y2+     0    4     3    4     1    3  HMS 2Y+ paddle 2
-hhod2y3+     0    4     3    1     1    3  HMS 2Y+ paddle 3
-hhod2y4+     0    4     3    5     1    3  HMS 2Y+ paddle 4
-hhod2y5+     0    4     3    2     1    3  HMS 2Y+ paddle 5
-hhod2y6+     0    4     3    6     1    3  HMS 2Y+ paddle 6
-hhod2y7+     0    4     3    3     1    3  HMS 2Y+ paddle 7
-hhod2y8+     0    4     3    7     1    3  HMS 2Y+ paddle 8
-hhod2y9+     0    4     3    8     1    3  HMS 2Y+ paddle 9
-hhod2y10+    0    4     3    12    1    3  HMS 2Y+ paddle 10
-Empty	     0    4     3    9     1    3  Empty
-Empty        0    4     3    10    1    3  Empty
-Empty        0    4     3    11    1    3  Empty
-Empty	     0    4     3    13    1    3  Empty
-Empty        0    4     3    14    1    3  Empty
-Empty        0    4     3    15    1    3  Empty
+# desc      hel crate slot start nchan page long-description
+hhod2y1+     0    4     3    0     1    3   HMS 2Y+ paddle 1
+hhod2y2+     0    4     3    4     1    3   HMS 2Y+ paddle 2
+hhod2y3+     0    4     3    1     1    3   HMS 2Y+ paddle 3
+hhod2y4+     0    4     3    5     1    3   HMS 2Y+ paddle 4
+hhod2y5+     0    4     3    2     1    3   HMS 2Y+ paddle 5
+hhod2y6+     0    4     3    6     1    3   HMS 2Y+ paddle 6
+hhod2y7+     0    4     3    3     1    3   HMS 2Y+ paddle 7
+hhod2y8+     0    4     3    7     1    3   HMS 2Y+ paddle 8
+hhod2y9+     0    4     3    8     1    3   HMS 2Y+ paddle 9
+hhod2y10+    0    4     3    12    1    3   HMS 2Y+ paddle 10
+9/9          0    4     3    9     1    3   Empty
+9/10         0    4     3    10    1    3   Empty
+9/11         0    4     3    11    1    3   Empty
+9/13         0    4     3    13    1    3   Empty
+9/14         0    4     3    14    1    3   Empty
+9/15         0    4     3    15    1    3   Empty
 
-# desc      hel crate slot start nchan  long-description
-hhod2y1-     0    4     3    16    1    3  HMS 2Y- paddle 1
-hhod2y2-     0    4     3    20    1    3  HMS 2Y- paddle 2
-hhod2y3-     0    4     3    17    1    3  HMS 2Y- paddle 3
-hhod2y4-     0    4     3    21    1    3  HMS 2Y- paddle 4
-hhod2y5-     0    4     3    18    1    3  HMS 2Y- paddle 5
-hhod2y6-     0    4     3    22    1    3  HMS 2Y- paddle 6
-hhod2y7-     0    4     3    19    1    3  HMS 2Y- paddle 7
-hhod2y8-     0    4     3    23    1    3  HMS 2Y- paddle 8
-hhod2y9-     0    4     3    24    1    3  HMS 2Y- paddle 9
-hhod2y10-    0    4     3    28    1    3  HMS 2Y- paddle 10
-Empty	     0    4     3    25    1    3  Empty
-Empty        0    4     3    26    1    3  Empty
-Empty        0    4     3    27    1    3  Empty
-Empty	     0    4     3    29    1    3  Empty
-Empty        0    4     3    30    1    3  Empty
-Empty        0    4     3    31    1    3  Empty
+# desc      hel crate slot start nchan page long-description
+hhod2y1-     0    4     3    16    1    3   HMS 2Y- paddle 1
+hhod2y2-     0    4     3    20    1    3   HMS 2Y- paddle 2
+hhod2y3-     0    4     3    17    1    3   HMS 2Y- paddle 3
+hhod2y4-     0    4     3    21    1    3   HMS 2Y- paddle 4
+hhod2y5-     0    4     3    18    1    3   HMS 2Y- paddle 5
+hhod2y6-     0    4     3    22    1    3   HMS 2Y- paddle 6
+hhod2y7-     0    4     3    19    1    3   HMS 2Y- paddle 7
+hhod2y8-     0    4     3    23    1    3   HMS 2Y- paddle 8
+hhod2y9-     0    4     3    24    1    3   HMS 2Y- paddle 9
+hhod2y10-    0    4     3    28    1    3   HMS 2Y- paddle 10
+9/25         0    4     3    25    1    3   Empty
+9/26         0    4     3    26    1    3   Empty
+9/27         0    4     3    27    1    3   Empty
+9/29         0    4     3    29    1    3   Empty
+9/30         0    4     3    30    1    3   Empty
+9/31         0    4     3    31    1    3   Empty
 
-# desc      hel crate slot start nchan  long-description
+# desc      hel crate slot start nchan page long-description
 hTRIG1       0    4     5    10    1    -1  HMS  TRIG1
 hTRIG2       0    4     5    11    1    -1  HMS  TRIG2
 hTRIG3       0    4     5    12    1    -1  HMS  TRIG3
@@ -207,7 +207,7 @@ pTRIG4       0    4     5    3     1    -1  SHMS TRIG4
 pTRIG5       0    4     5    4     1    -1  SHMS TRIG5
 pTRIG6       0    4     5    5     1    -1  SHMS TRIG6
 
-# desc      hel crate slot start nchan  long-description
+# desc      hel crate slot start nchan page long-description
 S1X          0    4     6    0     1    -1  HMS S1X
 S1Y          0    4     6    1     1    -1  HMS S1Y
 S2X          0    4     6    2     1    -1  HMS S2X
@@ -232,142 +232,200 @@ BCM17        0    4     6    29    1    -1  bcm17
 Unser        0    4     6    30    1    -1  Unser
 1Mhz         0    4     6    31    1    -1  1MHz  
                                         
-# desc      hel crate slot start nchan  long-description
+# desc      hel crate slot start nchan page long-description
 clock        0    4     7    1     1    -1  clock   
 
 # SHMS tabs
 # for SHMS the crate is 5 
 # let hel=0 always
 
-# desc      hel crate slot start nchan  long-description
-phod1x1+     0    5     0    0     1    -1  SHMS 1X+ paddle 1
-phod1x3+     0    5     0    1     1    -1  SHMS 1X+ paddle 3
-phod1x5+     0    5     0    2     1    -1  SHMS 1X+ paddle 5
-phod1x7+     0    5     0    3     1    -1  SHMS 1X+ paddle 7
-phod1x2+     0    5     0    4     1    -1  SHMS 1X+ paddle 2
-phod1x4+     0    5     0    5     1    -1  SHMS 1X+ paddle 4
-phod1x6+     0    5     0    6     1    -1  SHMS 1X+ paddle 6
-phod1x8+     0    5     0    7     1    -1  SHMS 1X+ paddle 8
-phod1x9+     0    5     0    8     1    -1  SHMS 1X+ paddle 9
-phod1x11+    0    5     0    9     1    -1  SHMS 1X+ paddle 11
-phod1x13+    0    5     0    10    1    -1  SHMS 1X+ paddle 13
-phod1x10+    0    5     0    12    1    -1  SHMS 1X+ paddle 10
-phod1x12+    0    5     0    13    1    -1  SHMS 1X+ paddle 12
+# desc      hel crate slot start nchan page long-description
+phod1x1+     0    5     0    0     1    0   SHMS 1X+ paddle 1
+phod1x2+     0    5     0    4     1    0   SHMS 1X+ paddle 2
+phod1x3+     0    5     0    1     1    0   SHMS 1X+ paddle 3
+phod1x4+     0    5     0    5     1    0   SHMS 1X+ paddle 4
+phod1x5+     0    5     0    2     1    0   SHMS 1X+ paddle 5
+phod1x6+     0    5     0    6     1    0   SHMS 1X+ paddle 6
+phod1x7+     0    5     0    3     1    0   SHMS 1X+ paddle 7
+phod1x8+     0    5     0    7     1    0   SHMS 1X+ paddle 8
+phod1x9+     0    5     0    8     1    0   SHMS 1X+ paddle 9
+phod1x10+    0    5     0    12    1    0   SHMS 1X+ paddle 10
+phod1x11+    0    5     0    9     1    0   SHMS 1X+ paddle 11
+phod1x12+    0    5     0    13    1    0   SHMS 1X+ paddle 12
+phod1x13+    0    5     0    10    1    0   SHMS 1X+ paddle 13
+6/11         0    5     0    11    1    0   Empty
+6/14         0    5     0    14    1    0   Empty
+6/15         0    5     0    15    1    0   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod1x1-     0    5     0    16    1    -1  SHMS 1X- paddle 1
-phod1x3-     0    5     0    17    1    -1  SHMS 1X- paddle 3
-phod1x5-     0    5     0    18    1    -1  SHMS 1X- paddle 5
-phod1x7-     0    5     0    19    1    -1  SHMS 1X- paddle 7
-phod1x2-     0    5     0    20    1    -1  SHMS 1X- paddle 2
-phod1x4-     0    5     0    21    1    -1  SHMS 1X- paddle 4
-phod1x6-     0    5     0    22    1    -1  SHMS 1X- paddle 6
-phod1x8-     0    5     0    23    1    -1  SHMS 1X- paddle 8
-phod1x9-     0    5     0    24    1    -1  SHMS 1X- paddle 9
-phod1x11-    0    5     0    25    1    -1  SHMS 1X- paddle 11
-phod1x13-    0    5     0    26    1    -1  SHMS 1X- paddle 13
-phod1x10-    0    5     0    28    1    -1  SHMS 1X- paddle 10
-phod1x12-    0    5     0    30    1    -1  SHMS 1X- paddle 12
+# desc      hel crate slot start nchan page long-description
+phod1x1-     0    5     0    16    1    0   SHMS 1X- paddle 1
+phod1x2-     0    5     0    20    1    0   SHMS 1X- paddle 2
+phod1x3-     0    5     0    17    1    0   SHMS 1X- paddle 3
+phod1x4-     0    5     0    21    1    0   SHMS 1X- paddle 4
+phod1x5-     0    5     0    18    1    0   SHMS 1X- paddle 5
+phod1x6-     0    5     0    22    1    0   SHMS 1X- paddle 6
+phod1x7-     0    5     0    19    1    0   SHMS 1X- paddle 7
+phod1x8-     0    5     0    23    1    0   SHMS 1X- paddle 8
+phod1x9-     0    5     0    24    1    0   SHMS 1X- paddle 9
+phod1x10-    0    5     0    28    1    0   SHMS 1X- paddle 10
+phod1x11-    0    5     0    25    1    0   SHMS 1X- paddle 11
+phod1x12-    0    5     0    30    1    0   SHMS 1X- paddle 12
+phod1x13-    0    5     0    26    1    0   SHMS 1X- paddle 13
+6/27         0    5     0    27    1    0   Empty
+6/29         0    5     0    29    1    0   Empty
+6/31         0    5     0    31    1    0   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod1y1-     0    5     1    0     1    -1  SHMS 1Y- paddle 1
-phod1y3-     0    5     1    1     1    -1  SHMS 1Y- paddle 3
-phod1y5-     0    5     1    2     1    -1  SHMS 1Y- paddle 5
-phod1y7-     0    5     1    3     1    -1  SHMS 1Y- paddle 7
-phod1y2-     0    5     1    4     1    -1  SHMS 1Y- paddle 2
-phod1y4-     0    5     1    5     1    -1  SHMS 1Y- paddle 4
-phod1y6-     0    5     1    6     1    -1  SHMS 1Y- paddle 6
-phod1y8-     0    5     1    7     1    -1  SHMS 1Y- paddle 8
-phod1y9-     0    5     1    8     1    -1  SHMS 1Y- paddle 9
-phod1y11-    0    5     1    9     1    -1  SHMS 1Y- paddle 11
-phod1y13-    0    5     1    10    1    -1  SHMS 1Y- paddle 13
-phod1y10-    0    5     1    12    1    -1  SHMS 1Y- paddle 10
-phod1y12-    0    5     1    13    1    -1  SHMS 1Y- paddle 12
+# desc      hel crate slot start nchan page long-description
+phod1y1+     0    5     1    16    1    1   SHMS 1Y+ paddle 1
+phod1y2+     0    5     1    20    1    1   SHMS 1Y+ paddle 2
+phod1y3+     0    5     1    17    1    1   SHMS 1Y+ paddle 3
+phod1y4+     0    5     1    21    1    1   SHMS 1Y+ paddle 4
+phod1y5+     0    5     1    18    1    1   SHMS 1Y+ paddle 5
+phod1y6+     0    5     1    22    1    1   SHMS 1Y+ paddle 6
+phod1y7+     0    5     1    19    1    1   SHMS 1Y+ paddle 7
+phod1y8+     0    5     1    23    1    1   SHMS 1Y+ paddle 8
+phod1y9+     0    5     1    24    1    1   SHMS 1Y+ paddle 9
+phod1y10+    0    5     1    28    1    1   SHMS 1Y+ paddle 10
+phod1y11+    0    5     1    25    1    1   SHMS 1Y+ paddle 11
+phod1y12+    0    5     1    29    1    1   SHMS 1Y+ paddle 12
+phod1y13+    0    5     1    26    1    1   SHMS 1Y+ paddle 13
+7/27         0    5     1    27    1    1   Empty
+7/30         0    5     1    30    1    1   Empty
+7/31         0    5     1    31    1    1   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod1y1+     0    5     1    16    1    -1  SHMS 1Y+ paddle 1
-phod1y3+     0    5     1    17    1    -1  SHMS 1Y+ paddle 3
-phod1y5+     0    5     1    18    1    -1  SHMS 1Y+ paddle 5
-phod1y7+     0    5     1    19    1    -1  SHMS 1Y+ paddle 7
-phod1y2+     0    5     1    20    1    -1  SHMS 1Y+ paddle 2
-phod1y4+     0    5     1    21    1    -1  SHMS 1Y+ paddle 4
-phod1y6+     0    5     1    22    1    -1  SHMS 1Y+ paddle 6
-phod1y8+     0    5     1    23    1    -1  SHMS 1Y+ paddle 8
-phod1y9+     0    5     1    24    1    -1  SHMS 1Y+ paddle 9
-phod1y11+    0    5     1    25    1    -1  SHMS 1Y+ paddle 11
-phod1y13+    0    5     1    26    1    -1  SHMS 1Y+ paddle 13
-phod1y10+    0    5     1    28    1    -1  SHMS 1Y+ paddle 10
-phod1y12+    0    5     1    29    1    -1  SHMS 1Y+ paddle 12
+# desc      hel crate slot start nchan page long-description
+phod1y1-     0    5     1    0     1    1   SHMS 1Y- paddle 1
+phod1y3-     0    5     1    1     1    1   SHMS 1Y- paddle 3
+phod1y5-     0    5     1    2     1    1   SHMS 1Y- paddle 5
+phod1y7-     0    5     1    3     1    1   SHMS 1Y- paddle 7
+phod1y2-     0    5     1    4     1    1   SHMS 1Y- paddle 2
+phod1y4-     0    5     1    5     1    1   SHMS 1Y- paddle 4
+phod1y6-     0    5     1    6     1    1   SHMS 1Y- paddle 6
+phod1y8-     0    5     1    7     1    1   SHMS 1Y- paddle 8
+phod1y9-     0    5     1    8     1    1   SHMS 1Y- paddle 9
+phod1y11-    0    5     1    9     1    1   SHMS 1Y- paddle 11
+phod1y13-    0    5     1    10    1    1   SHMS 1Y- paddle 13
+phod1y10-    0    5     1    12    1    1   SHMS 1Y- paddle 10
+phod1y12-    0    5     1    13    1    1   SHMS 1Y- paddle 12
+7/11         0    5     1    11    1    1   Empty
+7/14         0    5     1    14    1    1   Empty
+7/15         0    5     1    15    1    1   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod2x1+     0    5     2    0     1    -1  SHMS 2X+ paddle 1
-phod2x3+     0    5     2    1     1    -1  SHMS 2X+ paddle 3
-phod2x5+     0    5     2    2     1    -1  SHMS 2X+ paddle 5
-phod2x7+     0    5     2    3     1    -1  SHMS 2X+ paddle 7
-phod2x2+     0    5     2    4     1    -1  SHMS 2X+ paddle 2
-phod2x4+     0    5     2    5     1    -1  SHMS 2X+ paddle 4
-phod2x6+     0    5     2    6     1    -1  SHMS 2X+ paddle 6
-phod2x8+     0    5     2    7     1    -1  SHMS 2X+ paddle 8
-phod2x9+     0    5     2    8     1    -1  SHMS 2X+ paddle 9
-phod2x11+    0    5     2    9     1    -1  SHMS 2X+ paddle 11
-phod2x13+    0    5     2    10    1    -1  SHMS 2X+ paddle 13
-phod2x10+    0    5     2    12    1    -1  SHMS 2X+ paddle 10
-phod2x12+    0    5     2    13    1    -1  SHMS 2X+ paddle 12
-phod2x14+    0    5     2    14    1    -1  SHMS 2X+ paddle 14
+# desc      hel crate slot start nchan page long-description
+phod2x1+     0    5     2    0     1    2   SHMS 2X+ paddle 1
+phod2x2+     0    5     2    4     1    2   SHMS 2X+ paddle 2
+phod2x3+     0    5     2    1     1    2   SHMS 2X+ paddle 3
+phod2x4+     0    5     2    5     1    2   SHMS 2X+ paddle 4
+phod2x5+     0    5     2    2     1    2   SHMS 2X+ paddle 5
+phod2x6+     0    5     2    6     1    2   SHMS 2X+ paddle 6
+phod2x7+     0    5     2    3     1    2   SHMS 2X+ paddle 7
+phod2x8+     0    5     2    7     1    2   SHMS 2X+ paddle 8
+phod2x9+     0    5     2    8     1    2   SHMS 2X+ paddle 9
+phod2x10+    0    5     2    12    1    2   SHMS 2X+ paddle 10
+phod2x11+    0    5     2    9     1    2   SHMS 2X+ paddle 11
+phod2x12+    0    5     2    13    1    2   SHMS 2X+ paddle 12
+phod2x13+    0    5     2    10    1    2   SHMS 2X+ paddle 13
+phod2x14+    0    5     2    14    1    2   SHMS 2X+ paddle 14
+8/11         0    5     2    11    1    2   Empty
+8/15         0    5     2    15    1    2   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod2x1-     0    5     2    16    1    -1  SHMS 2X- paddle 1
-phod2x3-     0    5     2    17    1    -1  SHMS 2X- paddle 3
-phod2x5-     0    5     2    18    1    -1  SHMS 2X- paddle 5
-phod2x7-     0    5     2    19    1    -1  SHMS 2X- paddle 7
-phod2x2-     0    5     2    20    1    -1  SHMS 2X- paddle 2
-phod2x4-     0    5     2    21    1    -1  SHMS 2X- paddle 4
-phod2x6-     0    5     2    22    1    -1  SHMS 2X- paddle 6
-phod2x8-     0    5     2    23    1    -1  SHMS 2X- paddle 8
-phod2x9-     0    5     2    24    1    -1  SHMS 2X- paddle 9
-phod2x11-    0    5     2    25    1    -1  SHMS 2X- paddle 11
-phod2x13-    0    5     2    26    1    -1  SHMS 2X- paddle 13
-phod2x10-    0    5     2    28    1    -1  SHMS 2X- paddle 10
-phod2x12-    0    5     2    29    1    -1  SHMS 2X- paddle 12
-phod2x14-    0    5     2    30    1    -1  SHMS 2X- paddle 14
+# desc      hel crate slot start nchan page long-description
+phod2x1-     0    5     2    16    1    2   SHMS 2X- paddle 1
+phod2x2-     0    5     2    20    1    2   SHMS 2X- paddle 2
+phod2x3-     0    5     2    17    1    2   SHMS 2X- paddle 3
+phod2x4-     0    5     2    21    1    2   SHMS 2X- paddle 4
+phod2x5-     0    5     2    18    1    2   SHMS 2X- paddle 5
+phod2x6-     0    5     2    22    1    2   SHMS 2X- paddle 6
+phod2x7-     0    5     2    19    1    2   SHMS 2X- paddle 7
+phod2x8-     0    5     2    23    1    2   SHMS 2X- paddle 8
+phod2x9-     0    5     2    24    1    2   SHMS 2X- paddle 9
+phod2x10-    0    5     2    28    1    2   SHMS 2X- paddle 10
+phod2x11-    0    5     2    25    1    2   SHMS 2X- paddle 11
+phod2x12-    0    5     2    29    1    2   SHMS 2X- paddle 12
+phod2x13-    0    5     2    26    1    2   SHMS 2X- paddle 13
+phod2x14-    0    5     2    30    1    2   SHMS 2X- paddle 14
+8/27         0    5     2    27    1    2   Empty
+8/31         0    5     2    31    1    2   Empty
 
-# desc      hel crate slot start nchan  long-description 
-phod2y1+     0    5     3    0     1    -1  SHMS 2y+ paddle 1
-phod2y3+     0    5     3    1     1    -1  SHMS 2y+ paddle 3
-phod2y5+     0    5     3    2     1    -1  SHMS 2y+ paddle 5
-phod2y7+     0    5     3    3     1    -1  SHMS 2y+ paddle 7
-phod2y2+     0    5     3    4     1    -1  SHMS 2y+ paddle 2
-phod2y4+     0    5     3    5     1    -1  SHMS 2y+ paddle 4
-phod2y6+     0    5     3    6     1    -1  SHMS 2y+ paddle 6
-phod2y8+     0    5     3    7     1    -1  SHMS 2y+ paddle 8
-phod2y9+     0    5     3    8     1    -1  SHMS 2y+ paddle 9
-phod2y11+    0    5     3    9     1    -1  SHMS 2y+ paddle 11
-phod2y13+    0    5     3    10    1    -1  SHMS 2y+ paddle 13
-phod2y15+    0    5     3    11    1    -1  SHMS 2y+ paddle 15
-phod2y10+    0    5     3    12    1    -1  SHMS 2y+ paddle 10
-phod2y12+    0    5     3    13    1    -1  SHMS 2y+ paddle 12
-phod2y14+    0    5     3    14    1    -1  SHMS 2y+ paddle 14
-phod2y16+    0    5     3    15    1    -1  SHMS 2y+ paddle 16
+# 10/20/2017.  At most 16 bars of the 21 quartz plane bars will
+# be instrumented with tubes.  Since the 32 tubes for those 16 bars
+# will fit on one xscaler page, we only display scalers for 16 bars.
+# We assume that the first bar instrumented will be bar 3.  If it
+# turns out to be 4, this map will need to be adjusted.
+# desc      hel crate slot start nchan page long-description
+phod2y1+     0    5     3    16    1    -1  SHMS 2y+ paddle 1
+phod2y2+     0    5     3    20    1    -1  SHMS 2y+ paddle 2
+phod2y3+     0    5     3    17    1    3   SHMS 2y+ paddle 3
+phod2y4+     0    5     3    21    1    3   SHMS 2y+ paddle 4
+phod2y5+     0    5     3    18    1    3   SHMS 2y+ paddle 5
+phod2y6+     0    5     3    22    1    3   SHMS 2y+ paddle 6
+phod2y7+     0    5     3    19    1    3   SHMS 2y+ paddle 7
+phod2y8+     0    5     3    23    1    3   SHMS 2y+ paddle 8
+phod2y9+     0    5     3    24    1    3   SHMS 2y+ paddle 9
+phod2y10+    0    5     3    28    1    3   SHMS 2y+ paddle 10
+phod2y11+    0    5     3    25    1    3   SHMS 2y+ paddle 11
+phod2y12+    0    5     3    29    1    3   SHMS 2y+ paddle 12
+phod2y13+    0    5     3    26    1    3   SHMS 2y+ paddle 13
+phod2y14+    0    5     3    30    1    3   SHMS 2y+ paddle 14
+phod2y15+    0    5     3    27    1    3   SHMS 2y+ paddle 15
+phod2y16+    0    5     3    31    1    3   SHMS 2y+ paddle 16
 
-# desc      hel crate slot start nchan  long-description 
-phod2y1-     0    5     3    16    1    -1  SHMS 2y- paddle 1
-phod2y3-     0    5     3    17    1    -1  SHMS 2y- paddle 3
-phod2y5-     0    5     3    18    1    -1  SHMS 2y- paddle 5
-phod2y7-     0    5     3    19    1    -1  SHMS 2y- paddle 7
-phod2y2-     0    5     3    20    1    -1  SHMS 2y- paddle 2
-phod2y4-     0    5     3    21    1    -1  SHMS 2y- paddle 4
-phod2y6-     0    5     3    22    1    -1  SHMS 2y- paddle 6
-phod2y8-     0    5     3    23    1    -1  SHMS 2y- paddle 8
-phod2y9-     0    5     3    24    1    -1  SHMS 2y- paddle 9
-phod2y11-    0    5     3    25    1    -1  SHMS 2y- paddle 11
-phod2y13-    0    5     3    26    1    -1  SHMS 2y- paddle 13
-phod2y15-    0    5     3    27    1    -1  SHMS 2y- paddle 15
-phod2y10-    0    5     3    28    1    -1  SHMS 2y- paddle 10
-phod2y12-    0    5     3    29    1    -1  SHMS 2y- paddle 12
-phod2y14-    0    5     3    30    1    -1  SHMS 2y- paddle 14
-phod2y16-    0    5     3    31    1    -1  SHMS 2y- paddle 16
+# desc      hel crate slot start nchan page long-description
+phod2y17+    0    5     4    16    1    3   SHMS 2y+ paddle 17
+phod2y18+    0    5     4    20    1    3   SHMS 2y+ paddle 18
+phod2y19+    0    5     4    17    1    -1  SHMS 2y+ paddle 19
+phod2y20+    0    5     4    21    1    -1  SHMS 2y+ paddle 20
+phod2y21+    0    5     4    18    1    -1  SHMS 2y+ paddle 21
+10/19        0    5     4    19    1    -1  Empty
+10/22        0    5     4    22    1    -1  Empty
+10/23        0    5     4    23    1    -1  Empty
+10/24        0    5     4    24    1    -1  Empty
+10/25        0    5     4    25    1    -1  Empty
+10/26        0    5     4    26    1    -1  Empty
+10/27        0    5     4    27    1    -1  Empty
+10/28        0    5     4    28    1    -1  Empty
+10/29        0    5     4    29    1    -1  Empty
+10/30        0    5     4    30    1    -1  Empty
+10/31        0    5     4    31    1    -1  Empty
 
-# desc      hel crate slot start nchan  long-description
+# desc      hel crate slot start nchan page long-description
+phod2y1-     0    5     3    0     1    -1  SHMS 2y- paddle 1
+phod2y2-     0    5     3    4     1    -1  SHMS 2y- paddle 2
+phod2y3-     0    5     3    1     1    3   SHMS 2y- paddle 3
+phod2y4-     0    5     3    5     1    3   SHMS 2y- paddle 4
+phod2y5-     0    5     3    2     1    3   SHMS 2y- paddle 5
+phod2y6-     0    5     3    6     1    3   SHMS 2y- paddle 6
+phod2y7-     0    5     3    3     1    3   SHMS 2y- paddle 7
+phod2y8-     0    5     3    7     1    3   SHMS 2y- paddle 8
+phod2y9-     0    5     3    8     1    3   SHMS 2y- paddle 9
+phod2y10-    0    5     3    12    1    3   SHMS 2y- paddle 10
+phod2y11-    0    5     3    9     1    3   SHMS 2y- paddle 11
+phod2y12-    0    5     3    13    1    3   SHMS 2y- paddle 12
+phod2y13-    0    5     3    10    1    3   SHMS 2y- paddle 13
+phod2y14-    0    5     3    14    1    3   SHMS 2y- paddle 14
+phod2y15-    0    5     3    11    1    3   SHMS 2y- paddle 15
+phod2y16-    0    5     3    15    1    3   SHMS 2y- paddle 16
+
+
+# desc      hel crate slot start nchan page long-description
+phod2y17-    0    5     4    0     1    3   SHMS 2y- paddle 17
+phod2y18-    0    5     4    4     1    3   SHMS 2y- paddle 18
+phod2y19-    0    5     4    1     1    -1  SHMS 2y- paddle 19
+phod2y20-    0    5     4    5     1    -1  SHMS 2y- paddle 20
+phod2y21-    0    5     4    2     1    -1  SHMS 2y- paddle 21
+10/3         0    5     4    3     1    -1  Empty
+10/6         0    5     4    6     1    -1  Empty
+10/7         0    5     4    7     1    -1  Empty
+10/8         0    5     4    8     1    -1  Empty
+10/9         0    5     4    9     1    -1  Empty
+10/10        0    5     4    10    1    -1  Empty
+10/11        0    5     4    11    1    -1  Empty
+10/12        0    5     4    12    1    -1  Empty
+10/13        0    5     4    13    1    -1  Empty
+10/14        0    5     4    14    1    -1  Empty
+10/15        0    5     4    15    1    -1  Empty
+
+# desc      hel crate slot start nchan page long-description
 pTRIG1       0    5     6    0     1    -1  SHMS TRIG1
 pTRIG2       0    5     6    1     1    -1  SHMS TRIG2
 pTRIG3       0    5     6    2     1    -1  SHMS TRIG3
@@ -380,13 +438,33 @@ hTRIG3       0    5     6    12    1    -1  HMS  TRIG3
 hTRIG4       0    5     6    13    1    -1  HMS  TRIG4
 hTRIG5       0    5     6    14    1    -1  HMS  TRIG5
 hTRIG6       0    5     6    15    1    -1  HMS  TRIG6
+12/6         0    5     6    6     1    -1  Empty
+12/7         0    5     6    7     1    -1  Empty
+12/8         0    5     6    8     1    -1  Empty
+12/9         0    5     6    9     1    -1  Empty
+12/16        0    5     6    16    1    -1  Empty
+12/17        0    5     6    17    1    -1  Empty
+12/18        0    5     6    18    1    -1  Empty
+12/19        0    5     6    19    1    -1  Empty
+12/20        0    5     6    20    1    -1  Empty
+12/21        0    5     6    21    1    -1  Empty
+12/22        0    5     6    22    1    -1  Empty
+12/23        0    5     6    23    1    -1  Empty
+12/24        0    5     6    24    1    -1  Empty
+12/25        0    5     6    25    1    -1  Empty
+12/26        0    5     6    26    1    -1  Empty
+12/27        0    5     6    27    1    -1  Empty
+12/28        0    5     6    28    1    -1  Empty
+12/29        0    5     6    29    1    -1  Empty
+12/30        0    5     6    30    1    -1  Empty
+12/31        0    5     6    31    1    -1  Empty
 
-# desc      hel crate slot start nchan  long-description                            
+# desc      hel crate slot start nchan page long-description
 S1X          0    5     7    0     1    -1  SHMS S1X
 S1Y          0    5     7    1     1    -1  SHMS S1Y
 S2X          0    5     7    2     1    -1  SHMS S2X
 S2Y          0    5     7    3     1    -1  SHMS S2Y
-S1XS1Y       0    5     7    4     1    -1  SHMS S1T                                           
+S1XS1Y       0    5     7    4     1    -1  SHMS S1T
 S2XS2Y       0    5     7    5     1    -1  SHMS S2T
 Trig         0    5     7    6     1    -1  SHMS T1
 AERO         0    5     7    7     1    -1  SHMS AERO
@@ -400,6 +478,20 @@ BCM2         0    5     7    28    1    -1  bcm2
 BCM17        0    5     7    29    1    -1  bcm17
 Unser        0    5     7    30    1    -1  Unser
 1Mhz         0    5     7    31    1    -1  1MHz
+13/11        0    5     7    11    1    -1  Empty
+13/12        0    5     7    12    1    -1  Empty
+13/13        0    5     7    13    1    -1  Empty
+13/14        0    5     7    14    1    -1  Empty
+13/15        0    5     7    15    1    -1  Empty
+13/16        0    5     7    16    1    -1  Empty
+13/17        0    5     7    17    1    -1  Empty
+13/18        0    5     7    18    1    -1  Empty
+13/19        0    5     7    19    1    -1  Empty
+13/20        0    5     7    20    1    -1  Empty
+13/21        0    5     7    21    1    -1  Empty
+13/22        0    5     7    22    1    -1  Empty
+13/23        0    5     7    23    1    -1  Empty
+13/24        0    5     7    24    1    -1  Empty
 
-# desc      hel crate slot start nchan  long-description
-clock        0    5     9    1     1    -1  clock
+# desc      hel crate slot start nchan page long-description
+clock        0    5     8    1     1    -1  clock

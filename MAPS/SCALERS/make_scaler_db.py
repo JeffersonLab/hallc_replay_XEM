@@ -45,6 +45,8 @@ with open(xscalerMapName, 'r') as fi:
         nchan = splitline[5] # This better be 1
         page = splitline[6] # We ignore this here
         comment = splitline[7]
+        if comment == "Empty":  # Overwrite name used by xscaler
+            name = spec+"Empty"
         uniquename = name
         count = 2
         while chandict.has_key(uniquename):
