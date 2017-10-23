@@ -1,0 +1,131 @@
+; Geometrical parameters
+
+; Conversion factor from TDC clicks to ns.
+hdc_tdc_time_per_channel = -0.10
+
+; Number of drift chambers.
+hdc_num_chambers = 2
+
+; Total number of planes.
+hdc_num_planes = 12
+
+; Names of planes.
+hdc_plane_names = "1u1 1u2 1x1 1x2 1v2 1v1 2v1 2v2 2x2 2x1 2u2 2u1"
+
+; Chamber index for each plane.
+hdc_chamber_planes = 1, 1, 1, 1, 1, 1
+                     2, 2, 2, 2, 2, 2
+
+; Number of wires in each plane.
+hdc_nrwire = 96, 96, 102, 102, 96, 96
+             96, 96, 102, 102, 96, 96
+
+
+; Sigma of wire chamber resolution for each plane.
+; From SANE.
+hdc_sigma = 0.020, 0.020, 0.020, 0.020, 0.020, 0.020
+            0.020, 0.020, 0.020, 0.020, 0.020, 0.020
+
+; For wire velocity corrections.
+; From SANE.
+hdc_wire_velocity = 13.0              ;FIXME
+hdc_central_time = 1, 1, 1, 1, 1, 1   ;FIXME
+                   1, 1, 1, 1, 1, 1
+hdc_drifttime_sign = 1, -1, -1, -1, -1, -1   ;Is this -1 for C1190 TDC ??
+                     -1, -1, -1, -1, -1, -1
+
+
+; CHAMBER POSITION PARAMETERS (Must be updated after 12 GeV chambers on stack is done)
+
+; x, y and z position of center for each wire chamber in cm.
+; From SANE with correction from C1768 using 2007 controls.
+hdc_xcenter = 1.6345 - 0.37  ; TODO - final survey
+              2.7825 - 0.40
+hdc_ycenter = 1.2052 - 0.11  ; TODO - final survey
+              2.6510 - 0.06
+hdc_1_zpos = -51.920 - 0.44  ; TODO - final survey
+hdc_2_zpos =  29.291 - 1.76  ; TODO - final survey
+
+; Roll, pitch and yaw for each wire chamber in degrees.
+; From C1768 using 2007 controls.
+hdc_1_roll = 0.0  ; TODO - final survey
+hdc_2_roll = 0.0  ; TODO - final survey
+hdc_1_pitch = 1.0  ; TODO - final survey
+hdc_2_pitch = 1.0  ; TODO - final survey
+hdc_1_yaw = 0.324  ; TODO - final survey
+hdc_2_yaw = 0.118  ; TODO - final survey
+
+
+; PLANE POSITION PARAMETERS
+
+; Wire number of center of wire chamber for each plane.
+; Taken from SOS, must be updated for new HMS chambers
+hdc_central_wire = 54.25, 53.75, 40.25, 40.75, 54.25 , 53.75
+                   54.25, 53.75, 40.25, 40.75, 54.25 , 53.75
+
+; Distance between wires for each plane in cm.
+; From SANE.
+hdc_pitch = 1.000252, 1.000252, 1.000252, 1.000252, 1.000252, 1.000252
+            1.000252, 1.000252, 1.000252, 1.000252, 1.000252, 1.000252
+
+; Order in which wires are counted in each plane.
+hdc_wire_counting = 0, 0, 0, 0, 0, 0
+                    0, 0, 0, 0, 0, 0
+
+; z position in cm of each plane measured from focal plane.
+; From SANE.
+hdc_zpos = hdc_1_zpos - 1.5875
+           hdc_1_zpos - 0.9525
+           hdc_1_zpos - 0.3175
+           hdc_1_zpos + 0.3175
+           hdc_1_zpos + 0.9525
+           hdc_1_zpos + 1.5875
+           hdc_2_zpos - 1.5875
+           hdc_2_zpos - 0.9525
+           hdc_2_zpos - 0.3175
+           hdc_2_zpos + 0.3175
+           hdc_2_zpos + 0.9525
+           hdc_2_zpos + 1.5875
+
+; Alpha angle of wires for each plane in radians.
+  hdc_alpha_angle = (30-hdc1_roll)*raddeg
+  		    (30-hdc1_roll)*raddeg
+  		    (90-hdc1_roll)*raddeg
+  		    (90-hdc1_roll)*raddeg
+  		    (150-hdc1_roll)*raddeg
+  		    (150-hdc1_roll)*raddeg
+		    (30-hdc2_roll)*raddeg
+  		    (30-hdc2_roll)*raddeg
+  		    (90-hdc2_roll)*raddeg
+  		    (90-hdc2_roll)*raddeg
+  		    (150-hd2_roll)*raddeg
+  		    (150-hdc2_roll)*raddeg
+
+; Beta angle of wires for each plane in radians.
+hdc_beta_angle = hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+
+; Gamma angle of wires for each plane in radians
+hdc_gamma_angle = hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+
