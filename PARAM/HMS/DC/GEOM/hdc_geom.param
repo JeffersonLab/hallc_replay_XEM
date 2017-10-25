@@ -1,0 +1,158 @@
+; Geometrical parameters
+
+; Conversion factor from TDC clicks to ns.
+hdc_tdc_time_per_channel = -0.10
+
+; Number of drift chambers.
+hdc_num_chambers = 2
+
+; Total number of planes.
+hdc_num_planes = 12
+
+; Names of planes.
+hdc_plane_names = "1u1 1u2 1x1 1x2 1v1 1v2 2v2 2v1 2x2 2x1 2u2 2u1";
+
+; Chamber index for each plane.
+hdc_chamber_planes = 1, 1, 1, 1, 1, 1
+                     2, 2, 2, 2, 2, 2
+
+; Number of wires in each plane.
+hdc_nrwire = 96, 96, 102, 102, 96, 96
+             96, 96, 102, 102, 96, 96
+
+; Sigma of wire chamber resolution for each plane.
+hdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
+            0.02, 0.02, 0.02, 0.02, 0.02, 0.02
+
+; Wire velocity corrections.
+hdc_wire_velocity  = 12.0; -this should be checked (old HMS value for now)
+hdc_central_time   = 0, 0, 0, 0, 0, 0  ; -not used in new HMS chambers
+                     0, 0, 0, 0, 0, 0
+hdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; -not used in new HMS chambers
+                     0, 0, 0, 0, 0, 0
+
+hdc_readoutLR = 1.0, -1.0, 1.0, 1.0, 1.0, -1.0
+                -1.0, 1.0, 1.0, 1.0, -1.0, 1.0
+hdc_readoutTB = -1.0, 1.0, -1.0, 1.0, 1.0, -1.0
+                -1.0, 1.0, 1.0, -1.0, 1.0, -1.0             
+
+; CHAMBER POSITION PARAMETERS
+
+; x, y and z position of center for each wire chamber in cm.
+hdc_xcenter = 0.0; TODO - final survey
+hdc_ycenter = 0.0; 
+
+; 
+hdc_1_zpos = -52.0954;
+hdc_2_zpos =  29.2608;
+
+; Roll, pitch and yaw for each wire chamber in degrees.
+hdc_1_roll = 0.0 ;
+hdc_2_roll = 0.0 ; 
+hdc_1_pitch = 0.0 ; 
+hdc_2_pitch =  0.0 ; 
+hdc_1_yaw = 0.0 ; 
+hdc_2_yaw = 0.0 ; 
+
+
+; PLANE POSITION PARAMETERS
+
+; Wire number of center of wire chamber for each plane.
+; From technical drawings.
+hdc_central_wire = 48.75, 48.25, 51.75, 51.25, 48.25, 48.75
+                   48.75, 48.25, 51.25, 51.75, 48.25, 48.75
+
+; Distance between wires for each plane in cm.
+; From technical drawings.
+hdc_pitch = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+            1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+
+; Order in which wires are counted in each plane.
+hdc_wire_counting = 0, 0, 0, 0, 0, 0
+                    0, 0, 0, 0, 0, 0
+
+; x position in cm defaults to global
+hdc_xpos = hdc_xcenter[0]
+           hdc_xcenter[0]
+           hdc_xcenter[0]
+           hdc_xcenter[0]
+           hdc_xcenter[0]
+           hdc_xcenter[0]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           
+; y position in cm defaults to global
+hdc_ypos = hdc_ycenter[0]
+           hdc_ycenter[0]
+           hdc_ycenter[0]
+           hdc_ycenter[0]
+           hdc_ycenter[0]
+           hdc_ycenter[0]
+           hdc_ycenter[1]
+           hdc_ycenter[1]
+           hdc_ycenter[1]
+           hdc_ycenter[1]
+           hdc_ycenter[1]
+           hdc_ycenter[1]
+
+; z position in cm of each plane measured from focal plane.
+; From technical drawings.
+hdc_zpos = hdc_1_zpos - 1.7463
+           hdc_1_zpos - 1.1113
+           hdc_1_zpos - 0.4763
+           hdc_1_zpos + 0.4763
+           hdc_1_zpos + 1.1113
+           hdc_1_zpos + 1.7463
+           hdc_2_zpos - 1.7463
+           hdc_2_zpos - 1.1113
+           hdc_2_zpos - 0.4763
+           hdc_2_zpos + 0.4763
+           hdc_2_zpos + 1.1113
+           hdc_2_zpos + 1.7463
+
+; Alpha angle of wires for each plane in radians.
+; From technical drawings.
+hdc_alpha_angle = ( 30 + hdc_1_roll)*raddeg
+                  ( 30 + hdc_1_roll)*raddeg
+                  ( 90 + hdc_1_roll)*raddeg
+                  ( 90 + hdc_1_roll)*raddeg
+                  (150 + hdc_1_roll)*raddeg
+                  (150 + hdc_1_roll)*raddeg
+                  ( 30 + hdc_2_roll)*raddeg
+                  ( 30 + hdc_2_roll)*raddeg
+                  ( 90 + hdc_2_roll)*raddeg
+                  ( 90 + hdc_2_roll)*raddeg
+                  (150 + hdc_2_roll)*raddeg
+                  (150 + hdc_2_roll)*raddeg
+
+; Beta angle of wires for each plane in radians.
+hdc_beta_angle = hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_1_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+                 hdc_2_pitch*raddeg
+
+; Gamma angle of wires for each plane in radians
+hdc_gamma_angle = hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_1_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
+                  hdc_2_yaw*raddeg
