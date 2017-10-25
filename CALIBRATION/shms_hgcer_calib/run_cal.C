@@ -25,11 +25,10 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0)
   getline(std::cin, calib_raw);
   TString calib_option = calib_raw;
   
-  /*
   string eff_raw;
   cout << "\nEnter options for efficiency (enter NA to skip): ";
   getline(std::cin, eff_raw);
-  TString eff_option = eff_raw;*/
+  TString eff_option = eff_raw;
 
   TChain ch("T");
   ch.Add(Form("../../ROOTfiles/shms_replay_%d_%d.root", RunNumber, NumEvents));
@@ -66,5 +65,5 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0)
 	}
     }
 
-  //if (eff_option != "NA") ch.Process("efficiencies.C+",eff_option);
+  if (eff_option != "NA") ch.Process("efficiencies.C+",eff_option);
 }
