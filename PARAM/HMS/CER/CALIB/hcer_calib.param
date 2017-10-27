@@ -1,3 +1,4 @@
 
 ;Garth H.  gain calibration from HMS run 303
-hcer_adc_to_npe = 1/323., 1/327.
+hcer_adc_to_npe = 1/323./0.0195,1/327./0.0195
+
