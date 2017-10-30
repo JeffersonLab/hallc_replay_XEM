@@ -1,0 +1,5 @@
+#**********************
+# HMS Drift Chambers  *
+#**********************
+
+#include "DEF-files/HMS/TEST_STANDS/DC/hdcana.def"
