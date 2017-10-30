@@ -1,6 +1,6 @@
 Block: RawDecode
 
-Pedestal_event     g.evtyp == 4
+Pedestal_event     g.evtyp == 99
 scalar_event       g.evtyp == 0
 HMS_event          g.evtyp == 1
 SHMS_event         g.evtyp == 1

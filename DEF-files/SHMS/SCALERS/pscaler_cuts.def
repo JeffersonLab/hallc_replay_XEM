@@ -2,6 +2,7 @@
 
 Block: RawDecode
 
+Pedestal_event     g.evtyp == 99
 SHMS_trig_1_event   g.evtyp == 1
 SHMS_trig_2_event   g.evtyp == 2
 SHMS_trig_3_event   g.evtyp == 3
