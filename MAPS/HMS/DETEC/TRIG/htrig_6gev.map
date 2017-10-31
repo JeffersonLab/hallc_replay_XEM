@@ -65,14 +65,16 @@ SLOT=20
 
 ROC=3
 
-SLOT=4
- 111,   2,  18,   1  ! hDCREF1
-
-SLOT=7
- 127,   2,  19,   1  ! hDCREF2
-
-SLOT=13
-  95,   2,  20,   1  ! hDCREF3
-
-SLOT=16
- 111,   2,  21,   1  ! hDCREF4
+!CAEN1190 module
+SLOT=5
+! chan    plane     bar    sig
+     111,     2,     18,      1!  hDCREF1
+SLOT=8
+! chan    plane     bar    sig
+     127,     2,     19,      1!  hDCREF2
+SLOT=10
+! chan    plane     bar    sig
+     127,     2,     20,      1!  hDCREF3
+SLOT=17
+! chan    plane     bar    sig
+     127,     2,     21,      1!  hDCREF4

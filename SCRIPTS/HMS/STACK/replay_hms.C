@@ -107,7 +107,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file
-  analyzer->SetOdefFile("DEF-files/HMS/STACK/hstackana.def");
+  analyzer->SetOdefFile("DEF-files/HMS/STACK/hstack_include.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/HMS/STACK/hstackana_cuts.def");  // optional
   // File to record accounting information for cuts

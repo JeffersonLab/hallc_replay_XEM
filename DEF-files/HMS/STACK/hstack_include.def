@@ -1,0 +1,6 @@
+#include "DEF-files/HMS/STACK/BLOCK/hblock_vars.def"
+#include "DEF-files/HMS/STACK/DC/hdc_histos.def"
+#include "DEF-files/HMS/STACK/HODO/hhodo_histos.def"
+#include "DEF-files/HMS/STACK/CER/hcer_histos.def"
+#include "DEF-files/HMS/STACK/CAL/hcal_histos.def"
+#include "DEF-files/HMS/STACK/TRIG/htrig_histos.def"

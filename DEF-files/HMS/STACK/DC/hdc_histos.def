@@ -1,0 +1,69 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block H.dc.*
+block T.hms.*
+#block H.scin.*
+
+#SIMPLE DEF FILE TO TEST 12 GeV CHAMBERS: Will need to get updated  after tests
+
+#HMS Drift Chamber 1
+
+TH1F hdc1u1_wm 'HDC 1U1 Wiremap' H.dc.1u1.wirenum 96 0.5 96.5
+TH1F hdc1u2_wm 'HDC 1U2 Wiremap' H.dc.1u2.wirenum 96 0.5 96.5
+TH1F hdc1x1_wm 'HDC 1X1 Wiremap' H.dc.1x1.wirenum  102 0.5  102.5
+TH1F hdc1x2_wm 'HDC 1X2 Wiremap' H.dc.1x2.wirenum  102 0.5  102.5
+TH1F hdc1v1_wm 'HDC 1V1 Wiremap' H.dc.1v1.wirenum 96 0.5 96.5
+TH1F hdc1v2_wm 'HDC 1V2 Wiremap' H.dc.1v2.wirenum 96 0.5 96.5
+
+TH1F hdc1u1_rawt 'HDC 1U1 Raw TDC' H.dc.1u1.rawtdc 500 0 2000
+TH1F hdc1u2_rawt 'HDC 1U2 Raw TDC' H.dc.1u2.rawtdc 500 0 2000
+TH1F hdc1x1_rawt 'HDC 1X1 Raw TDC' H.dc.1x1.rawtdc 500 0 2000
+TH1F hdc1x2_rawt 'HDC 1X2 Raw TDC' H.dc.1x2.rawtdc 500 0 2000
+TH1F hdc1v1_rawt 'HDC 1V1 Raw TDC' H.dc.1v1.rawtdc 500 0 2000
+TH1F hdc1v2_rawt 'HDC 1V2 Raw TDC' H.dc.1v2.rawtdc 500 0 2000
+
+
+TH1F hdc1u1_dt 'HDC 1U1 Drift Time' H.dc.1u1.time 200 -1000 1000
+TH1F hdc1u2_dt 'HDC 1U2 Drift Time' H.dc.1u2.time 200 -1000 1000
+TH1F hdc1x1_dt 'HDC 1X1 Drift Time' H.dc.1x1.time 200 -1000 1000
+TH1F hdc1x2_dt 'HDC 1X2 Drift Time' H.dc.1x2.time 200 -1000 1000
+TH1F hdc1v1_dt 'HDC 1V1 Drift Time' H.dc.1v1.time 200 -1000 1000
+TH1F hdc1v2_dt 'HDC 1V2 Drift Time' H.dc.1v2.time 200 -1000 1000
+
+TH1F hdc1u1_dd 'HDC 1U1 Drift Distance' H.dc.1u1.dist 300 -0.1 0.6
+TH1F hdc1u2_dd 'HDC 1U2 Drift Distance' H.dc.1u2.dist 300 -0.1 0.6
+TH1F hdc1x1_dd 'HDC 1X1 Drift Distance' H.dc.1x1.dist 300 -0.1 0.6
+TH1F hdc1x2_dd 'HDC 1X2 Drift Distance' H.dc.1x2.dist 300 -0.1 0.6
+TH1F hdc1v1_dd 'HDC 1V1 Drift Distance' H.dc.1v1.dist 300 -0.1 0.6
+TH1F hdc1v2_dd 'HDC 1V2 Drift Distance' H.dc.1v2.dist 300 -0.1 0.6
+
+#HMS Drift Chamber 2
+
+TH1F hdc2u1_wm 'HDC 2U1 Wiremap' H.dc.2u1.wirenum 96 0.5 96.5
+TH1F hdc2u2_wm 'HDC 2U2 Wiremap' H.dc.2u2.wirenum 96 0.5 96.5
+TH1F hdc2x1_wm 'HDC 2X1 Wiremap' H.dc.2x1.wirenum  102 0.5  102.5
+TH1F hdc2x2_wm 'HDC 2X2 Wiremap' H.dc.2x2.wirenum  102 0.5  102.5
+TH1F hdc2v1_wm 'HDC 2V1 Wiremap' H.dc.2v1.wirenum 96 0.5 96.5
+TH1F hdc2v2_wm 'HDC 2V2 Wiremap' H.dc.2v2.wirenum 96 0.5 96.5
+
+TH1F hdc2u1_rawt 'HDC 2U1 Raw TDC' H.dc.2u1.rawtdc 500 0 2000
+TH1F hdc2u2_rawt 'HDC 2U2 Raw TDC' H.dc.2u2.rawtdc 500 0 2000
+TH1F hdc2x1_rawt 'HDC 2X1 Raw TDC' H.dc.2x1.rawtdc 500 0 2000
+TH1F hdc2x2_rawt 'HDC 2X2 Raw TDC' H.dc.2x2.rawtdc 500 0 2000
+TH1F hdc2v1_rawt 'HDC 2V1 Raw TDC' H.dc.2v1.rawtdc 500 0 2000
+TH1F hdc2v2_rawt 'HDC 2V2 Raw TDC' H.dc.2v2.rawtdc 500 0 2000
+
+
+TH1F hdc2u1_dt 'HDC 2U1 Drift Time' H.dc.2u1.time 200 -1000 1000
+TH1F hdc2u2_dt 'HDC 2U2 Drift Time' H.dc.2u2.time 200 -1000 1000
+TH1F hdc2x1_dt 'HDC 2X1 Drift Time' H.dc.2x1.time 200 -1000 1000
+TH1F hdc2x2_dt 'HDC 2X2 Drift Time' H.dc.2x2.time 200 -1000 1000
+TH1F hdc2v1_dt 'HDC 2V1 Drift Time' H.dc.2v1.time 200 -1000 1000
+TH1F hdc2v2_dt 'HDC 2V2 Drift Time' H.dc.2v2.time 200 -1000 1000
+
+TH1F hdc2u1_dd 'HDC 2U1 Drift Distance' H.dc.2u1.dist 300 -0.1 0.6
+TH1F hdc2u2_dd 'HDC 2U2 Drift Distance' H.dc.2u2.dist 300 -0.1 0.6
+TH1F hdc2x1_dd 'HDC 2X1 Drift Distance' H.dc.2x1.dist 300 -0.1 0.6
+TH1F hdc2x2_dd 'HDC 2X2 Drift Distance' H.dc.2x2.dist 300 -0.1 0.6
+TH1F hdc2v1_dd 'HDC 2V1 Drift Distance' H.dc.2v1.dist 300 -0.1 0.6
+TH1F hdc2v2_dd 'HDC 2V2 Drift Distance' H.dc.2v2.dist 300 -0.1 0.6
