@@ -39,8 +39,8 @@ hdc_readoutTB = -1.0, 1.0, -1.0, 1.0, 1.0, -1.0
 ; CHAMBER POSITION PARAMETERS
 
 ; x, y and z position of center for each wire chamber in cm.
-hdc_xcenter = 0.0; TODO - final survey
-hdc_ycenter = 0.0; 
+hdc_xcenter = 0.0,0.0; TODO - final survey
+hdc_ycenter = 0.0,0.0; 
 
 ; 
 hdc_1_zpos = -52.0954;

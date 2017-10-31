@@ -20,5 +20,5 @@ hdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
 
 
 ; Zero time correction for each plane in ns that is added to TDC time.
-  hdc_plane_time_zero = 0.0,0.0,0.0,0.0,0.0,0.0,
-   		       	 0.0,0.0,0.0,0.0,0.0,0.0
+  hdc_plane_time_zero = 1300.0,1300.0,1300.0,1300.0,1300.0,1300.0,
+   		       	 1300.0,1300.0,1300.0,1300.0,1300.0,1300.0

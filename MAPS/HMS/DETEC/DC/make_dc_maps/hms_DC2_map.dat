@@ -1,0 +1,119 @@
+HMS2
+##12 GeV HMS Drift Chamber 2
+
+
+
+## X plane
+## Wire 0 is top (from beam perspective) REFERENCE WIRE: 52 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Xc1	10	0	11,12,13,14,15
+cable	Xc2	26	11	
+cable	Xc3	42	27	
+cable	Xc4	43	58	
+cable	Xc5	59	74	
+cable	Xc6	75	90	
+cable	Xc7	91	101	11,12,13,14,15
+
+## X' plane
+## Wire 0 is top (from beam perspective) REFERENCE WIRE: 51 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Xc1p	10	0	11,12,13,14,15
+cable	Xc2p	26	11	
+cable	Xc3p	42	27	
+cable	Xc4p	58	43	
+cable	Xc5p	59	74	
+cable	Xc6p	75	90	
+cable	Xc7p	91	101	11,12,13,14,15
+
+## U plane
+## Wire 0 is upper right corner (from beam perspective) REFERENCE WIRE: 49 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Uc1	15	0	
+cable	Uc2	31	16	
+cable	Uc3	32	47	
+cable	Uc4	48	63	
+cable	Uc5	64	79	
+cable	Uc6	80	95	
+
+## U' plane
+## Wire 0 is upper left corner (from beam perspective)  REFERENCE WIRE: 48 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Uc1p	15	0	
+cable	Uc2p	31	16	
+cable	Uc3p	47	32	
+cable	Uc4p	63	48	
+cable	Uc5p	64	79	
+cable	Uc6p	80	95	
+
+## V plane
+## Wire 0 is upper right corner (from beam perspective)  REFERENCE WIRE: 49 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Vc1	15	0
+cable	Vc2	31	16
+cable	Vc3	32	47
+cable	Vc4	48	63
+cable	Vc5	64	79
+cable	Vc6	80	95
+
+## V' plane
+## Wire 0 is upper right  corner (from beam perspective)  REFERENCE WIRE: 48 (counting from Wire 1)
+#	cable	w_start	w_end	N/C
+cable	Vc1p	15	0
+cable	Vc2p	31	16
+cable	Vc3p	47	32
+cable	Vc4p	63	48
+cable	Vc5p	64	79
+cable	Vc6p	80	95
+
+## TDC mapping
+#	slot	conn	cable	ref
+tdc     2       C0      Vc6
+tdc     2       C1      Uc4p
+
+tdc	4	C0	Vc6p
+tdc	4	C1	Uc2
+tdc	4	D0	Xc7p    111
+tdc	4	D1	Uc3p
+
+tdc	5	C0	Xc6p
+tdc	5	C1	Xc5p
+tdc	5	D0	Uc2p
+tdc	5	D1	Vc5
+
+tdc	7	C0	Xc3
+tdc	7	C1	Xc2
+tdc	7	D0	Vc4
+tdc	7	D1	Xc1     127
+
+tdc	8	C0	Vc5p
+tdc	8	C1	Uc1
+tdc	8	D0	Vc3
+tdc	8	D1	Uc1p
+
+tdc	10	C0	Vc4p
+tdc	10	C1	Uc6
+tdc	10	D0	Vc2
+tdc	10	D1	Uc6p
+
+tdc	13	C0	Vc3p
+tdc	13	C1	Xc7     95
+tdc	13	D0	Xc4p
+tdc	13	D1	Xc6
+
+tdc	14	C0	Vc2p
+tdc	14	C1	Xc5
+tdc	14	D0	Xc3p
+tdc	14	D1	Uc5
+
+tdc	16	C0	Xc2p
+tdc	16	C1	Xc4
+tdc	16	D0	Xc1p    111
+tdc	16	D1	Uc4
+
+tdc	17	C0	Vc1
+tdc	17	C1	Uc5p
+tdc	17	D0	Vc1p
+tdc	17	D1	Uc3
+
+
+# vim: noexpandtab softtabstop=0 shiftwidth=8 tabstop=8
