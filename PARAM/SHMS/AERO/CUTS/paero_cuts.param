@@ -15,8 +15,8 @@ paero_dp_min = -20.0
 paero_dp_max = 25.0
 
 ; ADC time window cut values used to select "good" ADC events
-paero_adcTimeWindowMin = 500.
-paero_adcTimeWindowMax = 2500.
+paero_adcTimeWindowMin = 31.25
+paero_adcTimeWindowMax = 156.25
 
 ; NPE Threshold for "good" hit (for measureing effic.)
 paero_npe_thresh = 0.5

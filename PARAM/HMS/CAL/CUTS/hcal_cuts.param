@@ -6,8 +6,8 @@
 hcal_ADCmode=1
 
 ;FADC Pulse time window cuts
-hcal_AdcTimeWindowMin=1000.
-hcal_AdcTimeWindowMax=2800.
+hcal_AdcTimeWindowMin = 62.5
+hcal_AdcTimeWindowMax = 175.0
 
 ; threshold on selecting good adc is dynamic pedestal+pcal_AdcNegThreshold
 hcal_AdcNegThreshold=0.

@@ -4,7 +4,7 @@
 ;  3 == Use the sample integral - sample ped
 ; if not set then defaults to use the raw pulse integral
 pcal_ADCmode=1
-pcal_AdcTimeWindowMin=1300.
+pcal_AdcTimeWindowMin = 81.25
 ; Calibration constants for run 479_-1, 278685 events processed
 
 pcal_neg_gain_cor = 0.226/0.0195, 0.312/0.0195, 0.229/0.0195, 0.281/0.0195, 0.209/0.0195, 0.351/0.0195, 0.467/0.0195, 0.372/0.0195, 0.244/0.0195, 0.310/0.0195, 0.333/0.0195, 0.214/0.0195, 0.282/0.0195, 0.879/0.0195,
