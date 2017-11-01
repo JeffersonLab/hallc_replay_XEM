@@ -1,5 +1,8 @@
 ; Geometrical parameters
 
+; Chamber version
+ pdc_version = 2
+
 ; Conversion factor from TDC clicks to ns.
 pdc_tdc_time_per_channel = -0.10
 
@@ -32,10 +35,10 @@ pdc_central_time   = 0, 0, 0, 0, 0, 0  ; -not used in new SHMS chambers
 pdc_drifttime_sign = 0, 0, 0, 0, 0, 0  ; -not used in new SHMS chambers
                      0, 0, 0, 0, 0, 0
 
-pdc_readoutLR = -1.0, 1.0, -1.0, -1.0, 1.0, -1.0
-                 1.0, -1.0, 1.0, 1.0, -1.0, 1.0
-pdc_readoutTB = 1.0, -1.0, 1.0, -1.0, 1.0, -1.0
-                -1.0, 1.0, -1.0, 1.0, -1.0, 1.0             
+pdc_readoutLR = -1, 1, -1, -1, 1, -1
+                 1, -1, 1, 1, -1, 1
+pdc_readoutTB = 1, -1, 1, -1, 1, -1
+                -1, 1, -1, 1, -1, 1             
 
 ; CHAMBER POSITION PARAMETERS
 
