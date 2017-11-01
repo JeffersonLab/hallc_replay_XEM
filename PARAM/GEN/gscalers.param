@@ -1,10 +1,7 @@
-gbcm1_gain = 0.000328739              ; microA/Hz (New Value)
-gbcm2_gain = 0.000381677              ; microA/Hz (New Value)
-gbcm3_gain = 0.00043343               ; microA/Hz (Old, Value)
-
-gbcm1_offset =  250842.               ; Hz (New Value)
-gbcm2_offset =  250567.               ; Hz (New Value)
-gbcm3_offset =  245437.               ; Hz (Old, Value)
-
-gunser_offset =  514529.              ; Hz (Old, Value)
-gunser_gain = 0.00025001              ; microA/Hz (New Value)
+gNumBCMs=3
+gBCM_Gain = 4673,3954,4000
+gBCM_Offset = 250000,250000,393000
+gBCM_Names="BCM1 BCM2 Unser"
+gBCM_Current_threshold=1.0
+; index = 0 to gNumBCMs-1
+gBCM_Current_threshold_index=0

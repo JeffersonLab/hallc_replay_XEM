@@ -1,19 +1,28 @@
 Run #: {gen_run_number}
-
 **************************
 * General Run Information
 **************************
 
 1 MhZ Pulses : {H.1Mhz.scaler}
-Run Length   : {H.1Mhz.scaler/1000000.:%.3f} sec
+Run Length   : {H.1Mhz.scalerTime:%.3f} sec
 
 ***********
 * Beamline
 ***********
+  
+BCM1 Current: {H.BCM1.scalerCurrent:%.3f} uA		  
+BCM2 Current: {H.BCM2.scalerCurrent:%.3f} uA		 
+Unser Current: {H.Unser.scalerCurrent:%.3f} uA		  
 
-BCM1  Current : {(H.BCM1.scalerRate-250000)/(4673):%.3f} uA      Total charge = {(H.BCM1.scalerRate-250000) / (4673)*H.1Mhz.scaler/1000000.:%.3f} uC
-BCM2  Current : {(H.BCM2.scalerRate-250000)/(3954):%.3f} uA      Total charge = {(H.BCM2.scalerRate-250000) / (3954)*H.1Mhz.scaler/1000000.:%.3f} uC 
-Unser Current : {(H.Unser.scalerRate-393000)/(4000):%.3f} uA     Total charge = {(H.Unser.scalerRate-393000) / (4000)*H.1Mhz.scaler/1000000.:%.3f} uC
+With no cuts on BCM{gBCM_Current_threshold_index+1}.
+BCM1 Counts: {H.BCM1.scaler}		Total Charge: {H.BCM1.scalerCharge:%.3f} uC
+BCM2 Counts: {H.BCM2.scaler} 		Total Charge: {H.BCM2.scalerCharge:%.3f} uC	
+Unser Counts: {H.Unser.scaler} 		Total Charge: {H.Unser.scalerCharge:%.3f} uC
+
+Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1Mhz.scalerTimeCut:%.3f}s, or {((H.1Mhz.scalerTimeCut/H.1Mhz.scalerTime)*100.):%.3f}% of total run time.
+BCM1 Counts: {H.BCM1.scalerCut} 	Total Charge: {H.BCM1.scalerChargeCut:%.3f} uC
+BCM2 Counts: {H.BCM2.scalerCut} 	Total Charge: {H.BCM2.scalerChargeCut:%.3f} uC
+Unser Counts: {H.Unser.scalerCut} 	Total Charge: {H.Unser.scalerChargeCut:%.3f} uC
 
 ***********
 * Triggers

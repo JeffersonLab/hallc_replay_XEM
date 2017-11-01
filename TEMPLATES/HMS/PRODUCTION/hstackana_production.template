@@ -1,10 +1,29 @@
 Run #{gen_run_number}
 
-Run Time  : {H.1Mhz.scaler}  {H.1Mhz.scaler/1000000.} sec 
+**************************
+* General Run Information
+**************************
 
-BCM1  : {(H.BCM1.scalerRate-250000)/(4673):%3.3f} uA      Total charge = {(H.BCM1.scalerRate-250000) / (4673)*H.1Mhz.scaler/1000000.:%7.3f} uC
-BCM2  : {(H.BCM2.scalerRate-250000)/(3954):%3.3f} uA      Total charge = {(H.BCM2.scalerRate-250000) / (3954)*H.1Mhz.scaler/1000000.:%7.3f} uC 
-Unser : {(H.Unser.scalerRate-393000)/(4000):%3.3f} uA     Total charge = {(H.Unser.scalerRate-393000) / (4000)*H.1Mhz.scaler/1000000.:%7.3f} uC 
+1 MhZ Pulses : {H.1Mhz.scaler}
+Run Length   : {H.1Mhz.scalerTime:%.3f} sec
+
+***********
+* Beamline
+***********
+  
+BCM1 Current: {H.BCM1.scalerCurrent:%.3f} uA		  
+BCM2 Current: {H.BCM2.scalerCurrent:%.3f} uA		 
+Unser Current: {H.Unser.scalerCurrent:%.3f} uA		  
+
+With no cuts on BCM{gBCM_Current_threshold_index+1}.
+BCM1 Counts: {H.BCM1.scaler}		Total Charge: {H.BCM1.scalerCharge:%.3f} uC
+BCM2 Counts: {H.BCM2.scaler} 		Total Charge: {H.BCM2.scalerCharge:%.3f} uC	
+Unser Counts: {H.Unser.scaler} 		Total Charge: {H.Unser.scalerCharge:%.3f} uC
+
+Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1Mhz.scalerTimeCut:%.3f}s, or {((H.1Mhz.scalerTimeCut/H.1Mhz.scalerTime)*100.):%.3f}% of total run time.
+BCM1 Counts: {H.BCM1.scalerCut} 	Total Charge: {H.BCM1.scalerChargeCut:%.3f} uC
+BCM2 Counts: {H.BCM2.scalerCut} 	Total Charge: {H.BCM2.scalerChargeCut:%.3f} uC
+Unser Counts: {H.Unser.scalerCut} 	Total Charge: {H.Unser.scalerChargeCut:%.3f} uC
 
 {hdc_plane_names}
 Horizontal drift chamber z positions:
@@ -14,6 +33,20 @@ Chamber 2: {hdc_zpos[6]:%6.2f} {hdc_zpos[7]:%6.2f} {hdc_zpos[8]:%6.2f}
            {hdc_zpos[9]:%6.2f} {hdc_zpos[10]:%6.2f} {hdc_zpos[11]:%6.2f}
 
 HMS triggers:  {hms_trigs.npassed}
+
+Hodo efficiency:
+Plane 1: {hhodo_plane_AND_eff[0]}
+Plane 2: {hhodo_plane_AND_eff[1]}
+Plane 3: {hhodo_plane_AND_eff[2]}
+Plane 4: {hhodo_plane_AND_eff[3]}
+
+S1XY : {hhodo_s1XY_eff}
+S2XY : {hhodo_s2XY_eff}
+
+STOF: {hhodo_stof_eff}
+
+3_of_4 EFF : {hhodo_3_of_4_eff}
+4_of_4 EFF : {hhodo_4_of_4_eff}
 
 Rate  :  {H.Trig.scalerRate/1000.:%7.3f} kHz
 
