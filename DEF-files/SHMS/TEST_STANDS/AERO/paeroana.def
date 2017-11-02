@@ -24,47 +24,47 @@ TH1F paero_good_mult 'SHMS Aero Good Multiplicity; Number of PMTs Hit; Total Num
 
 
 #SHMS AERO TOTAL NUMBER OF P.E.
-TH1F paero_tot_npe_pos 'SHMS Aero+ Total Number of Photoelectrons; Total Number of Pos Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.posNpeSum 200 0 100 P.aero.posNpeSum>0.0 
-TH1F paero_tot_npe_neg 'SHMS Aero- Total Number of Photoelectrons; Total Number of Neg Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.negNpeSum 200 0 100 P.aero.negNpeSum>0.0 
-TH1F paero_tot_npe 'SHMS Aero Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.npeSum 200 0 100 P.aero.npeSum>0.0 
+TH1F paero_tot_npe_pos 'SHMS Aero+ Total Number of Photoelectrons; Total Number of Pos Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.posNpeSum 100 0 50 P.aero.posNpeSum>0.0 
+TH1F paero_tot_npe_neg 'SHMS Aero- Total Number of Photoelectrons; Total Number of Neg Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.negNpeSum 100 0 50 P.aero.negNpeSum>0.0 
+TH1F paero_tot_npe 'SHMS Aero Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.aero.npeSum 100 0 50 P.aero.npeSum>0.0 
 
 
 #SHMS AERO Number of P.E. / PMT
-TH2F paero_npe_pos 'SHMS Aero+ Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.aero.posNpe 7 0.5 7.5 200 0 100 P.aero.posNpe>0.0 
-TH2F paero_npe_neg 'SHMS Aero- Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.aero.negNpe 7 0.5 7.5 200 0 100 P.aero.negNpe>0.0 
+TH2F paero_npe_pos 'SHMS Aero+ Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.aero.posNpe 7 0.5 7.5 100 0 50 P.aero.posNpe>0.0 
+TH2F paero_npe_neg 'SHMS Aero- Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.aero.negNpe 7 0.5 7.5 100 0 50 P.aero.negNpe>0.0 
 
 
 #SHMS AERO RAW Pulse Pedestal / Integral  / Amplitude / Time
-TH2F paero_raw_pped_vs_pmt_pos 'SHMS Aero+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units'  P.aero.posAdcCounter P.aero.posAdcPedRaw 7 0.5 7.5 10000 0 10000
+TH2F paero_raw_pped_vs_pmt_pos 'SHMS Aero+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 10 ADC Units'  P.aero.posAdcCounter P.aero.posAdcPedRaw 7 0.5 7.5 410 0 4100
 TH2F paero_raw_pi_vs_pmt_pos 'SHMS Aero+ Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseIntRaw 7 0.5 7.5 650 0 32500
-TH2F paero_raw_pamp_vs_pmt_pos 'SHMS Aero+ Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmpRaw 7 0.5 7.5 410 0 8200
+TH2F paero_raw_pamp_vs_pmt_pos 'SHMS Aero+ Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
 TH2F paero_raw_ptime_vs_pmt_pos 'SHMS Aero+ Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseTimeRaw 7 0.5 7.5 650 0 6500
 
-TH2F paero_raw_pped_vs_pmt_neg 'SHMS Aero- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units'  P.aero.negAdcCounter P.aero.negAdcPedRaw 7 0.5 7.5 10000 0 10000
+TH2F paero_raw_pped_vs_pmt_neg 'SHMS Aero- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 10 ADC Units'  P.aero.negAdcCounter P.aero.negAdcPedRaw 7 0.5 7.5 410 0 4100
 TH2F paero_raw_pi_vs_pmt_neg 'SHMS Aero- Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseIntRaw 7 0.5 7.5 650 0 32500
-TH2F paero_raw_pamp_vs_pmt_neg 'SHMS Aero- Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmpRaw 7 0.5 7.5 410 0 8200
+TH2F paero_raw_pamp_vs_pmt_neg 'SHMS Aero- Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmpRaw 7 0.5 7.5 410 0 4100
 TH2F paero_raw_ptime_vs_pmt_neg 'SHMS Aero- Raw Pulse Time vs. PMT Number; PMT Number;  Raw Pulse Time / 10 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseTimeRaw 7 0.5 7.5 650 0 6500
 
 
 #SHMS AERO Pulse Pedestal / Integral  / Amplitude 
-TH2F paero_pped_vs_pmt_pos 'SHMS Aero+ Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 400 300 700
-TH2F paero_pi_vs_pmt_pos 'SHMS Aero+ Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 600 0 30000
-TH2F paero_pamp_vs_pmt_pos 'SHMS Aero+ Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 400 0 8000
+TH2F paero_pped_vs_pmt_pos 'SHMS Aero+ Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' P.aero.posAdcCounter P.aero.posAdcPed 7 0.5 7.5 500 0 1000
+TH2F paero_pi_vs_pmt_pos 'SHMS Aero+ Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 0.25 pC' P.aero.posAdcCounter P.aero.posAdcPulseInt 7 0.5 7.5 320 0 80
+TH2F paero_pamp_vs_pmt_pos 'SHMS Aero+ Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 2 mV' P.aero.posAdcCounter P.aero.posAdcPulseAmp 7 0.5 7.5 500 0 1000
 
-TH2F paero_pped_vs_pmt_neg 'SHMS Aero- Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 400 300 700
-TH2F paero_pi_vs_pmt_neg 'SHMS Aero- Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 600 0 30000
-TH2F paero_pamp_vs_pmt_neg 'SHMS Aero- Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 400 0 8000
+TH2F paero_pped_vs_pmt_neg 'SHMS Aero- Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' P.aero.negAdcCounter P.aero.negAdcPed 7 0.5 7.5 500 0 1000
+TH2F paero_pi_vs_pmt_neg 'SHMS Aero- Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 0.25 pC' P.aero.negAdcCounter P.aero.negAdcPulseInt 7 0.5 7.5 320 0 80
+TH2F paero_pamp_vs_pmt_neg 'SHMS Aero- Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 2 mV' P.aero.negAdcCounter P.aero.negAdcPulseAmp 7 0.5 7.5 500 0 1000
 
 
 #SHMS AERO GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time :: GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
-TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 400 300 700  P.aero.goodPosAdcPed>0.0
-TH2F paero_good_pi_vs_pmt_pos 'SHMS Aero+ Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] P.aero.goodPosAdcPulseInt 7 0.5 7.5 600 0 30000 P.aero.goodPosAdcPulseInt>0.0
+TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 500 0 1000 P.aero.goodPosAdcPed>0.0
+TH2F paero_good_pi_vs_pmt_pos 'SHMS Aero+ Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 0.25 pC' [I+1] P.aero.goodPosAdcPulseInt 7 0.5 7.5 320 0 80 P.aero.goodPosAdcPulseInt>0.0
 TH2F paero_good_raw_pi_vs_pmt_pos 'SHMS Aero+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.aero.goodPosAdcPulseIntRaw 7 0.5 7.5 600 0 30000 P.aero.goodPosAdcPulseIntRaw>0.0
-TH2F paero_good_pamp_vs_pmt_pos 'SHMS Aero+ Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] P.aero.goodPosAdcPulseAmp 7 0.5 7.5 200 0 4000 P.aero.goodPosAdcPulseAmp>0.0
-TH2F paero_good_ptime_vs_pmt_pos 'SHMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.aero.goodPosAdcPulseTime 7 0.5 7.5 350 0 3500 P.aero.goodPosAdcPulseTime>0.0
+TH2F paero_good_pamp_vs_pmt_pos 'SHMS Aero+ Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 2 mV' [I+1] P.aero.goodPosAdcPulseAmp 7 0.5 7.5 500 0 1000  P.aero.goodPosAdcPulseAmp>0.0
+TH2F paero_good_ptime_vs_pmt_pos 'SHMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] P.aero.goodPosAdcPulseTime 7 0.5 7.5 4000 0 400 P.aero.goodPosAdcPulseTime>0.0
 
-TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 400 300 700 P.aero.goodNegAdcPed>0.0
-TH2F paero_good_pi_vs_pmt_neg 'SHMS Aero- Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] P.aero.goodNegAdcPulseInt 7 0.5 7.5 600 0 30000 P.aero.goodNegAdcPulseInt>0.0
+TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 500 0 1000 P.aero.goodNegAdcPed>0.0
+TH2F paero_good_pi_vs_pmt_neg 'SHMS Aero- Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 0.25 pC' [I+1] P.aero.goodNegAdcPulseInt 7 0.5 7.5 320 0 80 P.aero.goodNegAdcPulseInt>0.0
 TH2F paero_good_raw_pi_vs_pmt_neg 'SHMS Aero- Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.aero.goodNegAdcPulseIntRaw 7 0.5 7.5 600 0 30000 P.aero.goodNegAdcPulseIntRaw>0.0
-TH2F paero_good_pamp_vs_pmt_neg 'SHMS Aero- Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] P.aero.goodNegAdcPulseAmp 7 0.5 7.5 200 0 4000 P.aero.goodNegAdcPulseAmp>0.0
-TH2F paero_good_ptime_vs_pmt_neg 'SHMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.aero.goodNegAdcPulseTime 7 0.5 7.5 350 0 3500 P.aero.goodNegAdcPulseTime>0.0
+TH2F paero_good_pamp_vs_pmt_neg 'SHMS Aero- Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 2 mV' [I+1] P.aero.goodNegAdcPulseAmp 7 0.5 7.5 500 0 1000 P.aero.goodNegAdcPulseAmp>0.0
+TH2F paero_good_ptime_vs_pmt_neg 'SHMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] P.aero.goodNegAdcPulseTime 7 0.5 7.5 4000 0 400 P.aero.goodNegAdcPulseTime>0.0

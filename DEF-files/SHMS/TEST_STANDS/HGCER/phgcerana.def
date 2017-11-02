@@ -16,27 +16,27 @@ TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; PMT Number; Numbe
 TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
 
 #SHMS HGC TOTAL NUMBER OF P.E.
-TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 200 0 100 P.hgcer.npeSum>0.0 
+TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 100 0 50 P.hgcer.npeSum>0.0 
 
 #SHMS HGC Number of P.E. / PMT
-TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] P.hgcer.npe 4 0.5 4.5 200 0 100 P.hgcer.npe>0.0 
+TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.hgcer.npe 4 0.5 4.5 100 0 50 P.hgcer.npe>0.0 
 
 #SHMS HGC RAW Pulse Pedestal / Integral  / Amplitude / Time
-TH2F phgcer_raw_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPedRaw 4 0.5 4.5 10000 0 10000
+TH2F phgcer_raw_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPedRaw 4 0.5 4.5 410 0 4100 
 TH2F phgcer_raw_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseIntRaw 4 0.5 4.5 650 0 32500
-TH2F phgcer_raw_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmpRaw 4 0.5 4.5 410 0 8200
+TH2F phgcer_raw_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmpRaw 4 0.5 4.5 410 0 4100
 TH2F phgcer_raw_ptime_vs_pmt 'SHMS Heavy Gas Cherenkov Raw Pulse Time vs. PMT Number; PMT Number;  Raw Pulse Time / 10 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseTimeRaw 4 0.5 4.5 650 0 6500
 
 #SHMS HGC Pulse Pedestal / Integral  / Amplitude 
-TH2F phgcer_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 400 300 700
-TH2F phgcer_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 600 0 30000
-TH2F phgcer_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 400 0 8000
+TH2F phgcer_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' P.hgcer.adcCounter P.hgcer.adcPed 4 0.5 4.5 500 0 1000
+TH2F phgcer_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 0.04 pC' P.hgcer.adcCounter P.hgcer.adcPulseInt 4 0.5 4.5 2000 0 80
+TH2F phgcer_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 2 mV' P.hgcer.adcCounter P.hgcer.adcPulseAmp 4 0.5 4.5 500 0 1000
 
 #SHMS HGC GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time :: GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
-TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 400 300 700
-TH2F phgcer_good_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' [I+1] P.hgcer.goodAdcPulseInt 4 0.5 4.5 600 0 30000 P.hgcer.goodAdcPulseInt>0.0
+TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 500 0 1000
+TH2F phgcer_good_pi_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.04 pC' [I+1] P.hgcer.goodAdcPulseInt 4 0.5 4.5 2000 0 80 P.hgcer.goodAdcPulseInt>0.0
 TH2F phgcer_good_rawpi_vs_pmt 'SHMS Heavy Gas Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.hgcer.goodAdcPulseIntRaw 4 0.5 4.5 600 0 30000 P.hgcer.goodAdcPulseIntRaw>0.0
-TH2F phgcer_good_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' [I+1] P.hgcer.goodAdcPulseAmp 4 0.5 4.5 200 0 4000 P.hgcer.goodAdcPulseAmp>0.0
-TH2F phgcer_good_ptime_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] P.hgcer.goodAdcPulseTime 4 0.5 4.5 350 0 3500 P.hgcer.goodAdcPulseTime>0.0
+TH2F phgcer_good_pamp_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' [I+1] P.hgcer.goodAdcPulseAmp 4 0.5 4.5 500 0 1000 P.hgcer.goodAdcPulseAmp>0.0
+TH2F phgcer_good_ptime_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] P.hgcer.goodAdcPulseTime 4 0.5 4.5 4000 0 400 P.hgcer.goodAdcPulseTime>0.0
 
 

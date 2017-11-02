@@ -128,7 +128,7 @@ TH1F phodo_1y_good_tdc_occ_neg 'SHMS 1Y- Good TDC Occupancy; PMT Number; Number 
 TH1F phodo_2x_good_tdc_occ_neg 'SHMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2x.numGoodNegTdcHits 14 0.5 14.5
 TH1F phodo_2y_good_tdc_occ_neg 'SHMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2y.numGoodNegTdcHits 21 0.5 21.5
 
-#####################
+####### SHMS HODO RAW VARIABLES #########
 
 #SHMS HODO RAW PULSE PEDESTAL
 TH2F phodo_1x_raw_pped_vs_pmt_pos 'SHMS 1X+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Unit' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPedRaw 13 0.5 13.5 4000 0 4000
@@ -175,139 +175,141 @@ TH2F phodo_2x_raw_ptime_vs_pmt_neg 'SHMS 2X- Raw Pulse Time vs. PMT Number; PMT 
 TH2F phodo_2y_raw_ptime_vs_pmt_neg 'SHMS 2Y- Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseTimeRaw 21 0.5 21.5 410 0 4100
 
 #SHMS HODO RAW TDC TIME
-TH2F phodo_1x_raw_tdctime_vs_pmt_pos 'SHMS 1X+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.1x.posTdcCounter  P.hod.1x.posTdcTimeRaw 13 0.5 13.5 200 0 2000
-TH2F phodo_1y_raw_tdctime_vs_pmt_pos 'SHMS 1Y+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.1y.posTdcCounter  P.hod.1y.posTdcTimeRaw 13 0.5 13.5 200 0 2000
-TH2F phodo_2x_raw_tdctime_vs_pmt_pos 'SHMS 2X+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.2x.posTdcCounter  P.hod.2x.posTdcTimeRaw 14 0.5 14.5 200 0 2000
-TH2F phodo_2y_raw_tdctime_vs_pmt_pos 'SHMS 2Y+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.2y.posTdcCounter  P.hod.2y.posTdcTimeRaw 21 0.5 21.5 200 0 2000
+TH2F phodo_1x_raw_tdctime_vs_pmt_pos 'SHMS 1X+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.1x.posTdcCounter  P.hod.1x.posTdcTimeRaw 13 0.5 13.5 200 0 2000
+TH2F phodo_1y_raw_tdctime_vs_pmt_pos 'SHMS 1Y+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.1y.posTdcCounter  P.hod.1y.posTdcTimeRaw 13 0.5 13.5 200 0 2000
+TH2F phodo_2x_raw_tdctime_vs_pmt_pos 'SHMS 2X+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.2x.posTdcCounter  P.hod.2x.posTdcTimeRaw 14 0.5 14.5 200 0 2000
+TH2F phodo_2y_raw_tdctime_vs_pmt_pos 'SHMS 2Y+ Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.2y.posTdcCounter  P.hod.2y.posTdcTimeRaw 21 0.5 21.5 200 0 2000
 
-TH2F phodo_1x_raw_tdctime_vs_pmt_neg 'SHMS 1X- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.1x.negTdcCounter  P.hod.1x.negTdcTimeRaw 13 0.5 13.5 200 0 2000
-TH2F phodo_1y_raw_tdctime_vs_pmt_neg 'SHMS 1Y- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.1y.negTdcCounter  P.hod.1y.negTdcTimeRaw 13 0.5 13.5 200 0 2000
-TH2F phodo_2x_raw_tdctime_vs_pmt_neg 'SHMS 2X- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.2x.negTdcCounter  P.hod.2x.negTdcTimeRaw 14 0.5 14.5 200 0 2000
-TH2F phodo_2y_raw_tdctime_vs_pmt_neg 'SHMS 2Y- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 ADC Units' P.hod.2y.negTdcCounter  P.hod.2y.negTdcTimeRaw 21 0.5 21.5 200 0 2000
+TH2F phodo_1x_raw_tdctime_vs_pmt_neg 'SHMS 1X- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.1x.negTdcCounter  P.hod.1x.negTdcTimeRaw 13 0.5 13.5 200 0 2000
+TH2F phodo_1y_raw_tdctime_vs_pmt_neg 'SHMS 1Y- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.1y.negTdcCounter  P.hod.1y.negTdcTimeRaw 13 0.5 13.5 200 0 2000
+TH2F phodo_2x_raw_tdctime_vs_pmt_neg 'SHMS 2X- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.2x.negTdcCounter  P.hod.2x.negTdcTimeRaw 14 0.5 14.5 200 0 2000
+TH2F phodo_2y_raw_tdctime_vs_pmt_neg 'SHMS 2Y- Raw TDC Time vs. PMT Number; PMT Number; Raw TDC Time / 10 TDC Units' P.hod.2y.negTdcCounter  P.hod.2y.negTdcTimeRaw 21 0.5 21.5 200 0 2000
+
+####### SHMS HODO NON-RAW VARIABLES #########
 
 #SHMS HODO PULSE PEDESTAL
-TH2F phodo_1x_pped_vs_pmt_pos 'SHMS 1X+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPed 13 0.5 13.5 400 300 700
-TH2F phodo_1y_pped_vs_pmt_pos 'SHMS 1Y+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPed 13 0.5 13.5 400 300 700
-TH2F phodo_2x_pped_vs_pmt_pos 'SHMS 2X+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPed 14 0.5 14.5 400 300 700
-TH2F phodo_2y_pped_vs_pmt_pos 'SHMS 2Y+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPed 21 0.5 21.5 400 300 700
+TH2F phodo_1x_pped_vs_pmt_pos 'SHMS 1X+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPed 13 0.5 13.5 500 0 1000
+TH2F phodo_1y_pped_vs_pmt_pos 'SHMS 1Y+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPed 13 0.5 13.5 500 0 1000
+TH2F phodo_2x_pped_vs_pmt_pos 'SHMS 2X+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPed 14 0.5 14.5 500 0 1000
+TH2F phodo_2y_pped_vs_pmt_pos 'SHMS 2Y+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPed 21 0.5 21.5 500 0 1000
 
-TH2F phodo_1x_pped_vs_pmt_neg 'SHMS 1X- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPed 13 0.5 13.5 400 300 700
-TH2F phodo_1y_pped_vs_pmt_neg 'SHMS 1Y- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPed 13 0.5 13.5 400 300 700
-TH2F phodo_2x_pped_vs_pmt_neg 'SHMS 2X- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPed 14 0.5 14.5 400 300 700
-TH2F phodo_2y_pped_vs_pmt_neg 'SHMS 2Y- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Unit' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPed 21 0.5 21.5 400 300 700
+TH2F phodo_1x_pped_vs_pmt_neg 'SHMS 1X- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPed 13 0.5 13.5 500 0 1000
+TH2F phodo_1y_pped_vs_pmt_neg 'SHMS 1Y- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPed 13 0.5 13.5 500 0 1000
+TH2F phodo_2x_pped_vs_pmt_neg 'SHMS 2X- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPed 14 0.5 14.5 500 0 1000
+TH2F phodo_2y_pped_vs_pmt_neg 'SHMS 2Y- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPed 21 0.5 21.5 500 0 1000
 
 #SHMS HODO PULSE INTEGRAL
-TH2F phodo_1x_pi_vs_pmt_pos 'SHMS 1X+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F phodo_1y_pi_vs_pmt_pos 'SHMS 1Y+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F phodo_2x_pi_vs_pmt_pos 'SHMS 2X+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseInt 14 0.5 14.5 600 0 30000
-TH2F phodo_2y_pi_vs_pmt_pos 'SHMS 2Y+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseInt 21 0.5 21.5 600 0 30000
+TH2F phodo_1x_pi_vs_pmt_pos 'SHMS 1X+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F phodo_1y_pi_vs_pmt_pos 'SHMS 1Y+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F phodo_2x_pi_vs_pmt_pos 'SHMS 2X+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseInt 14 0.5 14.5 320 0 80
+TH2F phodo_2y_pi_vs_pmt_pos 'SHMS 2Y+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseInt 21 0.5 21.5 320 0 80
 
-TH2F phodo_1x_pi_vs_pmt_neg 'SHMS 1X- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F phodo_1y_pi_vs_pmt_neg 'SHMS 1Y- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F phodo_2x_pi_vs_pmt_neg 'SHMS 2X- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseInt 14 0.5 14.5 600 0 30000
-TH2F phodo_2y_pi_vs_pmt_neg 'SHMS 2Y- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseInt 21 0.5 21.5 600 0 30000
+TH2F phodo_1x_pi_vs_pmt_neg 'SHMS 1X- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F phodo_1y_pi_vs_pmt_neg 'SHMS 1Y- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F phodo_2x_pi_vs_pmt_neg 'SHMS 2X- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseInt 14 0.5 14.5 320 0 80
+TH2F phodo_2y_pi_vs_pmt_neg 'SHMS 2Y- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseInt 21 0.5 21.5 320 0 80
 
 #SHMS HODO PULSE AMPLITUDE 
-TH2F phodo_1x_pamp_vs_pmt_pos 'SHMS 1X+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseAmp 13 0.5 13.5 410 0 4100
-TH2F phodo_1y_pamp_vs_pmt_pos 'SHMS 1Y+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseAmp 13 0.5 13.5 410 0 4100
-TH2F phodo_2x_pamp_vs_pmt_pos 'SHMS 2X+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseAmp 14 0.5 14.5 410 0 4100
-TH2F phodo_2y_pamp_vs_pmt_pos 'SHMS 2Y+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseAmp 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_pamp_vs_pmt_pos 'SHMS 1X+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.1x.posAdcCounter  P.hod.1x.posAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F phodo_1y_pamp_vs_pmt_pos 'SHMS 1Y+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.1y.posAdcCounter  P.hod.1y.posAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F phodo_2x_pamp_vs_pmt_pos 'SHMS 2X+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.2x.posAdcCounter  P.hod.2x.posAdcPulseAmp 14 0.5 14.5 500 0 1000
+TH2F phodo_2y_pamp_vs_pmt_pos 'SHMS 2Y+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.2y.posAdcCounter  P.hod.2y.posAdcPulseAmp 21 0.5 21.5 500 0 1000
 
-TH2F phodo_1x_pamp_vs_pmt_neg 'SHMS 1X- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseAmp 13 0.5 13.5 410 0 4100
-TH2F phodo_1y_pamp_vs_pmt_neg 'SHMS 1Y- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseAmp 13 0.5 13.5 410 0 4100
-TH2F phodo_2x_pamp_vs_pmt_neg 'SHMS 2X- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseAmp 14 0.5 14.5 410 0 4100
-TH2F phodo_2y_pamp_vs_pmt_neg 'SHMS 2Y- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 10 ADC Units' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseAmp 21 0.5 21.5 410 0 4100
+TH2F phodo_1x_pamp_vs_pmt_neg 'SHMS 1X- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.1x.negAdcCounter  P.hod.1x.negAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F phodo_1y_pamp_vs_pmt_neg 'SHMS 1Y- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.1y.negAdcCounter  P.hod.1y.negAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F phodo_2x_pamp_vs_pmt_neg 'SHMS 2X- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.2x.negAdcCounter  P.hod.2x.negAdcPulseAmp 14 0.5 14.5 500 0 1000
+TH2F phodo_2y_pamp_vs_pmt_neg 'SHMS 2Y- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' P.hod.2y.negAdcCounter  P.hod.2y.negAdcPulseAmp 21 0.5 21.5 500 0 1000
 
 #SHMS HODO TDC TIME
-TH2F phodo_1x_tdctime_vs_pmt_pos 'SHMS 1X+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.1x.posTdcCounter  P.hod.1x.posTdcTime 13 0.5 13.5 200 -2000 0
-TH2F phodo_1y_tdctime_vs_pmt_pos 'SHMS 1Y+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.1y.posTdcCounter  P.hod.1y.posTdcTime 13 0.5 13.5 200 -2000 0
-TH2F phodo_2x_tdctime_vs_pmt_pos 'SHMS 2X+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.2x.posTdcCounter  P.hod.2x.posTdcTime 14 0.5 14.5 200 -2000 0
-TH2F phodo_2y_tdctime_vs_pmt_pos 'SHMS 2Y+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.2y.posTdcCounter  P.hod.2y.posTdcTime 21 0.5 21.5 200 -2000 0
+TH2F phodo_1x_tdctime_vs_pmt_pos 'SHMS 1X+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.1x.posTdcCounter  P.hod.1x.posTdcTime 13 0.5 13.5 200 -2000 0
+TH2F phodo_1y_tdctime_vs_pmt_pos 'SHMS 1Y+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.1y.posTdcCounter  P.hod.1y.posTdcTime 13 0.5 13.5 200 -2000 0
+TH2F phodo_2x_tdctime_vs_pmt_pos 'SHMS 2X+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.2x.posTdcCounter  P.hod.2x.posTdcTime 14 0.5 14.5 200 -2000 0
+TH2F phodo_2y_tdctime_vs_pmt_pos 'SHMS 2Y+ TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.2y.posTdcCounter  P.hod.2y.posTdcTime 21 0.5 21.5 200 -2000 0
 
-TH2F phodo_1x_tdctime_vs_pmt_neg 'SHMS 1X- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.1x.negTdcCounter  P.hod.1x.negTdcTime 13 0.5 13.5 200 -2000 0
-TH2F phodo_1y_tdctime_vs_pmt_neg 'SHMS 1Y- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.1y.negTdcCounter  P.hod.1y.negTdcTime 13 0.5 13.5 200 -2000 0
-TH2F phodo_2x_tdctime_vs_pmt_neg 'SHMS 2X- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.2x.negTdcCounter  P.hod.2x.negTdcTime 14 0.5 14.5 200 -2000 0
-TH2F phodo_2y_tdctime_vs_pmt_neg 'SHMS 2Y- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 ADC Units' P.hod.2y.negTdcCounter  P.hod.2y.negTdcTime 21 0.5 21.5 200 -2000 0
+TH2F phodo_1x_tdctime_vs_pmt_neg 'SHMS 1X- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.1x.negTdcCounter  P.hod.1x.negTdcTime 13 0.5 13.5 200 -2000 0
+TH2F phodo_1y_tdctime_vs_pmt_neg 'SHMS 1Y- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.1y.negTdcCounter  P.hod.1y.negTdcTime 13 0.5 13.5 200 -2000 0
+TH2F phodo_2x_tdctime_vs_pmt_neg 'SHMS 2X- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.2x.negTdcCounter  P.hod.2x.negTdcTime 14 0.5 14.5 200 -2000 0
+TH2F phodo_2y_tdctime_vs_pmt_neg 'SHMS 2Y- TDC Time vs. PMT Number; PMT Number; TDC Time / 10 TDC Units' P.hod.2y.negTdcCounter  P.hod.2y.negTdcTime 21 0.5 21.5 200 -2000 0
 
 ####### SHMS HODO GOOD VARIABLES #########
 
 #GOOD PULSE PEDESTAL
-TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 400 300 700 P.hod.1x.GoodPosAdcPed>0.0
-TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 400 300 700 P.hod.1y.GoodPosAdcPed>0.0
-TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 400 300 700 P.hod.2x.GoodPosAdcPed>0.0
-TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 400 300 700 P.hod.2y.GoodPosAdcPed>0.0
+TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 500 0 1000 P.hod.1x.GoodPosAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 500 0 1000 P.hod.1y.GoodPosAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 500 0 1000 P.hod.2x.GoodPosAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 500 0 1000 P.hod.2y.GoodPosAdcPed>0.0
 
-TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 400 300 700 P.hod.1x.GoodNegAdcPed>0.0
-TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 400 300 700 P.hod.1y.GoodNegAdcPed>0.0
-TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 400 300 700 P.hod.2x.GoodNegAdcPed>0.0
-TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 400 300 700 P.hod.2y.GoodNegAdcPed>0.0
+TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 500 0 1000 P.hod.1x.GoodNegAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 500 0 1000 P.hod.1y.GoodNegAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 500 0 1000 P.hod.2x.GoodNegAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 500 0 1000 P.hod.2y.GoodNegAdcPed>0.0
 
 #GOOD PULSE INTEGRAL
-TH2F phodo_1x_good_pi_vs_pmt_pos 'SHMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1x.GoodPosAdcPulseInt>0.0
-TH2F phodo_1y_good_pi_vs_pmt_pos 'SHMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1y.GoodPosAdcPulseInt>0.0
-TH2F phodo_2x_good_pi_vs_pmt_pos 'SHMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseInt 14 0.5 14.5 600 0 30000 P.hod.2x.GoodPosAdcPulseInt>0.0
-TH2F phodo_2y_good_pi_vs_pmt_pos 'SHMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseInt 21 0.5 21.5 600 0 30000 P.hod.2y.GoodPosAdcPulseInt>0.0
+TH2F phodo_1x_good_pi_vs_pmt_pos 'SHMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.1x.GoodPosAdcPulseInt 13 0.5 13.5 320 0 80 P.hod.1x.GoodPosAdcPulseInt>0.0
+TH2F phodo_1y_good_pi_vs_pmt_pos 'SHMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.1y.GoodPosAdcPulseInt 13 0.5 13.5 320 0 80 P.hod.1y.GoodPosAdcPulseInt>0.0
+TH2F phodo_2x_good_pi_vs_pmt_pos 'SHMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.2x.GoodPosAdcPulseInt 14 0.5 14.5 320 0 80 P.hod.2x.GoodPosAdcPulseInt>0.0
+TH2F phodo_2y_good_pi_vs_pmt_pos 'SHMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.2y.GoodPosAdcPulseInt 21 0.5 21.5 320 0 80 P.hod.2y.GoodPosAdcPulseInt>0.0
 
-TH2F phodo_1x_good_pi_vs_pmt_neg 'SHMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1x.GoodNegAdcPulseInt>0.0
-TH2F phodo_1y_good_pi_vs_pmt_neg 'SHMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseInt 13 0.5 13.5 600 0 30000 P.hod.1y.GoodNegAdcPulseInt>0.0
-TH2F phodo_2x_good_pi_vs_pmt_neg 'SHMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseInt 14 0.5 14.5 600 0 30000 P.hod.2x.GoodNegAdcPulseInt>0.0
-TH2F phodo_2y_good_pi_vs_pmt_neg 'SHMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseInt 21 0.5 21.5 600 0 30000 P.hod.2y.GoodNegAdcPulseInt>0.0
+TH2F phodo_1x_good_pi_vs_pmt_neg 'SHMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.1x.GoodNegAdcPulseInt 13 0.5 13.5 320 0 80 P.hod.1x.GoodNegAdcPulseInt>0.0
+TH2F phodo_1y_good_pi_vs_pmt_neg 'SHMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.1y.GoodNegAdcPulseInt 13 0.5 13.5 320 0 80 P.hod.1y.GoodNegAdcPulseInt>0.0
+TH2F phodo_2x_good_pi_vs_pmt_neg 'SHMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.2x.GoodNegAdcPulseInt 14 0.5 14.5 320 0 80 P.hod.2x.GoodNegAdcPulseInt>0.0
+TH2F phodo_2y_good_pi_vs_pmt_neg 'SHMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  P.hod.2y.GoodNegAdcPulseInt 21 0.5 21.5 320 0 80 P.hod.2y.GoodNegAdcPulseInt>0.0
 
 #GOOD PULSE AMPLITUDE 
-TH2F phodo_1x_good_pamp_vs_pmt_pos 'SHMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1x.GoodPosAdcPulseAmp>0.0
-TH2F phodo_1y_good_pamp_vs_pmt_pos 'SHMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1y.GoodPosAdcPulseAmp>0.0
-TH2F phodo_2x_good_pamp_vs_pmt_pos 'SHMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseAmp 14 0.5 14.5 205 0 4100 P.hod.2x.GoodPosAdcPulseAmp>0.0
-TH2F phodo_2y_good_pamp_vs_pmt_pos 'SHMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseAmp 21 0.5 21.5 205 0 4100 P.hod.2y.GoodPosAdcPulseAmp>0.0
+TH2F phodo_1x_good_pamp_vs_pmt_pos 'SHMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.1x.GoodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 P.hod.1x.GoodPosAdcPulseAmp>0.0
+TH2F phodo_1y_good_pamp_vs_pmt_pos 'SHMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.1y.GoodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 P.hod.1y.GoodPosAdcPulseAmp>0.0
+TH2F phodo_2x_good_pamp_vs_pmt_pos 'SHMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.2x.GoodPosAdcPulseAmp 14 0.5 14.5 500 0 1000 P.hod.2x.GoodPosAdcPulseAmp>0.0
+TH2F phodo_2y_good_pamp_vs_pmt_pos 'SHMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.2y.GoodPosAdcPulseAmp 21 0.5 21.5 500 0 1000 P.hod.2y.GoodPosAdcPulseAmp>0.0
 
-TH2F phodo_1x_good_pamp_vs_pmt_neg 'SHMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1x.GoodNegAdcPulseAmp>0.0
-TH2F phodo_1y_good_pamp_vs_pmt_neg 'SHMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseAmp 13 0.5 13.5 205 0 4100 P.hod.1y.GoodNegAdcPulseAmp>0.0
-TH2F phodo_2x_good_pamp_vs_pmt_neg 'SHMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseAmp 14 0.5 14.5 205 0 4100 P.hod.2x.GoodNegAdcPulseAmp>0.0
-TH2F phodo_2y_good_pamp_vs_pmt_neg 'SHMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseAmp 21 0.5 21.5 205 0 4100 P.hod.2y.GoodNegAdcPulseAmp>0.0
+TH2F phodo_1x_good_pamp_vs_pmt_neg 'SHMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.1x.GoodNegAdcPulseAmp 13 0.5 13.5 500 0 1000 P.hod.1x.GoodNegAdcPulseAmp>0.0
+TH2F phodo_1y_good_pamp_vs_pmt_neg 'SHMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.1y.GoodNegAdcPulseAmp 13 0.5 13.5 500 0 1000 P.hod.1y.GoodNegAdcPulseAmp>0.0
+TH2F phodo_2x_good_pamp_vs_pmt_neg 'SHMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.2x.GoodNegAdcPulseAmp 14 0.5 14.5 500 0 1000 P.hod.2x.GoodNegAdcPulseAmp>0.0
+TH2F phodo_2y_good_pamp_vs_pmt_neg 'SHMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  P.hod.2y.GoodNegAdcPulseAmp 21 0.5 21.5 500 0 1000 P.hod.2y.GoodNegAdcPulseAmp>0.0
 
 
 #GOOD ADC PULSE TIME
-TH2F phodo_1x_good_ptime_vs_pmt_pos 'SHMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1x.GoodPosAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1x.GoodPosAdcPulseTime>0.0
-TH2F phodo_1y_good_ptime_vs_pmt_pos 'SHMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1y.GoodPosAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1y.GoodPosAdcPulseTime>0.0
-TH2F phodo_2x_good_ptime_vs_pmt_pos 'SHMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2x.GoodPosAdcPulseTime 14 0.5 14.5 410 0 4100 P.hod.2x.GoodPosAdcPulseTime>0.0
-TH2F phodo_2y_good_ptime_vs_pmt_pos 'SHMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2y.GoodPosAdcPulseTime 21 0.5 21.5 410 0 4100 P.hod.2y.GoodPosAdcPulseTime>0.0
+TH2F phodo_1x_good_ptime_vs_pmt_pos 'SHMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosAdcPulseTime 13 0.5 13.5 4000 0 400 P.hod.1x.GoodPosAdcPulseTime>0.0
+TH2F phodo_1y_good_ptime_vs_pmt_pos 'SHMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosAdcPulseTime 13 0.5 13.5 4000 0 400 P.hod.1y.GoodPosAdcPulseTime>0.0
+TH2F phodo_2x_good_ptime_vs_pmt_pos 'SHMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2x.GoodPosAdcPulseTime 14 0.5 14.5 4000 0 400 P.hod.2x.GoodPosAdcPulseTime>0.0
+TH2F phodo_2y_good_ptime_vs_pmt_pos 'SHMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2y.GoodPosAdcPulseTime 21 0.5 21.5 4000 0 400 P.hod.2y.GoodPosAdcPulseTime>0.0
 
-TH2F phodo_1x_good_ptime_vs_pmt_neg 'SHMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1x.GoodNegAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1x.GoodNegAdcPulseTime>0.0
-TH2F phodo_1y_good_ptime_vs_pmt_neg 'SHMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.1y.GoodNegAdcPulseTime 13 0.5 13.5 410 0 4100 P.hod.1y.GoodNegAdcPulseTime>0.0
-TH2F phodo_2x_good_ptime_vs_pmt_neg 'SHMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2x.GoodNegAdcPulseTime 14 0.5 14.5 410 0 4100 P.hod.2x.GoodNegAdcPulseTime>0.0
-TH2F phodo_2y_good_ptime_vs_pmt_neg 'SHMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  P.hod.2y.GoodNegAdcPulseTime 21 0.5 21.5 410 0 4100 P.hod.2y.GoodNegAdcPulseTime>0.0
+TH2F phodo_1x_good_ptime_vs_pmt_neg 'SHMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.1x.GoodNegAdcPulseTime 13 0.5 13.5 4000 0 400 P.hod.1x.GoodNegAdcPulseTime>0.0
+TH2F phodo_1y_good_ptime_vs_pmt_neg 'SHMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.1y.GoodNegAdcPulseTime 13 0.5 13.5 4000 0 400 P.hod.1y.GoodNegAdcPulseTime>0.0
+TH2F phodo_2x_good_ptime_vs_pmt_neg 'SHMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegAdcPulseTime 14 0.5 14.5 4000 0 400 P.hod.2x.GoodNegAdcPulseTime>0.0
+TH2F phodo_2y_good_ptime_vs_pmt_neg 'SHMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegAdcPulseTime 21 0.5 21.5 4000 0 400 P.hod.2y.GoodNegAdcPulseTime>0.0
 
 #GOOD TDC TIME UNCORRECTED (uncorrected for time offsets)
-TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeUnCorr>0.0
-TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeUnCorr>0.0
-TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeUnCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeUnCorr>0.0
-TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeUnCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodPosTdcTimeUnCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodPosTdcTimeUnCorr>0.0
+TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodPosTdcTimeUnCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodPosTdcTimeUnCorr>0.0
 
-TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeUnCorr>0.0
-TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeUnCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeUnCorr>0.0
-TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeUnCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeUnCorr>0.0
-TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeUnCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodNegTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodNegTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_2x_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegTdcTimeUnCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodNegTdcTimeUnCorr>0.0
+TH2F phodo_2y_good_tdctime_uncorr_vs_pmt_neg 'SHMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegTdcTimeUnCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodNegTdcTimeUnCorr>0.0
 
 #GOOD TDC TIME CORRECTED (corrected for time offsets)
-TH2F phodo_1x_good_tdctime_corr_vs_pmt_pos 'SHMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeCorr>0.0
-TH2F phodo_1y_good_tdctime_corr_vs_pmt_pos 'SHMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeCorr>0.0
-TH2F phodo_2x_good_tdctime_corr_vs_pmt_pos 'SHMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeCorr>0.0
-TH2F phodo_2y_good_tdctime_corr_vs_pmt_pos 'SHMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeCorr>0.0
+TH2F phodo_1x_good_tdctime_corr_vs_pmt_pos 'SHMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosTdcTimeCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodPosTdcTimeCorr>0.0
+TH2F phodo_1y_good_tdctime_corr_vs_pmt_pos 'SHMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosTdcTimeCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodPosTdcTimeCorr>0.0
+TH2F phodo_2x_good_tdctime_corr_vs_pmt_pos 'SHMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodPosTdcTimeCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodPosTdcTimeCorr>0.0
+TH2F phodo_2y_good_tdctime_corr_vs_pmt_pos 'SHMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodPosTdcTimeCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodPosTdcTimeCorr>0.0
 
-TH2F phodo_1x_good_tdctime_corr_vs_pmt_neg 'SHMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeCorr>0.0
-TH2F phodo_1y_good_tdctime_corr_vs_pmt_neg 'SHMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeCorr>0.0
-TH2F phodo_2x_good_tdctime_corr_vs_pmt_neg 'SHMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeCorr>0.0
-TH2F phodo_2y_good_tdctime_corr_vs_pmt_neg 'SHMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeCorr>0.0
+TH2F phodo_1x_good_tdctime_corr_vs_pmt_neg 'SHMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodNegTdcTimeCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodNegTdcTimeCorr>0.0
+TH2F phodo_1y_good_tdctime_corr_vs_pmt_neg 'SHMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodNegTdcTimeCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodNegTdcTimeCorr>0.0
+TH2F phodo_2x_good_tdctime_corr_vs_pmt_neg 'SHMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegTdcTimeCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodNegTdcTimeCorr>0.0
+TH2F phodo_2y_good_tdctime_corr_vs_pmt_neg 'SHMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegTdcTimeCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodNegTdcTimeCorr>0.0
 
 #GOOD TDC TIME TOF CORRECTED (corrected for time of flight) 
-TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodPosTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodPosTdcTimeTOFCorr>0.0
-TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodPosTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodPosTdcTimeTOFCorr>0.0
-TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodPosTdcTimeTOFCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodPosTdcTimeTOFCorr>0.0
-TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodPosTdcTimeTOFCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosTdcTimeTOFCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosTdcTimeTOFCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodPosTdcTimeTOFCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodPosTdcTimeTOFCorr>0.0
+TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'SHMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodPosTdcTimeTOFCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodPosTdcTimeTOFCorr>0.0
 
-TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1x.GoodNegTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1x.GoodNegTdcTimeTOFCorr>0.0
-TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.1y.GoodNegTdcTimeTOFCorr 13 0.5 13.5 120 0 120 P.hod.1y.GoodNegTdcTimeTOFCorr>0.0
-TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2x.GoodNegTdcTimeTOFCorr 14 0.5 14.5 120 0 120 P.hod.2x.GoodNegTdcTimeTOFCorr>0.0
-TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  P.hod.2y.GoodNegTdcTimeTOFCorr 21 0.5 21.5 120 0 120 P.hod.2y.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodNegTdcTimeTOFCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodNegTdcTimeTOFCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegTdcTimeTOFCorr 14 0.5 14.5 1200 0 120 P.hod.2x.GoodNegTdcTimeTOFCorr>0.0
+TH2F phodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'SHMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegTdcTimeTOFCorr 21 0.5 21.5 1200 0 120 P.hod.2y.GoodNegTdcTimeTOFCorr>0.0
 
 
 
