@@ -53,17 +53,17 @@ SLOT=20
 
 ROC=3
 
-SLOT=5
- 111,   2,  18,   1  ! hDCREF1
-
 SLOT=8
- 127,   2,  19,   1  ! hDCREF2
+ 15,   2,  18,   1  ! hDCREF1
 
-SLOT=10
- 127,   2,  20,   1  ! hDCREF3
+SLOT=16
+ 63,   2,  19,   1  ! hDCREF2
 
-SLOT=17
- 127,   2,  21,   1  ! hDCREF4
+SLOT=4
+ 111,   2,  20,   1  ! hDCREF3
+
+SLOT=13
+ 95,   2,  21,   1  ! hDCREF4
 
 
 DETECTOR=12
