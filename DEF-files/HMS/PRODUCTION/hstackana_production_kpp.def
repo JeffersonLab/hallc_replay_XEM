@@ -1,0 +1,604 @@
+
+
+#********************
+# Block Definitions *
+#********************
+
+block T.hms.*
+block H.cer.*
+block H.dc.*
+block H.tr.*
+block H.hod.*
+block H.cal.*
+block H.gtr.*
+block H.kin.*
+
+
+#********************
+# HMS Gas Cherenkov *
+#********************
+
+#-----------------------------------------
+# HMS Gas CER GOOD Occupancy and Multiplicity
+#-----------------------------------------
+
+TH1F hcer_good_occ 'HMS Cherenkov Good Occupancy; PMT Number; Number of Entries' H.cer.numGoodAdcHits 2 0.5 2.5
+TH1F hcer_good_mult 'HMS Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cer.totNumGoodAdcHits 2 0.5 2.5
+
+#-------------------------------------------------------------------------------
+# HMS Gas CER GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time 
+# GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
+#-------------------------------------------------------------------------------
+  
+TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' [I+1] H.cer.goodAdcPed 2 0.5 2.5 400 300 700
+TH2F hcer_good_pi_vs_pmt 'HMS Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' [I+1] H.cer.goodAdcPulseInt 2 0.5 2.5 600 0 30000 H.cer.goodAdcPulseInt>0.0
+TH2F hcer_good_pamp_vs_pmt 'HMS Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' [I+1] H.cer.goodAdcPulseAmp 2 0.5 2.5 200 0 4000 H.cer.goodAdcPulseAmp>0.0
+TH2F hcer_good_ptime_vs_pmt 'HMS Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.cer.goodAdcPulseTime 2 0.5 2.5 350 0 3500 H.cer.goodAdcPulseTime>0.0
+
+#-----------------------------------
+# HMS Gas CER Number of P.E. / PMT
+#-----------------------------------
+
+TH2F hcer_npe 'HMS Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] H.cer.npe 2 0.5 2.5 200 0 100 H.cer.npe>0.0
+
+
+#----------------------------------
+# HMS Gas CER TOTAL NUMBER OF P.E.
+#----------------------------------
+
+TH1F hcer_tot_npe 'HMS Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.cer.npeSum 200 0 100 H.cer.npeSum>0.0
+
+#--------------------------
+# HMS Gas CER TRACK MATCHING
+#--------------------------
+
+TH1F hcer_trk_match 'HMS  Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' H.cer.numTracksMatched 2 0.5 2.5
+TH1F hcer_trk_fired 'HMS  Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' H.cer.numTracksFired 2 0.5 2.5
+
+
+
+#***************************
+# HMS 6 GeV Drift Chambers *
+#***************************
+
+#-----------------
+# HMS DC WIREMAP 
+#-----------------
+
+TH1F hdc1x1_wirenum 'HMS DC 1X1 Wiremap; Wire Number; Number of Entries' H.dc.1x1.wirenum 113 0.5 113.5
+TH1F hdc1y1_wirenum 'HMS DC 1Y1 Wiremap; Wire Number; Number of Entries' H.dc.1y1.wirenum  52 0.5  52.5
+TH1F hdc1u1_wirenum 'HMS DC 1U1 Wiremap; Wire Number; Number of Entries' H.dc.1u1.wirenum 107 0.5 107.5
+TH1F hdc1v1_wirenum 'HMS DC 1V1 Wiremap; Wire Number; Number of Entries' H.dc.1v1.wirenum 107 0.5 107.5
+TH1F hdc1y2_wirenum 'HMS DC 1Y2 Wiremap; Wire Number; Number of Entries' H.dc.1y2.wirenum  52 0.5  52.5
+TH1F hdc1x2_wirenum 'HMS DC 1X2 Wiremap; Wire Number; Number of Entries' H.dc.1x2.wirenum 113 0.5 113.5
+
+TH1F hdc2x1_wirenum 'HMS DC 2X1 Wiremap; Wire Number; Number of Entries' H.dc.2x1.wirenum 113 0.5 113.5
+TH1F hdc2y1_wirenum 'HMS DC 2Y1 Wiremap; Wire Number; Number of Entries' H.dc.2y1.wirenum  52 0.5  52.5
+TH1F hdc2u1_wirenum 'HMS DC 2U1 Wiremap; Wire Number; Number of Entries' H.dc.2u1.wirenum 107 0.5 107.5
+TH1F hdc2v1_wirenum 'HMS DC 2V1 Wiremap; Wire Number; Number of Entries' H.dc.2v1.wirenum 107 0.5 107.5
+TH1F hdc2y2_wirenum 'HMS DC 2Y2 Wiremap; Wire Number; Number of Entries' H.dc.2y2.wirenum  52 0.5  52.5
+TH1F hdc2x2_wirenum 'HMS DC 2X2 Wiremap; Wire Number; Number of Entries' H.dc.2x2.wirenum 113 0.5 113.5
+
+#-----------------------------
+# HMS DC DRIFT TIME PER PLANE 
+#-----------------------------
+
+TH1F hdc1x1_drifttime 'HMS DC 1X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1x1.time 400 -50 350
+TH1F hdc1y1_drifttime 'HMS DC 1Y1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1y1.time 400 -50 350
+TH1F hdc1u1_drifttime 'HMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1u1.time 400 -50 350
+TH1F hdc1v1_drifttime 'HMS DC 1V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1v1.time 400 -50 350
+TH1F hdc1y2_drifttime 'HMS DC 1Y2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1y2.time 400 -50 350
+TH1F hdc1x2_drifttime 'HMS DC 1X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.1x2.time 400 -50 350
+
+TH1F hdc2x1_drifttime 'HMS DC 2X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2x1.time 400 -50 350
+TH1F hdc2y1_drifttime 'HMS DC 2Y1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2y1.time 400 -50 350
+TH1F hdc2u1_drifttime 'HMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2u1.time 400 -50 350
+TH1F hdc2v1_drifttime 'HMS DC 2V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2v1.time 400 -50 350
+TH1F hdc2y2_drifttime 'HMS DC 2Y2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2y2.time 400 -50 350
+TH1F hdc2x2_drifttime 'HMS DC 2X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' H.dc.2x2.time 400 -50 350
+
+#----------------------------------
+# HMS DC DRIFT TIME VS. WIRENUMBER
+#----------------------------------
+
+TH2F hdc1x1_drifttime_vs_wirenum 'HMS DC 1X1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1x1.wirenum H.dc.1x1.time 113 0.5 113.5 600 -100 500
+TH2F hdc1y1_drifttime_vs_wirenum 'HMS DC 1Y1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1y1.wirenum H.dc.1y1.time 52  0.5  52.5 600 -100 500
+TH2F hdc1u1_drifttime_vs_wirenum 'HMS DC 1U1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1u1.wirenum H.dc.1u1.time 107 0.5 107.5 600 -100 500
+TH2F hdc1v1_drifttime_vs_wirenum 'HMS DC 1V1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1v1.wirenum H.dc.1v1.time 107 0.5 107.5 600 -100 500
+TH2F hdc1y2_drifttime_vs_wirenum 'HMS DC 1Y2 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1y2.wirenum H.dc.1y2.time 52  0.5  52.5 600 -100 500
+TH2F hdc1x2_drifttime_vs_wirenum 'HMS DC 1X2 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.1x2.wirenum H.dc.1x2.time 113 0.5 113.5 600 -100 500
+
+TH2F hdc2x1_drifttime_vs_wirenum 'HMS DC 2X1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2x1.wirenum H.dc.2x1.time 113 0.5 113.5 600 -100 500
+TH2F hdc2y1_drifttime_vs_wirenum 'HMS DC 2Y1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2y1.wirenum H.dc.2y1.time 52  0.5  52.5 600 -100 500
+TH2F hdc2u1_drifttime_vs_wirenum 'HMS DC 2U1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2u1.wirenum H.dc.2u1.time 107 0.5 107.5 600 -100 500
+TH2F hdc2v1_drifttime_vs_wirenum 'HMS DC 2V1 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2v1.wirenum H.dc.2v1.time 107 0.5 107.5 600 -100 500
+TH2F hdc2y2_drifttime_vs_wirenum 'HMS DC 2Y2 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2y2.wirenum H.dc.2y2.time 52  0.5  52.5 600 -100 500
+TH2F hdc2x2_drifttime_vs_wirenum 'HMS DC 2X2 Drift Time vs. Wire Number; Wire Number; Drift Time (ns)' H.dc.2x2.wirenum H.dc.2x2.time 113 0.5 113.5 600 -100 500
+
+#---------------------------------
+# HMS DC Drift Distance Per Plane 
+#---------------------------------
+ 
+TH1F hdc1x1_ddist 'HMS 1X1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1x1.dist 28 -0.1 0.6
+TH1F hdc1y1_ddist 'HMS 1Y1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1y1.dist 28 -0.1 0.6
+TH1F hdc1u1_ddist 'HMS 1U1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1u1.dist 28 -0.1 0.6
+TH1F hdc1v1_ddist 'HMS 1V1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1v1.dist 28 -0.1 0.6
+TH1F hdc1y2_ddist 'HMS 1Y2 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1y2.dist 28 -0.1 0.6
+TH1F hdc1x2_ddist 'HMS 1X2 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.1x2.dist 28 -0.1 0.6
+
+TH1F hdc2x1_ddist 'HMS 2U2 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2x1.dist 28 -0.1 0.6
+TH1F hdc2y1_ddist 'HMS 2U1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2y1.dist 28 -0.1 0.6
+TH1F hdc2u1_ddist 'HMS 2X2 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2u1.dist 28 -0.1 0.6
+TH1F hdc2v1_ddist 'HMS 2X1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2v1.dist 28 -0.1 0.6
+TH1F hdc2y2_ddist 'HMS 2V2 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2y2.dist 28 -0.1 0.6
+TH1F hdc2x2_ddist 'HMS 2V1 Drift Distance; Drift Distance (cm); Number of Entries' H.dc.2x2.dist 28 -0.1 0.6
+
+#--------------------------------------
+# HMS DC DRIFT DISTANCE VS. WIRENUMBER
+#--------------------------------------
+
+TH2F hdc1x1_wirenum_vs_ddist 'HMS DC 1X1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1x1.wirenum H.dc.1x1.dist 113 0.5 113.5 300 -0.1 0.6
+TH2F hdc1y1_wirenum_vs_ddist 'HMS DC 1Y1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1y1.wirenum H.dc.1y1.dist 52  0.5  52.5 300 -0.1 0.6
+TH2F hdc1u1_wirenum_vs_ddist 'HMS DC 1U1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1u1.wirenum H.dc.1u1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F hdc1v1_wirenum_vs_ddist 'HMS DC 1V1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1v1.wirenum H.dc.1v1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F hdc1y2_wirenum_vs_ddist 'HMS DC 1Y2 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1y2.wirenum H.dc.1y2.dist 52  0.5  52.5 300 -0.1 0.6
+TH2F hdc1x2_wirenum_vs_ddist 'HMS DC 1X2 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.1x2.wirenum H.dc.1x2.dist 113 0.5 113.5 300 -0.1 0.6
+
+TH2F hdc2x1_wirenum_vs_ddist 'HMS DC 2X1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2x1.wirenum H.dc.2x1.dist 113 0.5 113.5 300 -0.1 0.6
+TH2F hdc2y1_wirenum_vs_ddist 'HMS DC 2Y1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2y1.wirenum H.dc.2y1.dist 52  0.5  52.5 300 -0.1 0.6
+TH2F hdc2u1_wirenum_vs_ddist 'HMS DC 2U1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2u1.wirenum H.dc.2u1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F hdc2v1_wirenum_vs_ddist 'HMS DC 2V1 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2v1.wirenum H.dc.2v1.dist 107 0.5 107.5 300 -0.1 0.6
+TH2F hdc2y2_wirenum_vs_ddist 'HMS DC 2Y2 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2y2.wirenum H.dc.2y2.dist 52  0.5  52.5 300 -0.1 0.6
+TH2F hdc2x2_wirenum_vs_ddist 'HMS DC 2X2 Drift Distance vs. Wire Number; Wire Number; Drift Distance (cm)' H.dc.2x2.wirenum H.dc.2x2.dist 113 0.5 113.5 300 -0.1 0.6
+
+#----------------------------
+# HMS DC RESIDUALS PER PLANE 
+#----------------------------
+ 
+TH1F hdc1x1_residuals 'HMS 1X1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[0]  200 -1.0 1.0
+TH1F hdc1y1_residuals 'HMS 1Y1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[1]  200 -1.0 1.0
+TH1F hdc1u1_residuals 'HMS 1U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[2]  200 -1.0 1.0
+TH1F hdc1v1_residuals 'HMS 1V1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[3]  200 -1.0 1.0
+TH1F hdc1y2_residuals 'HMS 1Y2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[4]  200 -1.0 1.0
+TH1F hdc1x2_residuals 'HMS 1X2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[5]  200 -1.0 1.0
+
+TH1F hdc2x1_residuals 'HMS 2X1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[6]  200 -1.0 1.0
+TH1F hdc2y1_residuals 'HMS 2Y1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[7]  200 -1.0 1.0
+TH1F hdc2u1_residuals 'HMS 2U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[8]  200 -1.0 1.0
+TH1F hdc2v1_residuals 'HMS 2V1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[9]  200 -1.0 1.0
+TH1F hdc2y2_residuals 'HMS 2Y2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[10] 200 -1.0 1.0
+TH1F hdc2x2_residuals 'HMS 2X2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[11] 200 -1.0 1.0
+
+#-------------------------------------------
+# HMS DC TRACKING VARIABLES AT FOCAL PLANE
+#-------------------------------------------
+
+TH1F hdc_trk_mom 'HMS DC Track Momentum; P (GeV); Number of Entires / 10 MeV' H.tr.p 600 0 6
+TH1F hdc_trk_beta 'HMS DC Track Beta; Beta (GeV); Number of Entires' H.tr.beta 300 -1.5 1.5
+TH2F hdc_xfp_vs_yxp 'HMS DC X_{fp} vs Y_{fp}; Y_{fp} (cm) / 1 cm; X_{fp} (cm) / 1 cm' H.dc.y_fp H.dc.x_fp 100 -50 50 100 -50 50
+TH2F hdc_xpfp_vs_ypfp 'HMS DC X'_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X'_{fp} / 0.002 rad' H.dc.yp_fp H.dc.xp_fp 100 -.1 .1 100 -.1 .1
+TH2F hdc_xfp_vs_ypfp 'HMS DC X_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X_{fp} / 1 cm'  H.dc.yp_fp H.dc.x_fp 100 -.1 .1 100 -50 50 
+TH2F hdc_xfp_vs_xpfp 'HMS DC X_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; X_{fp} / 1 cm' H.dc.xp_fp H.dc.x_fp 100 -.1 .1 100 -50 50
+
+
+#*****************
+# HMS HODOSCOPES *
+#*****************
+
+#-----------------------------------
+# HMS HODO GOOD ADC Multiplicities 
+#-----------------------------------
+
+TH1F hhodo_1x_good_adc_mult_pos 'HMS 1X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.1x.totNumGoodPosAdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_adc_mult_pos 'HMS 1Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.1y.totNumGoodPosAdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_adc_mult_pos 'HMS 2X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.2x.totNumGoodPosAdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_adc_mult_pos 'HMS 2Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.2y.totNumGoodPosAdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_adc_mult_neg 'HMS 1X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.1x.totNumGoodNegAdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_adc_mult_neg 'HMS 1Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.1y.totNumGoodNegAdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_adc_mult_neg 'HMS 2X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.2x.totNumGoodNegAdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_adc_mult_neg 'HMS 2Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.2y.totNumGoodNegAdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_adc_mult 'HMS 1X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.1x.totNumGoodAdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_adc_mult 'HMS 1Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.1y.totNumGoodAdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_adc_mult 'HMS 2X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.2x.totNumGoodAdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_adc_mult 'HMS 2Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.2y.totNumGoodAdcHits 10 0.5 10.5
+
+#-----------------------------------
+# HMS HODO Good TDC Multiplicities
+#-----------------------------------
+
+TH1F hhodo_1x_good_tdc_mult_pos 'HMS 1X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.1x.totNumGoodPosTdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_tdc_mult_pos 'HMS 1Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.1y.totNumGoodPosTdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_tdc_mult_pos 'HMS 2X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.2x.totNumGoodPosTdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_tdc_mult_pos 'HMS 2Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.2y.totNumGoodPosTdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_tdc_mult_neg 'HMS 1X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.1x.totNumGoodNegTdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_tdc_mult_neg 'HMS 1Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.1y.totNumGoodNegTdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_tdc_mult_neg 'HMS 2X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.2x.totNumGoodNegTdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_tdc_mult_neg 'HMS 2Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.2y.totNumGoodNegTdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_tdc_mult 'HMS 1X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.1x.totNumGoodTdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_tdc_mult 'HMS 1Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.1y.totNumGoodTdcHits 10 0.5 10.5
+TH1F hhodo_2x_good_tdc_mult 'HMS 2X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.2x.totNumGoodTdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_tdc_mult 'HMS 2Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.2y.totNumGoodTdcHits 10 0.5 10.5
+
+#---------------------------------
+# HMS HODO GOOD ADC OCCUPANCIES
+#---------------------------------
+
+TH1F hhodo_1x_good_adc_occ_pos 'HMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.1x.numGoodPosAdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_adc_occ_pos 'HMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.1y.numGoodPosAdcHits 10 0.5 10.5 
+TH1F hhodo_2x_good_adc_occ_pos 'HMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.2x.numGoodPosAdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_adc_occ_pos 'HMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.2y.numGoodPosAdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_adc_occ_neg 'HMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.1x.numGoodNegAdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_adc_occ_neg 'HMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.1y.numGoodNegAdcHits 10 0.5 10.5 
+TH1F hhodo_2x_good_adc_occ_neg 'HMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.2x.numGoodNegAdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_adc_occ_neg 'HMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.2y.numGoodNegAdcHits 10 0.5 10.5
+
+#--------------------------------
+# HMS HODO GOOD TDC OCCUPANCIES
+#--------------------------------
+
+TH1F hhodo_1x_good_tdc_occ_pos 'HMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.1x.numGoodPosTdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_tdc_occ_pos 'HMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.1y.numGoodPosTdcHits 10 0.5 10.5 
+TH1F hhodo_2x_good_tdc_occ_pos 'HMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.2x.numGoodPosTdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_tdc_occ_pos 'HMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.2y.numGoodPosTdcHits 10 0.5 10.5
+
+TH1F hhodo_1x_good_tdc_occ_neg 'HMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.1x.numGoodNegTdcHits 16 0.5 16.5
+TH1F hhodo_1y_good_tdc_occ_neg 'HMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.1y.numGoodNegTdcHits 10 0.5 10.5 
+TH1F hhodo_2x_good_tdc_occ_neg 'HMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.2x.numGoodNegTdcHits 16 0.5 16.5
+TH1F hhodo_2y_good_tdc_occ_neg 'HMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.2y.numGoodNegTdcHits 10 0.5 10.5
+
+#------------------------------
+# HMS HODO Good PULSE PEDESTAL
+#------------------------------
+
+TH2F hhodo_1x_good_pped_vs_pmt_pos 'HMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1x.GoodPosAdcPed 16 0.5 16.5 400 300 700 H.hod.1x.GoodPosAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_pos 'HMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1y.GoodPosAdcPed 10 0.5 10.5 400 300 700 H.hod.1y.GoodPosAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_pos 'HMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2x.GoodPosAdcPed 16 0.5 16.5 400 300 700 H.hod.2x.GoodPosAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_pos 'HMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2y.GoodPosAdcPed 10 0.5 10.5 400 300 700 H.hod.2y.GoodPosAdcPed>0.0
+
+TH2F hhodo_1x_good_pped_vs_pmt_neg 'HMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1x.GoodNegAdcPed 16 0.5 16.5 400 300 700 H.hod.1x.GoodNegAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_neg 'HMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1y.GoodNegAdcPed 10 0.5 10.5 400 300 700 H.hod.1y.GoodNegAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_neg 'HMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2x.GoodNegAdcPed 16 0.5 16.5 400 300 700 H.hod.2x.GoodNegAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_neg 'HMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2y.GoodNegAdcPed 10 0.5 10.5 400 300 700 H.hod.2y.GoodNegAdcPed>0.0
+
+#------------------------------
+# HMS HODO Good PULSE INTEGRAL
+#------------------------------
+
+TH2F hhodo_1x_good_pi_vs_pmt_pos 'HMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.1x.GoodPosAdcPulseInt>0.0
+TH2F hhodo_1y_good_pi_vs_pmt_pos 'HMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.1y.GoodPosAdcPulseInt>0.0
+TH2F hhodo_2x_good_pi_vs_pmt_pos 'HMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.2x.GoodPosAdcPulseInt>0.0
+TH2F hhodo_2y_good_pi_vs_pmt_pos 'HMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.2y.GoodPosAdcPulseInt>0.0
+
+TH2F hhodo_1x_good_pi_vs_pmt_neg 'HMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.1x.GoodNegAdcPulseInt>0.0
+TH2F hhodo_1y_good_pi_vs_pmt_neg 'HMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.1y.GoodNegAdcPulseInt>0.0
+TH2F hhodo_2x_good_pi_vs_pmt_neg 'HMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.2x.GoodNegAdcPulseInt>0.0
+TH2F hhodo_2y_good_pi_vs_pmt_neg 'HMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.2y.GoodNegAdcPulseInt>0.0
+
+#-------------------------------
+# HMS HODO Good PULSE AMPLITUDE 
+#-------------------------------
+
+TH2F hhodo_1x_good_pamp_vs_pmt_pos 'HMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.1x.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_1y_good_pamp_vs_pmt_pos 'HMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.1y.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_2x_good_pamp_vs_pmt_pos 'HMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.2x.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_2y_good_pamp_vs_pmt_pos 'HMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.2y.GoodPosAdcPulseAmp>0.0
+
+TH2F hhodo_1x_good_pamp_vs_pmt_neg 'HMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.1x.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_1y_good_pamp_vs_pmt_neg 'HMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.1y.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_2x_good_pamp_vs_pmt_neg 'HMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.2x.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_2y_good_pamp_vs_pmt_neg 'HMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.2y.GoodNegAdcPulseAmp>0.0
+
+#------------------------------
+# HMS HODO Good ADC PULSE TIME
+#------------------------------
+
+TH2F hhodo_1x_good_ptime_vs_pmt_pos 'HMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.1x.GoodPosAdcPulseTime>0.0
+TH2F hhodo_1y_good_ptime_vs_pmt_pos 'HMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.1y.GoodPosAdcPulseTime>0.0
+TH2F hhodo_2x_good_ptime_vs_pmt_pos 'HMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.2x.GoodPosAdcPulseTime>0.0
+TH2F hhodo_2y_good_ptime_vs_pmt_pos 'HMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.2y.GoodPosAdcPulseTime>0.0
+
+TH2F hhodo_1x_good_ptime_vs_pmt_neg 'HMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.1x.GoodNegAdcPulseTime>0.0
+TH2F hhodo_1y_good_ptime_vs_pmt_neg 'HMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.1y.GoodNegAdcPulseTime>0.0
+TH2F hhodo_2x_good_ptime_vs_pmt_neg 'HMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.2x.GoodNegAdcPulseTime>0.0
+TH2F hhodo_2y_good_ptime_vs_pmt_neg 'HMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.2y.GoodNegAdcPulseTime>0.0
+
+#-------------------------------------------------------------------
+# HMS HODO Good TDC TIME UNCORRECTED (uncorrected for time offsets)
+#-------------------------------------------------------------------
+
+TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_pos 'HMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_pos 'HMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_pos 'HMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_pos 'HMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeUnCorr>0.0
+
+TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_neg 'HMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_neg 'HMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_neg 'HMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_neg 'HMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeUnCorr>0.0
+
+#---------------------------------------------------------------
+# HMS HODO Good TDC TIME CORRECTED (corrected for time offsets)
+#---------------------------------------------------------------
+
+TH2F hhodo_1x_good_tdctime_corr_vs_pmt_pos 'HMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_1y_good_tdctime_corr_vs_pmt_pos 'HMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_2x_good_tdctime_corr_vs_pmt_pos 'HMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_2y_good_tdctime_corr_vs_pmt_pos 'HMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeCorr>0.0
+
+TH2F hhodo_1x_good_tdctime_corr_vs_pmt_neg 'HMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_1y_good_tdctime_corr_vs_pmt_neg 'HMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_2x_good_tdctime_corr_vs_pmt_neg 'HMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_2y_good_tdctime_corr_vs_pmt_neg 'HMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeCorr>0.0
+
+#--------------------------------------------------------------------
+# HMS HODO Good TDC TIME TOF CORRECTED (corrected for time of flight) 
+#--------------------------------------------------------------------
+
+TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeTOFCorr>0.0
+
+TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeTOFCorr>0.0
+
+#----------------------------------------------------------------
+# HMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
+#----------------------------------------------------------------
+
+TH1F hhodo_beta_notrack 'HMS Hodo Calculated Beta Without Track Info; Beta; Number of Entries / 0.02' H.hod.betanotrack 100 0 2.0 H.hod.betanotrack>0.0
+TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.02' H.hod.beta 100 0 2.0 H.hod.beta>0.0
+TH1F hhodo_fpHitsTime 'HMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' H.hod.fpHitsTime 90 0 90 
+TH1F hhodo_starttime 'HMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' H.hod.starttime 90 0 90
+TH1F hhodo_good_startime 'HMS Hodo Good Start Time ; Good Start Time (flag=1 good, =0 did not determine start time); Number of Entries' H.hod.goodstarttime 5 0 5
+TH1F hhodo_1x_diffdistrack 'HMS Hodo 1X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1x.DiffDisTrack 100 -10. 10.
+TH1F hhodo_1y_diffdistrack 'HMS Hodo 1Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1y.DiffDisTrack 100 -10. 10.
+TH1F hhodo_2x_diffdistrack 'HMS Hodo 2X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2x.DiffDisTrack 100 -10. 10.
+TH1F hhodo_2y_diffdistrack 'HMS Hodo 2Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2y.DiffDisTrack 100 -10. 10.
+TH2F hhodo_1x_diffdistrack_v_xtrack 'HMS Hodo 1X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.1x.DiffDisTrack H.hod.1x.TrackXPos 100 -10. 10. 200 -100 100
+TH2F hhodo_1y_diffdistrack_v_ytrack 'HMS Hodo 1Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.1y.DiffDisTrack H.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
+TH2F hhodo_2x_diffdistrack_v_xtrack 'HMS Hodo 2X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.2x.DiffDisTrack H.hod.2x.TrackXPos 100 -10. 10. 200 -100 100
+TH2F hhodo_2y_diffdistrack_v_ytrack 'HMS Hodo 2Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.2y.DiffDisTrack H.hod.2y.TrackYPos 100 -10. 10. 240 -60 60
+
+#******************
+# HMS CALORIMETER
+#******************
+
+#------------------------
+# HMS CAL Good Occupancy
+#------------------------
+
+TH1F hcal_hA_good_occ_pos 'HMS hA+ Good Occupancy; PMT Number; Number of Entries' H.cal.1pr.numGoodPosAdcHits 13 0.5 13.5  
+TH1F hcal_hA_good_occ_neg 'HMS hA- Good Occupancy; PMT Number; Number of Entries' H.cal.1pr.numGoodNegAdcHits 13 0.5 13.5 
+TH1F hcal_hB_good_occ_pos 'HMS hB+ Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodPosAdcHits 13 0.5 13.5
+TH1F hcal_hB_good_occ_neg 'HMS hB- Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodNegAdcHits 13 0.5 13.5 
+TH1F hcal_hC_good_occ_pos 'HMS hC+ Good Occupancy; PMT Number; Number of Entries' H.cal.3ta.numGoodPosAdcHits 13 0.5 13.5 
+TH1F hcal_hD_good_occ_pos 'HMS hD+ Good Occupancy; PMT Number; Number of Entries' H.cal.4ta.numGoodPosAdcHits 13 0.5 13.5 
+
+#---------------------------
+# HMS CAL Good Multiplicity
+#---------------------------
+ 
+TH1F hcal_hA_good_mult_pos 'HMS hA+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.1pr.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F hcal_hA_good_mult_neg 'HMS hA- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT' H.cal.1pr.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F hcal_hA_good_mult 'HMS hA Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.1pr.totnumGoodAdcHits 26 0.5 26.5
+
+TH1F hcal_hB_good_mult_pos 'HMS hB+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.2ta.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F hcal_hB_good_mult_neg 'HMS hB- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT' H.cal.2ta.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F hcal_hB_good_mult 'HMS hB Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.2ta.totnumGoodAdcHits 26 0.5 26.5
+
+TH1F hcal_hC_good_mult_pos 'HMS hC+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.3ta.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F hcal_hD_good_mult_pos 'HMS hD+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.4ta.totNumGoodPosAdcHits 13 0.5 13.5
+
+#-------------------------------
+# HMS CAL Good Pulse Pedestals 
+#-------------------------------
+
+TH2F hcal_hA_good_pped_vs_pmt_pos 'HMS hA+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.1pr.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.1pr.goodPosAdcPed>0.0
+TH2F hcal_hA_good_pped_vs_pmt_neg 'HMS hA- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.1pr.goodNegAdcPed 13 0.5 13.5 400 300 700 H.cal.1pr.goodNegAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_pos 'HMS hB+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.2ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.2ta.goodPosAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_neg 'HMS hB- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.2ta.goodNegAdcPed 13 0.5 13.5 400 300 700 H.cal.2ta.goodNegAdcPed>0.0
+TH2F hcal_hC_good_pped_vs_pmt_pos 'HMS hC+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.3ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.3ta.goodPosAdcPed>0.0
+TH2F hcal_hD_good_pped_vs_pmt_pos 'HMS hD+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.4ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.4ta.goodPosAdcPed>0.0
+
+#-------------------------------
+# HMS CAL Good Pulse Integrals 
+#-------------------------------
+
+TH2F hcal_hA_good_pi_vs_pmt_pos 'HMS hA+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.1pr.goodPosAdcPulseInt>0.0
+TH2F hcal_hA_good_pi_vs_pmt_neg 'HMS hA- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.1pr.goodNegAdcPulseInt>0.0
+TH2F hcal_hB_good_pi_vs_pmt_pos 'HMS hB+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.2ta.goodPosAdcPulseInt>0.0
+TH2F hcal_hB_good_pi_vs_pmt_neg 'HMS hB- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.2ta.goodNegAdcPulseInt>0.0
+TH2F hcal_hC_good_pi_vs_pmt_pos 'HMS hC+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.3ta.goodPosAdcPulseInt>0.0
+TH2F hcal_hD_good_pi_vs_pmt_pos 'HMS hD+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.4ta.goodPosAdcPulseInt>0.0
+
+#-------------------------------
+# HMS CAL Good Pulse Amplitudes 
+#-------------------------------
+
+TH2F hcal_hA_good_pamp_vs_pmt_pos 'HMS hA+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.1pr.goodPosAdcPulseAmp>0.0
+TH2F hcal_hA_good_pamp_vs_pmt_neg 'HMS hA- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.1pr.goodNegAdcPulseAmp>0.0
+TH2F hcal_hB_good_pamp_vs_pmt_pos 'HMS hB+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.2ta.goodPosAdcPulseAmp>0.0
+TH2F hcal_hB_good_pamp_vs_pmt_neg 'HMS hB- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.2ta.goodNegAdcPulseAmp>0.0
+TH2F hcal_hC_good_pamp_vs_pmt_pos 'HMS hC+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.3ta.goodPosAdcPulseAmp>0.0
+TH2F hcal_hD_good_pamp_vs_pmt_pos 'HMS hD+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.4ta.goodPosAdcPulseAmp>0.0
+
+#---------------------------
+# HMS CAL Good Pulse Times
+#--------------------------- 
+
+TH2F hcal_hA_good_ptime_vs_pmt_pos 'HMS hA+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.1pr.goodPosAdcPulseTime>0.0
+TH2F hcal_hA_good_ptime_vs_pmt_neg 'HMS hA- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.1pr.goodNegAdcPulseTime>0.0
+TH2F hcal_hB_good_ptime_vs_pmt_pos 'HMS hB+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.2ta.goodPosAdcPulseTime>0.0
+TH2F hcal_hB_good_ptime_vs_pmt_neg 'HMS hB- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.2ta.goodNegAdcPulseTime>0.0
+TH2F hcal_hC_good_ptime_vs_pmt_pos 'HMS hC+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.3ta.goodPosAdcPulseTime>0.0
+TH2F hcal_hD_good_ptime_vs_pmt_pos 'HMS hD+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.4ta.goodPosAdcPulseTime>0.0
+
+#-----------------------------------------------
+# HMS CAL ENERGY DEPOSITION vs. PMT HISTOGRAMS 
+# (calib consts (GAIN) are in GeV/ADC units )
+#-----------------------------------------------
+
+TH2F hA_Epos_vs_pmt 'HMS hA+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.1pr.epos 13 0.5 13.5 200 0 2 H.cal.1pr.epos>0.0
+TH2F hA_Eneg_vs_pmt 'HMS hA- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.1pr.eneg 13 0.5 13.5 200 0 2 H.cal.1pr.eneg>0.0
+TH2F hA_Emean_vs_pmt 'HMS hA Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.1pr.emean 13 0.5 13.5 300 0 3 H.cal.1pr.emean>0.0
+
+
+TH2F hB_Epos_vs_pmt 'HMS hB+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.2ta.epos 13 0.5 13.5 200 0 2 H.cal.2ta.epos>0.0
+TH2F hB_Eneg_vs_pmt 'HMS hB- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.2ta.eneg 13 0.5 13.5 200 0 2 H.cal.2ta.eneg>0.0
+TH2F hB_Emean_vs_pmt 'HMS hB Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.2ta.emean 13 0.5 13.5 300 0 3 H.cal.2ta.emean>0.0
+
+TH2F hC_Epos_vs_pmt 'HMS hC+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.3ta.epos 13 0.5 13.5 200 0 2 H.cal.3ta.epos>0.0
+TH2F hD_Epos_vs_pmt 'HMS hD+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] H.cal.4ta.epos 13 0.5 13.5 200 0 2 H.cal.4ta.epos>0.0
+
+#------------------------------------
+# HMS CAL ENERGY DEPOSITION / Plane
+#------------------------------------
+
+TH1F hcal_hA_Eplane_pos 'HMS hA+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.1pr.eplane_pos 200 0 2 H.cal.1pr.eplane_pos>0.0
+TH1F hcal_hA_Eplane_neg 'HMS hA- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.1pr.eplane_neg 200 0 2 H.cal.1pr.eplane_neg>0.0
+TH1F hcal_hA_Eplane 'HMS hA Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.1pr.eplane 300 0 3 H.cal.1pr.eplane>0.0
+
+TH1F hcal_hB_Eplane_pos 'HMS hB+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.2ta.eplane_pos 200 0 2 H.cal.2ta.eplane_pos>0.0
+TH1F hcal_hB_Eplane_neg 'HMS hB- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.2ta.eplane_neg 200 0 2 H.cal.2ta.eplane_neg>0.0
+TH1F hcal_hB_Eplane 'HMS hB Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.2ta.eplane 300 0 3 H.cal.2ta.eplane>0.0
+
+TH1F hcal_hC_Eplane_pos 'HMS hC+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.3ta.eplane_pos 200 0 2 H.cal.3ta.eplane_pos>0.0
+TH1F hcal_hD_Eplane_pos 'HMS hD+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' H.cal.4ta.eplane_pos 200 0 2 H.cal.4ta.eplane_pos>0.0
+
+
+
+#********************
+# Trigger Apparatus *
+#********************
+
+#---------------------------
+# HMS Raw Hodo TRIG TDC Time
+#---------------------------
+
+TH1F htrig_h1x_tdc 'HMS h1X TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1X_tdcTimeRaw 1500 0 1500
+TH1F htrig_h1y_tdc 'HMS h1Y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1Y_tdcTimeRaw 1500 0 1500
+TH1F htrig_h2x_tdc 'HMS h2X TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2X_tdcTimeRaw 1500 0 1500
+TH1F htrig_h2y_tdc 'HMS h2Y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2Y_tdcTimeRaw 1500 0 1500
+
+TH1F htrig_h1T_tdc 'HMS h1X/h1Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h1T_tdcTimeRaw 1500 0 1500
+TH1F htrig_h2T_tdc 'HMS h2X/h2Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.h2T_tdcTimeRaw 1500 0 1500
+
+TH1F htrig_hT1_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 2); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hT1_tdcTimeRaw 1500 0 1500
+TH1F htrig_hT2_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 20); Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hT2_tdcTimeRaw 1500 0 1500
+
+#----------------------------
+# HMS Raw DC Reference Time
+#----------------------------
+
+TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF1_tdcTimeRaw 15000 0 15000
+TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF2_tdcTimeRaw 15000 0 15000
+TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF3_tdcTimeRaw 15000 0 15000
+TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDCREF4_tdcTimeRaw 15000 0 15000
+
+
+TH1F hdc_refdiff_1m2 'HDC Reference time 1 minus 2; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF2_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m3 'HDC Reference time 1 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_1m4 'HDC Reference time 1 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF1_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
+
+TH1F hdc_refdiff_2m3 'HDC Reference time 2 minus 3; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF3_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_2m4 'HDC Reference time 2 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF2_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
+TH1F hdc_refdiff_3m4 'HDC Reference time 3 minus 4; TDC Time (Clicks); Number of Entries / 1 click' T.hms.hDCREF3_tdcTime-T.hms.hDCREF4_tdcTime 2000 -1000 1000
+
+
+#--------------------------------------------
+# HMS Calo Layers TRIG Pulse Profile
+#--------------------------------------------
+
+TH1F htrig_hasum_adc_pped 'HMS hAsum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hASUM_adcPed 5000 0 5000
+TH1F htrig_hasum_adc_pi 'HMS hAsum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hASUM_adcPulseInt 800 0 40000
+TH1F htrig_hasum_adc_pamp 'HMS hAsum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hASUM_adcPulseAmp 205 0 4100
+TH1F htrig_hasum_tdc 'HMS hAsum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hASUM_tdcTime 4000 0 40000
+
+TH1F htrig_hbsum_adc_pped 'HMS hBsum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hBSUM_adcPed 5000 0 5000
+TH1F htrig_hbsum_adc_pi 'HMS hBsum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hBSUM_adcPulseInt 800 0 40000
+TH1F htrig_hbsum_adc_pamp 'HMS hBsum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hBSUM_adcPulseAmp 205 0 4100
+TH1F htrig_hbsum_tdc 'HMS hBsum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hBSUM_tdcTime 4000 0 40000
+
+TH1F htrig_hcsum_adc_pped 'HMS hCsum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hCSUM_adcPed 5000 0 5000
+TH1F htrig_hcsum_adc_pi 'HMS hCsum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hCSUM_adcPulseInt 800 0 40000
+TH1F htrig_hcsum_adc_pamp 'HMS hCsum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hCSUM_adcPulseAmp 205 0 4100
+TH1F htrig_hcsum_tdc 'HMS hCsum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCSUM_tdcTime 4000 0 40000
+
+TH1F htrig_hdsum_adc_pped 'HMS hDsum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hDSUM_adcPed 5000 0 5000
+TH1F htrig_hdsum_adc_pi 'HMS hDsum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hDSUM_adcPulseInt 800 0 40000
+TH1F htrig_hdsum_adc_pamp 'HMS hDsum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hDSUM_adcPulseAmp 205 0 4100
+TH1F htrig_hdsum_tdc 'HMS hDsum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDSUM_tdcTime 4000 0 40000
+
+#----------------------------------
+# HMS PreShower TRIG Pulse Profile
+#----------------------------------
+
+TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hPSHWR_adcPed 5000 0 5000
+TH1F htrig_hpreShwr_adc_pi 'HMS Pre-Shower Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hPSHWR_adcPulseInt 800 0 40000
+TH1F htrig_hpreShwr_adc_pamp 'HMS Pre-Shower Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hPSHWR_adcPulseAmp 205 0 4100
+
+#-----------------------------
+# HMS PreShower TRIG LOW/HIGH  
+#-----------------------------
+
+TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRLO_tdcTimeRaw 4000 0 40000
+TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRHI_tdcTimeRaw 4000 0 40000
+
+
+#----------------------------------
+# HMS Shower TRIG Pulse Profile
+#----------------------------------
+
+TH1F htrig_hshwr_adc_pped 'HMS Shower Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hSHWR_adcPed 5000 0 5000
+TH1F htrig_hshwr_adc_pi 'HMS Shower Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hSHWR_adcPulseInt 800 0 40000
+TH1F htrig_hshwr_adc_pamp 'HMS Shower Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hSHWR_adcPulseAmp 205 0 4100
+TH1F htrig_hshwr_tdc 'HMS Shower TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hSHWR_tdcTime 4000 0 40000
+
+#---------------------------------------
+# HMS Gas Cherenkov TRIG Pulse Profile
+#---------------------------------------
+
+TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hCERSUM_adcPed 5000 0 5000
+TH1F htrig_hcersum_adc_pi 'HMS Cherenkov Sum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hCERSUM_adcPulseInt 800 0 40000
+TH1F htrig_hcersum_adc_pamp 'HMS Cherenkov Sum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hCERSUM_adcPulseAmp 205 0 4100
+TH1F htrig_hcersum_tdc 'HMS Cherenkov Sum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCERSUM_tdcTime 4000 0 40000
+
+
+
+
+
+
+#*****************************************
+# HMS Single Arm Primary (Scattered Beam)
+# Kinematic Quantities
+#*****************************************
+
+TH1F hkin_q2 'HMS Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.Q2 100 0 5
+TH1F hkin_omega 'HMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' H.kin.omega 100 0 5
+TH1F hkin_w2 'HMS W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.100 GeV^{2}' H.kin.W2 100 0 10
+TH1F hkin_w  'HMS W; W (GeV); Number of Entries / 0.050 GeV' H.kin.W 100 0 5
+TH1F hkin_theta 'HMS Scattering Angle Theta; HMS Scattering Angle (deg); Number of Entries / 0.06 deg' H.kin.scat_ang_deg 100 12 18
+
+#******************
+# EPICS VARIABLES *
+#******************
+
+begin epics
+
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+
+end epics

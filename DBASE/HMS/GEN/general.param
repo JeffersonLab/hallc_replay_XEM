@@ -8,6 +8,7 @@ cminch=2.54
 #include "PARAM/GEN/gdebug.param"
 #include "PARAM/GEN/gtarget.param"
 #include "PARAM/GEN/gbeam.param"
+#include "PARAM/GEN/gscalers.param"
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
