@@ -34,11 +34,11 @@ TH1F hcal_hD_raw_mult_pos 'HMS hD+ Raw Multiplicity; Number of PMTs Hit; Total N
 
 #Good Occupancy
 TH1F hcal_hA_good_occ_pos 'HMS hA+ Good Occupancy; PMT Number; Number of Entries' H.cal.1pr.numGoodPosAdcHits 13 0.5 13.5  
-TH1F hcal_hA_good_occ_neg 'HMS hA- Good Occupancy; PMT Number; Number of Entries' H.cal.1pr.numGoodNegAdcHits 13 0.5 13.5 
-TH1F hcal_hB_good_occ_pos 'HMS hB+ Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodPosAdcHits 13 0.5 13.5
-TH1F hcal_hB_good_occ_neg 'HMS hB- Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodNegAdcHits 13 0.5 13.5 
-TH1F hcal_hC_good_occ_pos 'HMS hC+ Good Occupancy; PMT Number; Number of Entries' H.cal.3ta.numGoodPosAdcHits 13 0.5 13.5 
-TH1F hcal_hD_good_occ_pos 'HMS hD+ Good Occupancy; PMT Number; Number of Entries' H.cal.4ta.numGoodPosAdcHits 13 0.5 13.5 
+TH1F hcal_hA_good_occ_neg 'HMS hA- Good Occupancy; PMT Number; Number of Entries' H.cal.1pr.numGoodNegAdcHits 13 0.5 13.5  
+TH1F hcal_hB_good_occ_pos 'HMS hB+ Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodPosAdcHits 13 0.5 13.5  
+TH1F hcal_hB_good_occ_neg 'HMS hB- Good Occupancy; PMT Number; Number of Entries' H.cal.2ta.numGoodNegAdcHits 13 0.5 13.5  
+TH1F hcal_hC_good_occ_pos 'HMS hC+ Good Occupancy; PMT Number; Number of Entries' H.cal.3ta.numGoodPosAdcHits 13 0.5 13.5  
+TH1F hcal_hD_good_occ_pos 'HMS hD+ Good Occupancy; PMT Number; Number of Entries' H.cal.4ta.numGoodPosAdcHits 13 0.5 13.5  
 
 #Good Multiplicity 
 TH1F hcal_hA_good_mult_pos 'HMS hA+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.1pr.totNumGoodPosAdcHits 13 0.5 13.5
@@ -52,14 +52,13 @@ TH1F hcal_hB_good_mult 'HMS hB Good Multiplicity; Number of PMTs Hit; Total Numb
 TH1F hcal_hC_good_mult_pos 'HMS hC+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.3ta.totNumGoodPosAdcHits 13 0.5 13.5
 TH1F hcal_hD_good_mult_pos 'HMS hD+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.4ta.totNumGoodPosAdcHits 13 0.5 13.5
 
-
 #Raw Pulse Pedestals
-TH2F hcal_hA_raw_pped_vs_pmt_pos 'HMS hA+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPedRaw 13 0.5 13.5 4000 0 4000
-TH2F hcal_hA_raw_pped_vs_pmt_neg 'HMS hA- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPedRaw 13 0.5 13.5 4000 0 4000
-TH2F hcal_hB_raw_pped_vs_pmt_pos 'HMS hB+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPedRaw 13 0.5 13.5 4000 0 4000
-TH2F hcal_hB_raw_pped_vs_pmt_neg 'HMS hB- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPedRaw 13 0.5 13.5 4000 0 4000
-TH2F hcal_hC_raw_pped_vs_pmt_pos 'HMS hC+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPedRaw 13 0.5 13.5 4000 0 4000
-TH2F hcal_hD_raw_pped_vs_pmt_pos 'HMS hD+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPedRaw 13 0.5 13.5 4000 0 4000
+TH2F hcal_hA_raw_pped_vs_pmt_pos 'HMS hA+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPedRaw 13 0.5 13.5 2000 1000 3000
+TH2F hcal_hA_raw_pped_vs_pmt_neg 'HMS hA- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPedRaw 13 0.5 13.5 2000 1000 3000
+TH2F hcal_hB_raw_pped_vs_pmt_pos 'HMS hB+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPedRaw 13 0.5 13.5 2000 1000 3000
+TH2F hcal_hB_raw_pped_vs_pmt_neg 'HMS hB- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPedRaw 13 0.5 13.5 2000 1000 3000
+TH2F hcal_hC_raw_pped_vs_pmt_pos 'HMS hC+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPedRaw 13 0.5 13.5 2000 1000 3000
+TH2F hcal_hD_raw_pped_vs_pmt_pos 'HMS hD+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPedRaw 13 0.5 13.5 2000 1000 3000
 
 #Raw Pulse Integrals
 TH2F hcal_hA_raw_pi_vs_pmt_pos 'HMS hA+ Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseIntRaw 13 0.5 13.5 650 0 32500
@@ -86,60 +85,60 @@ TH2F hcal_hC_raw_ptime_vs_pmt_pos 'HMS hC+ Raw Pulse Time vs. PMT Number; PMT Nu
 TH2F hcal_hD_raw_ptime_vs_pmt_pos 'HMS hD+ Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseTimeRaw 13 0.5 13.5 650 0 6500
 
 #Pulse Pedestals 
-TH2F hcal_hA_pped_vs_pmt_pos 'HMS hA+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPed 13 0.5 13.5 400 300 700
-TH2F hcal_hA_pped_vs_pmt_neg 'HMS hA- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPed 13 0.5 13.5 400 300 700
-TH2F hcal_hB_pped_vs_pmt_pos 'HMS hB+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPed 13 0.5 13.5 400 300 700
-TH2F hcal_hB_pped_vs_pmt_neg 'HMS hB- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPed 13 0.5 13.5 400 300 700
-TH2F hcal_hC_pped_vs_pmt_pos 'HMS hC+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPed 13 0.5 13.5 400 300 700
-TH2F hcal_hD_pped_vs_pmt_pos 'HMS hD+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPed 13 0.5 13.5 400 300 700
+TH2F hcal_hA_pped_vs_pmt_pos 'HMS hA+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPed 13 0.5 13.5 300 0 300
+TH2F hcal_hA_pped_vs_pmt_neg 'HMS hA- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPed 13 0.5 13.5 300 0 300
+TH2F hcal_hB_pped_vs_pmt_pos 'HMS hB+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPed 13 0.5 13.5 300 0 300
+TH2F hcal_hB_pped_vs_pmt_neg 'HMS hB- Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPed 13 0.5 13.5 300 0 300
+TH2F hcal_hC_pped_vs_pmt_pos 'HMS hC+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPed 13 0.5 13.5 300 0 300
+TH2F hcal_hD_pped_vs_pmt_pos 'HMS hD+ Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 1 mV' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPed 13 0.5 13.5 300 0 300
 
 #Pulse Integrals
-TH2F hcal_hA_pi_vs_pmt_pos 'HMS hA+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F hcal_hA_pi_vs_pmt_neg 'HMS hA- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F hcal_hB_pi_vs_pmt_pos 'HMS hB+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F hcal_hB_pi_vs_pmt_neg 'HMS hB- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F hcal_hC_pi_vs_pmt_pos 'HMS hC+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseInt 13 0.5 13.5 600 0 30000
-TH2F hcal_hD_pi_vs_pmt_pos 'HMS hD+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 50 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseInt 13 0.5 13.5 600 0 30000
+TH2F hcal_hA_pi_vs_pmt_pos 'HMS hA+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F hcal_hA_pi_vs_pmt_neg 'HMS hA- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F hcal_hB_pi_vs_pmt_pos 'HMS hB+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F hcal_hB_pi_vs_pmt_neg 'HMS hB- Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F hcal_hC_pi_vs_pmt_pos 'HMS hC+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseInt 13 0.5 13.5 320 0 80
+TH2F hcal_hD_pi_vs_pmt_pos 'HMS hD+ Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.25 pC' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseInt 13 0.5 13.5 320 0 80
 
 #Pulse Amplitudes 
-TH2F hcal_hA_pamp_vs_pmt_pos 'HMS hA+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseAmp 13 0.5 13.5 400 0 8000
-TH2F hcal_hA_pamp_vs_pmt_neg 'HMS hA- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseAmp 13 0.5 13.5 400 0 8000
-TH2F hcal_hB_pamp_vs_pmt_pos 'HMS hB+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseAmp 13 0.5 13.5 400 0 8000
-TH2F hcal_hB_pamp_vs_pmt_neg 'HMS hB- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseAmp 13 0.5 13.5 400 0 8000
-TH2F hcal_hC_pamp_vs_pmt_pos 'HMS hC+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseAmp 13 0.5 13.5 400 0 8000
-TH2F hcal_hD_pamp_vs_pmt_pos 'HMS hD+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 20 ADC Units' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmp 13 0.5 13.5 400 0 8000
+TH2F hcal_hA_pamp_vs_pmt_pos 'HMS hA+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.1pr.posAdcCounter H.cal.1pr.posAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F hcal_hA_pamp_vs_pmt_neg 'HMS hA- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.1pr.negAdcCounter H.cal.1pr.negAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F hcal_hB_pamp_vs_pmt_pos 'HMS hB+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.2ta.posAdcCounter H.cal.2ta.posAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F hcal_hB_pamp_vs_pmt_neg 'HMS hB- Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.2ta.negAdcCounter H.cal.2ta.negAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F hcal_hC_pamp_vs_pmt_pos 'HMS hC+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.3ta.posAdcCounter H.cal.3ta.posAdcPulseAmp 13 0.5 13.5 500 0 1000
+TH2F hcal_hD_pamp_vs_pmt_pos 'HMS hD+ Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' H.cal.4ta.posAdcCounter H.cal.4ta.posAdcPulseAmp 13 0.5 13.5 500 0 1000
 
 #Good Pulse Pedestals 
-TH2F hcal_hA_good_pped_vs_pmt_pos 'HMS hA+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.1pr.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.1pr.goodPosAdcPed>0.0
-TH2F hcal_hA_good_pped_vs_pmt_neg 'HMS hA- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.1pr.goodNegAdcPed 13 0.5 13.5 400 300 700 H.cal.1pr.goodNegAdcPed>0.0
-TH2F hcal_hB_good_pped_vs_pmt_pos 'HMS hB+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.2ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.2ta.goodPosAdcPed>0.0
-TH2F hcal_hB_good_pped_vs_pmt_neg 'HMS hB- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.2ta.goodNegAdcPed 13 0.5 13.5 400 300 700 H.cal.2ta.goodNegAdcPed>0.0
-TH2F hcal_hC_good_pped_vs_pmt_pos 'HMS hC+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.3ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.3ta.goodPosAdcPed>0.0
-TH2F hcal_hD_good_pped_vs_pmt_pos 'HMS hD+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Units' [I+1] H.cal.4ta.goodPosAdcPed 13 0.5 13.5 400 300 700 H.cal.4ta.goodPosAdcPed>0.0
+TH2F hcal_hA_good_pped_vs_pmt_pos 'HMS hA+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.1pr.goodPosAdcPed 13 0.5 13.5 200 0 200 H.cal.1pr.goodPosAdcPed>0.0
+TH2F hcal_hA_good_pped_vs_pmt_neg 'HMS hA- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.1pr.goodNegAdcPed 13 0.5 13.5 200 0 200 H.cal.1pr.goodNegAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_pos 'HMS hB+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.2ta.goodPosAdcPed 13 0.5 13.5 200 0 200 H.cal.2ta.goodPosAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_neg 'HMS hB- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.2ta.goodNegAdcPed 13 0.5 13.5 200 0 200 H.cal.2ta.goodNegAdcPed>0.0
+TH2F hcal_hC_good_pped_vs_pmt_pos 'HMS hC+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.3ta.goodPosAdcPed 13 0.5 13.5 200 0 200 H.cal.3ta.goodPosAdcPed>0.0
+TH2F hcal_hD_good_pped_vs_pmt_pos 'HMS hD+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 mV' [I+1] H.cal.4ta.goodPosAdcPed 13 0.5 13.5 200 0 200 H.cal.4ta.goodPosAdcPed>0.0
 
 #Good Pulse Integrals 
-TH2F hcal_hA_good_pi_vs_pmt_pos 'HMS hA+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.1pr.goodPosAdcPulseInt>0.0
-TH2F hcal_hA_good_pi_vs_pmt_neg 'HMS hA- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.1pr.goodNegAdcPulseInt>0.0
-TH2F hcal_hB_good_pi_vs_pmt_pos 'HMS hB+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.2ta.goodPosAdcPulseInt>0.0
-TH2F hcal_hB_good_pi_vs_pmt_neg 'HMS hB- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.2ta.goodNegAdcPulseInt>0.0
-TH2F hcal_hC_good_pi_vs_pmt_pos 'HMS hC+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.3ta.goodPosAdcPulseInt>0.0
-TH2F hcal_hD_good_pi_vs_pmt_pos 'HMS hD+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseInt 13 0.5 13.5 600 0 30000 H.cal.4ta.goodPosAdcPulseInt>0.0
+TH2F hcal_hA_good_pi_vs_pmt_pos 'HMS hA+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.1pr.goodPosAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.1pr.goodPosAdcPulseInt>0.0
+TH2F hcal_hA_good_pi_vs_pmt_neg 'HMS hA- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.1pr.goodNegAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.1pr.goodNegAdcPulseInt>0.0
+TH2F hcal_hB_good_pi_vs_pmt_pos 'HMS hB+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.2ta.goodPosAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.2ta.goodPosAdcPulseInt>0.0
+TH2F hcal_hB_good_pi_vs_pmt_neg 'HMS hB- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.2ta.goodNegAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.2ta.goodNegAdcPulseInt>0.0
+TH2F hcal_hC_good_pi_vs_pmt_pos 'HMS hC+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.3ta.goodPosAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.3ta.goodPosAdcPulseInt>0.0
+TH2F hcal_hD_good_pi_vs_pmt_pos 'HMS hD+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] H.cal.4ta.goodPosAdcPulseInt 13 0.5 13.5 320 0 80 H.cal.4ta.goodPosAdcPulseInt>0.0
 
 #Good Pulse Amplitudes 
-TH2F hcal_hA_good_pamp_vs_pmt_pos 'HMS hA+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.1pr.goodPosAdcPulseAmp>0.0
-TH2F hcal_hA_good_pamp_vs_pmt_neg 'HMS hA- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.1pr.goodNegAdcPulseAmp>0.0
-TH2F hcal_hB_good_pamp_vs_pmt_pos 'HMS hB+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.2ta.goodPosAdcPulseAmp>0.0
-TH2F hcal_hB_good_pamp_vs_pmt_neg 'HMS hB- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.2ta.goodNegAdcPulseAmp>0.0
-TH2F hcal_hC_good_pamp_vs_pmt_pos 'HMS hC+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.3ta.goodPosAdcPulseAmp>0.0
-TH2F hcal_hD_good_pamp_vs_pmt_pos 'HMS hD+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseAmp 13 0.5 13.5 200 0 4000 H.cal.4ta.goodPosAdcPulseAmp>0.0
+TH2F hcal_hA_good_pamp_vs_pmt_pos 'HMS hA+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.1pr.goodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.1pr.goodPosAdcPulseAmp>0.0
+TH2F hcal_hA_good_pamp_vs_pmt_neg 'HMS hA- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.1pr.goodNegAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.1pr.goodNegAdcPulseAmp>0.0
+TH2F hcal_hB_good_pamp_vs_pmt_pos 'HMS hB+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.2ta.goodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.2ta.goodPosAdcPulseAmp>0.0
+TH2F hcal_hB_good_pamp_vs_pmt_neg 'HMS hB- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.2ta.goodNegAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.2ta.goodNegAdcPulseAmp>0.0
+TH2F hcal_hC_good_pamp_vs_pmt_pos 'HMS hC+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.3ta.goodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.3ta.goodPosAdcPulseAmp>0.0
+TH2F hcal_hD_good_pamp_vs_pmt_pos 'HMS hD+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] H.cal.4ta.goodPosAdcPulseAmp 13 0.5 13.5 500 0 1000 H.cal.4ta.goodPosAdcPulseAmp>0.0
 
 #Good Pulse Times 
-TH2F hcal_hA_good_ptime_vs_pmt_pos 'HMS hA+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.1pr.goodPosAdcPulseTime>0.0
-TH2F hcal_hA_good_ptime_vs_pmt_neg 'HMS hA- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.1pr.goodNegAdcPulseTime>0.0
-TH2F hcal_hB_good_ptime_vs_pmt_pos 'HMS hB+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.2ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.2ta.goodPosAdcPulseTime>0.0
-TH2F hcal_hB_good_ptime_vs_pmt_neg 'HMS hB- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.2ta.goodNegAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.2ta.goodNegAdcPulseTime>0.0
-TH2F hcal_hC_good_ptime_vs_pmt_pos 'HMS hC+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.3ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.3ta.goodPosAdcPulseTime>0.0
-TH2F hcal_hD_good_ptime_vs_pmt_pos 'HMS hD+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] H.cal.4ta.goodPosAdcPulseTime 13 0.5 13.5 350 0 3500 H.cal.4ta.goodPosAdcPulseTime>0.0
+TH2F hcal_hA_good_ptime_vs_pmt_pos 'HMS hA+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.1pr.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.1pr.goodPosAdcPulseTime>0.0
+TH2F hcal_hA_good_ptime_vs_pmt_neg 'HMS hA- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.1pr.goodNegAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.1pr.goodNegAdcPulseTime>0.0
+TH2F hcal_hB_good_ptime_vs_pmt_pos 'HMS hB+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.2ta.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.2ta.goodPosAdcPulseTime>0.0
+TH2F hcal_hB_good_ptime_vs_pmt_neg 'HMS hB- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.2ta.goodNegAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.2ta.goodNegAdcPulseTime>0.0
+TH2F hcal_hC_good_ptime_vs_pmt_pos 'HMS hC+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.3ta.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.3ta.goodPosAdcPulseTime>0.0
+TH2F hcal_hD_good_ptime_vs_pmt_pos 'HMS hD+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.4ta.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.4ta.goodPosAdcPulseTime>0.0
 
 #GOOD RAW PULSE INTEGRALS 
 TH2F hcal_hA_good_raw_pi_vs_pmt_pos 'HMS hA+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseIntRaw 13 0.5 13.5 650 0 32500  H.cal.1pr.goodPosAdcPulseIntRaw>0.0

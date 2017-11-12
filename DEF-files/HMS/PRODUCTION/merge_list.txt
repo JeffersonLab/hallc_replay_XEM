@@ -1,6 +1,6 @@
 BLOCK/hblock_vars.def
 CER/hcer_histos.def
-DC/hdc_6gev_histos.def
+DC/hdcana.def
 HODO/hhodo_histos.def
 CAL/hcal_histos.def
 TRIG/htrig_histos.def

@@ -1,0 +1,61 @@
+
+#********************
+# Block Definitions *
+#********************
+
+block T.hms.*
+block H.cer.*
+block H.dc.*
+block H.tr.*
+block H.hod.*
+block H.aero.*
+block H.cal.*
+block H.gtr.*
+block H.kin.*
+
+
+#--------------------------
+# HMS Gas CER TRACK MATCHING
+#--------------------------
+
+TH1F hcer_trk_match 'HMS  Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' H.cer.numTracksMatched 2 0.5 2.5
+TH1F hcer_trk_fired 'HMS  Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' H.cer.numTracksFired 2 0.5 2.5
+
+#----------------------------------------------------------------
+# HMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
+#----------------------------------------------------------------
+
+TH1F hhodo_beta_notrack 'HMS Hodo Calculated Beta Without Track Info; Beta; Number of Entries / 0.02' H.hod.betanotrack 100 0 2.0 H.hod.betanotrack>0.0
+TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.02' H.hod.beta 100 0 2.0 H.hod.beta>0.0
+TH1F hhodo_fpHitsTime 'HMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' H.hod.fpHitsTime 90 0 90 
+TH1F hhodo_starttime 'HMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' H.hod.starttime 90 0 90
+TH1F hhodo_good_startime 'HMS Hodo Good Start Time (ns); Good Start Time (ns); Number of Entries / 1ns' H.hod.goodstarttime 90 0 90
+TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
+
+
+#*****************************************
+# HMS Single Arm Primary (Scattered Beam)
+# Kinematic Quantities
+#*****************************************
+
+TH1F hkin_q2 'HMS Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.Q2 100 0 5
+TH1F hkin_omega 'HMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' H.kin.omega 100 0 5
+TH1F hkin_w2 'HMS W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.100 GeV^{2}' H.kin.W2 100 0 10
+TH1F hkin_w  'HMS W; W (GeV); Number of Entries / 0.050 GeV' H.kin.W 100 0 5
+TH1F hkin_theta 'HMS Scattering Angle Theta; HMS Scattering Angle (deg); Number of Entries / 0.06 deg' H.kin.scat_ang_deg 100 12 18
+
+#******************
+# EPICS VARIABLES *
+#******************
+
+begin epics
+
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+
+end epics

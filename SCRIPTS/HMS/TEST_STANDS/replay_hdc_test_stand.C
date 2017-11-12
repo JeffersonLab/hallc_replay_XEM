@@ -60,7 +60,7 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
 
-  
+
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
   // The Analyzer controls the reading of the data, executes
@@ -93,7 +93,7 @@ void replay_hdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
  analyzer->SetEvent(event);
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/HMS/TEST_STANDS/DC/hdc_histos.def");
+ analyzer->SetOdefFile("DEF-files/HMS/TEST_STANDS/DC/hdcana.def");
  analyzer->SetCutFile("DEF-files/HMS/TEST_STANDS/DC/hdcana_cuts.def");    // optional
 
  // File to record cuts accounting information

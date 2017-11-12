@@ -33,23 +33,23 @@ void overlay2(TString hist1name, TString hist2name, TString label1="", TString l
     H2->SetMinimum(0);
     H1->SetTitle(htitle);
     H2->SetTitle(htitle);
-    H1->GetXaxis()->SetTitleSize(0.05);
-    H1->GetYaxis()->SetTitleSize(0.045);
-    H2->GetXaxis()->SetTitleSize(0.05);
-    H2->GetYaxis()->SetTitleSize(0.045);
-    H1->GetXaxis()->SetLabelSize(0.04);
-    H1->GetYaxis()->SetLabelSize(0.04);
-    H2->GetXaxis()->SetLabelSize(0.04);
-    H2->GetYaxis()->SetLabelSize(0.04);
+    H1->GetXaxis()->SetTitleSize(0.035);
+    H1->GetYaxis()->SetTitleSize(0.035);
+    H2->GetXaxis()->SetTitleSize(0.035);
+    H2->GetYaxis()->SetTitleSize(0.035);
+    H1->GetXaxis()->SetLabelSize(0.03);
+    H1->GetYaxis()->SetLabelSize(0.03);
+    H2->GetXaxis()->SetLabelSize(0.03);
+    H2->GetYaxis()->SetLabelSize(0.03);
 
   }
  
   double xpos = H1->GetXaxis()->GetBinCenter(H1->GetXaxis()->GetFirst()+4);
   double ypos = 0.95*H1->GetMaximum();
 
-  TText* t1 = new TText(xpos,ypos,label1);
+  TText* t1 = new TText(xpos,0.4*ypos,label1);
   t1->SetTextColor(4);
-  TText* t2 = new TText(xpos,0.9*ypos,label2);
+  TText* t2 = new TText(xpos,0.5*ypos,label2);
   t2->SetTextColor(2);
   
   if(golden){
@@ -79,10 +79,10 @@ void overlay2(TString hist1name, TString hist2name, TString label1="", TString l
       t1->Draw();
       t2->Draw();
 
-    H2->GetXaxis()->SetTitleOffset(.6);
-    H2->GetXaxis()->SetTitleSize(0.08);
-    H2->GetYaxis()->SetTitleOffset(.6);
-    H2->GetYaxis()->SetTitleSize(0.08);
+    H2->GetXaxis()->SetTitleOffset(.55);
+    H2->GetXaxis()->SetTitleSize(0.075);
+    H2->GetYaxis()->SetTitleOffset(.75);
+    H2->GetYaxis()->SetTitleSize(0.075);
     }
   }
   } else {

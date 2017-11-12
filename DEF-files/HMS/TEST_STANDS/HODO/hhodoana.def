@@ -159,55 +159,55 @@ TH2F hhodo_2y_neg_raw_tdc_time_vs_pad 'HMS 2Y- Raw TDC Time vs. Paddle Number; P
 #-------------------------
 # HMS Hodo Pulse Pedestal
 #-------------------------
-TH2F hhodo_1x_pos_ped_vs_pad 'HMS 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPed 16 0.5 16.5 1000 0 1000
-TH2F hhodo_1y_pos_ped_vs_pad 'HMS 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPed 10 0.5 10.5 1000 0 1000
-TH2F hhodo_2x_pos_ped_vs_pad 'HMS 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPed 16 0.5 16.5 1000 0 1000
-TH2F hhodo_2y_pos_ped_vs_pad 'HMS 2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_1x_pos_ped_vs_pad 'HMS 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPed 16 0.5 16.5 200 0 200
+TH2F hhodo_1y_pos_ped_vs_pad 'HMS 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPed 10 0.5 10.5 200 0 200
+TH2F hhodo_2x_pos_ped_vs_pad 'HMS 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPed 16 0.5 16.5 200 0 200
+TH2F hhodo_2y_pos_ped_vs_pad 'HMS 2Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPed 10 0.5 10.5 200 0 200
 
-TH2F hhodo_1x_neg_ped_vs_pad 'HMS 1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPed 16 0.5 16.5 1000 0 1000
-TH2F hhodo_1y_neg_ped_vs_pad 'HMS 1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPed 10 0.5 10.5 1000 0 1000
-TH2F hhodo_2x_neg_ped_vs_pad 'HMS 2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPed 16 0.5 16.5 1000 0 1000
-TH2F hhodo_2y_neg_ped_vs_pad 'HMS 2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / 1 ADC Unit' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPed 10 0.5 10.5 1000 0 1000
+TH2F hhodo_1x_neg_ped_vs_pad 'HMS 1X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mv' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPed 16 0.5 16.5 200 0 200
+TH2F hhodo_1y_neg_ped_vs_pad 'HMS 1Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPed 10 0.5 10.5 200 0 200
+TH2F hhodo_2x_neg_ped_vs_pad 'HMS 2X- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPed 16 0.5 16.5 200 0 200
+TH2F hhodo_2y_neg_ped_vs_pad 'HMS 2Y- Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPed 10 0.5 10.5 200 0 200
 
 #-------------------------
 # HMS Hodo Pulse Integral
 #-------------------------
-TH2F hhodo_1x_pos_pi_vs_pad 'HMS 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseInt 16 0.5 16.5 800 0 40000
-TH2F hhodo_1y_pos_pi_vs_pad 'HMS 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseInt 10 0.5 10.5 800 0 40000
-TH2F hhodo_2x_pos_pi_vs_pad 'HMS 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseInt 16 0.5 16.5 800 0 40000
-TH2F hhodo_2y_pos_pi_vs_pad 'HMS 2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPulseInt 10 0.5 10.5 800 0 40000
+TH2F hhodo_1x_pos_pi_vs_pad 'HMS 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseInt 16 0.5 16.5 320 0 80
+TH2F hhodo_1y_pos_pi_vs_pad 'HMS 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseInt 10 0.5 10.5 320 0 80
+TH2F hhodo_2x_pos_pi_vs_pad 'HMS 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseInt 16 0.5 16.5 320 0 80
+TH2F hhodo_2y_pos_pi_vs_pad 'HMS 2Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPulseInt 10 0.5 10.5 320 0 80
 
-TH2F hhodo_1x_neg_pi_vs_pad 'HMS 1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPulseInt 16 0.5 16.5 800 0 40000
-TH2F hhodo_1y_neg_pi_vs_pad 'HMS 1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPulseInt 10 0.5 10.5 800 0 40000
-TH2F hhodo_2x_neg_pi_vs_pad 'HMS 2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPulseInt 16 0.5 16.5 800 0 40000
-TH2F hhodo_2y_neg_pi_vs_pad 'HMS 2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 50 ADC Units' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPulseInt 10 0.5 10.5 800 0 40000
+TH2F hhodo_1x_neg_pi_vs_pad 'HMS 1X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPulseInt 16 0.5 16.5 320 0 80
+TH2F hhodo_1y_neg_pi_vs_pad 'HMS 1Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPulseInt 10 0.5 10.5 320 0 80
+TH2F hhodo_2x_neg_pi_vs_pad 'HMS 2X- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPulseInt 16 0.5 16.5 320 0 80
+TH2F hhodo_2y_neg_pi_vs_pad 'HMS 2Y- Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPulseInt 10 0.5 10.5 320 0 80
 
 
 #--------------------------
 # HMS Hodo Pulse Amplitude
 #--------------------------
-TH2F hhodo_1x_pos_pamp_vs_pad 'HMS 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseAmp 16 0.5 16.5 205 0 4100
-TH2F hhodo_1y_pos_pamp_vs_pad 'HMS 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseAmp 10 0.5 10.5 205 0 4100
-TH2F hhodo_2x_pos_pamp_vs_pad 'HMS 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseAmp 16 0.5 16.5 205 0 4100
-TH2F hhodo_2y_pos_pamp_vs_pad 'HMS 2Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPulseAmp 10 0.5 10.5 205 0 4100
+TH2F hhodo_1x_pos_pamp_vs_pad 'HMS 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseAmp 16 0.5 16.5 500 0 1000
+TH2F hhodo_1y_pos_pamp_vs_pad 'HMS 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseAmp 10 0.5 10.5 500 0 1000
+TH2F hhodo_2x_pos_pamp_vs_pad 'HMS 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseAmp 16 0.5 16.5 500 0 1000
+TH2F hhodo_2y_pos_pamp_vs_pad 'HMS 2Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.2y.posAdcCounter  H.hod.2y.posAdcPulseAmp 10 0.5 10.5 500 0 1000
 
-TH2F hhodo_1x_neg_pamp_vs_pad 'HMS 1X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPulseAmp 16 0.5 16.5 205 0 4100
-TH2F hhodo_1y_neg_pamp_vs_pad 'HMS 1Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPulseAmp 10 0.5 10.5 205 0 4100
-TH2F hhodo_2x_neg_pamp_vs_pad 'HMS 2X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPulseAmp 16 0.5 16.5 205 0 4100
-TH2F hhodo_2y_neg_pamp_vs_pad 'HMS 2Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 20 ADC Units' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPulseAmp 10 0.5 10.5 205 0 4100
+TH2F hhodo_1x_neg_pamp_vs_pad 'HMS 1X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1x.negAdcCounter  H.hod.1x.negAdcPulseAmp 16 0.5 16.5 500 0 1000
+TH2F hhodo_1y_neg_pamp_vs_pad 'HMS 1Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1y.negAdcCounter  H.hod.1y.negAdcPulseAmp 10 0.5 10.5 500 0 1000
+TH2F hhodo_2x_neg_pamp_vs_pad 'HMS 2X- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.2x.negAdcCounter  H.hod.2x.negAdcPulseAmp 16 0.5 16.5 500 0 1000
+TH2F hhodo_2y_neg_pamp_vs_pad 'HMS 2Y- Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.2y.negAdcCounter  H.hod.2y.negAdcPulseAmp 10 0.5 10.5 500 0 1000
 
 #-------------------
 # HMS Hodo TDC Time
 #-------------------
-TH2F hhodo_1x_pos_tdc_time_vs_pad 'HMS 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.1x.posTdcCounter  H.hod.1x.posTdcTime 16 0.5 16.5 200 -2000 0
-TH2F hhodo_1y_pos_tdc_time_vs_pad 'HMS 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.1y.posTdcCounter  H.hod.1y.posTdcTime 10 0.5 10.5 200 -2000 0
-TH2F hhodo_2x_pos_tdc_time_vs_pad 'HMS 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.2x.posTdcCounter  H.hod.2x.posTdcTime 16 0.5 16.5 200 -2000 0
-TH2F hhodo_2y_pos_tdc_time_vs_pad 'HMS 2Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.2y.posTdcCounter  H.hod.2y.posTdcTime 10 0.5 10.5 200 -2000 0
+TH2F hhodo_1x_pos_tdc_time_vs_pad 'HMS 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1x.posTdcCounter  H.hod.1x.posTdcTime 16 0.5 16.5 200 -2000 0
+TH2F hhodo_1y_pos_tdc_time_vs_pad 'HMS 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1y.posTdcCounter  H.hod.1y.posTdcTime 10 0.5 10.5 200 -2000 0
+TH2F hhodo_2x_pos_tdc_time_vs_pad 'HMS 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2x.posTdcCounter  H.hod.2x.posTdcTime 16 0.5 16.5 200 -2000 0
+TH2F hhodo_2y_pos_tdc_time_vs_pad 'HMS 2Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2y.posTdcCounter  H.hod.2y.posTdcTime 10 0.5 10.5 200 -2000 0
 
-TH2F hhodo_1x_neg_tdc_time_vs_pad 'HMS 1X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.1x.negTdcCounter  H.hod.1x.negTdcTime 16 0.5 16.5 200 -2000 0
-TH2F hhodo_1y_neg_tdc_time_vs_pad 'HMS 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.1y.negTdcCounter  H.hod.1y.negTdcTime 10 0.5 10.5 200 -2000 0
-TH2F hhodo_2x_neg_tdc_time_vs_pad 'HMS 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.2x.negTdcCounter  H.hod.2x.negTdcTime 16 0.5 16.5 200 -2000 0
-TH2F hhodo_2y_neg_tdc_time_vs_pad 'HMS 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 ADC Units' H.hod.2y.negTdcCounter  H.hod.2y.negTdcTime 10 0.5 10.5 200 -2000 0
+TH2F hhodo_1x_neg_tdc_time_vs_pad 'HMS 1X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1x.negTdcCounter  H.hod.1x.negTdcTime 16 0.5 16.5 200 -2000 0
+TH2F hhodo_1y_neg_tdc_time_vs_pad 'HMS 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1y.negTdcCounter  H.hod.1y.negTdcTime 10 0.5 10.5 200 -2000 0
+TH2F hhodo_2x_neg_tdc_time_vs_pad 'HMS 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2x.negTdcCounter  H.hod.2x.negTdcTime 16 0.5 16.5 200 -2000 0
+TH2F hhodo_2y_neg_tdc_time_vs_pad 'HMS 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2y.negTdcCounter  H.hod.2y.negTdcTime 10 0.5 10.5 200 -2000 0
 
 
 #-----------------------------------
@@ -280,99 +280,99 @@ TH1F hhodo_2y_good_tdc_occ_neg 'HMS 2Y- Good TDC Occupancy; PMT Number; Number o
 # HMS HODO Good PULSE PEDESTAL
 #------------------------------
 
-TH2F hhodo_1x_good_pped_vs_pmt_pos 'HMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1x.GoodPosAdcPed 16 0.5 16.5 400 300 700 H.hod.1x.GoodPosAdcPed>0.0
-TH2F hhodo_1y_good_pped_vs_pmt_pos 'HMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1y.GoodPosAdcPed 10 0.5 10.5 400 300 700 H.hod.1y.GoodPosAdcPed>0.0
-TH2F hhodo_2x_good_pped_vs_pmt_pos 'HMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2x.GoodPosAdcPed 16 0.5 16.5 400 300 700 H.hod.2x.GoodPosAdcPed>0.0
-TH2F hhodo_2y_good_pped_vs_pmt_pos 'HMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2y.GoodPosAdcPed 10 0.5 10.5 400 300 700 H.hod.2y.GoodPosAdcPed>0.0
+TH2F hhodo_1x_good_pped_vs_pmt_pos 'HMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1x.GoodPosAdcPed 16 0.5 16.5 200 0 200 H.hod.1x.GoodPosAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_pos 'HMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1y.GoodPosAdcPed 10 0.5 10.5 200 0 200 H.hod.1y.GoodPosAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_pos 'HMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2x.GoodPosAdcPed 16 0.5 16.5 200 0 200 H.hod.2x.GoodPosAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_pos 'HMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2y.GoodPosAdcPed 10 0.5 10.5 200 0 200 H.hod.2y.GoodPosAdcPed>0.0
 
-TH2F hhodo_1x_good_pped_vs_pmt_neg 'HMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1x.GoodNegAdcPed 16 0.5 16.5 400 300 700 H.hod.1x.GoodNegAdcPed>0.0
-TH2F hhodo_1y_good_pped_vs_pmt_neg 'HMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.1y.GoodNegAdcPed 10 0.5 10.5 400 300 700 H.hod.1y.GoodNegAdcPed>0.0
-TH2F hhodo_2x_good_pped_vs_pmt_neg 'HMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2x.GoodNegAdcPed 16 0.5 16.5 400 300 700 H.hod.2x.GoodNegAdcPed>0.0
-TH2F hhodo_2y_good_pped_vs_pmt_neg 'HMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1]  H.hod.2y.GoodNegAdcPed 10 0.5 10.5 400 300 700 H.hod.2y.GoodNegAdcPed>0.0
+TH2F hhodo_1x_good_pped_vs_pmt_neg 'HMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1x.GoodNegAdcPed 16 0.5 16.5 200 0 200 H.hod.1x.GoodNegAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_neg 'HMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1y.GoodNegAdcPed 10 0.5 10.5 200 0 200 H.hod.1y.GoodNegAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_neg 'HMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2x.GoodNegAdcPed 16 0.5 16.5 200 0 200 H.hod.2x.GoodNegAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_neg 'HMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2y.GoodNegAdcPed 10 0.5 10.5 200 0 200 H.hod.2y.GoodNegAdcPed>0.0
 
 #------------------------------
 # HMS HODO Good PULSE INTEGRAL
 #------------------------------
 
-TH2F hhodo_1x_good_pi_vs_pmt_pos 'HMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.1x.GoodPosAdcPulseInt>0.0
-TH2F hhodo_1y_good_pi_vs_pmt_pos 'HMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.1y.GoodPosAdcPulseInt>0.0
-TH2F hhodo_2x_good_pi_vs_pmt_pos 'HMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.2x.GoodPosAdcPulseInt>0.0
-TH2F hhodo_2y_good_pi_vs_pmt_pos 'HMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.2y.GoodPosAdcPulseInt>0.0
+TH2F hhodo_1x_good_pi_vs_pmt_pos 'HMS 1X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.1x.GoodPosAdcPulseInt 16 0.5 16.5 320 0 80 H.hod.1x.GoodPosAdcPulseInt>0.0
+TH2F hhodo_1y_good_pi_vs_pmt_pos 'HMS 1Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.1y.GoodPosAdcPulseInt 10 0.5 10.5 320 0 80 H.hod.1y.GoodPosAdcPulseInt>0.0
+TH2F hhodo_2x_good_pi_vs_pmt_pos 'HMS 2X+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.2x.GoodPosAdcPulseInt 16 0.5 16.5 320 0 80 H.hod.2x.GoodPosAdcPulseInt>0.0
+TH2F hhodo_2y_good_pi_vs_pmt_pos 'HMS 2Y+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.2y.GoodPosAdcPulseInt 10 0.5 10.5 320 0 80 H.hod.2y.GoodPosAdcPulseInt>0.0
 
-TH2F hhodo_1x_good_pi_vs_pmt_neg 'HMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.1x.GoodNegAdcPulseInt>0.0
-TH2F hhodo_1y_good_pi_vs_pmt_neg 'HMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.1y.GoodNegAdcPulseInt>0.0
-TH2F hhodo_2x_good_pi_vs_pmt_neg 'HMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseInt 16 0.5 16.5 600 0 30000 H.hod.2x.GoodNegAdcPulseInt>0.0
-TH2F hhodo_2y_good_pi_vs_pmt_neg 'HMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseInt 10 0.5 10.5 600 0 30000 H.hod.2y.GoodNegAdcPulseInt>0.0
+TH2F hhodo_1x_good_pi_vs_pmt_neg 'HMS 1X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.1x.GoodNegAdcPulseInt 16 0.5 16.5 320 0 80 H.hod.1x.GoodNegAdcPulseInt>0.0
+TH2F hhodo_1y_good_pi_vs_pmt_neg 'HMS 1Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.1y.GoodNegAdcPulseInt 10 0.5 10.5 320 0 80 H.hod.1y.GoodNegAdcPulseInt>0.0
+TH2F hhodo_2x_good_pi_vs_pmt_neg 'HMS 2X- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.2x.GoodNegAdcPulseInt 16 0.5 16.5 320 0 80 H.hod.2x.GoodNegAdcPulseInt>0.0
+TH2F hhodo_2y_good_pi_vs_pmt_neg 'HMS 2Y- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1]  H.hod.2y.GoodNegAdcPulseInt 10 0.5 10.5 320 0 80 H.hod.2y.GoodNegAdcPulseInt>0.0
 
 #-------------------------------
 # HMS HODO Good PULSE AMPLITUDE 
 #-------------------------------
 
-TH2F hhodo_1x_good_pamp_vs_pmt_pos 'HMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.1x.GoodPosAdcPulseAmp>0.0
-TH2F hhodo_1y_good_pamp_vs_pmt_pos 'HMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.1y.GoodPosAdcPulseAmp>0.0
-TH2F hhodo_2x_good_pamp_vs_pmt_pos 'HMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.2x.GoodPosAdcPulseAmp>0.0
-TH2F hhodo_2y_good_pamp_vs_pmt_pos 'HMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.2y.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_1x_good_pamp_vs_pmt_pos 'HMS 1X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.1x.GoodPosAdcPulseAmp 16 0.5 16.5 500 0 1000 H.hod.1x.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_1y_good_pamp_vs_pmt_pos 'HMS 1Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.1y.GoodPosAdcPulseAmp 10 0.5 10.5 500 0 1000 H.hod.1y.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_2x_good_pamp_vs_pmt_pos 'HMS 2X+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.2x.GoodPosAdcPulseAmp 16 0.5 16.5 500 0 1000 H.hod.2x.GoodPosAdcPulseAmp>0.0
+TH2F hhodo_2y_good_pamp_vs_pmt_pos 'HMS 2Y+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.2y.GoodPosAdcPulseAmp 10 0.5 10.5 500 0 1000 H.hod.2y.GoodPosAdcPulseAmp>0.0
 
-TH2F hhodo_1x_good_pamp_vs_pmt_neg 'HMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.1x.GoodNegAdcPulseAmp>0.0
-TH2F hhodo_1y_good_pamp_vs_pmt_neg 'HMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.1y.GoodNegAdcPulseAmp>0.0
-TH2F hhodo_2x_good_pamp_vs_pmt_neg 'HMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseAmp 16 0.5 16.5 205 0 4100 H.hod.2x.GoodNegAdcPulseAmp>0.0
-TH2F hhodo_2y_good_pamp_vs_pmt_neg 'HMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseAmp 10 0.5 10.5 205 0 4100 H.hod.2y.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_1x_good_pamp_vs_pmt_neg 'HMS 1X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.1x.GoodNegAdcPulseAmp 16 0.5 16.5 500 0 1000 H.hod.1x.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_1y_good_pamp_vs_pmt_neg 'HMS 1Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.1y.GoodNegAdcPulseAmp 10 0.5 10.5 500 0 1000 H.hod.1y.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_2x_good_pamp_vs_pmt_neg 'HMS 2X- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.2x.GoodNegAdcPulseAmp 16 0.5 16.5 500 0 1000 H.hod.2x.GoodNegAdcPulseAmp>0.0
+TH2F hhodo_2y_good_pamp_vs_pmt_neg 'HMS 2Y- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1]  H.hod.2y.GoodNegAdcPulseAmp 10 0.5 10.5 500 0 1000 H.hod.2y.GoodNegAdcPulseAmp>0.0
 
 #------------------------------
 # HMS HODO Good ADC PULSE TIME
 #------------------------------
 
-TH2F hhodo_1x_good_ptime_vs_pmt_pos 'HMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1x.GoodPosAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.1x.GoodPosAdcPulseTime>0.0
-TH2F hhodo_1y_good_ptime_vs_pmt_pos 'HMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1y.GoodPosAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.1y.GoodPosAdcPulseTime>0.0
-TH2F hhodo_2x_good_ptime_vs_pmt_pos 'HMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2x.GoodPosAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.2x.GoodPosAdcPulseTime>0.0
-TH2F hhodo_2y_good_ptime_vs_pmt_pos 'HMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2y.GoodPosAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.2y.GoodPosAdcPulseTime>0.0
+TH2F hhodo_1x_good_ptime_vs_pmt_pos 'HMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.1x.GoodPosAdcPulseTime>0.0
+TH2F hhodo_1y_good_ptime_vs_pmt_pos 'HMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.1y.GoodPosAdcPulseTime>0.0
+TH2F hhodo_2x_good_ptime_vs_pmt_pos 'HMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.2x.GoodPosAdcPulseTime>0.0
+TH2F hhodo_2y_good_ptime_vs_pmt_pos 'HMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.2y.GoodPosAdcPulseTime>0.0
 
-TH2F hhodo_1x_good_ptime_vs_pmt_neg 'HMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1x.GoodNegAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.1x.GoodNegAdcPulseTime>0.0
-TH2F hhodo_1y_good_ptime_vs_pmt_neg 'HMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.1y.GoodNegAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.1y.GoodNegAdcPulseTime>0.0
-TH2F hhodo_2x_good_ptime_vs_pmt_neg 'HMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2x.GoodNegAdcPulseTime 16 0.5 16.5 410 0 4100 H.hod.2x.GoodNegAdcPulseTime>0.0
-TH2F hhodo_2y_good_ptime_vs_pmt_neg 'HMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1]  H.hod.2y.GoodNegAdcPulseTime 10 0.5 10.5 410 0 4100 H.hod.2y.GoodNegAdcPulseTime>0.0
+TH2F hhodo_1x_good_ptime_vs_pmt_neg 'HMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.1x.GoodNegAdcPulseTime>0.0
+TH2F hhodo_1y_good_ptime_vs_pmt_neg 'HMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.1y.GoodNegAdcPulseTime>0.0
+TH2F hhodo_2x_good_ptime_vs_pmt_neg 'HMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.2x.GoodNegAdcPulseTime>0.0
+TH2F hhodo_2y_good_ptime_vs_pmt_neg 'HMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.2y.GoodNegAdcPulseTime>0.0
 
 #-------------------------------------------------------------------
 # HMS HODO Good TDC TIME UNCORRECTED (uncorrected for time offsets)
 #-------------------------------------------------------------------
 
-TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_pos 'HMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeUnCorr>0.0
-TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_pos 'HMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeUnCorr>0.0
-TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_pos 'HMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeUnCorr>0.0
-TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_pos 'HMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_pos 'HMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosTdcTimeUnCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_pos 'HMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosTdcTimeUnCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_pos 'HMS 2X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosTdcTimeUnCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodPosTdcTimeUnCorr>0.0
+TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_pos 'HMS 2Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosTdcTimeUnCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodPosTdcTimeUnCorr>0.0
 
-TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_neg 'HMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeUnCorr>0.0
-TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_neg 'HMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeUnCorr>0.0
-TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_neg 'HMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeUnCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeUnCorr>0.0
-TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_neg 'HMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeUnCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_1x_good_tdctime_uncorr_vs_pmt_neg 'HMS 1X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegTdcTimeUnCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_1y_good_tdctime_uncorr_vs_pmt_neg 'HMS 1Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegTdcTimeUnCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_2x_good_tdctime_uncorr_vs_pmt_neg 'HMS 2X- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegTdcTimeUnCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodNegTdcTimeUnCorr>0.0
+TH2F hhodo_2y_good_tdctime_uncorr_vs_pmt_neg 'HMS 2Y- Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegTdcTimeUnCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodNegTdcTimeUnCorr>0.0
 
 #---------------------------------------------------------------
 # HMS HODO Good TDC TIME CORRECTED (corrected for time offsets)
 #---------------------------------------------------------------
 
-TH2F hhodo_1x_good_tdctime_corr_vs_pmt_pos 'HMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeCorr>0.0
-TH2F hhodo_1y_good_tdctime_corr_vs_pmt_pos 'HMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeCorr>0.0
-TH2F hhodo_2x_good_tdctime_corr_vs_pmt_pos 'HMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeCorr>0.0
-TH2F hhodo_2y_good_tdctime_corr_vs_pmt_pos 'HMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_1x_good_tdctime_corr_vs_pmt_pos 'HMS 1X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns ' [I+1]  H.hod.1x.GoodPosTdcTimeCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_1y_good_tdctime_corr_vs_pmt_pos 'HMS 1Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosTdcTimeCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_2x_good_tdctime_corr_vs_pmt_pos 'HMS 2X+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosTdcTimeCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodPosTdcTimeCorr>0.0
+TH2F hhodo_2y_good_tdctime_corr_vs_pmt_pos 'HMS 2Y+ Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosTdcTimeCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodPosTdcTimeCorr>0.0
 
-TH2F hhodo_1x_good_tdctime_corr_vs_pmt_neg 'HMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeCorr>0.0
-TH2F hhodo_1y_good_tdctime_corr_vs_pmt_neg 'HMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeCorr>0.0
-TH2F hhodo_2x_good_tdctime_corr_vs_pmt_neg 'HMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeCorr>0.0
-TH2F hhodo_2y_good_tdctime_corr_vs_pmt_neg 'HMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_1x_good_tdctime_corr_vs_pmt_neg 'HMS 1X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegTdcTimeCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_1y_good_tdctime_corr_vs_pmt_neg 'HMS 1Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegTdcTimeCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_2x_good_tdctime_corr_vs_pmt_neg 'HMS 2X- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegTdcTimeCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodNegTdcTimeCorr>0.0
+TH2F hhodo_2y_good_tdctime_corr_vs_pmt_neg 'HMS 2Y- Good Corrected TDC Time vs. PMT Number; PMT Number; Good Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegTdcTimeCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodNegTdcTimeCorr>0.0
 
 #--------------------------------------------------------------------
 # HMS HODO Good TDC TIME TOF CORRECTED (corrected for time of flight) 
 #--------------------------------------------------------------------
 
-TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodPosTdcTimeTOFCorr>0.0
-TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodPosTdcTimeTOFCorr>0.0
-TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodPosTdcTimeTOFCorr>0.0
-TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 1Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2X+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosTdcTimeTOFCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodPosTdcTimeTOFCorr>0.0
+TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_pos 'HMS 2Y+ Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosTdcTimeTOFCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodPosTdcTimeTOFCorr>0.0
 
-TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.1x.GoodNegTdcTimeTOFCorr>0.0
-TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.1y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.1y.GoodNegTdcTimeTOFCorr>0.0
-TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 120 0 120 H.hod.2x.GoodNegTdcTimeTOFCorr>0.0
-TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 1 TDC Unit' [I+1]  H.hod.2y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 120 0 120 H.hod.2y.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_1x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 1200 0 120 H.hod.1x.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_1y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 1Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 1200 0 120 H.hod.1y.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_2x_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2X- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegTdcTimeTOFCorr 16 0.5 16.5 1200 0 120 H.hod.2x.GoodNegTdcTimeTOFCorr>0.0
+TH2F hhodo_2y_good_tdctime_tofcorr_vs_pmt_neg 'HMS 2Y- Good TOF Corrected TDC Time vs. PMT Number; PMT Number; Good TOF Corrected TDC Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegTdcTimeTOFCorr 10 0.5 10.5 1200 0 120 H.hod.2y.GoodNegTdcTimeTOFCorr>0.0
 
 
 
