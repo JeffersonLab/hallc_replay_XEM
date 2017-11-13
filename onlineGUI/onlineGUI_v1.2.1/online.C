@@ -1534,9 +1534,9 @@ void OnlineGUI::HistDraw(drawcommand command) {
                 if(!htitle.IsNull()) fRootFile.mytemp1d->SetTitle(htitle);
                 fRootFile.mytemp1d->Draw(type);
 
-                // Force TH1s' y-axis to start at 0 if not a logy plot
+                // Force TH1s' y-axis to start at 1 if not a logy plot
                 if(gStyle->GetOptLogy() == 0)
-                    fRootFile.mytemp1d->SetMinimum(0);
+                    fRootFile.mytemp1d->SetMinimum(1);
             }
         }
         return;

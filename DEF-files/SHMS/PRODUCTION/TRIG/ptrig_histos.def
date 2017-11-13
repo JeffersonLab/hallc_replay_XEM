@@ -2,18 +2,6 @@
 # Trigger Apparatus *
 #********************
 
-TH1F ptrig_pngc_sum_pped 'SHMS Noble Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Units' T.shms.pNGCSUM_adcPed 2000 0 2000
-TH1F ptrig_pngc_sum_pint 'SHMS Noble Gas Sum FADC Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.shms.pNGCSUM_adcPulseInt 4000 0 40000
-TH1F ptrig_pngc_sum_pamp 'SHMS Noble Gas Sum FADC Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Units' T.shms.pNGCSUM_adcPulseAmp 4100 0 4100
-TH1F ptrig_pngc_sum_ptime 'SHMS Noble Gas Sum FADC Pulse Time; Pulse Time; Number of Entries / 10 ADC Units' T.shms.pNGCSUM_adcPulseTimeRaw 1000 0 10000
-TH1F ptrig_pngc_sum_tdc 'SHMS Noble Gas Sum TDC Time; TDC Time; Number of Entries / 10 TDC Units' T.shms.pNGCSUM_tdcTime 700 -3500 3500
-
-TH1F ptrig_phgc_sum_pped 'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 1 ADC Units' T.shms.pHGCSUM_adcPed 2000 0 2000
-TH1F ptrig_phgc_sum_pint 'SHMS Heavy Gas Sum FADC Pulse Integral; Pulse Integral; Number of Entries / 10 ADC Units' T.shms.pHGCSUM_adcPulseInt 4000 0 40000
-TH1F ptrig_phgc_sum_pamp 'SHMS Heavy Gas Sum FADC Pulse Amplitude; Pulse Amplitude; Number of Entries / 1 ADC Units' T.shms.pHGCSUM_adcPulseAmp 4100 0 4100
-TH1F ptrig_phgc_sum_ptime 'SHMS Heavy Gas Sum FADC Pulse Time; Pulse Time; Number of Entries / 10 ADC Units' T.shms.pHGCSUM_adcPulseTimeRaw 1000 0 10000
-TH1F ptrig_phgc_sum_tdc 'SHMS Heavy Gas Sum TDC Time; TDC Time; Number of Entries / 10 TDC Units' T.shms.pHGCSUM_tdcTime 700 -3500 3500
-
 TH1F ptrig_p1x_tdc_mult 'SHMS p1x TDC Multiplicity; Raw TDC Multiplicity; Counts / 10' T.shms.p1X_tdcMultiplicity 11 0 11
 TH1F ptrig_p1y_tdc_mult 'SHMS p1y TDC Multiplicity; Raw TDC Multiplicity; Counts / 10' T.shms.p1Y_tdcMultiplicity 11 0 11
 TH1F ptrig_p2x_tdc_mult 'SHMS p2x TDC Multiplicity; Raw TDC Multiplicity; Counts / 10' T.shms.p2X_tdcMultiplicity 11 0 11
@@ -25,18 +13,6 @@ TH1F ptrig_p2T_tdc_mult 'SHMS p2x/p2y Coincidence TDC Multiplicity; Raw TDC Mult
 TH1F ptrig_pT1_tdc_mult 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Multiplicity (Slot 20, Channel 15); Raw TDC Multiplicity; Counts / 10' T.shms.pT1_tdcMultiplicity 11 0 11
 TH1F ptrig_pT2_tdc_mult 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Multiplicity (Slot 19, Channel 31); Raw TDC Multiplicity; Counts / 10' T.shms.pT2_tdcMultiplicity 11 0 11
 TH1F ptrig_pT3_tdc_mult 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Multiplicity (Slot 19, Channel 38); Raw TDC Multiplicity; Counts / 10' T.shms.pT3_tdcMultiplicity 11 0 11
-
-TH1F ptrig_p1x_tdc 'SHMS p1x TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p1X_tdcTime 350 0 3500
-TH1F ptrig_p1y_tdc 'SHMS p1y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p1Y_tdcTime 350 0 3500
-TH1F ptrig_p2x_tdc 'SHMS p2x TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p2X_tdcTime 350 0 3500
-TH1F ptrig_p2y_tdc 'SHMS p2y TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p2Y_tdcTime 350 0 3500
-
-TH1F ptrig_p1T_tdc 'SHMS p1x/p1y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p1T_tdcTime 350 0 3500
-TH1F ptrig_p2T_tdc 'SHMS p2x/p2y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p2T_tdcTime 350 0 3500
-
-TH1F ptrig_pT1_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 20, Channel 15); Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.pT1_tdcTime 350 0 3500
-TH1F ptrig_pT2_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 31); Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.pT2_tdcTime 350 0 3500
-TH1F ptrig_pT3_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 38); Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.pT3_tdcTime 350 0 3500
 
 TH1F ptrig_p1x_good_tdc 'SHMS p1x Good TDC Time; Good Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p1X_tdcTime 350 0 3500 T.shms.p1X_tdcMultiplicity==1
 TH1F ptrig_p1y_good_tdc 'SHMS p1y Good TDC Time; Good Raw TDC Time (TDC Units); Counts / 10 TDC Units' T.shms.p1Y_tdcTime 350 0 3500 T.shms.p1Y_tdcMultiplicity==1
@@ -53,15 +29,4 @@ TH1F ptrig_pT3_good_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence Good TDC Time (Slot 19
 TH2F ptrig_ch1xy_ch2x 'SHMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.shms.p1T_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1T_tdcMultiplicity==1
 TH2F ptrig_ch1x_ch2x 'SHMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)' T.shms.p1X_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
 TH2F ptrig_ch1y_ch2x 'SHMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.shms.p1Y_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1Y_tdcMultiplicity==1
-TH2F ptrig_ch1ych1x 'SHMS Hodo Trig; Trig 1X (ns); Trig 1Y (ns)' T.shms.p1X_tdcTime T.shms.p1Y_tdcTime 200 100 300 200 100 300 T.shms.p1Y_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
-
-TH1F ptrig_pdc_ref1  'SHMS DC Reference Time Slot 6 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF1_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref2  'SHMS DC Reference Time Slot 7 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF2_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref3  'SHMS DC Reference Time Slot 8 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF3_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref4  'SHMS DC Reference Time Slot 9 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF4_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref5  'SHMS DC Reference Time Slot 10 Channel 79; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF5_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref6  'SHMS DC Reference Time Slot 11 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF6_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref7  'SHMS DC Reference Time Slot 12 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF7_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref8  'SHMS DC Reference Time Slot 13 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF8_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref9  'SHMS DC Reference Time Slot 14 Channel 15; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF9_tdcTime  200 12000 14000
-TH1F ptrig_pdc_ref10 'SHMS DC Reference Time Slot 15 Channel 47; Raw TDC Time (TDC Clicks); Counts / 10 TDC Clicks' T.shms.pDCREF10_tdcTime 200 12000 14000
+TH2F ptrig_ch1y_ch1x 'SHMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)' T.shms.p1X_tdcTime T.shms.p1Y_tdcTime 200 100 300 200 100 300 T.shms.p1Y_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1

@@ -4,8 +4,8 @@
 # Kinematic Quantities
 #*****************************************
 
-TH1F pkin_q2 'SHMS Q2; Q2 (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 100 0 5
-TH1F pkin_omega 'SHMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 100 0 5
-TH1F pkin_w2 'SHMS W2; W2 (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10
-TH1F pkin_w  'SHMS W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 100 0 5
-TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 100 12 18
+TH1F pkin_q2 'SHMS 4-Momentum Transfer Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 200 0 10 
+TH1F pkin_omega 'SHMS Energy Transfer Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 200 0 10
+TH1F pkin_w2 'SHMS Invariant Mass W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10
+TH1F pkin_w  'SHMS Invariant Mass W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 200 0 10
+TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 350 5 40

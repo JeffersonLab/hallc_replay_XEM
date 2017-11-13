@@ -2,83 +2,11 @@
 # SHMS CALORIMETER *
 #*******************
 
-#--------------------------------------------
-# SHMS PreSH GOOD Occupancy and Multiplicity
-#--------------------------------------------
-
-TH1F pcal_prshwr_good_occ_pos 'SHMS PreShower+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.cal.pr.numGoodPosAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_occ_neg 'SHMS PreShower- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.cal.pr.numGoodNegAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_mult_pos 'SHMS PreShower+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.cal.pr.totNumGoodPosAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.cal.pr.totnumGoodAdcHits 28 0.5 28.5
-
-#--------------------------------------------------------------------------------------------------
-# GOOD PULSE PEDESTALS/INTEGRALS/AMPLITUDES/TIMES 
-# GOOD --> (passed errorFlag cut, pulsetime cuts oN Min/Max ADC Time Window, and ADC threshold cut)
-#--------------------------------------------------------------------------------------------------
-
-TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 400 300 700  P.cal.pr.goodPosAdcPed>0.0
-TH2F pcal_prshwr_good_pi_vs_pmt_pos 'SHMS PreShower+ Good Pulse Integral vs. PMT Number; PMT Number; Good  Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseInt 14 0.5 14.5 600 0 30000 P.cal.pr.goodPosAdcPulseInt>0.0
-TH2F pcal_prshwr_good_pamp_vs_pmt_pos 'SHMS PreShower+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good  Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodPosAdcPulseAmp>0.0
-TH2F pcal_prshwr_good_ptime_vs_pmt_pos 'SHMS PreShower+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseTime 14 0.5 14.5 350 0 3500 P.cal.pr.goodPosAdcPulseTime>0.0
-
-TH2F pcal_prshwr_good_pped_vs_pmt_neg 'SHMS PreShower- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.pr.goodNegAdcPed 14 0.5 14.5 400 300 700  P.cal.pr.goodNegAdcPed>0.0
-TH2F pcal_prshwr_good_pi_vs_pmt_neg 'SHMS PreShower- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseInt 14 0.5 14.5 600 0 30000 P.cal.pr.goodNegAdcPulseInt>0.0
-TH2F pcal_prshwr_good_pamp_vs_pmt_neg 'SHMS PreShower- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseAmp 14 0.5 14.5 200 0 4000 P.cal.pr.goodNegAdcPulseAmp>0.0
-TH2F pcal_prshwr_good_ptime_vs_pmt_neg 'SHMS PreShower- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.pr.goodNegAdcPulseTime 14 0.5 14.5 350 0 3500 P.cal.pr.goodNegAdcPulseTime>0.0
-
-#------------------------------------------------------
-# SHMS PRE-SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS 
-# (calib consts (GAIN) are in GeV/ADC units )
-#------------------------------------------------------
-
-TH2F pcal_prshwr_Epos_vs_pmt 'SHMS PreShower+ Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.epos 14 0.5 14.5 200 0 2 P.cal.pr.epos>0.0
-TH2F pcal_prshwr_Eneg_vs_pmt 'SHMS PreShower- Energy Deposition vs. PMT Number; PMT Number; Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.eneg 14 0.5 14.5 200 0 2 P.cal.pr.eneg>0.0
-TH2F pcal_prshwr_Emean_vs_pmt 'SHMS PreShower Mean Energy Deposition vs. PMT Number; PMT Number; Mean Energy Deposition (0.01 GeV / ADC Units)' [I+1] P.cal.pr.emean 14 0.5 14.5 300 0 3 P.cal.pr.emean>0.0
-
-#-------------------------------------------
-# SHMS ENERGY DEPOSITION in PreShower PLANE
-#-------------------------------------------
-
-TH1F pcal_prshwr_Eplane_pos 'SHMS PreShower+ Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_pos 200 0 2 P.cal.pr.eplane_pos>0.0
-TH1F pcal_prshwr_Eplane_neg 'SHMS PreShower- Energy Deposition; Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane_neg 200 0 2 P.cal.pr.eplane_neg>0.0
-TH1F pcal_prshwr_Eplane 'SHMS PreShower Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.pr.eplane 300 0 3 P.cal.pr.eplane>0.0
-
-#---------------------------------------------
-# SHMS Shower GOOD Occupancy and Multiplicity
-#---------------------------------------------
-TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Good ADC Hits' P.cal.fly.numGoodAdcHits 224 0.5 224.5
-TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; PMT Number; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 224 0.5 224.5
-
-#-------------------------------------------------------------
-# SHMS Shower GOOD PULSE PEDESTALS/INTEGRALS/AMPLITUDES/TIMES
-#-------------------------------------------------------------
-
-TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 1 ADC Unit' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 700 300 1000 P.cal.fly.goodAdcPed>0.0
-TH2F pcal_shwr_good_pi_vs_pmt 'SHMS Shower Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseInt 224 0.5 224.5 600 0 30000 P.cal.fly.goodAdcPulseInt>0.0
-TH2F pcal_shwr_good_pamp_vs_pmt 'SHMS Shower Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 20 ADC Units' [I+1] P.cal.fly.goodAdcPulseAmp 224 0.5 224.5 200 0 4000 P.cal.fly.goodAdcPulseAmp>0.0
-TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 10 ADC Units' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 350 0 3500 P.cal.fly.goodAdcPulseTime>0.0
-
-#--------------------------------------------------
-# SHMS SHOWER ENERGY DEPOSITION vs. PMT HISTOGRAMS 
-# (calib consts (GAIN) are in GeV/ADC units )
-#--------------------------------------------------
-
-TH2F pcal_shwr_E_vs_pmt 'SHMS Shower Energy Deposition vs. PMT Number; PMT Number; Energy Deposited (0.01 GeV / ADC Units)' [I+1] P.cal.fly.e 224 0.5 224.5 300 0 3 P.cal.fly.e>0.0
-
-#--------------------------------------------------
-# TOTAL ENERGY DEPOSITION IN THE SHMS SHOWER ARRAY
-#--------------------------------------------------
-
-TH1F pcal_shwr_Earray 'SHMS Shower Total Energy Deposition in Array; Total Energy Deposited (GeV); Number of Entries / 0.01 GeV' P.cal.fly.earray 600 0 6 P.cal.fly.earray>0.0
-
 #-------------------------------------------------------------------------------------
 # SHMS PRE-SHOWER AND SHOWER (CALORIMETER) TOTAL ENERGY DEPOSITION
 # TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
 #-------------------------------------------------------------------------------------
 
-TH1F pcal_etot 'SHMS Calorimeter Total Energy Deposition; Total Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.etot 500 0 5 P.cal.etot>0.0
-TH1F pcal_etot_norm 'SHMS Calorimeter Total Normalized Energy Deposition; Total Energy Deposited (GeV) / P0 (GeV); Number of Entries / 0.01' P.cal.etotnorm 500 0 5 P.cal.etotnorm>0.0
 TH1F pcal_etrack 'SHMS Calorimeter Total Track Energy; Track Energy Deposited (GeV); Number of Entries / 0.1 GeV' P.cal.etrack 100 0 10 P.cal.etrack>0.0 
 TH1F pcal_etracknorm 'SHMS Calorimeter Normalized Track Energy; Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' P.cal.etracknorm 100 0 10 P.cal.etracknorm>0.0
 TH1F pcal_etracknorm_track 'SHMS Calorimeter Normalized Track Energy (Ntrack > 0); Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' P.cal.etracknorm 100 0 10 P.cal.etracknorm>0.0&&P.dc.ntrack>0
@@ -93,10 +21,10 @@ TH2F pcal_hgnpe_etrack 'SHMS HG Cer Npe v Cal energy/p' P.cal.etracknorm P.hgcer
 # SHMS PID AND ACCEPTANCE PLOTS
 #-------------------------------
 
-TH2F hgc_vs_prshw 'SHMS HGC Total N.P.E. vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; HGC Total N.P.E. / 0.5' P.cal.pr.eplane P.hgcer.npeSum 300 0 3 40 0 20 P.cal.pr.eplane>0.0&&P.hgcer.npeSum>0.0 
-TH2F ngc_vs_prshw 'SHMS NGC Total N.P.E. vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; NGC Total N.P.E. / 0.5' P.cal.pr.eplane P.ngcer.npeSum 300 0 3 40 0 20 P.cal.pr.eplane>0.0&&P.ngcer.npeSum>0.0 
-TH2F pcal_shw_vs_prshw 'Shower vs. PreShower Energy Deposition; PreShower Energy / 0.1 GeV; Shower Energy / 0.1 GeV' P.cal.pr.eplane P.cal.fly.earray 50 0 5 350 0 35  P.cal.pr.eplane>0.0&&P.cal.fly.earray>0.0 
-TH2F delta_vs_etracknorm 'SHMS Delta. vs. Normalized Track Energy; Calorimeter Normalized Track Energy; Momentum Acceptance (%)' P.cal.etracknorm P.gtr.dp 50 0 5 80 -15, 25 P.cal.etracknorm>0.0&&P.dc.ntrack>0 
+TH2F ngc_vs_prshw 'SHMS NGC Total N.P.E. vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; NGC Total N.P.E. / 0.5' P.cal.pr.eplane P.ngcer.npeSum 400 0 4 80 0 40 P.cal.pr.eplane>0.0&&P.ngcer.npeSum>0.0 
+TH2F hgc_vs_prshw 'SHMS HGC Total N.P.E. vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; HGC Total N.P.E. / 0.5' P.cal.pr.eplane P.hgcer.npeSum 400 0 4 80 0 40 P.cal.pr.eplane>0.0&&P.hgcer.npeSum>0.0 
+TH2F pcal_shw_vs_prshw 'Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' P.cal.pr.eplane P.cal.fly.earray 400 0 4 1200 0 12 P.cal.pr.eplane>0.0&&P.cal.fly.earray>0.0 
+TH2F delta_vs_etracknorm 'SHMS Delta. vs. Normalized Track Energy; Calorimeter Normalized Track Energy; Momentum Acceptance / 0.1 %' P.cal.etracknorm P.gtr.dp 200 0 2 400 -15 25 P.cal.etracknorm>0.0&&P.dc.ntrack>0 
 
 #---------------------------
 #  CLUSTERING PLOTS
