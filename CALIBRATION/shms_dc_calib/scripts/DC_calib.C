@@ -49,12 +49,12 @@ DC_calib::DC_calib(TString a, TString b, const int c, Long64_t d)
 DC_calib::~DC_calib()
 {
   cout << "calling the destructor " << endl;  
-
+  
   delete in_file;  in_file  = NULL;
   delete out_file; out_file = NULL;             
   delete graph;    graph    = NULL;
   delete gr1_canv; gr1_canv = NULL;
-  //Delete Arrays/pointers to free up 'heap' space
+  //Delete 1D Arrays pointers to free up 'heap' space
     
     delete [] dt_vs_wire; dt_vs_wire = NULL;
     delete [] dt_vs_wire_corr; dt_vs_wire_corr = NULL;
@@ -88,6 +88,7 @@ DC_calib::~DC_calib()
     delete [] time_max;                    time_max               = NULL;
     delete [] twenty_perc_maxContent;      twenty_perc_maxContent = NULL;
     delete [] ref_time;                    ref_time               = NULL;
+  
 }
 
 //____________________________________________________________
@@ -111,7 +112,8 @@ void DC_calib::SetPlaneNames()
   if(spec=="SHMS")
     {
       SPECTROMETER = "P";
-         
+      spectre = "p";
+   
       plane_names[0]="1u1",  nwires[0] = 107;  
       plane_names[1]="1u2",  nwires[1] = 107;
       plane_names[2]="1x1",  nwires[2] = 79;
@@ -130,7 +132,22 @@ void DC_calib::SetPlaneNames()
   
   else if(spec=="HMS")
     {
-      cout << "hms calibration is a work-in-praw gress" << endl;
+        
+      SPECTROMETER = "H";
+      spectre="h";
+      
+      plane_names[0]="1u1",  nwires[0] = 96;  
+      plane_names[1]="1u2",  nwires[1] = 96;
+      plane_names[2]="1x1",  nwires[2] = 102;
+      plane_names[3]="1x2",  nwires[3] = 102; 
+      plane_names[4]="1v2",  nwires[4] = 96;
+      plane_names[5]="1v1",  nwires[5] = 96;
+      plane_names[6]="2v1",  nwires[6] = 96;
+      plane_names[7]="2v2",  nwires[7] = 96;
+      plane_names[8]="2x2",  nwires[8] = 102;
+      plane_names[9]="2x1",  nwires[9] = 102;
+      plane_names[10]="2u2", nwires[10] = 96;
+      plane_names[11]="2u1", nwires[11] = 96;
     }
   
 }
@@ -168,10 +185,10 @@ void DC_calib::GetDCLeafs()
     }
 
   ntrack = SPECTROMETER + "." + DETECTOR + ".ntrack";
-  etracknorm = SPECTROMETER + ".cal.etracknorm"; 
+  //  etracknorm = SPECTROMETER + ".cal.etracknorm"; 
  
   tree->SetBranchAddress(ntrack, &dc_ntrack);
-  tree->SetBranchAddress(etracknorm, &psh_etracknorm);   
+  //tree->SetBranchAddress(etracknorm, &psh_etracknorm);   
 
  
 }
@@ -227,7 +244,7 @@ void DC_calib::CreateHistoNames()
       
       //Set-Up plane drift time histo labels
       plane_dt_name  = plane_names[ip]+"_time"; 
-      plane_dt_title = "SHMS DC, Plane "+plane_names[ip]+" Drift Time";
+      plane_dt_title = spec + " DC, Plane "+plane_names[ip]+" Drift Time";
       
       plane_dt[ip].SetName(plane_dt_name);
       plane_dt[ip].SetTitle(plane_dt_title);
@@ -237,7 +254,7 @@ void DC_calib::CreateHistoNames()
 
       
       plane_dt_name_corr  = plane_names[ip]+"corrected_time"; 
-      plane_dt_title_corr = "SHMS DC, Plane "+plane_names[ip]+" Corrected Drift Time";
+      plane_dt_title_corr = spec + " DC, Plane "+plane_names[ip]+" Corrected Drift Time";
       
       plane_dt_corr[ip].SetName(plane_dt_name_corr);
       plane_dt_corr[ip].SetTitle(plane_dt_title_corr);
@@ -249,7 +266,7 @@ void DC_calib::CreateHistoNames()
       
       //Set-Up Drift Time vs. Wire Number Histos labels
       dt_vs_wire_name  = "dt_vs_wire_plane_"+plane_names[ip]; 
-      dt_vs_wire_title = "SHMS Drift Time vs. Wire: Plane "+plane_names[ip];
+      dt_vs_wire_title = spec + " Drift Time vs. Wire: Plane "+plane_names[ip];
       
       dt_vs_wire[ip].SetName(dt_vs_wire_name);
       dt_vs_wire[ip].SetTitle(dt_vs_wire_title);
@@ -267,7 +284,7 @@ void DC_calib::CreateHistoNames()
       for (wire = 0; wire < nwires[ip]; wire++)
 	{
 	  cell_dt_name  = Form("Wire_%d", wire+1); 
-	  cell_dt_title = "SHMS DC Plane " +plane_names[ip] + Form(": Wire_%d", wire+1);
+	  cell_dt_title = spec + " DC Plane " +plane_names[ip] + Form(": Wire_%d", wire+1);
 	  
 	  cell_dt[ip][wire].SetName(cell_dt_name);
 	  cell_dt[ip][wire].SetTitle(cell_dt_title);
@@ -276,7 +293,7 @@ void DC_calib::CreateHistoNames()
 	  cell_dt[ip][wire].SetYTitle("Number of Entries / 1 ns");	       
 
 	  fitted_cell_dt_name  = Form("Wire_%d", wire+1); 
-	  fitted_cell_dt_title = "SHMS DC Plane " +plane_names[ip] + Form(": Wire_%d", wire+1);
+	  fitted_cell_dt_title = spec + " DC Plane " +plane_names[ip] + Form(": Wire_%d", wire+1);
 	  
 	  fitted_cell_dt[ip][wire].SetName(fitted_cell_dt_name);
 	  fitted_cell_dt[ip][wire].SetTitle(fitted_cell_dt_title);
@@ -563,7 +580,7 @@ void DC_calib::WriteToFile(Int_t debug = 0)
 
   
   //create output ROOT file to write UnCALIB./CALIB. histos
-  ofile_name = "SHMS_DC_driftimes.root";
+  ofile_name = spec+"_DC_driftimes.root";
   out_file   = new TFile(ofile_name, "RECREATE"); 
 
   
@@ -726,13 +743,13 @@ void DC_calib::WriteToFile(Int_t debug = 0)
 //__________________________________________________________________________
 void DC_calib::WriteTZeroParam()
 {
-  otxtfile_name =  "./pdc_tzero_per_wire_"+std::to_string(run_NUM)+".param";
+  otxtfile_name =  "./"+spectre+"dc_tzero_per_wire_"+std::to_string(run_NUM)+".param";
   out_txtFILE.open(otxtfile_name);
   
   for (int ip=0; ip<NPLANES; ip++) { 
 	  
     //write plane headers
-    out_txtFILE << "ptzero"+plane_names[ip] << "=" << endl;
+    out_txtFILE << spectre+"tzero"+plane_names[ip] << "=" << endl;
 
    for (wire=0; wire<nwires[ip]; wire++) 
      {
@@ -744,7 +761,7 @@ void DC_calib::WriteTZeroParam()
 	 {
 	   out_txtFILE << setprecision(6) << t_zero[ip][wire] << ((wire+1) % 16 ? ", " : "\n") << fixed;
 	 }
-       else if (wire==78 || wire == 106) 
+       else if (wire==nwires[ip]-1) 
 	 {
 	   out_txtFILE << setprecision(6) << t_zero[ip][wire] << fixed << endl;
 	 }
@@ -796,21 +813,22 @@ void DC_calib::ApplyTZeroCorrection()
     } //end loop over events
 }
 
+//_________________________________________________________________________________
 void DC_calib::WriteLookUpTable()
 {
-  otxtfile_name = "./pdc_calib_"+std::to_string(run_NUM)+".param";
+  otxtfile_name = "./"+spectre+"dc_calib_"+std::to_string(run_NUM)+".param";
   out_txtFILE.open(otxtfile_name);
   
   //Set headers for subsequent columns of data
   out_txtFILE << Form("; Lookup Table: RUN %d", run_NUM) << "\n";
   out_txtFILE << "; number of bins in time to distance lookup table" << "\n";
-  out_txtFILE << Form("pdriftbins = %d", TOTAL_BINS+1) << "\n";
+  out_txtFILE << Form(spectre+"driftbins = %d", TOTAL_BINS+1) << "\n";
   out_txtFILE << "; number of 1st bin in table in ns" << "\n";
-  out_txtFILE << "pdrift1stbin=0" << "\n";
+  out_txtFILE << spectre+"drift1stbin=0" << "\n";
   out_txtFILE << "; bin size in ns" << "\n";
-  out_txtFILE << "pdriftbinsz=1" << "\n";
+  out_txtFILE << spectre+"driftbinsz=1" << "\n";
   
-//Loop over each plane of shms Drift Chambers (DC1 & DC2)
+//Loop over each plane of hms/shms Drift Chambers (DC1 & DC2)
 
   for (int ip=0; ip<NPLANES; ip++){
    
@@ -835,7 +853,7 @@ void DC_calib::WriteLookUpTable()
       //   cout << "Content SUM : " << binContent_TOTAL[ip] << endl;
     }
    
-    TString headers = "pwc" + plane_names[ip] + "fract=";      
+    TString headers = spectre+"wc" + plane_names[ip] + "fract=";      
     out_txtFILE << headers;	  
    
     //Calculate LookUp Value

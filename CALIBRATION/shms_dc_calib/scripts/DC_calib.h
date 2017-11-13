@@ -43,6 +43,7 @@ class DC_calib
   Long64_t nentries;
   
   TString SPECTROMETER;
+  TString spectre;
   TString spec;
   TString DETECTOR;
   TString plane_names[NPLANES];

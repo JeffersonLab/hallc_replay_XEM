@@ -17,7 +17,7 @@ int main_calib()
   cl = clock();
 
 
-  DC_calib obj("SHMS", "../../../ROOTfiles/shms_replay_484_dc_uncal.root ", 484,300000);
+  DC_calib obj("HMS", "../../../ROOTfiles/hms_replay_production_859_10000.root", 859,10000);
   
  
   obj.printInitVar();
