@@ -539,7 +539,7 @@ void DC_calib::FitWireDriftTime()
 	  std_dev = fitted_cell_dt[ip][wire].GetStdDev();
 
 	  //Require sufficient events and NOT CRAZY! tzero values, otherwis, set t0 to ZERO
-	  if (abs(-y_int/m) < std_dev && m > 0.0 && entries[ip][wire]>100)
+	  if (abs(-y_int/m) < std_dev*5.0 && m > 0.0 && entries[ip][wire]>100)
 	    {
 	      t_zero[ip][wire] = - y_int/m ;
 	      t_zero_err[ip][wire] = sqrt(y_int_err*y_int_err/(m*m) + y_int*y_int*m_err*m_err/(m*m*m*m) );
