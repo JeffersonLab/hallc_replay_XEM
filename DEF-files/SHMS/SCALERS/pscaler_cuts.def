@@ -18,7 +18,7 @@ Block: Decode
 shms_trigs        SHMS_event
 edtm_accepted     T.shms.pHODO_EDTM_tdcTime != 0.0
 physics_accepted  T.shms.pHODO_EDTM_tdcTime == 0.0
-triggers_accepted T.shms.pT2_tdcTime == 0.0
+triggers_accepted T.shms.pT2_tdcTime == 300.0
 
 Decode_master     SHMS_event
 

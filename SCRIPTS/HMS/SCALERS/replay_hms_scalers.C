@@ -48,18 +48,17 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
   TRG->AddDetector(hms);
 
-  // Add handler for EPICS events
+  // Add event handler for EPICS events
   THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
-  // Add handler for scaler events
-  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H","Hall C scaler event type 1");
-  
-  hscaler->SetUseFirstEvent(kTRUE);
+  // Add event handler for scaler events
+  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H","Hall C scaler event type 129");
   hscaler->AddEvtType(129);
-  hscaler->SetDelayedType(129);
-  hscaler->SetOnlyBanks(kTRUE);
-
+  hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
+  // Add event handler for DAQ configuration event
+  THcConfigEvtHandler *hconfig = new THcConfigEvtHandler("hconfig", "Hall C configuration event handler");
+  gHaEvtHandlers->Add(hconfig);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -68,14 +67,15 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // and executes the output routines.
   THcAnalyzer* analyzer = new THcAnalyzer;
 
-  // A simple event class to be output to the resulting tree.
+  // A simple event class to be output to the resulting tree. 
   // Creating your own descendant of THaEvent is one way of
   // defining and controlling the output.
   THaEvent* event = new THaEvent;
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  //THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
@@ -91,7 +91,6 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
   analyzer->SetEvent(event);
- 
   // Set EPICS event type
   analyzer->SetEpicsEvtType(180);
   // Define crate map

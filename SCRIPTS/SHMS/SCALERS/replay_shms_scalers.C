@@ -53,9 +53,12 @@ void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
   THcScalerEvtHandler *pscaler = new THcScalerEvtHandler("P","Hall C scaler event type 1");
-  pscaler->AddEvtType(1);
+  pscaler->AddEvtType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
+  // Add event handler for DAQ configuration event
+  THcConfigEvtHandler *pconfig = new THcConfigEvtHandler("pconfig", "Hall C configuration event handler");
+  gHaEvtHandlers->Add(pconfig);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
@@ -71,7 +74,7 @@ void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
