@@ -20,6 +20,10 @@ SLOT=17
      14,      1,      7,     0!  hAERSUM
      15,      1,      8,     0!  hCERSUM
 
+SLOT=18
+! chan    plane     bar    sig
+     11,      1,      9,     0!  hFADC_TREF_ROC1
+
 !CAEN1190 module
 SLOT=2
 REFINDEX=0
