@@ -25,78 +25,78 @@ CoarseTracking_master HMS_event
 
 #add cuts to stricter times and apply them to drift distances (HMS 6 GeV Drift Chambers)
 time_cut1                            H.dc.1x1.time > 0 && H.dc.1x1.time < 250
-time_cut2                            H.dc.1y1.time > 0 && H.dc.1y1.time < 250
+time_cut2                            H.dc.1v2.time > 0 && H.dc.1v2.time < 250
 time_cut3                            H.dc.1u1.time > 0 && H.dc.1u1.time < 250
 time_cut4                            H.dc.1v1.time > 0 && H.dc.1v1.time < 250
-time_cut5                            H.dc.1y2.time > 0 && H.dc.1y2.time < 250
+time_cut5                            H.dc.1u2.time > 0 && H.dc.1u2.time < 250
 time_cut6                            H.dc.1x2.time > 0 && H.dc.1x2.time < 250
 time_cut7                            H.dc.2x1.time > 0 && H.dc.2x1.time < 250
-time_cut8                            H.dc.2y1.time > 0 && H.dc.1y1.time < 250
+time_cut8                            H.dc.2v2.time > 0 && H.dc.1v2.time < 250
 time_cut9                            H.dc.2u1.time > 0 && H.dc.2u1.time < 250
 time_cut10                            H.dc.2v1.time > 0 && H.dc.2v1.time < 250
-time_cut11                            H.dc.2y2.time > 0 && H.dc.2y2.time < 250
+time_cut11                            H.dc.2u2.time > 0 && H.dc.2u2.time < 250
 time_cut12                            H.dc.2x2.time > 0 && H.dc.2x2.time < 250
 
 
 
-hmsDC1Planes_large  (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit) >20
-hmsDC2Planes_large  (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit) >20
+hmsDC1Planes_large  (H.dc.1x1.nhit+H.dc.1v2.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1u2.nhit) >20
+hmsDC2Planes_large  (H.dc.2x1.nhit+H.dc.2v2.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2u2.nhit) >20
 
 hmsDC1_1hit_x1                H.dc.1x1.nhit == 1
-hmsDC1_1hit_y1                H.dc.1y1.nhit == 1
+hmsDC1_1hit_v2                H.dc.1v2.nhit == 1
 hmsDC1_1hit_u1                H.dc.1u1.nhit == 1
 hmsDC1_1hit_v1                H.dc.1v1.nhit == 1
-hmsDC1_1hit_y2                H.dc.1y2.nhit == 1
+hmsDC1_1hit_u2                H.dc.1u2.nhit == 1
 hmsDC1_1hit_x2                H.dc.1x2.nhit == 1
 
 hmsDC2_1hit_x1                H.dc.2x1.nhit == 1
-hmsDC2_1hit_y1                H.dc.2y1.nhit == 1
+hmsDC2_1hit_v2                H.dc.2v2.nhit == 1
 hmsDC2_1hit_u1                H.dc.2u1.nhit == 1
 hmsDC2_1hit_v1                H.dc.2v1.nhit == 1
-hmsDC2_1hit_y2                H.dc.2y2.nhit == 1
+hmsDC2_1hit_u2                H.dc.2u2.nhit == 1
 hmsDC2_1hit_x2                H.dc.2x2.nhit == 1
 
 h1hit1                H.dc.1x1.nhit >= 1
-h1hit2                H.dc.1y1.nhit >= 1
+h1hit2                H.dc.1v2.nhit >= 1
 h1hit3                H.dc.1u1.nhit >= 1
 h1hit4                H.dc.1v1.nhit >= 1
-h1hit5                H.dc.1y2.nhit >= 1
+h1hit5                H.dc.1u2.nhit >= 1
 h1hit6                H.dc.1x2.nhit >= 1
 
 h2hit1                H.dc.2x1.nhit >= 1
-h2hit2                H.dc.2y1.nhit >= 1
+h2hit2                H.dc.2v2.nhit >= 1
 h2hit3                H.dc.2u1.nhit >= 1
 h2hit4                H.dc.2v1.nhit >= 1
-h2hit5                H.dc.2y2.nhit >= 1
+h2hit5                H.dc.2u2.nhit >= 1
 h2hit6                H.dc.2x2.nhit >= 1
 
-hmsDC1Planes6hits   (H.dc.1x1.nhit+H.dc.1y1.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1y2.nhit) ==6
-hmsDC2Planes6hits   (H.dc.2x1.nhit+H.dc.2y1.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2y2.nhit )==6
-hmsDC1_5hits_x1     hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_6hits_x1     h1hit1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_5hits_y1     hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_6hits_y1     h1hit2&&hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_5hits_u1     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_6hits_u1     h1hit3&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_5hits_v1     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2 
-hmsDC1_6hits_v1     h1hit4&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_y2
-hmsDC1_5hits_x2     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_y2
-hmsDC1_6hits_x2     h1hit6&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_y2
-hmsDC1_5hits_y2     hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
-hmsDC1_6hits_y2     h1hit5&&hmsDC1_1hit_x1&&hmsDC1_1hit_y1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+hmsDC1Planes6hits   (H.dc.1x1.nhit+H.dc.1v2.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1u2.nhit) ==6
+hmsDC2Planes6hits   (H.dc.2x1.nhit+H.dc.2v2.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2u2.nhit )==6
+hmsDC1_5hits_x1     hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_x1     h1hit1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_v2     hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_v2     h1hit2&&hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_u1     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_u1     h1hit3&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_v1     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2 
+hmsDC1_6hits_v1     h1hit4&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_x2     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_u2
+hmsDC1_6hits_x2     h1hit6&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_u2
+hmsDC1_5hits_u2     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+hmsDC1_6hits_u2     h1hit5&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
 
-hmsDC2_5hits_x1     hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_6hits_x1     h2hit1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_5hits_y1     hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_6hits_y1     h2hit2&&hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_5hits_u1     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_6hits_u1     h2hit3&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_5hits_v1     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2 
-hmsDC2_6hits_v1     h2hit4&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_y2
-hmsDC2_5hits_x2     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_y2
-hmsDC2_6hits_x2     h2hit6&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_y2
-hmsDC2_5hits_y2     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
-hmsDC2_6hits_y2     h2hit5&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+hmsDC2_5hits_x1     hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_x1     h2hit1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_v2     hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_v2     h2hit2&&hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_u1     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_u1     h2hit3&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_v1     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2 
+hmsDC2_6hits_v1     h2hit4&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_x2     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_u2
+hmsDC2_6hits_x2     h2hit6&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_u2
+hmsDC2_5hits_u2     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+hmsDC2_6hits_u2     h2hit5&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
 
 
 
@@ -143,34 +143,34 @@ HMSScinDidh           HMSScinShouldh && H.dc.ntrack > 0
 
 
 goodHDC1x1            H.dc.1x1.nhit > 0 && H.dc.1x1.nhit < 3
-goodHDC1y1            H.dc.1y1.nhit > 0 && H.dc.1y1.nhit < 3
+goodHDC1v2            H.dc.1v2.nhit > 0 && H.dc.1v2.nhit < 3
 goodHDC1u1            H.dc.1u1.nhit > 0 && H.dc.1u1.nhit < 3
 goodHDC1v1            H.dc.1v1.nhit > 0 && H.dc.1v1.nhit < 3
-goodHDC1y2            H.dc.1y2.nhit > 0 && H.dc.1y2.nhit < 3
+goodHDC1u2            H.dc.1u2.nhit > 0 && H.dc.1u2.nhit < 3
 goodHDC1x2            H.dc.1x2.nhit > 0 && H.dc.1x2.nhit < 3
 
 goodHDC2x1            H.dc.2x1.nhit > 0 && H.dc.2x1.nhit < 3
-goodHDC2y1            H.dc.2y1.nhit > 0 && H.dc.2y1.nhit < 3
+goodHDC2v2            H.dc.2v2.nhit > 0 && H.dc.2v2.nhit < 3
 goodHDC2u1            H.dc.2u1.nhit > 0 && H.dc.2u1.nhit < 3
 goodHDC2v1            H.dc.2v1.nhit > 0 && H.dc.2v1.nhit < 3
-goodHDC2y2            H.dc.2y2.nhit > 0 && H.dc.2y2.nhit < 3
+goodHDC2u2            H.dc.2u2.nhit > 0 && H.dc.2u2.nhit < 3
 goodHDC2x2            H.dc.2x2.nhit > 0 && H.dc.2x2.nhit < 3
 
-goodHDC1              goodHDC1x1  && goodHDC1y1 && goodHDC1u1 && goodHDC1v1 && goodHDC1y2 && goodHDC1x2 
-goodHDC2              goodHDC2x1  && goodHDC2y1 && goodHDC2u1 && goodHDC2v1 && goodHDC2y2 && goodHDC2x2 
+goodHDC1              goodHDC1x1  && goodHDC1v2 && goodHDC1u1 && goodHDC1v1 && goodHDC1u2 && goodHDC1x2 
+goodHDC2              goodHDC2x1  && goodHDC2v2 && goodHDC2u1 && goodHDC2v1 && goodHDC2u2 && goodHDC2x2 
 bothGood              goodHDC1 && goodHDC2
 
 realhdc1x1            goodHDC1x1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
-realhdc1y1            goodHDC1y1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+realhdc1v2            goodHDC1v2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc1u1            goodHDC1u1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc1v1            goodHDC1v1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
-realhdc1y2            goodHDC1y2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+realhdc1u2            goodHDC1u2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc1x2            goodHDC1x2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc2x1            goodHDC2x1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
-realhdc2y1            goodHDC2y1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+realhdc2v2            goodHDC2y1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc2u1            goodHDC2u1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc2v1            goodHDC2v1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
-realhdc2y2            goodHDC2y2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+realhdc2u2            goodHDC2u2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 realhdc2x2            goodHDC2x2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
 
 hFound1Track          H.dc.ntrack == 1
@@ -196,6 +196,13 @@ goodhs2x              H.hod.2x.nhits > 0 && H.hod.2x.nhits < 3
 goodhs2y              H.hod.2y.nhits > 0 && H.hod.2y.nhits < 3
 goodhs2               goodhs2x && goodhs2y
 goodhs1s2             goodhs1 && goodhs2
+
+HMS_hcer_track_matched_region_1 H.cer.numTracksMatched[0]>0
+HMS_hcer_track_fired_region_1 H.cer.numTracksFired[0]>0
+HMS_hcer_track_matched_region_2 H.cer.numTracksMatched[1]>0
+HMS_hcer_track_fired_region_2 H.cer.numTracksFired[1]>0
+HMS_hcer_track_matched_tot H.cer.totNumTracksMatched>0
+HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0
 
 Block: Physics
 Physics_master HMS_event

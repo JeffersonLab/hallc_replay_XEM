@@ -98,9 +98,6 @@ hmsDC2_6hits_x2     h2hit6&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsD
 hmsDC2_5hits_y2     hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
 hmsDC2_6hits_y2     h2hit5&&hmsDC2_1hit_x1&&hmsDC2_1hit_y1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
 
-
-
-
 hms1HitsLt            H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && g.evtyp==1
 hms2HitsLt            H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1
 hmsHitsLt             H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1
@@ -139,8 +136,6 @@ HMSScinShouldh        HMSScinGood && H.cal.etotnorm <0.6&& H.cal.etotnorm>0.0&& 
 HMSScinDid            HMSScinShould && H.dc.ntrack > 0
 HMSScinDide           HMSScinShoulde && H.dc.ntrack > 0
 HMSScinDidh           HMSScinShouldh && H.dc.ntrack > 0
-
-
 
 goodHDC1x1            H.dc.1x1.nhit > 0 && H.dc.1x1.nhit < 3
 goodHDC1y1            H.dc.1y1.nhit > 0 && H.dc.1y1.nhit < 3
@@ -196,6 +191,13 @@ goodhs2x              H.hod.2x.nhits > 0 && H.hod.2x.nhits < 3
 goodhs2y              H.hod.2y.nhits > 0 && H.hod.2y.nhits < 3
 goodhs2               goodhs2x && goodhs2y
 goodhs1s2             goodhs1 && goodhs2
+
+HMS_hcer_track_matched_region_1 H.cer.numTracksMatched[0]>0
+HMS_hcer_track_fired_region_1 H.cer.numTracksFired[0]>0
+HMS_hcer_track_matched_region_2 H.cer.numTracksMatched[1]>0
+HMS_hcer_track_fired_region_2 H.cer.numTracksFired[1]>0
+HMS_hcer_track_matched_tot H.cer.totNumTracksMatched>0
+HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0
 
 Block: Physics
 Physics_master HMS_event
