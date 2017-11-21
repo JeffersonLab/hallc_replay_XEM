@@ -40,6 +40,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
