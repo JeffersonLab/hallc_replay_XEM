@@ -239,7 +239,7 @@ void THcPShowerCalib::Init() {
 
   // Histogram declarations.
 
-  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 10.);
+  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 0.2);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 200, 0., 2.);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
 		       400,0.,2., 440,DELTA_MIN-1.,DELTA_MAX+1.);
@@ -780,14 +780,14 @@ void THcPShowerCalib::SaveAlphas() {
   for (UInt_t k=0; k<THcPShTrack::fNcols_pr; k++) {
     k==0 ? output << "pcal_neg_gain_cor =" : output << "pcal_pos_gain_cor =";
     for (UInt_t i=0; i<THcPShTrack::fNrows_pr; i++)
-      output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+      output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
     output << endl;
   }
 
   for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
     k==0 ? output << "pcal_arr_gain_cor =" : output << "                  ";
     for (UInt_t i=0; i<THcPShTrack::fNrows_sh; i++)
-      output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+      output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
     output << endl;
   }
 
