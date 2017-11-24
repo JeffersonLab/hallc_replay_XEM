@@ -241,7 +241,7 @@ void THcShowerCalib::Init() {
 
   // Histogram declarations.
 
-  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 5.);
+  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 0.2);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 150, 0., 1.5);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
 		       150,0.,1.5, 250,-12.5,12.5);
@@ -762,26 +762,26 @@ void THcShowerCalib::SaveAlphas() {
   UInt_t j = 0;
   output << "hcal_pos_gain_cor=";
   for (UInt_t i=0; i<THcShTrack::fNrows; i++)
-    output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+    output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
   output << endl;
   for (Int_t k=0; k<3; k++) {
     output << "                  ";
     for (UInt_t i=0; i<THcShTrack::fNrows; i++)
-      output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+      output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
     output << endl;
   }
   output << "hcal_neg_gain_cor=";
   for (UInt_t i=0; i<THcShTrack::fNrows; i++)
-    output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+    output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
   output << endl;
   output << "                  ";
   for (UInt_t i=0; i<THcShTrack::fNrows; i++)
-    output << fixed << setw(6) << setprecision(3) << falphaC[j++] << ",";
+    output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
   output << endl;
   for (Int_t k=0; k<2; k++) {
     output << "                  ";
     for (UInt_t i=0; i<THcShTrack::fNrows; i++)
-      output << fixed << setw(6) << setprecision(3) << 0. << ",";
+      output << fixed << setw(6) << setprecision(2) << 0. << ",";
     output << endl;
   }
 
