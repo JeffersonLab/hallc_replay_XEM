@@ -20,6 +20,7 @@ void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
   vector<TString> pathList;
     pathList.push_back(".");
     pathList.push_back("./raw");
+    pathList.push_back("./raw/../raw.copiedtotape");
     pathList.push_back("./cache");
 
   const char* ROOTFileNamePattern = "ROOTfiles/hms_raster_simple_%d_%d.root";

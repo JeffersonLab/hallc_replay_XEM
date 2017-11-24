@@ -22,6 +22,7 @@ void replay_gem_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   vector<TString> pathList;
     pathList.push_back(".");
     pathList.push_back("./raw");
+    pathList.push_back("./raw/../raw.copiedtotape");
     pathList.push_back("./cache");
 
   const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_gem_%d_%d.root";
