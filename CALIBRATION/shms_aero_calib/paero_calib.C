@@ -18,7 +18,7 @@
 // single input parameter of the program.
 
 #define NPMT 7
-#define MaxAdc 2000.
+#define MaxAdc 40.   //pC
 #define NBin   1000
 
 void paero_calib(string fname) {
@@ -61,11 +61,11 @@ void paero_calib(string fname) {
   TCanvas* c1 = new TCanvas("adc_spec", "fADC spectra", 600, 800);
   c1->Divide(2,NPMT);
 
-  double flo_neg[NPMT] {400., 400., 400., 400., 350., 400., 400.};
-  double fhi_neg[NPMT] {700., 650., 800., 700., 750., 650., 900.};
+  double flo_neg[NPMT] { 8., 8.,10., 8., 7., 5., 8.};
+  double fhi_neg[NPMT] {16.,13.,18.,14.,15.,10.,18.};
 
-  double flo_pos[NPMT] {250., 300., 400., 550., 250., 300., 250.};
-  double fhi_pos[NPMT] {500., 600., 700., 800., 500., 600., 550.};
+  double flo_pos[NPMT] { 5., 6., 8.,10., 5., 6., 5.};
+  double fhi_pos[NPMT] {10.,12.,14.,17.,10.,12.,11.};
 
   float gain_pos[NPMT] {NPMT*0.};
   float gain_neg[NPMT] {NPMT*0.};
