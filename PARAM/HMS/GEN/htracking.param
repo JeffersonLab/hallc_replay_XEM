@@ -30,7 +30,8 @@ hstub_max_xpdiff = .05
 ; recommended value for hspace_point_criterion ( based on meeting
 ; Feb 2003) 
        hxt_track_criterion  = 10.
-       hyt_track_criterion  = 4.
+      ;hyt_track_criterion  = 4.
+       hyt_track_criterion  = 20.     ;for cosmics
        hxpt_track_criterion = 0.2
        hypt_track_criterion = 0.5
 ;

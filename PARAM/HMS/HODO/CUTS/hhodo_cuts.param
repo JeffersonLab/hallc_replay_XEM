@@ -1,7 +1,7 @@
 ; HMS Hodo Cuts parameters
 
 ; Cosmic flag for beta calculation
-hcosmicflag=0
+hcosmicflag=1
 
 ; for now manually set hte FADC mode
 ;  1 == Use the pulse int - pulse ped
@@ -12,7 +12,7 @@ hhodo_adc_mode=1
 ; 
 ; hhodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc to between 0 and 4000 channels.
-  hhodo_tdc_offset = 1120, 1120, 1120, 1120
+  hhodo_tdc_offset = 1280, 1280, 1280, 1280
 ;  hhodo_tdc_offset = 1000, 1000, 1000, 1000
 
 ; hhodo set min and max fADC time window for all paddles in a plane in units of ns
