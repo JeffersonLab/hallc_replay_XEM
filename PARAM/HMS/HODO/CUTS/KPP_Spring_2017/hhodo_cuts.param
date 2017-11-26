@@ -1,0 +1,43 @@
+; HMS Hodo Cuts parameters
+
+; Cosmic flag for beta calculation
+hcosmicflag=0
+
+; for now manually set hte FADC mode
+;  1 == Use the pulse int - pulse ped
+;  2 == Use the sample integral - known ped
+;  3 == Use the sample integral - sample ped
+; if not set then defaults to use the raw pulse integral
+hhodo_adc_mode=1
+; 
+; hhodo_tdc_offset is array of time offsets for all paddles in a plane
+;   to move the tdc to between 0 and 4000 channels.
+  hhodo_tdc_offset = 1120, 1120, 1120, 1120
+;  hhodo_tdc_offset = 1000, 1000, 1000, 1000
+
+; hhodo set min and max fADC time window for all paddles in a plane in units of ns
+; the conversion is 0.0625 ns / channel for flash ADC 250
+hhodo_AdcTimeWindowMin = 0., 0., 0., 0.
+hhodo_AdcTimeWindowMax = 200., 200., 200., 200.
+
+; hstart_time_center  center of allowed time window (ns)
+   hstart_time_center = 32.                                                     
+; hstart_time_slop    1/2 width of time window                                  
+   hstart_time_slop = 100.                                                       
+; hscin_tdc_min       minimum tdc value in hms scin                             
+    hscin_tdc_min = -500                                                           
+; hscin_tdc_max       maximum allowed tdc value                                 
+   hscin_tdc_max = 4000                                                         
+; hscin_tdc_to_time   scin tdc time per channel                                 
+   hscin_tdc_to_time = 0.1                                                  
+; tof and you figured out good values
+   htof_tolerance = 50.0
+;                                                                               
+; hms_tof_params                                                                
+; hnum_scin_counters, hhodo_zpos, hhodo_center_coord, hhodo_width               
+; are all calculated within h_init_scin                                         
+;    hhodo_pos_coord and hhodo_neg_coord are not yet used                       
+;                                                                               
+     hhodo_slop     =    2.,  2.,  4.,  4.                                      
+;   
+htofusinginvadc=1
