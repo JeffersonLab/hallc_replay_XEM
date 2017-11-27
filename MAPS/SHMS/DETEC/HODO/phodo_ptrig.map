@@ -324,7 +324,7 @@ REFINDEX=0
  117,   4,  20,   3  ! p2y20T-
 
 SLOT=19
-REFINDEX=0
+REFINDEX=1
   31,1000,   0,   1
    0,   4,   1,   2  ! p2y01T+
    1,   4,   3,   2  ! p2y03T+
