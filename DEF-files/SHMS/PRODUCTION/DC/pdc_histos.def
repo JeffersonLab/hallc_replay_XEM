@@ -2,3 +2,8 @@
 # SHMS Drift Chambers *
 #**********************
 
+TH1F pdc_trk_beta_elec  'SHMS DC ElectronTrack Beta; Beta; Number of Entires'  P.tr.beta 300 -1.5 1.5 pCleanTrack&&elec_all
+TH1F pdc_trk_beta_pi    'SHMS DC Pion Track Beta; Beta; Number of Entires'     P.tr.beta 300 -1.5 1.5 pCleanTrack&&pi_all
+
+TH1F pdc_trk_mom_elec   'SHMS DC Electron Track Momentum; P (GeV); Number of Entires / 10 MeV' P.tr.p 600 0 6 pCleanTrack&&elec_all
+TH1F pdc_trk_mom_pi     'SHMS DC Pion Track Momentum; P (GeV); Number of Entires / 10 MeV'     P.tr.p 600 0 6 pCleanTrack&&pi_all

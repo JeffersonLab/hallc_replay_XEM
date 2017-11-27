@@ -169,9 +169,11 @@ TH2F pdc2u1_residuals_vs_wirenum 'SHMS 2U1 DC Residuals vs. Wire Number; Wire Nu
 # SHMS DC TRACKING VARIABLES AT FOCAL PLANE
 #-------------------------------------------
 
-TH1F pdc_trk_mom 'SHMS DC Track Momentum; P (GeV); Number of Entires / 10 MeV' P.tr.p 600 0 6
-TH1F pdc_trk_beta 'SHMS DC Track Beta; Beta (GeV); Number of Entires' P.tr.beta 300 -1.5 1.5
-TH2F pdc_xfp_vs_yfp 'SHMS DC X_{fp} vs Y_{fp}; Y_{fp} (cm) / 1 cm; X_{fp} (cm) / 1 cm' P.dc.y_fp P.dc.x_fp 100 -50 50 100 -50 50
+TH1F pdc_trk_mom      'SHMS DC Track Momentum; P (GeV); Number of Entires / 10 MeV' P.tr.p 600 0 6
+TH1F pdc_trk_beta     'SHMS DC Track Beta; Beta (GeV); Number of Entires' P.tr.beta 300 -1.5 1.5
+TH2F pdc_xfp_vs_yfp   'SHMS DC X_{fp} vs Y_{fp}; Y_{fp} (cm) / 1 cm; X_{fp} (cm) / 1 cm' P.dc.y_fp P.dc.x_fp 100 -50 50 100 -50 50
 TH2F pdc_xpfp_vs_ypfp 'SHMS DC X'_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X'_{fp} / 0.002 rad' P.dc.yp_fp P.dc.xp_fp 100 -.1 .1 100 -.1 .1
-TH2F pdc_xfp_vs_ypfp 'SHMS DC X_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X_{fp} / 1 cm'  P.dc.yp_fp P.dc.x_fp 100 -.1 .1 100 -50 50 
-TH2F pdc_xfp_vs_xpfp 'SHMS DC X_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; X_{fp} / 1 cm' P.dc.xp_fp P.dc.x_fp 100 -.1 .1 100 -50 50
+TH2F pdc_xfp_vs_ypfp  'SHMS DC X_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X_{fp} / 1 cm'  P.dc.yp_fp P.dc.x_fp 100 -.1 .1 100 -50 50 
+TH2F pdc_xfp_vs_xpfp  'SHMS DC X_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; X_{fp} / 1 cm' P.dc.xp_fp P.dc.x_fp 100 -.1 .1 100 -50 50
+TH2F pdc_yfp_vs_ypfp  'SHMS DC Y_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; Y_{fp} / 1 cm'  P.dc.yp_fp P.dc.y_fp 100 -.1 .1 100 -50 50
+TH2F pdc_yfp_vs_xpfp  'SHMS DC Y_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; Y_{fp} / 1 cm' P.dc.xp_fp P.dc.y_fp 100 -.1 .1 100 -50 50

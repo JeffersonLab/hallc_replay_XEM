@@ -1,3 +1,13 @@
 #***************
 # SHMS AEROGEL *
 #***************
+
+#--------------------------
+# SHMS HGC TRACK PROJECTION
+#--------------------------
+TH1F paero_xtrack  'SHMS Aerogel Tracking X; X (cm); Number of Entries / 1 cm'  P.aero.xAtAero 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+TH1F paero_ytrack  'SHMS Aerogel Tracking Y; Y (cm); Number of Entries / 1 cm'  P.aero.yAtAero 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+TH2F paero_xytrack 'SHMS Aerogel Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.aero.yAtAero P.aero.xAtAero 120 -60 60 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+
+TH2F paero_x_vs_npe 'SHMS Aerogel X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.aero.npeSum P.aero.xAtAero 100 0 50 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+TH2F paero_y_vs_npe 'SHMS Aerogel Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.aero.npeSum P.aero.yAtAero 100 0 50 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0

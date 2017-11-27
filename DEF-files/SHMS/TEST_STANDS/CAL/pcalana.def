@@ -84,11 +84,11 @@ TH2F pcal_shwr_adcErrFlg2D 'SHMS Shower FPGA Error Flag; PMT Number; Error Flag'
 
 #SHMS Shower RAW Occupancy and Multiplicity
 TH1F pcal_shwr_raw_occ 'SHMS Shower Raw Occupancy; PMT Number; Number of Raw ADC Hits' P.cal.fly.adcCounter 224 0.5 224.5
-TH1F pcal_shwr_raw_mult 'SHMS Shower Raw Multiplicity; Number of PMTs Hit; Total Number of Raw ADC Hits' P.cal.fly.totNumAdcHits 224 0.5 224.5
+TH1F pcal_shwr_raw_mult 'SHMS Shower Raw Multiplicity; Number of PMTs Hit; Total Number of Raw ADC Hits' P.cal.fly.totNumAdcHits 40 0.5 40.5
 
 #SHMS Shower GOOD Occupancy and Multiplicity
 TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Good ADC Hits' P.cal.fly.numGoodAdcHits 224 0.5 224.5
-TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; Numer of PMTs Hit; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 224 0.5 224.5
+TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; Numer of PMTs Hit; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 40 0.5 40.5
 
 #SHMS Shower RAW PULSE PEDESTALS/INTEGRALS/AMPLITUDES/TIMES
 TH2F pcal_shwr_raw_pped_vs_pmt 'SHMS Shower Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 10 ADC Unit' P.cal.fly.adcCounter P.cal.fly.adcPedRaw 224 0.5 224.5 410 0 4100

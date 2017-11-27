@@ -27,6 +27,8 @@ void overlay2(TString hist1name, TString hist2name, TString label1="", TString l
     H1->SetLineWidth(2);
     H2->SetLineWidth(2);
     H2->SetLineColor(2);
+    H1->SetMinimum(1);
+    H2->SetMinimum(1);
     H1->SetStats(0);
     H2->SetStats(0);
     H1->SetTitle(htitle);

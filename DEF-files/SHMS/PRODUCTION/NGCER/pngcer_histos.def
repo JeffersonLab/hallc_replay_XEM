@@ -8,3 +8,13 @@
 
 sTH1F pngcer_trk_match 'SHMS Noble Gas Cherenkov Tracks Matches; PMT Number; Number of Tracks Matched' P.ngcer.numTracksMatched 4 0.5 4.5
 sTH1F pngcer_trk_fired 'SHMS Noble Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' P.ngcer.numTracksFired 4 0.5 4.5
+
+#--------------------------
+# SHMS NGC TRACK PROJECTION
+#--------------------------
+TH1F pngcer_xtrack  'SHMS Noble Gas Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' P.ngcer.xAtCer 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+TH1F pngcer_ytrack  'SHMS Noble Gas Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' P.ngcer.yAtCer 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+TH2F pngcer_xytrack 'SHMS Noble Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.ngcer.yAtCer P.ngcer.xAtCer 120 -60 60 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+
+TH2F pngcer_x_vs_npe 'SHMS Noble Gas Cherenkov X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.ngcer.npeSum P.ngcer.xAtCer 100 0 50 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+TH2F pngcer_y_vs_npe 'SHMS Noble Gas Cherenkov Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.ngcer.npeSum P.ngcer.yAtCer 100 0 50 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
