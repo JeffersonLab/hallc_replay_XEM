@@ -7,9 +7,10 @@
 ; if not set then defaults to use the raw pulse integral
 pcal_ADCmode = 1
 
+pcal_adc_tdc_offset=200.
 ; FADC pulse time window cuts
-pcal_AdcTimeWindowMin = 81.25
-pcal_AdcTimeWindowMax = 143.75
+pcal_AdcTimeWindowMin = -1000.
+pcal_AdcTimeWindowMax = 1000.
 
 ; Threshold on selecting good adc is dynamic pedestal+pcal_AdcNegThreshold
 pcal_AdcNegThreshold = 0.
@@ -18,9 +19,10 @@ pcal_AdcPosThreshold = 0.
 ; Threshold on selecting good adc is dynamic pedestal+pcal_AdcPosThreshold
 pcal_arr_ADCmode = 1
 
+pcal_arr_adc_tdc_offset = 200.0
 ; FADC pulse time window cuts
-pcal_arr_AdcTimeWindowMin = 75.0
-pcal_arr_AdcTimeWindowMax = 112.5
+pcal_arr_AdcTimeWindowMin = -1000.
+pcal_arr_AdcTimeWindowMax = 1000.
 
 ; Threshold on selecting good adc is dynamic pedestal+pcal_arr_AdcThreshold
 pcal_arr_AdcThreshold = 0.

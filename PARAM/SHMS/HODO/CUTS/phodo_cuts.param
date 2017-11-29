@@ -9,6 +9,7 @@ pcosmicflag=0
 ; if not set then defaults to use the raw pulse integral
 phodo_adc_mode=1
 
+phodo_adc_tdc_offset = 200., 200., 200., 200.
 ; phodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc to between 0 and 4000 channels.
 phodo_tdc_offset = 1860, 2000, 2060, 2000
