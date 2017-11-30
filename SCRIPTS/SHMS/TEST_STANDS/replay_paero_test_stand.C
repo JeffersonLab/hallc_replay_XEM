@@ -35,7 +35,7 @@ void replay_paero_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-  // Load params for HMS trigger configuration
+  // Load params for SHMS trigger configuration
   gHcParms->Load("PARAM/TRIG/tshms.param");
 
   // Load the Hall C style detector map
@@ -46,7 +46,7 @@ void replay_paero_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
-  // Add aeroscope to HMS apparatus
+  // Add aeroscope to SHMS apparatus
   THcAerogel* aero = new THcAerogel("aero", "Aerogel");
   SHMS->AddDetector(aero);
 

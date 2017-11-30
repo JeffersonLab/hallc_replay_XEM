@@ -1,7 +1,6 @@
 # See $ANALYZER/examples/output_example.def for examples
 #
 block P.cal.*
-block T.shms.*
 
 #SHMS PRE-SHOWER HISTOGRAMS
 

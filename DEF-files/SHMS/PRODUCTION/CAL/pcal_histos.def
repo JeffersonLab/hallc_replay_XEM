@@ -55,6 +55,9 @@ TH1F pcal_ytrack      'SHMS Cal Track y; Track y (cm); Entries / 0.2 cm' P.cal.y
 TH1F pcal_ytrack1     'SHMS Cal Track y pos with no matching clust; Track y (cm); Entries / 0.2 cm' P.cal.ytrack 1000 -100. 100. P.cal.nclusttrack==-1&&P.gtr.dp>-8.&&P.gtr.dp<8.&&P.dc.ntrack>0
 TH1F pcal_ytrack2     'SHMS Cal Track y pos with no matching clust number of cluster=1; Track y (cm); Entries / 0.2 cm' P.cal.ytrack 1000 -100. 100. P.cal.nclusttrack==-1&&P.cal.nclust==0&&P.gtr.dp>-8.&&P.gtr.dp<8.&&P.dc.ntrack>0
 
+TH2F pcal_xytrack      'SHMS Cal Track X vs Track Y; Track Y / 1 cm; Track X / 1 cm' P.cal.ytrack P.cal.xtrack 200 -100 100 200 -100 100 P.dc.ntrack>0
+TH2F pcal_xyclusttrack 'SHMS Cal Cluster X vs Cluster Y; Cluster Y / 1 cm; Cluster X / 1 cm' P.cal.yclusttrack P.cal.xclusttrack 200 -100 100 200 -100 100 P.cal.nclusttrack>-1&&P.dc.ntrack>0
+
 TH2F pcal_xtrack_vs_etrack 'SHMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' P.cal.etrack P.cal.xtrack 100 0 10 200 -100 100 pCleanTrack
 TH2F pcal_ytrack_vs_etrack 'SHMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' P.cal.etrack P.cal.ytrack 100 0 10 200 -100 100 pCleanTrack
 TH2F pcal_xtrack_vs_etrack_elec 'SHMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' P.cal.etrack P.cal.xtrack 100 0 10 200 -100 100 pCleanTrack&&elec_all

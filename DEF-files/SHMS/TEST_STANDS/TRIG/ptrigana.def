@@ -29,14 +29,16 @@ TH1F ptrig_p2T_tdc 'SHMS p2x/p2y Coincidence TDC Time; TDC Time (ns); Counts / 1
 #--------------
 # SHMS TRIGGER
 #--------------
-TH1F ptrig_pT1_tdc_raw 'SHMS p1x/p1y/p2x/p2y Coincidence Raw TDC Time (Slot 20, Channel 15); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT1_tdcTimeRaw 4000 0 4000
-TH1F ptrig_pT2_tdc_raw 'SHMS p1x/p1y/p2x/p2y Coincidence Raw TDC Time (Slot 19, Channel 31); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT2_tdcTimeRaw 4000 0 4000
-TH1F ptrig_pT3_tdc_raw 'SHMS p1x/p1y/p2x/p2y Coincidence Raw TDC Time (Slot 19, Channel 38); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT3_tdcTimeRaw 4000 0 4000
+TH1F ptrig_pT1_tdc_raw 'SHMS pT1 Raw TDC Time (Slot 20, Channel 15); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT1_tdcTimeRaw 4000 0 4000
+TH1F ptrig_pT2_tdc_raw 'SHMS pT2 Raw TDC Time (Slot 19, Channel 31); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT2_tdcTimeRaw 4000 0 4000
+TH1F ptrig_pT3_tdc_raw 'SHMS pT3 Raw TDC Time (Slot 19, Channel 38); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.shms.pT3_tdcTimeRaw 4000 0 4000
 
-TH1F ptrig_pT1_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 20, Channel 15); TDC Time (ns); Counts / 1 ns;' T.shms.pT1_tdcTime 800 0 800
-TH1F ptrig_pT2_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 31); TDC Time (ns); Counts / 1 ns;' T.shms.pT2_tdcTime 800 0 800
-TH1F ptrig_pT3_tdc 'SHMS p1x/p1y/p2x/p2y Coincidence TDC Time (Slot 19, Channel 38); TDC Time (ns); Counts / 1 ns;' T.shms.pT3_tdcTime 800 0 800
+TH1F ptrig_pT1_tdc 'SHMS pT1 TDC Time (Slot 20, Channel 15); TDC Time (ns); Counts / 1 ns;' T.shms.pT1_tdcTime 800 0 800
+TH1F ptrig_pT2_tdc 'SHMS pT2 TDC Time (Slot 19, Channel 31); TDC Time (ns); Counts / 1 ns;' T.shms.pT2_tdcTime 800 0 800
+TH1F ptrig_pT3_tdc 'SHMS pT3 TDC Time (Slot 19, Channel 38); TDC Time (ns); Counts / 1 ns;' T.shms.pT3_tdcTime 800 0 800
 
+TH1F ptrig_pFADC_TREF_ROC2_ptime     'SHMS pFADC_TREF_ROC2 Pulse Time; Pulse Time (ns); Counts / 1 ns;' T.shms.pFADC_TREF_ROC2_adcPulseTime 800 0 800
+TH1F ptrig_pFADC_TREF_ROC2_ptime_raw 'SHMS pFADC_TREF_ROC2 Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 1 ADC Unit;' T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw 4000 0 4000
 
 #---------
 # SHMS DC
