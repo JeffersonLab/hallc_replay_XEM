@@ -5,9 +5,10 @@
 ; if not set then defaults to use the raw pulse integral
 hcal_ADCmode=1
 
+hcal_adc_tdc_offset= 200.
 ;FADC Pulse time window cuts
-hcal_AdcTimeWindowMin = 62.5
-hcal_AdcTimeWindowMax = 175.0
+hcal_AdcTimeWindowMin = -1000.
+hcal_AdcTimeWindowMax = 1000.
 
 ; threshold on selecting good adc is dynamic pedestal+pcal_AdcNegThreshold
 hcal_AdcNegThreshold=0.

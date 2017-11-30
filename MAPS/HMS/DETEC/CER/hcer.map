@@ -3,9 +3,13 @@
 
 ROC=1
 detector=14
+SLOT=18
+REFINDEX=3
+  11,1000,0,3
 
 !F250 modules
 SLOT=7
+REFINDEX=3
 !  chan    plane   tube     sig
     14,      1,      1,      0!    hCER01
     15,      1,      2,      0!    hCER02

@@ -73,6 +73,7 @@ TH1F ptrig_pngc_sum_pint_raw  'SHMS Noble Gas Sum FADC Raw Pulse Integral; Pulse
 TH1F ptrig_pngc_sum_pamp      'SHMS Noble Gas Sum FADC Pulse Amplitude; Pulse Amplitude; Number of Entries / 2 mV'             T.shms.pNGCSUM_adcPulseAmp     700  -400 1000
 TH1F ptrig_pngc_sum_pamp_raw  'SHMS Noble Gas Sum FADC Raw Pulse Amplitude; Pulse Amplitude; Number of Entries / 10 ADC Units' T.shms.pNGCSUM_adcPulseAmpRaw  450  0 4100
 TH1F ptrig_pngc_sum_ptime_raw 'SHMS Noble Gas Sum FADC Raw Pulse Time; Pulse Time; Number of Entries / 10 ADC Units'           T.shms.pNGCSUM_adcPulseTimeRaw 410  0 4100
+TH1F ptrig_pngc_sum_ptime 'SHMS Noble Gas Sum FADC Pulse Time; Pulse Time (ns); Number of Entries '           T.shms.pNGCSUM_adcPulseTimeRaw 410  0 410
 TH1F ptrig_pngc_sum_tdc       'SHMS Noble Gas Sum TDC Time; TDC Time; Number of Entries / 0.1 ns'                              T.shms.pNGCSUM_tdcTime         4000 0 400
 TH1F ptrig_pngc_sum_tdc_raw   'SHMS Noble Gas Sum Raw TDC Time; TDC Time; Number of Entries / 1 TDC Units'                     T.shms.pNGCSUM_tdcTimeRaw      4000 0 4000
 
@@ -86,5 +87,6 @@ TH1F ptrig_phgc_sum_pint_raw  'SHMS Heavy Gas Sum FADC Raw Pulse Integral; Pulse
 TH1F ptrig_phgc_sum_pamp      'SHMS Heavy Gas Sum FADC Pulse Amplitude; Pulse Amplitude; Number of Entries / 2 mV'             T.shms.pHGCSUM_adcPulseAmp     700  -400 1000
 TH1F ptrig_phgc_sum_pamp_raw  'SHMS Heavy Gas Sum FADC Raw Pulse Amplitude; Pulse Amplitude; Number of Entries / 10 ADC Units' T.shms.pHGCSUM_adcPulseAmpRaw  450  0 4100
 TH1F ptrig_phgc_sum_ptime_raw 'SHMS Heavy Gas Sum FADC Raw Pulse Time; Pulse Time; Number of Entries / 10 ADC Units'           T.shms.pHGCSUM_adcPulseTimeRaw 410  0 4100
+TH1F ptrig_phgc_sum_ptime 'SHMS Heavy Gas Sum FADC Pulse Time; Pulse Time ; Number of Entries '           T.shms.pHGCSUM_adcPulseTimeRaw 410  0 410
 TH1F ptrig_phgc_sum_tdc       'SHMS Heavy Gas Sum TDC Time; TDC Time; Number of Entries / 0.1 ns'                              T.shms.pHGCSUM_tdcTime         4000 0 400
 TH1F ptrig_phgc_sum_tdc_raw   'SHMS Heavy Gas Sum Raw TDC Time; TDC Time; Number of Entries / 1 TDC Units'                     T.shms.pHGCSUM_tdcTimeRaw      4000 0 4000

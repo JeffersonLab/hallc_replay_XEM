@@ -1,7 +1,8 @@
 t_shms_numAdc = 4
 t_shms_numTdc = 35
 
-t_shms_tdcoffset = -300.
+t_shms_tdcoffset = 300.
+t_shms_adc_tdc_offset = 200.
 t_shms_tdcchanperns = 0.1
 
 ; bar num:            1       2       3           4

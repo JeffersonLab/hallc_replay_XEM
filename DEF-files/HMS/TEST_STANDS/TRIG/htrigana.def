@@ -50,25 +50,29 @@ TH1F hdc_refdiff_3m4 'HDC Reference time 3 minus 4; TDC Time (Clicks); Number of
 TH1F htrig_hasum_adc_rawpped 'HMS hAsum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adcPedRaw 500 -500 4000
 TH1F htrig_hasum_adc_rawpi 'HMS hAsum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adcPulseIntRaw 4000 15000 33000
 TH1F htrig_hasum_adc_rawpamp 'HMS hAsum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adcPulseAmpRaw 410 -500 3000
-TH1F htrig_hasum_adc_rawptime 'HMS hAsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hasum_adc_rawptime 'HMS hAsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hASUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hasum_adc_ptime 'HMS hAsum Pulse Time; Pulse Time (ns); Counts ;' T.hms.hASUM_adcPulseTime 300 0 300
 TH1F htrig_hasum_rawtdc 'HMS hAsum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hASUM_tdcTimeRaw 4000 1000 2200
 
 TH1F htrig_hbsum_adc_rawpped 'HMS hBsum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adcPedRaw 500 2000 3000
 TH1F htrig_hbsum_adc_rawpi 'HMS hBsum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adcPulseIntRaw 4000 15000 30000
 TH1F htrig_hbsum_adc_rawpamp 'HMS hBsum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adcPulseAmpRaw 410 -500 3000
-TH1F htrig_hbsum_adc_rawptime 'HMS hBsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hbsum_adc_rawptime 'HMS hBsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hBSUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hbsum_adc_ptime 'HMS hBsum Pulse Time; Pulse Time (ns); Counts ;' T.hms.hBSUM_adcPulseTime 300 0 300
 TH1F htrig_hbsum_rawtdc 'HMS hBsum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hBSUM_tdcTimeRaw 4000 1000 2000
 
 TH1F htrig_hcsum_adc_rawpped 'HMS hCsum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adcPedRaw 500 2000 3000
 TH1F htrig_hcsum_adc_rawpi 'HMS hCsum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adcPulseIntRaw 4000 15000 25000
 TH1F htrig_hcsum_adc_rawpamp 'HMS hCsum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adcPulseAmpRaw 410 -500 2000
-TH1F htrig_hcsum_adc_rawptime 'HMS hCsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hcsum_adc_rawptime 'HMS hCsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hCSUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hcsum_adc_ptime 'HMS hCsum Pulse Time; Pulse Time (ns); Counts ;' T.hms.hCSUM_adcPulseTimeRaw 300 0 300
 TH1F htrig_hcsum_rawtdc 'HMS hCsum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCSUM_tdcTimeRaw 4000 1000 2000
 
 TH1F htrig_hdsum_adc_rawpped 'HMS hDsum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adcPedRaw 500 2000 3000
 TH1F htrig_hdsum_adc_rawpi 'HMS hDsum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adcPulseIntRaw 4000 15000 25000
 TH1F htrig_hdsum_adc_rawpamp 'HMS hDsum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adcPulseAmpRaw 410 -200 1200
-TH1F htrig_hdsum_adc_rawptime 'HMS hDsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hdsum_adc_rawptime 'HMS hDsum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hDSUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hdsum_adc_ptime 'HMS hDsum Pulse Time; Pulse Time (ns); Counts ;' T.hms.hDSUM_adcPulseTime 300 0 300
 TH1F htrig_hdsum_rawtdc 'HMS hDsum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hDSUM_tdcTimeRaw 4000 -500 1000
 
 #-------------------------------------
@@ -78,7 +82,8 @@ TH1F htrig_hdsum_rawtdc 'HMS hDsum Raw TDC Time; Raw TDC Time (TDC Units); Count
 TH1F htrig_hpreShwr_adc_rawpped 'HMS Pre-Shower Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPedRaw 500 2000 3500
 TH1F htrig_hpreShwr_adc_rawpi 'HMS Pre-Shower Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseIntRaw 4000 15000 40000
 TH1F htrig_hpreShwr_adc_rawpamp 'HMS Pre-Shower Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseAmpRaw 410 -500 4000
-TH1F htrig_hpreShwr_adc_rawptime 'HMS Pre-Shower Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hpreShwr_adc_rawptime 'HMS Pre-Shower Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hpreShwr_adc_ptime 'HMS Pre-Shower Pulse Time; Pulse Time (ns); Counts ;' T.hms.hPSHWR_adcPulseTime 300 0 300
 TH1F htrig_hpreShwr_rawtdc 'HMS Pre-Shower Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWR_tdcTimeRaw 4000 -1000 1000
 
 TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRLO_tdcTimeRaw 4000 -500 2500
@@ -91,7 +96,8 @@ TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units)
 TH1F htrig_hshwr_adc_rawpped 'HMS Shower Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adcPedRaw 500 3000 4000
 TH1F htrig_hshwr_adc_rawpi 'HMS Shower Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adcPulseIntRaw 4000 20000 45000
 TH1F htrig_hshwr_adc_rawpamp 'HMS Shower Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adcPulseAmpRaw 410 -1000 3800
-TH1F htrig_hshwr_adc_rawptime 'HMS Shower Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adcPulseTimeRaw 2000 1500 3000
+TH1F htrig_hshwr_adc_rawptime 'HMS Shower Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hSHWR_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hshwr_adc_ptime 'HMS Shower Pulse Time; Pulse Time (ns); Counts ;' T.hms.hSHWR_adcPulseTime 300 0 300
 TH1F htrig_hshwr_rawtdc 'HMS Shower Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hSHWR_tdcTimeRaw 4000 -500 2500
 
 
@@ -144,7 +150,8 @@ TH1F htrig_hshwr_tdc 'HMS Shower TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.h
 TH1F htrig_hcersum_adc_rawpped 'HMS Cherenkov Sum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hCERSUM_adcPedRaw 500 1800 2200
 TH1F htrig_hcersum_adc_rawpi 'HMS Cherenkov Sum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hCERSUM_adcPulseIntRaw 4000 10000 25000
 TH1F htrig_hcersum_adc_rawpamp 'HMS Cherenkov Sum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hCERSUM_adcPulseAmpRaw 410 -200 1500
-TH1F htrig_hcersum_adc_rawptime 'HMS Cherenkov Sum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hCERSUM_adcPulseTimeRaw 2000 -500 3500
+TH1F htrig_hcersum_adc_rawptime 'HMS Cherenkov Sum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hCERSUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_hcersum_adc_ptime 'HMS Cherenkov Sum Pulse Time; Pulse Time (ns); Counts;' T.hms.hCERSUM_adcPulseTime 300 0 300
 TH1F htrig_hcersum_rawtdc 'HMS Cherenkov Sum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCERSUM_tdcTimeRaw 4000 1000 2500
 
 #---------------------------------------
@@ -163,7 +170,8 @@ TH1F htrig_hcersum_tdc 'HMS Cherenkov Sum TDC Time;  TDC Time (ns); Counts / 0.1
 TH1F htrig_haersum_adc_rawpped 'HMS Aerogel Sum Raw Pulse Pedestal; Raw Pulse Pedestal (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPedRaw 500 0 5000
 TH1F htrig_haersum_adc_rawpi 'HMS Aerogel Sum Raw Pulse Integral; Raw Pulse Integral (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseIntRaw 4000 0 40000
 TH1F htrig_haersum_adc_rawpamp 'HMS Aerogel Sum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseAmpRaw 410 0 4100
-TH1F htrig_haersum_adc_rawptime 'HMS Aerogel Sum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseTimeRaw 2000 0 20000
+TH1F htrig_haersum_adc_rawptime 'HMS Aerogel Sum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseTimeRaw 3000 0 3000
+TH1F htrig_haersum_adc_ptime 'HMS Aerogel Sum Pulse Time; Raw Pulse Time (ns); Counts;' T.hms.hAERSUM_adcPulseTime 300 0 300
 TH1F htrig_haersum_rawtdc 'HMS Aerogel Sum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hAERSUM_tdcTimeRaw 4000 0 40000
 
 #------------------------------------------
@@ -176,25 +184,3 @@ TH1F htrig_haersum_adc_pamp 'HMS Aerogel Sum Pulse Amplitude;  Pulse Amplitude (
 TH1F htrig_haersum_tdc 'HMS Aerogel Sum TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hms.hAERSUM_tdcTime 4000 0 40000
 
 
-#-------------
-# Fast Raster 
-#-------------
-
-# Assume FADC range is set to 1V and the integration is 25 channels
-# Offset in the FADC is about 0.122V or 500 channels.
-
-formula FRXA_V T.hms.pFRXA_adcPulseIntRaw*(1./4096.)/25.
-formula FRXB_V T.hms.pFRXB_adcPulseIntRaw*(1./4096.)/25.
-formula FRYA_V T.hms.pFRYA_adcPulseIntRaw*(1./4096.)/25.
-formula FRYB_V T.hms.pFRYB_adcPulseIntRaw*(1./4096.)/25.
-
-TH1F hFRXA 'HMS FRXA; FRXA RAW ADC (chan); Counts' T.hms.pFRXA_adcPulseIntRaw 10 -0.2 0.2
-TH1F hFRXA_V 'HMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 10 -0.2 0.2
-TH1F hFRXB 'HMS FRXB; FRXB RAW ADC (chan); Counts' T.hms.pFRXB_adcPulseIntRaw 10 -0.2 0.2
-TH1F hFRXB_V 'HMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 10 -0.2 0.2
-TH1F hFRYA 'HMS FRYA; FRYA RAW ADC (chan); Counts' T.hms.pFRYA_adcPulseIntRaw 10 -0.2 0.2
-TH1F hFRYA_V 'HMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 10 -0.2 0.2
-TH1F hFRYB 'HMS FRYB; FRYB RAW ADC (chan); Counts' T.hms.pFRYB_adcPulseIntRaw 10 -0.2 0.2
-TH1F hFRYB_V 'HMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 10 -0.2 0.2
-TH2F hFRA_XvsY 'HMSFRA_XvsY; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 10 -0.2 0.2 10 -0.2 0.2
-TH2F hFRB_XvsY 'HMSFRB_XvsY; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 10 -0.2 0.2 10 -0.2 0.2

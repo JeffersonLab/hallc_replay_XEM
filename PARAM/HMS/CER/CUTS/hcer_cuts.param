@@ -16,9 +16,10 @@ hcer_enorm_max = 1.5
 hcer_dp_min = -20.0
 hcer_dp_max = 25.0
 
+hcer_adc_tdc_window= 200.
 ; ADC time window cut values used to select "good" ADC events
-hcer_adcTimeWindowMin = 93.75
-hcer_adcTimeWindowMax = 218.75
+hcer_adcTimeWindowMin = -1000.
+hcer_adcTimeWindowMax = 1000.
 
 ; NPE Threshold for good hit (for measureing effic.)
 hcer_npe_thresh = 0.5

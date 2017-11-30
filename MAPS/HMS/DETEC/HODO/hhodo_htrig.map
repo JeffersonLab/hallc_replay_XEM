@@ -5,8 +5,12 @@
 DETECTOR=10
 
 ROC=1
+SLOT=18
+REFINDEX=3
+  11,1000,0,3
 
 SLOT=17
+REFINDEX=3
    8,   1,   1,   0  ! hASUM
    9,   1,   2,   0  ! hBSUM
   10,   1,   3,   0  ! hCSUM
@@ -17,6 +21,7 @@ SLOT=17
   15,   1,   8,   0  ! hCERSUM
 
 SLOT=18
+REFINDEX=3
   11,   1,   9,   0  ! hFADC_TREF_ROC1
 
 SLOT=2
@@ -52,6 +57,7 @@ REFINDEX=0
   21,   2,  33,   1  ! pTRIG6
 
 SLOT=20
+REFINDEX=0
  127,   2,  17,   1  ! hT2
 
 ROC=3
@@ -72,8 +78,12 @@ SLOT=13
 DETECTOR=13
 
 ROC=1
+SLOT=18
+REFINDEX=3
+  11,1000,0,3
 
 SLOT=8
+REFINDEX=3
    0,   1,   1,   0  ! h1x01A+
    1,   1,   2,   0  ! h1x02A+
    2,   1,   3,   0  ! h1x03A+
@@ -92,6 +102,7 @@ SLOT=8
   15,   1,  16,   0  ! h1x16A+
 
 SLOT=9
+REFINDEX=3
    0,   1,   1,   1  ! h1x01A-
    1,   1,   2,   1  ! h1x02A-
    2,   1,   3,   1  ! h1x03A-
@@ -110,6 +121,7 @@ SLOT=9
   15,   1,  16,   1  ! h1x16A-
 
 SLOT=10
+REFINDEX=3
    0,   2,   1,   0  ! h1y01A+
    1,   2,   2,   0  ! h1y02A+
    2,   2,   3,   0  ! h1y03A+
@@ -128,6 +140,7 @@ SLOT=10
   15,   2,   6,   1  ! h1y06A-
 
 SLOT=13
+REFINDEX=3
    0,   2,   7,   1  ! h1y07A-
    1,   2,   8,   1  ! h1y08A-
    2,   2,   9,   1  ! h1y09A-
@@ -146,6 +159,7 @@ SLOT=13
   15,   3,  12,   0  ! h2x12A+
 
 SLOT=14
+REFINDEX=3
    0,   3,  13,   0  ! h2x13A+
    1,   3,  14,   0  ! h2x14A+
    2,   3,  15,   0  ! h2x15A+
@@ -164,6 +178,7 @@ SLOT=14
   15,   3,  12,   1  ! h2x12A-
 
 SLOT=15
+REFINDEX=3
    0,   3,  13,   1  ! h2x13A-
    1,   3,  14,   1  ! h2x14A-
    2,   3,  15,   1  ! h2x15A-
@@ -182,6 +197,7 @@ SLOT=15
   15,   4,   2,   1  ! h2y02A-
 
 SLOT=16
+REFINDEX=3
    0,   4,   3,   1  ! h2y03A-
    1,   4,   4,   1  ! h2y04A-
    2,   4,   5,   1  ! h2y05A-

@@ -16,9 +16,10 @@ haero_enorm_max = 1.5
 haero_dp_min = -20.0
 haero_dp_max = 25.0
 
+haero_adc_tdc_offset = 200.
 ; ADC time window cut values used to select "good" ADC events
-haero_adcTimeWindowMin = 31.25
-haero_adcTimeWindowMax = 156.25
+haero_adcTimeWindowMin = -1000.
+haero_adcTimeWindowMax = 1000.
 
 ; NPE Threshold for "good" hit (for measureing effic.)
 haero_npe_thresh = 0.5

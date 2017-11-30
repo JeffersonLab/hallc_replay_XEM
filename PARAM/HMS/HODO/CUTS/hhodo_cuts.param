@@ -15,6 +15,7 @@ hhodo_adc_mode=1
   hhodo_tdc_offset = 1280, 1280, 1280, 1280
 ;  hhodo_tdc_offset = 1000, 1000, 1000, 1000
 
+hhodo_adc_tdc_offset = 200., 200., 200., 200.
 ; hhodo set min and max fADC time window for all paddles in a plane in units of ns
 ; the conversion is 0.0625 ns / channel for flash ADC 250
 hhodo_AdcTimeWindowMin = 0., 0., 0., 0.

@@ -1,6 +1,7 @@
 t_hms_numAdc = 9
 t_hms_numTdc = 33
-t_hms_tdcoffset=-300.
+t_hms_tdcoffset=300.
+t_hms_adc_tdc_offset=300.
 t_hms_tdcchanperns=0.1
 
 ; bar num:          1     2     3     4     5      6      7       8           9
