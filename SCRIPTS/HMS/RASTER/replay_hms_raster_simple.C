@@ -35,20 +35,19 @@ void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
   // Load params for HMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/thms_raster.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/RASTER/hraster_simple.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/RASTER/hraster.map");
   
 
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
-  TRG->AddDetector(hms);
-
+  // Add handler for EPICS events
+  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
+  gHaEvtHandlers->Add(hcepics);
+ // Add Rastered Beam Apparatus
+  THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
+  gHaApps->Add(beam);
+ 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
   // The Analyzer controls the reading of the data, executes
@@ -63,7 +62,7 @@ void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
@@ -79,6 +78,8 @@ void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
  analyzer->SetEvent(event);
+  // Set EPICS event type
+  analyzer->SetEpicsEvtType(180);
  // Define crate map
  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
  // Define output ROOT file
