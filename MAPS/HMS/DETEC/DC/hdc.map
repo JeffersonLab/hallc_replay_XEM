@@ -1,7 +1,9 @@
 ! HDC_ID=11        ::  TDC
+
 DETECTOR=11  ! HMS 12 gev chambers
 
 ROC=3
+
 ! HMS Drift Chamber 1
 SLOT=17
 REFINDEX=0

@@ -1,11 +1,15 @@
 ! PSCIN_ID=23      ::  ::,ADC+,ADC-,TDC+,TDC-
 
-
 DETECTOR=23
 
 ROC=2
 
+SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
+
 SLOT=3
+REFINDEX=3
    0,   1,   1,   0  ! p1x01A+
    1,   1,   2,   0  ! p1x02A+
    2,   1,   3,   0  ! p1x03A+
@@ -24,6 +28,7 @@ SLOT=3
   15,   1,   3,   1  ! p1x03A-
 
 SLOT=4
+REFINDEX=3
    0,   1,   4,   1  ! p1x04A-
    1,   1,   5,   1  ! p1x05A-
    2,   1,   6,   1  ! p1x06A-
@@ -42,6 +47,7 @@ SLOT=4
   15,   2,   6,   1  ! p1y06A-
 
 SLOT=5
+REFINDEX=3
    0,   2,   7,   1  ! p1y07A-
    1,   2,   8,   1  ! p1y08A-
    2,   2,   9,   1  ! p1y09A-
@@ -60,6 +66,7 @@ SLOT=5
   15,   2,   9,   0  ! p1y09A+
 
 SLOT=6
+REFINDEX=3
    0,   2,  10,   0  ! p1y10A+
    1,   2,  11,   0  ! p1y11A+
    2,   2,  12,   0  ! p1y12A+
@@ -78,6 +85,7 @@ SLOT=6
   15,   3,  12,   0  ! p2x12A+
 
 SLOT=7
+REFINDEX=3
    0,   3,  13,   0  ! p2x13A+
    1,   3,  14,   0  ! p2x14A+
    2,   3,   1,   1  ! p2x01A-
@@ -96,6 +104,7 @@ SLOT=7
   15,   3,  14,   1  ! p2x14A-
 
 SLOT=8
+REFINDEX=3
    0,   4,   1,   1  ! p2y01A-
    1,   4,   2,   1  ! p2y02A-
    2,   4,   3,   1  ! p2y03A-
@@ -114,6 +123,7 @@ SLOT=8
   15,   4,  16,   1  ! p2y16A-
 
 SLOT=9
+REFINDEX=3
    0,   4,  17,   1  ! p2y17A-
    1,   4,  18,   1  ! p2y18A-
    2,   4,  19,   1  ! p2y19A-
@@ -132,6 +142,7 @@ SLOT=9
   15,   4,  11,   0  ! p2y11A+
 
 SLOT=10
+REFINDEX=3
    0,   4,  12,   0  ! p2y12A+
    1,   4,  13,   0  ! p2y13A+
    2,   4,  14,   0  ! p2y14A+

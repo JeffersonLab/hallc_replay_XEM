@@ -1,11 +1,17 @@
 ! PCAL_ID=26       ::  ADC
 
-
 DETECTOR=26
+
+ROC=2
+
+SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 ROC=4
 
 SLOT=3
+REFINDEX=3
    0,   1,   1,   0  ! pPRSH1+
    1,   1,   2,   0  ! pPRSH2+
    2,   1,   3,   0  ! pPRSH3+
@@ -22,6 +28,7 @@ SLOT=3
   13,   1,  14,   0  ! pPRSH14+
 
 SLOT=4
+REFINDEX=3
    0,   1,   1,   1  ! pPRSH1-
    1,   1,   2,   1  ! pPRSH2-
    2,   1,   3,   1  ! pPRSH3-
@@ -38,6 +45,7 @@ SLOT=4
   13,   1,  14,   1  ! pPRSH14-
 
 SLOT=5
+REFINDEX=3
    0,   2,   1,   0  ! Row 1, Column 1
    1,   2,   2,   0  ! Row 2, Column 1
    2,   2,   3,   0  ! Row 3, Column 1
@@ -56,6 +64,7 @@ SLOT=5
   15,   2,  16,   0  ! Row 16, Column 1
 
 SLOT=6
+REFINDEX=3
    0,   2,  17,   0  ! Row 1, Column 2
    1,   2,  18,   0  ! Row 2, Column 2
    2,   2,  19,   0  ! Row 3, Column 2
@@ -74,6 +83,7 @@ SLOT=6
   15,   2,  32,   0  ! Row 16, Column 2
 
 SLOT=7
+REFINDEX=3
    0,   2,  33,   0  ! Row 1, Column 3
    1,   2,  34,   0  ! Row 2, Column 3
    2,   2,  35,   0  ! Row 3, Column 3
@@ -92,6 +102,7 @@ SLOT=7
   15,   2,  48,   0  ! Row 16, Column 3
 
 SLOT=8
+REFINDEX=3
    0,   2,  49,   0  ! Row 1, Column 4
    1,   2,  50,   0  ! Row 2, Column 4
    2,   2,  51,   0  ! Row 3, Column 4
@@ -110,6 +121,7 @@ SLOT=8
   15,   2,  64,   0  ! Row 16, Column 4
 
 SLOT=9
+REFINDEX=3
    0,   2,  65,   0  ! Row 1, Column 5
    1,   2,  66,   0  ! Row 2, Column 5
    2,   2,  67,   0  ! Row 3, Column 5
@@ -128,6 +140,7 @@ SLOT=9
   15,   2,  80,   0  ! Row 16, Column 5
 
 SLOT=10
+REFINDEX=3
    0,   2,  81,   0  ! Row 1, Column 6
    1,   2,  82,   0  ! Row 2, Column 6
    2,   2,  83,   0  ! Row 3, Column 6
@@ -146,6 +159,7 @@ SLOT=10
   15,   2,  96,   0  ! Row 16, Column 6
 
 SLOT=13
+REFINDEX=3
    0,   2,  97,   0  ! Row 1, Column 7
    1,   2,  98,   0  ! Row 2, Column 7
    2,   2,  99,   0  ! Row 3, Column 7
@@ -164,6 +178,7 @@ SLOT=13
   15,   2, 112,   0  ! Row 16, Column 7
 
 SLOT=14
+REFINDEX=3
    0,   2, 113,   0  ! Row 1, Column 8
    1,   2, 114,   0  ! Row 2, Column 8
    2,   2, 115,   0  ! Row 3, Column 8
@@ -182,6 +197,7 @@ SLOT=14
   15,   2, 128,   0  ! Row 16, Column 8
 
 SLOT=15
+REFINDEX=3
    0,   2, 129,   0  ! Row 1, Column 9
    1,   2, 130,   0  ! Row 2, Column 9
    2,   2, 131,   0  ! Row 3, Column 9
@@ -200,6 +216,7 @@ SLOT=15
   15,   2, 144,   0  ! Row 16, Column 9
 
 SLOT=16
+REFINDEX=3
    0,   2, 145,   0  ! Row 1, Column 10
    1,   2, 146,   0  ! Row 2, Column 10
    2,   2, 147,   0  ! Row 3, Column 10
@@ -218,6 +235,7 @@ SLOT=16
   15,   2, 160,   0  ! Row 16, Column 10
 
 SLOT=17
+REFINDEX=3
    0,   2, 161,   0  ! Row 1, Column 11
    1,   2, 162,   0  ! Row 2, Column 11
    2,   2, 163,   0  ! Row 3, Column 11
@@ -236,6 +254,7 @@ SLOT=17
   15,   2, 176,   0  ! Row 16, Column 11
 
 SLOT=18
+REFINDEX=3
    0,   2, 177,   0  ! Row 1, Column 12
    1,   2, 178,   0  ! Row 2, Column 12
    2,   2, 179,   0  ! Row 3, Column 12
@@ -254,6 +273,7 @@ SLOT=18
   15,   2, 192,   0  ! Row 16, Column 12
 
 SLOT=19
+REFINDEX=3
    0,   2, 193,   0  ! Row 1, Column 13
    1,   2, 194,   0  ! Row 2, Column 13
    2,   2, 195,   0  ! Row 3, Column 13
@@ -272,6 +292,7 @@ SLOT=19
   15,   2, 208,   0  ! Row 16, Column 13
 
 SLOT=20
+REFINDEX=3
    0,   2, 209,   0  ! Row 1, Column 14
    1,   2, 210,   0  ! Row 2, Column 14
    2,   2, 211,   0  ! Row 3, Column 14

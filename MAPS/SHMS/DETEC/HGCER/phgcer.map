@@ -1,11 +1,15 @@
 ! PHGCER_ID=24       ::  ADC
 
-
 DETECTOR=24
 
 ROC=2
 
+SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
+
 SLOT=13
+REFINDEX=3
   12,   1,   1,   0  ! pHGCER01
   13,   1,   2,   0  ! pHGCER02
   14,   1,   3,   0  ! pHGCER03

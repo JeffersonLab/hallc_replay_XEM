@@ -30,4 +30,4 @@ CALIBRATION/*/data_files/*
 CALIBRATION/*/root_files/*
 CALIBRATION/shms_dc_calib/data_files/
 onlineGUI/onlineGUI_v1.2.1/onlineDict_rdict.pcm
-SCRIPTS/SHMS/SCALERS/.nfs*
+.nfs*

@@ -7,6 +7,8 @@ DETECTOR=20
 ROC=2
 
 SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
    0,   1,   1,   0  ! pAERSUM
    1,   1,   2,   0  ! pHGCERSUM
    2,   1,   3,   0  ! pNGCERSUM
@@ -82,7 +84,12 @@ DETECTOR=21
 
 ROC=2
 
+SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
+
 SLOT=13
+REFINDEX=3
    8,   1,   1,   0  ! pNGCER01
    9,   1,   2,   0  ! pNGCER02
   10,   1,   3,   0  ! pNGCER03

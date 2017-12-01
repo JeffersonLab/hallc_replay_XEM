@@ -1,11 +1,18 @@
 !HMS:
 ! HAERO_ID= 12             (TDC),ADC
 
+DETECTOR=12
+
 ROC=1
-detector=12
+
+SLOT=18
+REFINDEX=3
+! chan    plane     bar    sig
+     11,   1000,      0,     3!  hFADC_TREF_ROC1
 
 !F250 modules
 SLOT=16
+REFINDEX=3
 !  chan    plane   tube     sig
      8,      1,      1,      1!    hAER01-
      9,      1,      2,      1!    hAER02-
@@ -16,6 +23,7 @@ SLOT=16
      14,     1,      7,      1!    hAER07-
      15,     1,      8,      1!    hAER08-
 SLOT=17
+REFINDEX=3
 !  chan    plane   tube     sig
      0,      1,      1,      0!   hAER01+
      1,      1,      2,      0!   hAER02+

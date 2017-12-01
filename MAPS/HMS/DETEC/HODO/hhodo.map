@@ -1,11 +1,14 @@
 !HMS:
 ! HSCIN_ID= 13   ADC+,ADC-,TDC+,TDC-
 
+DETECTOR=13
+
 ROC=1
-detector=13
+
 SLOT=18
 REFINDEX=3
-  11,1000,0,3
+! chan    plane     bar    sig
+     11,   1000,      0,     3!  hFADC_TREF_ROC1
 
 ! F250 modules
 SLOT=8

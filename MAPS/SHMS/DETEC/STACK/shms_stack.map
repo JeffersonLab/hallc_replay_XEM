@@ -14,11 +14,12 @@ ROC=2
 
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
    0,   1,   1,   0  ! pAERSUM
    1,   1,   2,   0  ! pHGCERSUM
    2,   1,   3,   0  ! pNGCERSUM
   11,   1,   4,   0  ! pFADC_TREF_ROC2
+
 SLOT=20
 REFINDEX=1
   15,1000,   0,   1  ! pTRef1
@@ -91,7 +92,7 @@ ROC=2
 
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 SLOT=13
 REFINDEX=3
@@ -1440,9 +1441,10 @@ REFCHAN=79
 DETECTOR=23
 
 ROC=2
+
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 SLOT=3
 REFINDEX=3
@@ -1522,7 +1524,7 @@ REFINDEX=3
 
 SLOT=7
 REFINDEX=3
-  0,   3,  13,   0  ! p2x13A+
+   0,   3,  13,   0  ! p2x13A+
    1,   3,  14,   0  ! p2x14A+
    2,   3,   1,   1  ! p2x01A-
    3,   3,   2,   1  ! p2x02A-
@@ -1727,7 +1729,7 @@ ROC=2
 
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 SLOT=13
 REFINDEX=3
@@ -1740,9 +1742,10 @@ REFINDEX=3
 DETECTOR=25
 
 ROC=2
+
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 SLOT=10
 REFINDEX=3
@@ -1766,11 +1769,12 @@ REFINDEX=3
 
 
 DETECTOR=26
+
 ROC=2
 
 SLOT=14
 REFINDEX=3
-  11,1000,0,3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
 
 ROC=4
 

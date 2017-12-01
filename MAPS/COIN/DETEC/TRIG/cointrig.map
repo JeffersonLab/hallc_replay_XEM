@@ -10,6 +10,7 @@ ROC=1
 
 !F250 module
 SLOT=17
+REFINDEX=3
 ! chan    plane     bar    sig
      8,       1,      1,     0!  hASUM
      9,       1,      2,     0!  hBSUM
@@ -21,7 +22,9 @@ SLOT=17
      15,      1,      8,     0!  hCERSUM
 
 SLOT=18
+REFINDEX=3
 ! chan    plane     bar    sig
+     11,   1000,      0,     3!  hFADC_TREF_ROC1
      11,      1,      9,     0!  hFADC_TREF_ROC1
 
 !CAEN1190 module
@@ -90,6 +93,7 @@ SLOT=13
 ROC=2
 
 SLOT=14
+REFINDEX=3
    0,      1,     10,   0  ! pAERSUM
    1,      1,     11,   0  ! pHGCERSUM
    2,      1,     12,   0  ! pNGCERSUM

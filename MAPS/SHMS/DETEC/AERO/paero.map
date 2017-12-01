@@ -1,11 +1,15 @@
 ! PAERO_ID=25      ::  ::,ADC+,ADC-
 
-
 DETECTOR=25
 
 ROC=2
 
+SLOT=14
+REFINDEX=3
+  11,1000,   0,   3  ! pFADC_TREF_ROC2
+
 SLOT=10
+REFINDEX=3
   10,   1,   1,   0  ! pAER01+
   11,   1,   2,   0  ! pAER02+
   12,   1,   3,   0  ! pAER03+
@@ -14,6 +18,7 @@ SLOT=10
   15,   1,   6,   0  ! pAER06+
 
 SLOT=13
+REFINDEX=3
    0,   1,   7,   0  ! pAER07+
    1,   1,   1,   1  ! pAER01-
    2,   1,   2,   1  ! pAER02-

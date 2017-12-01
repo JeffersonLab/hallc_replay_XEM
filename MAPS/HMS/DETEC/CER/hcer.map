@@ -1,11 +1,14 @@
 !HMS:
 ! HCER_ID= 14             (TDC),ADC
 
+DETECTOR=14
+
 ROC=1
-detector=14
+
 SLOT=18
 REFINDEX=3
-  11,1000,0,3
+! chan    plane     bar    sig
+     11,   1000,      0,     3!  hFADC_TREF_ROC1
 
 !F250 modules
 SLOT=7
