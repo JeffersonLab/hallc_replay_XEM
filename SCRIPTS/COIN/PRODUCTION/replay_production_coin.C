@@ -16,7 +16,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "shms_all_%05d.dat";
+  const char* RunFileNamePattern = "coin_all_%05d.dat";
   vector<TString> pathList;
     pathList.push_back(".");
     pathList.push_back("./raw");
@@ -38,48 +38,11 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
   // Load params for SHMS trigger configuration
   gHcParms->Load("PARAM/TRIG/tcoin.param");
-
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
-
-  //=:=:=
-  // HMS 
-  //=:=:=
-
-  // Set up the equipment to be analyzed.
-  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
-  gHaApps->Add(HMS);
-  // Add drift chambers to HMS apparatus
-  THcDC* hdc = new THcDC("dc", "Drift Chambers");
-  HMS->AddDetector(hdc);
-  // Add hodoscope to HMS apparatus
-  THcHodoscope* hhod = new THcHodoscope("hod", "Hodoscope");
-  HMS->AddDetector(hhod);
-  // Add Cherenkov to HMS apparatus
-  THcCherenkov* hcer = new THcCherenkov("cer", "Heavy Gas Cherenkov");
-  HMS->AddDetector(hcer);
-  // Add Aerogel Cherenkov to HMS apparatus
-  //THcAerogel* aero = new THcAerogel("aero", "Aerogel");
-  //HMS->AddDetector(aero);
-  // Add calorimeter to HMS apparatus
-  THcShower* hcal = new THcShower("cal", "Calorimeter");
-  HMS->AddDetector(hcal);
-
-  // Include golden track information
-  THaGoldenTrack* hgtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
-  gHaPhysics->Add(hgtr);
-  // Add Physics Module to calculate primary (scattered) beam kinematics
-  THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "IB");
-  gHaPhysics->Add(hkin_primary);
-  // Add Physics Module to calculate secondary (scattered) beam kinematics
-  // THcSecondaryKine* hkin_secondary = new THcSecondaryKine("H.kin.secondary", "HMS Single Arm Kinematics", "H", "IB");
-  // gHaPhysics->Add(hkin_secondary);
-  // Add event handler for scaler events
-  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 1");  
-  hscaler->AddEvtType(1);
-  hscaler->SetUseFirstEvent(kTRUE);
-  gHaEvtHandlers->Add(hscaler);
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
   //=:=:=:=
   // SHMS 
@@ -108,13 +71,16 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   SHMS->AddDetector(pcal);
 
   // Include golden track information
-  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(gtr);
+  THaGoldenTrack* pgtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
+  gHaPhysics->Add(pgtr);
+  // Add Rastered Beam Apparatus
+  THaApparatus* pbeam = new THcRasteredBeam("P.rb", "SHMS Rastered Beamline");
+  gHaApps->Add(pbeam);
   // Add Physics Module to calculate primary (scattered) beam kinematics
-  THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "IB");
+  THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(pkin_primary);
-  // // Add Physics Module to calculate secondary (scattered) beam kinematics
-  // THcSecondaryKine* pkin_secondary = new THcSecondaryKine("P.kin.secondary", "SHMS Single Arm Kinematics", "P", "IB");
+  // Add Physics Module to calculate secondary (scattered) beam kinematics
+  // THcSecondaryKine* pkin_secondary = new THcSecondaryKine("P.kin.secondary", "SHMS Single Arm Kinematics", "P", "H.kin.primary");
   // gHaPhysics->Add(pkin_secondary);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
@@ -122,6 +88,46 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
 
+  //=:=:=
+  // HMS 
+  //=:=:=
+
+  // Set up the equipment to be analyzed.
+  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
+  gHaApps->Add(HMS);
+  // Add drift chambers to HMS apparatus
+  THcDC* hdc = new THcDC("dc", "Drift Chambers");
+  HMS->AddDetector(hdc);
+  // Add hodoscope to HMS apparatus
+  THcHodoscope* hhod = new THcHodoscope("hod", "Hodoscope");
+  HMS->AddDetector(hhod);
+   // Add Cherenkov to HMS apparatus
+  THcCherenkov* hcer = new THcCherenkov("cer", "Heavy Gas Cherenkov");
+  HMS->AddDetector(hcer);
+  // Add Aerogel Cherenkov to HMS apparatus
+  //THcAerogel* aero = new THcAerogel("aero", "Aerogel");
+  //HMS->AddDetector(aero);
+  // Add calorimeter to HMS apparatus
+  THcShower* hcal = new THcShower("cal", "Calorimeter");
+  HMS->AddDetector(hcal);
+
+  // Include golden track information
+  THaGoldenTrack* hgtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
+  gHaPhysics->Add(hgtr);
+  // Add Rastered Beam Apparatus
+  THaApparatus* hbeam = new THcRasteredBeam("H.rb", "HMS Rastered Beamline");
+  gHaApps->Add(hbeam);
+  // Add Physics Module to calculate primary (scattered) beam kinematics
+  // THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "H.rb");
+  // gHaPhysics->Add(hkin_primary);
+  // Add Physics Module to calculate secondary (scattered) beam kinematics
+  THcSecondaryKine* hkin_secondary = new THcSecondaryKine("H.kin.secondary", "HMS Single Arm Kinematics", "H", "P.kin.primary");
+  gHaPhysics->Add(hkin_secondary);
+  // Add event handler for scaler events
+  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
+  hscaler->AddEvtType(4);
+  hscaler->SetUseFirstEvent(kTRUE);
+  gHaEvtHandlers->Add(hscaler);
 
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
   // Global Objects & Event Handlers
@@ -133,16 +139,13 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add trigger detector to trigger apparatus
   THcTrigDet* coin = new THcTrigDet("coin", "Coincidence Trigger Information");
   TRG->AddDetector(coin); 
-  // Add Ideal Beam Apparatus
-  THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
-  gHaApps->Add(beam);
   // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add event handler for EPICS events
   THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
-
+ 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
   // The Analyzer controls the reading of the data, executes

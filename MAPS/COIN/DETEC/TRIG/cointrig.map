@@ -22,10 +22,7 @@ SLOT=17
 
 SLOT=18
 ! chan    plane     bar    sig
-     12,      1,      9,     0!  hFRXA
-     13,      1,     10,     0!  hFRYA
-     14,      1,     11,     0!  hFRXB
-     15,      1,     12,     0!  hFRYB 
+     11,      1,      9,     0!  hFADC_TREF_ROC1
 
 !CAEN1190 module
 SLOT=2
@@ -38,7 +35,8 @@ REFINDEX=0
      3,       2,      4,     1!  h2Y
      4,       2,      5,     1!  h1T
      5,       2,      6,     1!  h2T
-     6,   1000,   0,   0  ! hTref
+     6,    1000,      0,     0!  hTref1
+     6,       2,      7,     1!  hT1
      7,       2,      8,     1!  hASUM
      8,       2,      9,     1!  hBSUM
      9,       2,     10,     1!  hCSUM
@@ -48,27 +46,42 @@ REFINDEX=0
     13,       2,     14,     1!  hSHWR
     14,       2,     15,     1!  hHODO_EDTM
     15,       2,     16,     1!  hCERSUM
+! A1
+    26,       2,     22,     1!  hhTRIG1
+    27,       2,     23,     1!  hhTRIG2
+    28,       2,     24,     1!  hhTRIG3
+    29,       2,     25,     1!  hhTRIG4
+    30,       2,     26,     1!  hhTRIG5
+    31,       2,     27,     1!  hhTRIG6
+    16,       2,     28,     1!  hpTRIG1
+    17,       2,     29,     1!  hpTRIG2
+    18,       2,     30,     1!  hpTRIG3
+    19,       2,     31,     1!  hpTRIG4
+    20,       2,     32,     1!  hpTRIG5
+    21,       2,     33,     1!  hpTRIG6
+    
+
 !CAEN1190 module
 SLOT=20
 ! D1
 ! chan    plane     bar    sig
-     127,     2,     17,      1!  hT2
+REFINDEX=1
+   127,    1000,      0,     1!  hTref2
+   127,       2,     17,     1!  hT2
 
 ROC=3
 
-!CAEN1190 module
-SLOT=5
-! chan    plane     bar    sig
-     111,     2,     18,      1!  hDCREF1
 SLOT=8
-! chan    plane     bar    sig
-     127,     2,     19,      1!  hDCREF2
-SLOT=10
-! chan    plane     bar    sig
-     127,     2,     20,      1!  hDCREF3
-SLOT=17
-! chan    plane     bar    sig
-     127,     2,     21,      1!  hDCREF4
+ 15,   2,  18,   1  ! hDCREF1
+
+SLOT=16
+ 63,   2,  19,   1  ! hDCREF2
+
+SLOT=4
+ 111,  2,  20,   1  ! hDCREF3
+
+SLOT=13
+ 95,   2,  21,   1  ! hDCREF4
 
 !=:=:=:
 ! SHMS
@@ -77,61 +90,72 @@ SLOT=17
 ROC=2
 
 SLOT=14
-   0,   1,   1,   0  ! pAERSUM
-   1,   1,   2,   0  ! pHGCERSUM
-   2,   1,   3,   0  ! pNGCERSUM
-  12,   1,   4,   0  ! FR-XA
-  13,   1,   5,   0  ! FR-YA
-  14,   1,   6,   0  ! FR-XB
-  15,   1,   7,   0  ! FR-YB
-
+   0,      1,     10,   0  ! pAERSUM
+   1,      1,     11,   0  ! pHGCERSUM
+   2,      1,     12,   0  ! pNGCERSUM
+  11,      1,     13,   0  ! pFADC_TREF_ROC2
 
 SLOT=20
-  15,   2,   1,   1  ! pT1
+REFINDEX=1
+  15,   1000,      0,   1  ! pTRef1
+  15,      2,     34,   1  ! pT1
 
 SLOT=19
 REFINDEX=0
-  31,   1000,   0,   0  ! pTRef
-  32,   2,   3,   1  ! p1X
-  33,   2,   4,   1  ! p1Y
-  34,   2,   5,   1  ! p2X
-  35,   2,   6,   1  ! p2Y
-  36,   2,   7,   1  ! p1T
-  37,   2,   8,   1  ! p2T
-  38,   2,   9,   1  ! pT3
-  39,   2,  10,   1  ! pAERSUM
-  40,   2,  11,   1  ! pHGCERSUM
-  41,   2,  12,   1  ! pNGCERSUM
-  42,   2,  23,   1  ! pHODO_EDTM
+  31,   1000,      0,   0  ! pTRef2
+  31,      2,     35,   1  ! pT2
+  32,      2,  	  36,   1  ! p1X
+  33,      2,     37,   1  ! p1Y
+  34,      2,     38,   1  ! p2X
+  35,      2,     39,   1  ! p2Y
+  36,      2,     40,   1  ! p1T
+  37,      2,     41,   1  ! p2T
+  38,      2,     42,   1  ! pT3
+  39,      2,     43,   1  ! pAERSUM
+  40,      2,     44,   1  ! pHGCERSUM
+  41,      2,     45,   1  ! pNGCERSUM
+  42,      2,     56,   1  ! pHODO_EDTM
+  48,      2,     57,   1  ! ppTRIG1
+  49,      2,     58,   1  ! ppTRIG2
+  50,      2,     59,   1  ! ppTRIG3
+  51,      2,     60,   1  ! ppTRIG4
+  52,      2,     61,   1  ! ppTRIG5
+  53,      2,     62,   1  ! ppTRIG6
+  58,      2,     63,   1  ! phTRIG1
+  59,      2,     64,   1  ! phTRIG2
+  60,      2,     65,   1  ! phTRIG3
+  61,      2,     66,   1  ! phTRIG4
+  62,      2,     67,   1  ! phTRIG5
+  63,      2,     68,   1  ! phTRIG6
 
 ROC=6
 
 SLOT=6
-  79,   2,  13,   1  ! pDCREF1
+  79,      2,     46,   1  ! pDCREF1
 
 SLOT=7
-  79,   2,  14,   1  ! pDCREF2
+  79,      2,     47,   1  ! pDCREF2
 
 SLOT=8
-  79,   2,  15,   1  ! pDCREF3
+  79,      2,     48,   1  ! pDCREF3
 
 SLOT=9
-  79,   2,  16,   1  ! pDCREF4
+  79,      2,     49,   1  ! pDCREF4
 
 SLOT=10
-  79,   2,  17,   1  ! pDCREF5
+  79,      2,     50,   1  ! pDCREF5
 
 SLOT=11
-  47,   2,  18,   1  ! pDCREF6
+  47,      2,     51,   1  ! pDCREF6
 
 SLOT=12
-  47,   2,  19,   1  ! pDCREF7
+  47,      2,     52,   1  ! pDCREF7
 
 SLOT=13
-  47,   2,  20,   1  ! pDCREF8
+  47,      2,     53,   1  ! pDCREF8
 
 SLOT=14
-  15,   2,  21,   1  ! pDCREF9
+  15,      2,     54,   1  ! pDCREF9
 
 SLOT=15
-  47,   2,  22,   1  ! pDCREF10
+  47,      2,     55,   1  ! pDCREF10

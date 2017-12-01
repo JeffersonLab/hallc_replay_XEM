@@ -20,11 +20,13 @@ REFINDEX=3
    2,   1,   3,   0  ! pNGCERSUM
   11,   1,   4,   0  ! pFADC_TREF_ROC2
 SLOT=20
+REFINDEX=1
+  15,1000,   0,   1  ! pTRef1
   15,   2,   1,   1  ! pT1
 
 SLOT=19
 REFINDEX=0
-  31,1000,   0,   0  ! pTRef
+  31,1000,   0,   0  ! pTRef2
   31,   2,   2,   1  ! pT2
   32,   2,   3,   1  ! p1X
   33,   2,   4,   1  ! p1Y
@@ -1590,7 +1592,7 @@ REFINDEX=3
 
 SLOT=20
 REFINDEX=0
-  15,1000,   0,   0
+  15,1000,   0,   0  ! pT1
    0,   1,   1,   2  ! p1x01T+
    1,   1,   3,   2  ! p1x03T+
    2,   1,   5,   2  ! p1x05T+
@@ -1695,7 +1697,7 @@ REFINDEX=0
 
 SLOT=19
 REFINDEX=1
-  31,1000,   0,   1
+  31,1000,   0,   1  ! pT2
    0,   4,   1,   2  ! p2y01T+
    1,   4,   3,   2  ! p2y03T+
    2,   4,   5,   2  ! p2y05T+

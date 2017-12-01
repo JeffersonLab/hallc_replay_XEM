@@ -8,6 +8,7 @@ cminch=2.54
 #include "PARAM/GEN/gdebug.param"
 #include "PARAM/GEN/gtarget.param"
 #include "PARAM/GEN/gbeam.param"
+#include "PARAM/GEN/gscalers.param"
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
@@ -18,21 +19,22 @@ cminch=2.54
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/GEOM/hcer_geom.param"
-#include "PARAM/HMS/DC/GEOM/hdc_geom_6gev.param"
+#include "PARAM/HMS/DC/GEOM/hdc_geom.param"
 #include "PARAM/HMS/HODO/GEOM/hhodo_geom.param"
 #include "PARAM/HMS/AERO/GEOM/haero_geom.param"
 #include "PARAM/HMS/CAL/GEOM/hcal_geom.param"
 
 ; HMS default cut parameter files
 #include "PARAM/HMS/CER/CUTS/hcer_cuts.param"
-#include "PARAM/HMS/DC/CUTS/hdc_cuts_6gev.param"
+#include "PARAM/HMS/DC/CUTS/hdc_cuts.param"
 #include "PARAM/HMS/HODO/CUTS/hhodo_cuts.param"
 #include "PARAM/HMS/AERO/CUTS/haero_cuts.param"
 #include "PARAM/HMS/CAL/CUTS/hcal_cuts.param"
 
 ; HMS default calibration parameter files
 #include "PARAM/HMS/CER/CALIB/hcer_calib.param"
-#include "PARAM/HMS/DC/CALIB/hdc_calib_6gev.param"
+#include "PARAM/HMS/DC/CALIB/hdc_calib.param"
+#include "PARAM/HMS/DC/CALIB/hdc_tzero_per_wire.param"
 #include "PARAM/HMS/HODO/CALIB/hhodo_calib.param"
 #include "PARAM/HMS/AERO/CALIB/haero_calib.param"
 #include "PARAM/HMS/CAL/CALIB/hcal_calib.param"

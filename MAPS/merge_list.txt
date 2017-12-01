@@ -1,4 +1,4 @@
-HMS/DETEC/DC/hdc_6gev.map
+HMS/DETEC/DC/hdc.map
 HMS/DETEC/HODO/hhodo.map
 HMS/DETEC/CER/hcer.map
 HMS/DETEC/CAL/hcal.map

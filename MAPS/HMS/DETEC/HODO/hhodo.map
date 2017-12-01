@@ -137,7 +137,7 @@ REFINDEX=3
 ! Caen 1190 module
 SLOT=20
 REFINDEX=0
-  127,1000,   0,   0
+  127,    1000,      0,      0!    hT2
 ! A0
 ! chan   plane     bar     sig
      0,      1,      1,      2!    h1x01T+

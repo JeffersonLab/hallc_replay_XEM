@@ -1,7 +1,3 @@
-#********************
-# Block Definitions *
-#********************
-
 block T.coin.*
 
 block H.cer.*

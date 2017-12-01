@@ -1,39 +1,21 @@
 Block: RawDecode
 
 Pedestal_event     g.evtyp == 99
-scalar_event       g.evtyp == 0
-HMS_event          g.evtyp == 1
-SHMS_event         g.evtyp == 1
-coin_event         g.evtyp == 3
-tr4_event          g.evtyp == 4
-tr5_event          g.evtyp == 5
-tr6_event          g.evtyp == 6
-misc_event         g.evtyp >= 10
-hmscoin_event      g.evtyp == 1 || g.evtyp == 3
-shmscoin_event     g.evtyp == 2 || g.evtyp == 3
-all_event          g.evtyp == 1 || g.evtyp == 2 || g.evtyp == 3
 
 RawDecode_master  1
 
 Block: Decode
 
-all_trigs          HMS_event || SHMS_event || coin_event
-hms_coin_trig      HMS_event || coin_event
-shms_coin_trig     SHMS_event || coin_event
-hms_trig           HMS_event
-shms_trig          SHMS_event
-coin_trig          coin_event
-
-Decode_master     SHMS_event
+Decode_master     1
 
 Block: CoarseTracking
-CoarseTracking_master SHMS_event
+CoarseTracking_master 1
 
 Block: CoarseReconstruct
-CoarseReconstruct_master SHMS_event
+CoarseReconstruct_master 1
 
 Block: Tracking
-Tracking_master  SHMS_event
+Tracking_master  1
 
 Block: Reconstruct
-Reconstruct_master SHMS_event
+Reconstruct_master 1
