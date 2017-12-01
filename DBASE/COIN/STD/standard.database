@@ -1,3 +1,4 @@
 0-99999
 g_ctp_parm_filename ="DBASE/COIN/GEN/general.param"
 g_ctp_kinematics_filename ="DBASE/COIN/STD/standard.kinematics"
+g_ctp_calib_filename ="DBASE/COIN/GEN/default_det_calib_files.param"
