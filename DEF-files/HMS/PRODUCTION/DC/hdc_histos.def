@@ -2,4 +2,8 @@
 # HMS Drift Chambers  *
 #**********************
 
-#include "DEF-files/HMS/TEST_STANDS/DC/hdcana.def"
+TH1F hdc_trk_beta_elec  'HMS DC ElectronTrack Beta; Beta; Number of Entires'  H.tr.beta 300 -1.5 1.5 hCleanTrack&&cer_elec
+TH1F hdc_trk_beta_pi    'HMS DC Pion Track Beta; Beta; Number of Entires'     H.tr.beta 300 -1.5 1.5 hCleanTrack&&cer_pi
+
+TH1F hdc_trk_mom_elec   'HMS DC Electron Track Momentum; P (GeV); Number of Entires / 10 MeV' H.tr.p 600 0 6 hCleanTrack&&cer_elec
+TH1F hdc_trk_mom_pi     'HMS DC Pion Track Momentum; P (GeV); Number of Entires / 10 MeV'     H.tr.p 600 0 6 hCleanTrack&&cer_pi

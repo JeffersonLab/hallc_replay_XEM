@@ -21,8 +21,8 @@ TH1F htrig_h2y_tdc 'HMS h2y TDC Time; TDC Time (ns); Counts / 0.1 ns;' T.hms.h2Y
 TH1F htrig_h1T_tdc 'HMS h1X/h1Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.h1T_tdcTimeRaw 4000 0 4000
 TH1F htrig_h2T_tdc 'HMS h2X/h2Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.h2T_tdcTimeRaw 4000 0 4000
 
-TH1F htrig_hT1_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 2); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT1_tdcTimeRaw 4000 0 4000
-TH1F htrig_hT2_tdc 'HMS h1X/h1Y/h2X/h2Y Coincidence TDC Time (Slot 20); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT2_tdcTimeRaw 4000 0 4000
+TH1F htrig_hT1_tdc 'HMS T1 Coincidence TDC Time (Slot 2); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT1_tdcTimeRaw 4000 0 4000
+TH1F htrig_hT2_tdc 'HMS T2 Coincidence TDC Time (Slot 20); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT2_tdcTimeRaw 4000 0 4000
 
 #----------------------------
 # HMS Raw DC TRIG Reference Time
@@ -84,7 +84,7 @@ TH1F htrig_hpreShwr_adc_rawpi 'HMS Pre-Shower Raw Pulse Integral; Raw Pulse Inte
 TH1F htrig_hpreShwr_adc_rawpamp 'HMS Pre-Shower Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseAmpRaw 410 -500 4000
 TH1F htrig_hpreShwr_adc_rawptime 'HMS Pre-Shower Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hPSHWR_adcPulseTimeRaw 3000 0 3000
 TH1F htrig_hpreShwr_adc_ptime 'HMS Pre-Shower Pulse Time; Pulse Time (ns); Counts ;' T.hms.hPSHWR_adcPulseTime 300 0 300
-TH1F htrig_hpreShwr_rawtdc 'HMS Pre-Shower Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWR_tdcTimeRaw 4000 -1000 1000
+#TH1F htrig_hpreShwr_rawtdc 'HMS Pre-Shower Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWR_tdcTimeRaw 4000 -1000 1000
 
 TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRLO_tdcTimeRaw 4000 -500 2500
 TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRHI_tdcTimeRaw 4000 -500 2500
@@ -132,7 +132,7 @@ TH1F htrig_hdsum_tdc 'HMS hDsum TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hm
 TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 2 mV;' T.hms.hPSHWR_adcPed 500 -500 500
 TH1F htrig_hpreShwr_adc_pi 'HMS Pre-Shower Pulse Integral;  Pulse Integral (pC); Counts / 0.25 pC;' T.hms.hPSHWR_adcPulseInt 4000 -2000 15000
 TH1F htrig_hpreShwr_adc_pamp 'HMS Pre-Shower Pulse Amplitude;  Pulse Amplitude (mV); Counts / 2 mV;' T.hms.hPSHWR_adcPulseAmp 410 -500 3000
-TH1F htrig_hpreShwr_tdc 'HMS Pre-Shower TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hms.hPSHWR_tdcTime 4000 -1000 1000
+#TH1F htrig_hpreShwr_tdc 'HMS Pre-Shower TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hms.hPSHWR_tdcTime 4000 -1000 1000
 
 #----------------------------------
 # HMS Shower TRIG Pulse Profile
@@ -172,7 +172,7 @@ TH1F htrig_haersum_adc_rawpi 'HMS Aerogel Sum Raw Pulse Integral; Raw Pulse Inte
 TH1F htrig_haersum_adc_rawpamp 'HMS Aerogel Sum Raw Pulse Amplitude; Raw Pulse Amplitude (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseAmpRaw 410 0 4100
 TH1F htrig_haersum_adc_rawptime 'HMS Aerogel Sum Raw Pulse Time; Raw Pulse Time (ADC Units); Counts / 10 ADC Units;' T.hms.hAERSUM_adcPulseTimeRaw 3000 0 3000
 TH1F htrig_haersum_adc_ptime 'HMS Aerogel Sum Pulse Time; Raw Pulse Time (ns); Counts;' T.hms.hAERSUM_adcPulseTime 300 0 300
-TH1F htrig_haersum_rawtdc 'HMS Aerogel Sum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hAERSUM_tdcTimeRaw 4000 0 40000
+#TH1F htrig_haersum_rawtdc 'HMS Aerogel Sum Raw TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hAERSUM_tdcTimeRaw 4000 0 40000
 
 #------------------------------------------
 # HMS Aerogel TRIG Pulse Profile
@@ -181,6 +181,6 @@ TH1F htrig_haersum_rawtdc 'HMS Aerogel Sum Raw TDC Time; Raw TDC Time (TDC Units
 TH1F htrig_haersum_adc_pped 'HMS Aerogel Sum Pulse Pedestal;  Pulse Pedestal (mV); Counts / 2 mV;' T.hms.hAERSUM_adcPed 500 0 5000
 TH1F htrig_haersum_adc_pi 'HMS Aerogel Sum Pulse Integral;  Pulse Integral (pC); Counts / 0.25 pC;' T.hms.hAERSUM_adcPulseInt 4000 0 40000
 TH1F htrig_haersum_adc_pamp 'HMS Aerogel Sum Pulse Amplitude;  Pulse Amplitude (mV); Counts / 2 mV;' T.hms.hAERSUM_adcPulseAmp 410 0 4100
-TH1F htrig_haersum_tdc 'HMS Aerogel Sum TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hms.hAERSUM_tdcTime 4000 0 40000
+#TH1F htrig_haersum_tdc 'HMS Aerogel Sum TDC Time;  TDC Time (ns); Counts / 0.1 ns;' T.hms.hAERSUM_tdcTime 4000 0 40000
 
 

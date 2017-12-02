@@ -13,4 +13,4 @@ TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.02' H.hod.beta 100 0
 TH1F hhodo_fpHitsTime 'HMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' H.hod.fpHitsTime 90 0 90 
 TH1F hhodo_starttime 'HMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' H.hod.starttime 90 0 90
 TH1F hhodo_good_startime 'HMS Hodo Good Start Time (ns); Good Start Time (ns); Number of Entries / 1ns' H.hod.goodstarttime 90 0 90
-TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
+#TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
