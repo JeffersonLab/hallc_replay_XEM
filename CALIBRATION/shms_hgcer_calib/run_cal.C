@@ -31,7 +31,7 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0)
   TString eff_option = eff_raw;
 
   TChain ch("T");
-  ch.Add(Form("../../ROOTfiles/shms_replay_%d_%d.root", RunNumber, NumEvents));
+  ch.Add(Form("../../ROOTfiles/shms_replay_production_%d_%d.root", RunNumber, NumEvents));
   TProof *proof = TProof::Open("");
   proof->SetProgressDialog(0);  
   ch.SetProof();
