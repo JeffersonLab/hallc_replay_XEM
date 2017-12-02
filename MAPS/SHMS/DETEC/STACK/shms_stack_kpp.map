@@ -1,0 +1,2031 @@
+! TSHMS_ID=20      ::  ADC,TDC
+! PNGCER_ID=21     ::  ADC
+! PDC_ID=22        ::  TDC
+! PSCIN_ID=23      ::  ,ADC+,ADC-,TDC+,TDC-
+! PHGCER_ID=24     ::  ADC
+! PAERO_ID=25      ::  ,ADC+,ADC-
+! PCAL_ID=26       ::  ADC
+! PRASTER_ID=28    ::  ADC
+
+
+DETECTOR=20
+
+ROC=2
+
+SLOT=14
+   0,   1,   1,   0  ! pAERSUM
+   1,   1,   2,   0  ! pHGCERSUM
+   2,   1,   3,   0  ! pNGCERSUM
+ 
+SLOT=20
+REFINDEX=1
+  15,1000,   0,   1  ! pTRef1
+  15,   2,   1,   1  ! pT1
+
+SLOT=19
+REFINDEX=0
+  31,1000,   0,   0  ! pTRef2
+  31,   2,   2,   1  ! pT2
+  32,   2,   3,   1  ! p1X
+  33,   2,   4,   1  ! p1Y
+  34,   2,   5,   1  ! p2X
+  35,   2,   6,   1  ! p2Y
+  36,   2,   7,   1  ! p1T
+  37,   2,   8,   1  ! p2T
+  38,   2,   9,   1  ! pT3
+  39,   2,  10,   1  ! pAERSUM
+  40,   2,  11,   1  ! pHGCERSUM
+  41,   2,  12,   1  ! pNGCERSUM
+
+ROC=6
+
+SLOT=6
+  79,   2,  13,   1  ! pDCREF1
+
+SLOT=7
+  79,   2,  14,   1  ! pDCREF2
+
+SLOT=8
+  79,   2,  15,   1  ! pDCREF3
+
+SLOT=9
+  79,   2,  16,   1  ! pDCREF4
+
+SLOT=10
+  79,   2,  17,   1  ! pDCREF5
+
+SLOT=11
+  47,   2,  18,   1  ! pDCREF6
+
+SLOT=12
+  47,   2,  19,   1  ! pDCREF7
+
+SLOT=13
+  47,   2,  20,   1  ! pDCREF8
+
+SLOT=14
+  15,   2,  21,   1  ! pDCREF9
+
+SLOT=15
+  47,   2,  22,   1  ! pDCREF10
+
+
+DETECTOR=21
+
+ROC=2
+
+
+SLOT=13
+   8,   1,   1,   0  ! pNGCER01
+   9,   1,   2,   0  ! pNGCER02
+  10,   1,   3,   0  ! pNGCER03
+  11,   1,   4,   0  ! pNGCER04
+
+
+DETECTOR=22  ! SHMS chambers
+
+ROC=6
+
+SLOT=9
+REFCHAN=79
+  78,   1,   1  ! DC1, Plane U, wire 1
+  77,   1,   2  ! DC1, Plane U, wire 2
+  76,   1,   3  ! DC1, Plane U, wire 3
+  75,   1,   4  ! DC1, Plane U, wire 4
+  74,   1,   5  ! DC1, Plane U, wire 5
+  73,   1,   6  ! DC1, Plane U, wire 6
+  72,   1,   7  ! DC1, Plane U, wire 7
+  71,   1,   8  ! DC1, Plane U, wire 8
+  70,   1,   9  ! DC1, Plane U, wire 9
+  69,   1,  10  ! DC1, Plane U, wire 10
+  68,   1,  11  ! DC1, Plane U, wire 11
+  67,   1,  12  ! DC1, Plane U, wire 12
+  66,   1,  13  ! DC1, Plane U, wire 13
+  65,   1,  14  ! DC1, Plane U, wire 14
+  64,   1,  15  ! DC1, Plane U, wire 15
+
+SLOT=7
+REFCHAN=79
+  31,   1,  16  ! DC1, Plane U, wire 16
+  30,   1,  17  ! DC1, Plane U, wire 17
+  29,   1,  18  ! DC1, Plane U, wire 18
+  28,   1,  19  ! DC1, Plane U, wire 19
+  27,   1,  20  ! DC1, Plane U, wire 20
+  26,   1,  21  ! DC1, Plane U, wire 21
+  25,   1,  22  ! DC1, Plane U, wire 22
+  24,   1,  23  ! DC1, Plane U, wire 23
+  23,   1,  24  ! DC1, Plane U, wire 24
+  22,   1,  25  ! DC1, Plane U, wire 25
+  21,   1,  26  ! DC1, Plane U, wire 26
+  20,   1,  27  ! DC1, Plane U, wire 27
+  19,   1,  28  ! DC1, Plane U, wire 28
+  18,   1,  29  ! DC1, Plane U, wire 29
+  17,   1,  30  ! DC1, Plane U, wire 30
+  16,   1,  31  ! DC1, Plane U, wire 31
+
+SLOT=6
+REFCHAN=79
+  95,   1,  32  ! DC1, Plane U, wire 32
+  94,   1,  33  ! DC1, Plane U, wire 33
+  93,   1,  34  ! DC1, Plane U, wire 34
+  92,   1,  35  ! DC1, Plane U, wire 35
+  91,   1,  36  ! DC1, Plane U, wire 36
+  90,   1,  37  ! DC1, Plane U, wire 37
+  89,   1,  38  ! DC1, Plane U, wire 38
+  88,   1,  39  ! DC1, Plane U, wire 39
+  87,   1,  40  ! DC1, Plane U, wire 40
+  86,   1,  41  ! DC1, Plane U, wire 41
+  85,   1,  42  ! DC1, Plane U, wire 42
+  84,   1,  43  ! DC1, Plane U, wire 43
+  83,   1,  44  ! DC1, Plane U, wire 44
+  82,   1,  45  ! DC1, Plane U, wire 45
+  81,   1,  46  ! DC1, Plane U, wire 46
+  80,   1,  47  ! DC1, Plane U, wire 47
+  31,   1,  48  ! DC1, Plane U, wire 48
+  30,   1,  49  ! DC1, Plane U, wire 49
+  29,   1,  50  ! DC1, Plane U, wire 50
+  28,   1,  51  ! DC1, Plane U, wire 51
+  27,   1,  52  ! DC1, Plane U, wire 52
+  26,   1,  53  ! DC1, Plane U, wire 53
+  25,   1,  54  ! DC1, Plane U, wire 54
+  24,   1,  55  ! DC1, Plane U, wire 55
+  23,   1,  56  ! DC1, Plane U, wire 56
+  22,   1,  57  ! DC1, Plane U, wire 57
+  21,   1,  58  ! DC1, Plane U, wire 58
+  20,   1,  59  ! DC1, Plane U, wire 59
+  19,   1,  60  ! DC1, Plane U, wire 60
+  18,   1,  61  ! DC1, Plane U, wire 61
+  17,   1,  62  ! DC1, Plane U, wire 62
+  16,   1,  63  ! DC1, Plane U, wire 63
+
+SLOT=8
+REFCHAN=79
+ 112,   1,  64  ! DC1, Plane U, wire 64
+ 113,   1,  65  ! DC1, Plane U, wire 65
+ 114,   1,  66  ! DC1, Plane U, wire 66
+ 115,   1,  67  ! DC1, Plane U, wire 67
+ 116,   1,  68  ! DC1, Plane U, wire 68
+ 117,   1,  69  ! DC1, Plane U, wire 69
+ 118,   1,  70  ! DC1, Plane U, wire 70
+ 119,   1,  71  ! DC1, Plane U, wire 71
+ 120,   1,  72  ! DC1, Plane U, wire 72
+ 121,   1,  73  ! DC1, Plane U, wire 73
+ 122,   1,  74  ! DC1, Plane U, wire 74
+ 123,   1,  75  ! DC1, Plane U, wire 75
+ 124,   1,  76  ! DC1, Plane U, wire 76
+ 125,   1,  77  ! DC1, Plane U, wire 77
+ 126,   1,  78  ! DC1, Plane U, wire 78
+ 127,   1,  79  ! DC1, Plane U, wire 79
+  48,   1,  80  ! DC1, Plane U, wire 80
+  49,   1,  81  ! DC1, Plane U, wire 81
+  50,   1,  82  ! DC1, Plane U, wire 82
+  51,   1,  83  ! DC1, Plane U, wire 83
+  52,   1,  84  ! DC1, Plane U, wire 84
+  53,   1,  85  ! DC1, Plane U, wire 85
+  54,   1,  86  ! DC1, Plane U, wire 86
+  55,   1,  87  ! DC1, Plane U, wire 87
+  56,   1,  88  ! DC1, Plane U, wire 88
+  57,   1,  89  ! DC1, Plane U, wire 89
+  58,   1,  90  ! DC1, Plane U, wire 90
+  59,   1,  91  ! DC1, Plane U, wire 91
+  60,   1,  92  ! DC1, Plane U, wire 92
+  61,   1,  93  ! DC1, Plane U, wire 93
+  62,   1,  94  ! DC1, Plane U, wire 94
+  63,   1,  95  ! DC1, Plane U, wire 95
+
+SLOT=9
+REFCHAN=79
+ 112,   1,  96  ! DC1, Plane U, wire 96
+ 113,   1,  97  ! DC1, Plane U, wire 97
+ 114,   1,  98  ! DC1, Plane U, wire 98
+ 115,   1,  99  ! DC1, Plane U, wire 99
+ 116,   1, 100  ! DC1, Plane U, wire 100
+ 117,   1, 101  ! DC1, Plane U, wire 101
+ 118,   1, 102  ! DC1, Plane U, wire 102
+ 119,   1, 103  ! DC1, Plane U, wire 103
+ 120,   1, 104  ! DC1, Plane U, wire 104
+ 121,   1, 105  ! DC1, Plane U, wire 105
+ 122,   1, 106  ! DC1, Plane U, wire 106
+ 123,   1, 107  ! DC1, Plane U, wire 107
+
+SLOT=8
+REFCHAN=79
+  75,   2,   1  ! DC1, Plane U', wire 1
+  74,   2,   2  ! DC1, Plane U', wire 2
+  73,   2,   3  ! DC1, Plane U', wire 3
+  72,   2,   4  ! DC1, Plane U', wire 4
+  71,   2,   5  ! DC1, Plane U', wire 5
+  70,   2,   6  ! DC1, Plane U', wire 6
+  69,   2,   7  ! DC1, Plane U', wire 7
+  68,   2,   8  ! DC1, Plane U', wire 8
+  67,   2,   9  ! DC1, Plane U', wire 9
+  66,   2,  10  ! DC1, Plane U', wire 10
+  65,   2,  11  ! DC1, Plane U', wire 11
+  64,   2,  12  ! DC1, Plane U', wire 12
+
+SLOT=6
+REFCHAN=79
+ 127,   2,  13  ! DC1, Plane U', wire 13
+ 126,   2,  14  ! DC1, Plane U', wire 14
+ 125,   2,  15  ! DC1, Plane U', wire 15
+ 124,   2,  16  ! DC1, Plane U', wire 16
+ 123,   2,  17  ! DC1, Plane U', wire 17
+ 122,   2,  18  ! DC1, Plane U', wire 18
+ 121,   2,  19  ! DC1, Plane U', wire 19
+ 120,   2,  20  ! DC1, Plane U', wire 20
+ 119,   2,  21  ! DC1, Plane U', wire 21
+ 118,   2,  22  ! DC1, Plane U', wire 22
+ 117,   2,  23  ! DC1, Plane U', wire 23
+ 116,   2,  24  ! DC1, Plane U', wire 24
+ 115,   2,  25  ! DC1, Plane U', wire 25
+ 114,   2,  26  ! DC1, Plane U', wire 26
+ 113,   2,  27  ! DC1, Plane U', wire 27
+ 112,   2,  28  ! DC1, Plane U', wire 28
+  47,   2,  29  ! DC1, Plane U', wire 29
+  46,   2,  30  ! DC1, Plane U', wire 30
+  45,   2,  31  ! DC1, Plane U', wire 31
+  44,   2,  32  ! DC1, Plane U', wire 32
+  43,   2,  33  ! DC1, Plane U', wire 33
+  42,   2,  34  ! DC1, Plane U', wire 34
+  41,   2,  35  ! DC1, Plane U', wire 35
+  40,   2,  36  ! DC1, Plane U', wire 36
+  39,   2,  37  ! DC1, Plane U', wire 37
+  38,   2,  38  ! DC1, Plane U', wire 38
+  37,   2,  39  ! DC1, Plane U', wire 39
+  36,   2,  40  ! DC1, Plane U', wire 40
+  35,   2,  41  ! DC1, Plane U', wire 41
+  34,   2,  42  ! DC1, Plane U', wire 42
+  33,   2,  43  ! DC1, Plane U', wire 43
+  32,   2,  44  ! DC1, Plane U', wire 44
+
+SLOT=9
+REFCHAN=79
+   0,   2,  45  ! DC1, Plane U', wire 45
+   1,   2,  46  ! DC1, Plane U', wire 46
+   2,   2,  47  ! DC1, Plane U', wire 47
+   3,   2,  48  ! DC1, Plane U', wire 48
+   4,   2,  49  ! DC1, Plane U', wire 49
+   5,   2,  50  ! DC1, Plane U', wire 50
+   6,   2,  51  ! DC1, Plane U', wire 51
+   7,   2,  52  ! DC1, Plane U', wire 52
+   8,   2,  53  ! DC1, Plane U', wire 53
+   9,   2,  54  ! DC1, Plane U', wire 54
+  10,   2,  55  ! DC1, Plane U', wire 55
+  11,   2,  56  ! DC1, Plane U', wire 56
+  12,   2,  57  ! DC1, Plane U', wire 57
+  13,   2,  58  ! DC1, Plane U', wire 58
+  14,   2,  59  ! DC1, Plane U', wire 59
+  15,   2,  60  ! DC1, Plane U', wire 60
+
+SLOT=8
+REFCHAN=79
+  96,   2,  61  ! DC1, Plane U', wire 61
+  97,   2,  62  ! DC1, Plane U', wire 62
+  98,   2,  63  ! DC1, Plane U', wire 63
+  99,   2,  64  ! DC1, Plane U', wire 64
+ 100,   2,  65  ! DC1, Plane U', wire 65
+ 101,   2,  66  ! DC1, Plane U', wire 66
+ 102,   2,  67  ! DC1, Plane U', wire 67
+ 103,   2,  68  ! DC1, Plane U', wire 68
+ 104,   2,  69  ! DC1, Plane U', wire 69
+ 105,   2,  70  ! DC1, Plane U', wire 70
+ 106,   2,  71  ! DC1, Plane U', wire 71
+ 107,   2,  72  ! DC1, Plane U', wire 72
+ 108,   2,  73  ! DC1, Plane U', wire 73
+ 109,   2,  74  ! DC1, Plane U', wire 74
+ 110,   2,  75  ! DC1, Plane U', wire 75
+ 111,   2,  76  ! DC1, Plane U', wire 76
+
+SLOT=10
+REFCHAN=79
+  80,   2,  77  ! DC1, Plane U', wire 77
+  81,   2,  78  ! DC1, Plane U', wire 78
+  82,   2,  79  ! DC1, Plane U', wire 79
+  83,   2,  80  ! DC1, Plane U', wire 80
+  84,   2,  81  ! DC1, Plane U', wire 81
+  85,   2,  82  ! DC1, Plane U', wire 82
+  86,   2,  83  ! DC1, Plane U', wire 83
+  87,   2,  84  ! DC1, Plane U', wire 84
+  88,   2,  85  ! DC1, Plane U', wire 85
+  89,   2,  86  ! DC1, Plane U', wire 86
+  90,   2,  87  ! DC1, Plane U', wire 87
+  91,   2,  88  ! DC1, Plane U', wire 88
+  92,   2,  89  ! DC1, Plane U', wire 89
+  93,   2,  90  ! DC1, Plane U', wire 90
+  94,   2,  91  ! DC1, Plane U', wire 91
+  95,   2,  92  ! DC1, Plane U', wire 92
+  16,   2,  93  ! DC1, Plane U', wire 93
+  17,   2,  94  ! DC1, Plane U', wire 94
+  18,   2,  95  ! DC1, Plane U', wire 95
+  19,   2,  96  ! DC1, Plane U', wire 96
+  20,   2,  97  ! DC1, Plane U', wire 97
+  21,   2,  98  ! DC1, Plane U', wire 98
+  22,   2,  99  ! DC1, Plane U', wire 99
+  23,   2, 100  ! DC1, Plane U', wire 100
+  24,   2, 101  ! DC1, Plane U', wire 101
+  25,   2, 102  ! DC1, Plane U', wire 102
+  26,   2, 103  ! DC1, Plane U', wire 103
+  27,   2, 104  ! DC1, Plane U', wire 104
+  28,   2, 105  ! DC1, Plane U', wire 105
+  29,   2, 106  ! DC1, Plane U', wire 106
+  30,   2, 107  ! DC1, Plane U', wire 107
+
+SLOT=9
+REFCHAN=79
+  46,   5,   1  ! DC1, Plane V, wire 1
+  45,   5,   2  ! DC1, Plane V, wire 2
+  44,   5,   3  ! DC1, Plane V, wire 3
+  43,   5,   4  ! DC1, Plane V, wire 4
+  42,   5,   5  ! DC1, Plane V, wire 5
+  41,   5,   6  ! DC1, Plane V, wire 6
+  40,   5,   7  ! DC1, Plane V, wire 7
+  39,   5,   8  ! DC1, Plane V, wire 8
+  38,   5,   9  ! DC1, Plane V, wire 9
+  37,   5,  10  ! DC1, Plane V, wire 10
+  36,   5,  11  ! DC1, Plane V, wire 11
+  35,   5,  12  ! DC1, Plane V, wire 12
+  34,   5,  13  ! DC1, Plane V, wire 13
+  33,   5,  14  ! DC1, Plane V, wire 14
+  32,   5,  15  ! DC1, Plane V, wire 15
+
+SLOT=8
+REFCHAN=79
+  31,   5,  16  ! DC1, Plane V, wire 16
+  30,   5,  17  ! DC1, Plane V, wire 17
+  29,   5,  18  ! DC1, Plane V, wire 18
+  28,   5,  19  ! DC1, Plane V, wire 19
+  27,   5,  20  ! DC1, Plane V, wire 20
+  26,   5,  21  ! DC1, Plane V, wire 21
+  25,   5,  22  ! DC1, Plane V, wire 22
+  24,   5,  23  ! DC1, Plane V, wire 23
+  23,   5,  24  ! DC1, Plane V, wire 24
+  22,   5,  25  ! DC1, Plane V, wire 25
+  21,   5,  26  ! DC1, Plane V, wire 26
+  20,   5,  27  ! DC1, Plane V, wire 27
+  19,   5,  28  ! DC1, Plane V, wire 28
+  18,   5,  29  ! DC1, Plane V, wire 29
+  17,   5,  30  ! DC1, Plane V, wire 30
+  16,   5,  31  ! DC1, Plane V, wire 31
+
+SLOT=10
+REFCHAN=79
+  15,   5,  32  ! DC1, Plane V, wire 32
+  14,   5,  33  ! DC1, Plane V, wire 33
+  13,   5,  34  ! DC1, Plane V, wire 34
+  12,   5,  35  ! DC1, Plane V, wire 35
+  11,   5,  36  ! DC1, Plane V, wire 36
+  10,   5,  37  ! DC1, Plane V, wire 37
+   9,   5,  38  ! DC1, Plane V, wire 38
+   8,   5,  39  ! DC1, Plane V, wire 39
+   7,   5,  40  ! DC1, Plane V, wire 40
+   6,   5,  41  ! DC1, Plane V, wire 41
+   5,   5,  42  ! DC1, Plane V, wire 42
+   4,   5,  43  ! DC1, Plane V, wire 43
+   3,   5,  44  ! DC1, Plane V, wire 44
+   2,   5,  45  ! DC1, Plane V, wire 45
+   1,   5,  46  ! DC1, Plane V, wire 46
+   0,   5,  47  ! DC1, Plane V, wire 47
+
+SLOT=9
+REFCHAN=79
+  63,   5,  48  ! DC1, Plane V, wire 48
+  62,   5,  49  ! DC1, Plane V, wire 49
+  61,   5,  50  ! DC1, Plane V, wire 50
+  60,   5,  51  ! DC1, Plane V, wire 51
+  59,   5,  52  ! DC1, Plane V, wire 52
+  58,   5,  53  ! DC1, Plane V, wire 53
+  57,   5,  54  ! DC1, Plane V, wire 54
+  56,   5,  55  ! DC1, Plane V, wire 55
+  55,   5,  56  ! DC1, Plane V, wire 56
+  54,   5,  57  ! DC1, Plane V, wire 57
+  53,   5,  58  ! DC1, Plane V, wire 58
+  52,   5,  59  ! DC1, Plane V, wire 59
+  51,   5,  60  ! DC1, Plane V, wire 60
+  50,   5,  61  ! DC1, Plane V, wire 61
+  49,   5,  62  ! DC1, Plane V, wire 62
+  48,   5,  63  ! DC1, Plane V, wire 63
+
+SLOT=7
+REFCHAN=79
+  32,   5,  64  ! DC1, Plane V, wire 64
+  33,   5,  65  ! DC1, Plane V, wire 65
+  34,   5,  66  ! DC1, Plane V, wire 66
+  35,   5,  67  ! DC1, Plane V, wire 67
+  36,   5,  68  ! DC1, Plane V, wire 68
+  37,   5,  69  ! DC1, Plane V, wire 69
+  38,   5,  70  ! DC1, Plane V, wire 70
+  39,   5,  71  ! DC1, Plane V, wire 71
+  40,   5,  72  ! DC1, Plane V, wire 72
+  41,   5,  73  ! DC1, Plane V, wire 73
+  42,   5,  74  ! DC1, Plane V, wire 74
+  43,   5,  75  ! DC1, Plane V, wire 75
+  44,   5,  76  ! DC1, Plane V, wire 76
+  45,   5,  77  ! DC1, Plane V, wire 77
+  46,   5,  78  ! DC1, Plane V, wire 78
+  47,   5,  79  ! DC1, Plane V, wire 79
+  96,   5,  80  ! DC1, Plane V, wire 80
+  97,   5,  81  ! DC1, Plane V, wire 81
+  98,   5,  82  ! DC1, Plane V, wire 82
+  99,   5,  83  ! DC1, Plane V, wire 83
+ 100,   5,  84  ! DC1, Plane V, wire 84
+ 101,   5,  85  ! DC1, Plane V, wire 85
+ 102,   5,  86  ! DC1, Plane V, wire 86
+ 103,   5,  87  ! DC1, Plane V, wire 87
+ 104,   5,  88  ! DC1, Plane V, wire 88
+ 105,   5,  89  ! DC1, Plane V, wire 89
+ 106,   5,  90  ! DC1, Plane V, wire 90
+ 107,   5,  91  ! DC1, Plane V, wire 91
+ 108,   5,  92  ! DC1, Plane V, wire 92
+ 109,   5,  93  ! DC1, Plane V, wire 93
+ 110,   5,  94  ! DC1, Plane V, wire 94
+ 111,   5,  95  ! DC1, Plane V, wire 95
+  64,   5,  96  ! DC1, Plane V, wire 96
+  65,   5,  97  ! DC1, Plane V, wire 97
+  66,   5,  98  ! DC1, Plane V, wire 98
+  67,   5,  99  ! DC1, Plane V, wire 99
+  68,   5, 100  ! DC1, Plane V, wire 100
+  69,   5, 101  ! DC1, Plane V, wire 101
+  70,   5, 102  ! DC1, Plane V, wire 102
+  71,   5, 103  ! DC1, Plane V, wire 103
+  72,   5, 104  ! DC1, Plane V, wire 104
+  73,   5, 105  ! DC1, Plane V, wire 105
+  74,   5, 106  ! DC1, Plane V, wire 106
+  75,   5, 107  ! DC1, Plane V, wire 107
+
+SLOT=10
+REFCHAN=79
+  75,   6,   1  ! DC1, Plane V', wire 1
+  74,   6,   2  ! DC1, Plane V', wire 2
+  73,   6,   3  ! DC1, Plane V', wire 3
+  72,   6,   4  ! DC1, Plane V', wire 4
+  71,   6,   5  ! DC1, Plane V', wire 5
+  70,   6,   6  ! DC1, Plane V', wire 6
+  69,   6,   7  ! DC1, Plane V', wire 7
+  68,   6,   8  ! DC1, Plane V', wire 8
+  67,   6,   9  ! DC1, Plane V', wire 9
+  66,   6,  10  ! DC1, Plane V', wire 10
+  65,   6,  11  ! DC1, Plane V', wire 11
+  64,   6,  12  ! DC1, Plane V', wire 12
+  47,   6,  13  ! DC1, Plane V', wire 13
+  46,   6,  14  ! DC1, Plane V', wire 14
+  45,   6,  15  ! DC1, Plane V', wire 15
+  44,   6,  16  ! DC1, Plane V', wire 16
+  43,   6,  17  ! DC1, Plane V', wire 17
+  42,   6,  18  ! DC1, Plane V', wire 18
+  41,   6,  19  ! DC1, Plane V', wire 19
+  40,   6,  20  ! DC1, Plane V', wire 20
+  39,   6,  21  ! DC1, Plane V', wire 21
+  38,   6,  22  ! DC1, Plane V', wire 22
+  37,   6,  23  ! DC1, Plane V', wire 23
+  36,   6,  24  ! DC1, Plane V', wire 24
+  35,   6,  25  ! DC1, Plane V', wire 25
+  34,   6,  26  ! DC1, Plane V', wire 26
+  33,   6,  27  ! DC1, Plane V', wire 27
+  32,   6,  28  ! DC1, Plane V', wire 28
+
+SLOT=9
+REFCHAN=79
+ 111,   6,  29  ! DC1, Plane V', wire 29
+ 110,   6,  30  ! DC1, Plane V', wire 30
+ 109,   6,  31  ! DC1, Plane V', wire 31
+ 108,   6,  32  ! DC1, Plane V', wire 32
+ 107,   6,  33  ! DC1, Plane V', wire 33
+ 106,   6,  34  ! DC1, Plane V', wire 34
+ 105,   6,  35  ! DC1, Plane V', wire 35
+ 104,   6,  36  ! DC1, Plane V', wire 36
+ 103,   6,  37  ! DC1, Plane V', wire 37
+ 102,   6,  38  ! DC1, Plane V', wire 38
+ 101,   6,  39  ! DC1, Plane V', wire 39
+ 100,   6,  40  ! DC1, Plane V', wire 40
+  99,   6,  41  ! DC1, Plane V', wire 41
+  98,   6,  42  ! DC1, Plane V', wire 42
+  97,   6,  43  ! DC1, Plane V', wire 43
+  96,   6,  44  ! DC1, Plane V', wire 44
+
+SLOT=8
+REFCHAN=79
+  80,   6,  45  ! DC1, Plane V', wire 45
+  81,   6,  46  ! DC1, Plane V', wire 46
+  82,   6,  47  ! DC1, Plane V', wire 47
+  83,   6,  48  ! DC1, Plane V', wire 48
+  84,   6,  49  ! DC1, Plane V', wire 49
+  85,   6,  50  ! DC1, Plane V', wire 50
+  86,   6,  51  ! DC1, Plane V', wire 51
+  87,   6,  52  ! DC1, Plane V', wire 52
+  88,   6,  53  ! DC1, Plane V', wire 53
+  89,   6,  54  ! DC1, Plane V', wire 54
+  90,   6,  55  ! DC1, Plane V', wire 55
+  91,   6,  56  ! DC1, Plane V', wire 56
+  92,   6,  57  ! DC1, Plane V', wire 57
+  93,   6,  58  ! DC1, Plane V', wire 58
+  94,   6,  59  ! DC1, Plane V', wire 59
+  95,   6,  60  ! DC1, Plane V', wire 60
+
+SLOT=7
+REFCHAN=79
+ 112,   6,  61  ! DC1, Plane V', wire 61
+ 113,   6,  62  ! DC1, Plane V', wire 62
+ 114,   6,  63  ! DC1, Plane V', wire 63
+ 115,   6,  64  ! DC1, Plane V', wire 64
+ 116,   6,  65  ! DC1, Plane V', wire 65
+ 117,   6,  66  ! DC1, Plane V', wire 66
+ 118,   6,  67  ! DC1, Plane V', wire 67
+ 119,   6,  68  ! DC1, Plane V', wire 68
+ 120,   6,  69  ! DC1, Plane V', wire 69
+ 121,   6,  70  ! DC1, Plane V', wire 70
+ 122,   6,  71  ! DC1, Plane V', wire 71
+ 123,   6,  72  ! DC1, Plane V', wire 72
+ 124,   6,  73  ! DC1, Plane V', wire 73
+ 125,   6,  74  ! DC1, Plane V', wire 74
+ 126,   6,  75  ! DC1, Plane V', wire 75
+ 127,   6,  76  ! DC1, Plane V', wire 76
+  80,   6,  77  ! DC1, Plane V', wire 77
+  81,   6,  78  ! DC1, Plane V', wire 78
+  82,   6,  79  ! DC1, Plane V', wire 79
+  83,   6,  80  ! DC1, Plane V', wire 80
+  84,   6,  81  ! DC1, Plane V', wire 81
+  85,   6,  82  ! DC1, Plane V', wire 82
+  86,   6,  83  ! DC1, Plane V', wire 83
+  87,   6,  84  ! DC1, Plane V', wire 84
+  88,   6,  85  ! DC1, Plane V', wire 85
+  89,   6,  86  ! DC1, Plane V', wire 86
+  90,   6,  87  ! DC1, Plane V', wire 87
+  91,   6,  88  ! DC1, Plane V', wire 88
+  92,   6,  89  ! DC1, Plane V', wire 89
+  93,   6,  90  ! DC1, Plane V', wire 90
+  94,   6,  91  ! DC1, Plane V', wire 91
+  95,   6,  92  ! DC1, Plane V', wire 92
+
+SLOT=6
+REFCHAN=79
+  64,   6,  93  ! DC1, Plane V', wire 93
+  65,   6,  94  ! DC1, Plane V', wire 94
+  66,   6,  95  ! DC1, Plane V', wire 95
+  67,   6,  96  ! DC1, Plane V', wire 96
+  68,   6,  97  ! DC1, Plane V', wire 97
+  69,   6,  98  ! DC1, Plane V', wire 98
+  70,   6,  99  ! DC1, Plane V', wire 99
+  71,   6, 100  ! DC1, Plane V', wire 100
+  72,   6, 101  ! DC1, Plane V', wire 101
+  73,   6, 102  ! DC1, Plane V', wire 102
+  74,   6, 103  ! DC1, Plane V', wire 103
+  75,   6, 104  ! DC1, Plane V', wire 104
+  76,   6, 105  ! DC1, Plane V', wire 105
+  77,   6, 106  ! DC1, Plane V', wire 106
+  78,   6, 107  ! DC1, Plane V', wire 107
+
+SLOT=8
+REFCHAN=79
+  15,   3,   1  ! DC1, Plane X, wire 1
+  14,   3,   2  ! DC1, Plane X, wire 2
+  13,   3,   3  ! DC1, Plane X, wire 3
+  12,   3,   4  ! DC1, Plane X, wire 4
+  11,   3,   5  ! DC1, Plane X, wire 5
+  10,   3,   6  ! DC1, Plane X, wire 6
+   9,   3,   7  ! DC1, Plane X, wire 7
+   8,   3,   8  ! DC1, Plane X, wire 8
+   7,   3,   9  ! DC1, Plane X, wire 9
+   6,   3,  10  ! DC1, Plane X, wire 10
+   5,   3,  11  ! DC1, Plane X, wire 11
+   4,   3,  12  ! DC1, Plane X, wire 12
+   3,   3,  13  ! DC1, Plane X, wire 13
+   2,   3,  14  ! DC1, Plane X, wire 14
+   1,   3,  15  ! DC1, Plane X, wire 15
+   0,   3,  16  ! DC1, Plane X, wire 16
+
+SLOT=7
+REFCHAN=79
+  63,   3,  17  ! DC1, Plane X, wire 17
+  62,   3,  18  ! DC1, Plane X, wire 18
+  61,   3,  19  ! DC1, Plane X, wire 19
+  60,   3,  20  ! DC1, Plane X, wire 20
+  59,   3,  21  ! DC1, Plane X, wire 21
+  58,   3,  22  ! DC1, Plane X, wire 22
+  57,   3,  23  ! DC1, Plane X, wire 23
+  56,   3,  24  ! DC1, Plane X, wire 24
+  55,   3,  25  ! DC1, Plane X, wire 25
+  54,   3,  26  ! DC1, Plane X, wire 26
+  53,   3,  27  ! DC1, Plane X, wire 27
+  52,   3,  28  ! DC1, Plane X, wire 28
+  51,   3,  29  ! DC1, Plane X, wire 29
+  50,   3,  30  ! DC1, Plane X, wire 30
+  49,   3,  31  ! DC1, Plane X, wire 31
+  48,   3,  32  ! DC1, Plane X, wire 32
+
+SLOT=6
+REFCHAN=79
+  63,   3,  33  ! DC1, Plane X, wire 33
+  62,   3,  34  ! DC1, Plane X, wire 34
+  61,   3,  35  ! DC1, Plane X, wire 35
+  60,   3,  36  ! DC1, Plane X, wire 36
+  59,   3,  37  ! DC1, Plane X, wire 37
+  58,   3,  38  ! DC1, Plane X, wire 38
+  57,   3,  39  ! DC1, Plane X, wire 39
+  56,   3,  40  ! DC1, Plane X, wire 40
+  55,   3,  41  ! DC1, Plane X, wire 41
+  54,   3,  42  ! DC1, Plane X, wire 42
+  53,   3,  43  ! DC1, Plane X, wire 43
+  52,   3,  44  ! DC1, Plane X, wire 44
+  51,   3,  45  ! DC1, Plane X, wire 45
+  50,   3,  46  ! DC1, Plane X, wire 46
+  49,   3,  47  ! DC1, Plane X, wire 47
+  48,   3,  48  ! DC1, Plane X, wire 48
+
+SLOT=10
+REFCHAN=79
+  48,   3,  49  ! DC1, Plane X, wire 49
+  49,   3,  50  ! DC1, Plane X, wire 50
+  50,   3,  51  ! DC1, Plane X, wire 51
+  51,   3,  52  ! DC1, Plane X, wire 52
+  52,   3,  53  ! DC1, Plane X, wire 53
+  53,   3,  54  ! DC1, Plane X, wire 54
+  54,   3,  55  ! DC1, Plane X, wire 55
+  55,   3,  56  ! DC1, Plane X, wire 56
+  56,   3,  57  ! DC1, Plane X, wire 57
+  57,   3,  58  ! DC1, Plane X, wire 58
+  58,   3,  59  ! DC1, Plane X, wire 59
+  59,   3,  60  ! DC1, Plane X, wire 60
+  60,   3,  61  ! DC1, Plane X, wire 61
+  61,   3,  62  ! DC1, Plane X, wire 62
+  62,   3,  63  ! DC1, Plane X, wire 63
+  63,   3,  64  ! DC1, Plane X, wire 64
+
+SLOT=9
+REFCHAN=79
+  80,   3,  65  ! DC1, Plane X, wire 65
+  81,   3,  66  ! DC1, Plane X, wire 66
+  82,   3,  67  ! DC1, Plane X, wire 67
+  83,   3,  68  ! DC1, Plane X, wire 68
+  84,   3,  69  ! DC1, Plane X, wire 69
+  85,   3,  70  ! DC1, Plane X, wire 70
+  86,   3,  71  ! DC1, Plane X, wire 71
+  87,   3,  72  ! DC1, Plane X, wire 72
+  88,   3,  73  ! DC1, Plane X, wire 73
+  89,   3,  74  ! DC1, Plane X, wire 74
+  90,   3,  75  ! DC1, Plane X, wire 75
+  91,   3,  76  ! DC1, Plane X, wire 76
+  92,   3,  77  ! DC1, Plane X, wire 77
+  93,   3,  78  ! DC1, Plane X, wire 78
+  94,   3,  79  ! DC1, Plane X, wire 79
+  30,   4,   1  ! DC1, Plane X', wire 1
+  29,   4,   2  ! DC1, Plane X', wire 2
+  28,   4,   3  ! DC1, Plane X', wire 3
+  27,   4,   4  ! DC1, Plane X', wire 4
+  26,   4,   5  ! DC1, Plane X', wire 5
+  25,   4,   6  ! DC1, Plane X', wire 6
+  24,   4,   7  ! DC1, Plane X', wire 7
+  23,   4,   8  ! DC1, Plane X', wire 8
+  22,   4,   9  ! DC1, Plane X', wire 9
+  21,   4,  10  ! DC1, Plane X', wire 10
+  20,   4,  11  ! DC1, Plane X', wire 11
+  19,   4,  12  ! DC1, Plane X', wire 12
+  18,   4,  13  ! DC1, Plane X', wire 13
+  17,   4,  14  ! DC1, Plane X', wire 14
+  16,   4,  15  ! DC1, Plane X', wire 15
+
+SLOT=8
+REFCHAN=79
+  47,   4,  16  ! DC1, Plane X', wire 16
+  46,   4,  17  ! DC1, Plane X', wire 17
+  45,   4,  18  ! DC1, Plane X', wire 18
+  44,   4,  19  ! DC1, Plane X', wire 19
+  43,   4,  20  ! DC1, Plane X', wire 20
+  42,   4,  21  ! DC1, Plane X', wire 21
+  41,   4,  22  ! DC1, Plane X', wire 22
+  40,   4,  23  ! DC1, Plane X', wire 23
+  39,   4,  24  ! DC1, Plane X', wire 24
+  38,   4,  25  ! DC1, Plane X', wire 25
+  37,   4,  26  ! DC1, Plane X', wire 26
+  36,   4,  27  ! DC1, Plane X', wire 27
+  35,   4,  28  ! DC1, Plane X', wire 28
+  34,   4,  29  ! DC1, Plane X', wire 29
+  33,   4,  30  ! DC1, Plane X', wire 30
+  32,   4,  31  ! DC1, Plane X', wire 31
+
+SLOT=7
+REFCHAN=79
+   0,   4,  32  ! DC1, Plane X', wire 32
+   1,   4,  33  ! DC1, Plane X', wire 33
+   2,   4,  34  ! DC1, Plane X', wire 34
+   3,   4,  35  ! DC1, Plane X', wire 35
+   4,   4,  36  ! DC1, Plane X', wire 36
+   5,   4,  37  ! DC1, Plane X', wire 37
+   6,   4,  38  ! DC1, Plane X', wire 38
+   7,   4,  39  ! DC1, Plane X', wire 39
+   8,   4,  40  ! DC1, Plane X', wire 40
+   9,   4,  41  ! DC1, Plane X', wire 41
+  10,   4,  42  ! DC1, Plane X', wire 42
+  11,   4,  43  ! DC1, Plane X', wire 43
+  12,   4,  44  ! DC1, Plane X', wire 44
+  13,   4,  45  ! DC1, Plane X', wire 45
+  14,   4,  46  ! DC1, Plane X', wire 46
+  15,   4,  47  ! DC1, Plane X', wire 47
+
+SLOT=6
+REFCHAN=79
+  96,   4,  48  ! DC1, Plane X', wire 48
+  97,   4,  49  ! DC1, Plane X', wire 49
+  98,   4,  50  ! DC1, Plane X', wire 50
+  99,   4,  51  ! DC1, Plane X', wire 51
+ 100,   4,  52  ! DC1, Plane X', wire 52
+ 101,   4,  53  ! DC1, Plane X', wire 53
+ 102,   4,  54  ! DC1, Plane X', wire 54
+ 103,   4,  55  ! DC1, Plane X', wire 55
+ 104,   4,  56  ! DC1, Plane X', wire 56
+ 105,   4,  57  ! DC1, Plane X', wire 57
+ 106,   4,  58  ! DC1, Plane X', wire 58
+ 107,   4,  59  ! DC1, Plane X', wire 59
+ 108,   4,  60  ! DC1, Plane X', wire 60
+ 109,   4,  61  ! DC1, Plane X', wire 61
+ 110,   4,  62  ! DC1, Plane X', wire 62
+ 111,   4,  63  ! DC1, Plane X', wire 63
+   0,   4,  64  ! DC1, Plane X', wire 64
+   1,   4,  65  ! DC1, Plane X', wire 65
+   2,   4,  66  ! DC1, Plane X', wire 66
+   3,   4,  67  ! DC1, Plane X', wire 67
+   4,   4,  68  ! DC1, Plane X', wire 68
+   5,   4,  69  ! DC1, Plane X', wire 69
+   6,   4,  70  ! DC1, Plane X', wire 70
+   7,   4,  71  ! DC1, Plane X', wire 71
+   8,   4,  72  ! DC1, Plane X', wire 72
+   9,   4,  73  ! DC1, Plane X', wire 73
+  10,   4,  74  ! DC1, Plane X', wire 74
+  11,   4,  75  ! DC1, Plane X', wire 75
+  12,   4,  76  ! DC1, Plane X', wire 76
+  13,   4,  77  ! DC1, Plane X', wire 77
+  14,   4,  78  ! DC1, Plane X', wire 78
+  15,   4,  79  ! DC1, Plane X', wire 79
+
+SLOT=14
+REFCHAN=15
+  46,  12,   1  ! DC2, Plane U, wire 1
+  45,  12,   2  ! DC2, Plane U, wire 2
+  44,  12,   3  ! DC2, Plane U, wire 3
+  43,  12,   4  ! DC2, Plane U, wire 4
+  42,  12,   5  ! DC2, Plane U, wire 5
+  41,  12,   6  ! DC2, Plane U, wire 6
+  40,  12,   7  ! DC2, Plane U, wire 7
+  39,  12,   8  ! DC2, Plane U, wire 8
+  38,  12,   9  ! DC2, Plane U, wire 9
+  37,  12,  10  ! DC2, Plane U, wire 10
+  36,  12,  11  ! DC2, Plane U, wire 11
+  35,  12,  12  ! DC2, Plane U, wire 12
+  34,  12,  13  ! DC2, Plane U, wire 13
+  33,  12,  14  ! DC2, Plane U, wire 14
+  32,  12,  15  ! DC2, Plane U, wire 15
+
+SLOT=11
+REFCHAN=47
+ 127,  12,  16  ! DC2, Plane U, wire 16
+ 126,  12,  17  ! DC2, Plane U, wire 17
+ 125,  12,  18  ! DC2, Plane U, wire 18
+ 124,  12,  19  ! DC2, Plane U, wire 19
+ 123,  12,  20  ! DC2, Plane U, wire 20
+ 122,  12,  21  ! DC2, Plane U, wire 21
+ 121,  12,  22  ! DC2, Plane U, wire 22
+ 120,  12,  23  ! DC2, Plane U, wire 23
+ 119,  12,  24  ! DC2, Plane U, wire 24
+ 118,  12,  25  ! DC2, Plane U, wire 25
+ 117,  12,  26  ! DC2, Plane U, wire 26
+ 116,  12,  27  ! DC2, Plane U, wire 27
+ 115,  12,  28  ! DC2, Plane U, wire 28
+ 114,  12,  29  ! DC2, Plane U, wire 29
+ 113,  12,  30  ! DC2, Plane U, wire 30
+ 112,  12,  31  ! DC2, Plane U, wire 31
+  63,  12,  32  ! DC2, Plane U, wire 32
+  62,  12,  33  ! DC2, Plane U, wire 33
+  61,  12,  34  ! DC2, Plane U, wire 34
+  60,  12,  35  ! DC2, Plane U, wire 35
+  59,  12,  36  ! DC2, Plane U, wire 36
+  58,  12,  37  ! DC2, Plane U, wire 37
+  57,  12,  38  ! DC2, Plane U, wire 38
+  56,  12,  39  ! DC2, Plane U, wire 39
+  55,  12,  40  ! DC2, Plane U, wire 40
+  54,  12,  41  ! DC2, Plane U, wire 41
+  53,  12,  42  ! DC2, Plane U, wire 42
+  52,  12,  43  ! DC2, Plane U, wire 43
+  51,  12,  44  ! DC2, Plane U, wire 44
+  50,  12,  45  ! DC2, Plane U, wire 45
+  49,  12,  46  ! DC2, Plane U, wire 46
+  48,  12,  47  ! DC2, Plane U, wire 47
+
+SLOT=10
+REFCHAN=79
+ 127,  12,  48  ! DC2, Plane U, wire 48
+ 126,  12,  49  ! DC2, Plane U, wire 49
+ 125,  12,  50  ! DC2, Plane U, wire 50
+ 124,  12,  51  ! DC2, Plane U, wire 51
+ 123,  12,  52  ! DC2, Plane U, wire 52
+ 122,  12,  53  ! DC2, Plane U, wire 53
+ 121,  12,  54  ! DC2, Plane U, wire 54
+ 120,  12,  55  ! DC2, Plane U, wire 55
+ 119,  12,  56  ! DC2, Plane U, wire 56
+ 118,  12,  57  ! DC2, Plane U, wire 57
+ 117,  12,  58  ! DC2, Plane U, wire 58
+ 116,  12,  59  ! DC2, Plane U, wire 59
+ 115,  12,  60  ! DC2, Plane U, wire 60
+ 114,  12,  61  ! DC2, Plane U, wire 61
+ 113,  12,  62  ! DC2, Plane U, wire 62
+ 112,  12,  63  ! DC2, Plane U, wire 63
+
+SLOT=13
+REFCHAN=47
+  80,  12,  64  ! DC2, Plane U, wire 64
+  81,  12,  65  ! DC2, Plane U, wire 65
+  82,  12,  66  ! DC2, Plane U, wire 66
+  83,  12,  67  ! DC2, Plane U, wire 67
+  84,  12,  68  ! DC2, Plane U, wire 68
+  85,  12,  69  ! DC2, Plane U, wire 69
+  86,  12,  70  ! DC2, Plane U, wire 70
+  87,  12,  71  ! DC2, Plane U, wire 71
+  88,  12,  72  ! DC2, Plane U, wire 72
+  89,  12,  73  ! DC2, Plane U, wire 73
+  90,  12,  74  ! DC2, Plane U, wire 74
+  91,  12,  75  ! DC2, Plane U, wire 75
+  92,  12,  76  ! DC2, Plane U, wire 76
+  93,  12,  77  ! DC2, Plane U, wire 77
+  94,  12,  78  ! DC2, Plane U, wire 78
+  95,  12,  79  ! DC2, Plane U, wire 79
+  16,  12,  80  ! DC2, Plane U, wire 80
+  17,  12,  81  ! DC2, Plane U, wire 81
+  18,  12,  82  ! DC2, Plane U, wire 82
+  19,  12,  83  ! DC2, Plane U, wire 83
+  20,  12,  84  ! DC2, Plane U, wire 84
+  21,  12,  85  ! DC2, Plane U, wire 85
+  22,  12,  86  ! DC2, Plane U, wire 86
+  23,  12,  87  ! DC2, Plane U, wire 87
+  24,  12,  88  ! DC2, Plane U, wire 88
+  25,  12,  89  ! DC2, Plane U, wire 89
+  26,  12,  90  ! DC2, Plane U, wire 90
+  27,  12,  91  ! DC2, Plane U, wire 91
+  28,  12,  92  ! DC2, Plane U, wire 92
+  29,  12,  93  ! DC2, Plane U, wire 93
+  30,  12,  94  ! DC2, Plane U, wire 94
+  31,  12,  95  ! DC2, Plane U, wire 95
+
+SLOT=14
+REFCHAN=15
+  80,  12,  96  ! DC2, Plane U, wire 96
+  81,  12,  97  ! DC2, Plane U, wire 97
+  82,  12,  98  ! DC2, Plane U, wire 98
+  83,  12,  99  ! DC2, Plane U, wire 99
+  84,  12, 100  ! DC2, Plane U, wire 100
+  85,  12, 101  ! DC2, Plane U, wire 101
+  86,  12, 102  ! DC2, Plane U, wire 102
+  87,  12, 103  ! DC2, Plane U, wire 103
+  88,  12, 104  ! DC2, Plane U, wire 104
+  89,  12, 105  ! DC2, Plane U, wire 105
+  90,  12, 106  ! DC2, Plane U, wire 106
+  91,  12, 107  ! DC2, Plane U, wire 107
+
+SLOT=13
+REFCHAN=47
+  43,  11,   1  ! DC2, Plane U', wire 1
+  42,  11,   2  ! DC2, Plane U', wire 2
+  41,  11,   3  ! DC2, Plane U', wire 3
+  40,  11,   4  ! DC2, Plane U', wire 4
+  39,  11,   5  ! DC2, Plane U', wire 5
+  38,  11,   6  ! DC2, Plane U', wire 6
+  37,  11,   7  ! DC2, Plane U', wire 7
+  36,  11,   8  ! DC2, Plane U', wire 8
+  35,  11,   9  ! DC2, Plane U', wire 9
+  34,  11,  10  ! DC2, Plane U', wire 10
+  33,  11,  11  ! DC2, Plane U', wire 11
+  32,  11,  12  ! DC2, Plane U', wire 12
+
+SLOT=11
+REFCHAN=47
+  95,  11,  13  ! DC2, Plane U', wire 13
+  94,  11,  14  ! DC2, Plane U', wire 14
+  93,  11,  15  ! DC2, Plane U', wire 15
+  92,  11,  16  ! DC2, Plane U', wire 16
+  91,  11,  17  ! DC2, Plane U', wire 17
+  90,  11,  18  ! DC2, Plane U', wire 18
+  89,  11,  19  ! DC2, Plane U', wire 19
+  88,  11,  20  ! DC2, Plane U', wire 20
+  87,  11,  21  ! DC2, Plane U', wire 21
+  86,  11,  22  ! DC2, Plane U', wire 22
+  85,  11,  23  ! DC2, Plane U', wire 23
+  84,  11,  24  ! DC2, Plane U', wire 24
+  83,  11,  25  ! DC2, Plane U', wire 25
+  82,  11,  26  ! DC2, Plane U', wire 26
+  81,  11,  27  ! DC2, Plane U', wire 27
+  80,  11,  28  ! DC2, Plane U', wire 28
+  15,  11,  29  ! DC2, Plane U', wire 29
+  14,  11,  30  ! DC2, Plane U', wire 30
+  13,  11,  31  ! DC2, Plane U', wire 31
+  12,  11,  32  ! DC2, Plane U', wire 32
+  11,  11,  33  ! DC2, Plane U', wire 33
+  10,  11,  34  ! DC2, Plane U', wire 34
+   9,  11,  35  ! DC2, Plane U', wire 35
+   8,  11,  36  ! DC2, Plane U', wire 36
+   7,  11,  37  ! DC2, Plane U', wire 37
+   6,  11,  38  ! DC2, Plane U', wire 38
+   5,  11,  39  ! DC2, Plane U', wire 39
+   4,  11,  40  ! DC2, Plane U', wire 40
+   3,  11,  41  ! DC2, Plane U', wire 41
+   2,  11,  42  ! DC2, Plane U', wire 42
+   1,  11,  43  ! DC2, Plane U', wire 43
+   0,  11,  44  ! DC2, Plane U', wire 44
+
+SLOT=13
+REFCHAN=47
+  96,  11,  45  ! DC2, Plane U', wire 45
+  97,  11,  46  ! DC2, Plane U', wire 46
+  98,  11,  47  ! DC2, Plane U', wire 47
+  99,  11,  48  ! DC2, Plane U', wire 48
+ 100,  11,  49  ! DC2, Plane U', wire 49
+ 101,  11,  50  ! DC2, Plane U', wire 50
+ 102,  11,  51  ! DC2, Plane U', wire 51
+ 103,  11,  52  ! DC2, Plane U', wire 52
+ 104,  11,  53  ! DC2, Plane U', wire 53
+ 105,  11,  54  ! DC2, Plane U', wire 54
+ 106,  11,  55  ! DC2, Plane U', wire 55
+ 107,  11,  56  ! DC2, Plane U', wire 56
+ 108,  11,  57  ! DC2, Plane U', wire 57
+ 109,  11,  58  ! DC2, Plane U', wire 58
+ 110,  11,  59  ! DC2, Plane U', wire 59
+ 111,  11,  60  ! DC2, Plane U', wire 60
+  64,  11,  61  ! DC2, Plane U', wire 61
+  65,  11,  62  ! DC2, Plane U', wire 62
+  66,  11,  63  ! DC2, Plane U', wire 63
+  67,  11,  64  ! DC2, Plane U', wire 64
+  68,  11,  65  ! DC2, Plane U', wire 65
+  69,  11,  66  ! DC2, Plane U', wire 66
+  70,  11,  67  ! DC2, Plane U', wire 67
+  71,  11,  68  ! DC2, Plane U', wire 68
+  72,  11,  69  ! DC2, Plane U', wire 69
+  73,  11,  70  ! DC2, Plane U', wire 70
+  74,  11,  71  ! DC2, Plane U', wire 71
+  75,  11,  72  ! DC2, Plane U', wire 72
+  76,  11,  73  ! DC2, Plane U', wire 73
+  77,  11,  74  ! DC2, Plane U', wire 74
+  78,  11,  75  ! DC2, Plane U', wire 75
+  79,  11,  76  ! DC2, Plane U', wire 76
+
+SLOT=15
+REFCHAN=47
+  48,  11,  77  ! DC2, Plane U', wire 77
+  49,  11,  78  ! DC2, Plane U', wire 78
+  50,  11,  79  ! DC2, Plane U', wire 79
+  51,  11,  80  ! DC2, Plane U', wire 80
+  52,  11,  81  ! DC2, Plane U', wire 81
+  53,  11,  82  ! DC2, Plane U', wire 82
+  54,  11,  83  ! DC2, Plane U', wire 83
+  55,  11,  84  ! DC2, Plane U', wire 84
+  56,  11,  85  ! DC2, Plane U', wire 85
+  57,  11,  86  ! DC2, Plane U', wire 86
+  58,  11,  87  ! DC2, Plane U', wire 87
+  59,  11,  88  ! DC2, Plane U', wire 88
+  60,  11,  89  ! DC2, Plane U', wire 89
+  61,  11,  90  ! DC2, Plane U', wire 90
+  62,  11,  91  ! DC2, Plane U', wire 91
+  63,  11,  92  ! DC2, Plane U', wire 92
+
+SLOT=14
+REFCHAN=15
+ 112,  11,  93  ! DC2, Plane U', wire 93
+ 113,  11,  94  ! DC2, Plane U', wire 94
+ 114,  11,  95  ! DC2, Plane U', wire 95
+ 115,  11,  96  ! DC2, Plane U', wire 96
+ 116,  11,  97  ! DC2, Plane U', wire 97
+ 117,  11,  98  ! DC2, Plane U', wire 98
+ 118,  11,  99  ! DC2, Plane U', wire 99
+ 119,  11, 100  ! DC2, Plane U', wire 100
+ 120,  11, 101  ! DC2, Plane U', wire 101
+ 121,  11, 102  ! DC2, Plane U', wire 102
+ 122,  11, 103  ! DC2, Plane U', wire 103
+ 123,  11, 104  ! DC2, Plane U', wire 104
+ 124,  11, 105  ! DC2, Plane U', wire 105
+ 125,  11, 106  ! DC2, Plane U', wire 106
+ 126,  11, 107  ! DC2, Plane U', wire 107
+  14,   8,   1  ! DC2, Plane V, wire 1
+  13,   8,   2  ! DC2, Plane V, wire 2
+  12,   8,   3  ! DC2, Plane V, wire 3
+  11,   8,   4  ! DC2, Plane V, wire 4
+  10,   8,   5  ! DC2, Plane V, wire 5
+   9,   8,   6  ! DC2, Plane V, wire 6
+   8,   8,   7  ! DC2, Plane V, wire 7
+   7,   8,   8  ! DC2, Plane V, wire 8
+   6,   8,   9  ! DC2, Plane V, wire 9
+   5,   8,  10  ! DC2, Plane V, wire 10
+   4,   8,  11  ! DC2, Plane V, wire 11
+   3,   8,  12  ! DC2, Plane V, wire 12
+   2,   8,  13  ! DC2, Plane V, wire 13
+   1,   8,  14  ! DC2, Plane V, wire 14
+   0,   8,  15  ! DC2, Plane V, wire 15
+
+SLOT=12
+REFCHAN=47
+ 127,   8,  16  ! DC2, Plane V, wire 16
+ 126,   8,  17  ! DC2, Plane V, wire 17
+ 125,   8,  18  ! DC2, Plane V, wire 18
+ 124,   8,  19  ! DC2, Plane V, wire 19
+ 123,   8,  20  ! DC2, Plane V, wire 20
+ 122,   8,  21  ! DC2, Plane V, wire 21
+ 121,   8,  22  ! DC2, Plane V, wire 22
+ 120,   8,  23  ! DC2, Plane V, wire 23
+ 119,   8,  24  ! DC2, Plane V, wire 24
+ 118,   8,  25  ! DC2, Plane V, wire 25
+ 117,   8,  26  ! DC2, Plane V, wire 26
+ 116,   8,  27  ! DC2, Plane V, wire 27
+ 115,   8,  28  ! DC2, Plane V, wire 28
+ 114,   8,  29  ! DC2, Plane V, wire 29
+ 113,   8,  30  ! DC2, Plane V, wire 30
+ 112,   8,  31  ! DC2, Plane V, wire 31
+
+SLOT=14
+REFCHAN=15
+ 111,   8,  32  ! DC2, Plane V, wire 32
+ 110,   8,  33  ! DC2, Plane V, wire 33
+ 109,   8,  34  ! DC2, Plane V, wire 34
+ 108,   8,  35  ! DC2, Plane V, wire 35
+ 107,   8,  36  ! DC2, Plane V, wire 36
+ 106,   8,  37  ! DC2, Plane V, wire 37
+ 105,   8,  38  ! DC2, Plane V, wire 38
+ 104,   8,  39  ! DC2, Plane V, wire 39
+ 103,   8,  40  ! DC2, Plane V, wire 40
+ 102,   8,  41  ! DC2, Plane V, wire 41
+ 101,   8,  42  ! DC2, Plane V, wire 42
+ 100,   8,  43  ! DC2, Plane V, wire 43
+  99,   8,  44  ! DC2, Plane V, wire 44
+  98,   8,  45  ! DC2, Plane V, wire 45
+  97,   8,  46  ! DC2, Plane V, wire 46
+  96,   8,  47  ! DC2, Plane V, wire 47
+  31,   8,  48  ! DC2, Plane V, wire 48
+  30,   8,  49  ! DC2, Plane V, wire 49
+  29,   8,  50  ! DC2, Plane V, wire 50
+  28,   8,  51  ! DC2, Plane V, wire 51
+  27,   8,  52  ! DC2, Plane V, wire 52
+  26,   8,  53  ! DC2, Plane V, wire 53
+  25,   8,  54  ! DC2, Plane V, wire 54
+  24,   8,  55  ! DC2, Plane V, wire 55
+  23,   8,  56  ! DC2, Plane V, wire 56
+  22,   8,  57  ! DC2, Plane V, wire 57
+  21,   8,  58  ! DC2, Plane V, wire 58
+  20,   8,  59  ! DC2, Plane V, wire 59
+  19,   8,  60  ! DC2, Plane V, wire 60
+  18,   8,  61  ! DC2, Plane V, wire 61
+  17,   8,  62  ! DC2, Plane V, wire 62
+  16,   8,  63  ! DC2, Plane V, wire 63
+
+SLOT=12
+REFCHAN=47
+   0,   8,  64  ! DC2, Plane V, wire 64
+   1,   8,  65  ! DC2, Plane V, wire 65
+   2,   8,  66  ! DC2, Plane V, wire 66
+   3,   8,  67  ! DC2, Plane V, wire 67
+   4,   8,  68  ! DC2, Plane V, wire 68
+   5,   8,  69  ! DC2, Plane V, wire 69
+   6,   8,  70  ! DC2, Plane V, wire 70
+   7,   8,  71  ! DC2, Plane V, wire 71
+   8,   8,  72  ! DC2, Plane V, wire 72
+   9,   8,  73  ! DC2, Plane V, wire 73
+  10,   8,  74  ! DC2, Plane V, wire 74
+  11,   8,  75  ! DC2, Plane V, wire 75
+  12,   8,  76  ! DC2, Plane V, wire 76
+  13,   8,  77  ! DC2, Plane V, wire 77
+  14,   8,  78  ! DC2, Plane V, wire 78
+  15,   8,  79  ! DC2, Plane V, wire 79
+  64,   8,  80  ! DC2, Plane V, wire 80
+  65,   8,  81  ! DC2, Plane V, wire 81
+  66,   8,  82  ! DC2, Plane V, wire 82
+  67,   8,  83  ! DC2, Plane V, wire 83
+  68,   8,  84  ! DC2, Plane V, wire 84
+  69,   8,  85  ! DC2, Plane V, wire 85
+  70,   8,  86  ! DC2, Plane V, wire 86
+  71,   8,  87  ! DC2, Plane V, wire 87
+  72,   8,  88  ! DC2, Plane V, wire 88
+  73,   8,  89  ! DC2, Plane V, wire 89
+  74,   8,  90  ! DC2, Plane V, wire 90
+  75,   8,  91  ! DC2, Plane V, wire 91
+  76,   8,  92  ! DC2, Plane V, wire 92
+  77,   8,  93  ! DC2, Plane V, wire 93
+  78,   8,  94  ! DC2, Plane V, wire 94
+  79,   8,  95  ! DC2, Plane V, wire 95
+  32,   8,  96  ! DC2, Plane V, wire 96
+  33,   8,  97  ! DC2, Plane V, wire 97
+  34,   8,  98  ! DC2, Plane V, wire 98
+  35,   8,  99  ! DC2, Plane V, wire 99
+  36,   8, 100  ! DC2, Plane V, wire 100
+  37,   8, 101  ! DC2, Plane V, wire 101
+  38,   8, 102  ! DC2, Plane V, wire 102
+  39,   8, 103  ! DC2, Plane V, wire 103
+  40,   8, 104  ! DC2, Plane V, wire 104
+  41,   8, 105  ! DC2, Plane V, wire 105
+  42,   8, 106  ! DC2, Plane V, wire 106
+  43,   8, 107  ! DC2, Plane V, wire 107
+
+SLOT=15
+REFCHAN=47
+  43,   7,   1  ! DC2, Plane V', wire 1
+  42,   7,   2  ! DC2, Plane V', wire 2
+  41,   7,   3  ! DC2, Plane V', wire 3
+  40,   7,   4  ! DC2, Plane V', wire 4
+  39,   7,   5  ! DC2, Plane V', wire 5
+  38,   7,   6  ! DC2, Plane V', wire 6
+  37,   7,   7  ! DC2, Plane V', wire 7
+  36,   7,   8  ! DC2, Plane V', wire 8
+  35,   7,   9  ! DC2, Plane V', wire 9
+  34,   7,  10  ! DC2, Plane V', wire 10
+  33,   7,  11  ! DC2, Plane V', wire 11
+  32,   7,  12  ! DC2, Plane V', wire 12
+  15,   7,  13  ! DC2, Plane V', wire 13
+  14,   7,  14  ! DC2, Plane V', wire 14
+  13,   7,  15  ! DC2, Plane V', wire 15
+  12,   7,  16  ! DC2, Plane V', wire 16
+  11,   7,  17  ! DC2, Plane V', wire 17
+  10,   7,  18  ! DC2, Plane V', wire 18
+   9,   7,  19  ! DC2, Plane V', wire 19
+   8,   7,  20  ! DC2, Plane V', wire 20
+   7,   7,  21  ! DC2, Plane V', wire 21
+   6,   7,  22  ! DC2, Plane V', wire 22
+   5,   7,  23  ! DC2, Plane V', wire 23
+   4,   7,  24  ! DC2, Plane V', wire 24
+   3,   7,  25  ! DC2, Plane V', wire 25
+   2,   7,  26  ! DC2, Plane V', wire 26
+   1,   7,  27  ! DC2, Plane V', wire 27
+   0,   7,  28  ! DC2, Plane V', wire 28
+
+SLOT=14
+REFCHAN=15
+  79,   7,  29  ! DC2, Plane V', wire 29
+  78,   7,  30  ! DC2, Plane V', wire 30
+  77,   7,  31  ! DC2, Plane V', wire 31
+  76,   7,  32  ! DC2, Plane V', wire 32
+  75,   7,  33  ! DC2, Plane V', wire 33
+  74,   7,  34  ! DC2, Plane V', wire 34
+  73,   7,  35  ! DC2, Plane V', wire 35
+  72,   7,  36  ! DC2, Plane V', wire 36
+  71,   7,  37  ! DC2, Plane V', wire 37
+  70,   7,  38  ! DC2, Plane V', wire 38
+  69,   7,  39  ! DC2, Plane V', wire 39
+  68,   7,  40  ! DC2, Plane V', wire 40
+  67,   7,  41  ! DC2, Plane V', wire 41
+  66,   7,  42  ! DC2, Plane V', wire 42
+  65,   7,  43  ! DC2, Plane V', wire 43
+  64,   7,  44  ! DC2, Plane V', wire 44
+
+SLOT=13
+REFCHAN=47
+  48,   7,  45  ! DC2, Plane V', wire 45
+  49,   7,  46  ! DC2, Plane V', wire 46
+  50,   7,  47  ! DC2, Plane V', wire 47
+  51,   7,  48  ! DC2, Plane V', wire 48
+  52,   7,  49  ! DC2, Plane V', wire 49
+  53,   7,  50  ! DC2, Plane V', wire 50
+  54,   7,  51  ! DC2, Plane V', wire 51
+  55,   7,  52  ! DC2, Plane V', wire 52
+  56,   7,  53  ! DC2, Plane V', wire 53
+  57,   7,  54  ! DC2, Plane V', wire 54
+  58,   7,  55  ! DC2, Plane V', wire 55
+  59,   7,  56  ! DC2, Plane V', wire 56
+  60,   7,  57  ! DC2, Plane V', wire 57
+  61,   7,  58  ! DC2, Plane V', wire 58
+  62,   7,  59  ! DC2, Plane V', wire 59
+  63,   7,  60  ! DC2, Plane V', wire 60
+
+SLOT=12
+REFCHAN=47
+  80,   7,  61  ! DC2, Plane V', wire 61
+  81,   7,  62  ! DC2, Plane V', wire 62
+  82,   7,  63  ! DC2, Plane V', wire 63
+  83,   7,  64  ! DC2, Plane V', wire 64
+  84,   7,  65  ! DC2, Plane V', wire 65
+  85,   7,  66  ! DC2, Plane V', wire 66
+  86,   7,  67  ! DC2, Plane V', wire 67
+  87,   7,  68  ! DC2, Plane V', wire 68
+  88,   7,  69  ! DC2, Plane V', wire 69
+  89,   7,  70  ! DC2, Plane V', wire 70
+  90,   7,  71  ! DC2, Plane V', wire 71
+  91,   7,  72  ! DC2, Plane V', wire 72
+  92,   7,  73  ! DC2, Plane V', wire 73
+  93,   7,  74  ! DC2, Plane V', wire 74
+  94,   7,  75  ! DC2, Plane V', wire 75
+  95,   7,  76  ! DC2, Plane V', wire 76
+  48,   7,  77  ! DC2, Plane V', wire 77
+  49,   7,  78  ! DC2, Plane V', wire 78
+  50,   7,  79  ! DC2, Plane V', wire 79
+  51,   7,  80  ! DC2, Plane V', wire 80
+  52,   7,  81  ! DC2, Plane V', wire 81
+  53,   7,  82  ! DC2, Plane V', wire 82
+  54,   7,  83  ! DC2, Plane V', wire 83
+  55,   7,  84  ! DC2, Plane V', wire 84
+  56,   7,  85  ! DC2, Plane V', wire 85
+  57,   7,  86  ! DC2, Plane V', wire 86
+  58,   7,  87  ! DC2, Plane V', wire 87
+  59,   7,  88  ! DC2, Plane V', wire 88
+  60,   7,  89  ! DC2, Plane V', wire 89
+  61,   7,  90  ! DC2, Plane V', wire 90
+  62,   7,  91  ! DC2, Plane V', wire 91
+  63,   7,  92  ! DC2, Plane V', wire 92
+
+SLOT=11
+REFCHAN=47
+  32,   7,  93  ! DC2, Plane V', wire 93
+  33,   7,  94  ! DC2, Plane V', wire 94
+  34,   7,  95  ! DC2, Plane V', wire 95
+  35,   7,  96  ! DC2, Plane V', wire 96
+  36,   7,  97  ! DC2, Plane V', wire 97
+  37,   7,  98  ! DC2, Plane V', wire 98
+  38,   7,  99  ! DC2, Plane V', wire 99
+  39,   7, 100  ! DC2, Plane V', wire 100
+  40,   7, 101  ! DC2, Plane V', wire 101
+  41,   7, 102  ! DC2, Plane V', wire 102
+  42,   7, 103  ! DC2, Plane V', wire 103
+  43,   7, 104  ! DC2, Plane V', wire 104
+  44,   7, 105  ! DC2, Plane V', wire 105
+  45,   7, 106  ! DC2, Plane V', wire 106
+  46,   7, 107  ! DC2, Plane V', wire 107
+
+SLOT=12
+REFCHAN=47
+ 111,  10,   1  ! DC2, Plane X, wire 1
+ 110,  10,   2  ! DC2, Plane X, wire 2
+ 109,  10,   3  ! DC2, Plane X, wire 3
+ 108,  10,   4  ! DC2, Plane X, wire 4
+ 107,  10,   5  ! DC2, Plane X, wire 5
+ 106,  10,   6  ! DC2, Plane X, wire 6
+ 105,  10,   7  ! DC2, Plane X, wire 7
+ 104,  10,   8  ! DC2, Plane X, wire 8
+ 103,  10,   9  ! DC2, Plane X, wire 9
+ 102,  10,  10  ! DC2, Plane X, wire 10
+ 101,  10,  11  ! DC2, Plane X, wire 11
+ 100,  10,  12  ! DC2, Plane X, wire 12
+  99,  10,  13  ! DC2, Plane X, wire 13
+  98,  10,  14  ! DC2, Plane X, wire 14
+  97,  10,  15  ! DC2, Plane X, wire 15
+  96,  10,  16  ! DC2, Plane X, wire 16
+  31,  10,  17  ! DC2, Plane X, wire 17
+  30,  10,  18  ! DC2, Plane X, wire 18
+  29,  10,  19  ! DC2, Plane X, wire 19
+  28,  10,  20  ! DC2, Plane X, wire 20
+  27,  10,  21  ! DC2, Plane X, wire 21
+  26,  10,  22  ! DC2, Plane X, wire 22
+  25,  10,  23  ! DC2, Plane X, wire 23
+  24,  10,  24  ! DC2, Plane X, wire 24
+  23,  10,  25  ! DC2, Plane X, wire 25
+  22,  10,  26  ! DC2, Plane X, wire 26
+  21,  10,  27  ! DC2, Plane X, wire 27
+  20,  10,  28  ! DC2, Plane X, wire 28
+  19,  10,  29  ! DC2, Plane X, wire 29
+  18,  10,  30  ! DC2, Plane X, wire 30
+  17,  10,  31  ! DC2, Plane X, wire 31
+  16,  10,  32  ! DC2, Plane X, wire 32
+
+SLOT=11
+REFCHAN=47
+  31,  10,  33  ! DC2, Plane X, wire 33
+  30,  10,  34  ! DC2, Plane X, wire 34
+  29,  10,  35  ! DC2, Plane X, wire 35
+  28,  10,  36  ! DC2, Plane X, wire 36
+  27,  10,  37  ! DC2, Plane X, wire 37
+  26,  10,  38  ! DC2, Plane X, wire 38
+  25,  10,  39  ! DC2, Plane X, wire 39
+  24,  10,  40  ! DC2, Plane X, wire 40
+  23,  10,  41  ! DC2, Plane X, wire 41
+  22,  10,  42  ! DC2, Plane X, wire 42
+  21,  10,  43  ! DC2, Plane X, wire 43
+  20,  10,  44  ! DC2, Plane X, wire 44
+  19,  10,  45  ! DC2, Plane X, wire 45
+  18,  10,  46  ! DC2, Plane X, wire 46
+  17,  10,  47  ! DC2, Plane X, wire 47
+  16,  10,  48  ! DC2, Plane X, wire 48
+
+SLOT=15
+REFCHAN=47
+  16,  10,  49  ! DC2, Plane X, wire 49
+  17,  10,  50  ! DC2, Plane X, wire 50
+  18,  10,  51  ! DC2, Plane X, wire 51
+  19,  10,  52  ! DC2, Plane X, wire 52
+  20,  10,  53  ! DC2, Plane X, wire 53
+  21,  10,  54  ! DC2, Plane X, wire 54
+  22,  10,  55  ! DC2, Plane X, wire 55
+  23,  10,  56  ! DC2, Plane X, wire 56
+  24,  10,  57  ! DC2, Plane X, wire 57
+  25,  10,  58  ! DC2, Plane X, wire 58
+  26,  10,  59  ! DC2, Plane X, wire 59
+  27,  10,  60  ! DC2, Plane X, wire 60
+  28,  10,  61  ! DC2, Plane X, wire 61
+  29,  10,  62  ! DC2, Plane X, wire 62
+  30,  10,  63  ! DC2, Plane X, wire 63
+  31,  10,  64  ! DC2, Plane X, wire 64
+
+SLOT=14
+REFCHAN=15
+  48,  10,  65  ! DC2, Plane X, wire 65
+  49,  10,  66  ! DC2, Plane X, wire 66
+  50,  10,  67  ! DC2, Plane X, wire 67
+  51,  10,  68  ! DC2, Plane X, wire 68
+  52,  10,  69  ! DC2, Plane X, wire 69
+  53,  10,  70  ! DC2, Plane X, wire 70
+  54,  10,  71  ! DC2, Plane X, wire 71
+  55,  10,  72  ! DC2, Plane X, wire 72
+  56,  10,  73  ! DC2, Plane X, wire 73
+  57,  10,  74  ! DC2, Plane X, wire 74
+  58,  10,  75  ! DC2, Plane X, wire 75
+  59,  10,  76  ! DC2, Plane X, wire 76
+  60,  10,  77  ! DC2, Plane X, wire 77
+  61,  10,  78  ! DC2, Plane X, wire 78
+  62,  10,  79  ! DC2, Plane X, wire 79
+
+SLOT=13
+REFCHAN=47
+ 126,   9,   1  ! DC2, Plane X', wire 1
+ 125,   9,   2  ! DC2, Plane X', wire 2
+ 124,   9,   3  ! DC2, Plane X', wire 3
+ 123,   9,   4  ! DC2, Plane X', wire 4
+ 122,   9,   5  ! DC2, Plane X', wire 5
+ 121,   9,   6  ! DC2, Plane X', wire 6
+ 120,   9,   7  ! DC2, Plane X', wire 7
+ 119,   9,   8  ! DC2, Plane X', wire 8
+ 118,   9,   9  ! DC2, Plane X', wire 9
+ 117,   9,  10  ! DC2, Plane X', wire 10
+ 116,   9,  11  ! DC2, Plane X', wire 11
+ 115,   9,  12  ! DC2, Plane X', wire 12
+ 114,   9,  13  ! DC2, Plane X', wire 13
+ 113,   9,  14  ! DC2, Plane X', wire 14
+ 112,   9,  15  ! DC2, Plane X', wire 15
+  15,   9,  16  ! DC2, Plane X', wire 16
+  14,   9,  17  ! DC2, Plane X', wire 17
+  13,   9,  18  ! DC2, Plane X', wire 18
+  12,   9,  19  ! DC2, Plane X', wire 19
+  11,   9,  20  ! DC2, Plane X', wire 20
+  10,   9,  21  ! DC2, Plane X', wire 21
+   9,   9,  22  ! DC2, Plane X', wire 22
+   8,   9,  23  ! DC2, Plane X', wire 23
+   7,   9,  24  ! DC2, Plane X', wire 24
+   6,   9,  25  ! DC2, Plane X', wire 25
+   5,   9,  26  ! DC2, Plane X', wire 26
+   4,   9,  27  ! DC2, Plane X', wire 27
+   3,   9,  28  ! DC2, Plane X', wire 28
+   2,   9,  29  ! DC2, Plane X', wire 29
+   1,   9,  30  ! DC2, Plane X', wire 30
+   0,   9,  31  ! DC2, Plane X', wire 31
+
+SLOT=11
+REFCHAN=47
+  96,   9,  32  ! DC2, Plane X', wire 32
+  97,   9,  33  ! DC2, Plane X', wire 33
+  98,   9,  34  ! DC2, Plane X', wire 34
+  99,   9,  35  ! DC2, Plane X', wire 35
+ 100,   9,  36  ! DC2, Plane X', wire 36
+ 101,   9,  37  ! DC2, Plane X', wire 37
+ 102,   9,  38  ! DC2, Plane X', wire 38
+ 103,   9,  39  ! DC2, Plane X', wire 39
+ 104,   9,  40  ! DC2, Plane X', wire 40
+ 105,   9,  41  ! DC2, Plane X', wire 41
+ 106,   9,  42  ! DC2, Plane X', wire 42
+ 107,   9,  43  ! DC2, Plane X', wire 43
+ 108,   9,  44  ! DC2, Plane X', wire 44
+ 109,   9,  45  ! DC2, Plane X', wire 45
+ 110,   9,  46  ! DC2, Plane X', wire 46
+ 111,   9,  47  ! DC2, Plane X', wire 47
+  64,   9,  48  ! DC2, Plane X', wire 48
+  65,   9,  49  ! DC2, Plane X', wire 49
+  66,   9,  50  ! DC2, Plane X', wire 50
+  67,   9,  51  ! DC2, Plane X', wire 51
+  68,   9,  52  ! DC2, Plane X', wire 52
+  69,   9,  53  ! DC2, Plane X', wire 53
+  70,   9,  54  ! DC2, Plane X', wire 54
+  71,   9,  55  ! DC2, Plane X', wire 55
+  72,   9,  56  ! DC2, Plane X', wire 56
+  73,   9,  57  ! DC2, Plane X', wire 57
+  74,   9,  58  ! DC2, Plane X', wire 58
+  75,   9,  59  ! DC2, Plane X', wire 59
+  76,   9,  60  ! DC2, Plane X', wire 60
+  77,   9,  61  ! DC2, Plane X', wire 61
+  78,   9,  62  ! DC2, Plane X', wire 62
+  79,   9,  63  ! DC2, Plane X', wire 63
+
+SLOT=10
+REFCHAN=79
+  96,   9,  64  ! DC2, Plane X', wire 64
+  97,   9,  65  ! DC2, Plane X', wire 65
+  98,   9,  66  ! DC2, Plane X', wire 66
+  99,   9,  67  ! DC2, Plane X', wire 67
+ 100,   9,  68  ! DC2, Plane X', wire 68
+ 101,   9,  69  ! DC2, Plane X', wire 69
+ 102,   9,  70  ! DC2, Plane X', wire 70
+ 103,   9,  71  ! DC2, Plane X', wire 71
+ 104,   9,  72  ! DC2, Plane X', wire 72
+ 105,   9,  73  ! DC2, Plane X', wire 73
+ 106,   9,  74  ! DC2, Plane X', wire 74
+ 107,   9,  75  ! DC2, Plane X', wire 75
+ 108,   9,  76  ! DC2, Plane X', wire 76
+ 109,   9,  77  ! DC2, Plane X', wire 77
+ 110,   9,  78  ! DC2, Plane X', wire 78
+ 111,   9,  79  ! DC2, Plane X', wire 79
+
+
+DETECTOR=23
+
+ROC=2
+
+
+SLOT=3
+   0,   1,   1,   0  ! p1x01A+
+   1,   1,   2,   0  ! p1x02A+
+   2,   1,   3,   0  ! p1x03A+
+   3,   1,   4,   0  ! p1x04A+
+   4,   1,   5,   0  ! p1x05A+
+   5,   1,   6,   0  ! p1x06A+
+   6,   1,   7,   0  ! p1x07A+
+   7,   1,   8,   0  ! p1x08A+
+   8,   1,   9,   0  ! p1x09A+
+   9,   1,  10,   0  ! p1x10A+
+  10,   1,  11,   0  ! p1x11A+
+  11,   1,  12,   0  ! p1x12A+
+  12,   1,  13,   0  ! p1x13A+
+  13,   1,   1,   1  ! p1x01A-
+  14,   1,   2,   1  ! p1x02A-
+  15,   1,   3,   1  ! p1x03A-
+
+SLOT=4
+   0,   1,   4,   1  ! p1x04A-
+   1,   1,   5,   1  ! p1x05A-
+   2,   1,   6,   1  ! p1x06A-
+   3,   1,   7,   1  ! p1x07A-
+   4,   1,   8,   1  ! p1x08A-
+   5,   1,   9,   1  ! p1x09A-
+   6,   1,  10,   1  ! p1x10A-
+   7,   1,  11,   1  ! p1x11A-
+   8,   1,  12,   1  ! p1x12A-
+   9,   1,  13,   1  ! p1x13A-
+  10,   2,   1,   1  ! p1y01A-
+  11,   2,   2,   1  ! p1y02A-
+  12,   2,   3,   1  ! p1y03A-
+  13,   2,   4,   1  ! p1y04A-
+  14,   2,   5,   1  ! p1y05A-
+  15,   2,   6,   1  ! p1y06A-
+
+SLOT=5
+   0,   2,   7,   1  ! p1y07A-
+   1,   2,   8,   1  ! p1y08A-
+   2,   2,   9,   1  ! p1y09A-
+   3,   2,  10,   1  ! p1y10A-
+   4,   2,  11,   1  ! p1y11A-
+   5,   2,  12,   1  ! p1y12A-
+   6,   2,  13,   1  ! p1y13A-
+   7,   2,   1,   0  ! p1y01A+
+   8,   2,   2,   0  ! p1y02A+
+   9,   2,   3,   0  ! p1y03A+
+  10,   2,   4,   0  ! p1y04A+
+  11,   2,   5,   0  ! p1y05A+
+  12,   2,   6,   0  ! p1y06A+
+  13,   2,   7,   0  ! p1y07A+
+  14,   2,   8,   0  ! p1y08A+
+  15,   2,   9,   0  ! p1y09A+
+
+SLOT=6
+   0,   2,  10,   0  ! p1y10A+
+   1,   2,  11,   0  ! p1y11A+
+   2,   2,  12,   0  ! p1y12A+
+   3,   2,  13,   0  ! p1y13A+
+   4,   3,   1,   0  ! p2x01A+
+   5,   3,   2,   0  ! p2x02A+
+   6,   3,   3,   0  ! p2x03A+
+   7,   3,   4,   0  ! p2x04A+
+   8,   3,   5,   0  ! p2x05A+
+   9,   3,   6,   0  ! p2x06A+
+  10,   3,   7,   0  ! p2x07A+
+  11,   3,   8,   0  ! p2x08A+
+  12,   3,   9,   0  ! p2x09A+
+  13,   3,  10,   0  ! p2x10A+
+  14,   3,  11,   0  ! p2x11A+
+  15,   3,  12,   0  ! p2x12A+
+
+SLOT=7
+   0,   3,  13,   0  ! p2x13A+
+   1,   3,  14,   0  ! p2x14A+
+   2,   3,   1,   1  ! p2x01A-
+   3,   3,   2,   1  ! p2x02A-
+   4,   3,   3,   1  ! p2x03A-
+   5,   3,   4,   1  ! p2x04A-
+   6,   3,   5,   1  ! p2x05A-
+   7,   3,   6,   1  ! p2x06A-
+   8,   3,   7,   1  ! p2x07A-
+   9,   3,   8,   1  ! p2x08A-
+  10,   3,   9,   1  ! p2x09A-
+  11,   3,  10,   1  ! p2x10A-
+  12,   3,  11,   1  ! p2x11A-
+  13,   3,  12,   1  ! p2x12A-
+  14,   3,  13,   1  ! p2x13A-
+  15,   3,  14,   1  ! p2x14A-
+
+SLOT=8
+   0,   4,   1,   1  ! p2y01A-
+   1,   4,   2,   1  ! p2y02A-
+   2,   4,   3,   1  ! p2y03A-
+   3,   4,   4,   1  ! p2y04A-
+   4,   4,   5,   1  ! p2y05A-
+   5,   4,   6,   1  ! p2y06A-
+   6,   4,   7,   1  ! p2y07A-
+   7,   4,   8,   1  ! p2y08A-
+   8,   4,   9,   1  ! p2y09A-
+   9,   4,  10,   1  ! p2y10A-
+  10,   4,  11,   1  ! p2y11A-
+  11,   4,  12,   1  ! p2y12A-
+  12,   4,  13,   1  ! p2y13A-
+  13,   4,  14,   1  ! p2y14A-
+  14,   4,  15,   1  ! p2y15A-
+  15,   4,  16,   1  ! p2y16A-
+
+SLOT=9
+   0,   4,  17,   1  ! p2y17A-
+   1,   4,  18,   1  ! p2y18A-
+   2,   4,  19,   1  ! p2y19A-
+   3,   4,  20,   1  ! p2y20A-
+   4,   4,  21,   1  ! p2y21A-
+   5,   4,   1,   0  ! p2y01A+
+   6,   4,   2,   0  ! p2y02A+
+   7,   4,   3,   0  ! p2y03A+
+   8,   4,   4,   0  ! p2y04A+
+   9,   4,   5,   0  ! p2y05A+
+  10,   4,   6,   0  ! p2y06A+
+  11,   4,   7,   0  ! p2y07A+
+  12,   4,   8,   0  ! p2y08A+
+  13,   4,   9,   0  ! p2y09A+
+  14,   4,  10,   0  ! p2y10A+
+  15,   4,  11,   0  ! p2y11A+
+
+SLOT=10
+   0,   4,  12,   0  ! p2y12A+
+   1,   4,  13,   0  ! p2y13A+
+   2,   4,  14,   0  ! p2y14A+
+   3,   4,  15,   0  ! p2y15A+
+   4,   4,  16,   0  ! p2y16A+
+   5,   4,  17,   0  ! p2y17A+
+   6,   4,  18,   0  ! p2y18A+
+   7,   4,  19,   0  ! p2y19A+
+   8,   4,  20,   0  ! p2y20A+
+   9,   4,  21,   0  ! p2y21A+
+
+SLOT=20
+REFINDEX=0
+  15,1000,   0,   0  ! pT1
+   0,   1,   1,   2  ! p1x01T+
+   1,   1,   3,   2  ! p1x03T+
+   2,   1,   5,   2  ! p1x05T+
+   3,   1,   7,   2  ! p1x07T+
+   4,   1,   2,   2  ! p1x02T+
+   5,   1,   4,   2  ! p1x04T+
+   6,   1,   6,   2  ! p1x06T+
+   7,   1,   8,   2  ! p1x08T+
+   8,   1,   9,   2  ! p1x09T+
+   9,   1,  11,   2  ! p1x11T+
+  10,   1,  13,   2  ! p1x13T+
+  12,   1,  10,   2  ! p1x10T+
+  13,   1,  12,   2  ! p1x12T+
+  16,   1,   1,   3  ! p1x01T-
+  17,   1,   3,   3  ! p1x03T-
+  18,   1,   5,   3  ! p1x05T-
+  19,   1,   7,   3  ! p1x07T-
+  20,   1,   2,   3  ! p1x02T-
+  21,   1,   4,   3  ! p1x04T-
+  22,   1,   6,   3  ! p1x06T-
+  23,   1,   8,   3  ! p1x08T-
+  24,   1,   9,   3  ! p1x09T-
+  25,   1,  11,   3  ! p1x11T-
+  26,   1,  13,   3  ! p1x13T-
+  28,   1,  10,   3  ! p1x10T-
+  30,   1,  12,   3  ! p1x12T-
+  32,   2,   1,   3  ! p1y01T-
+  33,   2,   3,   3  ! p1y03T-
+  34,   2,   5,   3  ! p1y05T-
+  35,   2,   7,   3  ! p1y07T-
+  36,   2,   2,   3  ! p1y02T-
+  37,   2,   4,   3  ! p1y04T-
+  38,   2,   6,   3  ! p1y06T-
+  39,   2,   8,   3  ! p1y08T-
+  40,   2,   9,   3  ! p1y09T-
+  41,   2,  11,   3  ! p1y11T-
+  42,   2,  13,   3  ! p1y13T-
+  44,   2,  10,   3  ! p1y10T-
+  45,   2,  12,   3  ! p1y12T-
+  48,   2,   1,   2  ! p1y01T+
+  49,   2,   3,   2  ! p1y03T+
+  50,   2,   5,   2  ! p1y05T+
+  51,   2,   7,   2  ! p1y07T+
+  52,   2,   2,   2  ! p1y02T+
+  53,   2,   4,   2  ! p1y04T+
+  54,   2,   6,   2  ! p1y06T+
+  55,   2,   8,   2  ! p1y08T+
+  56,   2,   9,   2  ! p1y09T+
+  57,   2,  11,   2  ! p1y11T+
+  58,   2,  13,   2  ! p1y13T+
+  60,   2,  10,   2  ! p1y10T+
+  61,   2,  12,   2  ! p1y12T+
+  64,   3,   1,   2  ! p2x01T+
+  65,   3,   3,   2  ! p2x03T+
+  66,   3,   5,   2  ! p2x05T+
+  67,   3,   7,   2  ! p2x07T+
+  68,   3,   2,   2  ! p2x02T+
+  69,   3,   4,   2  ! p2x04T+
+  70,   3,   6,   2  ! p2x06T+
+  71,   3,   8,   2  ! p2x08T+
+  72,   3,   9,   2  ! p2x09T+
+  73,   3,  11,   2  ! p2x11T+
+  74,   3,  13,   2  ! p2x13T+
+  76,   3,  10,   2  ! p2x10T+
+  77,   3,  12,   2  ! p2x12T+
+  78,   3,  14,   2  ! p2x14T+
+  80,   3,   1,   3  ! p2x01T-
+  81,   3,   3,   3  ! p2x03T-
+  82,   3,   5,   3  ! p2x05T-
+  83,   3,   7,   3  ! p2x07T-
+  84,   3,   2,   3  ! p2x02T-
+  85,   3,   4,   3  ! p2x04T-
+  86,   3,   6,   3  ! p2x06T-
+  87,   3,   8,   3  ! p2x08T-
+  88,   3,   9,   3  ! p2x09T-
+  89,   3,  11,   3  ! p2x11T-
+  90,   3,  13,   3  ! p2x13T-
+  92,   3,  10,   3  ! p2x10T-
+  93,   3,  12,   3  ! p2x12T-
+  94,   3,  14,   3  ! p2x14T-
+  96,   4,   1,   3  ! p2y01T-
+  97,   4,   3,   3  ! p2y03T-
+  98,   4,   5,   3  ! p2y05T-
+  99,   4,   7,   3  ! p2y07T-
+ 100,   4,   2,   3  ! p2y02T-
+ 101,   4,   4,   3  ! p2y04T-
+ 102,   4,   6,   3  ! p2y06T-
+ 103,   4,   8,   3  ! p2y08T-
+ 104,   4,   9,   3  ! p2y09T-
+ 105,   4,  11,   3  ! p2y11T-
+ 106,   4,  13,   3  ! p2y13T-
+ 107,   4,  15,   3  ! p2y15T-
+ 108,   4,  10,   3  ! p2y10T-
+ 109,   4,  12,   3  ! p2y12T-
+ 110,   4,  14,   3  ! p2y14T-
+ 111,   4,  16,   3  ! p2y16T-
+ 112,   4,  17,   3  ! p2y17T-
+ 113,   4,  19,   3  ! p2y19T-
+ 114,   4,  21,   3  ! p2y21T-
+ 116,   4,  18,   3  ! p2y18T-
+ 117,   4,  20,   3  ! p2y20T-
+
+SLOT=19
+REFINDEX=1
+  31,1000,   0,   1  ! pT2
+   0,   4,   1,   2  ! p2y01T+
+   1,   4,   3,   2  ! p2y03T+
+   2,   4,   5,   2  ! p2y05T+
+   3,   4,   7,   2  ! p2y07T+
+   4,   4,   2,   2  ! p2y02T+
+   5,   4,   4,   2  ! p2y04T+
+   6,   4,   6,   2  ! p2y06T+
+   7,   4,   8,   2  ! p2y08T+
+   8,   4,   9,   2  ! p2y09T+
+   9,   4,  11,   2  ! p2y11T+
+  10,   4,  13,   2  ! p2y13T+
+  11,   4,  15,   2  ! p2y15T+
+  12,   4,  10,   2  ! p2y10T+
+  13,   4,  12,   2  ! p2y12T+
+  14,   4,  14,   2  ! p2y14T+
+  15,   4,  16,   2  ! p2y16T+
+  16,   4,  17,   2  ! p2y17T+
+  17,   4,  19,   2  ! p2y19T+
+  18,   4,  21,   2  ! p2y21T+
+  20,   4,  18,   2  ! p2y18T+
+  21,   4,  20,   2  ! p2y20T+
+
+
+DETECTOR=24
+
+ROC=2
+
+
+SLOT=13
+  12,   1,   1,   0  ! pHGCER01
+  13,   1,   2,   0  ! pHGCER02
+  14,   1,   3,   0  ! pHGCER03
+  15,   1,   4,   0  ! pHGCER04
+
+
+DETECTOR=25
+
+ROC=2
+
+
+SLOT=10
+  10,   1,   1,   0  ! pAER01+
+  11,   1,   2,   0  ! pAER02+
+  12,   1,   3,   0  ! pAER03+
+  13,   1,   4,   0  ! pAER04+
+  14,   1,   5,   0  ! pAER05+
+  15,   1,   6,   0  ! pAER06+
+
+SLOT=13
+   0,   1,   7,   0  ! pAER07+
+   1,   1,   1,   1  ! pAER01-
+   2,   1,   2,   1  ! pAER02-
+   3,   1,   3,   1  ! pAER03-
+   4,   1,   4,   1  ! pAER04-
+   5,   1,   5,   1  ! pAER05-
+   6,   1,   6,   1  ! pAER06-
+   7,   1,   7,   1  ! pAER07-
+
+
+DETECTOR=26
+
+ROC=2
+
+
+ROC=4
+
+SLOT=3
+   0,   1,   1,   0  ! pPRSH1+
+   1,   1,   2,   0  ! pPRSH2+
+   2,   1,   3,   0  ! pPRSH3+
+   3,   1,   4,   0  ! pPRSH4+
+   4,   1,   5,   0  ! pPRSH5+
+   5,   1,   6,   0  ! pPRSH6+
+   6,   1,   7,   0  ! pPRSH7+
+   7,   1,   8,   0  ! pPRSH8+
+   8,   1,   9,   0  ! pPRSH9+
+   9,   1,  10,   0  ! pPRSH10+
+  10,   1,  11,   0  ! pPRSH11+
+  11,   1,  12,   0  ! pPRSH12+
+  12,   1,  13,   0  ! pPRSH13+
+  13,   1,  14,   0  ! pPRSH14+
+
+SLOT=4
+   0,   1,   1,   1  ! pPRSH1-
+   1,   1,   2,   1  ! pPRSH2-
+   2,   1,   3,   1  ! pPRSH3-
+   3,   1,   4,   1  ! pPRSH4-
+   4,   1,   5,   1  ! pPRSH5-
+   5,   1,   6,   1  ! pPRSH6-
+   6,   1,   7,   1  ! pPRSH7-
+   7,   1,   8,   1  ! pPRSH8-
+   8,   1,   9,   1  ! pPRSH9-
+   9,   1,  10,   1  ! pPRSH10-
+  10,   1,  11,   1  ! pPRSH11-
+  11,   1,  12,   1  ! pPRSH12-
+  12,   1,  13,   1  ! pPRSH13-
+  13,   1,  14,   1  ! pPRSH14-
+
+SLOT=5
+   0,   2,   1,   0  ! Row 1, Column 1
+   1,   2,   2,   0  ! Row 2, Column 1
+   2,   2,   3,   0  ! Row 3, Column 1
+   3,   2,   4,   0  ! Row 4, Column 1
+   4,   2,   5,   0  ! Row 5, Column 1
+   5,   2,   6,   0  ! Row 6, Column 1
+   6,   2,   7,   0  ! Row 7, Column 1
+   7,   2,   8,   0  ! Row 8, Column 1
+   8,   2,   9,   0  ! Row 9, Column 1
+   9,   2,  10,   0  ! Row 10, Column 1
+  10,   2,  11,   0  ! Row 11, Column 1
+  11,   2,  12,   0  ! Row 12, Column 1
+  12,   2,  13,   0  ! Row 13, Column 1
+  13,   2,  14,   0  ! Row 14, Column 1
+  14,   2,  15,   0  ! Row 15, Column 1
+  15,   2,  16,   0  ! Row 16, Column 1
+
+SLOT=6
+   0,   2,  17,   0  ! Row 1, Column 2
+   1,   2,  18,   0  ! Row 2, Column 2
+   2,   2,  19,   0  ! Row 3, Column 2
+   3,   2,  20,   0  ! Row 4, Column 2
+   4,   2,  21,   0  ! Row 5, Column 2
+   5,   2,  22,   0  ! Row 6, Column 2
+   6,   2,  23,   0  ! Row 7, Column 2
+   7,   2,  24,   0  ! Row 8, Column 2
+   8,   2,  25,   0  ! Row 9, Column 2
+   9,   2,  26,   0  ! Row 10, Column 2
+  10,   2,  27,   0  ! Row 11, Column 2
+  11,   2,  28,   0  ! Row 12, Column 2
+  12,   2,  29,   0  ! Row 13, Column 2
+  13,   2,  30,   0  ! Row 14, Column 2
+  14,   2,  31,   0  ! Row 15, Column 2
+  15,   2,  32,   0  ! Row 16, Column 2
+
+SLOT=7
+   0,   2,  33,   0  ! Row 1, Column 3
+   1,   2,  34,   0  ! Row 2, Column 3
+   2,   2,  35,   0  ! Row 3, Column 3
+   3,   2,  36,   0  ! Row 4, Column 3
+   4,   2,  37,   0  ! Row 5, Column 3
+   5,   2,  38,   0  ! Row 6, Column 3
+   6,   2,  39,   0  ! Row 7, Column 3
+   7,   2,  40,   0  ! Row 8, Column 3
+   8,   2,  41,   0  ! Row 9, Column 3
+   9,   2,  42,   0  ! Row 10, Column 3
+  10,   2,  43,   0  ! Row 11, Column 3
+  11,   2,  44,   0  ! Row 12, Column 3
+  12,   2,  45,   0  ! Row 13, Column 3
+  13,   2,  46,   0  ! Row 14, Column 3
+  14,   2,  47,   0  ! Row 15, Column 3
+  15,   2,  48,   0  ! Row 16, Column 3
+
+SLOT=8
+   0,   2,  49,   0  ! Row 1, Column 4
+   1,   2,  50,   0  ! Row 2, Column 4
+   2,   2,  51,   0  ! Row 3, Column 4
+   3,   2,  52,   0  ! Row 4, Column 4
+   4,   2,  53,   0  ! Row 5, Column 4
+   5,   2,  54,   0  ! Row 6, Column 4
+   6,   2,  55,   0  ! Row 7, Column 4
+   7,   2,  56,   0  ! Row 8, Column 4
+   8,   2,  57,   0  ! Row 9, Column 4
+   9,   2,  58,   0  ! Row 10, Column 4
+  10,   2,  59,   0  ! Row 11, Column 4
+  11,   2,  60,   0  ! Row 12, Column 4
+  12,   2,  61,   0  ! Row 13, Column 4
+  13,   2,  62,   0  ! Row 14, Column 4
+  14,   2,  63,   0  ! Row 15, Column 4
+  15,   2,  64,   0  ! Row 16, Column 4
+
+SLOT=9
+   0,   2,  65,   0  ! Row 1, Column 5
+   1,   2,  66,   0  ! Row 2, Column 5
+   2,   2,  67,   0  ! Row 3, Column 5
+   3,   2,  68,   0  ! Row 4, Column 5
+   4,   2,  69,   0  ! Row 5, Column 5
+   5,   2,  70,   0  ! Row 6, Column 5
+   6,   2,  71,   0  ! Row 7, Column 5
+   7,   2,  72,   0  ! Row 8, Column 5
+   8,   2,  73,   0  ! Row 9, Column 5
+   9,   2,  74,   0  ! Row 10, Column 5
+  10,   2,  75,   0  ! Row 11, Column 5
+  11,   2,  76,   0  ! Row 12, Column 5
+  12,   2,  77,   0  ! Row 13, Column 5
+  13,   2,  78,   0  ! Row 14, Column 5
+  14,   2,  79,   0  ! Row 15, Column 5
+  15,   2,  80,   0  ! Row 16, Column 5
+
+SLOT=10
+   0,   2,  81,   0  ! Row 1, Column 6
+   1,   2,  82,   0  ! Row 2, Column 6
+   2,   2,  83,   0  ! Row 3, Column 6
+   3,   2,  84,   0  ! Row 4, Column 6
+   4,   2,  85,   0  ! Row 5, Column 6
+   5,   2,  86,   0  ! Row 6, Column 6
+   6,   2,  87,   0  ! Row 7, Column 6
+   7,   2,  88,   0  ! Row 8, Column 6
+   8,   2,  89,   0  ! Row 9, Column 6
+   9,   2,  90,   0  ! Row 10, Column 6
+  10,   2,  91,   0  ! Row 11, Column 6
+  11,   2,  92,   0  ! Row 12, Column 6
+  12,   2,  93,   0  ! Row 13, Column 6
+  13,   2,  94,   0  ! Row 14, Column 6
+  14,   2,  95,   0  ! Row 15, Column 6
+  15,   2,  96,   0  ! Row 16, Column 6
+
+SLOT=13
+   0,   2,  97,   0  ! Row 1, Column 7
+   1,   2,  98,   0  ! Row 2, Column 7
+   2,   2,  99,   0  ! Row 3, Column 7
+   3,   2, 100,   0  ! Row 4, Column 7
+   4,   2, 101,   0  ! Row 5, Column 7
+   5,   2, 102,   0  ! Row 6, Column 7
+   6,   2, 103,   0  ! Row 7, Column 7
+   7,   2, 104,   0  ! Row 8, Column 7
+   8,   2, 105,   0  ! Row 9, Column 7
+   9,   2, 106,   0  ! Row 10, Column 7
+  10,   2, 107,   0  ! Row 11, Column 7
+  11,   2, 108,   0  ! Row 12, Column 7
+  12,   2, 109,   0  ! Row 13, Column 7
+  13,   2, 110,   0  ! Row 14, Column 7
+  14,   2, 111,   0  ! Row 15, Column 7
+  15,   2, 112,   0  ! Row 16, Column 7
+
+SLOT=14
+   0,   2, 113,   0  ! Row 1, Column 8
+   1,   2, 114,   0  ! Row 2, Column 8
+   2,   2, 115,   0  ! Row 3, Column 8
+   3,   2, 116,   0  ! Row 4, Column 8
+   4,   2, 117,   0  ! Row 5, Column 8
+   5,   2, 118,   0  ! Row 6, Column 8
+   6,   2, 119,   0  ! Row 7, Column 8
+   7,   2, 120,   0  ! Row 8, Column 8
+   8,   2, 121,   0  ! Row 9, Column 8
+   9,   2, 122,   0  ! Row 10, Column 8
+  10,   2, 123,   0  ! Row 11, Column 8
+  11,   2, 124,   0  ! Row 12, Column 8
+  12,   2, 125,   0  ! Row 13, Column 8
+  13,   2, 126,   0  ! Row 14, Column 8
+  14,   2, 127,   0  ! Row 15, Column 8
+  15,   2, 128,   0  ! Row 16, Column 8
+
+SLOT=15
+   0,   2, 129,   0  ! Row 1, Column 9
+   1,   2, 130,   0  ! Row 2, Column 9
+   2,   2, 131,   0  ! Row 3, Column 9
+   3,   2, 132,   0  ! Row 4, Column 9
+   4,   2, 133,   0  ! Row 5, Column 9
+   5,   2, 134,   0  ! Row 6, Column 9
+   6,   2, 135,   0  ! Row 7, Column 9
+   7,   2, 136,   0  ! Row 8, Column 9
+   8,   2, 137,   0  ! Row 9, Column 9
+   9,   2, 138,   0  ! Row 10, Column 9
+  10,   2, 139,   0  ! Row 11, Column 9
+  11,   2, 140,   0  ! Row 12, Column 9
+  12,   2, 141,   0  ! Row 13, Column 9
+  13,   2, 142,   0  ! Row 14, Column 9
+  14,   2, 143,   0  ! Row 15, Column 9
+  15,   2, 144,   0  ! Row 16, Column 9
+
+SLOT=16
+   0,   2, 145,   0  ! Row 1, Column 10
+   1,   2, 146,   0  ! Row 2, Column 10
+   2,   2, 147,   0  ! Row 3, Column 10
+   3,   2, 148,   0  ! Row 4, Column 10
+   4,   2, 149,   0  ! Row 5, Column 10
+   5,   2, 150,   0  ! Row 6, Column 10
+   6,   2, 151,   0  ! Row 7, Column 10
+   7,   2, 152,   0  ! Row 8, Column 10
+   8,   2, 153,   0  ! Row 9, Column 10
+   9,   2, 154,   0  ! Row 10, Column 10
+  10,   2, 155,   0  ! Row 11, Column 10
+  11,   2, 156,   0  ! Row 12, Column 10
+  12,   2, 157,   0  ! Row 13, Column 10
+  13,   2, 158,   0  ! Row 14, Column 10
+  14,   2, 159,   0  ! Row 15, Column 10
+  15,   2, 160,   0  ! Row 16, Column 10
+
+SLOT=17
+   0,   2, 161,   0  ! Row 1, Column 11
+   1,   2, 162,   0  ! Row 2, Column 11
+   2,   2, 163,   0  ! Row 3, Column 11
+   3,   2, 164,   0  ! Row 4, Column 11
+   4,   2, 165,   0  ! Row 5, Column 11
+   5,   2, 166,   0  ! Row 6, Column 11
+   6,   2, 167,   0  ! Row 7, Column 11
+   7,   2, 168,   0  ! Row 8, Column 11
+   8,   2, 169,   0  ! Row 9, Column 11
+   9,   2, 170,   0  ! Row 10, Column 11
+  10,   2, 171,   0  ! Row 11, Column 11
+  11,   2, 172,   0  ! Row 12, Column 11
+  12,   2, 173,   0  ! Row 13, Column 11
+  13,   2, 174,   0  ! Row 14, Column 11
+  14,   2, 175,   0  ! Row 15, Column 11
+  15,   2, 176,   0  ! Row 16, Column 11
+
+SLOT=18
+   0,   2, 177,   0  ! Row 1, Column 12
+   1,   2, 178,   0  ! Row 2, Column 12
+   2,   2, 179,   0  ! Row 3, Column 12
+   3,   2, 180,   0  ! Row 4, Column 12
+   4,   2, 181,   0  ! Row 5, Column 12
+   5,   2, 182,   0  ! Row 6, Column 12
+   6,   2, 183,   0  ! Row 7, Column 12
+   7,   2, 184,   0  ! Row 8, Column 12
+   8,   2, 185,   0  ! Row 9, Column 12
+   9,   2, 186,   0  ! Row 10, Column 12
+  10,   2, 187,   0  ! Row 11, Column 12
+  11,   2, 188,   0  ! Row 12, Column 12
+  12,   2, 189,   0  ! Row 13, Column 12
+  13,   2, 190,   0  ! Row 14, Column 12
+  14,   2, 191,   0  ! Row 15, Column 12
+  15,   2, 192,   0  ! Row 16, Column 12
+
+SLOT=19
+   0,   2, 193,   0  ! Row 1, Column 13
+   1,   2, 194,   0  ! Row 2, Column 13
+   2,   2, 195,   0  ! Row 3, Column 13
+   3,   2, 196,   0  ! Row 4, Column 13
+   4,   2, 197,   0  ! Row 5, Column 13
+   5,   2, 198,   0  ! Row 6, Column 13
+   6,   2, 199,   0  ! Row 7, Column 13
+   7,   2, 200,   0  ! Row 8, Column 13
+   8,   2, 201,   0  ! Row 9, Column 13
+   9,   2, 202,   0  ! Row 10, Column 13
+  10,   2, 203,   0  ! Row 11, Column 13
+  11,   2, 204,   0  ! Row 12, Column 13
+  12,   2, 205,   0  ! Row 13, Column 13
+  13,   2, 206,   0  ! Row 14, Column 13
+  14,   2, 207,   0  ! Row 15, Column 13
+  15,   2, 208,   0  ! Row 16, Column 13
+
+SLOT=20
+   0,   2, 209,   0  ! Row 1, Column 14
+   1,   2, 210,   0  ! Row 2, Column 14
+   2,   2, 211,   0  ! Row 3, Column 14
+   3,   2, 212,   0  ! Row 4, Column 14
+   4,   2, 213,   0  ! Row 5, Column 14
+   5,   2, 214,   0  ! Row 6, Column 14
+   6,   2, 215,   0  ! Row 7, Column 14
+   7,   2, 216,   0  ! Row 8, Column 14
+   8,   2, 217,   0  ! Row 9, Column 14
+   9,   2, 218,   0  ! Row 10, Column 14
+  10,   2, 219,   0  ! Row 11, Column 14
+  11,   2, 220,   0  ! Row 12, Column 14
+  12,   2, 221,   0  ! Row 13, Column 14
+  13,   2, 222,   0  ! Row 14, Column 14
+  14,   2, 223,   0  ! Row 15, Column 14
+  15,   2, 224,   0  ! Row 16, Column 14
+
+
+DETECTOR=28
+
+ROC=2
+
+SLOT=14
+  12,   1,   1,   0  ! FR-XA
+  13,   1,   2,   0  ! FR-XB
+  14,   1,   3,   0  ! FR-YA
+  15,   1,   4,   0  ! FR-YB
