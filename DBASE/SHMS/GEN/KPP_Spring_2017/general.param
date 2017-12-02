@@ -1,0 +1,43 @@
+#real raddeg
+raddeg=3.14159265/180
+#real cminch
+cminch=2.54
+
+; General Hall-C parameter files
+#include "PARAM/GEN/genflags.param"
+#include "PARAM/GEN/gdebug.param"
+#include "PARAM/GEN/gtarget.param"
+#include "PARAM/GEN/gbeam.param"
+#include "PARAM/GEN/gscalers.param"
+
+; General SHMS parameter files
+; Note: shmsflags.param includes spectrometer offsets and options.
+#include "PARAM/SHMS/GEN/pcana.param"
+#include "PARAM/SHMS/GEN/pdebug.param"
+#include "PARAM/SHMS/GEN/shmsflags.param"
+#include "PARAM/SHMS/GEN/ptracking.param"
+
+; SHMS default geometry parameter files
+#include "PARAM/SHMS/NGCER/GEOM/pngcer_geom.param"
+#include "PARAM/SHMS/DC/GEOM/pdc_geom.param"
+#include "PARAM/SHMS/HODO/GEOM/phodo_geom.param"
+#include "PARAM/SHMS/HGCER/GEOM/phgcer_geom.param"
+#include "PARAM/SHMS/AERO/GEOM/paero_geom.param"
+#include "PARAM/SHMS/CAL/GEOM/pcal_geom.param"
+
+; SHMS default cut parameter files
+#include "PARAM/SHMS/NGCER/CUTS/pngcer_cuts.param"
+#include "PARAM/SHMS/DC/CUTS/pdc_cuts.param"
+#include "PARAM/SHMS/HODO/CUTS/KPP_Spring_2017/phodo_cuts.param"
+#include "PARAM/SHMS/HGCER/CUTS/phgcer_cuts.param"
+#include "PARAM/SHMS/AERO/CUTS/paero_cuts.param"
+#include "PARAM/SHMS/CAL/CUTS/pcal_cuts.param"
+
+; SHMS default calibration parameter files
+#include "PARAM/SHMS/NGCER/CALIB/pngcer_calib.param"
+#include "PARAM/SHMS/DC/CALIB/pdc_calib.param"
+#include "PARAM/SHMS/DC/CALIB/pdc_tzero_per_wire.param"
+#include "PARAM/SHMS/HODO/CALIB/phodo_calib.param"
+#include "PARAM/SHMS/HGCER/CALIB/phgcer_calib.param"
+#include "PARAM/SHMS/AERO/CALIB/paero_calib.param"
+#include "PARAM/SHMS/CAL/CALIB/pcal_calib.param"

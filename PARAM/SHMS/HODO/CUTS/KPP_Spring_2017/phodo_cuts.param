@@ -1,0 +1,46 @@
+; Cosmic flag for beta calculation
+
+pcosmicflag=0
+
+; for now manually set hte FADC mode
+;  1 == Use the pulse int - pulse ped
+;  2 == Use the sample integral - known ped
+;  3 == Use the sample integral - sample ped
+; if not set then defaults to use the raw pulse integral
+phodo_adc_mode=1
+
+phodo_adc_tdc_offset = 200., 200., 200., 200.
+; phodo_tdc_offset is array of time offsets for all paddles in a plane
+;   to move the tdc to between 0 and 4000 channels.
+phodo_tdc_offset = 1860, 2000, 2060, 2000
+
+; phodo set min and max fADC time window for all paddles in a plane in 'Channel' units
+;   the conversion is 0.0625 ns / channel for flash ADC 250
+phodo_AdcTimeWindowMin = -10000.,-10000., -10000., -10000.
+phodo_AdcTimeWindowMax = 10000., 10000., 10000., 10000.
+
+; pstart_time_center  center of allowed time window                             
+pstart_time_center = 32.                                                     
+
+; hstart_time_slop    1/2 width of time window                                  
+pstart_time_slop = 100.                                                       
+
+; pscin_tdc_min       minimum tdc value in hms scin                             
+pscin_tdc_min = -500                                                           
+
+; pscin_tdc_max       maximum allowed tdc value                                 
+pscin_tdc_max = 1000                                                        
+
+; pscin_tdc_to_time   scin tdc time per channel                                 
+pscin_tdc_to_time = 0.1                                                   
+
+; tof and you figured out good values
+ptof_tolerance = 100.0
+                                                                               
+; shms_tof_params                                                              
+; pnum_scin_counters, phodo_zpos, phodo_center_coord, phodo_width               
+; are all calculated within p_init_scin                                         
+;    phodo_pos_coord and phodo_neg_coord are not yet used                                                                                                    
+phodo_slop = 2.,  2.,  4.,  4.    
+
+ptofusinginvadc=1

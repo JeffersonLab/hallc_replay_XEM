@@ -3,6 +3,8 @@ g_ctp_parm_filename ="DBASE/SHMS/GEN/general.param"
 g_ctp_kinematics_filename ="DBASE/SHMS/STD/standard.kinematics"
 g_ctp_calib_filename ="DBASE/SHMS/GEN/default_det_calib_files.param"
 
+464-488
+g_ctp_parm_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/general.param"
 464-464
 g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_464.param"
 
