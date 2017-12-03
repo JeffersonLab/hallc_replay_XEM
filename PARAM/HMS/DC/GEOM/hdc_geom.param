@@ -42,20 +42,27 @@ hdc_readoutTB = -1, 1, -1, 1, 1, -1
 ; CHAMBER POSITION PARAMETERS
 
 ; x, y and z position of center for each wire chamber in cm.
-hdc_xcenter = 0.0,0.0; TODO - final survey
-hdc_ycenter = 0.0,0.0; 
 
-; 
-hdc_1_zpos = -52.0954;
+;HMS DC Surevy Source: Jefferson Lab Alignment Group Data Transmittal
+;dated 30 Nov. 2017, Checked #: C1832
+hdc_xcenter = -2.227,-2.232; ; obtained from 11/29/17 Survey
+hdc_ycenter = -0.01, 0.009; 
+
+;HMS DC Surevy Source: Jefferson Lab Alignment Group Data Transmittal
+;dated 30 Nov. 2017, Checked #: C1832 
+hdc_1_zpos = -52.0954 - 0.013;
 hdc_2_zpos =  29.2608;
 
 ; Roll, pitch and yaw for each wire chamber in degrees.
-hdc_1_roll = 0.0 ;
-hdc_2_roll = 0.0 ; 
-hdc_1_pitch = 0.0 ; 
-hdc_2_pitch =  0.0 ; 
-hdc_1_yaw = 0.0 ; 
-hdc_2_yaw = 0.0 ; 
+;Obtained from survey done on 11/29/17
+;HMS DC Surevy Source: Jefferson Lab Alignment Group Data Transmittal
+;dated 30 Nov. 2017, Checked #: C1832
+hdc_1_roll = -0.0034 ;   
+hdc_2_roll = 0.0026 ; 
+hdc_1_pitch = -0.0004 ; 
+hdc_2_pitch = -0.0069 ; 
+hdc_1_yaw = 0.0046 ; 
+hdc_2_yaw = -0.0079 ; 
 
 
 ; PLANE POSITION PARAMETERS
