@@ -21,8 +21,8 @@ TH1F htrig_h2y_tdc 'HMS h2y TDC Time; TDC Time (ns); Counts / 0.1 ns;' T.hms.h2Y
 TH1F htrig_h1T_tdc 'HMS h1X/h1Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.h1T_tdcTimeRaw 4000 0 4000
 TH1F htrig_h2T_tdc 'HMS h2X/h2Y Coincidence TDC Time; Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.h2T_tdcTimeRaw 4000 0 4000
 
-TH1F htrig_hT1_tdc 'HMS T1 Coincidence TDC Time (Slot 2); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT1_tdcTimeRaw 4000 0 4000
-TH1F htrig_hT2_tdc 'HMS T2 Coincidence TDC Time (Slot 20); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT2_tdcTimeRaw 4000 0 4000
+TH1F htrig_hT1_tdc 'HMS T1 Coincidence TDC Time (Slot 2, Channel 6); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT1_tdcTimeRaw 4000 0 4000
+TH1F htrig_hT2_tdc 'HMS T2 Coincidence TDC Time (Slot 20, Channel 127); Raw TDC Time (TDC Units); Counts / 1 TDC Units;' T.hms.hT2_tdcTimeRaw 4000 0 4000
 
 #----------------------------
 # HMS Raw DC TRIG Reference Time

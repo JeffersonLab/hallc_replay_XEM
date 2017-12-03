@@ -1,0 +1,9 @@
+####################
+# TARGET VARIABLES
+####################
+TH2F hgtr_xtar_vs_ytar   'HMS Golden Track X_{tar} vs Y_{tar}; Y_{tar} (cm) / 1 cm; X_{tar} (cm) / 1 cm' H.gtr.y H.gtr.x 40 -20 20 40 -20 20 hCleanTrack
+TH2F hgtr_xptar_vs_yptar 'HMS Golden Track X'_{tar} vs Y'_{tar}; Y'_{tar} / 0.002 rad; X'_{tar} / 0.002 rad' H.gtr.ph H.gtr.th 100 -.1 .1 100 -.1 .1 hCleanTrack
+TH2F hgtr_xtar_vs_yptar  'HMS Golden Track X_{tar} vs Y'_{tar}; Y'_{tar} / 0.002 rad; X_{tar} / 1 cm'  H.gtr.ph H.gtr.x 100 -.1 .1 40 -20 20 hCleanTrack
+TH2F hgtr_xtar_vs_xptar  'HMS Golden Track X_{tar} vs X'_{tar}; X'_{tar} / 0.002 rad; X_{tar} / 1 cm' H.gtr.th H.gtr.x 100 -.1 .1 40 -20 20 hCleanTrack
+TH2F hgtr_ytar_vs_yptar  'HMS Golden Track Y_{tar} vs Y'_{tar}; Y'_{tar} / 0.002 rad; Y_{tar} / 1 cm'  H.gtr.ph H.gtr.y 100 -.1 .1 40 -20 20 hCleanTrack
+TH2F hgtr_ytar_vs_xptar  'HMS Golden Track Y_{tar} vs X'_{tar}; X'_{tar} / 0.002 rad; Y_{tar} / 1 cm' H.gtr.th H.gtr.y 100 -.1 .1 40 -20 20 hCleanTrack
