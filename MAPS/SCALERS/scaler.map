@@ -14,32 +14,32 @@ DATE 4 1 2017
 
 # Setup for Hall C testing HMS hodoscopes, etc.
 
-xscaler-tabs     HMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig   5:Triggers
+xscaler-tabs     HMS 0:1X      1:1Y      2:2X      3:2Y      4:Trigger   5:Trigger
 xscaler-layout   HMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4    5:8x4
 xscaler-pageslot HMS 0:page0   1:page1   2:page2   3:page3   4:slot6  5:slot5
 
-xscaler-pagename HMS 0:'HMS Hodoscope X1'
-xscaler-pagename HMS 1:'HMS Hodoscope Y1'
-xscaler-pagename HMS 2:'HMS Hodoscope X2'
-xscaler-pagename HMS 3:'HMS Hodoscope Y2'
-xscaler-pagename HMS 4:'HMS Trigger,BCM and clock'
-xscaler-pagename HMS 5:'HMS Triggers'
+xscaler-pagename HMS 0:'HMS Hodoscope Plane 1X'
+xscaler-pagename HMS 1:'HMS Hodoscope Plane 1Y'
+xscaler-pagename HMS 2:'HMS Hodoscope Plane 2X'
+xscaler-pagename HMS 3:'HMS Hodoscope Plane 2Y'
+xscaler-pagename HMS 4:'HMS Trigger & Beamline'
+xscaler-pagename HMS 5:'HMS Trigger'
 
 xscaler-clock HMS slot:7 chan:1 rate:60 
 #####################################################################
 
 # Setup for Hall C testing SHMS hodoscopes, etc.
 
-xscaler-tabs     SHMS 0:X1      1:Y1      2:X2      3:Y2      4:Trig   5:Triggers
+xscaler-tabs     SHMS 0:1X      1:1Y      2:2X      3:2Y      4:Trigger   5:Trigger
 xscaler-layout   SHMS 0:8x4     1:8x4     2:8x4     3:8x4     4:8x4    5:8x4
 xscaler-pageslot SHMS 0:page0   1:page1   2:page2   3:page3   4:slot7  5:slot6
 
-xscaler-pagename SHMS 0:'SHMS Hodoscope X1'
-xscaler-pagename SHMS 1:'SHMS Hodoscope Y1'
-xscaler-pagename SHMS 2:'SHMS Hodoscope X2'
-xscaler-pagename SHMS 3:'SHMS Hodoscope Y2'
-xscaler-pagename SHMS 4:'SHMS Trigger,BCM and clock'
-xscaler-pagename SHMS 5:'SHMS Triggers'
+xscaler-pagename SHMS 0:'SHMS Hodoscope Plane 1X'
+xscaler-pagename SHMS 1:'SHMS Hodoscope Plane 1Y'
+xscaler-pagename SHMS 2:'SHMS Hodoscope Plane 2X'
+xscaler-pagename SHMS 3:'SHMS Hodoscope Plane 2Y'
+xscaler-pagename SHMS 4:'SHMS Trigger & Beamline'
+xscaler-pagename SHMS 5:'SHMS Trigger'
 
 xscaler-clock SHMS slot:8 chan:1 rate:60
 #####################################################################
@@ -194,18 +194,39 @@ hhod2y10-    0    4     3    28    1    3   HMS 2Y- paddle 10
 9/31         0    4     3    31    1    3   Empty
 
 # desc      hel crate slot start nchan page long-description
-hTRIG1       0    4     5    10    1    -1  HMS  TRIG1
-hTRIG2       0    4     5    11    1    -1  HMS  TRIG2
-hTRIG3       0    4     5    12    1    -1  HMS  TRIG3
-hTRIG4       0    4     5    13    1    -1  HMS  TRIG4
-hTRIG5       0    4     5    14    1    -1  HMS  TRIG5
-hTRIG6       0    4     5    15    1    -1  HMS  TRIG6
 pTRIG1       0    4     5    0     1    -1  SHMS TRIG1
 pTRIG2       0    4     5    1     1    -1  SHMS TRIG2
 pTRIG3       0    4     5    2     1    -1  SHMS TRIG3
 pTRIG4       0    4     5    3     1    -1  SHMS TRIG4
 pTRIG5       0    4     5    4     1    -1  SHMS TRIG5
 pTRIG6       0    4     5    5     1    -1  SHMS TRIG6
+12/6         0    5     6    6     1    -1  Empty
+12/7         0    5     6    7     1    -1  Empty
+12/8         0    5     6    8     1    -1  Empty
+12/9         0    5     6    9     1    -1  Empty
+hTRIG1       0    4     5    10    1    -1  HMS  TRIG1
+hTRIG2       0    4     5    11    1    -1  HMS  TRIG2
+hTRIG3       0    4     5    12    1    -1  HMS  TRIG3
+hTRIG4       0    4     5    13    1    -1  HMS  TRIG4
+hTRIG5       0    4     5    14    1    -1  HMS  TRIG5
+hTRIG6       0    4     5    15    1    -1  HMS  TRIG6
+pSTOF        0    4     5    16    1    -1  SHMS STOF
+pEL_LO       0    4     5    17    1    -1  SHMS EL_LO
+pEL_HI       0    4     5    18    1    -1  SHMS EL_HI
+pEL_REAL     0    4     5    19    1    -1  SHMS EL_REAL
+pEL_CLEAN    0    4     5    20    1    -1  SHMS EL_CLEAN
+12/21        0    4     5    21    1    -1  Empty
+12/22        0    4     5    22    1    -1  Empty
+12/23        0    4     5    23    1    -1  Empty
+hSTOF        0    4     5    24    1    -1  HMS STOF
+hEL_LO       0    4     5    25    1    -1  HMS EL_LO
+hEL_HI       0    4     5    26    1    -1  HMS EL_HI
+hEL_REAL     0    4     5    27    1    -1  HMS EL_REAL
+hEL_CLEAN    0    4     5    28    1    -1  HMS EL_CLEAN
+12/29        0    4     5    29    1    -1  Empty
+12/30        0    4     5    30    1    -1  Empty
+12/31        0    4     5    31    1    -1  Empty
+
 
 # desc      hel crate slot start nchan page long-description
 S1X          0    4     6    0     1    -1  HMS S1X
@@ -214,7 +235,7 @@ S2X          0    4     6    2     1    -1  HMS S2X
 S2Y          0    4     6    3     1    -1  HMS S2Y
 S1XS1Y       0    4     6    4     1    -1  HMS S1T
 S2XS2Y       0    4     6    5     1    -1  HMS S2T
-Trig         0    4     6    6     1    -1  HMS T1
+hTREF1       0    4     6    6     1    -1  HMS TREF1
 ASUM         0    4     6    7     1    -1  HMS ASUM
 BSUM         0    4     6    8     1    -1  HMS BSUM
 CSUM         0    4     6    9     1    -1  HMS CSUM
@@ -222,13 +243,22 @@ DSUM         0    4     6    10    1    -1  HMS DSUM
 PSHWRLO      0    4     6    11    1    -1  HMS PSHWRLO
 PSHWRHI      0    4     6    12    1    -1  HMS PSHWRHI
 SHWR         0    4     6    13    1    -1  HMS SHWR
-HOD_EDTM     0    4     6    14    1    -1  HMS HODO EDTM
+EDTM         0    4     6    14    1    -1  HMS EDTM
 CERSUM       0    4     6    15    1    -1  HMS CERSUM
-BCM4A        0    4     6    25    1    -1  bcm4a
-BCM4B        0    4     6    26    1    -1  bcm4b
-BCM1         0    4     6    27    1    -1  bcm1
-BCM2         0    4     6    28    1    -1  bcm2 
-BCM17        0    4     6    29    1    -1  bcm17
+21/16        0    4     6    16    1    -1  Empty
+21/17        0    4     6    17    1    -1  Empty
+21/18        0    4     6    18    1    -1  Empty
+21/19        0    4     6    19    1    -1  Empty
+21/20        0    4     6    20    1    -1  Empty
+21/21        0    4     6    21    1    -1  Empty
+21/22        0    4     6    22    1    -1  Empty
+21/23        0    4     6    23    1    -1  Empty
+21/24        0    4     6    24    1    -1  Empty
+BCM4A        0    4     6    25    1    -1  BCM4a
+BCM4B        0    4     6    26    1    -1  BCM4b
+BCM1         0    4     6    27    1    -1  BCM1
+BCM2         0    4     6    28    1    -1  BCM2 
+BCM17        0    4     6    29    1    -1  BCM17
 Unser        0    4     6    30    1    -1  Unser
 1Mhz         0    4     6    31    1    -1  1MHz  
                                         
@@ -432,29 +462,29 @@ pTRIG3       0    5     6    2     1    -1  SHMS TRIG3
 pTRIG4       0    5     6    3     1    -1  SHMS TRIG4
 pTRIG5       0    5     6    4     1    -1  SHMS TRIG5
 pTRIG6       0    5     6    5     1    -1  SHMS TRIG6
+12/6         0    5     6    6     1    -1  Empty
+12/7         0    5     6    7     1    -1  Empty
+12/8         0    5     6    8     1    -1  Empty
+12/9         0    5     6    9     1    -1  Empty
 hTRIG1       0    5     6    10    1    -1  HMS  TRIG1
 hTRIG2       0    5     6    11    1    -1  HMS  TRIG2
 hTRIG3       0    5     6    12    1    -1  HMS  TRIG3
 hTRIG4       0    5     6    13    1    -1  HMS  TRIG4
 hTRIG5       0    5     6    14    1    -1  HMS  TRIG5
 hTRIG6       0    5     6    15    1    -1  HMS  TRIG6
-12/6         0    5     6    6     1    -1  Empty
-12/7         0    5     6    7     1    -1  Empty
-12/8         0    5     6    8     1    -1  Empty
-12/9         0    5     6    9     1    -1  Empty
-12/16        0    5     6    16    1    -1  Empty
-12/17        0    5     6    17    1    -1  Empty
-12/18        0    5     6    18    1    -1  Empty
-12/19        0    5     6    19    1    -1  Empty
-12/20        0    5     6    20    1    -1  Empty
+pSTOF        0    5     6    16    1    -1  SHMS STOF
+pEL_LO       0    5     6    17    1    -1  SHMS EL_LO
+pEL_HI       0    5     6    18    1    -1  SHMS EL_HI
+pEL_REAL     0    5     6    19    1    -1  SHMS EL_REAL
+pEL_CLEAN    0    5     6    20    1    -1  SHMS EL_CLEAN
 12/21        0    5     6    21    1    -1  Empty
 12/22        0    5     6    22    1    -1  Empty
 12/23        0    5     6    23    1    -1  Empty
-12/24        0    5     6    24    1    -1  Empty
-12/25        0    5     6    25    1    -1  Empty
-12/26        0    5     6    26    1    -1  Empty
-12/27        0    5     6    27    1    -1  Empty
-12/28        0    5     6    28    1    -1  Empty
+hSTOF        0    5     6    24    1    -1  HMS STOF
+hEL_LO       0    5     6    25    1    -1  HMS EL_LO
+hEL_HI       0    5     6    26    1    -1  HMS EL_HI
+hEL_REAL     0    5     6    27    1    -1  HMS EL_REAL
+hEL_CLEAN    0    5     6    28    1    -1  HMS EL_CLEAN
 12/29        0    5     6    29    1    -1  Empty
 12/30        0    5     6    30    1    -1  Empty
 12/31        0    5     6    31    1    -1  Empty
@@ -466,18 +496,11 @@ S2X          0    5     7    2     1    -1  SHMS S2X
 S2Y          0    5     7    3     1    -1  SHMS S2Y
 S1XS1Y       0    5     7    4     1    -1  SHMS S1T
 S2XS2Y       0    5     7    5     1    -1  SHMS S2T
-Trig         0    5     7    6     1    -1  SHMS T1
+pTREF3       0    5     7    6     1    -1  SHMS TREF3
 AERO         0    5     7    7     1    -1  SHMS AERO
 HGC          0    5     7    8     1    -1  SHMS HGC
 NGC          0    5     7    9     1    -1  SHMS NGC
-HOD_EDTM     0    5     7    10    1    -1  SHMS HODO EDTM
-BCM4A        0    5     7    25    1    -1  bcm4a
-BCM4B        0    5     7    26    1    -1  bcm4b
-BCM1         0    5     7    27    1    -1  bcm1
-BCM2         0    5     7    28    1    -1  bcm2
-BCM17        0    5     7    29    1    -1  bcm17
-Unser        0    5     7    30    1    -1  Unser
-1Mhz         0    5     7    31    1    -1  1MHz
+EDTM         0    5     7    10    1    -1  SHMS EDTM
 13/11        0    5     7    11    1    -1  Empty
 13/12        0    5     7    12    1    -1  Empty
 13/13        0    5     7    13    1    -1  Empty
@@ -492,6 +515,13 @@ Unser        0    5     7    30    1    -1  Unser
 13/22        0    5     7    22    1    -1  Empty
 13/23        0    5     7    23    1    -1  Empty
 13/24        0    5     7    24    1    -1  Empty
+BCM4A        0    5     7    25    1    -1  BCM4a
+BCM4B        0    5     7    26    1    -1  BCM4b
+BCM1         0    5     7    27    1    -1  BCM1
+BCM2         0    5     7    28    1    -1  BCM2
+BCM17        0    5     7    29    1    -1  BCM17
+Unser        0    5     7    30    1    -1  Unser
+1Mhz         0    5     7    31    1    -1  1MHz
 
 # desc      hel crate slot start nchan page long-description
 clock        0    5     8    1     1    -1  clock

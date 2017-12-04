@@ -3803,20 +3803,30 @@ REFINDEX=0
   11,   2,  12,   1  ! hPSHWRLO
   12,   2,  13,   1  ! hPSHWRHI
   13,   2,  14,   1  ! hSHWR
-  14,   2,  15,   1  ! hHODO_EDTM
+  14,   2,  15,   1  ! hEDTM
   15,   2,  16,   1  ! hCERSUM
-  26,   2,  22,   1  ! hhTRIG1
-  27,   2,  23,   1  ! hhTRIG2
-  28,   2,  24,   1  ! hhTRIG3
-  29,   2,  25,   1  ! hhTRIG4
-  30,   2,  26,   1  ! hhTRIG5
-  31,   2,  27,   1  ! hhTRIG6
-  16,   2,  28,   1  ! hpTRIG1
-  17,   2,  29,   1  ! hpTRIG2
-  18,   2,  30,   1  ! hpTRIG3
-  19,   2,  31,   1  ! hpTRIG4
-  20,   2,  32,   1  ! hpTRIG5
-  21,   2,  33,   1  ! hpTRIG6
+  26,   2,  22,   1  ! hTRIG1_ROC1
+  27,   2,  23,   1  ! hTRIG2_ROC1
+  28,   2,  24,   1  ! hTRIG3_ROC1
+  29,   2,  25,   1  ! hTRIG4_ROC1
+  30,   2,  26,   1  ! hTRIG5_ROC1
+  31,   2,  27,   1  ! hTRIG6_ROC1
+  16,   2,  28,   1  ! pTRIG1_ROC1
+  17,   2,  29,   1  ! pTRIG2_ROC1
+  18,   2,  30,   1  ! pTRIG3_ROC1
+  19,   2,  31,   1  ! pTRIG4_ROC1
+  20,   2,  32,   1  ! pTRIG5_ROC1
+  21,   2,  33,   1  ! pTRIG6_ROC1
+  48,   2,  79,   1  ! pSTOF_ROC1
+  49,   2,  80,   1  ! pEL_LO_ROC1
+  50,   2,  81,   1  ! pEL_HI_ROC1
+  51,   2,  82,   1  ! pEL_REAL_ROC1
+  52,   2,  83,   1  ! pEL_CLEAN_ROC1
+  56,   2,  84,   1  ! hSTOF_ROC1
+  57,   2,  85,   1  ! hEL_LO_ROC1
+  58,   2,  86,   1  ! hEL_HI_ROC1
+  59,   2,  87,   1  ! hEL_REAL_ROC1
+  60,   2,  88,   1  ! hEL_CLEAN_ROC1
 
 SLOT=20
 REFINDEX=1
@@ -3841,7 +3851,6 @@ ROC=2
 
 SLOT=14
 REFINDEX=3
-  11,1000,   0,   3  ! pFADC_TREF_ROC2
    0,   1,  10,   0  ! pAERSUM
    1,   1,  11,   0  ! pHGCERSUM
    2,   1,  12,   0  ! pNGCERSUM
@@ -3866,19 +3875,29 @@ REFINDEX=0
   39,   2,  43,   1  ! pAERSUM
   40,   2,  44,   1  ! pHGCERSUM
   41,   2,  45,   1  ! pNGCERSUM
-  42,   2,  56,   1  ! pHODO_EDTM
-  48,   2,  57,   1  ! ppTRIG1
-  49,   2,  58,   1  ! ppTRIG2
-  50,   2,  59,   1  ! ppTRIG3
-  51,   2,  60,   1  ! ppTRIG4
-  52,   2,  61,   1  ! ppTRIG5
-  53,   2,  62,   1  ! ppTRIG6
-  58,   2,  63,   1  ! phTRIG1
-  59,   2,  64,   1  ! phTRIG2
-  60,   2,  65,   1  ! phTRIG3
-  61,   2,  66,   1  ! phTRIG4
-  62,   2,  67,   1  ! phTRIG5
-  63,   2,  68,   1  ! phTRIG6
+  42,   2,  56,   1  ! pEDTM
+  48,   2,  57,   1  ! pTRIG1_ROC2
+  49,   2,  58,   1  ! pTRIG2_ROC2
+  50,   2,  59,   1  ! pTRIG3_ROC2
+  51,   2,  60,   1  ! pTRIG4_ROC2
+  52,   2,  61,   1  ! pTRIG5_ROC2
+  53,   2,  62,   1  ! pTRIG6_ROC2
+  58,   2,  63,   1  ! hTRIG1_ROC2
+  59,   2,  64,   1  ! hTRIG2_ROC2
+  60,   2,  65,   1  ! hTRIG3_ROC2
+  61,   2,  66,   1  ! hTRIG4_ROC2
+  62,   2,  67,   1  ! hTRIG5_ROC2
+  63,   2,  68,   1  ! hTRIG6_ROC2
+  64,   2,  69,   1  ! pSTOF_ROC2
+  65,   2,  70,   1  ! pEL_LO_ROC2
+  66,   2,  71,   1  ! pEL_HI_ROC2
+  67,   2,  72,   1  ! pEL_REAL_ROC2
+  68,   2,  73,   1  ! pEL_CLEAN_ROC2
+  72,   2,  74,   1  ! hSTOF_ROC2
+  73,   2,  75,   1  ! hEL_LO_ROC2
+  74,   2,  76,   1  ! hEL_HI_ROC2
+  75,   2,  77,   1  ! hEL_REAL_ROC2
+  76,   2,  78,   1  ! hEL_CLEAN_ROC2
 
 ROC=6
 

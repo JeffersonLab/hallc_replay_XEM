@@ -46,34 +46,34 @@ Ps6_factor = {floor(2**(ghconfig_ti_ps[5] - 1) + 1):%d}
 * Triggers
 ***********
 
-HMS Triggers           : {H.Trig.scaler}
-Estimated HMS Triggers : {H.Trig.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
-HMS Trigger Rate       : {H.Trig.scalerRate/1000.:%.3f} kHz
+HMS Triggers           : {H.hTREF1.scaler}
+Estimated HMS Triggers : {H.hTREF1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+HMS Trigger Rate       : {H.hTREF1.scalerRate/1000.:%.3f} kHz
 Accepted HMS Triggers  : {triggers_accepted.npassed}
 HMS Event Types        : {hms_trigs.npassed}
 
-HMS Computer Live Time : {(hms_trigs.npassed / H.Trig.scaler)*100.0:%3.4f} %
-HMS Computer Dead Time : {100.0 - (hms_trigs.npassed / H.Trig.scaler)*100.0:%3.4f} %
+HMS Computer Live Time : {(hms_trigs.npassed / H.hTREF1.scaler)*100.0:%3.4f} %
+HMS Computer Dead Time : {100.0 - (hms_trigs.npassed / H.hTREF1.scaler)*100.0:%3.4f} %
 
 *******
 * EDTM
 *******
 
-EDTM Triggers           : {H.HOD_EDTM.scaler}
-Estimated EDTM Triggers : {H.HOD_EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
-EDTM Trigger Rate       : {H.HOD_EDTM.scalerRate/1000.:%.3f} kHz
+EDTM Triggers           : {H.EDTM.scaler}
+Estimated EDTM Triggers : {H.EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+EDTM Trigger Rate       : {H.EDTM.scalerRate/1000.:%.3f} kHz
 Accepted EDTM Triggers  : {edtm_accepted.npassed}
 
-Total Live Time (EDTM) : {(edtm_accepted.npassed / H.HOD_EDTM.scaler)*100.0:%3.4f} %
-Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.HOD_EDTM.scaler)*100.0:%3.4f} %
+Total Live Time (EDTM) : {(edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
 
 *******************
 * Physics Triggers
 *******************
 
-Physics Triggers           : {H.Trig.scaler - H.HOD_EDTM.scaler}
-Estimated Physics Triggers : {(H.Trig.scalerRate - H.HOD_EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
-Physics Trigger Rate       : {(H.Trig.scalerRate - H.HOD_EDTM.scalerRate)/1000.:%.3f} kHz
+Physics Triggers           : {H.hTREF1.scaler - H.EDTM.scaler}
+Estimated Physics Triggers : {(H.hTREF1.scalerRate - H.EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
+Physics Trigger Rate       : {(H.hTREF1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
 Accepted Physics Triggers  : {physics_accepted.npassed}
 
 *******************

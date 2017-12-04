@@ -84,7 +84,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // gHaPhysics->Add(pkin_secondary);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
-  pscaler->AddEvtType(1);
+  pscaler->AddEvtType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
 
@@ -125,7 +125,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(hkin_secondary);
   // Add event handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
-  hscaler->AddEvtType(4);
+  hscaler->AddEvtType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
