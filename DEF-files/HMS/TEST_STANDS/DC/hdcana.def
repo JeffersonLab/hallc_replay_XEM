@@ -175,3 +175,5 @@ TH2F hdc_xfp_vs_yfp 'HMS DC X_{fp} vs Y_{fp}; Y_{fp} (cm) / 1 cm; X_{fp} (cm) / 
 TH2F hdc_xpfp_vs_ypfp 'HMS DC X'_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X'_{fp} / 0.002 rad' H.dc.yp_fp H.dc.xp_fp 100 -.1 .1 100 -.1 .1
 TH2F hdc_xfp_vs_ypfp 'HMS DC X_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X_{fp} / 1 cm'  H.dc.yp_fp H.dc.x_fp 100 -.1 .1 100 -50 50 
 TH2F hdc_xfp_vs_xpfp 'HMS DC X_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; X_{fp} / 1 cm' H.dc.xp_fp H.dc.x_fp 100 -.1 .1 100 -50 50
+TH2F hdc_yfp_vs_xpfp 'HMS DC Y_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; Y_{fp} / 1 cm' H.dc.xp_fp H.dc.y_fp 100 -.1 .1 100 -50 50
+TH2F hdc_yfp_vs_ypfp 'HMS DC Y_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; Y_{fp} / 1 cm' H.dc.yp_fp H.dc.y_fp 100 -.1 .1 100 -50 50

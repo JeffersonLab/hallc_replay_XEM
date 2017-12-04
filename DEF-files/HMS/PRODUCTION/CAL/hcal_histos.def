@@ -47,7 +47,8 @@ TH2F hcal_ydiff_v_ytr 'HMS Cal (Cluster y - Track y) vs. (Track y); Track y (cm)
 TH1F hcal_ytrack      'HMS Cal Track y; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
 TH1F hcal_ytrack1     'HMS Cal Track y pos with no matching clust; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
 TH1F hcal_ytrack2     'HMS Cal Track y pos with no matching clust number of cluster=1; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
-
+TH2F hcal_xytrack      'HMS Cal Track X vs Track Y; Track Y / 1 cm; Track X / 1 cm' H.cal.ytrack H.cal.xtrack 200 -100 100 200 -100 100 H.dc.ntrack>0
+TH2F hcal_xyclusttrack 'HMS Cal Cluster X vs Cluster Y; Cluster Y / 1 cm; Cluster X / 1 cm' H.cal.yclusttrack H.cal.xclusttrack 200 -100 100 200 -100 100 H.cal.nclusttrack>-1&&H.dc.ntrack>0
 TH2F hcal_xtrack_vs_etrack 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hCleanTrack
 TH2F hcal_ytrack_vs_etrack 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hCleanTrack
 
