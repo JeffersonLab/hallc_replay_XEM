@@ -3,7 +3,7 @@
 Block: RawDecode
 
 Pedestal_event     g.evtyp == 99
-SHMS_event         g.evtyp == 7
+SHMS_event         g.evtyp == 1
 
 RawDecode_master  1
 

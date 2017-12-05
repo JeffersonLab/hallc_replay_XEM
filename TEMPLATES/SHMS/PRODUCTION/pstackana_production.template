@@ -23,15 +23,15 @@ Unser Counts: {P.Unser.scalerCut} 	Total Charge: {P.Unser.scalerChargeCut:%.3f} 
 
 SHMS triggers  :  {shms_trigs.npassed}
 
-Rate  :  {P.Trig.scalerRate/1000.:%7.3f} kHz
-Live Time : {(shms_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (shms_trigs.npassed / P.Trig.scaler)*100.0:%3.2f} %
+Rate  :  {P.pTREF3.scalerRate/1000.:%7.3f} kHz
+Live Time : {(shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
+Dead Time : {100.0 - (shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
 
 
 **DRIFT CHAMBER** 
-good_S1_time         Counts: {good_S1_time.npassed}     / all_trigs : {good_S1_time.npassed / all_trigs.npassed}       
-good_S2X_time        Counts: {good_S2X_time.npassed}    / all_trigs : {good_S2X_time.npassed / all_trigs.npassed}    
-good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / all_trigs : {good_S1_S2X_time.npassed / all_trigs.npassed}
+good_S1_time         Counts: {good_S1_time.npassed}     / shms_trigs : {good_S1_time.npassed / shms_trigs.npassed}       
+good_S2X_time        Counts: {good_S2X_time.npassed}    / shms_trigs : {good_S2X_time.npassed / shms_trigs.npassed}    
+good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / shms_trigs : {good_S1_S2X_time.npassed / shms_trigs.npassed}
 
 Chamber 1 hits > 0                        Counts: {shms_ch1_gt0.npassed} / shms_trigs : {shms_ch1_gt0.npassed / shms_trigs.npassed}         
 Chamber 2 hits > 0                   	  Counts: {shms_ch2_gt0.npassed} / shms_trigs : { shms_ch2_gt0.npassed / shms_trigs.npassed}        
@@ -91,23 +91,23 @@ shmsDC2_1hit_v2: {shmsDC2_1hit_v2.npassed}		;eff:
 shmsDC2_1hit_x2: {shmsDC2_1hit_x2.npassed}		;eff:
 
 "Good" means one or two hits per dc plane.
-goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
 
-goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
 
-goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(P.Trig.scaler+.0001):%5.3f}
-bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(P.pTREF3.scaler+.0001):%5.3f}
 
 realhdc1x1:	     {realhdc1x1.npassed}
 realhdc1u2:	     {realhdc1u2.npassed}
@@ -126,19 +126,19 @@ realhdc2x2:	     {realhdc2x2.npassed}
 **HODOSCOPE**
 
 "Any" means one or more hits per scint plane.
-anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(P.Trig.scaler+.0001):%5.3f}	BAD = ??
-anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(P.Trig.scaler+.0001):%5.3f}
-anyhs2x : {anyhs2x.npassed}		 eff: {anyhs2x.npassed/(P.Trig.scaler+.0001):%5.3f}
-anyhs2y : {anyhs2y.npassed}		 eff: {anyhs2y.npassed/(P.Trig.scaler+.0001):%5.3f} 
+anyhs1x : {anyhs1x.npassed}		 eff: {anyhs1x.npassed/(P.pTREF3.scaler+.0001):%5.3f}	BAD = ??
+anyhs1y : {anyhs1y.npassed}		 eff: {anyhs1y.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+anyhs2x : {anyhs2x.npassed}		 eff: {anyhs2x.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+anyhs2y : {anyhs2y.npassed}		 eff: {anyhs2y.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
 
 "Good" means one or two hits per scint plane.
-goodps1x : {goodps1x.npassed}		 eff: {goodps1x.npassed/(P.Trig.scaler+.0001):%5.3f}	BAD = ??
-goodps1y : {goodps1y.npassed}		 eff: {goodps1y.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps1  : {goodps1.npassed}		 eff: {goodps1.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(P.Trig.scaler+.0001):%5.3f}
-goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/(P.Trig.scaler+.0001):%5.3f}
+goodps1x : {goodps1x.npassed}		 eff: {goodps1x.npassed/(P.pTREF3.scaler+.0001):%5.3f}	BAD = ??
+goodps1y : {goodps1y.npassed}		 eff: {goodps1y.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodps1  : {goodps1.npassed}		 eff: {goodps1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodps2x : {goodps2x.npassed}		 eff: {goodps2x.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodps2y : {goodps2y.npassed}		 eff: {goodps2y.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodps2  : {goodps2.npassed}		 eff: {goodps2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodps1s2: {goodps1s2.npassed}		 eff: {goodps1s2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
 
 **CHERENKOVS AND CAL**
 cer_ng_elec   :	  {cer_ng_elec.npassed}
@@ -308,22 +308,22 @@ P2Y20-
 P2Y21-
 
 **TRACKING**
-pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(P.Trig.scaler+.0001):%5.3f} BAD = ??
-pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound2Track :{pFound2Track.npassed}	 eff: {pFound2Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound3Track :{pFound3Track.npassed}	 eff: {pFound3Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
-pFound4Track :{pFound4Track.npassed}	 eff: {pFound4Track.npassed/(P.Trig.scaler+.0001):%5.3f} 
+pFoundTrack  :{pFoundTrack.npassed}	 eff: {pFoundTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f} BAD = ??
+pFound1Track :{pFound1Track.npassed}	 eff: {pFound1Track.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
+pFound2Track :{pFound2Track.npassed}	 eff: {pFound2Track.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
+pFound3Track :{pFound3Track.npassed}	 eff: {pFound3Track.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
+pFound4Track :{pFound4Track.npassed}	 eff: {pFound4Track.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
 
-pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}	 BAD = ??
-1pCleanTrack:{1pCleanTrack.npassed}	 eff: {1pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f} 
-2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
-3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
-4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(P.Trig.scaler+.0001):%5.3f}
+pCleanTrack :{pCleanTrack.npassed}	 eff: {pCleanTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f}	 BAD = ??
+1pCleanTrack:{1pCleanTrack.npassed}	 eff: {1pCleanTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f} 
+2pCleanTrack:{2pCleanTrack.npassed}	 eff: {2pCleanTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+3pCleanTrack:{3pCleanTrack.npassed}	 eff: {3pCleanTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+4pCleanTrack:{4pCleanTrack.npassed}	 eff: {4pCleanTrack.npassed/(P.pTREF3.scaler+.0001):%5.3f}
 
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************
-ptrig                          : {shmscoin_event.npassed}
+ptrig                          : {SHMS_event.npassed}
 phitslt = passed hits/cham     : {shmsHitsLt.npassed}
 phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
 phitsplanessps = + sps         : {pSpacePoints.npassed}
