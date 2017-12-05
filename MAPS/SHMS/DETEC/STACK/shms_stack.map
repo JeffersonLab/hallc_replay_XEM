@@ -52,7 +52,18 @@ REFINDEX=0
   61,   2,  33,   1  ! hTRIG4
   62,   2,  34,   1  ! hTRIG5
   63,   2,  35,   1  ! hTRIG6
-
+  64,   2,  36,   1  ! pSTOF
+  65,   2,  37,   1  ! pEL_LO
+  66,   2,  38,   1  ! pEL_LO_CER
+  67,   2,  39,   1  ! pEL_HI
+  68,   2,  40,   1  ! pEL_REAL
+  69,   2,  41,   1  ! pEL_CLEAN
+  72,   2,  42,   1  ! hSTOF
+  73,   2,  43,   1  ! hEL_LO
+  74,   2,  44,   1  ! hEL_LO_CER
+  75,   2,  45,   1  ! hEL_HI
+  76,   2,  46,   1  ! hEL_REAL
+  77,   2,  47,   1  ! hEL_CLEAN
 ROC=6
 
 SLOT=6
