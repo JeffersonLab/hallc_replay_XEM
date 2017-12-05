@@ -14,11 +14,11 @@ pcal_arr_xstep = 9.
 pcal_arr_ystep = 9.
 pcal_arr_zsize = 70.0
 
-# Constants for the coordiante correction of the calorimeter energy depositions
-pcal_a_cor = 200.
-pcal_b_cor = 8000.
-pcal_c_cor = 64.36, 64.36	# for positive and negative sides
-pcal_d_cor =  1.66,  1.66
+# Constants for the coordinate correction of SHMS Preshower energy depositions
+pcal_a_cor = 106.73
+pcal_b_cor = 2.329
+pcal_c_cor = 0 0
+pcal_d_cor = 0 0
 
 ; Parameters copied from HMS
 ; Slope in x position.  Allowed distance between track and edge of block
