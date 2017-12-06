@@ -19,7 +19,7 @@
 ;
 
 ;saturation correction flag
-  genable_hms_satcorr = 2000 ;(0=disabled) - h_satcorr.f
+  hsatcorr = 2000 ; 
                           ; a correction to hsdelta event by event
                           ; for a problem in setting Q3 current.
                           ; There was an unknown zero offset in the Q3 current.
@@ -28,25 +28,12 @@
                           ; the corrections to delta.
                           ; Data taken with fields set by field99.f or earlier should set to 1999.
                           ; Data taken with fields set by field00.f or later should set to 2000.
+; These offsets are determined from elastic ep data.
 ; central field  correction
-  genable_hms_fieldcorr = 1 ; (1=disabled) - h_fieldcorr.f 
-                            ; Need to enable for experiments before Jan 2002 .
-			    ; experiments using field02 and field03 should disable. 
-;
-; The following offsets are applied to the central kinematic variables
-;  in h_apply_offsets.f  . These might be modified by an experiment
-;  after doing calibration with elastic ep.
-; The values below are from T. Horn 2003 analysis
-  hpcentral_offset = -0.25   ; sets hpcentral = hpcentral * ( 1. + hpcentral_offset / 100. )
-		    ; experiments earlier than April 2003 
-                    ; should use  about -0.3 which is the best
-                    ; estimate based on several previous experiments.
-  hthetacentral_offset = 0.0002 ; (rad) 
-                         ;htheta_lab=htheta_lab + hthetacentral_offset/degree 
-; This offset is determined from elastic ep data.
-; Must be added to ssxptar when used in calculating lab angles.
-; Example is in h_physics.f
-;
-  h_oopcentral_offset = 0.0011  ; (rad)
+  hpcentral_offset = -0.025   
+  hthetacentral_offset = 0.000 ; (rad) 
+  h_oopcentral_offset = 0.00  ; (rad)
+; sets hpcentral = hpcentral * ( 1. + hpcentral_offset / 100. )
+;      htheta_lab=htheta_lab + hthetacentral_offset/degree 
 
 
