@@ -8,7 +8,7 @@ void UserScript()
   const TString bpm_type[NBPMS_TYPES]={"RAW","SOF","POS"};
   TH1F* hbpm[NBPMS*NBPMS_POS*NBPMS_TYPES];
   Double_t bpm[NBPMS*NBPMS_POS*NBPMS_TYPES];
-  
+  Double_t ibcm1;
   //
   TTree *T=(TTree*)gDirectory->Get("E");
   Int_t totev=T->GetEntries();
@@ -18,15 +18,18 @@ void UserScript()
   for(UInt_t ip = 0; ip < NBPMS; ip++) {
   for(UInt_t is = 0; is < NBPMS_POS; is++) {
   for(UInt_t it = 0; it < NBPMS_TYPES; it++) {
+     
      h2dttitle= ";"+bpm_names[ip]+bpm_pos[is]+" "+bpm_type[it]+" (mm)  ;  Events ";
     h2dtname="uh"+bpm_names[ip]+bpm_pos[is]+bpm_type[it];
     hbpm[icnt]= new TH1F(h2dtname,h2dttitle,100,-10,10);
     list_name =bpm_names[ip]+"."+bpm_pos[is]+bpm_type[it];
     T->SetBranchAddress(list_name,&bpm[icnt]);
     icnt++;
+    
   }
   }
   }
+  T->SetBranchAddress("ibcm1",&ibcm1);
   // Loop over the events, filling the histograms
   //  cout << " looping over data " << endl;
   for(UInt_t iev = 0; iev < totev; iev++) {
@@ -34,7 +37,9 @@ void UserScript()
     //       cout << " get entry = " << iev << endl;
     T->GetEntry(iev);
      for(UInt_t ip = 0; ip < NBPMS*NBPMS_POS*NBPMS_TYPES; ip++) {
+       if (ibcm1>1){
        hbpm[ip]->Fill(bpm[ip]);
+       }
      }
     //
   }
