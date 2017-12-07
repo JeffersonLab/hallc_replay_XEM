@@ -6,3 +6,4 @@ block P.tr.*
 block P.gtr.*
 block P.kin.*
 block P.rb.*
+block P.react.*

@@ -53,7 +53,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   TRG->AddDetector(shms);
 
   // Set up the equipment to be analyzed.
-  THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
+  THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add Noble Gas Cherenkov to SHMS apparatus
   THcCherenkov* ngcer = new THcCherenkov("ngcer", "Noble Gas Cherenkov");
@@ -81,6 +81,8 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
+  THaReactionPoint* prp= new THaReactionPoint("P.react"," SHMS reaction point","P","P.rb");
+  gHaPhysics->Add(prp);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
   THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(kin);
@@ -96,6 +98,8 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
   pscaler->AddEvtType(1);
+  pscaler->AddEvtType(129);
+  pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
 
@@ -113,7 +117,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");
