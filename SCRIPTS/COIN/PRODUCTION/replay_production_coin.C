@@ -49,7 +49,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   //=:=:=:=
 
   // Set up the equipment to be analyzed.
-  THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
+  THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add Noble Gas Cherenkov to SHMS apparatus
   THcCherenkov* pngcer = new THcCherenkov("ngcer", "Noble Gas Cherenkov");
@@ -76,6 +76,8 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add Rastered Beam Apparatus
   THaApparatus* pbeam = new THcRasteredBeam("P.rb", "SHMS Rastered Beamline");
   gHaApps->Add(pbeam);
+  THaReactionPoint* prp= new THaReactionPoint("P.react"," SHMS reaction point","P","P.rb");
+  gHaPhysics->Add(prp);
   // Add Physics Module to calculate primary (scattered) beam kinematics
   THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(pkin_primary);
@@ -84,7 +86,9 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // gHaPhysics->Add(pkin_secondary);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
+  pscaler->AddEvtType(1);
   pscaler->AddEvtType(129);
+  pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
 
@@ -117,6 +121,8 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add Rastered Beam Apparatus
   THaApparatus* hbeam = new THcRasteredBeam("H.rb", "HMS Rastered Beamline");
   gHaApps->Add(hbeam);
+  THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
+  gHaPhysics->Add(hrp);
   // Add Physics Module to calculate primary (scattered) beam kinematics
   // THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "H.rb");
   // gHaPhysics->Add(hkin_primary);
@@ -125,7 +131,10 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(hkin_secondary);
   // Add event handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
+  hscaler->AddEvtType(2);
+  hscaler->AddEvtType(4);
   hscaler->AddEvtType(129);
+  hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
@@ -160,7 +169,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");
