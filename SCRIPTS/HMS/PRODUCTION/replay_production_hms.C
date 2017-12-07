@@ -51,7 +51,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   TRG->AddDetector(hms);
 
   // Set up the equipment to be analyzed.
-  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
+  THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
   // Add drift chambers to HMS apparatus
   THcDC* dc = new THcDC("dc", "Drift Chambers");
@@ -75,6 +75,8 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
   gHaApps->Add(beam);  
+  THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
+  gHaPhysics->Add(hrp);
 // Add Ideal Beam Apparatus
  // THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
  // gHaApps->Add(beam);
@@ -89,8 +91,10 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
-  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 1");  
-  hscaler->AddEvtType(1);
+  THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 2");  
+  hscaler->AddEvtType(2);
+  hscaler->AddEvtType(129);
+  hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
@@ -108,7 +112,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");

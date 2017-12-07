@@ -1,0 +1,4 @@
+TH1F hreactx 'HMS React x; React x (cm);' H.react.x 100 -5 5
+TH1F hreacty 'HMS React x; React y (cm);' H.react.y 100 -5 5
+TH1F hreactz 'HMS React x; React z (cm);' H.react.z 100 -15 15
+
