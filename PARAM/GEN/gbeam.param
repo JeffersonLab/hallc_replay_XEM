@@ -5,25 +5,25 @@
 ;gbpm_x_off = -0.284, -0.288, -0.326
 ;gbpm_y_off = -0.021, -0.020, -0.0045
 
-; average beam positions: only used if 'guse_bpm_in_recon=0' 
-  gbeam_xoff  = +0.00
-  gbeam_xpoff = +0.00
-  gbeam_yoff  = +0.00
-  gbeam_ypoff = +0.00
+; average beam positions:
+; Use the Hall C EPICS BPM values
+  gbeam_x = +0.00
+  gbeam_xp = +0.00
+  gbeam_y  = +0.00
+  gbeam_yp = +0.00
 
-;positions of BPMs relative to target (from Mark 2017)
+;positions of BPMs relative to target (from survey 2017)
 gbpm_zpos = 370.82, 224.96, 129.3 ; cm
 
 
 ;             Fast Raster calibration constants
 ;             =================================
-
+  gusefr               = 1  
 ; flag if 1 fast raster data used with average beam pos and angles in
 calculating beam position
 ; if 0 then only use average beam pos and angles in calculating beam position
 ; Various fast raster quantities: gUse* are flags
 
-  gusefr               = 1  ; if 1 correct for FRY in reconstruction
 
   gfr_cal_mom      = 6.4  ; = beam momnetum during calibration run 
 
