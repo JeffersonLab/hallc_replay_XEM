@@ -6,10 +6,9 @@
 #
 0-99999
 gpbeam = 6.4
-gtarg_num = 1
 ptheta_lab = 15.
 ppcentral = 3.
 ppartmass = 0.00051099
-ptargmass_amu=12.0107
+gtargmass_amu=12.0107
 465-465
 ppcentral = 0.750
