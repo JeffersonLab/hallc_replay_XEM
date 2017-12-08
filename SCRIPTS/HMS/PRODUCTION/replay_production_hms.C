@@ -77,12 +77,16 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHaApps->Add(beam);  
   THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
   gHaPhysics->Add(hrp);
+  THcExtTarCor* hext = new THcExtTarCor("H.extcor"," HMS extended target corrections","H","H.react");
+  gHaPhysics->Add(hext);
 // Add Ideal Beam Apparatus
  // THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
  // gHaApps->Add(beam);
   // Add Physics Module to calculate primary (scattered) beam kinematics
   THcPrimaryKine* hkin = new THcPrimaryKine("H.kin", "HMS Single Arm Kinematics", "H", "H.rb");
   gHaPhysics->Add(hkin);
+  THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
+  gHaPhysics->Add(heff);
 
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");

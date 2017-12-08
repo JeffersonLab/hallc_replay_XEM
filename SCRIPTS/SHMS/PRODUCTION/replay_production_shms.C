@@ -83,9 +83,13 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaApps->Add(beam);
   THaReactionPoint* prp= new THaReactionPoint("P.react"," SHMS reaction point","P","P.rb");
   gHaPhysics->Add(prp);
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
+  gHaPhysics->Add(pext);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
   THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(kin);
+ THcHodoEff* peff = new THcHodoEff("phodeff"," SHMS hodo efficiency","P.hod");
+  gHaPhysics->Add(peff);
 
    
 
