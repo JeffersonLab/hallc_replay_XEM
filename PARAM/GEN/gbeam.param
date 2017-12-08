@@ -1,12 +1,9 @@
 ;                    BPM calibration constants
 ;                    =========================
 
-;From Dave Gaskell's survey
-;gbpm_x_off = -0.284, -0.288, -0.326
-;gbpm_y_off = -0.021, -0.020, -0.0045
 
 ; average beam positions:
-; Use the Hall C EPICS BPM values
+; Use the Hall C EPICS BPM values in units of cm
   gbeam_x = +0.00
   gbeam_xp = +0.00
   gbeam_y  = +0.00
