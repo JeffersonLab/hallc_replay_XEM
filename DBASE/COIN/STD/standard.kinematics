@@ -1,11 +1,16 @@
+#
+# Need to set htheta_lab to a NEGATIVE value
+# Need to set ptheta_lab to a POSITIVE value
+# 1h gtargmass_amu=1.00794
+# 12C gtargmass_amu=12.0107
+# 27Al gtargmass_amu=26.98
+#
 0-99999
 gpbeam = 6.4
-gtarg_num = 1
-htheta_lab = 15.
+gtargmass_amu=12.0107
+htheta_lab = -15.
 ptheta_lab = 15.
 hpcentral = 3.
 ppcentral = 3.
 hpartmass = 0.00051099
 ppartmass = 0.00051099
-htargmass_amu = 12.0
-ptargmass_amu = 12.0
