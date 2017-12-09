@@ -28,6 +28,24 @@ Live Time : {(shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
 Dead Time : {100.0 - (shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
 
 
+***** Hodoscope Efficiency ********
+
+Plane 1: {phodo_plane_AND_eff[0]}
+Plane 2: {phodo_plane_AND_eff[1]}
+Plane 3: {phodo_plane_AND_eff[2]}
+Plane 4: {phodo_plane_AND_eff[3]}
+
+S1XY : {phodo_s1XY_eff}
+S2XY : {phodo_s2XY_eff}
+
+STOF: {phodo_stof_eff}
+
+3_of_4 EFF : {phodo_3_of_4_eff}
+4_of_4 EFF : {phodo_4_of_4_eff}
+
+***********************************
+
+
 **DRIFT CHAMBER** 
 good_S1_time         Counts: {good_S1_time.npassed}     / shms_trigs : {good_S1_time.npassed / shms_trigs.npassed}       
 good_S2X_time        Counts: {good_S2X_time.npassed}    / shms_trigs : {good_S2X_time.npassed / shms_trigs.npassed}    
