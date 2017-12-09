@@ -38,5 +38,6 @@ TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. P
 TH2F pngcer_good_pi_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.04 pC' [I+1] P.ngcer.goodAdcPulseInt 4 0.5 4.5 2000 0 80 P.ngcer.goodAdcPulseInt>0.0
 TH2F pngcer_good_rawpi_vs_pmt 'SHMS Noble Gas Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] P.ngcer.goodAdcPulseIntRaw 4 0.5 4.5 600 0 30000 P.ngcer.goodAdcPulseIntRaw>0.0
 TH2F pngcer_good_pamp_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' [I+1] P.ngcer.goodAdcPulseAmp 4 0.5 4.5 500 0 1000 P.ngcer.goodAdcPulseAmp>0.0
-TH2F pngcer_good_ptime_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] P.ngcer.goodAdcPulseTime 4 0.5 4.5 4000 0 400 P.ngcer.goodAdcPulseTime>0.0
+TH2F pngcer_good_ptime_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] P.ngcer.goodAdcPulseTime 4 0.5 4.5 4000 0 400 
+TH2F pngcer_good_dtime_vs_pmt 'SHMS Noble Gas Cherenkov Good Hodo start - Pulse Time vs. PMT Number; PMT Number; Hodo start - Pulse Time / 0.1 ns' [I+1] P.ngcer.goodAdcTdcDiffTime 4 0.5 4.5 4000 -200 200 
 

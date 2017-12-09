@@ -61,10 +61,12 @@ TH2F haero_good_pped_vs_pmt_pos 'HMS Aero+ Good Pulse Pedestal vs. PMT Number; P
 TH2F haero_good_pi_vs_pmt_pos 'HMS Aero+ Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] H.aero.goodPosAdcPulseInt 8 0.5 8.5 600 0 30000 H.aero.goodPosAdcPulseInt>0.0
 TH2F haero_good_raw_pi_vs_pmt_pos 'HMS Aero+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.aero.goodPosAdcPulseIntRaw 8 0.5 8.5 600 0 30000 H.aero.goodPosAdcPulseIntRaw>0.0
 TH2F haero_good_pamp_vs_pmt_pos 'HMS Aero+ Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] H.aero.goodPosAdcPulseAmp 8 0.5 8.5 200 0 4000 H.aero.goodPosAdcPulseAmp>0.0
-TH2F haero_good_ptime_vs_pmt_pos 'HMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodPosAdcPulseTime 8 0.5 8.5 350 0 3500 H.aero.goodPosAdcPulseTime>0.0
+TH2F haero_good_ptime_vs_pmt_pos 'HMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodPosAdcPulseTime 8 0.5 8.5 350 0 3500
+TH2F haero_good_dtime_vs_pmt_pos 'HMS Aero+ Good Hodo Starttime - adc pulse Time vs. PMT Number; PMT Number; Starttime - Pulse Time ' [I+1] H.aero.goodPosAdcTdcDiffTime 8 0.5 8.5 4000 -200 200
 
 TH2F haero_good_pped_vs_pmt_neg 'HMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] H.aero.goodNegAdcPed 8 0.5 8.5 400 300 700 H.aero.goodNegAdcPed>0.0
 TH2F haero_good_pi_vs_pmt_neg 'HMS Aero- Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] H.aero.goodNegAdcPulseInt 8 0.5 8.5 600 0 30000 H.aero.goodNegAdcPulseInt>0.0
 TH2F haero_good_raw_pi_vs_pmt_neg 'HMS Aero- Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.aero.goodNegAdcPulseIntRaw 8 0.5 8.5 600 0 30000 H.aero.goodNegAdcPulseIntRaw>0.0
 TH2F haero_good_pamp_vs_pmt_neg 'HMS Aero- Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] H.aero.goodNegAdcPulseAmp 8 0.5 8.5 200 0 4000 H.aero.goodNegAdcPulseAmp>0.0
-TH2F haero_good_ptime_vs_pmt_neg 'HMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodNegAdcPulseTime 8 0.5 8.5 350 0 3500 H.aero.goodNegAdcPulseTime>0.0
+TH2F haero_good_ptime_vs_pmt_neg 'HMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodNegAdcPulseTime 8 0.5 8.5 350 0 3500
+TH2F haero_good_dtime_vs_pmt_neg 'HMS Aero- Good Hodo Starttime - adc pulse Time vs. PMT Number; PMT Number; Starttime - Pulse Time ' [I+1] H.aero.goodNegAdcTdcDiffTime 8 0.5 8.5 4000 -200 200

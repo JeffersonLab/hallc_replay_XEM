@@ -140,6 +140,14 @@ TH2F hcal_hB_good_ptime_vs_pmt_neg 'HMS hB- Good Pulse Time vs. PMT Number; PMT 
 TH2F hcal_hC_good_ptime_vs_pmt_pos 'HMS hC+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.3ta.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.3ta.goodPosAdcPulseTime>0.0
 TH2F hcal_hD_good_ptime_vs_pmt_pos 'HMS hD+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] H.cal.4ta.goodPosAdcPulseTime 13 0.5 13.5 4000 0 400 H.cal.4ta.goodPosAdcPulseTime>0.0
 
+#Good Hodo Start - Pulse Times 
+TH2F hcal_hA_good_dtime_vs_pmt_pos 'HMS hA+ Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.1pr.goodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F hcal_hA_good_dtime_vs_pmt_neg 'HMS hA- Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.1pr.goodNegAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F hcal_hB_good_dtime_vs_pmt_pos 'HMS hB+ Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.2ta.goodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200
+TH2F hcal_hB_good_dtime_vs_pmt_neg 'HMS hB- Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.2ta.goodNegAdcTdcDiffTime 13 0.5 13.5 4000 -200 200
+TH2F hcal_hC_good_dtime_vs_pmt_pos 'HMS hC+ Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.3ta.goodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200
+TH2F hcal_hD_good_dtime_vs_pmt_pos 'HMS hD+ Good Hodo Start -Pulse Time vs. PMT Number; PMT Number; Good Hodo Start -Pulse Time / 0.1 ns' [I+1] H.cal.4ta.goodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200
+
 #GOOD RAW PULSE INTEGRALS 
 TH2F hcal_hA_good_raw_pi_vs_pmt_pos 'HMS hA+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodPosAdcPulseIntRaw 13 0.5 13.5 650 0 32500  H.cal.1pr.goodPosAdcPulseIntRaw>0.0
 TH2F hcal_hA_good_raw_pi_vs_pmt_neg 'HMS hA- Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] H.cal.1pr.goodNegAdcPulseIntRaw 13 0.5 13.5 650 0 32500  H.cal.1pr.goodNegAdcPulseIntRaw>0.0

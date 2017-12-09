@@ -36,4 +36,5 @@ TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PM
 TH2F hcer_good_pi_vs_pmt 'HMS Cherenkov Good Pulse Integral vs. PMT Number; PMT Number; Pulse Integral / 0.04 pC' [I+1] H.cer.goodAdcPulseInt 2 0.5 2.5 2000 0 80 H.cer.goodAdcPulseInt>0.0
 TH2F hcer_good_rawpi_vs_pmt 'HMS Cherenkov Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.cer.goodAdcPulseIntRaw 2 0.5 2.5 600 0 30000 H.cer.goodAdcPulseIntRaw>0.0
 TH2F hcer_good_pamp_vs_pmt 'HMS Cherenkov Good Pulse Amplitude vs. PMT Number; PMT Number; Pulse Amplitude / 2 mV' [I+1] H.cer.goodAdcPulseAmp 2 0.5 2.5 500 0 1000 H.cer.goodAdcPulseAmp>0.0
-TH2F hcer_good_ptime_vs_pmt 'HMS Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] H.cer.goodAdcPulseTime 2 0.5 2.5 4000 0 400 H.cer.goodAdcPulseTime>0.0
+TH2F hcer_good_ptime_vs_pmt 'HMS Cherenkov Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 0.1 ns' [I+1] H.cer.goodAdcPulseTime 2 0.5 2.5 4000 0 400 
+TH2F hcer_good_dtime_vs_pmt 'HMS Cherenkov Good Hodo Start - Pulse Time vs. PMT Number; PMT Number; Hodo Staart - Pulse Time / 0.1 ns' [I+1] H.cer.goodAdcTdcDiffTime 2 0.5 2.5 4000 -200 200

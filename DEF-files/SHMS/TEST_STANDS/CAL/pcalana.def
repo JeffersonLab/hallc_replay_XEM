@@ -53,12 +53,14 @@ TH2F pcal_prshwr_pamp_vs_pmt_neg 'SHMS PreShower- Pulse Amplitude vs. PMT Number
 TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 500 0 1000 P.cal.pr.goodPosAdcPed>0.0
 TH2F pcal_prshwr_good_pi_vs_pmt_pos 'SHMS PreShower+ Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] P.cal.pr.goodPosAdcPulseInt 14 0.5 14.5 320 0 80 P.cal.pr.goodPosAdcPulseInt>0.0
 TH2F pcal_prshwr_good_pamp_vs_pmt_pos 'SHMS PreShower+ Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] P.cal.pr.goodPosAdcPulseAmp 14 0.5 14.5 500 0 1000 P.cal.pr.goodPosAdcPulseAmp>0.0
-TH2F pcal_prshwr_good_ptime_vs_pmt_pos 'SHMS PreShower+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] P.cal.pr.goodPosAdcPulseTime 14 0.5 14.5 4000 0 400 P.cal.pr.goodPosAdcPulseTime>0.0
+TH2F pcal_prshwr_good_ptime_vs_pmt_pos 'SHMS PreShower+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] P.cal.pr.goodPosAdcPulseTime 14 0.5 14.5 4000 0 400 
+TH2F pcal_prshwr_good_dtime_vs_pmt_pos 'SHMS PreShower+ Good Hodo Start - Pulse Time vs. PMT Number; PMT Number; Good Hodo Start - Pulse Time / 0.1 ns' [I+1] P.cal.pr.goodPosAdcPulseTime 14 0.5 14.5 4000 -200 200 
 
 TH2F pcal_prshwr_good_pped_vs_pmt_neg 'SHMS PreShower- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1] P.cal.pr.goodNegAdcPed 14 0.5 14.5 500 0 1000 P.cal.pr.goodNegAdcPed>0.0
 TH2F pcal_prshwr_good_pi_vs_pmt_neg 'SHMS PreShower- Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] P.cal.pr.goodNegAdcPulseInt 14 0.5 14.5 320 0 80 P.cal.pr.goodNegAdcPulseInt>0.0
 TH2F pcal_prshwr_good_pamp_vs_pmt_neg 'SHMS PreShower- Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude 2 mV/ ' [I+1] P.cal.pr.goodNegAdcPulseAmp 14 0.5 14.5 500 0 1000 P.cal.pr.goodNegAdcPulseAmp>0.0
 TH2F pcal_prshwr_good_ptime_vs_pmt_neg 'SHMS PreShower- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] P.cal.pr.goodNegAdcPulseTime 14 0.5 14.5 4000 0 400 P.cal.pr.goodNegAdcPulseTime>0.0
+TH2F pcal_prshwr_good_dtime_vs_pmt_neg 'SHMS PreShower-  Good Hodo Start - Pulse Time vs. PMT Number; PMT Number; Good Hodo Start - Pulse Time / 0.1 ns' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 4000 -200 200 
 
 #SHMS PreSH GOOD RAW PULSE INTEGRALS 
 TH2F pcal_prshwr_good_raw_pi_vs_pmt_pos 'SHMS PreShower+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.pr.goodPosAdcPulseIntRaw 14 0.5 14.5 650 0 32500 P.cal.pr.goodPosAdcPulseIntRaw>0.0
@@ -104,7 +106,8 @@ TH2F pcal_shwr_pamp_vs_pmt 'SHMS Shower Pulse Amplitude vs. PMT Number; PMT Numb
 TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 500 0 1000 P.cal.fly.goodAdcPed>0.0
 TH2F pcal_shwr_good_pi_vs_pmt 'SHMS Shower Good Pulse Integral vs. PMT Number; PMT Number; Good Pulse Integral / 0.25 pC' [I+1] P.cal.fly.goodAdcPulseInt 224 0.5 224.5 320 0 80 P.cal.fly.goodAdcPulseInt>0.0
 TH2F pcal_shwr_good_pamp_vs_pmt 'SHMS Shower Good Pulse Amplitude vs. PMT Number; PMT Number; Good Pulse Amplitude / 2 mV' [I+1] P.cal.fly.goodAdcPulseAmp 224 0.5 224.5 500 0 1000 P.cal.fly.goodAdcPulseAmp>0.0
-TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 4000 0 400 P.cal.fly.goodAdcPulseTime>0.0
+TH2F pcal_shwr_good_ptime_vs_pmt 'SHMS Shower Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 4000 0 400
+TH2F pcal_shwr_good_dtime_vs_pmt 'SHMS Shower Good Hodo Start - Pulse Time vs. PMT Number; PMT Number; Good Hodo Start - Pulse Time / 0.1 ns' [I+1] P.cal.fly.goodAdcPulseTime 224 0.5 224.5 4000 -200 200 
 
 #Good Raw Pulse Integrals 
 TH2F pcal_shwr_good_raw_pi_vs_pmt 'SHMS Shower Good Raw Pulse Integral vs. PMT Number; PMT Number; Good Raw Pulse Integral / 50 ADC Units' [I+1] P.cal.fly.goodAdcPulseIntRaw 224 0.5 224.5 650 0 32500 P.cal.fly.goodAdcPulseIntRaw>0.0
