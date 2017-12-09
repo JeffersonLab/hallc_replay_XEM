@@ -1,7 +1,7 @@
 ; HMS Hodo Cuts parameters
 
 ; Cosmic flag for beta calculation
-hcosmicflag=1
+hcosmicflag=0
 
 ; for now manually set hte FADC mode
 ;  1 == Use the pulse int - pulse ped
