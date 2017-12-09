@@ -322,15 +322,29 @@ TH2F hhodo_2y_good_pamp_vs_pmt_neg 'HMS 2Y- Good Pulse Amplitude vs. PMT Number;
 # HMS HODO Good ADC PULSE TIME
 #------------------------------
 
-TH2F hhodo_1x_good_ptime_vs_pmt_pos 'HMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.1x.GoodPosAdcPulseTime>0.0
+TH2F hhodo_1x_good_ptime_vs_pmt_pos 'HMS 1X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 
 TH2F hhodo_1y_good_ptime_vs_pmt_pos 'HMS 1Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.1y.GoodPosAdcPulseTime>0.0
-TH2F hhodo_2x_good_ptime_vs_pmt_pos 'HMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.2x.GoodPosAdcPulseTime>0.0
-TH2F hhodo_2y_good_ptime_vs_pmt_pos 'HMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.2y.GoodPosAdcPulseTime>0.0
+TH2F hhodo_2x_good_ptime_vs_pmt_pos 'HMS 2X+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosAdcPulseTime 16 0.5 16.5 4100 0 410 
+TH2F hhodo_2y_good_ptime_vs_pmt_pos 'HMS 2Y+ Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosAdcPulseTime 10 0.5 10.5 4100 0 410 
 
 TH2F hhodo_1x_good_ptime_vs_pmt_neg 'HMS 1X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.1x.GoodNegAdcPulseTime>0.0
 TH2F hhodo_1y_good_ptime_vs_pmt_neg 'HMS 1Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.1y.GoodNegAdcPulseTime>0.0
 TH2F hhodo_2x_good_ptime_vs_pmt_neg 'HMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegAdcPulseTime 16 0.5 16.5 4100 0 410 H.hod.2x.GoodNegAdcPulseTime>0.0
 TH2F hhodo_2y_good_ptime_vs_pmt_neg 'HMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegAdcPulseTime 10 0.5 10.5 4100 0 410 H.hod.2y.GoodNegAdcPulseTime>0.0
+
+#------------------------------
+# HMS HODO Good TDC - ADC PULSE TIME
+#------------------------------
+
+TH2F hhodo_1x_good_dtime_vs_pmt_pos 'HMS 1X+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.1x.GoodPosAdcTdcDiffTime 16 0.5 16.5 2000 -200 200
+TH2F hhodo_1y_good_dtime_vs_pmt_pos 'HMS 1Y+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.1y.GoodPosAdcTdcDiffTime 10 0.5 10.5 2000 -200 200 
+TH2F hhodo_2x_good_dtime_vs_pmt_pos 'HMS 2X+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.2x.GoodPosAdcTdcDiffTime 16 0.5 16.5 2000 -200 200 
+TH2F hhodo_2y_good_dtime_vs_pmt_pos 'HMS 2Y+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.2y.GoodPosAdcTdcDiffTime 10 0.5 10.5 2000 -200 200 
+
+TH2F hhodo_1x_good_dtime_vs_pmt_neg 'HMS 1X- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.1x.GoodNegAdcTdcDiffTime 16 0.5 16.5 2000 -200 200 
+TH2F hhodo_1y_good_dtime_vs_pmt_neg 'HMS 1Y- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.1y.GoodNegAdcTdcDiffTime 10 0.5 10.5 2000 -200 200 
+TH2F hhodo_2x_good_dtime_vs_pmt_neg 'HMS 2X- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  H.hod.2x.GoodNegAdcTdcDiffTime 16 0.5 16.5 2000 -200 200
+TH2F hhodo_2y_good_dtime_vs_pmt_neg 'HMS 2Y- Good TDC - ADC Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  H.hod.2y.GoodNegAdcTdcDiffTime 10 0.5 10.5 2000 -200 200 
 
 #-------------------------------------------------------------------
 # HMS HODO Good TDC TIME UNCORRECTED (uncorrected for time offsets)

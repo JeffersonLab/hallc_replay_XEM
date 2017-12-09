@@ -278,6 +278,17 @@ TH2F phodo_1y_good_ptime_vs_pmt_neg 'SHMS 1Y- Good Pulse Time vs. PMT Number; PM
 TH2F phodo_2x_good_ptime_vs_pmt_neg 'SHMS 2X- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegAdcPulseTime 14 0.5 14.5 4000 0 400 P.hod.2x.GoodNegAdcPulseTime>0.0
 TH2F phodo_2y_good_ptime_vs_pmt_neg 'SHMS 2Y- Good Pulse Time vs. PMT Number; PMT Number; Good Pulse Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegAdcPulseTime 21 0.5 21.5 4000 0 400 P.hod.2y.GoodNegAdcPulseTime>0.0
 
+#GOOD TDC-ADC  TIME
+TH2F phodo_1x_good_dtime_vs_pmt_pos 'SHMS 1X+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F phodo_1y_good_dtime_vs_pmt_pos 'SHMS 1Y+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F phodo_2x_good_dtime_vs_pmt_pos 'SHMS 2X+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.2x.GoodPosAdcTdcDiffTime 14 0.5 14.5 4000 -200 200 
+TH2F phodo_2y_good_dtime_vs_pmt_pos 'SHMS 2Y+ Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.2y.GoodPosAdcTdcDiffTime 21 0.5 21.5 4000 -200 200 
+
+TH2F phodo_1x_good_dtime_vs_pmt_neg 'SHMS 1X- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.1x.GoodNegAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F phodo_1y_good_dtime_vs_pmt_neg 'SHMS 1Y- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.1y.GoodNegAdcTdcDiffTime 13 0.5 13.5 4000 -200 200 
+TH2F phodo_2x_good_dtime_vs_pmt_neg 'SHMS 2X- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.2x.GoodNegAdcTdcDiffTime 14 0.5 14.5 4000 -200 200 
+TH2F phodo_2y_good_dtime_vs_pmt_neg 'SHMS 2Y- Good TDC - ADC Time vs. PMT Number; PMT Number; Good TDC - ADC Time / 0.1 ns' [I+1]  P.hod.2y.GoodNegAdcTdcDiffTime 21 0.5 21.5 4000 -200 200 
+
 #GOOD TDC TIME UNCORRECTED (uncorrected for time offsets)
 TH2F phodo_1x_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1X+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1x.GoodPosTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1x.GoodPosTdcTimeUnCorr>0.0
 TH2F phodo_1y_good_tdctime_uncorr_vs_pmt_pos 'SHMS 1Y+ Good Uncorrected TDC Time vs. PMT Number; PMT Number; Good Uncorrected TDC Time / 0.1 ns' [I+1]  P.hod.1y.GoodPosTdcTimeUnCorr 13 0.5 13.5 1200 0 120 P.hod.1y.GoodPosTdcTimeUnCorr>0.0

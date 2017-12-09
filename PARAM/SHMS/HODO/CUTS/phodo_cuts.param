@@ -16,7 +16,7 @@ phodo_tdc_offset = 1860, 2000, 2060, 2000
 
 ; phodo set min and max fADC time window for all paddles in a plane in 'Channel' units
 ;   the conversion is 0.0625 ns / channel for flash ADC 250
-phodo_AdcTimeWindowMin = 0., 0., 0., 0.
+phodo_AdcTimeWindowMin = -200., -200., -200., -200.
 phodo_AdcTimeWindowMax = 200., 200., 200., 200.
 
 ; pstart_time_center  center of allowed time window                             
