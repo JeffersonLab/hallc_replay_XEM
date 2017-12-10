@@ -8,9 +8,17 @@
 # HMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
 #----------------------------------------------------------------
 
-TH1F hhodo_beta_notrack 'HMS Hodo Calculated Beta Without Track Info; Beta; Number of Entries / 0.02' H.hod.betanotrack 100 0 2.0 H.hod.betanotrack>0.0
-TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.02' H.hod.beta 100 0 2.0 H.hod.beta>0.0
+TH1F hhodo_beta_notrack 'HMS Hodo Calculated Beta Without Track Info; Beta; Number of Entries / 0.015' H.hod.betanotrack 100 0 1.5
+TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.015' H.hod.beta 100 0 1.5
 TH1F hhodo_fpHitsTime 'HMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' H.hod.fpHitsTime 90 0 90 
 TH1F hhodo_starttime 'HMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' H.hod.starttime 90 0 90
-TH1F hhodo_good_startime 'HMS Hodo Good Start Time (ns); Good Start Time (ns); Number of Entries / 1ns' H.hod.goodstarttime 90 0 90
+TH1F hhodo_good_startime 'HMS Hodo Good Start Flag; Good Start Time Flag (=1 is good); Number of Entries' H.hod.goodstarttime 5 0 5
 #TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
+TH1F hhodo_1x_diffdistrack 'HMS Hodo 1X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1x.DiffDisTrack 100 -10. 10.
+TH1F hhodo_1y_diffdistrack 'HMS Hodo 1Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1y.DiffDisTrack 100 -10. 10.
+TH1F hhodo_2x_diffdistrack 'HMS Hodo 2X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2x.DiffDisTrack 100 -10. 10.
+TH1F hhodo_2y_diffdistrack 'HMS Hodo 2Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2y.DiffDisTrack 100 -10. 10.
+TH2F hhodo_1x_diffdistrack_v_xtrack 'HMS Hodo 1X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.1x.DiffDisTrack H.hod.1x.TrackXPos 100 -10. 10. 200 -100 100
+TH2F hhodo_1y_diffdistrack_v_ytrack 'HMS Hodo 1Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.1y.DiffDisTrack H.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
+TH2F hhodo_2x_diffdistrack_v_xtrack 'HMS Hodo 2X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.2x.DiffDisTrack H.hod.2x.TrackXPos 100 -10. 10. 200 -100 100
+TH2F hhodo_2y_diffdistrack_v_ytrack 'HMS Hodo 2Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.2y.DiffDisTrack H.hod.2y.TrackYPos 100 -10. 10. 240 -60 60
