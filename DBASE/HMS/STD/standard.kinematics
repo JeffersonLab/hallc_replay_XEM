@@ -5,8 +5,8 @@
 # 27Al gtargmass_amu=26.98
 #
 0-99999
-gpbeam = 6.4
+gpbeam = 2.215
 gtargmass_amu=12.0107
-htheta_lab = -15.
-hpcentral = 3.
+htheta_lab = -25.005
+hpcentral = 1.6
 hpartmass = 0.00051099

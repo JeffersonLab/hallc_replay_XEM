@@ -5,10 +5,11 @@
 # 27Al gtargmass_amu=26.98
 #
 0-99999
-gpbeam = 6.4
-ptheta_lab = 15.
-ppcentral = 3.
+gpbeam = 2.215
+ptheta_lab = 25.02
+ppcentral = 1.6
 ppartmass = 0.00051099
 gtargmass_amu=12.0107
+
 465-465
 ppcentral = 0.750
