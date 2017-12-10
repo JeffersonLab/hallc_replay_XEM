@@ -45,7 +45,7 @@ hdc_readoutTB = -1, 1, -1, 1, 1, -1
 
 ;HMS DC Surevy Source: Jefferson Lab Alignment Group Data Transmittal
 ;dated 30 Nov. 2017, Checked #: C1832
-hdc_xcenter = -2.227-0.04,-2.232-0.04; ; obtained from 11/29/17 Survey
+hdc_xcenter = +2.227+0.04,+2.232+0.04; ; obtained from 11/29/17 Survey
 hdc_ycenter = -0.01-0.26, 0.009-0.26; 
 
 ;HMS DC Surevy Source: Jefferson Lab Alignment Group Data Transmittal
