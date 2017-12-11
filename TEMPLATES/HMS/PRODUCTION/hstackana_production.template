@@ -50,18 +50,22 @@ Ps4_factor = {floor(2**(ghconfig_ti_ps[3] - 1) + 1):%d}
 Ps5_factor = {floor(2**(ghconfig_ti_ps[4] - 1) + 1):%d}
 Ps6_factor = {floor(2**(ghconfig_ti_ps[5] - 1) + 1):%d}
 
-***********
-* Triggers
-***********
+***************
+* 3/4 Triggers
+***************
 
 HMS 3/4 Triggers                   : {H.hTRIG1.scaler}
 Estimated HMS 3/4 Triggers         : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 HMS 3/4 Trigger Rate               : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
 Accepted HMS Triggers              : {TRIG1.npassed}
-HMS Event Types        : {HMS_events.npassed}
+HMS Event Types                    : {HMS_event.npassed}
 
-HMS Computer Live Time : {TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
+HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
 HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
+
+****************
+* Chamber Hits *
+****************
 
 hmsDC1Planes_large  Counts:{hmsDC1Planes_large.npassed} /hms_trigs : {hmsDC1Planes_large.npassed/hms_trigs.npassed}
 hmsDC2Planes_large  Counts:{hmsDC2Planes_large.npassed}  /hms_trigs : {hmsDC2Planes_large.npassed/hms_trigs.npassed}  
@@ -109,9 +113,9 @@ hdidh                          :   {HMSScinDidh.npassed}
 hscinshould                    :   {HMSScinShould.npassed}
 hscinshoulde                   :   {HMSScinShoulde.npassed}
 hscinshouldh                   :   {HMSScinShouldh.npassed}
-SING FID TRACK EFFIC           : {HMSScinDid.npassed/(HMSScinShould.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShould.npassed-HMSScinDid.npassed)/(HMSScinShould.npassed+.0001)):%8.4f}
-E SING FID TRACK EFFIC         : {HMSScinDide.npassed/(HMSScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShoulde.npassed-HMSScinDide.npassed)/(HMSScinShoulde.npassed+.0001)):%8.4f}
-HADRON SING FID TRACK EFFIC    : {HMSScinDidh.npassed/(HMSScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShouldh.npassed-HMSScinDidh.npassed)/(HMSScinShouldh.npassed+.0001)):%8.4f}
+SING FID TRACK EFFIC           :   {HMSScinDid.npassed/(HMSScinShould.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShould.npassed-HMSScinDid.npassed)/(HMSScinShould.npassed+.0001)):%8.4f}
+E SING FID TRACK EFFIC         :   {HMSScinDide.npassed/(HMSScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShoulde.npassed-HMSScinDide.npassed)/(HMSScinShoulde.npassed+.0001)):%8.4f}
+HADRON SING FID TRACK EFFIC    :   {HMSScinDidh.npassed/(HMSScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShouldh.npassed-HMSScinDidh.npassed)/(HMSScinShouldh.npassed+.0001)):%8.4f}
 
 
 *******************
@@ -337,9 +341,9 @@ cer_elec:	     {cer_elec.npassed}
 cer_pi:		     {cer_pi.npassed}
 
 
-************
+****************
 * HGC Cerenkov *
-************
+****************
 
 Good Track Requirements:
    1. Only one track found in the focal plane
@@ -361,10 +365,10 @@ and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
 
 Events examined = strig       = {hms_trigs.npassed}
 Tracks found    = scleantrack = {hCleanTrack.npassed}
-//Tracks passing chisquared cut = {hstat_cal_numevents:%7d} (in previous template, do we need this here?)
+Tracks passing chisquared cut = (hstat_cal_numevents:%7d) (in previous template, do we need this here?)
 
-hmsPreShower	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
-hmsShowerArray	     Counts: {H.cal.stat_trksum_array} eff : {H.cal.stat_hitsum_array / H.cal.stat_trksum_array}
+hmsPreShower	     Counts: (H.cal.stat_trksum1) eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
+hmsShowerArray	     Counts: (H.cal.stat_trksum_array) eff : (H.cal.stat_hitsum_array / H.cal.stat_trksum_array)
 
 **************************
 * Hodoscope Efficiencies * 
@@ -374,7 +378,7 @@ with chisquared/dof < {hstat_maxchisq:%5.1f} came within {hstat_slop:%4.1f} cm o
 
 Events examined = strig       = {hms_trigs.npassed}
 Tracks found    = scleantrack = {hCleanTrack.npassed}
-//Tracks passing chisquared cut = {hstat_numevents} (in previous template, do we still need this?)
+Tracks passing chisquared cut = (hstat_numevents) (in previous template, do we still need this?)
 
 Hodo efficiency:
 Plane 1: {hhodo_plane_AND_eff[0]}

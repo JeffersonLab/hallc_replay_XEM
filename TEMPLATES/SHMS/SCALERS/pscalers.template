@@ -50,11 +50,11 @@ Ps6_factor = {floor(2**(gpconfig_ti_ps[5] - 1) + 1):%d}
 SHMS 3/4 Triggers           : {P.pTRIG1.scaler}
 Estimated SHMS 3/4 Triggers : {P.pTRIG1.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
 SHMS 3/4 Trigger Rate       : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
-Accepted SHMS Triggers  : {triggers_accepted.npassed}
-SHMS Event Types        : {shms_trigs.npassed}
+Accepted SHMS Triggers      : {TRIG1.npassed}
+SHMS Event Types            : {SHMS_Pretrig.npassed}
 
-SHMS Computer Live Time : {(shms_trigs.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
-SHMS Computer Dead Time : {100.0 - (shms_trigs.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
+SHMS Computer Live Time : {(TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
+SHMS Computer Dead Time : {100.0 - (TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
 
 *******
 * EDTM

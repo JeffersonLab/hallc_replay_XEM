@@ -101,6 +101,9 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
+  // Add event handler for DAQ configuration event
+  THcConfigEvtHandler *hconfig = new THcConfigEvtHandler("hconfig", "Hall C configuration event handler");
+  gHaEvtHandlers->Add(hconfig);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.

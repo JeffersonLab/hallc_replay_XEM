@@ -49,11 +49,11 @@ Ps6_factor = {floor(2**(ghconfig_ti_ps[5] - 1) + 1):%d}
 HMS 3/4 Triggers           : {H.hTRIG1.scaler}
 Estimated HMS 3/4 Triggers : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 HMS 3/4 Trigger Rate       : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
-Accepted HMS Triggers  : {triggers_accepted.npassed}
-HMS Event Types        : {hms_trigs.npassed}
+Accepted HMS Triggers      : {TRIG1.npassed}
+HMS Event Types            : {HMS_event.npassed}
 
-HMS Computer Live Time : {(hms_trigs.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
-HMS Computer Dead Time : {100.0 - (hms_trigs.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
+HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
+HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
 
 *******
 * EDTM

@@ -3,19 +3,22 @@
 Block: RawDecode
 
 Pedestal_event      g.evtyp == 99
-SHMS_event    g.evtyp == 1
-  HMS_event   g.evtyp == 2
-COIN_event    g.evtyp == 4
-TRIG1         T.shms.pTRIG1_tdcTimeRaw>0
-TRIG2         T.shms.pTRIG2_tdcTimeRaw>0
-TRIG3         T.shms.pTRIG3_tdcTimeRaw>0
-SHMS_Pretrig  TRIG1||TRIG2||TRIG3
+SHMS_event          g.evtyp == 1
+HMS_event           g.evtyp == 2
+COIN_event          g.evtyp == 4
+
+TRIG1         T.shms.pTRIG1_tdcTimeRaw > 0
+TRIG2         T.shms.pTRIG2_tdcTimeRaw > 0
+TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
+SHMS_Pretrig  TRIG1 || TRIG2 || TRIG3
+
+shms_trigs        SHMS_event
+edtm_accepted     T.shms.pEDTM_tdcTime != 0.0
+physics_accepted  T.shms.pEDTM_tdcTime == 0.0
 
 RawDecode_master  1
 
 Block: Decode
-
-shms_trigs        SHMS_event
 
 good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
 good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220
