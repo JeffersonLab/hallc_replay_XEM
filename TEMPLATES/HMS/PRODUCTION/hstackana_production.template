@@ -32,9 +32,36 @@ Chamber 1: {hdc_zpos[0]:%6.2f} {hdc_zpos[1]:%6.2f} {hdc_zpos[2]:%6.2f}
 Chamber 2: {hdc_zpos[6]:%6.2f} {hdc_zpos[7]:%6.2f} {hdc_zpos[8]:%6.2f} 
            {hdc_zpos[9]:%6.2f} {hdc_zpos[10]:%6.2f} {hdc_zpos[11]:%6.2f}
 
-Rate  :  {H.Trig.scalerRate/1000.:%7.3f} kHz
-Live Time : {(hms_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (hms_trigs.npassed / H.Trig.scaler)*100.0:%3.2f} %
+********************
+* DAQ Configuration
+********************
+
+Ps1_value = {ghconfig_ti_ps[0]}
+Ps2_value = {ghconfig_ti_ps[1]}
+Ps3_value = {ghconfig_ti_ps[2]}
+Ps4_value = {ghconfig_ti_ps[3]}
+Ps5_value = {ghconfig_ti_ps[4]}
+Ps6_value = {ghconfig_ti_ps[5]}
+
+Ps1_factor = {floor(2**(ghconfig_ti_ps[0] - 1) + 1):%d}
+Ps2_factor = {floor(2**(ghconfig_ti_ps[1] - 1) + 1):%d}
+Ps3_factor = {floor(2**(ghconfig_ti_ps[2] - 1) + 1):%d}
+Ps4_factor = {floor(2**(ghconfig_ti_ps[3] - 1) + 1):%d}
+Ps5_factor = {floor(2**(ghconfig_ti_ps[4] - 1) + 1):%d}
+Ps6_factor = {floor(2**(ghconfig_ti_ps[5] - 1) + 1):%d}
+
+***********
+* Triggers
+***********
+
+HMS 3/4 Triggers                   : {H.hTRIG1.scaler}
+Estimated HMS 3/4 Triggers         : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+HMS 3/4 Trigger Rate               : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+Accepted HMS Triggers              : {TRIG1.npassed}
+HMS Event Types        : {HMS_events.npassed}
+
+HMS Computer Live Time : {TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
+HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} %
 
 hmsDC1Planes_large  Counts:{hmsDC1Planes_large.npassed} /hms_trigs : {hmsDC1Planes_large.npassed/hms_trigs.npassed}
 hmsDC2Planes_large  Counts:{hmsDC2Planes_large.npassed}  /hms_trigs : {hmsDC2Planes_large.npassed/hms_trigs.npassed}  

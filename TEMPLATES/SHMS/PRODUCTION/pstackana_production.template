@@ -21,11 +21,36 @@ BCM1 Counts: {P.BCM1.scalerCut} 	Total Charge: {P.BCM1.scalerChargeCut:%.3f} uC
 BCM2 Counts: {P.BCM2.scalerCut} 	Total Charge: {P.BCM2.scalerChargeCut:%.3f} uC
 Unser Counts: {P.Unser.scalerCut} 	Total Charge: {P.Unser.scalerChargeCut:%.3f} uC
 
-SHMS triggers  :  {shms_trigs.npassed}
+********************
+* DAQ Configuration
+********************
 
-Rate  :  {P.pTREF3.scalerRate/1000.:%7.3f} kHz
-Live Time : {(shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
-Dead Time : {100.0 - (shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.2f} %
+Ps1_value = {gpconfig_ti_ps[0]}
+Ps2_value = {gpconfig_ti_ps[1]}
+Ps3_value = {gpconfig_ti_ps[2]}
+Ps4_value = {gpconfig_ti_ps[3]}
+Ps5_value = {gpconfig_ti_ps[4]}
+Ps6_value = {gpconfig_ti_ps[5]}
+
+Ps1_factor = {floor(2**(gpconfig_ti_ps[0] - 1) + 1):%d}
+Ps2_factor = {floor(2**(gpconfig_ti_ps[1] - 1) + 1):%d}
+Ps3_factor = {floor(2**(gpconfig_ti_ps[2] - 1) + 1):%d}
+Ps4_factor = {floor(2**(gpconfig_ti_ps[3] - 1) + 1):%d}
+Ps5_factor = {floor(2**(gpconfig_ti_ps[4] - 1) + 1):%d}
+Ps6_factor = {floor(2**(gpconfig_ti_ps[5] - 1) + 1):%d}
+
+***********	
+* 3/4 Triggers
+***********
+
+SHMS 3/4 Triggers           : {P.pTRIG1.scaler}
+Estimated SHMS 3/4 Triggers : {P.pTRIG1.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
+SHMS 3/4 Trigger Rate       : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
+Accepted SHMS Triggers  : {TRIG1.npassed}
+SHMS Event Types        : {SHMS_Pretrig.npassed}
+
+SHMS Computer Live Time : {(TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
+SHMS Computer Dead Time : {100.0 - (TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
 
 
 ***** Hodoscope Efficiency ********

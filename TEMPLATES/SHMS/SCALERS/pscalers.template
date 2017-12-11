@@ -44,17 +44,17 @@ Ps5_factor = {floor(2**(gpconfig_ti_ps[4] - 1) + 1):%d}
 Ps6_factor = {floor(2**(gpconfig_ti_ps[5] - 1) + 1):%d}
 
 ***********	
-* Triggers
+* 3/4 Triggers
 ***********
 
-SHMS Triggers           : {P.pTREF3.scaler}
-Estimated SHMS Triggers : {P.pTREF3.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
-SHMS Trigger Rate       : {P.pTREF3.scalerRate/1000.:%.3f} kHz
+SHMS 3/4 Triggers           : {P.pTRIG1.scaler}
+Estimated SHMS 3/4 Triggers : {P.pTRIG1.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
+SHMS 3/4 Trigger Rate       : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
 Accepted SHMS Triggers  : {triggers_accepted.npassed}
 SHMS Event Types        : {shms_trigs.npassed}
 
-SHMS Computer Live Time : {(shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.4f} %
-SHMS Computer Dead Time : {100.0 - (shms_trigs.npassed / P.pTREF3.scaler)*100.0:%3.4f} %
+SHMS Computer Live Time : {(shms_trigs.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
+SHMS Computer Dead Time : {100.0 - (shms_trigs.npassed / P.pTRIG1.scaler)*100.0:%3.4f} %
 
 *******
 * EDTM
@@ -69,12 +69,12 @@ Total Live Time (EDTM) : {(edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 
 *******************
-* Physics Triggers
+* Physics 3/4 Triggers
 *******************
 
-Physics Triggers           : {P.pTREF3.scaler - P.EDTM.scaler}
-Estimated Physics Triggers : {(P.pTREF3.scalerRate - P.EDTM.scalerRate)*(P.1Mhz.scaler/1000000.):%.0f}
-Physics Trigger Rate       : {(P.pTREF3.scalerRate - P.EDTM.scalerRate)/1000.:%.3f} kHz
+Physics 3/4 Triggers           : {P.pTRIG1.scaler - P.EDTM.scaler}
+Estimated Physics 3/4 Triggers : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)*(P.1Mhz.scaler/1000000.):%.0f}
+Physics 3/4 Trigger Rate       : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)/1000.:%.3f} kHz
 Accepted Physics Triggers  : {physics_accepted.npassed}
 
 *******************

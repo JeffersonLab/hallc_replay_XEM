@@ -3,7 +3,13 @@
 Block: RawDecode
 
 Pedestal_event      g.evtyp == 99
-SHMS_event          g.evtyp == 1
+SHMS_event    g.evtyp == 1
+  HMS_event   g.evtyp == 2
+COIN_event    g.evtyp == 4
+TRIG1         T.shms.pTRIG1_tdcTimeRaw>0
+TRIG2         T.shms.pTRIG2_tdcTimeRaw>0
+TRIG3         T.shms.pTRIG3_tdcTimeRaw>0
+SHMS_Pretrig  TRIG1||TRIG2||TRIG3
 
 RawDecode_master  1
 
