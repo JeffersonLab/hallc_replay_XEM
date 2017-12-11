@@ -128,6 +128,20 @@ void calibration::SlaveBegin(TTree * /*tree*/)
 	}
     }
 
+  //Timing and Beta cut visualizations
+  fBeta_Cut = new TH1F("Beta_Cut", "Beta cut used for 'good' hits;Beta;Counts", 1000, -5, 5);
+  GetOutputList()->Add(fBeta_Cut);
+
+  fBeta_Full = new TH1F("Beta_Full", "Full beta for events;Beta;Counts", 1000, -5, 5);
+  GetOutputList()->Add(fBeta_Full);
+
+  fTiming_Cut = new TH1F("Timing_Cut", "Timing cut used for 'good' hits;Time (ns);Counts", 10000, 1, 200);
+  GetOutputList()->Add(fTiming_Cut);
+
+  fTiming_Full = new TH1F("Timing_Full", "Full timing information for events;Time (ns);Counts", 10000, 1, 200);
+  GetOutputList()->Add(fTiming_Full);
+
+  //Particle ID cut visualization
   fCut_everything = new TH2F("Cut_everything", "Visualization of no cuts; Calorimeter Energy (GeV); Pre-Shower Energy (GeV)", 200, 0, 1.0, 200, 0, 1.0);
   GetOutputList()->Add(fCut_everything);
   fCut_electron = new TH2F("Cut_electron", "Visualization of electron cut; Calorimeter Energy (GeV); Pre-Shower Energy (GeV)", 200, 0, 1.0, 200, 0, 1.0);
@@ -178,15 +192,19 @@ Bool_t calibration::Process(Long64_t entry)
     {
       if (!fFullRead) b_P_tr_beta->GetEntry(entry);
       //Require loose cut on particle velocity
-      if (TMath::Abs(P_tr_beta[itrack] -1.) > 0.2) return kTRUE;
+      fBeta_Full->Fill(P_tr_beta[itrack]);
+      if (TMath::Abs(P_tr_beta[itrack] -0.7) > 0.3) return kTRUE;
+      fBeta_Cut->Fill(P_tr_beta[itrack]);
 
       //Filling the histograms
       for (Int_t ipmt = 0; ipmt < fpmts; ipmt++) 
 	{	  
 	  //Perform a loose timing cut
 	  if (!fFullRead) fNGC ? b_P_ngcer_goodAdcPulseTime->GetEntry(entry) : b_P_hgcer_goodAdcPulseTime->GetEntry(entry);
+	  fTiming_Full->Fill(fNGC ? P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
 	  if (fNGC ? P_ngcer_goodAdcPulseTime[ipmt] < 50 || P_ngcer_goodAdcPulseTime[ipmt] > 125 :
-	             P_hgcer_goodAdcPulseTime[ipmt] < 70 || P_hgcer_goodAdcPulseTime[ipmt] > 135) continue;
+	             P_hgcer_goodAdcPulseTime[ipmt] < 50 || P_hgcer_goodAdcPulseTime[ipmt] > 70) continue;
+	  fTiming_Cut->Fill(fNGC ? P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
 
 	  //Cuts to remove entries corresponding to a PMT not registering a hit	  
 	  if (!fFullRead) fNGC ? b_P_ngcer_goodAdcPulseInt->GetEntry(entry) : b_P_hgcer_goodAdcPulseInt->GetEntry(entry);
@@ -479,7 +497,29 @@ void calibration::Terminate()
       fNGC ? PulseInt[ipmt]->Rebin(20) : PulseInt[ipmt]->Rebin(20);
     }
 */
+  //Canvases to display cut information
+  if (fFullShow)
+    {
+      //Canvas to show beta cut information
+      TCanvas *Beta;
+      Beta = new TCanvas("Beta", "Beta information for events");
+      Beta->Divide(2,1);
+      Beta->cd(1);
+      fBeta_Full->Draw();
+      Beta->cd(2);
+      fBeta_Cut->Draw();
 
+      //Canvas to show timing cut information
+      TCanvas *Timing;
+      Timing = new TCanvas("Timing", "Timing information for events");
+      Timing->Divide(2,1);
+      Timing->cd(1);
+      fTiming_Full->Draw();
+      Timing->cd(2);
+
+      fTiming_Cut->Draw();
+   } 
+  
   //Show the particle cuts performed in the histogram forming
   if (fCut)
     {
@@ -560,16 +600,16 @@ void calibration::Terminate()
 	      if (xpeaks[1] < xpeaks[0]) xpeaks[1] = xpeaks[0];
 
 	      //Use the peak to fit the SPE with a Gaussian to determine the mean
-	      Gauss1->SetRange(xpeaks[1]-5, xpeaks[1]+5);
-	      Gauss1->SetParameter(1, xpeaks[1]);
+	      Gauss1->SetRange(xpeaks[0]-3, xpeaks[0]+3);
+	      Gauss1->SetParameter(1, xpeaks[0]);
 	      Gauss1->SetParameter(2, 10.);
 	      Gauss1->SetParLimits(0, 0., 2000.);
-	      Gauss1->SetParLimits(1, xpeaks[1]-10, xpeaks[1]+10);
+	      Gauss1->SetParLimits(1, xpeaks[0]-3, xpeaks[0]+3);
 	      Gauss1->SetParLimits(2, 0.5, 10.);
 	      fFullShow ? PulseInt_quad[iquad][ipmt]->Fit("Gauss1","RQ") : PulseInt_quad[iquad][ipmt]->Fit("Gauss1","RQN");
 
 	      //Store the mean of the SPE in the mean array provided it is not zero and passes a loose statistical cut. Note that indexing by ipad-1 is for convienience 
-	      if (xpeaks[1] > 2.0 && PulseInt_quad[iquad][ipmt]->GetBinContent(PulseInt_quad[iquad][ipmt]->GetXaxis()->FindBin(xpeaks[1])) > 90) mean[ipad-1] = Gauss1->GetParameter(1); 
+	      if (xpeaks[0] > 2.0 && PulseInt_quad[iquad][ipmt]->GetBinContent(PulseInt_quad[iquad][ipmt]->GetXaxis()->FindBin(xpeaks[1])) > 90) mean[ipad-1] = Gauss1->GetParameter(1); 
 	      ipad++;
 	    }
 	  
@@ -595,11 +635,11 @@ void calibration::Terminate()
 	      TList *functions = PulseInt[ipmt]->GetListOfFunctions();
 	      TPolyMarker *pm = (TPolyMarker*)functions->FindObject("TPolyMarker");
 	      Double_t *xpeaks = pm->GetX();
-	      Gauss1->SetRange(xpeaks[1]-5, xpeaks[1]+5);
-	      Gauss1->SetParameter(1, xpeaks[1]);
+	      Gauss1->SetRange(xpeaks[0]-3, xpeaks[0]+3);
+	      Gauss1->SetParameter(1, xpeaks[0]);
 	      Gauss1->SetParameter(2, 10.);
-	      Gauss1->SetParLimits(0, 0., 2000.);
-	      Gauss1->SetParLimits(1, xpeaks[1]-5, xpeaks[1]+5);
+	      Gauss1->SetParLimits(0, 0., 10000.);
+	      Gauss1->SetParLimits(1, xpeaks[0]-3, xpeaks[0]+3);
 	      Gauss1->SetParLimits(2, 0.5, 20.);
 	      PulseInt[ipmt]->GetXaxis()->SetRangeUser(-10,200);
 	      fFullShow ? PulseInt[ipmt]->Fit("Gauss1","RQ") : PulseInt[ipmt]->Fit("Gauss1","RQN");

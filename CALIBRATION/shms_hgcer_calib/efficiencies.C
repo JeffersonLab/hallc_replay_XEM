@@ -225,7 +225,7 @@ Bool_t efficiencies::Process(Long64_t entry)
       //Require loose cut on particle velocity
       b_P_tr_beta->GetEntry(entry);
       fBeta_Full->Fill(P_tr_beta[itrack]);
-      if (TMath::Abs(P_tr_beta[itrack] - 1.0) > 0.2) return kTRUE;
+      if (TMath::Abs(P_tr_beta[itrack] - 0.7) > 0.3) return kTRUE;
       fBeta_Cut->Fill(P_tr_beta[itrack]);
 
       //Filling the histograms
@@ -235,7 +235,7 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  fNGC ? b_P_ngcer_goodAdcPulseTime->GetEntry(entry) : b_P_hgcer_goodAdcPulseTime->GetEntry(entry);
 	  fTiming_Full->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
 	  if (fNGC ? P_ngcer_goodAdcPulseTime[ipmt] < 50 || P_ngcer_goodAdcPulseTime[ipmt] > 125 :
-	  P_hgcer_goodAdcPulseTime[ipmt] < 70 || P_hgcer_goodAdcPulseTime[ipmt] > 135) continue;
+	  P_hgcer_goodAdcPulseTime[ipmt] < 50 || P_hgcer_goodAdcPulseTime[ipmt] > 70) continue;
 	  fTiming_Cut->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
 
 	  //Require the signal passes a tracking cut, with a threshold NPE cut as well

@@ -40,6 +40,10 @@ public :
    TH2F           *fCut_everything;
    TH2F           *fCut_electron;
    TH2F           *fCut_pion;
+   TH1F           *fBeta_Cut;
+   TH1F           *fBeta_Full;
+   TH1F           *fTiming_Cut;
+   TH1F           *fTiming_Full;
 
    // Declaration of histograms used in fitting/analysis
    TH1F *fscaled[4];
