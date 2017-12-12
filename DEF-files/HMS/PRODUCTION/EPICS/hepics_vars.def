@@ -12,4 +12,18 @@ iunser
 itov3out
 itov4out
 
+#Spectrometer Settings
+ecHMS_Angle
+ecP_HMS
+
+#Magnet Currents
+ecQ1_Set_Current
+ecQ2_I_True
+ecQ2_Set_Current
+ecQ2_I_True
+ecQ3_Set_Current
+ecQ3_I_True
+ecDI_B_Set_NMR
+ecDI_B_True_NMR
+
 end epics

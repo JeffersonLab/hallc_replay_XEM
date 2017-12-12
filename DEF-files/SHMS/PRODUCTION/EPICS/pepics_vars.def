@@ -18,5 +18,20 @@ IPM3H07B.YPOS
 IPM3H07C.XPOS
 IPM3H07C.YPOS
 
+#Spectrometer Settings
+ecSHMS_Angle
+ecSP_SHMS
+
+#Magnet Currents
+ecSHB_Set_Current
+ecSHB_I_True
+ecSQ1_Set_Current
+ecSQ1_I_True
+ecSQ2_Set_Current
+ecSQ2_I_True
+ecSQ3_Set_Current
+ecSQ3_I_True
+ecSDI_B_Set_NMR
+ecSDI_B_True_NMR
 
 end epics
