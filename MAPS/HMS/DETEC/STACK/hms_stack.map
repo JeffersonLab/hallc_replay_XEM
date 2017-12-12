@@ -63,12 +63,12 @@ REFINDEX=0
   51,   2,  37,   1  ! pEL_HI
   52,   2,  38,   1  ! pEL_REAL
   53,   2,  39,   1  ! pEL_CLEAN
-  56,   2,  39,   1  ! hSTOF
-  57,   2,  40,   1  ! hEL_LO
-  58,   2,  41,   1  ! hEL_LO_CER
-  59,   2,  42,   1  ! hEL_HI
-  60,   2,  43,   1  ! hEL_REAL
-  61,   2,  44,   1  ! hEL_CLEAN
+  56,   2,  40,   1  ! hSTOF
+  57,   2,  41,   1  ! hEL_LO
+  58,   2,  42,   1  ! hEL_LO_CER
+  59,   2,  43,   1  ! hEL_HI
+  60,   2,  44,   1  ! hEL_REAL
+  61,   2,  45,   1  ! hEL_CLEAN
 
 SLOT=20
 REFINDEX=1
