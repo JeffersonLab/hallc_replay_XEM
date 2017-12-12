@@ -1,0 +1,6 @@
+# See $ANALYZER/examples/output_example.def for examples
+#
+block H.dc.*
+block T.hms.*
+
+#include "DEF-files/HMS/TEST_STANDS/DC/hdcana_6gev_histos.def"

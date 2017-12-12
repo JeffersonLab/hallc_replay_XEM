@@ -1,9 +1,8 @@
-
-#include "DEF-files/HMS/TEST_STANDS/CER/hcerana.def"
-#include "DEF-files/HMS/TEST_STANDS/DC/hdcana.def"
-#include "DEF-files/HMS/TEST_STANDS/HODO/hhodoana.def"
-#include "DEF-files/HMS/TEST_STANDS/CAL/hcalana.def"
-#include "DEF-files/HMS/TEST_STANDS/TRIG/htrigana.def"
+#include "DEF-files/HMS/TEST_STANDS/CER/hcerana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/DC/hdcana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/HODO/hhodoana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/CAL/hcalana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/TRIG/htrigana_histos.def"
 
 #include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"
 #include "DEF-files/HMS/PRODUCTION/BLOCK/hblock_vars.def"
@@ -16,5 +15,3 @@
 #include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"
 #include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"
 #include "DEF-files/HMS/PRODUCTION/REACT/hreact_histos.def"
-
-

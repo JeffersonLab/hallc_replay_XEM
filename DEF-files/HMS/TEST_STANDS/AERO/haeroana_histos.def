@@ -1,0 +1,67 @@
+#HMS AERO FPGA Error Flag
+TH2F haero_adcErrFlg2D_pos 'HMS Aero+ FPGA Error Flag; PMT Number; Error Flag' H.aero.posAdcCounter H.aero.posAdcErrorFlag 8 0.5 8.5 2 -0.5 1.5
+TH2F haero_adcErrFlg2D_neg 'HMS Aero- FPGA Error Flag; PMT Number; Error Flag' H.aero.negAdcCounter H.aero.negAdcErrorFlag 8 0.5 8.5 2 -0.5 1.5
+
+#HMS AERO RAW Occupancy and Multiplicity
+TH1F haero_raw_occ_pos 'HMS Aero+ Raw Occupancy; PMT Number; Number of Raw +ADC Hits' H.aero.posAdcCounter 8 0.5 8.5
+TH1F haero_raw_occ_neg 'HMS Aero- Raw Occupancy; PMT Number; Number of Raw -ADC Hits' H.aero.negAdcCounter 8 0.5 8.5
+TH1F haero_raw_mult_pos 'HMS Aero+ Raw Multiplicity; Number of PMTs Hit; Total Number of Raw +ADC Hits' H.aero.totNumPosAdcHits 8 0.5 8.5
+TH1F haero_raw_mult_neg 'HMS Aero- Raw Multiplicity; Number of PMTs Hit; Total Number of Raw -ADC Hits' H.aero.totNumNegAdcHits 8 0.5 8.5
+TH1F haero_raw_mult 'HMS Aero Raw Multiplicity; Number of PMTs Hit; Total Number of Raw ADC Hits' H.aero.totnumAdcHits 14 0.5 14.5
+
+
+#HMS GOOD Occupancy and Multiplicity
+TH1F haero_good_occ_pos 'HMS Aero+ Good Occupancy; PMT Number; Number of Good +ADC Hits' H.aero.numGoodPosAdcHits 8 0.5 8.5
+TH1F haero_good_occ_neg 'HMS Aero- Good Occupancy; PMT Number; Number of Good -ADC Hits' H.aero.numGoodNegAdcHits 8 0.5 8.5
+TH1F haero_good_mult_pos 'HMS Aero+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.aero.totNumGoodPosAdcHits 8 0.5 8.5
+TH1F haero_good_mult_neg 'HMS Aero- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.aero.totNumGoodNegAdcHits 8 0.5 8.5
+TH1F haero_good_mult 'HMS Aero Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.aero.totnumGoodAdcHits 14 0.5 14.5
+
+
+#HMS AERO TOTAL NUMBER OF P.E.
+TH1F haero_tot_npe_pos 'HMS Aero+ Total Number of Photoelectrons; Total Number of Pos Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.aero.posNpeSum 200 0 100 H.aero.posNpeSum>0.0 
+TH1F haero_tot_npe_neg 'HMS Aero- Total Number of Photoelectrons; Total Number of Neg Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.aero.negNpeSum 200 0 100 H.aero.negNpeSum>0.0 
+TH1F haero_tot_npe 'HMS Aero Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.aero.npeSum 200 0 100 H.aero.npeSum>0.0 
+
+
+#HMS AERO Number of P.E. / PMT
+TH2F haero_npe_pos 'HMS Aero+ Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] H.aero.posNpe 8 0.5 8.5 200 0 100 H.aero.posNpe>0.0 
+TH2F haero_npe_neg 'HMS Aero- Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / PMT' [I+1] H.aero.negNpe 8 0.5 8.5 200 0 100 H.aero.negNpe>0.0 
+
+
+#HMS AERO RAW Pulse Pedestal / Integral  / Amplitude / Time
+TH2F haero_raw_pped_vs_pmt_pos 'HMS Aero+ Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units'  H.aero.posAdcCounter H.aero.posAdcPedRaw 8 0.5 8.5 10000 0 10000
+TH2F haero_raw_pi_vs_pmt_pos 'HMS Aero+ Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' H.aero.posAdcCounter H.aero.posAdcPulseIntRaw 8 0.5 8.5 650 0 32500
+TH2F haero_raw_pamp_vs_pmt_pos 'HMS Aero+ Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' H.aero.posAdcCounter H.aero.posAdcPulseAmpRaw 8 0.5 8.5 410 0 8200
+TH2F haero_raw_ptime_vs_pmt_pos 'HMS Aero+ Raw Pulse Time vs. PMT Number; PMT Number; Raw Pulse Time / 10 ADC Units' H.aero.posAdcCounter H.aero.posAdcPulseTimeRaw 8 0.5 8.5 650 0 6500
+
+TH2F haero_raw_pped_vs_pmt_neg 'HMS Aero- Raw Pulse Pedestal vs. PMT Number; PMT Number; Raw Pulse Pedestal / 1 ADC Units'  H.aero.negAdcCounter H.aero.negAdcPedRaw 8 0.5 8.5 10000 0 10000
+TH2F haero_raw_pi_vs_pmt_neg 'HMS Aero- Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' H.aero.negAdcCounter H.aero.negAdcPulseIntRaw 8 0.5 8.5 650 0 32500
+TH2F haero_raw_pamp_vs_pmt_neg 'HMS Aero- Raw Pulse Amplitude vs. PMT Number; PMT Number; Raw Pulse Amplitude / 20 ADC Units' H.aero.negAdcCounter H.aero.negAdcPulseAmpRaw 8 0.5 8.5 410 0 8200
+TH2F haero_raw_ptime_vs_pmt_neg 'HMS Aero- Raw Pulse Time vs. PMT Number; PMT Number;  Raw Pulse Time / 10 ADC Units' H.aero.negAdcCounter H.aero.negAdcPulseTimeRaw 8 0.5 8.5 650 0 6500
+
+
+#HMS AERO Pulse Pedestal / Integral  / Amplitude 
+TH2F haero_pped_vs_pmt_pos 'HMS Aero+ Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' H.aero.posAdcCounter H.aero.posAdcPed 8 0.5 8.5 400 300 700
+TH2F haero_pi_vs_pmt_pos 'HMS Aero+ Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' H.aero.posAdcCounter H.aero.posAdcPulseInt 8 0.5 8.5 600 0 30000
+TH2F haero_pamp_vs_pmt_pos 'HMS Aero+ Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' H.aero.posAdcCounter H.aero.posAdcPulseAmp 8 0.5 8.5 400 0 8000
+
+TH2F haero_pped_vs_pmt_neg 'HMS Aero- Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' H.aero.negAdcCounter H.aero.negAdcPed 8 0.5 8.5 400 300 700
+TH2F haero_pi_vs_pmt_neg 'HMS Aero- Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' H.aero.negAdcCounter H.aero.negAdcPulseInt 8 0.5 8.5 600 0 30000
+TH2F haero_pamp_vs_pmt_neg 'HMS Aero- Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' H.aero.negAdcCounter H.aero.negAdcPulseAmp 8 0.5 8.5 400 0 8000
+
+
+#HMS AERO GOOD Pulse Pedestal / Integral / Raw Integral / Amplitude / Time :: GOOD --> (passed errorFlag cut and pulsetime cuts oN Min/Max ADC Time Window) 
+TH2F haero_good_pped_vs_pmt_pos 'HMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] H.aero.goodPosAdcPed 8 0.5 8.5 400 300 700  H.aero.goodPosAdcPed>0.0
+TH2F haero_good_pi_vs_pmt_pos 'HMS Aero+ Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] H.aero.goodPosAdcPulseInt 8 0.5 8.5 600 0 30000 H.aero.goodPosAdcPulseInt>0.0
+TH2F haero_good_raw_pi_vs_pmt_pos 'HMS Aero+ Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.aero.goodPosAdcPulseIntRaw 8 0.5 8.5 600 0 30000 H.aero.goodPosAdcPulseIntRaw>0.0
+TH2F haero_good_pamp_vs_pmt_pos 'HMS Aero+ Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] H.aero.goodPosAdcPulseAmp 8 0.5 8.5 200 0 4000 H.aero.goodPosAdcPulseAmp>0.0
+TH2F haero_good_ptime_vs_pmt_pos 'HMS Aero+ Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodPosAdcPulseTime 8 0.5 8.5 350 0 3500
+TH2F haero_good_dtime_vs_pmt_pos 'HMS Aero+ Good Hodo Starttime - adc pulse Time vs. PMT Number; PMT Number; Starttime - Pulse Time ' [I+1] H.aero.goodPosAdcTdcDiffTime 8 0.5 8.5 4000 -200 200
+
+TH2F haero_good_pped_vs_pmt_neg 'HMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 1 ADC Units' [I+1] H.aero.goodNegAdcPed 8 0.5 8.5 400 300 700 H.aero.goodNegAdcPed>0.0
+TH2F haero_good_pi_vs_pmt_neg 'HMS Aero- Good Pulse Integral vs. PMT Number; PMT Number;  Pulse Integral / 50 ADC Units' [I+1] H.aero.goodNegAdcPulseInt 8 0.5 8.5 600 0 30000 H.aero.goodNegAdcPulseInt>0.0
+TH2F haero_good_raw_pi_vs_pmt_neg 'HMS Aero- Good Raw Pulse Integral vs. PMT Number; PMT Number; Raw Pulse Integral / 50 ADC Units' [I+1] H.aero.goodNegAdcPulseIntRaw 8 0.5 8.5 600 0 30000 H.aero.goodNegAdcPulseIntRaw>0.0
+TH2F haero_good_pamp_vs_pmt_neg 'HMS Aero- Good Pulse Amplitude vs. PMT Number; PMT Number;  Pulse Amplitude / 20 ADC Units' [I+1] H.aero.goodNegAdcPulseAmp 8 0.5 8.5 200 0 4000 H.aero.goodNegAdcPulseAmp>0.0
+TH2F haero_good_ptime_vs_pmt_neg 'HMS Aero- Good Pulse Time vs. PMT Number; PMT Number; Pulse Time / 10 ADC Units' [I+1] H.aero.goodNegAdcPulseTime 8 0.5 8.5 350 0 3500
+TH2F haero_good_dtime_vs_pmt_neg 'HMS Aero- Good Hodo Starttime - adc pulse Time vs. PMT Number; PMT Number; Starttime - Pulse Time ' [I+1] H.aero.goodNegAdcTdcDiffTime 8 0.5 8.5 4000 -200 200
