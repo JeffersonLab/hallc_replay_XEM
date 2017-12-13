@@ -8,6 +8,7 @@ bck/*
 *#*
 hcana
 raw
+cache
 .root_history
 HISTOGRAMS/*
 REPORT_OUTPUT
