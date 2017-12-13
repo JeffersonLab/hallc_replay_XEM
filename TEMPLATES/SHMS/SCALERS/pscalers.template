@@ -29,12 +29,12 @@ Unser Counts: {P.Unser.scalerCut} 	Total Charge: {P.Unser.scalerChargeCut:%.3f} 
 * DAQ Configuration
 ********************
 
-Ps1_factor = {ghconfig_ti_ps_factors[0]}
-Ps2_factor = {ghconfig_ti_ps_factors[1]}
-Ps3_factor = {ghconfig_ti_ps_factors[2]}
-Ps4_factor = {ghconfig_ti_ps_factors[3]}
-Ps5_factor = {ghconfig_ti_ps_factors[4]}
-Ps6_factor = {ghconfig_ti_ps_factors[5]}
+Ps1_factor = {gpconfig_ti_ps_factors[0]}
+Ps2_factor = {gpconfig_ti_ps_factors[1]}
+Ps3_factor = {gpconfig_ti_ps_factors[2]}
+Ps4_factor = {gpconfig_ti_ps_factors[3]}
+Ps5_factor = {gpconfig_ti_ps_factors[4]}
+Ps6_factor = {gpconfig_ti_ps_factors[5]}
 
 ***********	
 * 3/4 Triggers
