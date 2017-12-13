@@ -12,11 +12,25 @@ ppartmass = 0.00051099
 ptheta_lab = 25.02
 ppcentral = 1.6
 
-1562-1588
+1562-1580
 ptheta_lab = 25.02
 ppcentral = 1.6
 
-1589-1591
+1581
+gtargmass_amu=1.00794
+ptheta_lab = 25.02
+ppcentral = 1.6
+
+1582-1588
+ptheta_lab = 25.02
+ppcentral = 1.6
+
+1589
+gtargmass_amu=0.0
+ptheta_lab = 25.02
+ppcentral = 1.6
+
+1590-1591
 ptheta_lab = 13.51
 ppcentral = 2.20154
 
