@@ -28,13 +28,6 @@ Unser Counts: {H.Unser.scalerCut} 	Total Charge: {H.Unser.scalerChargeCut:%.3f} 
 * DAQ Configuration
 ********************
 
-Ps1_value = {ghconfig_ti_ps[0]}
-Ps2_value = {ghconfig_ti_ps[1]}
-Ps3_value = {ghconfig_ti_ps[2]}
-Ps4_value = {ghconfig_ti_ps[3]}
-Ps5_value = {ghconfig_ti_ps[4]}
-Ps6_value = {ghconfig_ti_ps[5]}
-
 Ps1_factor = {ghconfig_ti_ps_factors[0]}
 Ps2_factor = {ghconfig_ti_ps_factors[1]}
 Ps3_factor = {ghconfig_ti_ps_factors[2]}
