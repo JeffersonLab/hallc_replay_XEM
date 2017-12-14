@@ -297,6 +297,8 @@ public :
    Double_t        P_hgcer_goodAdcPulseIntRaw[4];   //[Ndata.P.hgcer.goodAdcPulseIntRaw]
    Int_t           Ndata_P_hgcer_goodAdcPulseTime;
    Double_t        P_hgcer_goodAdcPulseTime[4];   //[Ndata.P.hgcer.goodAdcPulseTime]
+   Int_t           Ndata_P_hgcer_goodAdcTdcDiffTime;
+   Double_t        P_hgcer_goodAdcTdcDiffTime[4];
    Int_t           Ndata_P_hgcer_npe;
    Double_t        P_hgcer_npe[4];   //[Ndata.P.hgcer.npe]
    Int_t           Ndata_P_hgcer_numGoodAdcHits;
@@ -1124,6 +1126,8 @@ public :
    TBranch        *b_P_hgcer_goodAdcPulseIntRaw;   //!
    TBranch        *b_Ndata_P_hgcer_goodAdcPulseTime;   //!
    TBranch        *b_P_hgcer_goodAdcPulseTime;   //!
+   TBranch        *b_Ndata_P_hgcer_goodAdcTdcDiffTime;
+   TBranch        *b_P_hgcer_goodAdcTdcDiffTime;
    TBranch        *b_Ndata_P_hgcer_npe;   //!
    TBranch        *b_P_hgcer_npe;   //!
    TBranch        *b_Ndata_P_hgcer_numGoodAdcHits;   //!
@@ -1986,6 +1990,8 @@ void efficiencies::Init(TTree *tree)
    fChain->SetBranchAddress("P.hgcer.goodAdcPulseIntRaw", P_hgcer_goodAdcPulseIntRaw, &b_P_hgcer_goodAdcPulseIntRaw);
    fChain->SetBranchAddress("Ndata.P.hgcer.goodAdcPulseTime", &Ndata_P_hgcer_goodAdcPulseTime, &b_Ndata_P_hgcer_goodAdcPulseTime);
    fChain->SetBranchAddress("P.hgcer.goodAdcPulseTime", P_hgcer_goodAdcPulseTime, &b_P_hgcer_goodAdcPulseTime);
+   fChain->SetBranchAddress("Ndata.P.hgcer.goodAdcTdcDiffTime", &Ndata_P_hgcer_goodAdcTdcDiffTime, &b_Ndata_P_hgcer_goodAdcTdcDiffTime);
+   fChain->SetBranchAddress("P.hgcer.goodAdcTdcDiffTime", P_hgcer_goodAdcTdcDiffTime, &b_P_hgcer_goodAdcTdcDiffTime);
    fChain->SetBranchAddress("Ndata.P.hgcer.npe", &Ndata_P_hgcer_npe, &b_Ndata_P_hgcer_npe);
    fChain->SetBranchAddress("P.hgcer.npe", P_hgcer_npe, &b_P_hgcer_npe);
    fChain->SetBranchAddress("Ndata.P.hgcer.numGoodAdcHits", &Ndata_P_hgcer_numGoodAdcHits, &b_Ndata_P_hgcer_numGoodAdcHits);

@@ -171,20 +171,20 @@ void efficiencies::SlaveBegin(TTree * /*tree*/)
   fBeta_Full = new TH1F("Beta_Full", "Full beta for events;Beta;Counts", 1000, -5, 5);
   GetOutputList()->Add(fBeta_Full);
 
-  fTiming_Cut = new TH1F("Timing_Cut", "Timing cut used for 'good' hits;Time (ns);Counts", 10000, 1, 200);
+  fTiming_Cut = new TH1F("Timing_Cut", "Timing cut used for 'good' hits;Time (ns);Counts", 10000, -40, 0);
   GetOutputList()->Add(fTiming_Cut);
 
-  fTiming_Full = new TH1F("Timing_Full", "Full timing information for events;Time (ns);Counts", 10000, 1, 200);
+  fTiming_Full = new TH1F("Timing_Full", "Full timing information for events;Time (ns);Counts", 10000, -40, 0);
   GetOutputList()->Add(fTiming_Full);
 
   //Histograms examining particle ID cuts
-  fFly_Pr_Full = new TH2F("Fly_Pr_Full", "Particle ID from calorimeter & preshower;Calorimeter (GeV);Pre-Shower (GeV)", 200, 0.0, 1.0, 200, 0.0, 1.0);
+  fFly_Pr_Full = new TH2F("Fly_Pr_Full", "Particle ID from calorimeter & preshower;Calorimeter (GeV);Pre-Shower (GeV)", 250, 0.0, 0.7, 250, 0.0, 0.8);
   GetOutputList()->Add(fFly_Pr_Full);
   
-  fFly_Pr_eCut = new TH2F("Fly_Pr_eCut", "calorimeter & preshower electrons;Calorimeter (GeV);Pre-Shower (GeV)", 200, 0.0, 1.0, 200, 0.0, 1.0);
+  fFly_Pr_eCut = new TH2F("Fly_Pr_eCut", "calorimeter & preshower electrons;Calorimeter (GeV);Pre-Shower (GeV)", 250, 0.0, 0.7, 250, 0.0, 0.8);
   GetOutputList()->Add(fFly_Pr_eCut);
 
-  fFly_Pr_piCut = new TH2F("Fly_Pr_piCut", "calorimeter & preshower pions;Calorimeter (GeV);Pre-Shower (GeV)", 200, 0.0, 1.0, 200, 0.0, 1.0);
+  fFly_Pr_piCut = new TH2F("Fly_Pr_piCut", "calorimeter & preshower pions;Calorimeter (GeV);Pre-Shower (GeV)", 250, 0.0, 0.7, 250, 0.0, 0.8);
   GetOutputList()->Add(fFly_Pr_piCut);
 
   printf("\n\n");
@@ -225,18 +225,18 @@ Bool_t efficiencies::Process(Long64_t entry)
       //Require loose cut on particle velocity
       b_P_tr_beta->GetEntry(entry);
       fBeta_Full->Fill(P_tr_beta[itrack]);
-      if (TMath::Abs(P_tr_beta[itrack] - 0.7) > 0.3) return kTRUE;
+      if (TMath::Abs(P_tr_beta[itrack] - 1.0) > 0.2) return kTRUE;
       fBeta_Cut->Fill(P_tr_beta[itrack]);
 
       //Filling the histograms
       for (Int_t ipmt = 0; ipmt < hgc_pmts; ipmt++)
 	{
 	  //Require the signal passes a timing cut
-	  fNGC ? b_P_ngcer_goodAdcPulseTime->GetEntry(entry) : b_P_hgcer_goodAdcPulseTime->GetEntry(entry);
-	  fTiming_Full->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
+	  fNGC ? b_P_ngcer_goodAdcPulseTime->GetEntry(entry) : b_P_hgcer_goodAdcTdcDiffTime->GetEntry(entry);
+	  fTiming_Full->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcTdcDiffTime[ipmt]);
 	  if (fNGC ? P_ngcer_goodAdcPulseTime[ipmt] < 50 || P_ngcer_goodAdcPulseTime[ipmt] > 125 :
-	  P_hgcer_goodAdcPulseTime[ipmt] < 50 || P_hgcer_goodAdcPulseTime[ipmt] > 70) continue;
-	  fTiming_Cut->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcPulseTime[ipmt]);
+	  P_hgcer_goodAdcTdcDiffTime[ipmt] > -17.0 || P_hgcer_goodAdcTdcDiffTime[ipmt] < -30.0) continue;
+	  fTiming_Cut->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcTdcDiffTime[ipmt]);
 
 	  //Require the signal passes a tracking cut, with a threshold NPE cut as well
 	  fNGC ? b_P_ngcer_numTracksFired->GetEntry(entry) : b_P_hgcer_numTracksFired->GetEntry(entry);
@@ -248,7 +248,7 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  b_P_cal_fly_earray->GetEntry(entry);
 	  b_P_cal_pr_eplane->GetEntry(entry);
 	  b_P_gtr_dp->GetEntry(entry);
-	  Float_t central_p = 3.0;
+	  Float_t central_p = 2.2;
 	  Float_t p = ((P_gtr_dp/100.0)*central_p) + central_p;
 
 	  //Visualize what we have to cut with
@@ -256,14 +256,16 @@ Bool_t efficiencies::Process(Long64_t entry)
 
 	  //Perform cut for electrons
 	  //Cut on Shower vs preshower is a tilted ellipse, this requires an angle of rotation (in radians), x/y center, semimajor and semiminor axis
-	  Float_t eangle = 3.0*3.14159/4.0;
-	  //Float_t eangle2 = 3.14159/4.0;
+	  /*Float_t eangle = 3.0*3.14159/4.0;
 	  Float_t ex_center = 0.66;
-	  //Float_t ex_center2 = -0.04;
 	  Float_t ey_center = 0.35;
-	  //Float_t ey_center2 = -0.03;
 	  Float_t esemimajor_axis = 0.28;
-	  Float_t esemiminor_axis = 0.04;
+	  Float_t esemiminor_axis = 0.04;*/
+	  Float_t eangle = 3.0*3.14159/4.0;
+	  Float_t ex_center = 0.375;
+	  Float_t ey_center = 0.360;
+	  Float_t esemimajor_axis = 0.38;
+	  Float_t esemiminor_axis = 0.05;
 	  if (pow((P_cal_fly_earray/p - ex_center)*cos(eangle) + (P_cal_pr_eplane/p - ey_center)*sin(eangle),2)/pow(esemimajor_axis,2) + 
 	      pow((P_cal_fly_earray/p - ex_center)*sin(eangle) - (P_cal_pr_eplane/p - ey_center)*cos(eangle),2)/pow(esemiminor_axis,2) < 1)
 	    {
@@ -283,10 +285,14 @@ Bool_t efficiencies::Process(Long64_t entry)
 
 	  //Perform cut for pions
 	  //Cut on Shower vs preshower is a tilted ellipse, this requires an angle of rotation (in radians), x/y center, semimajor and semiminor axis
-	  Float_t piangle = 0.0;
+	  Float_t piangle = 0.0;/*
 	  Float_t pix_center = 0.26;
 	  Float_t piy_center = 0.03;
 	  Float_t pisemimajor_axis = 0.1;
+	  Float_t pisemiminor_axis = 0.02;*/
+	  Float_t pix_center = 0.00;
+	  Float_t piy_center = 0.00;
+	  Float_t pisemimajor_axis = 0.01;
 	  Float_t pisemiminor_axis = 0.02;
 	  if (pow((P_cal_fly_earray/p - pix_center)*cos(piangle) + (P_cal_pr_eplane/p - piy_center)*sin(piangle),2)/pow(pisemimajor_axis,2) + 
 	      pow((P_cal_fly_earray/p - pix_center)*sin(piangle) - (P_cal_pr_eplane/p - piy_center)*cos(piangle),2)/pow(pisemiminor_axis,2) < 1)
