@@ -1,6 +1,6 @@
 gNumBCMs=3
-gBCM_Gain = 4673,3954,4000
-gBCM_Offset = 250000,250000,393000
+gBCM_Gain = 4574,3847,4166
+gBCM_Offset = 250200,250100,393000
 gBCM_Names="BCM1 BCM2 Unser"
 gBCM_Current_threshold=1.0
 ; index = 0 to gNumBCMs-1
