@@ -1,5 +1,4 @@
 #include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"
-#include "DEF-files/SHMS/PRODUCTION/BLOCK/pblock_vars.def"
 #include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"
