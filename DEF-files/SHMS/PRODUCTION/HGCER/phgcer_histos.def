@@ -2,17 +2,29 @@
 # Heavy Gas Cherenkov *
 #**********************
 
-#--------------------------
+#------------------------------
+# SHMS HGC FADC/NPE MONITORING
+#------------------------------
+
+TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 500 0 1000
+
+TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; PMT Number; Number Good ADC Hits' P.hgcer.numGoodAdcHits 4 0.5 4.5
+TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
+
+TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.hgcer.npe 4 0.5 4.5 100 0 50 P.hgcer.npe>0.0 
+TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 100 0 50 P.hgcer.npeSum>0.0 
+
+#-------------------------
 # SHMS HGC TRACK MATCHING
-#--------------------------
+#-------------------------
 
 sTH1F phgcer_trk_match 'SHMS Heavy Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' P.hgcer.numTracksMatched 4 0.5 4.5
 sTH1F phgcer_trk_fired 'SHMS Heavy Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' P.hgcer.numTracksFired 4 0.5 4.5
 
-
 #--------------------------
 # SHMS HGC TRACK PROJECTION
 #--------------------------
+
 TH1F phgcer_xtrack  'SHMS Heavy Gas Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' P.hgcer.xAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
 TH1F phgcer_ytrack  'SHMS Heavy Gas Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' P.hgcer.yAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
 TH2F phgcer_xytrack 'SHMS Heavy Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.hgcer.yAtCer P.hgcer.xAtCer 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0

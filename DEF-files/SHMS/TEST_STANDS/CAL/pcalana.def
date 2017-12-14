@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.cal.*
 block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/CAL/pcalana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"

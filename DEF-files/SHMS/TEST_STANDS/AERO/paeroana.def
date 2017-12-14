@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.aero.*
 block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/AERO/paeroana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"

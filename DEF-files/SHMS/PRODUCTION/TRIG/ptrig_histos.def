@@ -2,19 +2,24 @@
 # Trigger Apparatus *
 #********************
 
-TH1F ptrig_p1x_tdc_mult 'SHMS p1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1X_tdcMultiplicity 11 0 11
-TH1F ptrig_p1y_tdc_mult 'SHMS p1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1Y_tdcMultiplicity 11 0 11
-TH1F ptrig_p2x_tdc_mult 'SHMS p2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2X_tdcMultiplicity 11 0 11
-TH1F ptrig_p2y_tdc_mult 'SHMS p2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2Y_tdcMultiplicity 11 0 11
+#-------------------
+# DC REFERENCE TIMES
+#-------------------
 
-TH1F ptrig_p1T_tdc_mult 'SHMS p1x/p1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1T_tdcMultiplicity 11 0 11
-TH1F ptrig_p2T_tdc_mult 'SHMS p2x/p2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2T_tdcMultiplicity 11 0 11
+TH1F ptrig_pdc_ref1  'SHMS PDC Reference Time 1; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF1_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref2  'SHMS PDC Reference Time 2; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF2_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref3  'SHMS PDC Reference Time 3; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF3_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref4  'SHMS PDC Reference Time 4; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF4_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref5  'SHMS PDC Reference Time 5; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF5_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref6  'SHMS PDC Reference Time 6; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF6_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref7  'SHMS PDC Reference Time 7; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF7_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref8  'SHMS PDC Reference Time 8; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF8_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref9  'SHMS PDC Reference Time 9; TDC Time (ns); Counts / 1 ns;'  T.shms.pDCREF9_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref10 'SHMS PDC Reference Time 10; TDC Time (ns); Counts / 1 ns;' T.shms.pDCREF10_tdcTime 4000 0 4000
 
-TH1F ptrig_pT1_tdc_mult 'SHMS pT1 TDC Multiplicity (Slot 20, Channel 15); TDC Multiplicity; Counts / 1' T.shms.pT1_tdcMultiplicity 11 0 11
-TH1F ptrig_pT2_tdc_mult 'SHMS pT2 TDC Multiplicity (Slot 19, Channel 31); TDC Multiplicity; Counts / 1' T.shms.pT2_tdcMultiplicity 11 0 11
-TH1F ptrig_pT3_tdc_mult 'SHMS pT3 TDC Multiplicity (Slot 19, Channel 38); TDC Multiplicity; Counts / 1' T.shms.pT3_tdcMultiplicity 11 0 11
-
-TH1F ptrig_pFADC_TREF_ROC2_ptime_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; ADC Multiplicity; Counts / 1' T.shms.pFADC_TREF_ROC2_adcMultiplicity 11 0 11
+#------------------------
+# TRIGGER REFERENCE TIMES
+#------------------------
 
 TH1F ptrig_p1x_good_tdc 'SHMS p1x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p1X_tdcTime 800 0 800 T.shms.p1X_tdcMultiplicity==1
 TH1F ptrig_p1y_good_tdc 'SHMS p1y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p1Y_tdcTime 800 0 800 T.shms.p1Y_tdcMultiplicity==1
@@ -34,3 +39,17 @@ TH2F ptrig_ch1xy_ch2x 'SHMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.shms.p1T_
 TH2F ptrig_ch1x_ch2x  'SHMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)'   T.shms.p1X_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
 TH2F ptrig_ch1y_ch2x  'SHMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)'   T.shms.p1Y_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 T.shms.p2X_tdcMultiplicity==1&&T.shms.p1Y_tdcMultiplicity==1
 TH2F ptrig_ch1y_ch1x  'SHMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)'   T.shms.p1X_tdcTime T.shms.p1Y_tdcTime 200 100 300 200 100 300 T.shms.p1Y_tdcMultiplicity==1&&T.shms.p1X_tdcMultiplicity==1
+
+TH1F ptrig_p1x_tdc_mult 'SHMS p1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1X_tdcMultiplicity 11 0 11
+TH1F ptrig_p1y_tdc_mult 'SHMS p1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1Y_tdcMultiplicity 11 0 11
+TH1F ptrig_p2x_tdc_mult 'SHMS p2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2X_tdcMultiplicity 11 0 11
+TH1F ptrig_p2y_tdc_mult 'SHMS p2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2Y_tdcMultiplicity 11 0 11
+
+TH1F ptrig_p1T_tdc_mult 'SHMS p1x/p1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1T_tdcMultiplicity 11 0 11
+TH1F ptrig_p2T_tdc_mult 'SHMS p2x/p2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2T_tdcMultiplicity 11 0 11
+
+TH1F ptrig_pT1_tdc_mult 'SHMS pT1 TDC Multiplicity (Slot 20, Channel 15); TDC Multiplicity; Counts / 1' T.shms.pT1_tdcMultiplicity 11 0 11
+TH1F ptrig_pT2_tdc_mult 'SHMS pT2 TDC Multiplicity (Slot 19, Channel 31); TDC Multiplicity; Counts / 1' T.shms.pT2_tdcMultiplicity 11 0 11
+TH1F ptrig_pT3_tdc_mult 'SHMS pT3 TDC Multiplicity (Slot 19, Channel 38); TDC Multiplicity; Counts / 1' T.shms.pT3_tdcMultiplicity 11 0 11
+
+TH1F ptrig_pFADC_TREF_ROC2_ptime_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; ADC Multiplicity; Counts / 1' T.shms.pFADC_TREF_ROC2_adcMultiplicity 11 0 11

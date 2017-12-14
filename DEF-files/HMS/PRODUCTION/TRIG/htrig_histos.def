@@ -1,6 +1,7 @@
 #********************
 # Trigger Apparatus *
 #********************
+
 TH1F htrig_h1x_tdc_mult 'HMS h1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1X_tdcMultiplicity 11 0 11
 TH1F htrig_h1y_tdc_mult 'HMS h1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1Y_tdcMultiplicity 11 0 11
 TH1F htrig_h2x_tdc_mult 'HMS h2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2X_tdcMultiplicity 11 0 11
@@ -27,3 +28,12 @@ TH2F htrig_ch1xy_ch2x 'HMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.hms.h1T_td
 TH2F htrig_ch1x_ch2x 'HMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)' T.hms.h1X_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 T.hms.h2X_tdcMultiplicity==1&&T.hms.h1X_tdcMultiplicity==1
 TH2F htrig_ch1y_ch2x 'HMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.hms.h1Y_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 T.hms.h2X_tdcMultiplicity==1&&T.hms.h1Y_tdcMultiplicity==1
 TH2F htrig_ch1y_ch1x 'HMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)' T.hms.h1X_tdcTime T.hms.h1Y_tdcTime 200 100 300 200 100 300 T.hms.h1Y_tdcMultiplicity==1&&T.hms.h1X_tdcMultiplicity==1
+
+#----------------------------
+# HMS DC TRIG Reference Time
+#----------------------------
+
+TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF1_tdcTime 2000 0 2000
+TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF2_tdcTime 2000 0 2000
+TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF3_tdcTime 2000 0 2000
+TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF4_tdcTime 2000 0 2000

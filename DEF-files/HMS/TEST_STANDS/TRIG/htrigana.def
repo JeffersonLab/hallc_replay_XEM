@@ -1,3 +1,4 @@
 block T.hms.*
 
 #include "DEF-files/HMS/TEST_STANDS/TRIG/htrigana_histos.def"
+#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"

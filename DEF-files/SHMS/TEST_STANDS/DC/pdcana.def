@@ -1,5 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.dc.*
+block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/DC/pdcana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"

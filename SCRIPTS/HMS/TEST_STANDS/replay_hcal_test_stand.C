@@ -33,10 +33,12 @@ void replay_hcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
+  // Load params for HMS trigger configuration
+  gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/CAL/hcal.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/CAL/hcal_htrig.map");
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
   // Set up the equipment to be analyzed.
@@ -45,6 +47,13 @@ void replay_hcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add Calorimeter to HMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
 
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");

@@ -1,13 +1,18 @@
 Block: RawDecode
 
 Pedestal_event     g.evtyp == 99
-HMS_trig_1_event   g.evtyp == 1
-HMS_trig_2_event   g.evtyp == 2
-HMS_trig_3_event   g.evtyp == 3
-HMS_trig_4_event   g.evtyp == 4
-HMS_trig_5_event   g.evtyp == 5
-HMS_trig_6_event   g.evtyp == 6
-HMS_event          HMS_trig_1_event || HMS_trig_2_event || HMS_trig_3_event || HMS_trig_4_event || HMS_trig_5_event || HMS_trig_6_event
+HMS_event          g.evtyp == 2
+SHMS_event         g.evtyp == 1
+COIN_event         g.evtyp == 4
+
+TRIG1        T.hms.hTRIG1_tdcTimeRaw > 0
+TRIG2        T.hms.hTRIG2_tdcTimeRaw > 0
+TRIG3        T.hms.hTRIG3_tdcTimeRaw > 0
+HMS_Pretrig  TRIG1 || TRIG2 || TRIG3
+
+hms_trigs         HMS_event
+edtm_accepted     T.hms.hEDTM_tdcTime != 0.0
+physics_accepted  T.hms.hEDTM_tdcTime == 0.0
 
 RawDecode_master 1
 

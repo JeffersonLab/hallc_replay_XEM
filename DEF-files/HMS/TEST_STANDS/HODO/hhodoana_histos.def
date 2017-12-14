@@ -1,6 +1,7 @@
 #-----------------------
 # HMS Hodo Error Flags
 #-----------------------
+
 TH2F hhodo_1x_pos_adcErrFlg2D 'HMS 1X+ FPGA Error Flag; PMT Number; Error Flag' H.hod.1x.posAdcCounter H.hod.1x.posAdcErrorFlag 16 0.5 16.5 2 -0.5 1.5
 TH2F hhodo_1y_pos_adcErrFlg2D 'HMS 1Y+ FPGA Error Flag; PMT Number; Error Flag' H.hod.1y.posAdcCounter H.hod.1y.posAdcErrorFlag 10 0.5 10.5 2 -0.5 1.5
 TH2F hhodo_2x_pos_adcErrFlg2D 'HMS 2X+ FPGA Error Flag; PMT Number; Error Flag' H.hod.2x.posAdcCounter H.hod.2x.posAdcErrorFlag 16 0.5 16.5 2 -0.5 1.5
@@ -154,6 +155,7 @@ TH2F hhodo_2y_neg_raw_tdc_time_vs_pad 'HMS 2Y- Raw TDC Time vs. Paddle Number; P
 #-------------------------
 # HMS Hodo Pulse Pedestal
 #-------------------------
+
 TH2F hhodo_1x_pos_ped_vs_pad 'HMS 1X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPed 16 0.5 16.5 200 0 200
 TH2F hhodo_1y_pos_ped_vs_pad 'HMS 1Y+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPed 10 0.5 10.5 200 0 200
 TH2F hhodo_2x_pos_ped_vs_pad 'HMS 2X+ Pulse Pedestal vs. Paddle Number; Paddle Number; Pulse Pedestal / mV' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPed 16 0.5 16.5 200 0 200
@@ -167,6 +169,7 @@ TH2F hhodo_2y_neg_ped_vs_pad 'HMS 2Y- Pulse Pedestal vs. Paddle Number; Paddle N
 #-------------------------
 # HMS Hodo Pulse Integral
 #-------------------------
+
 TH2F hhodo_1x_pos_pi_vs_pad 'HMS 1X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseInt 16 0.5 16.5 320 0 80
 TH2F hhodo_1y_pos_pi_vs_pad 'HMS 1Y+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseInt 10 0.5 10.5 320 0 80
 TH2F hhodo_2x_pos_pi_vs_pad 'HMS 2X+ Pulse Integral vs. Paddle Number; Paddle Number; Pulse Integral / 0.25 pC' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseInt 16 0.5 16.5 320 0 80
@@ -181,6 +184,7 @@ TH2F hhodo_2y_neg_pi_vs_pad 'HMS 2Y- Pulse Integral vs. Paddle Number; Paddle Nu
 #--------------------------
 # HMS Hodo Pulse Amplitude
 #--------------------------
+
 TH2F hhodo_1x_pos_pamp_vs_pad 'HMS 1X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1x.posAdcCounter  H.hod.1x.posAdcPulseAmp 16 0.5 16.5 500 0 1000
 TH2F hhodo_1y_pos_pamp_vs_pad 'HMS 1Y+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.1y.posAdcCounter  H.hod.1y.posAdcPulseAmp 10 0.5 10.5 500 0 1000
 TH2F hhodo_2x_pos_pamp_vs_pad 'HMS 2X+ Pulse Amplitude vs. Paddle Number; Paddle Number; Pulse Amplitude / 2 mV' H.hod.2x.posAdcCounter  H.hod.2x.posAdcPulseAmp 16 0.5 16.5 500 0 1000
@@ -194,6 +198,7 @@ TH2F hhodo_2y_neg_pamp_vs_pad 'HMS 2Y- Pulse Amplitude vs. Paddle Number; Paddle
 #-------------------
 # HMS Hodo TDC Time
 #-------------------
+
 TH2F hhodo_1x_pos_tdc_time_vs_pad 'HMS 1X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1x.posTdcCounter  H.hod.1x.posTdcTime 16 0.5 16.5 200 -2000 0
 TH2F hhodo_1y_pos_tdc_time_vs_pad 'HMS 1Y+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1y.posTdcCounter  H.hod.1y.posTdcTime 10 0.5 10.5 200 -2000 0
 TH2F hhodo_2x_pos_tdc_time_vs_pad 'HMS 2X+ TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2x.posTdcCounter  H.hod.2x.posTdcTime 16 0.5 16.5 200 -2000 0
@@ -203,87 +208,6 @@ TH2F hhodo_1x_neg_tdc_time_vs_pad 'HMS 1X- TDC Time vs. Paddle Number; Paddle Nu
 TH2F hhodo_1y_neg_tdc_time_vs_pad 'HMS 1Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.1y.negTdcCounter  H.hod.1y.negTdcTime 10 0.5 10.5 200 -2000 0
 TH2F hhodo_2x_neg_tdc_time_vs_pad 'HMS 2X- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2x.negTdcCounter  H.hod.2x.negTdcTime 16 0.5 16.5 200 -2000 0
 TH2F hhodo_2y_neg_tdc_time_vs_pad 'HMS 2Y- TDC Time vs. Paddle Number; Paddle Number; TDC Time / 10 TDC Units' H.hod.2y.negTdcCounter  H.hod.2y.negTdcTime 10 0.5 10.5 200 -2000 0
-
-
-#-----------------------------------
-# HMS HODO GOOD ADC Multiplicities 
-#-----------------------------------
-
-TH1F hhodo_1x_good_adc_mult_pos 'HMS 1X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.1x.totNumGoodPosAdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_adc_mult_pos 'HMS 1Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.1y.totNumGoodPosAdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_adc_mult_pos 'HMS 2X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.2x.totNumGoodPosAdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_adc_mult_pos 'HMS 2Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' H.hod.2y.totNumGoodPosAdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_adc_mult_neg 'HMS 1X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.1x.totNumGoodNegAdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_adc_mult_neg 'HMS 1Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.1y.totNumGoodNegAdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_adc_mult_neg 'HMS 2X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.2x.totNumGoodNegAdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_adc_mult_neg 'HMS 2Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' H.hod.2y.totNumGoodNegAdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_adc_mult 'HMS 1X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.1x.totNumGoodAdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_adc_mult 'HMS 1Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.1y.totNumGoodAdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_adc_mult 'HMS 2X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.2x.totNumGoodAdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_adc_mult 'HMS 2Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' H.hod.2y.totNumGoodAdcHits 10 0.5 10.5
-
-#-----------------------------------
-# HMS HODO Good TDC Multiplicities
-#-----------------------------------
-
-TH1F hhodo_1x_good_tdc_mult_pos 'HMS 1X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.1x.totNumGoodPosTdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_tdc_mult_pos 'HMS 1Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.1y.totNumGoodPosTdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_tdc_mult_pos 'HMS 2X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.2x.totNumGoodPosTdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_tdc_mult_pos 'HMS 2Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' H.hod.2y.totNumGoodPosTdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_tdc_mult_neg 'HMS 1X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.1x.totNumGoodNegTdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_tdc_mult_neg 'HMS 1Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.1y.totNumGoodNegTdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_tdc_mult_neg 'HMS 2X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.2x.totNumGoodNegTdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_tdc_mult_neg 'HMS 2Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' H.hod.2y.totNumGoodNegTdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_tdc_mult 'HMS 1X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.1x.totNumGoodTdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_tdc_mult 'HMS 1Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.1y.totNumGoodTdcHits 10 0.5 10.5
-TH1F hhodo_2x_good_tdc_mult 'HMS 2X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.2x.totNumGoodTdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_tdc_mult 'HMS 2Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' H.hod.2y.totNumGoodTdcHits 10 0.5 10.5
-
-#---------------------------------
-# HMS HODO GOOD ADC OCCUPANCIES
-#---------------------------------
-
-TH1F hhodo_1x_good_adc_occ_pos 'HMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.1x.numGoodPosAdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_adc_occ_pos 'HMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.1y.numGoodPosAdcHits 10 0.5 10.5 
-TH1F hhodo_2x_good_adc_occ_pos 'HMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.2x.numGoodPosAdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_adc_occ_pos 'HMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' H.hod.2y.numGoodPosAdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_adc_occ_neg 'HMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.1x.numGoodNegAdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_adc_occ_neg 'HMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.1y.numGoodNegAdcHits 10 0.5 10.5 
-TH1F hhodo_2x_good_adc_occ_neg 'HMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.2x.numGoodNegAdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_adc_occ_neg 'HMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' H.hod.2y.numGoodNegAdcHits 10 0.5 10.5
-
-#--------------------------------
-# HMS HODO GOOD TDC OCCUPANCIES
-#--------------------------------
-
-TH1F hhodo_1x_good_tdc_occ_pos 'HMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.1x.numGoodPosTdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_tdc_occ_pos 'HMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.1y.numGoodPosTdcHits 10 0.5 10.5 
-TH1F hhodo_2x_good_tdc_occ_pos 'HMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.2x.numGoodPosTdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_tdc_occ_pos 'HMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' H.hod.2y.numGoodPosTdcHits 10 0.5 10.5
-
-TH1F hhodo_1x_good_tdc_occ_neg 'HMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.1x.numGoodNegTdcHits 16 0.5 16.5
-TH1F hhodo_1y_good_tdc_occ_neg 'HMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.1y.numGoodNegTdcHits 10 0.5 10.5 
-TH1F hhodo_2x_good_tdc_occ_neg 'HMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.2x.numGoodNegTdcHits 16 0.5 16.5
-TH1F hhodo_2y_good_tdc_occ_neg 'HMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' H.hod.2y.numGoodNegTdcHits 10 0.5 10.5
-
-#------------------------------
-# HMS HODO Good PULSE PEDESTAL
-#------------------------------
-
-TH2F hhodo_1x_good_pped_vs_pmt_pos 'HMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1x.GoodPosAdcPed 16 0.5 16.5 200 0 200 H.hod.1x.GoodPosAdcPed>0.0
-TH2F hhodo_1y_good_pped_vs_pmt_pos 'HMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1y.GoodPosAdcPed 10 0.5 10.5 200 0 200 H.hod.1y.GoodPosAdcPed>0.0
-TH2F hhodo_2x_good_pped_vs_pmt_pos 'HMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2x.GoodPosAdcPed 16 0.5 16.5 200 0 200 H.hod.2x.GoodPosAdcPed>0.0
-TH2F hhodo_2y_good_pped_vs_pmt_pos 'HMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2y.GoodPosAdcPed 10 0.5 10.5 200 0 200 H.hod.2y.GoodPosAdcPed>0.0
-
-TH2F hhodo_1x_good_pped_vs_pmt_neg 'HMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1x.GoodNegAdcPed 16 0.5 16.5 200 0 200 H.hod.1x.GoodNegAdcPed>0.0
-TH2F hhodo_1y_good_pped_vs_pmt_neg 'HMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.1y.GoodNegAdcPed 10 0.5 10.5 200 0 200 H.hod.1y.GoodNegAdcPed>0.0
-TH2F hhodo_2x_good_pped_vs_pmt_neg 'HMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2x.GoodNegAdcPed 16 0.5 16.5 200 0 200 H.hod.2x.GoodNegAdcPed>0.0
-TH2F hhodo_2y_good_pped_vs_pmt_neg 'HMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / mV' [I+1]  H.hod.2y.GoodNegAdcPed 10 0.5 10.5 200 0 200 H.hod.2y.GoodNegAdcPed>0.0
 
 #------------------------------
 # HMS HODO Good PULSE INTEGRAL

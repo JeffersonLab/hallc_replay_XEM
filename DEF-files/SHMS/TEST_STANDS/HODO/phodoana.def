@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.hod.*
 block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/HODO/phodoana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/HODO/phodo_histos.def"

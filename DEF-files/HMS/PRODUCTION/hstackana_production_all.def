@@ -1,4 +1,13 @@
+#include "DEF-files/HMS/PRODUCTION/BLOCK/hblock_vars.def"
+
+#include "DEF-files/HMS/TEST_STANDS/CER/hcerana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/DC/hdcana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/HODO/hhodoana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/CAL/hcalana_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/TRIG/htrigana_histos.def"
+
 #include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"
+#include "DEF-files/HMS/PRODUCTION/BLOCK/hblock_vars.def"
 #include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"
 #include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"
 #include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"

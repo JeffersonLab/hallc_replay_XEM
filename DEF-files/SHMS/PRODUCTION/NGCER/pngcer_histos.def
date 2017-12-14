@@ -2,6 +2,18 @@
 # Noble Gas Cherenkov *
 #**********************
 
+#-----------------------------
+# SHMS NGC FADC/NPE MONITORING
+#-----------------------------
+
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 2 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 500 0 1000
+
+TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Good Occupancy; PMT Number; Number of Good ADC Hits' P.ngcer.numGoodAdcHits 4 0.5 4.5
+TH1F pngcer_good_mult 'SHMS Noble Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.ngcer.totNumGoodAdcHits 4 0.5 4.5
+
+TH2F pngcer_npe 'SHMS Noble Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.ngcer.npe 4 0.5 4.5 100 0 50 P.ngcer.npe>0.0 
+TH1F pngcer_tot_npe 'SHMS Noble Gas Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' P.ngcer.npeSum 100 0 50 P.ngcer.npeSum>0.0 
+
 #--------------------------
 # SHMS NGC TRACK MATCHING
 #--------------------------
@@ -12,6 +24,7 @@ sTH1F pngcer_trk_fired 'SHMS Noble Gas Cherenkov Tracks Fired; PMT Number; Numbe
 #--------------------------
 # SHMS NGC TRACK PROJECTION
 #--------------------------
+
 TH1F pngcer_xtrack  'SHMS Noble Gas Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' P.ngcer.xAtCer 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
 TH1F pngcer_ytrack  'SHMS Noble Gas Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' P.ngcer.yAtCer 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
 TH2F pngcer_xytrack 'SHMS Noble Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.ngcer.yAtCer P.ngcer.xAtCer 120 -60 60 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0

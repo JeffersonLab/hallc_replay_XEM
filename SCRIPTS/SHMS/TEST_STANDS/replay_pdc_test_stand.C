@@ -35,20 +35,26 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-  
-  // Load params for SHMS DC test stand configuration
-  //gHcParms->Load("PARAM/SHMS/DC/pdc_test_stand.param");
+  // Load params for the trigger apparatus
+  gHcParms->Load("PARAM/TRIG/tshms.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
   //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/DC/pdc.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/DC/pdc_ptrig.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add SHMS drift chambers
   SHMS->AddDetector(new THcDC("dc", "Drift Chambers"));
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
+  TRG->AddDetector(shms);
 
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");

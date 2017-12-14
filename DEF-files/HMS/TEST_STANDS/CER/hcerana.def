@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block H.cer.*
 block T.hms.*
 
 #include "DEF-files/HMS/TEST_STANDS/CER/hcerana_histos.def"
+#include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"

@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.ngcer.*
 block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/NGCER/pngcerana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"

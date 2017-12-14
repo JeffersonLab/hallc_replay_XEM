@@ -2,9 +2,79 @@
 # SHMS HODOSCOPES
 #*****************
 
-#----------------------------------------------------------------
-# SHMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
-#----------------------------------------------------------------
+#-------------------------
+# SHMS FADC/TDC Monitoring
+#-------------------------
+
+# SHMS HODO GOOD PULSE PEDESTAL
+
+TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 500 0 1000 P.hod.1x.GoodPosAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 500 0 1000 P.hod.1y.GoodPosAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 500 0 1000 P.hod.2x.GoodPosAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 500 0 1000 P.hod.2y.GoodPosAdcPed>0.0
+
+TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 500 0 1000 P.hod.1x.GoodNegAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 500 0 1000 P.hod.1y.GoodNegAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 500 0 1000 P.hod.2x.GoodNegAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 2 mV' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 500 0 1000 P.hod.2y.GoodNegAdcPed>0.0
+
+# SHMS HODO GOOD ADC Multiplicities 
+
+TH1F phodo_1x_good_adc_mult_pos 'SHMS 1X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1x.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_pos 'SHMS 1Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1y.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_pos 'SHMS 2X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2x.totNumGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_pos 'SHMS 2Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2y.totNumGoodPosAdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_adc_mult_neg 'SHMS 1X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1x.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_neg 'SHMS 1Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1y.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_neg 'SHMS 2X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2x.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_neg 'SHMS 2Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2y.totNumGoodNegAdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_adc_mult 'SHMS 1X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.1x.totNumGoodAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult 'SHMS 1Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.1y.totNumGoodAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult 'SHMS 2X Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.2x.totNumGoodAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult 'SHMS 2Y Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hod.2y.totNumGoodAdcHits 21 0.5 21.5
+
+# SHMS HODO Good TDC Multiplicities
+
+TH1F phodo_1x_good_tdc_mult_pos 'SHMS 1X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1x.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_pos 'SHMS 1Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1y.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_pos 'SHMS 2X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2x.totNumGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_pos 'SHMS 2Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2y.totNumGoodPosTdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_tdc_mult_neg 'SHMS 1X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1x.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_neg 'SHMS 1Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1y.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_neg 'SHMS 2X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2x.totNumGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_neg 'SHMS 2Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2y.totNumGoodNegTdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_tdc_mult 'SHMS 1X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.1x.totNumGoodTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult 'SHMS 1Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.1y.totNumGoodTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult 'SHMS 2X Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.2x.totNumGoodTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult 'SHMS 2Y Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good TDC Hits' P.hod.2y.totNumGoodTdcHits 21 0.5 21.5
+
+# SHMS HODO GOOD ADC OCCUPANCIES
+
+TH1F phodo_1x_good_adc_occ_pos 'SHMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1x.numGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_pos 'SHMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1y.numGoodPosAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_pos 'SHMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2x.numGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_pos 'SHMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2y.numGoodPosAdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_adc_occ_neg 'SHMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1x.numGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_neg 'SHMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1y.numGoodNegAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_neg 'SHMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2x.numGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_neg 'SHMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2y.numGoodNegAdcHits 21 0.5 21.5
+
+#SHMS HODO GOOD TDC OCCUPANCIES
+
+TH1F phodo_1x_good_tdc_occ_pos 'SHMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1x.numGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_pos 'SHMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1y.numGoodPosTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_pos 'SHMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2x.numGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_pos 'SHMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2y.numGoodPosTdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_tdc_occ_neg 'SHMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1x.numGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_neg 'SHMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1y.numGoodNegTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_neg 'SHMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2x.numGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_neg 'SHMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2y.numGoodNegTdcHits 21 0.5 21.5
 
 #----------------------------------------------------------------
 # SHMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 

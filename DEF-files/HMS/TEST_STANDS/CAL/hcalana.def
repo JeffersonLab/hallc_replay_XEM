@@ -1,5 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
+block T.hms.*
 block H.cal.*
 
 #include "DEF-files/HMS/TEST_STANDS/CAL/hcalana_histos.def"
+#include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"

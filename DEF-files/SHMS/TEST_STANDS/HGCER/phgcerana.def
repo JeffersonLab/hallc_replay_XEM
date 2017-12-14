@@ -1,6 +1,7 @@
 # See $ANALYZER/examples/output_example.def for examples
-#
+
 block P.hgcer.*
 block T.shms.*
 
 #include "DEF-files/SHMS/TEST_STANDS/HGCER/phgcerana_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/HGCER/phgcer_histos.def"
