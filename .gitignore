@@ -34,3 +34,5 @@ onlineGUI/onlineGUI_v1.2.1/onlineDict_rdict.pcm
 .nfs*
 raw.copiedtotape
 HISTOGRAMS
+*.png
+*.ps
