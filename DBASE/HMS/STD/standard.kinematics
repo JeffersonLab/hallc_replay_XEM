@@ -188,3 +188,7 @@ gtargmass_amu=12.0107
 htheta_lab = -21.94
 hpcentral = 1.6162
 
+1211-1213
+gtargmass_amu=1.00794
+htheta_lab = -21.94
+hpcentral = 0.9
