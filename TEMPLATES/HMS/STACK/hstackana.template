@@ -30,17 +30,10 @@ hmsDC2v1Planes5	  Counts: {hmsDC2_5hits_v1.npassed} eff : {hmsDC2_6hits_v1.npass
 hmsDC2v2Planes5	  Counts: {hmsDC2_5hits_v2.npassed} eff : {hmsDC2_6hits_v2.npassed/hmsDC2_5hits_v2.npassed}
 hmsDC2x2Planes5	  Counts: {hmsDC2_5hits_x2.npassed} eff : {hmsDC2_6hits_x2.npassed/hmsDC2_5hits_x2.npassed}
 
-HMS Calorimeter Efficiencies
-
-hA	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
-hB	     Counts: {H.cal.stat_trksum2} eff : {H.cal.stat_hitsum2 / H.cal.stat_trksum2}
-hC	     Counts: {H.cal.stat_trksum3} eff : {H.cal.stat_hitsum3 / H.cal.stat_trksum3}
-hD	     Counts: {H.cal.stat_trksum4} eff : {H.cal.stat_hitsum4 / H.cal.stat_trksum4}
-
 *****************************
 *HMS TRACKING EFFICIENCIES *
 *****************************
-htrig                          :   {hmscoin_event.npassed}
+htrig                          :   {hms_trigs.npassed}
 hhitslt = passed hits/cham     :   {hmsHitsLt.npassed}
 hhitsplanes = +planes >= 5/6   :   {hmsHitsPlanes.npassed}
 hhitsplanessps = + sps         :   {hSpacePoints.npassed}
@@ -66,3 +59,119 @@ hscinshouldh                   :   {HMSScinShouldh.npassed}
 SING FID TRACK EFFIC           : {HMSScinDid.npassed/(HMSScinShould.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShould.npassed-HMSScinDid.npassed)/(HMSScinShould.npassed+.0001)):%8.4f}
 E SING FID TRACK EFFIC         : {HMSScinDide.npassed/(HMSScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShoulde.npassed-HMSScinDide.npassed)/(HMSScinShoulde.npassed+.0001)):%8.4f}
 HADRON SING FID TRACK EFFIC    : {HMSScinDidh.npassed/(HMSScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(HMSScinShouldh.npassed-HMSScinDidh.npassed)/(HMSScinShouldh.npassed+.0001)):%8.4f}
+
+************
+* HGC Cerenkov *
+****************
+
+Good Track Requirements:
+   1. Only one track found in the focal plane
+   2. chisq/dof < {hcer_red_chi2_max:%5.1f}
+   3. {hcer_beta_min:%5.3f} < beta < {hcer_beta_max:%5.3f}
+   4. {hcer_enorm_min:%5.3f} < calorimeter energy < {hcer_enorm_max:%5.3f}
+Threshold set at {hcer_npe_thresh:%4.1f}
+*HGC EFF* 2PMTs
+HMS Region 1 efficiency: {HMS_hcer_track_fired_region_1.npassed/HMS_hcer_track_matched_region_1.npassed} = {HMS_hcer_track_fired_region_1.npassed} of {HMS_hcer_track_matched_region_1.npassed} good tracks.
+HMS Region 2 efficiency: {HMS_hcer_track_fired_region_2.npassed/HMS_hcer_track_matched_region_2.npassed} = {HMS_hcer_track_fired_region_2.npassed} of {HMS_hcer_track_matched_region_2.npassed} good tracks.
+Overall HGC Efficiency: {HMS_hcer_track_fired_tot.npassed/HMS_hcer_track_matched_tot.npassed} = {HMS_hcer_track_fired_tot.npassed} of {HMS_hcer_track_matched_tot.npassed} good tracks.
+
+****************************
+* Calorimeter Efficiencies *
+****************************
+Efficiencies for calorimeter is the fraction of times block was hit when track
+with chisquared/dof < {hstat_cal_maxchisq:%5.1f} came within {hstat_cal_slop:%4.1f} cm of the center.
+and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
+
+Events examined = strig       = {hms_trigs.npassed}
+Tracks found    = scleantrack = {hCleanTrack.npassed}
+Tracks passing chisquared cut = (hstat_cal_numevents:%7d) (in previous template, do we need this here?)
+
+hmsPreShower	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
+hmsShowerArray	     Counts: {H.cal.stat_trksum_array} eff : {H.cal.stat_hitsum_array / H.cal.stat_trksum_array}
+
+hA	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
+hB	     Counts: {H.cal.stat_trksum2} eff : {H.cal.stat_hitsum2 / H.cal.stat_trksum2}
+hC	     Counts: {H.cal.stat_trksum3} eff : {H.cal.stat_hitsum3 / H.cal.stat_trksum3}
+hD	     Counts: {H.cal.stat_trksum4} eff : {H.cal.stat_hitsum4 / H.cal.stat_trksum4}
+
+**************************
+* Hodoscope Efficiencies * 
+**************************
+Efficiencies for hodoscopes is the fraction of times scin. was hit when track
+with chisquared/dof < {hstat_maxchisq:%5.1f} came within {hstat_slop:%4.1f} cm of the center.
+
+Events examined = strig       = {hms_trigs.npassed}
+Tracks found    = scleantrack = {hCleanTrack.npassed}
+//Tracks passing chisquared cut = (stat_numevents) (in previous template, do we still need this?)
+
+Plane 1: {hhodo_plane_AND_eff[0]}
+Plane 2: {hhodo_plane_AND_eff[1]}
+Plane 3: {hhodo_plane_AND_eff[2]}
+Plane 4: {hhodo_plane_AND_eff[3]}
+
+S1XY : {hhodo_s1XY_eff}
+S2XY : {hhodo_s2XY_eff}
+
+STOF: {hhodo_stof_eff}
+
+3_of_4 EFF : {hhodo_3_of_4_eff}
+4_of_4 EFF : {hhodo_4_of_4_eff}
+
+*HODO EFF*
+Scint		Pos eff		Neg eff		OR eff		AND eff		 Hits
+-----------------------------------------------------------------------------------------------------------
+H1X1		{hhodo_pos_eff[0]}		{hhodo_neg_eff[0]}		 {hhodo_or_eff[0]}		 {hhodo_and_eff[0]}             {hhodo_gold_hits[0]}
+H1X2		{hhodo_pos_eff[4]}		{hhodo_neg_eff[4]}	 	 {hhodo_or_eff[4]}	 	 {hhodo_and_eff[4]}	       {hhodo_gold_hits[4]}
+H1X3	 	{hhodo_pos_eff[8]}		{hhodo_neg_eff[8]}		 {hhodo_or_eff[8]}	 	 {hhodo_and_eff[8]}  	       {hhodo_gold_hits[8]}
+H1X4 	 	{hhodo_pos_eff[12]}		{hhodo_neg_eff[12]} 	 	 {hhodo_or_eff[12]} 	 	 {hhodo_and_eff[12]}	       {hhodo_gold_hits[12]}
+H1X5	 	{hhodo_pos_eff[16]}		{hhodo_neg_eff[16]} 	 	 {hhodo_or_eff[16]} 	 	 {hhodo_and_eff[16]} 	       {hhodo_gold_hits[16]}
+H1X6	 	{hhodo_pos_eff[20]}		{hhodo_neg_eff[20]} 	 	 {hhodo_or_eff[20]} 	 	 {hhodo_and_eff[20]} 	       {hhodo_gold_hits[20]}
+H1X7 	 	{hhodo_pos_eff[24]}  		{hhodo_neg_eff[24]} 	 	 {hhodo_or_eff[24]} 	 	 {hhodo_and_eff[24]} 	       {hhodo_gold_hits[24]}
+H1X8 	 	{hhodo_pos_eff[28]} 		{hhodo_neg_eff[28]} 	 	 {hhodo_or_eff[28]} 	 	 {hhodo_and_eff[28]} 	       {hhodo_gold_hits[28]}
+H1X9 	 	{hhodo_pos_eff[32]}		{hhodo_neg_eff[32]} 	 	 {hhodo_or_eff[32]} 	 	 {hhodo_and_eff[32]} 	       {hhodo_gold_hits[32]}
+H1X10 	 	{hhodo_pos_eff[36]} 		{hhodo_neg_eff[36]} 	 	 {hhodo_or_eff[36]} 	 	 {hhodo_and_eff[36]}	       {hhodo_gold_hits[36]}
+H1X11	 	{hhodo_pos_eff[40]} 		{hhodo_neg_eff[40]} 	 	 {hhodo_or_eff[40]} 	 	 {hhodo_and_eff[40]} 	       {hhodo_gold_hits[40]}
+H1X12	 	{hhodo_pos_eff[44]} 		{hhodo_neg_eff[44]} 	 	 {hhodo_or_eff[44]} 	 	 {hhodo_and_eff[44]} 	       {hhodo_gold_hits[44]}
+H1X13 	 	{hhodo_pos_eff[48]} 		{hhodo_neg_eff[48]} 	 	 {hhodo_or_eff[48]} 	 	 {hhodo_and_eff[48]} 	       {hhodo_gold_hits[48]}
+H1X14 	 	{hhodo_pos_eff[52]} 		{hhodo_neg_eff[52]} 	 	 {hhodo_or_eff[52]} 	 	 {hhodo_and_eff[52]} 	       {hhodo_gold_hits[52]}
+H1X15 	 	{hhodo_pos_eff[56]} 		{hhodo_neg_eff[56]} 	 	 {hhodo_or_eff[56]} 	 	 {hhodo_and_eff[56]} 	       {hhodo_gold_hits[56]}
+H1X16  	 	{hhodo_pos_eff[60]} 		{hhodo_neg_eff[60]} 	 	 {hhodo_or_eff[60]} 	 	 {hhodo_and_eff[60]} 	       {hhodo_gold_hits[60]}
+
+H1Y1 	 	{hhodo_pos_eff[1]}		{hhodo_neg_eff[1]} 	 	 {hhodo_or_eff[1]}	 	 {hhodo_and_eff[1]}	       {hhodo_gold_hits[1]}
+H1Y2 	 	{hhodo_pos_eff[5]} 		{hhodo_neg_eff[5]} 	 	 {hhodo_or_eff[5]} 	 	 {hhodo_and_eff[5]} 	       {hhodo_gold_hits[5]}
+H1Y3		{hhodo_pos_eff[9]} 		{hhodo_neg_eff[9]} 	 	 {hhodo_or_eff[9]} 	 	 {hhodo_and_eff[9]} 	       {hhodo_gold_hits[9]}
+H1Y4   	 	{hhodo_pos_eff[13]} 		{hhodo_neg_eff[13]} 	 	 {hhodo_or_eff[13]} 	 	 {hhodo_and_eff[13]} 	       {hhodo_gold_hits[13]}
+H1Y5 	 	{hhodo_pos_eff[17]} 		{hhodo_neg_eff[17]} 	 	 {hhodo_or_eff[17]} 	 	 {hhodo_and_eff[17]} 	       {hhodo_gold_hits[17]}
+H1Y6 	 	{hhodo_pos_eff[21]} 		{hhodo_neg_eff[21]} 	 	 {hhodo_or_eff[21]} 	 	 {hhodo_and_eff[21]} 	       {hhodo_gold_hits[21]}
+H1Y7 	 	{hhodo_pos_eff[25]} 		{hhodo_neg_eff[25]} 	 	 {hhodo_or_eff[25]} 	 	 {hhodo_and_eff[25]} 	       {hhodo_gold_hits[25]}
+H1Y8 	 	{hhodo_pos_eff[29]} 		{hhodo_neg_eff[29]} 	 	 {hhodo_or_eff[29]} 	 	 {hhodo_and_eff[29]} 	       {hhodo_gold_hits[29]}
+H1Y9 	 	{hhodo_pos_eff[33]} 		{hhodo_neg_eff[33]} 	 	 {hhodo_or_eff[33]} 	 	 {hhodo_and_eff[33]} 	       {hhodo_gold_hits[33]}
+H1Y10 	 	{hhodo_pos_eff[37]} 		{hhodo_neg_eff[37]} 	 	 {hhodo_or_eff[37]} 	 	 {hhodo_and_eff[37]} 	       {hhodo_gold_hits[37]}
+
+H2X1	 	{hhodo_pos_eff[2]}	 	{hhodo_neg_eff[2]}	 	 {hhodo_or_eff[2]} 	 	 {hhodo_and_eff[2]} 	       {hhodo_gold_hits[2]}
+H2X2 	 	{hhodo_pos_eff[6]}	 	{hhodo_neg_eff[6]}	 	 {hhodo_or_eff[6]}	 	 {hhodo_and_eff[6]}	       {hhodo_gold_hits[6]}
+H2X3 	 	{hhodo_pos_eff[10]} 	 	{hhodo_neg_eff[10]} 	 	 {hhodo_or_eff[10]}	 	 {hhodo_and_eff[10]} 	       {hhodo_gold_hits[10]}
+H2X4 	 	{hhodo_pos_eff[14]} 	 	{hhodo_neg_eff[14]}	 	 {hhodo_or_eff[14]} 	 	 {hhodo_and_eff[14]} 	       {hhodo_gold_hits[14]}
+H2X5 	 	{hhodo_pos_eff[18]} 	 	{hhodo_neg_eff[18]} 	 	 {hhodo_or_eff[18]} 	 	 {hhodo_and_eff[18]}	       {hhodo_gold_hits[18]}
+H2X6 	 	{hhodo_pos_eff[22]}	 	{hhodo_neg_eff[22]}	 	 {hhodo_or_eff[22]} 	 	 {hhodo_and_eff[22]} 	       {hhodo_gold_hits[22]}
+H2X7 	 	{hhodo_pos_eff[26]} 	 	{hhodo_neg_eff[26]}	 	 {hhodo_or_eff[26]}	 	 {hhodo_and_eff[26]}	       {hhodo_gold_hits[26]}
+H2X8 	 	{hhodo_pos_eff[30]} 	 	{hhodo_neg_eff[30]}		 {hhodo_or_eff[30]}      	 {hhodo_and_eff[30]}	       {hhodo_gold_hits[30]}
+H2X9 	 	{hhodo_pos_eff[34]} 	 	{hhodo_neg_eff[34]}		 {hhodo_or_eff[34]}		 {hhodo_and_eff[34]}	       {hhodo_gold_hits[34]}
+H2X10	 	{hhodo_pos_eff[38]}	 	{hhodo_neg_eff[38]}		 {hhodo_or_eff[38]}		 {hhodo_and_eff[38]}	       {hhodo_gold_hits[38]}
+H2X11 	 	{hhodo_pos_eff[42]} 	 	{hhodo_neg_eff[42]}		 {hhodo_or_eff[42]}		 {hhodo_and_eff[42]}	       {hhodo_gold_hits[42]}
+H2X12 	 	{hhodo_pos_eff[46]} 	 	{hhodo_neg_eff[46]}		 {hhodo_or_eff[46]}		 {hhodo_and_eff[46]}	       {hhodo_gold_hits[46]}
+H2X13 	 	{hhodo_pos_eff[50]} 	 	{hhodo_neg_eff[50]}		 {hhodo_or_eff[50]}		 {hhodo_and_eff[50]}	       {hhodo_gold_hits[50]}
+H2X14 	 	{hhodo_pos_eff[54]} 	 	{hhodo_neg_eff[54]}		 {hhodo_or_eff[54]}		 {hhodo_and_eff[54]}	       {hhodo_gold_hits[54]}
+H2X15 	 	{hhodo_pos_eff[58]} 	 	{hhodo_neg_eff[58]}		 {hhodo_or_eff[58]}		 {hhodo_and_eff[58]}	       {hhodo_gold_hits[58]}
+H2X16 	 	{hhodo_pos_eff[62]} 	 	{hhodo_neg_eff[62]}		 {hhodo_or_eff[62]}		 {hhodo_and_eff[62]}	       {hhodo_gold_hits[62]}
+
+H2Y1	 	{hhodo_pos_eff[3]}	 	{hhodo_neg_eff[3]}		 {hhodo_or_eff[3]}       	 {hhodo_and_eff[3]}	       {hhodo_gold_hits[3]}
+H2Y2 	 	{hhodo_pos_eff[7]}	 	{hhodo_neg_eff[7]} 	 	 {hhodo_or_eff[7]} 	 	 {hhodo_and_eff[7]}    	       {hhodo_gold_hits[7]}
+H2Y3 	 	{hhodo_pos_eff[11]} 	 	{hhodo_neg_eff[11]}	 	 {hhodo_or_eff[11]} 	 	 {hhodo_and_eff[11]}	       {hhodo_gold_hits[11]}
+H2Y4 	 	{hhodo_pos_eff[15]} 	 	{hhodo_neg_eff[15]} 	 	 {hhodo_or_eff[15]} 	 	 {hhodo_and_eff[15]}	       {hhodo_gold_hits[15]}
+H2Y5 	 	{hhodo_pos_eff[19]} 	 	{hhodo_neg_eff[19]}	 	 {hhodo_or_eff[19]} 	 	 {hhodo_and_eff[19]}	       {hhodo_gold_hits[19]}
+H2Y6 	 	{hhodo_pos_eff[23]} 	 	{hhodo_neg_eff[23]} 	 	 {hhodo_or_eff[23]} 	 	 {hhodo_and_eff[23]}	       {hhodo_gold_hits[23]}
+H2Y7 	 	{hhodo_pos_eff[27]} 	 	{hhodo_neg_eff[27]} 	 	 {hhodo_or_eff[27]} 	 	 {hhodo_and_eff[27]}	       {hhodo_gold_hits[27]}
+H2Y8 	 	{hhodo_pos_eff[31]} 	 	{hhodo_neg_eff[31]} 	 	 {hhodo_or_eff[31]} 	 	 {hhodo_and_eff[31]}	       {hhodo_gold_hits[31]}
+H2Y9 	 	{hhodo_pos_eff[35]} 	 	{hhodo_neg_eff[35]} 	 	 {hhodo_or_eff[35]} 	 	 {hhodo_and_eff[35]}	       {hhodo_gold_hits[35]}
+H2Y10 	 	{hhodo_pos_eff[39]} 	 	{hhodo_neg_eff[39]} 	 	 {hhodo_or_eff[39]} 	 	 {hhodo_and_eff[39]}	       {hhodo_gold_hits[39]}

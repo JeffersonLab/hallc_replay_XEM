@@ -48,10 +48,104 @@ shmsDC2v1Planes5     			  Counts: {shmsDC2_5hits_v1.npassed} eff : {shmsDC2_6hit
 shmsDC2v2Planes5     			  Counts: {shmsDC2_5hits_v2.npassed} eff : {shmsDC2_6hits_v2.npassed / shmsDC2_5hits_v2.npassed}
 shmsDC2x2Planes5     			  Counts: {shmsDC2_5hits_x2.npassed} eff : {shmsDC2_6hits_x2.npassed / shmsDC2_5hits_x2.npassed}
 
+**DRIFTCHAMBER**
+I'm pretty sure that these are the "raw" number of counts. "Raw" means one or more hits per dc plane.
+shmsDC1_1hit_x1:     	   {shmsDC1_1hit_x1.npassed} 		
+shmsDC1_1hit_u1:     	   {shmsDC1_1hit_u1.npassed}		
+shmsDC1_1hit_u2:      	   {shmsDC1_1hit_u2.npassed}		
+shmsDC1_1hit_v1:      	   {shmsDC1_1hit_v1.npassed}		
+shmsDC1_1hit_v2:      	   {shmsDC1_1hit_v2.npassed}		
+shmsDC1_1hit_x2:      	   {shmsDC1_1hit_x2.npassed}		
+
+shmsDC2_1hit_x1:      	   {shmsDC2_1hit_x1.npassed}		
+shmsDC2_1hit_u1:      	   {shmsDC2_1hit_u1.npassed}		
+shmsDC2_1hit_u2:      	   {shmsDC2_1hit_u2.npassed}		
+shmsDC2_1hit_v1:      	   {shmsDC2_1hit_v1.npassed}		
+shmsDC2_1hit_v2:      	   {shmsDC2_1hit_v2.npassed}		
+shmsDC2_1hit_x2:      	   {shmsDC2_1hit_x2.npassed}		
+
+"Good" means one or two hits per dc plane.
+goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+
+goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+
+goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(P.pTREF3.scaler+.0001):%5.3f}
+
+realhdc1x1:	     	   {realhdc1x1.npassed}
+realhdc1u2:	     	   {realhdc1u2.npassed}
+realhdc1u1:          	   {realhdc1u1.npassed}
+realhdc1v1:	    	   {realhdc1v1.npassed}
+realhdc1v2:	     	   {realhdc1v2.npassed}
+realhdc1x2:	     	   {realhdc1x2.npassed}
+
+realhdc2x1:	     	   {realhdc2x1.npassed}
+realhdc2u2:	     	   {realhdc2u2.npassed}
+realhdc2u1:	     	   {realhdc2u1.npassed}
+realhdc2v1:	     	   {realhdc2v1.npassed}
+realhdc2v2:	     	   {realhdc2v2.npassed}
+realhdc2x2:	     	   {realhdc2x2.npassed}
+    	   	       
+**HODOSCOPE**
+"Any" means one or more hits per scint plane.
+anyhs1x:    	   	   {anyhs1x.npassed}	eff: {anyhs1x.npassed/(P.pTREF3.npassed+.0001):%5.3f}		BAD = ??
+anyhs1y:    	 	   {anyhs1y.npassed}	eff: {anyhs1y.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+anyhs2x:    	 	   {anyhs2x.npassed}	eff: {anyhs2x.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+anyhs2y:    	 	   {anyhs2y.npassed}	eff: {anyhs2y.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+
+"Good" means one or two hits per scint plane.
+goodps1x:    	    	   {goodps1x.npassed}	eff: {goodps1x.npassed/(P.pTREF3.npassed+.0001):%5.3f}		BAD = ??
+goodps1y:    	 	   {goodps1y.npassed}	eff: {goodps1y.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+goodps1:     	 	   {goodps1.npassed}	eff: {goodps1.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+goodps2x:    	 	   {goodps2x.npassed}	eff: {goodps2x.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+goodps2y:    	 	   {goodps2y.npassed}	eff: {goodps2y.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+goodps2:     	 	   {goodps2.npassed}	eff: {goodps2.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+goodps1s2:   		   {goodps1s2.npassed}	eff: {goodps1s2.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+
+pFoundTrack: 	 	   {pFoundTrack.npassed}	eff: {pFoundTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f}		BAD = ??
+pFound1Track:	 	   {pFound1Track.npassed}	eff: {pFound1Track.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+pFound2Track:	 	   {pFound2Track.npassed}	eff: {pFound2Track.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+pFound3Track:	 	   {pFound3Track.npassed}	eff: {pFound3Track.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+pFound4Track:	 	   {pFound4Track.npassed}	eff: {pFound4Track.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+
+pCleanTrack: 	 	   {pCleanTrack.npassed}	eff: {pCleanTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f}		BAD = ??
+1pCleanTrack:	 	   {1pCleanTrack.npassed}	eff: {1pCleanTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f} 
+2pCleanTrack:	 	   {2pCleanTrack.npassed}	eff: {2pCleanTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+3pCleanTrack:	 	   {3pCleanTrack.npassed}	eff: {3pCleanTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+4pCleanTrack:	 	   {4pCleanTrack.npassed}	eff: {4pCleanTrack.npassed/(P.pTREF3.npassed+.0001):%5.3f}
+
+**CHERENKOVS AND CAL**
+cer_ng_elec:		{cer_ng_elec.npassed}
+cer_ng_pi:		{cer_ng_pi.npassed}
+cer_hg_elec:	  	{cer_hg_elec.npassed}
+cer_hg_pi:	  	{cer_hg_pi.npassed}
+cer_pi_both:	  	{cer_pi_both.npassed}
+cer_elec_both:	  	{cer_elec_both.npassed}
+cal_elec:	  	{cal_elec.npassed}
+cal_pi:		  	{cal_pi.npassed}
+elec_all:	  	{elec_all.npassed}
+pi_all:		  	{pi_all.npassed} 
+
+pCleanTrack_cer_elec: 	{pCleanTrack_cer_elec.npassed} 
+p1hit1_cer_elec:      	{p1hit1_cer_elec.npassed}
+pCleanTrack_cal_elec: 	{pCleanTrack_cal_elec.npassed} 
+p1hit1_cal_elec:      	{p1hit1_cal_elec.npassed}
+
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************
-ptrig                          : {shms_trigs.npassed}
+ptrig                          : {SHMS_event.npassed}
 phitslt = passed hits/cham     : {shmsHitsLt.npassed}
 phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
 phitsplanessps = + sps         : {pSpacePoints.npassed}
@@ -78,104 +172,9 @@ SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+
 E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
 HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}
 
-**DRIFTCHAMBER**
-I'm pretty sure that these are the "raw" number of counts. "Raw" means one or more hits per dc plane.
-shmsDC1_1hit_x1:     	   {shmsDC1_1hit_x1.npassed} 		
-shmsDC1_1hit_u1:     	   {shmsDC1_1hit_u1.npassed}		
-shmsDC1_1hit_u2:      	   {shmsDC1_1hit_u2.npassed}		
-shmsDC1_1hit_v1:      	   {shmsDC1_1hit_v1.npassed}		
-shmsDC1_1hit_v2:      	   {shmsDC1_1hit_v2.npassed}		
-shmsDC1_1hit_x2:      	   {shmsDC1_1hit_x2.npassed}		
-
-shmsDC2_1hit_x1:      	   {shmsDC2_1hit_x1.npassed}		
-shmsDC2_1hit_u1:      	   {shmsDC2_1hit_u1.npassed}		
-shmsDC2_1hit_u2:      	   {shmsDC2_1hit_u2.npassed}		
-shmsDC2_1hit_v1:      	   {shmsDC2_1hit_v1.npassed}		
-shmsDC2_1hit_v2:      	   {shmsDC2_1hit_v2.npassed}		
-shmsDC2_1hit_x2:      	   {shmsDC2_1hit_x2.npassed}		
-
-"Good" means one or two hits per dc plane.
-goodHDC1x1:  	    	   {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC1u2:	    	   {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC1u1:         	   {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC1v1:	    	   {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC1v2:	    	   {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC1x2:	    	   {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-goodHDC2x1:	     	   {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2u2:	     	   {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2u1:	     	   {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2v1:	     	   {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2v2:	     	   {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2x2:	     	   {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-goodHDC1:	   	   {goodHDC1.npassed}	eff : {goodHDC1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodHDC2:	     	   {goodHDC2.npassed}	eff : {goodHDC2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-bothgood:	     	   {bothGood.npassed}	eff : {bothGood.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-realhdc1x1:	     	   {realhdc1x1.npassed}
-realhdc1u2:	     	   {realhdc1u2.npassed}
-realhdc1u1:          	   {realhdc1u1.npassed}
-realhdc1v1:	    	   {realhdc1v1.npassed}
-realhdc1v2:	     	   {realhdc1v2.npassed}
-realhdc1x2:	     	   {realhdc1x2.npassed}
-
-realhdc2x1:	     	   {realhdc2x1.npassed}
-realhdc2u2:	     	   {realhdc2u2.npassed}
-realhdc2u1:	     	   {realhdc2u1.npassed}
-realhdc2v1:	     	   {realhdc2v1.npassed}
-realhdc2v2:	     	   {realhdc2v2.npassed}
-realhdc2x2:	     	   {realhdc2x2.npassed}
-    	   	       
-**HODOSCOPE**
-"Any" means one or more hits per scint plane.
-anyhs1x:    	   	   {anyhs1x.npassed}	eff: {anyhs1x.npassed/(shms_trigs.npassed+.0001):%5.3f}		BAD = ??
-anyhs1y:    	 	   {anyhs1y.npassed}	eff: {anyhs1y.npassed/(shms_trigs.npassed+.0001):%5.3f}
-anyhs2x:    	 	   {anyhs2x.npassed}	eff: {anyhs2x.npassed/(shms_trigs.npassed+.0001):%5.3f}
-anyhs2y:    	 	   {anyhs2y.npassed}	eff: {anyhs2y.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-
-"Good" means one or two hits per scint plane.
-goodps1x:    	    	   {goodps1x.npassed}	eff: {goodps1x.npassed/(shms_trigs.npassed+.0001):%5.3f}		BAD = ??
-goodps1y:    	 	   {goodps1y.npassed}	eff: {goodps1y.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodps1:     	 	   {goodps1.npassed}	eff: {goodps1.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodps2x:    	 	   {goodps2x.npassed}	eff: {goodps2x.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodps2y:    	 	   {goodps2y.npassed}	eff: {goodps2y.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodps2:     	 	   {goodps2.npassed}	eff: {goodps2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-goodps1s2:   		   {goodps1s2.npassed}	eff: {goodps1s2.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-pFoundTrack: 	 	   {pFoundTrack.npassed}	eff: {pFoundTrack.npassed/(shms_trigs.npassed+.0001):%5.3f}		BAD = ??
-pFound1Track:	 	   {pFound1Track.npassed}	eff: {pFound1Track.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-pFound2Track:	 	   {pFound2Track.npassed}	eff: {pFound2Track.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-pFound3Track:	 	   {pFound3Track.npassed}	eff: {pFound3Track.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-pFound4Track:	 	   {pFound4Track.npassed}	eff: {pFound4Track.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-
-pCleanTrack: 	 	   {pCleanTrack.npassed}	eff: {pCleanTrack.npassed/(shms_trigs.npassed+.0001):%5.3f}		BAD = ??
-1pCleanTrack:	 	   {1pCleanTrack.npassed}	eff: {1pCleanTrack.npassed/(shms_trigs.npassed+.0001):%5.3f} 
-2pCleanTrack:	 	   {2pCleanTrack.npassed}	eff: {2pCleanTrack.npassed/(shms_trigs.npassed+.0001):%5.3f}
-3pCleanTrack:	 	   {3pCleanTrack.npassed}	eff: {3pCleanTrack.npassed/(shms_trigs.npassed+.0001):%5.3f}
-4pCleanTrack:	 	   {4pCleanTrack.npassed}	eff: {4pCleanTrack.npassed/(shms_trigs.npassed+.0001):%5.3f}
-
-**CHERENKOVS AND CAL**
-cer_ng_elec:		{cer_ng_elec.npassed}
-cer_ng_pi:		{cer_ng_pi.npassed}
-cer_hg_elec:	  	{cer_hg_elec.npassed}
-cer_hg_pi:	  	{cer_hg_pi.npassed}
-cer_pi_both:	  	{cer_pi_both.npassed}
-cer_elec_both:	  	{cer_elec_both.npassed}
-cal_elec:	  	{cal_elec.npassed}
-cal_pi:		  	{cal_pi.npassed}
-elec_all:	  	{elec_all.npassed}
-pi_all:		  	{pi_all.npassed} 
-
-pCleanTrack_cer_elec: 	{pCleanTrack_cer_elec.npassed} 
-p1hit1_cer_elec:      	{p1hit1_cer_elec.npassed}
-pCleanTrack_cal_elec: 	{pCleanTrack_cal_elec.npassed} 
-p1hit1_cal_elec:      	{p1hit1_cal_elec.npassed}
-
 ************
 * HGC Cerenkov *
 ************
-
 Good Track Requirements:
    1. Only one track found in the focal plane
    2. chisq/dof < {phgcer_red_chi2_max:%5.1f}
@@ -208,6 +207,12 @@ Overall NGC Efficiency: {SHMS_ngcer_track_fired_tot.npassed/SHMS_ngcer_track_mat
 ************
 * Aerogel Cerenkov * Still need to add requirements for what constitutes a good track.
 ************
+Good Track Requirements:
+   1. Only one track found in the focal plane 
+   2. chisq/dof < {paero_red_chi2_max:%5.1f}
+   3. {paero_beta_min:%5.3f} < beta < {paero_beta_max:%5.3f}
+   4. {paero_enorm_min:%5.3f} < calorimeter energy < {paero_enorm_max:%5.3f}
+   5. {paero_dp_min:%5.3f} < delta p (dp) < {paero_dp_max:%5.3f} //added because paero_cuts.param has this as a cut 
 *AEROGEL EFF* 7 PMT pairs
 SHMS AERO Region 1 efficiency: {SHMS_aero_track_fired_region_1.npassed/SHMS_aero_track_matched_region_1.npassed} = {SHMS_aero_track_fired_region_1.npassed} of {SHMS_aero_track_matched_region_1.npassed} good tracks.
 SHMS AERO Region 2 efficiency: {SHMS_aero_track_fired_region_2.npassed/SHMS_aero_track_matched_region_2.npassed} = {SHMS_aero_track_fired_region_2.npassed} of {SHMS_aero_track_matched_region_2.npassed} good tracks.
@@ -242,138 +247,82 @@ Events examined = strig       = {shms_trigs.npassed}
 Tracks found    = scleantrack = {pCleanTrack.npassed}
 //Tracks passing chisquared cut = {pstat_numevents} (in previous template, do we still need this?)
 
-*HODO EFF* Need to checkout hodoeff module.
+Plane 1: {phodo_plane_AND_eff[0]}
+Plane 2: {phodo_plane_AND_eff[1]}
+Plane 3: {phodo_plane_AND_eff[2]}
+Plane 4: {phodo_plane_AND_eff[3]}
+
+S1XY : {phodo_s1XY_eff}
+S2XY : {phodo_s2XY_eff}
+
+STOF: {phodo_stof_eff}
+
+3_of_4 EFF : {phodo_3_of_4_eff}
+4_of_4 EFF : {phodo_4_of_4_eff}
+
 Scint		Pos eff		Neg eff		OR eff		AND eff		 Hits
------------------------------------------------------------------------------------------------------
-P1X1+			 
-P1X2+
-P1X3+	
-P1X4+
-P1X5+
-P1X6+
-P1X7+
-P1X8+
-P1X9+
-P1X10+
-P1X11+
-P1X12+
-P1X13+
+-----------------------------------------------------------------------------------------------------------
+P1X1		{phodo_pos_eff[0]}		{phodo_neg_eff[0]}		 {phodo_or_eff[0]}		 {phodo_and_eff[0]}             {phodo_gold_hits[0]}
+P1X2		{phodo_pos_eff[4]}		{phodo_neg_eff[4]}	 	 {phodo_or_eff[4]}	 	 {phodo_and_eff[4]}	       {phodo_gold_hits[4]}
+P1X3	 	{phodo_pos_eff[8]}		{phodo_neg_eff[8]}		 {phodo_or_eff[8]}	 	 {phodo_and_eff[8]}  	       {phodo_gold_hits[8]}
+P1X4 	 	{phodo_pos_eff[12]}		{phodo_neg_eff[12]} 	 	 {phodo_or_eff[12]} 	 	 {phodo_and_eff[12]}	       {phodo_gold_hits[12]}
+P1X5	 	{phodo_pos_eff[16]}		{phodo_neg_eff[16]} 	 	 {phodo_or_eff[16]} 	 	 {phodo_and_eff[16]} 	       {phodo_gold_hits[16]}
+P1X6	 	{phodo_pos_eff[20]}		{phodo_neg_eff[20]} 	 	 {phodo_or_eff[20]} 	 	 {phodo_and_eff[20]} 	       {phodo_gold_hits[20]}
+P1X7 	 	{phodo_pos_eff[24]}  		{phodo_neg_eff[24]} 	 	 {phodo_or_eff[24]} 	 	 {phodo_and_eff[24]} 	       {phodo_gold_hits[24]}
+P1X8 	 	{phodo_pos_eff[28]} 		{phodo_neg_eff[28]} 	 	 {phodo_or_eff[28]} 	 	 {phodo_and_eff[28]} 	       {phodo_gold_hits[28]}
+P1X9 	 	{phodo_pos_eff[32]}		{phodo_neg_eff[32]} 	 	 {phodo_or_eff[32]} 	 	 {phodo_and_eff[32]} 	       {phodo_gold_hits[32]}
+P1X10 	 	{phodo_pos_eff[36]} 		{phodo_neg_eff[36]} 	 	 {phodo_or_eff[36]} 	 	 {phodo_and_eff[36]}	       {phodo_gold_hits[36]}
+P1X11	 	{phodo_pos_eff[40]} 		{phodo_neg_eff[40]} 	 	 {phodo_or_eff[40]} 	 	 {phodo_and_eff[40]} 	       {phodo_gold_hits[40]}
+P1X12	 	{phodo_pos_eff[44]} 		{phodo_neg_eff[44]} 	 	 {phodo_or_eff[44]} 	 	 {phodo_and_eff[44]} 	       {phodo_gold_hits[44]}
+P1X13 	 	{phodo_pos_eff[48]} 		{phodo_neg_eff[48]} 	 	 {phodo_or_eff[48]} 	 	 {phodo_and_eff[48]} 	       {phodo_gold_hits[48]}
 
-P1X1-
-P1X2-
-P1X3-
-P1X4-
-P1X5-
-P1X6-
-P1X7-
-P1X8-
-P1X9-
-P1X10-
-P1X11-
-P1X12-
-P1X13-
+P1Y1 	 	{phodo_pos_eff[1]}		{phodo_neg_eff[1]} 	 	 {phodo_or_eff[1]}	 	 {phodo_and_eff[1]}	       {phodo_gold_hits[1]}
+P1Y2 	 	{phodo_pos_eff[5]} 		{phodo_neg_eff[5]} 	 	 {phodo_or_eff[5]} 	 	 {phodo_and_eff[5]} 	       {phodo_gold_hits[5]}
+P1Y3		{phodo_pos_eff[9]} 		{phodo_neg_eff[9]} 	 	 {phodo_or_eff[9]} 	 	 {phodo_and_eff[9]} 	       {phodo_gold_hits[9]}
+P1Y4   	 	{phodo_pos_eff[13]} 		{phodo_neg_eff[13]} 	 	 {phodo_or_eff[13]} 	 	 {phodo_and_eff[13]} 	       {phodo_gold_hits[13]}
+P1Y5 	 	{phodo_pos_eff[17]} 		{phodo_neg_eff[17]} 	 	 {phodo_or_eff[17]} 	 	 {phodo_and_eff[17]} 	       {phodo_gold_hits[17]}
+P1Y6 	 	{phodo_pos_eff[21]} 		{phodo_neg_eff[21]} 	 	 {phodo_or_eff[21]} 	 	 {phodo_and_eff[21]} 	       {phodo_gold_hits[21]}
+P1Y7 	 	{phodo_pos_eff[25]} 		{phodo_neg_eff[25]} 	 	 {phodo_or_eff[25]} 	 	 {phodo_and_eff[25]} 	       {phodo_gold_hits[25]}
+P1Y8 	 	{phodo_pos_eff[29]} 		{phodo_neg_eff[29]} 	 	 {phodo_or_eff[29]} 	 	 {phodo_and_eff[29]} 	       {phodo_gold_hits[29]}
+P1Y9 	 	{phodo_pos_eff[33]} 		{phodo_neg_eff[33]} 	 	 {phodo_or_eff[33]} 	 	 {phodo_and_eff[33]} 	       {phodo_gold_hits[33]}
+P1Y10 	 	{phodo_pos_eff[37]} 		{phodo_neg_eff[37]} 	 	 {phodo_or_eff[37]} 	 	 {phodo_and_eff[37]} 	       {phodo_gold_hits[37]}
+P1Y11 	 	{phodo_pos_eff[41]} 		{phodo_neg_eff[41]} 	 	 {phodo_or_eff[41]} 	 	 {phodo_and_eff[41]} 	       {phodo_gold_hits[41]}
+P1Y12 	 	{phodo_pos_eff[45]} 		{phodo_neg_eff[45]} 	 	 {phodo_or_eff[45]} 	 	 {phodo_and_eff[45]} 	       {phodo_gold_hits[45]}
+P1Y13 	 	{phodo_pos_eff[49]} 		{phodo_neg_eff[49]} 	 	 {phodo_or_eff[49]} 	 	 {phodo_and_eff[49]} 	       {phodo_gold_hits[49]}
 
-P1Y1+
-P1Y2+
-P1Y3+
-P1Y4+
-P1Y5+
-P1Y6+
-P1Y7+
-P1Y8+
-P1Y9+
-P1Y10+
-P1Y11+
-P1Y12+
-P1Y13+
+P2X1	 	{phodo_pos_eff[2]}	 	{phodo_neg_eff[2]}	 	 {phodo_or_eff[2]} 	 	 {phodo_and_eff[2]} 	       {phodo_gold_hits[2]}
+P2X2 	 	{phodo_pos_eff[6]}	 	{phodo_neg_eff[6]}	 	 {phodo_or_eff[6]}	 	 {phodo_and_eff[6]}	       {phodo_gold_hits[6]}
+P2X3 	 	{phodo_pos_eff[10]} 	 	{phodo_neg_eff[10]} 	 	 {phodo_or_eff[10]}	 	 {phodo_and_eff[10]} 	       {phodo_gold_hits[10]}
+P2X4 	 	{phodo_pos_eff[14]} 	 	{phodo_neg_eff[14]}	 	 {phodo_or_eff[14]} 	 	 {phodo_and_eff[14]} 	       {phodo_gold_hits[14]}
+P2X5 	 	{phodo_pos_eff[18]} 	 	{phodo_neg_eff[18]} 	 	 {phodo_or_eff[18]} 	 	 {phodo_and_eff[18]}	       {phodo_gold_hits[18]}
+P2X6 	 	{phodo_pos_eff[22]}	 	{phodo_neg_eff[22]}	 	 {phodo_or_eff[22]} 	 	 {phodo_and_eff[22]} 	       {phodo_gold_hits[22]}
+P2X7 	 	{phodo_pos_eff[26]} 	 	{phodo_neg_eff[26]}	 	 {phodo_or_eff[26]}	 	 {phodo_and_eff[26]}	       {phodo_gold_hits[26]}
+P2X8 	 	{phodo_pos_eff[30]} 	 	{phodo_neg_eff[30]}		 {phodo_or_eff[30]}      	 {phodo_and_eff[30]}	       {phodo_gold_hits[30]}
+P2X9 	 	{phodo_pos_eff[34]} 	 	{phodo_neg_eff[34]}		 {phodo_or_eff[34]}		 {phodo_and_eff[34]}	       {phodo_gold_hits[34]}
+P2X10	 	{phodo_pos_eff[38]}	 	{phodo_neg_eff[38]}		 {phodo_or_eff[38]}		 {phodo_and_eff[38]}	       {phodo_gold_hits[38]}
+P2X11 	 	{phodo_pos_eff[42]} 	 	{phodo_neg_eff[42]}		 {phodo_or_eff[42]}		 {phodo_and_eff[42]}	       {phodo_gold_hits[42]}
+P2X12 	 	{phodo_pos_eff[46]} 	 	{phodo_neg_eff[46]}		 {phodo_or_eff[46]}		 {phodo_and_eff[46]}	       {phodo_gold_hits[46]}
+P2X13 	 	{phodo_pos_eff[50]} 	 	{phodo_neg_eff[50]}		 {phodo_or_eff[50]}		 {phodo_and_eff[50]}	       {phodo_gold_hits[50]}
+P2X14 	 	{phodo_pos_eff[54]} 	 	{phodo_neg_eff[54]}		 {phodo_or_eff[54]}		 {phodo_and_eff[54]}	       {phodo_gold_hits[54]}
 
-P1Y1-
-P1Y2-
-P1Y3-
-P1Y4-
-P1Y5-
-P1Y6-
-P1Y7-
-P1Y8-
-P1Y9-
-P1Y10-
-P1Y11-
-P1Y12-
-P1Y13-
-
-P2X1+
-P2X2+
-P2X3+
-P2X4+
-P2X5+
-P2X6+
-P2X7+
-P2X8+
-P2X9+
-P2X10+
-P2X11+
-P2X12+
-P2X13+
-P2X14+
-
-P2X1-
-P2X2-
-P2X3-
-P2X4-
-P2X5-
-P2X6-
-P2X7-
-P2X8-
-P2X9-
-P2X10-
-P2X11-
-P2X12-
-P2X13-
-P2X14-
-
-P2Y1+
-P2Y2+
-P2Y3+
-P2Y4+
-P2Y5+
-P2Y6+
-P2Y7+
-P2Y8+
-P2Y9+
-P2Y10+
-P2Y11+
-P2Y12+
-P2Y13+
-P2Y14+
-P2Y15+
-P2Y16+
-P2Y17+
-P2Y18+
-P2Y19+
-P2Y20+
-P2Y21+
-
-P2Y1-
-P2Y2-
-P2Y3-
-P2Y4-
-P2Y5-
-P2Y6-
-P2Y7-
-P2Y8-
-P2Y9-
-P2Y10-
-P2Y11-
-P2Y12-
-P2Y13-
-P2Y14-
-P2Y15-
-P2Y16-
-P2Y17-
-P2Y18-
-P2Y19-
-P2Y20-
-P2Y21-
-
-
-
+P2Y1	 	{phodo_pos_eff[3]}	 	{phodo_neg_eff[3]}		 {phodo_or_eff[3]}       	 {phodo_and_eff[3]}	       {phodo_gold_hits[3]}
+P2Y2 	 	{phodo_pos_eff[7]}	 	{phodo_neg_eff[7]} 	 	 {phodo_or_eff[7]} 	 	 {phodo_and_eff[7]}    	       {phodo_gold_hits[7]}
+P2Y3 	 	{phodo_pos_eff[11]} 	 	{phodo_neg_eff[11]}	 	 {phodo_or_eff[11]} 	 	 {phodo_and_eff[11]}	       {phodo_gold_hits[11]}
+P2Y4 	 	{phodo_pos_eff[15]} 	 	{phodo_neg_eff[15]} 	 	 {phodo_or_eff[15]} 	 	 {phodo_and_eff[15]}	       {phodo_gold_hits[15]}
+P2Y5 	 	{phodo_pos_eff[19]} 	 	{phodo_neg_eff[19]}	 	 {phodo_or_eff[19]} 	 	 {phodo_and_eff[19]}	       {phodo_gold_hits[19]}
+P2Y6 	 	{phodo_pos_eff[23]} 	 	{phodo_neg_eff[23]} 	 	 {phodo_or_eff[23]} 	 	 {phodo_and_eff[23]}	       {phodo_gold_hits[23]}
+P2Y7 	 	{phodo_pos_eff[27]} 	 	{phodo_neg_eff[27]} 	 	 {phodo_or_eff[27]} 	 	 {phodo_and_eff[27]}	       {phodo_gold_hits[27]}
+P2Y8 	 	{phodo_pos_eff[31]} 	 	{phodo_neg_eff[31]} 	 	 {phodo_or_eff[31]} 	 	 {phodo_and_eff[31]}	       {phodo_gold_hits[31]}
+P2Y9 	 	{phodo_pos_eff[35]} 	 	{phodo_neg_eff[35]} 	 	 {phodo_or_eff[35]} 	 	 {phodo_and_eff[35]}	       {phodo_gold_hits[35]}
+P2Y10 	 	{phodo_pos_eff[39]} 	 	{phodo_neg_eff[39]} 	 	 {phodo_or_eff[39]} 	 	 {phodo_and_eff[39]}	       {phodo_gold_hits[39]}
+P2Y11 	 	{phodo_pos_eff[43]} 	 	{phodo_neg_eff[43]} 	 	 {phodo_or_eff[43]} 	 	 {phodo_and_eff[43]}	       {phodo_gold_hits[43]}
+P2Y12 	 	{phodo_pos_eff[47]} 	 	{phodo_neg_eff[47]} 	 	 {phodo_or_eff[47]} 	 	 {phodo_and_eff[47]}	       {phodo_gold_hits[47]}
+P2Y13 	 	{phodo_pos_eff[51]} 	 	{phodo_neg_eff[51]} 	 	 {phodo_or_eff[51]} 	 	 {phodo_and_eff[51]}	       {phodo_gold_hits[51]}
+P2Y14 	 	{phodo_pos_eff[55]} 	 	{phodo_neg_eff[55]} 	 	 {phodo_or_eff[55]} 	 	 {phodo_and_eff[55]}	       {phodo_gold_hits[55]}
+P2Y15 	 	{phodo_pos_eff[59]} 	 	{phodo_neg_eff[59]} 	 	 {phodo_or_eff[59]} 	 	 {phodo_and_eff[59]}	       {phodo_gold_hits[59]}
+P2Y16 	 	{phodo_pos_eff[63]} 	 	{phodo_neg_eff[63]} 	 	 {phodo_or_eff[63]}	 	 {phodo_and_eff[63]}	       {phodo_gold_hits[63]}
+P2Y17 	 	{phodo_pos_eff[67]} 	 	{phodo_neg_eff[67]} 	 	 {phodo_or_eff[67]} 	 	 {phodo_and_eff[67]}	       {phodo_gold_hits[67]}
+P2Y18 	 	{phodo_pos_eff[71]} 	 	{phodo_neg_eff[71]} 	 	 {phodo_or_eff[71]} 	 	 {phodo_and_eff[71]}	       {phodo_gold_hits[71]}
+P2Y19 	 	{phodo_pos_eff[75]} 	 	{phodo_neg_eff[75]} 	 	 {phodo_or_eff[75]} 	 	 {phodo_and_eff[75]}	       {phodo_gold_hits[75]}
+P2Y20 	 	{phodo_pos_eff[79]} 	 	{phodo_neg_eff[79]} 	 	 {phodo_or_eff[79]} 	 	 {phodo_and_eff[79]}	       {phodo_gold_hits[79]}
+P2Y21 	 	{phodo_pos_eff[83]} 	 	{phodo_neg_eff[83]}	 	 {phodo_or_eff[83]} 	 	 {phodo_and_eff[83]}	       {phodo_gold_hits[83]}

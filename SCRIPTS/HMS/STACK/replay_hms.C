@@ -71,6 +71,8 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
+ THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
+  gHaPhysics->Add(heff);
 
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
