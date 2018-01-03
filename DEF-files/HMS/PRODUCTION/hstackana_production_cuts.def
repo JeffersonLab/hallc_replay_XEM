@@ -2,10 +2,15 @@
 
 Block: RawDecode
 
-Pedestal_event     g.evtyp == 99
-HMS_event          g.evtyp == 2
-SHMS_event         g.evtyp == 1
-COIN_event         g.evtyp == 4
+Pedestal_event       g.evtyp == 99
+SHMS_event           g.evtyp == 1
+HMS_event            g.evtyp == 2
+BOTH_SINGLES_event   g.evtyp == 3
+COIN_ONLY_event      g.evtyp == 4
+SHMS_COIN_event      g.evtyp == 5
+HMS_COIN_event       g.evtyp == 6 
+COIN_ALL_event       g.evtyp == 7
+ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
 
 TRIG1        T.hms.hTRIG1_tdcTimeRaw > 0
 TRIG2        T.hms.hTRIG2_tdcTimeRaw > 0
@@ -20,10 +25,10 @@ RawDecode_master  1
 
 Block: Decode
 
-Decode_master     HMS_event
+Decode_master     ALL_events
 
 Block: CoarseTracking
-CoarseTracking_master HMS_event
+CoarseTracking_master ALL_events
 
 #add cuts to stricter times and apply them to drift distances (HMS 6 GeV Drift Chambers)
 time_cut1                            H.dc.1x1.time > 0 && H.dc.1x1.time < 250
@@ -118,13 +123,13 @@ hTest1                hmsHitsPlanes && (!hSpacePoints)
 hTest2                hSpacePoints && (!hStubLT)
 
 Block: CoarseReconstruct
-CoarseReconstruct_master HMS_event
+CoarseReconstruct_master ALL_events
 
 Block: Tracking
-Tracking_master  HMS_event
+Tracking_master  ALL_events
 
 Block: Reconstruct
-Reconstruct_master HMS_event
+Reconstruct_master ALL_events
 cer_pmt1_elec        H.cer.npe[0]>.5
 cer_pmt2_elec        H.cer.npe[0]>.5
 cer_elec       H.cer.npeSum>.5
@@ -205,4 +210,4 @@ HMS_hcer_track_matched_tot H.cer.totNumTracksMatched>0
 HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0
 
 Block: Physics
-Physics_master HMS_event
+Physics_master ALL_events

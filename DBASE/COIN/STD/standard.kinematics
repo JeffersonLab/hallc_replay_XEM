@@ -1,10 +1,11 @@
 #
 # Need to set htheta_lab to a NEGATIVE value
 # Need to set ptheta_lab to a POSITIVE value
-# 1h gtargmass_amu=1.00794
-# 12C gtargmass_amu=12.0107
-# 27Al gtargmass_amu=26.98
+# 1H   gtargmass_amu = 1.00794
+# 12C  gtargmass_amu = 12.0107
+# 27Al gtargmass_amu = 26.98
 #
+
 0-99999
 gpbeam = 6.4
 gtargmass_amu=12.0107
@@ -14,3 +15,71 @@ hpcentral = 3.
 ppcentral = 3.
 hpartmass = 0.00051099
 ppartmass = 0.00051099
+
+1711-1722
+gpbeam=2.221
+hpartmass = 0.938272
+ppartmass = 0.00051099
+
+1711-1712
+hpcentral = 0.957
+ppcentral = 1.816
+htheta_lab = -53.33
+ptheta_lab = 25.01
+
+1711
+gtargmass_amu = 1.00794
+
+1712
+gtargmass_amu = 26.98
+
+1713-1716
+hpcentral = 1.136
+ppcentral = 1.816
+htheta_lab = -47.9
+ptheta_lab = 30.0
+
+1713
+gtargmass_amu = 1.00794
+
+1714-1715
+gtargmass_amu = 26.98
+
+1716
+gtargmass_amu = 1.00794
+
+1717-1718
+hpcentral = 1.136
+ppcentral = 1.686
+htheta_lab = -47.9
+ptheta_lab = 30.0
+
+1717
+gtargmass_amu = 26.98
+
+1718
+gtargmass_amu = 1.00794
+
+1719-1720
+hpcentral = 1.136
+ppcentral = 1.555
+htheta_lab = -47.9
+ptheta_lab = 30.0
+
+1719
+gtargmass_amu = 1.00794
+
+1720
+gtargmass_amu = 26.98
+
+1721-1722
+hpcentral = 0.936
+ppcentral = 2.012
+htheta_lab = -65.1
+ptheta_lab = 25.0
+
+1721
+gtargmass_amu = 26.98
+
+1722
+gtargmass_amu = 1.00794

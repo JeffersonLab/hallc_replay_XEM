@@ -22,4 +22,7 @@ BCM1 Counts: {P.BCM1.scalerCut} 	Total Charge: {P.BCM1.scalerChargeCut:%.3f} uC
 BCM2 Counts: {P.BCM2.scalerCut} 	Total Charge: {P.BCM2.scalerChargeCut:%.3f} uC
 Unser Counts: {P.Unser.scalerCut} 	Total Charge: {P.Unser.scalerChargeCut:%.3f} uC
 
-All triggers  :  {all_trigs.npassed}
+HMS Singles Triggers   :  {HMS_event.npassed}
+SHMS Singles Triggers  :  {SHMS_event.npassed}
+Coincidence Triggers   :  {COIN_event.npassed}
+All triggers           :  {ALL_events.npassed}
