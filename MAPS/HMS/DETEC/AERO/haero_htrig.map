@@ -7,6 +7,7 @@ DETECTOR=10
 ROC=1
 
 SLOT=17
+REFINDEX=3
    8,   1,   1,   0  ! hASUM
    9,   1,   2,   0  ! hBSUM
   10,   1,   3,   0  ! hCSUM
@@ -17,6 +18,8 @@ SLOT=17
   15,   1,   8,   0  ! hCERSUM
 
 SLOT=18
+REFINDEX=3
+  11,1000,   0,   3  ! hFADC_TREF_ROC1
   11,   1,   9,   0  ! hFADC_TREF_ROC1
 
 SLOT=2
@@ -27,7 +30,7 @@ REFINDEX=0
    3,   2,   4,   1  ! h2Y
    4,   2,   5,   1  ! h1T
    5,   2,   6,   1  ! h2T
-   6,1000,   0,   0  ! hTref
+   6,1000,   0,   0  ! hTref1
    6,   2,   7,   1  ! hT1
    7,   2,   8,   1  ! hASUM
    8,   2,   9,   1  ! hBSUM
@@ -36,7 +39,7 @@ REFINDEX=0
   11,   2,  12,   1  ! hPSHWRLO
   12,   2,  13,   1  ! hPSHWRHI
   13,   2,  14,   1  ! hSHWR
-  14,   2,  15,   1  ! hHODO_EDTM
+  14,   2,  15,   1  ! hEDTM
   15,   2,  16,   1  ! hCERSUM
   26,   2,  22,   1  ! hTRIG1
   27,   2,  23,   1  ! hTRIG2
@@ -50,30 +53,49 @@ REFINDEX=0
   19,   2,  31,   1  ! pTRIG4
   20,   2,  32,   1  ! pTRIG5
   21,   2,  33,   1  ! pTRIG6
+  48,   2,  34,   1  ! pSTOF
+  49,   2,  35,   1  ! pEL_LO_LO
+  50,   2,  36,   1  ! pEL_LO
+  51,   2,  37,   1  ! pEL_HI
+  52,   2,  38,   1  ! pEL_REAL
+  53,   2,  39,   1  ! pEL_CLEAN
+  56,   2,  40,   1  ! hSTOF
+  57,   2,  41,   1  ! hEL_LO_LO
+  58,   2,  42,   1  ! hEL_LO
+  59,   2,  43,   1  ! hEL_HI
+  60,   2,  44,   1  ! hEL_REAL
+  61,   2,  45,   1  ! hEL_CLEAN
 
 SLOT=20
+REFINDEX=1
+ 127,1000,   0,   1  ! hTref2
  127,   2,  17,   1  ! hT2
 
 ROC=3
 
 SLOT=8
- 15,   2,  18,   1  ! hDCREF1
+  15,   2,  18,   1  ! hDCREF1
 
 SLOT=16
- 63,   2,  19,   1  ! hDCREF2
+  63,   2,  19,   1  ! hDCREF2
 
 SLOT=4
  111,   2,  20,   1  ! hDCREF3
 
 SLOT=13
- 95,   2,  21,   1  ! hDCREF4
+  95,   2,  21,   1  ! hDCREF4
 
 
 DETECTOR=12
 
 ROC=1
 
+SLOT=18
+REFINDEX=3
+  11,1000,   0,   3  ! hFADC_TREF_ROC1
+
 SLOT=16
+REFINDEX=3
    8,   1,   1,   1  ! hAER01-
    9,   1,   2,   1  ! hAER02-
   10,   1,   3,   1  ! hAER03-
@@ -84,6 +106,7 @@ SLOT=16
   15,   1,   8,   1  ! hAER08-
 
 SLOT=17
+REFINDEX=3
    0,   1,   1,   0  ! hAER01+
    1,   1,   2,   0  ! hAER02+
    2,   1,   3,   0  ! hAER03+

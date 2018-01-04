@@ -3818,14 +3818,14 @@ REFINDEX=0
   20,   2,  32,   1  ! pTRIG5_ROC1
   21,   2,  33,   1  ! pTRIG6_ROC1
   48,   2,  81,   1  ! pSTOF_ROC1
-  49,   2,  82,   1  ! pEL_LO_ROC1
-  50,   2,  83,   1  ! pEL_LO_CER_ROC1
+  49,   2,  82,   1  ! pEL_LO_LO_ROC1
+  50,   2,  83,   1  ! pEL_LO_ROC1
   51,   2,  84,   1  ! pEL_HI_ROC1
   52,   2,  85,   1  ! pEL_REAL_ROC1
   53,   2,  86,   1  ! pEL_CLEAN_ROC1
   56,   2,  87,   1  ! hSTOF_ROC1
-  57,   2,  88,   1  ! hEL_LO_ROC1
-  58,   2,  89,   1  ! hEL_LO_CER_ROC1
+  57,   2,  88,   1  ! hEL_LO_LO_ROC1
+  58,   2,  89,   1  ! hEL_LO_ROC1
   59,   2,  90,   1  ! hEL_HI_ROC1
   60,   2,  91,   1  ! hEL_REAL_ROC1
   61,   2,  92,   1  ! hEL_CLEAN_ROC1
@@ -3893,14 +3893,14 @@ REFINDEX=0
   62,   2,  69,   1  ! hTRIG5_ROC2
   63,   2,  70,   1  ! hTRIG6_ROC2
   64,   2,  71,   1  ! pSTOF_ROC2
-  65,   2,  72,   1  ! pEL_LO_ROC2
-  66,   2,  73,   1  ! pEL_LO_CER_ROC2
+  65,   2,  72,   1  ! pEL_LO_LO_ROC2
+  66,   2,  73,   1  ! pEL_LO_ROC2
   67,   2,  74,   1  ! pEL_HI_ROC2
   68,   2,  75,   1  ! pEL_REAL_ROC2
   69,   2,  76,   1  ! pEL_CLEAN_ROC2
   72,   2,  77,   1  ! hSTOF_ROC2
-  73,   2,  78,   1  ! hEL_LO_ROC2
-  74,   2,  79,   1  ! hEL_LO_CER_ROC2
+  73,   2,  78,   1  ! hEL_LO_LO_ROC2
+  74,   2,  79,   1  ! hEL_LO_ROC2
   75,   2,  80,   1  ! hEL_HI_ROC2
   76,   2,  81,   1  ! hEL_REAL_ROC2
   77,   2,  82,   1  ! hEL_CLEAN_ROC2

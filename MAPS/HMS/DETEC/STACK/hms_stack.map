@@ -58,14 +58,14 @@ REFINDEX=0
   20,   2,  32,   1  ! pTRIG5
   21,   2,  33,   1  ! pTRIG6
   48,   2,  34,   1  ! pSTOF
-  49,   2,  35,   1  ! pEL_LO
-  50,   2,  36,   1  ! pEL_LO_CER
+  49,   2,  35,   1  ! pEL_LO_LO
+  50,   2,  36,   1  ! pEL_LO
   51,   2,  37,   1  ! pEL_HI
   52,   2,  38,   1  ! pEL_REAL
   53,   2,  39,   1  ! pEL_CLEAN
   56,   2,  40,   1  ! hSTOF
-  57,   2,  41,   1  ! hEL_LO
-  58,   2,  42,   1  ! hEL_LO_CER
+  57,   2,  41,   1  ! hEL_LO_LO
+  58,   2,  42,   1  ! hEL_LO
   59,   2,  43,   1  ! hEL_HI
   60,   2,  44,   1  ! hEL_REAL
   61,   2,  45,   1  ! hEL_CLEAN

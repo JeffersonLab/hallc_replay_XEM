@@ -1,5 +1,9 @@
 Run #: {gen_run_number}
 
+**************************
+* General Run Information
+**************************
+
 1 MhZ Pulses : {P.1Mhz.scaler}
 Run Length   : {P.1Mhz.scalerTime:%.3f} sec
 
@@ -32,9 +36,13 @@ Ps4_factor = {gpconfig_ti_ps_factors[3]}
 Ps5_factor = {gpconfig_ti_ps_factors[4]}
 Ps6_factor = {gpconfig_ti_ps_factors[5]}
 
-***************	
-* 3/4 Triggers 
-***************
+***********	
+* Triggers 
+***********
+
+=:=:=:=:=:=:=:  
+= 3/4 Trigger
+=:=:=:=:=:=:=:
 
 SHMS 3/4 Triggers           : {P.pTRIG1.scaler} [ {P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]} ]
 Estimated SHMS 3/4 Triggers : {P.pTRIG1.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
@@ -45,41 +53,54 @@ SHMS Event Types            : {SHMS_Pretrig.npassed}
 SHMS Computer Live Time : {(TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {(TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
 SHMS Computer Dead Time : {100.0 - (TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
 
-*************
-* MORE TRIGGERS
-**************
-HMS TRIG
-hEL_LO :	{P.hEL_LO.scaler}	[{P.hEL_LO.scaler/P.1Mhz.scalerTime}]
-hEL_HI :	{P.hEL_HI.scaler}	[{P.hEL_HI.scaler/P.1Mhz.scalerTime}]
-hEL_REAL :	{P.hEL_REAL.scaler}	[{P.hEL_REAL.scaler/P.1Mhz.scalerTime]
-hEL_CLEAN :	{P.hEL_CLEAN.scaler}	[{P.hEL_CLEAN.scaler/P.1Mhz.scalerTime}]
-hSTOF:	  	{P.hSTOF.scaler}	[{P.hSTOF.scaler/P.1Mhz.scalerTime}]
+=:=:=:=:=:=:=:=:=:=:=:=:
+= Physics 3/4 Triggers
+=:=:=:=:=:=:=:=:=:=:=:=:
 
-hTRIG1:	  	{P.hTRIG1.scaler} 	[{P.hTRIG1.scaler/P.1Mhz.scalerTime}]
-hTRIG2:	  	{P.hTRIG2.scaler} 	[{P.hTRIG2.scaler/P.1Mhz.scalerTime}]
-hTRIG3:	  	{P.hTRIG3.scaler} 	[{P.hTRIG3.scaler/P.1Mhz.scalerTime}]
-hTRIG4:	  	{P.hTRIG4.scaler} 	[{P.hTRIG4.scaler/P.1Mhz.scalerTime}]
-hTRIG5:	  	{P.hTRIG5.scaler} 	[{P.hTRIG5.scaler/P.1Mhz.scalerTime}]
-hTRIG6:	  	{P.hTRIG6.scaler} 	[{P.hTRIG6.scaler/P.1Mhz.scalerTime}]
+Physics 3/4 Triggers           : {P.pTRIG1.scaler - P.EDTM.scaler}
+Estimated Physics 3/4 Triggers : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)*(P.1Mhz.scaler/1000000.):%.0f}
+Physics 3/4 Trigger Rate       : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)/1000.:%.3f} kHz
+Accepted Physics Triggers      : {physics_accepted.npassed}
 
-SHMS TRIG
-pEL_LO :	{P.pEL_LO.scaler}	[{P.pEL_LO.scaler/P.1Mhz.scalerTime}]
-pEL_HI :	{P.pEL_HI.scaler}	[{P.pEL_HI.scaler/P.1Mhz.scalerTime}]
-pEL_REAL :	{P.pEL_REAL.scaler}	[{P.pEL_REAL.scaler/P.1Mhz.scalerTime}]
-pEL_CLEAN :	{P.pEL_CLEAN.scaler}	[{P.pEL_CLEAN.scaler/P.1Mhz.scalerTime}]
-pSTOF:	  	{P.pSTOF.scaler}	[{P.pSTOF.scaler/P.1Mhz.scalerTime}]
-pTREF3:		{P.pTREF3.scaler}	[{P.pTREF3.scaler/P.1Mhz.scalerTime}]
+=:=:=:=:=:=:=:=:  
+= HMS Triggers
+=:=:=:=:=:=:=:=: 
 
-pTRIG1:	  	{P.pTRIG1.scaler} 	[{P.pTRIG1.scaler/P.1Mhz.scalerTime}]
-pTRIG2:	  	{P.pTRIG2.scaler} 	[{P.pTRIG2.scaler/P.1Mhz.scalerTime}]
-pTRIG3:	  	{P.pTRIG3.scaler} 	[{P.pTRIG3.scaler/P.1Mhz.scalerTime}]
-pTRIG4:	  	{P.pTRIG4.scaler} 	[{P.pTRIG4.scaler/P.1Mhz.scalerTime}]
-pTRIG5:	  	{P.pTRIG5.scaler} 	[{P.pTRIG5.scaler/P.1Mhz.scalerTime}]
-pTRIG6:	  	{P.pTRIG6.scaler} 	[{P.pTRIG6.scaler/P.1Mhz.scalerTime}]
+hEL_LO_LO :	{P.hEL_LO_LO.scaler}	[ {(P.hEL_LO_LO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_LO    :	{P.hEL_LO.scaler}	[ {(P.hEL_LO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_HI    :	{P.hEL_HI.scaler}	[ {(P.hEL_HI.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_REAL  :	{P.hEL_REAL.scaler}	[ {(P.hEL_REAL.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_CLEAN :	{P.hEL_CLEAN.scaler}	[ {(P.hEL_CLEAN.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hSTOF     :	{P.hSTOF.scaler}	[ {(P.hSTOF.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 
-*******
-* EDTM
-*******
+hTRIG1 :  	{P.hTRIG1.scaler} 	[ {(P.hTRIG1.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG2 :  	{P.hTRIG2.scaler} 	[ {(P.hTRIG2.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG3 :  	{P.hTRIG3.scaler} 	[ {(P.hTRIG3.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG4 : 	{P.hTRIG4.scaler} 	[ {(P.hTRIG4.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG5 :  	{P.hTRIG5.scaler} 	[ {(P.hTRIG5.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG6 :  	{P.hTRIG6.scaler} 	[ {(P.hTRIG6.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:=:=:=:=: 
+= SHMS Triggers
+=:=:=:=:=:=:=:=: 
+
+pEL_LO_LO :	{P.pEL_LO_LO.scaler}	[ {(P.pEL_LO_LO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pEL_LO    :	{P.pEL_LO.scaler}	[ {(P.pEL_LO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pEL_HI    :	{P.pEL_HI.scaler}	[ {(P.pEL_HI.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pEL_REAL  :	{P.pEL_REAL.scaler}	[ {(P.pEL_REAL.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pEL_CLEAN :	{P.pEL_CLEAN.scaler}	[ {(P.pEL_CLEAN.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pSTOF     :	{P.pSTOF.scaler}	[ {(P.pSTOF.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+pTRIG1 :  	{P.pTRIG1.scaler} 	[ {(P.pTRIG1.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pTRIG2 :  	{P.pTRIG2.scaler} 	[ {(P.pTRIG2.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pTRIG3 :  	{P.pTRIG3.scaler} 	[ {(P.pTRIG3.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pTRIG4 :  	{P.pTRIG4.scaler} 	[ {(P.pTRIG4.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pTRIG5 :  	{P.pTRIG5.scaler} 	[ {(P.pTRIG5.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pTRIG6 :  	{P.pTRIG6.scaler} 	[ {(P.pTRIG6.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:
+= EDTM
+=:=:=:=:
 
 EDTM Triggers           : {P.EDTM.scaler}
 Estimated EDTM Triggers : {P.EDTM.scalerRate*(P.1Mhz.scaler/1000000.):%.0f}
@@ -89,18 +110,32 @@ Accepted EDTM Triggers  : {edtm_accepted.npassed}
 Total Live Time (EDTM) : {(edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 
-*******************
-* Physics 3/4 Triggers
-*******************
+=:=:=:=:=:=:=:
+= Hodoscopes
+=:=:=:=:=:=:=:
 
-Physics 3/4 Triggers           : {P.pTRIG1.scaler - P.EDTM.scaler}
-Estimated Physics 3/4 Triggers : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)*(P.1Mhz.scaler/1000000.):%.0f}
-Physics 3/4 Trigger Rate       : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)/1000.:%.3f} kHz
-Accepted Physics Triggers      : {physics_accepted.npassed}
+P1X : {P.S1X.scaler} [ {(P.S1X.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1X 
+P1Y : {P.S1Y.scaler} [ {(P.S1Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1Y
+P2X : {P.S2X.scaler} [ {(P.S2X.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2X
+P2Y : {P.S2Y.scaler} [ {(P.S2Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2Y
 
-****************
-* Chamber *
-****************
+P1XP1Y : {P.S1XS1Y.scaler} [ {(P.S1XS1Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between P1X and P1Y planes 
+P2XP2Y : {P.S2XS2Y.scaler} [ {(P.S2XS2Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between P2X and P2Y planes                                        
+
+=:=:=:=:=:=:=:=:=:=:=:=:=
+= Aerogel, HGC, NGC, CAL
+=:=:=:=:=:=:=:=:=:=:=:=:=
+
+AERO : {P.AERO.scaler} [ {(P.AERO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] Aerogel sum currently not available
+HGC  : {P.HCER.scaler} [ {(P.HCER.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+NGC  : {P.NCER.scaler} [ {(P.NCER.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+PRLO : {P.PRLO.scaler} [ {(P.PRLO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+PRHI : {P.PRHI.scaler} [ {(P.PRHI.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+***********
+* Chambers 
+***********
+
 good_S1_time         Counts: {good_S1_time.npassed}     / shms_trigs.scaler : {good_S1_time.npassed / shms_trigs.npassed}       
 good_S2X_time        Counts: {good_S2X_time.npassed}    / shms_trigs.scaler : {good_S2X_time.npassed / shms_trigs.npassed}    
 good_S1_S2X_time     Counts: {good_S1_S2X_time.npassed} / shms_trigs.scaler : {good_S1_S2X_time.npassed / shms_trigs.npassed}
@@ -244,6 +279,7 @@ p1hit1_cal_elec	     : {p1hit1_cal_elec.npassed}
 ******************************
 * SHMS TRACKING EFFICIENCIES *
 ******************************
+
 ptrig                          : {SHMS_event.npassed}
 phitslt = passed hits/cham     : {shmsHitsLt.npassed}
 phitsplanes = +planes >= 5/6   : {shmsHitsPlanes.npassed}
@@ -271,9 +307,10 @@ SING FID TRACK EFFIC           : {shmsScinDid.npassed / (shmsScinShould.npassed+
 E SING FID TRACK EFFIC         : {shmsScinDide.npassed / (shmsScinShoulde.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShoulde.npassed-shmsScinDide.npassed) / (shmsScinShoulde.npassed+.0001)):%8.4f}
 HADRON SING FID TRACK EFFIC    : {shmsScinDidh.npassed / (shmsScinShouldh.npassed+0.0001):%8.4f} +- {(sqrt(shmsScinShouldh.npassed-shmsScinDidh.npassed) / (shmsScinShouldh.npassed+.0001)):%8.4f}
 
-************
-* HGC Cerenkov *
-************
+***************
+* HGC Cerenkov 
+***************
+
 Good Track Requirements:
    1. Only one track found in the focal plane
    2. chisq/dof < {phgcer_red_chi2_max:%5.1f}
@@ -287,9 +324,10 @@ SHMS HGC Region 3 efficiency: {SHMS_hgcer_track_fired_region_3.npassed/SHMS_hgce
 SHMS HGC Region 4 efficiency: {SHMS_hgcer_track_fired_region_4.npassed/SHMS_hgcer_track_matched_region_4.npassed} = {SHMS_hgcer_track_fired_region_4.npassed} of {SHMS_hgcer_track_matched_region_4.npassed} good tracks.
 Overall HGC Efficiency: {SHMS_hgcer_track_fired_tot.npassed/SHMS_hgcer_track_matched_tot.npassed} = {SHMS_hgcer_track_fired_tot.npassed} of {SHMS_hgcer_track_matched_tot.npassed} good tracks.
 
-************
-* NGC Cerenkov *
-************
+***************
+* NGC Cerenkov 
+***************
+
 Good Track Requirements:
    1. Only one track found in the focal plane
    2. chisq/dof < {pngcer_red_chi2_max:%5.1f}
@@ -303,9 +341,10 @@ SHMS NGC Region 3 efficiency: {SHMS_ngcer_track_fired_region_3.npassed/SHMS_ngce
 SHMS NGC Region 4 efficiency: {SHMS_ngcer_track_fired_region_4.npassed/SHMS_ngcer_track_matched_region_4.npassed} = {SHMS_ngcer_track_fired_region_4.npassed} of {SHMS_ngcer_track_matched_region_4.npassed} good tracks.
 Overall NGC Efficiency: {SHMS_ngcer_track_fired_tot.npassed/SHMS_ngcer_track_matched_tot.npassed} = {SHMS_ngcer_track_fired_tot.npassed} of {SHMS_ngcer_track_matched_tot.npassed} good tracks.
 
-************
-* Aerogel Cerenkov * 
-************
+**********
+* Aerogel  
+**********
+
 Good Track Requirements:
    1. Only one track found in the focal plane 
    2. chisq/dof < {paero_red_chi2_max:%5.1f}
@@ -326,6 +365,7 @@ Overall AERO Efficiency: {SHMS_aero_track_fired_tot.npassed/SHMS_aero_track_matc
 ****************************
 * Calorimeter Efficiencies *
 ****************************
+
 Efficiencies for calorimeter is the fraction of times block was hit when track
 with chisquared/dof < {pstat_cal_maxchisq:%5.1f} came within {pstat_cal_slop:%4.1f} cm of the center.
 and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
@@ -340,6 +380,7 @@ shmsShowerArray	     Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_
 **************************
 * Hodoscope Efficiencies * 
 **************************
+
 Efficiencies for hodoscopes is the fraction of times scin. was hit when track
 with chisquared/dof < {pstat_maxchisq:%5.1f} came within {pstat_slop:%4.1f} cm of the center.
 
@@ -431,7 +472,10 @@ P2Y21 	 	{phodo_pos_eff[83]} 	 	{phodo_neg_eff[83]}	 	 {phodo_or_eff[83]} 	 	 {p
 * Hardware Scalers
 *******************
 
-*HODOSCOPES*
+=:=:=:=:=:=:=
+= HODOSCOPES
+=:=:=:=:=:=:=
+
 Scint	Counts		Rate
 P1X1+:  {P.hod.1x1.posScaler} [ {(P.hod.1x1.posScaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 P1X2+:  {P.hod.1x2.posScaler} [ {(P.hod.1x2.posScaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
@@ -562,17 +606,3 @@ P2Y18-: {P.hod.2y18.negScaler} [ {(P.hod.2y18.negScaler/P.1Mhz.scalerTime)/1000.
 P2Y19-: {P.hod.2y19.negScaler} [ {(P.hod.2y19.negScaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 P2Y20-: {P.hod.2y20.negScaler} [ {(P.hod.2y20.negScaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 P2Y21-: {P.hod.2y21.negScaler} [ {(P.hod.2y21.negScaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-
-P1X: {P.S1X.scaler} [ {(P.S1X.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1X 
-P1Y: {P.S1Y.scaler} [ {(P.S1Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1Y
-P2X: {P.S2X.scaler} [ {(P.S2X.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2X
-P2Y: {P.S2Y.scaler} [ {(P.S2Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2Y
-
-P1XP1Y: {P.S1XS1Y.scaler} [ {(P.S1XS1Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] AND between P1X and P1Y planes 
-P2XP2Y: {P.S2XS2Y.scaler} [ {(P.S2XS2Y.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] OR between P2X and P2Y planes (just for kpp, will be AND)                                               
-
-*Aerogel, NGC, HGC*
-AERO: {P.AERO.scaler} [ {(P.AERO.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ] Aerogel sum currently not available
-HGC:{P.HGC.scaler} [ {(P.HGC.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-NGC:{P.NGC.scaler} [ {(P.NGC.scaler/P.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-

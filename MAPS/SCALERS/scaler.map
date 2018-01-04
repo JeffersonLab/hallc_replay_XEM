@@ -200,33 +200,32 @@ pTRIG3       0    4     5    2     1    -1  SHMS TRIG3
 pTRIG4       0    4     5    3     1    -1  SHMS TRIG4
 pTRIG5       0    4     5    4     1    -1  SHMS TRIG5
 pTRIG6       0    4     5    5     1    -1  SHMS TRIG6
-12/6         0    5     6    6     1    -1  Empty
-12/7         0    5     6    7     1    -1  Empty
-12/8         0    5     6    8     1    -1  Empty
-12/9         0    5     6    9     1    -1  Empty
-hTRIG1       0    4     5    10    1    -1  HMS  TRIG1
-hTRIG2       0    4     5    11    1    -1  HMS  TRIG2
-hTRIG3       0    4     5    12    1    -1  HMS  TRIG3
-hTRIG4       0    4     5    13    1    -1  HMS  TRIG4
-hTRIG5       0    4     5    14    1    -1  HMS  TRIG5
-hTRIG6       0    4     5    15    1    -1  HMS  TRIG6
+12/6         0    4     5    6     1    -1  Empty
+12/7         0    4     5    7     1    -1  Empty
+12/8         0    4     5    8     1    -1  Empty
+12/9         0    4     5    9     1    -1  Empty
+hTRIG1       0    4     5    10    1    -1  HMS TRIG1
+hTRIG2       0    4     5    11    1    -1  HMS TRIG2
+hTRIG3       0    4     5    12    1    -1  HMS TRIG3
+hTRIG4       0    4     5    13    1    -1  HMS TRIG4
+hTRIG5       0    4     5    14    1    -1  HMS TRIG5
+hTRIG6       0    4     5    15    1    -1  HMS TRIG6
 pSTOF        0    4     5    16    1    -1  SHMS STOF
-pEL_LO       0    4     5    17    1    -1  SHMS EL_LO
-pEL_HI       0    4     5    18    1    -1  SHMS EL_HI
-pEL_REAL     0    4     5    19    1    -1  SHMS EL_REAL
-pEL_CLEAN    0    4     5    20    1    -1  SHMS EL_CLEAN
-12/21        0    4     5    21    1    -1  Empty
+pEL_LO_LO    0    4     5    17    1    -1  SHMS EL_LO_LO
+pEL_LO       0    4     5    18    1    -1  SHMS EL_LO
+pEL_HI       0    4     5    19    1    -1  SHMS EL_HI
+pEL_REAL     0    4     5    20    1    -1  SHMS EL_REAL
+pEL_CLEAN    0    4     5    21    1    -1  SHMS EL_CLEAN
 12/22        0    4     5    22    1    -1  Empty
 12/23        0    4     5    23    1    -1  Empty
 hSTOF        0    4     5    24    1    -1  HMS STOF
-hEL_LO       0    4     5    25    1    -1  HMS EL_LO
-hEL_HI       0    4     5    26    1    -1  HMS EL_HI
-hEL_REAL     0    4     5    27    1    -1  HMS EL_REAL
-hEL_CLEAN    0    4     5    28    1    -1  HMS EL_CLEAN
-12/29        0    4     5    29    1    -1  Empty
+hEL_LO_LO    0    4     5    25    1    -1  HMS EL_LO_LO
+hEL_LO       0    4     5    26    1    -1  HMS EL_LO
+hEL_HI       0    4     5    27    1    -1  HMS EL_HI
+hEL_REAL     0    4     5    28    1    -1  HMS EL_REAL
+hEL_CLEAN    0    4     5    29    1    -1  HMS EL_CLEAN
 12/30        0    4     5    30    1    -1  Empty
 12/31        0    4     5    31    1    -1  Empty
-
 
 # desc      hel crate slot start nchan page long-description
 S1X          0    4     6    0     1    -1  HMS S1X
@@ -240,11 +239,11 @@ ASUM         0    4     6    7     1    -1  HMS ASUM
 BSUM         0    4     6    8     1    -1  HMS BSUM
 CSUM         0    4     6    9     1    -1  HMS CSUM
 DSUM         0    4     6    10    1    -1  HMS DSUM
-PSHWRLO      0    4     6    11    1    -1  HMS PSHWRLO
-PSHWRHI      0    4     6    12    1    -1  HMS PSHWRHI
-SHWR         0    4     6    13    1    -1  HMS SHWR
+PRLO         0    4     6    11    1    -1  HMS PRLO
+PRHI         0    4     6    12    1    -1  HMS PRHI
+SHLO         0    4     6    13    1    -1  HMS SHLO
 EDTM         0    4     6    14    1    -1  HMS EDTM
-CERSUM       0    4     6    15    1    -1  HMS CERSUM
+CER          0    4     6    15    1    -1  HMS CER
 21/16        0    4     6    16    1    -1  Empty
 21/17        0    4     6    17    1    -1  Empty
 21/18        0    4     6    18    1    -1  Empty
@@ -473,21 +472,21 @@ hTRIG4       0    5     6    13    1    -1  HMS  TRIG4
 hTRIG5       0    5     6    14    1    -1  HMS  TRIG5
 hTRIG6       0    5     6    15    1    -1  HMS  TRIG6
 pSTOF        0    5     6    16    1    -1  SHMS STOF
-pEL_LO       0    5     6    17    1    -1  SHMS EL_LO
-pEL_HI       0    5     6    18    1    -1  SHMS EL_HI
-pEL_REAL     0    5     6    19    1    -1  SHMS EL_REAL
-pEL_CLEAN    0    5     6    20    1    -1  SHMS EL_CLEAN
-12/21        0    5     6    21    1    -1  Empty
+pEL_LO_LO    0    5     6    17    1    -1  SHMS EL_LO_LO
+pEL_LO       0    5     6    18    1    -1  SHMS EL_LO
+pEL_HI       0    5     6    19    1    -1  SHMS EL_HI
+pEL_REAL     0    5     6    20    1    -1  SHMS EL_REAL
+pEL_CLEAN    0    5     6    21    1    -1  SHMS EL_CLEAN
 12/22        0    5     6    22    1    -1  Empty
 12/23        0    5     6    23    1    -1  Empty
 hSTOF        0    5     6    24    1    -1  HMS STOF
-hEL_LO       0    5     6    25    1    -1  HMS EL_LO
-hEL_HI       0    5     6    26    1    -1  HMS EL_HI
-hEL_REAL     0    5     6    27    1    -1  HMS EL_REAL
-hEL_CLEAN    0    5     6    28    1    -1  HMS EL_CLEAN
-12/29        0    5     6    29    1    -1  Empty
-12/30        0    5     6    30    1    -1  Empty
-12/31        0    5     6    31    1    -1  Empty
+hEL_LO_LO    0    5     6    25    1    -1  HMS EL_LO_LO
+hEL_LO       0    5     6    26    1    -1  HMS EL_LO
+hEL_HI       0    5     6    27    1    -1  HMS EL_HI
+hEL_REAL     0    5     6    28    1    -1  HMS EL_REAL
+hEL_CLEAN    0    5     6    29    1    -1  HMS EL_CLEAN
+12/29        0    5     6    30    1    -1  Empty
+12/30        0    5     6    31    1    -1  Empty
 
 # desc      hel crate slot start nchan page long-description
 S1X          0    5     7    0     1    -1  SHMS S1X
@@ -498,11 +497,11 @@ S1XS1Y       0    5     7    4     1    -1  SHMS S1T
 S2XS2Y       0    5     7    5     1    -1  SHMS S2T
 pTREF3       0    5     7    6     1    -1  SHMS TREF3
 AERO         0    5     7    7     1    -1  SHMS AERO
-HGC          0    5     7    8     1    -1  SHMS HGC
-NGC          0    5     7    9     1    -1  SHMS NGC
+HCER         0    5     7    8     1    -1  SHMS HGC
+NCER         0    5     7    9     1    -1  SHMS NGC
 EDTM         0    5     7    10    1    -1  SHMS EDTM
-13/11        0    5     7    11    1    -1  Empty
-13/12        0    5     7    12    1    -1  Empty
+PRLO         0    5     7    11    1    -1  SHMS PRLO
+PRHI         0    5     7    12    1    -1  SHMS PRHI
 13/13        0    5     7    13    1    -1  Empty
 13/14        0    5     7    14    1    -1  Empty
 13/15        0    5     7    15    1    -1  Empty
