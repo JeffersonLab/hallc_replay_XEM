@@ -1,0 +1,3 @@
+; SHMS calibration files for run 1585
+#include "/PARAM/SHMS/AERO/CALIB/Fall_Comm_2017/paero_calib_1585.param"
+#include "/PARAM/SHMS/CAL/CALIB/Fall_Comm_2017/pcal_calib_1585.param"

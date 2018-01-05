@@ -5,6 +5,7 @@ g_ctp_calib_filename ="DBASE/SHMS/GEN/default_det_calib_files.param"
 
 464-488
 g_ctp_parm_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/general.param"
+
 464-464
 g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_464.param"
 
@@ -40,3 +41,15 @@ g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_487.param"
 
 488-488
 g_ctp_calib_filename ="DBASE/SHMS/GEN/KPP_Spring_2017/calib_488.param"
+
+1158-1704
+g_ctp_parm_filename ="DBASE/SHMS/GEN/Fall_Comm_2017/general.param"
+
+1583-1583
+g_ctp_calib_filename ="DBASE/SHMS/GEN/Fall_Comm_2017/calib_1583.param"
+
+1585-1585
+g_ctp_calib_filename ="DBASE/SHMS/GEN/Fall_Comm_2017/calib_1585.param"
+
+1586-1586
+g_ctp_calib_filename ="DBASE/SHMS/GEN/Fall_Comm_2017/calib_1586.param"

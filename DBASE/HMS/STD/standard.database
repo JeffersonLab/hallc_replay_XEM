@@ -2,6 +2,40 @@
 g_ctp_parm_filename ="DBASE/HMS/GEN/general.param"
 g_ctp_kinematics_filename ="DBASE/HMS/STD/standard.kinematics"
 g_ctp_calib_filename ="DBASE/HMS/GEN/default_det_calib_files.param"
+
 303-303
 g_ctp_parm_filename ="DBASE/HMS/GEN/KPP_Spring_2017/general.param"
 g_ctp_calib_filename ="DBASE/HMS/GEN/KPP_Spring_2017/calib_303.param"
+
+1116-1277
+g_ctp_parm_filename ="DBASE/HMS/GEN/Fall_Comm_2017/general.param"
+
+1130-1130
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1130.param"
+
+1136-1136
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1136.param"
+
+1178-1178
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1178.param"
+
+1179-1179
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1179.param"
+
+1180-1180
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1180.param"
+
+1212-1212
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1212.param"
+
+1213-1213
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1213.param"
+
+1214-1214
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1214.param"
+
+1235-1235
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1235.param"
+
+1249-1249
+g_ctp_calib_filename ="DBASE/HMS/GEN/Fall_Comm_2017/calib_1249.param"
