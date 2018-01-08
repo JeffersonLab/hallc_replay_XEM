@@ -6,7 +6,7 @@
 #
 
 0-99999
-gpbeam = 2.215
+gpbeam = 2.218
 gtargmass_amu=12.0107
 ppartmass = 0.00051099
 ptheta_lab = 25.02

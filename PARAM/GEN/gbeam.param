@@ -4,7 +4,7 @@
 
 ; average beam positions:
 ; Use the Hall C EPICS BPM values in units of cm
-  gbeam_x = +0.00
+  gbeam_x  = +0.00
   gbeam_xp = +0.00
   gbeam_y  = +0.00
   gbeam_yp = +0.00
@@ -22,18 +22,30 @@ calculating beam position
 ; Various fast raster quantities: gUse* are flags
 
 
-  gfr_cal_mom      = 6.4  ; = beam momnetum during calibration run 
-
+ ; gfr_cal_mom  = 6.4  ; = beam momnetum during calibration run 
+   gfr_cal_mom  = 2.218  ; = beam momentum during Winter '17 run             
       
-  gfrxa_adcpercm = 97666.7;
-  gfrxb_adcpercm = 97333.3;
-  gfrya_adcpercm = 113667;
-  gfryb_adcpercm = 114333;
+ ; gfrxa_adcpercm = 97666.7;
+ ; gfrxb_adcpercm = 97333.3;
+ ; gfrya_adcpercm = 113667;
+ ; gfryb_adcpercm = 114333;
 
-  gfrxa_adc_zero_offset = 67800;
-  gfrxb_adc_zero_offset = 69050;
-  gfrya_adc_zero_offset = 67700;
-  gfryb_adc_zero_offset = 67000;
+ ; gfrxa_adc_zero_offset = 67800;
+ ; gfrxb_adc_zero_offset = 69050;
+ ; gfrya_adc_zero_offset = 67700;
+ ; gfryb_adc_zero_offset = 67000;
+
+  ; raster constants from Winter '17 Commissioning shms run 1565
+
+    gfrya_adcpercm = 56333.3;
+    gfryb_adcpercm = 56000;
+    gfrxa_adcpercm = 67000.0;
+    gfrxb_adcpercm = 62666.6;
+
+    gfrya_adc_zero_offset = 67200;
+    gfryb_adc_zero_offset = 65650;
+    gfrxa_adc_zero_offset = 65200;
+    gfrxb_adc_zero_offset = 67050;
 
 ; positions of FR magnets relative to target
   gfrx_dist  = 1375   ; cm

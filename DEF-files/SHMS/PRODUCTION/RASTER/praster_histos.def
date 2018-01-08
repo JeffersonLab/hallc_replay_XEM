@@ -5,18 +5,38 @@
 # Assume FADC range is set to 1V and the integration is 25 channels
 # Offset in the FADC is about 0.122V or 500 channels.
 
-formula FRXA_V P.rb.raster.frxaRawAdc*(1./4096.)/25.
-formula FRXB_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
-formula FRYA_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
-formula FRYB_V P.rb.raster.frybRawAdc*(1./4096.)/25.
+formula FRXAraw_V P.rb.raster.frxaRawAdc*(1./4096.)/25.
+formula FRXBraw_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
+formula FRYAraw_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
+formula FRYBraw_V P.rb.raster.frybRawAdc*(1./4096.)/25.
 
-TH1F pFRXA 'SHMS FRXA; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 1000 0 100000
-TH1F pFRXA_V 'SHMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
-TH1F pFRXB 'SHMS FRXB; FRXB RAW ADC (chan); Counts' P.rb.raster.frxbRawAdc 1000 0 100000
-TH1F pFRXB_V 'SHMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0
-TH1F pFRYA 'SHMS FRYA; FRYA RAW ADC (chan); Counts' P.rb.raster.fryaRawAdc 1000 0 100000
-TH1F pFRYA_V 'SHMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0
-TH1F pFRYB 'SHMS FRYB; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 1000 0 100000
-TH1F pFRYB_V 'SHMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
-TH2F pFRA_XvsY 'SHMS FRA X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
-TH2F pFRB_XvsY 'SHMS FRB X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0
+formula FRXApos P.rb.raster.fr_xa
+formula FRXBpos P.rb.raster.fr_xb
+formula FRYApos P.rb.raster.fr_ya
+formula FRYBpos P.rb.raster.fr_yb
+
+TH1F pFRXAraw 'SHMS FRXA Raw; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 100 0 100000 P.dc.ntrack>0
+TH1F pFRXAraw_V 'SHMS FRXA Raw; FRXA RAW ADC (Volts); Counts' FRXAraw_V 100 0 1.0 P.dc.ntrack>0
+TH1F pFRXBraw 'SHMS FRXB Raw; FRXB RAW ADC (chan); Counts' P.rb.raster.frxbRawAdc 100 0 100000 P.dc.ntrack>0
+TH1F pFRXBraw_V 'SHMS FRXB Raw; FRXB RAW ADC (Volts); Counts' FRXBraw_V 100 0 1.0 P.dc.ntrack>0
+TH1F pFRYAraw 'SHMS FRYA Raw; FRYA RAW ADC (chan); Counts' P.rb.raster.fryaRawAdc 100 0 100000 P.dc.ntrack>0
+TH1F pFRYAraw_V 'SHMS FRYA Raw; FRYA RAW ADC (Volts); Counts' FRYAraw_V 100 0 1.0 P.dc.ntrack>0
+TH1F pFRYBraw 'SHMS FRYB Raw; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 100 0 100000 P.dc.ntrack>0
+TH1F pFRYBraw_V 'SHMS FRYB Raw; FRYB RAW ADC (Volts); Counts' FRYBraw_V 100 0 1.0 P.dc.ntrack>0
+
+TH1F pFRXA 'SHMS FRXA; FRXA ADC (chan); Counts' P.rb.raster.frxa_adc 100 -50000 50000 P.dc.ntrack>0
+TH1F pFRXB 'SHMS FRXB; FRXB ADC (chan); Counts' P.rb.raster.frxb_adc 100 -50000 50000 P.dc.ntrack>0
+TH1F pFRYA 'SHMS FRYA; FRYA ADC (chan); Counts' P.rb.raster.frya_adc 100 -50000 50000 P.dc.ntrack>0
+TH1F pFRYB 'SHMS FRYB; FRYB ADC (chan); Counts' P.rb.raster.fryb_adc 100 -50000 50000 P.dc.ntrack>0
+
+TH1F pFRXApos 'SHMS FRXApos; FRXA POS (CM); Counts' P.rb.raster.fr_xa 100 -0.5 0.5 P.dc.ntrack>0
+TH1F pFRXBpos 'SHMS FRXBpos; FRXB POS (CM); Counts' P.rb.raster.fr_xb 100 -0.5 0.5 P.dc.ntrack>0
+TH1F pFRYApos 'SHMS FRYApos; FRYA POS (CM); Counts' P.rb.raster.fr_ya 100 -0.5 0.5 P.dc.ntrack>0
+TH1F pFRYBpos 'SHMS FRYBpos; FRYB POS (CM); Counts' P.rb.raster.fr_yb 100 -0.5 0.5 P.dc.ntrack>0
+
+
+TH2F pFRAraw_XvsY 'SHMS FRA Raw X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
+TH2F pFRBraw_XvsY 'SHMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
+
+TH2F pFRApos_XvsY 'SHMS FRA X vs Y; FRXA POS (CM); FRYA POS (CM)' P.rb.raster.fr_xa P.rb.raster.fr_ya 100 -0.5 0.5 100 -0.5 0.5 P.dc.ntrack>0
+TH2F pFRBpos_XvsY 'SHMS FRB X vs Y; FRXB POS (CM); FRYB POS (CM)' P.rb.raster.fr_xb P.rb.raster.fr_yb 100 -0.5 0.5 100 -0.5 0.5 P.dc.ntrack>0
