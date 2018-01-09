@@ -14,8 +14,8 @@ REFINDEX=3
   11,   1,   4,   0  ! hDSUM
   12,   1,   5,   0  ! hPSHWR
   13,   1,   6,   0  ! hSHWR
-  14,   1,   7,   0  ! hAERSUM
-  15,   1,   8,   0  ! hCERSUM
+  14,   1,   7,   0  ! hAER
+  15,   1,   8,   0  ! hCER
 
 SLOT=18
 REFINDEX=3
@@ -36,11 +36,11 @@ REFINDEX=0
    8,   2,   9,   1  ! hBSUM
    9,   2,  10,   1  ! hCSUM
   10,   2,  11,   1  ! hDSUM
-  11,   2,  12,   1  ! hPSHWRLO
-  12,   2,  13,   1  ! hPSHWRHI
+  11,   2,  12,   1  ! hPRLO
+  12,   2,  13,   1  ! hPRHI
   13,   2,  14,   1  ! hSHWR
   14,   2,  15,   1  ! hEDTM
-  15,   2,  16,   1  ! hCERSUM
+  15,   2,  16,   1  ! hCER
   26,   2,  22,   1  ! hTRIG1
   27,   2,  23,   1  ! hTRIG2
   28,   2,  24,   1  ! hTRIG3

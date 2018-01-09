@@ -549,8 +549,8 @@ TH1F htrig_hpreShwr_adc_pamp 'HMS Pre-Shower Pulse Amplitude;  Pulse Amplitude (
 # HMS PreShower TRIG LOW/HIGH  
 #-----------------------------
 
-TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRLO_tdcTimeRaw 4000 0 40000
-TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPSHWRHI_tdcTimeRaw 4000 0 40000
+TH1F htrig_hpreShwrLow_tdc 'HMS hpreShwrLow TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPRLO_tdcTimeRaw 4000 0 40000
+TH1F htrig_hpreShwrHigh_tdc 'HMS hpreShwrHigh TDC Time; Raw TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hPRHI_tdcTimeRaw 4000 0 40000
 
 
 #----------------------------------
@@ -566,10 +566,10 @@ TH1F htrig_hshwr_tdc 'HMS Shower TDC Time;  TDC Time (TDC Units); Counts / 10 TD
 # HMS Gas Cherenkov TRIG Pulse Profile
 #---------------------------------------
 
-TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hCERSUM_adcPed 5000 0 5000
-TH1F htrig_hcersum_adc_pi 'HMS Cherenkov Sum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hCERSUM_adcPulseInt 800 0 40000
-TH1F htrig_hcersum_adc_pamp 'HMS Cherenkov Sum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hCERSUM_adcPulseAmp 205 0 4100
-TH1F htrig_hcersum_tdc 'HMS Cherenkov Sum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCERSUM_tdcTime 4000 0 40000
+TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (ADC Units); Counts / 1 ADC Units;' T.hms.hCER_adcPed 5000 0 5000
+TH1F htrig_hcersum_adc_pi 'HMS Cherenkov Sum Pulse Integral;  Pulse Integral (ADC Units); Counts / 50 ADC Units;' T.hms.hCER_adcPulseInt 800 0 40000
+TH1F htrig_hcersum_adc_pamp 'HMS Cherenkov Sum Pulse Amplitude;  Pulse Amplitude (ADC Units); Counts / 20 ADC Units;' T.hms.hCER_adcPulseAmp 205 0 4100
+TH1F htrig_hcersum_tdc 'HMS Cherenkov Sum TDC Time;  TDC Time (TDC Units); Counts / 10 TDC Units;' T.hms.hCER_tdcTime 4000 0 40000
 
 
 

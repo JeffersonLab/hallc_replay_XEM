@@ -9,9 +9,10 @@ ROC=2
 SLOT=14
 REFINDEX=3
   11,1000,   0,   3  ! pFADC_TREF_ROC2
-   0,   1,   1,   0  ! pAERSUM
-   1,   1,   2,   0  ! pHGCERSUM
-   2,   1,   3,   0  ! pNGCERSUM
+   0,   1,   1,   0  ! pAER
+   1,   1,   2,   0  ! pHGCER
+   2,   1,   3,   0  ! pNGCER
+   2,   1,   3,   0  ! pPSHWR
   11,   1,   4,   0  ! pFADC_TREF_ROC2
 
 SLOT=20
@@ -30,12 +31,12 @@ REFINDEX=0
   36,   2,   7,   1  ! p1T
   37,   2,   8,   1  ! p2T
   38,   2,   9,   1  ! pT3
-  39,   2,  10,   1  ! pAERSUM
-  40,   2,  11,   1  ! pHGCERSUM
-  41,   2,  12,   1  ! pNGCERSUM
+  39,   2,  10,   1  ! pAER
+  40,   2,  11,   1  ! pHGCER
+  41,   2,  12,   1  ! pNGCER
   42,   2,  23,   1  ! pEDTM
-  43,   2,  24,   1  ! pPRSHWRLO
-  44,   2,  25,   1  ! pPRSHWRHI
+  43,   2,  24,   1  ! pPRLO
+  44,   2,  25,   1  ! pPRHI
   48,   2,  26,   1  ! pTRIG1
   49,   2,  27,   1  ! pTRIG2
   50,   2,  28,   1  ! pTRIG3
