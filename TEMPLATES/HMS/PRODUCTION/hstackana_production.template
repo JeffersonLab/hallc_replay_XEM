@@ -47,11 +47,11 @@ Ps6_factor = {ghconfig_ti_ps_factors[5]}
 HMS 3/4 Triggers           : {H.hTRIG1.scaler} [ {H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]} ]
 Estimated HMS 3/4 Triggers : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 HMS 3/4 Trigger Rate       : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
-Accepted HMS Triggers      : {TRIG1.npassed}
+Accepted HMS Triggers      : {hcut_TRIG1.npassed}
 HMS Event Types            : {HMS_Pretrig.npassed}
 
-HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {(TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
-HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+HMS Computer Live Time : {(hcut_TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {(hcut_TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+HMS Computer Dead Time : {100.0 - (hcut_TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (hcut_TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
 
 =:=:=:=:=:=:=:=:=:=:=:=:
 = Physics 3/4 Triggers
@@ -60,7 +60,7 @@ HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f}
 Physics Triggers           : {H.hTRIG1.scaler - H.EDTM.scaler}
 Estimated Physics Triggers : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
 Physics Trigger Rate       : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
-Accepted Physics Triggers  : {physics_accepted.npassed}
+Accepted Physics Triggers  : {hcut_physics_accepted.npassed}
 
 =:=:=:=:=:=:=:=:
 = HMS Triggers
@@ -105,10 +105,10 @@ pTRIG6 :  	{H.pTRIG6.scaler} 	[ {(H.pTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f}
 EDTM Triggers           : {H.EDTM.scaler}
 Estimated EDTM Triggers : {H.EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 EDTM Trigger Rate       : {H.EDTM.scalerRate/1000.:%.3f} kHz
-Accepted EDTM Triggers  : {edtm_accepted.npassed}
+Accepted EDTM Triggers  : {hcut_edtm_accepted.npassed}
 
-Total Live Time (EDTM) : {(edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
-Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
 
 =:=:=:=:=:=:=:
 = Hodoscopes
@@ -175,71 +175,71 @@ hmsDC2_1hit_u2:      {hmsDC2_1hit_u2.npassed}
 hmsDC2_1hit_x2:      {hmsDC2_1hit_x2.npassed}		
 
 "Good" means one or two hits per dc plane.
-goodHDC1x1:	     {goodHDC1x1.npassed}	eff : {goodHDC1x1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC1u2:	     {goodHDC1u2.npassed}	eff : {goodHDC1u2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC1u1:          {goodHDC1u1.npassed}	eff : {goodHDC1u1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC1v1:	     {goodHDC1v1.npassed}	eff : {goodHDC1v1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC1v2:	     {goodHDC1v2.npassed}	eff : {goodHDC1v2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC1x2:	     {goodHDC1x2.npassed}	eff : {goodHDC1x2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1x1:	     {hcut_goodHDC1x1.npassed}	eff : {hcut_goodHDC1x1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1u2:	     {hcut_goodHDC1u2.npassed}	eff : {hcut_goodHDC1u2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1u1:             {hcut_goodHDC1u1.npassed}	eff : {hcut_goodHDC1u1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1v1:	     {hcut_goodHDC1v1.npassed}	eff : {hcut_goodHDC1v1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1v2:	     {hcut_goodHDC1v2.npassed}	eff : {hcut_goodHDC1v2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1x2:	     {hcut_goodHDC1x2.npassed}	eff : {hcut_goodHDC1x2.npassed/(hms_trigs.npassed+.0001):%5.3f}
 
-goodHDC2x1:	     {goodHDC2x1.npassed}	eff : {goodHDC2x1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2u2:	     {goodHDC2u2.npassed}	eff : {goodHDC2u2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2u1:	     {goodHDC2u1.npassed}	eff : {goodHDC2u1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2v1:	     {goodHDC2v1.npassed}	eff : {goodHDC2v1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2v2:	     {goodHDC2v2.npassed}	eff : {goodHDC2v2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2x2:	     {goodHDC2x2.npassed}	eff : {goodHDC2x2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2x1:	     {hcut_goodHDC2x1.npassed}	eff : {hcut_goodHDC2x1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2u2:	     {hcut_goodHDC2u2.npassed}	eff : {hcut_goodHDC2u2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2u1:	     {hcut_goodHDC2u1.npassed}	eff : {hcut_goodHDC2u1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2v1:	     {hcut_goodHDC2v1.npassed}	eff : {hcut_goodHDC2v1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2v2:	     {hcut_goodHDC2v2.npassed}	eff : {hcut_goodHDC2v2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2x2:	     {hcut_goodHDC2x2.npassed}	eff : {hcut_goodHDC2x2.npassed/(hms_trigs.npassed+.0001):%5.3f}
 
-goodHDC1:	     {goodHDC1.npassed}	eff : {goodHDC1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodHDC2:	     {goodHDC2.npassed}	eff : {goodHDC2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-bothgood:	     {bothGood.npassed}	eff : {bothGood.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC1:	     {hcut_goodHDC1.npassed}	eff : {hcut_goodHDC1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goodHDC2:	     {hcut_goodHDC2.npassed}	eff : {hcut_goodHDC2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_bothgood:	     {hcut_bothGood.npassed}	eff : {hcut_bothGood.npassed/(hms_trigs.npassed+.0001):%5.3f}
 
-realhdc1x1:	     {realhdc1x1.npassed}
-realhdc1u2:	     {realhdc1u2.npassed}
-realhdc1u1:          {realhdc1u1.npassed}
-realhdc1v1:	     {realhdc1v1.npassed}
-realhdc1v2:	     {realhdc1v2.npassed}
-realhdc1x2:	     {realhdc1x2.npassed}
+hcut_realhdc1x1:	     {hcut_realhdc1x1.npassed}
+hcut_realhdc1u2:	     {hcut_realhdc1u2.npassed}
+hcut_realhdc1u1:             {hcut_realhdc1u1.npassed}
+hcut_realhdc1v1:	     {hcut_realhdc1v1.npassed}
+hcut_realhdc1v2:	     {hcut_realhdc1v2.npassed}
+hcut_realhdc1x2:	     {hcut_realhdc1x2.npassed}
 
-realhdc2x1:	     {realhdc2x1.npassed}
-realhdc2u2:	     {realhdc2u2.npassed}
-realhdc2u1:	     {realhdc2u1.npassed}
-realhdc2v1:	     {realhdc2v1.npassed}
-realhdc2v2:	     {realhdc2v2.npassed}
-realhdc2x2:	     {realhdc2x2.npassed}
+hcut_realhdc2x1:	     {hcut_realhdc2x1.npassed}
+hcut_realhdc2u2:	     {hcut_realhdc2u2.npassed}
+hcut_realhdc2u1:	     {hcut_realhdc2u1.npassed}
+hcut_realhdc2v1:	     {hcut_realhdc2v1.npassed}
+hcut_realhdc2v2:	     {hcut_realhdc2v2.npassed}
+hcut_realhdc2x2:	     {hcut_realhdc2x2.npassed}
     	   	       
 **HODOSCOPE**
 "Any" means one or more hits per scint plane.
-anyhs1x:    	     {anyhs1x.npassed}	eff: {anyhs1x.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
-anyhs1y: 	     {anyhs1y.npassed}	eff: {anyhs1y.npassed/(hms_trigs.npassed+.0001):%5.3f}
-anyhs2x:	     {anyhs2x.npassed}	eff: {anyhs2x.npassed/(hms_trigs.npassed+.0001):%5.3f}
-anyhs2y: 	     {anyhs2y.npassed}	eff: {anyhs2y.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_anys1x:    	     {hcut_anys1x.npassed}	eff: {hcut_anys1x.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
+hcut_anys1y: 	     	     {hcut_anys1y.npassed}	eff: {hcut_anys1y.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_anys2x:	     	     {hcut_anys2x.npassed}	eff: {hcut_anys2x.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_anys2y: 	     	     {hcut_anys2y.npassed}	eff: {hcut_anys2y.npassed/(hms_trigs.npassed+.0001):%5.3f} 
 
 "Good" means one or two hits per scint plane.
-goodhs1x :   	     {goodhs1x.npassed}	 eff: {goodhs1x.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
-goodhs1y:	     {goodhs1y.npassed}	 eff: {goodhs1y.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodhs1:	     {goodhs1.npassed}	 eff: {goodhs1.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodhs2x:	     {goodhs2x.npassed}	 eff: {goodhs2x.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodhs2y:	     {goodhs2y.npassed}	 eff: {goodhs2y.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodhs2:	     {goodhs2.npassed}	 eff: {goodhs2.npassed/(hms_trigs.npassed+.0001):%5.3f}
-goodhs1s2: 	     {goodhs1s2.npassed}       eff: {goodhs1s2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods1x:  	     {hcut_goods1x.npassed}	 eff: {hcut_goods1x.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
+hcut_goods1y:	     {hcut_goods1y.npassed}	 eff: {hcut_goods1y.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods1:	     {hcut_goods1.npassed}	 eff: {hcut_goods1.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods2x:	     {hcut_goods2x.npassed}	 eff: {hcut_goods2x.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods2y:	     {hcut_goods2y.npassed}	 eff: {hcut_goods2y.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods2:	     {hcut_goods2.npassed}	 eff: {hcut_goods2.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_goods1s2: 	     {hcut_goods1s2.npassed}       eff: {hcut_goods1s2.npassed/(hms_trigs.npassed+.0001):%5.3f}
 
-hFoundTrack:	     {hFoundTrack.npassed}	 eff: {hFoundTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
-hFound1Track:	     {hFound1Track.npassed}	 eff: {hFound1Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
-hFound2Track:	     {hFound2Track.npassed}	 eff: {hFound2Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
-hFound3Track:	     {hFound3Track.npassed}	 eff: {hFound3Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
-hFound4Track:	     {hFound4Track.npassed}	 eff: {hFound4Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_FoundTrack:	     {hcut_FoundTrack.npassed}	 eff: {hcut_FoundTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}	BAD = ??
+hcut_Found1Track:	     {hcut_Found1Track.npassed}	 eff: {hcut_Found1Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_Found2Track:	     {hcut_Found2Track.npassed}	 eff: {hcut_Found2Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_Found3Track:	     {hcut_Found3Track.npassed}	 eff: {hcut_Found3Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_Found4Track:	     {hcut_Found4Track.npassed}	 eff: {hcut_Found4Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
 
-hCleanTrack:	     {hCleanTrack.npassed}	 eff: {hCleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}	 BAD = ??
-1hCleanTrack:	     {1hCleanTrack.npassed}	 eff: {1hCleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f} 
-2hCleanTrack:	     {2hCleanTrack.npassed}	 eff: {2hCleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}
-3hCleanTrack:	     {3hCleanTrack.npassed}	 eff: {3hCleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}
-4hCleanTrack:	     {4hCleanTrack.npassed}	 eff: {4hCleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_Clean1Track:	     {hcut_Clean1Track.npassed}	 eff: {hcut_Clean1Track.npassed/(hms_trigs.npassed+.0001):%5.3f}	 BAD = ??
+hcut_Clean2Track:	     {hcut_Clean2Track.npassed}	 eff: {hcut_Clean2Track.npassed/(hms_trigs.npassed+.0001):%5.3f} 
+hcut_Clean3Track:	     {hcut_Clean3Track.npassed}	 eff: {hcut_Clean3Track.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_Clean4Track:	     {hcut_Clean4Track.npassed}	 eff: {hcut_Clean4Track.npassed/(hms_trigs.npassed+.0001):%5.3f}
+hcut_CleanTrack:	     {hcut_CleanTrack.npassed}	 eff: {hcut_CleanTrack.npassed/(hms_trigs.npassed+.0001):%5.3f}
 
 **CHERENKOVS AND CAL**
-cer_pmt1_elec:	     {cer_pmt1_elec.npassed}
-cer_pmt2_elect:	     {cer_pmt2_elec.npassed}
-cer_elec:	     {cer_elec.npassed}
-cer_pi:		     {cer_pi.npassed}
+hcut_cer_pmt1_elec:	     {hcut_cer_pmt1_elec.npassed}
+hcut_cer_pmt2_elect:	     {hcut_cer_pmt2_elec.npassed}
+hcut_cer_elec:	     	     {hcut_cer_elec.npassed}
+hcut_cer_pi:		     {hcut_cer_pi.npassed}
 
 *****************************
 *HMS TRACKING EFFICIENCIES *
@@ -250,8 +250,8 @@ hhitslt = passed hits/cham     :   {hmsHitsLt.npassed}
 hhitsplanes = +planes >= 5/6   :   {hmsHitsPlanes.npassed}
 hhitsplanessps = + sps         :   {hSpacePoints.npassed}
 hhitsplanesspsstubs +stub      :   {hSpacePointsStub.npassed}
-hsfoundtrack                   :   {hFoundTrack.npassed}
-hscleantrack                   :   {hCleanTrack.npassed}
+hsfoundtrack                   :   {hcut_FoundTrack.npassed}
+hscleantrack                   :   {hcut_CleanTrack.npassed}
 hstublt = passed stub tests    :   {hStubLT.npassed}
 h1hitslt                       :   {hms1HitsLt.npassed}
 h2hitslt                       :   {hms2HitsLt.npassed}
@@ -296,7 +296,7 @@ with chisquared/dof < {hstat_cal_maxchisq:%5.1f} came within {hstat_cal_slop:%4.
 and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
 
 Events examined = strig       = {hms_trigs.npassed}
-Tracks found    = scleantrack = {hCleanTrack.npassed}
+Tracks found    = scleantrack = {hcut_CleanTrack.npassed}
 //Tracks passing chisquared cut = (hstat_cal_numevents:%7d) (in previous template, do we need this here?)
 
 hmsPreShower	     Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
@@ -315,7 +315,7 @@ Efficiencies for hodoscopes is the fraction of times scin. was hit when track
 with chisquared/dof < {hstat_maxchisq:%5.1f} came within {hstat_slop:%4.1f} cm of the center.
 
 Events examined = strig       = {hms_trigs.npassed}
-Tracks found    = scleantrack = {hCleanTrack.npassed}
+Tracks found    = scleantrack = {hcut_CleanTrack.npassed}
 //Tracks passing chisquared cut = (stat_numevents) (in previous template, do we still need this?)
 
 Plane 1: {hhodo_plane_AND_eff[0]}

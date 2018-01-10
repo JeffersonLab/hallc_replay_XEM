@@ -12,22 +12,22 @@ HMS_COIN_event       g.evtyp == 6
 COIN_ALL_event       g.evtyp == 7
 ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
 
-TRIG1         T.shms.pTRIG1_tdcTimeRaw > 0
-TRIG2         T.shms.pTRIG2_tdcTimeRaw > 0
-TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
-SHMS_Pretrig  TRIG1 || TRIG2 || TRIG3
+pcut_TRIG1         T.shms.pTRIG1_tdcTimeRaw > 0
+pcut_TRIG2         T.shms.pTRIG2_tdcTimeRaw > 0
+pcut_TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
+SHMS_Pretrig  pcut_TRIG1 || pcut_TRIG2 || pcut_TRIG3
 
 shms_trigs        SHMS_event
-edtm_accepted     T.shms.pEDTM_tdcTime != 0.0
-physics_accepted  T.shms.pEDTM_tdcTime == 0.0
+pcut_edtm_accepted     T.shms.pEDTM_tdcTime != 0.0
+pcut_physics_accepted  T.shms.pEDTM_tdcTime == 0.0
 
 RawDecode_master  1
 
 Block: Decode
 
-good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
-good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220
-good_S1_S2X_time     good_S1_time && good_S2X_time
+pcut_good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
+pcut_good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220
+pcut_good_S1_S2X_time     pcut_good_S1_time && pcut_good_S2X_time
 
 Decode_master     ALL_events
 
@@ -35,18 +35,18 @@ Block: CoarseTracking
 CoarseTracking_master ALL_events
 
 # Add cuts to stricter times and apply them to drift distances 
-time_cut1      P.dc.1u1.time > 0 && P.dc.1u1.time < 250
-time_cut2      P.dc.1u2.time > 0 && P.dc.1u2.time < 250
-time_cut3      P.dc.1x1.time > 0 && P.dc.1x1.time < 250
-time_cut4      P.dc.1x2.time > 0 && P.dc.1x2.time < 250
-time_cut5      P.dc.1v1.time > 0 && P.dc.1v1.time < 250
-time_cut6      P.dc.1v2.time > 0 && P.dc.1v2.time < 250
-time_cut7      P.dc.2v2.time > 0 && P.dc.2v2.time < 250
-time_cut8      P.dc.2v1.time > 0 && P.dc.2v1.time < 250
-time_cut9      P.dc.2x2.time > 0 && P.dc.2x2.time < 250
-time_cut10     P.dc.2x1.time > 0 && P.dc.2x1.time < 250
-time_cut11     P.dc.2u2.time > 0 && P.dc.2u2.time < 250
-time_cut12     P.dc.2u1.time > 0 && P.dc.2u1.time < 250
+pcut_time_cut1      P.dc.1u1.time > 0 && P.dc.1u1.time < 250
+pcut_time_cut2      P.dc.1u2.time > 0 && P.dc.1u2.time < 250
+pcut_time_cut3      P.dc.1x1.time > 0 && P.dc.1x1.time < 250
+pcut_time_cut4      P.dc.1x2.time > 0 && P.dc.1x2.time < 250
+pcut_time_cut5      P.dc.1v1.time > 0 && P.dc.1v1.time < 250
+pcut_time_cut6      P.dc.1v2.time > 0 && P.dc.1v2.time < 250
+pcut_time_cut7      P.dc.2v2.time > 0 && P.dc.2v2.time < 250
+pcut_time_cut8      P.dc.2v1.time > 0 && P.dc.2v1.time < 250
+pcut_time_cut9      P.dc.2x2.time > 0 && P.dc.2x2.time < 250
+pcut_time_cut10     P.dc.2x1.time > 0 && P.dc.2x1.time < 250
+pcut_time_cut11     P.dc.2u2.time > 0 && P.dc.2u2.time < 250
+pcut_time_cut12     P.dc.2u1.time > 0 && P.dc.2u1.time < 250
 
 shmsDC1Planes_large     (P.dc.1x1.nhit + P.dc.1u2.nhit + P.dc.1u1.nhit + P.dc.1v1.nhit + P.dc.1x2.nhit + P.dc.1v2.nhit) > 20
 shmsDC2Planes_large     (P.dc.2x1.nhit + P.dc.2u2.nhit + P.dc.2u1.nhit + P.dc.2v1.nhit + P.dc.2x2.nhit + P.dc.2v2.nhit) > 20 
@@ -61,15 +61,15 @@ shms_noch1_noch2       P.dc.Ch1.nhit == 0 && P.dc.Ch2.nhit == 0
 shms_ch_gt0_track      shms_ch_gt0 && P.dc.ntrack > 0
 shms_ch_gt4_track      shms_ch_gt4 && P.dc.ntrack > 0
 
-shms_ch1_gt0_gtime           P.dc.Ch1.nhit > 0 && good_S1_S2X_time
-shms_ch2_gt0_gtime           P.dc.Ch2.nhit > 0 && good_S1_S2X_time
-shms_ch_gt0_gtime            P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit > 0 && good_S1_S2X_time
-shms_ch_gt4_gtime            P.dc.Ch2.nhit > 3 && P.dc.Ch1.nhit > 3 && good_S1_S2X_time
-shms_ch2_gt0_noch1_gtime     P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit == 0 && good_S1_S2X_time
-shms_ch1_gt0_noch2_gtime     P.dc.Ch1.nhit > 0 && P.dc.Ch2.nhit == 0 && good_S1_S2X_time
-shms_noch1_noch2_gtime       P.dc.Ch1.nhit == 0 && P.dc.Ch2.nhit == 0 && good_S1_S2X_time
-shms_ch_gt0_track_gtime      shms_ch_gt0 && P.dc.ntrack > 0 && good_S1_S2X_time
-shms_ch_gt4_track_gtime      shms_ch_gt4 && P.dc.ntrack > 0 && good_S1_S2X_time
+shms_ch1_gt0_gtime           P.dc.Ch1.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch2_gt0_gtime           P.dc.Ch2.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch_gt0_gtime            P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch_gt4_gtime            P.dc.Ch2.nhit > 3 && P.dc.Ch1.nhit > 3 && pcut_good_S1_S2X_time
+shms_ch2_gt0_noch1_gtime     P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit == 0 && pcut_good_S1_S2X_time
+shms_ch1_gt0_noch2_gtime     P.dc.Ch1.nhit > 0 && P.dc.Ch2.nhit == 0 && pcut_good_S1_S2X_time
+shms_noch1_noch2_gtime       P.dc.Ch1.nhit == 0 && P.dc.Ch2.nhit == 0 && pcut_good_S1_S2X_time
+shms_ch_gt0_track_gtime      shms_ch_gt0 && P.dc.ntrack > 0 && pcut_good_S1_S2X_time
+shms_ch_gt4_track_gtime      shms_ch_gt4 && P.dc.ntrack > 0 && pcut_good_S1_S2X_time
 
 shmsDC1_1hit_x1     P.dc.1x1.nhit == 1
 shmsDC1_1hit_u1     P.dc.1u1.nhit == 1
@@ -139,7 +139,7 @@ shmsHitsPlanes      (P.dc.Ch1.nhit <= 6) && (P.dc.Ch2.nhit <= 6) && shmsPlanesGT
 
 pSpacePoints         P.dc.Ch1.spacepoints >= 1 && P.dc.Ch2.spacepoints >= 1
 pSpacePointsStub     P.dc.stubtest == 1 && P.dc.Ch1.spacepoints >= 1 && P.dc.Ch2.spacepoints >= 1
-pFoundTrack          P.dc.ntrack > 0 
+pcut_FoundTrack      P.dc.ntrack > 0 
 pStubLT              P.dc.stubtest == 1
 f1PSpacePoints       shms1HitsLt && shmsDC1PlanesGT && P.dc.Ch1.spacepoints == 0 && g.evtyp == 1
 f2PSpacePoints       shms2HitsLt && shmsDC2PlanesGT && P.dc.Ch2.spacepoints == 0 && g.evtyp == 1
@@ -156,16 +156,16 @@ Tracking_master  ALL_events
 Block: Reconstruct
 Reconstruct_master ALL_events
 
-cer_ng_elec    	  P.ngcer.npeSum > 0.5
-cer_ng_pi      	  P.ngcer.npeSum <= 0.5
-cer_hg_elec	  P.hgcer.npeSum > 0.5
-cer_hg_pi	  P.hgcer.npeSum <= 0.5
-cer_pi_both       cer_ng_pi && cer_hg_pi
-cer_elec_both     cer_ng_elec && cer_hg_elec
-cal_elec          P.cal.etracknorm > 0.6 && P.cal.etracknorm < 1.6
-cal_pi            P.cal.etracknorm <= 0.6 && P.cal.etracknorm > 0.
-elec_all          cer_ng_elec && cer_hg_elec && cal_elec
-pi_all        	  cer_ng_pi && cer_hg_pi && cal_pi
+pcut_cer_ng_elec    	  P.ngcer.npeSum > 0.5
+pcut_cer_ng_pi      	  P.ngcer.npeSum <= 0.5
+pcut_cer_hg_elec	  P.hgcer.npeSum > 0.5
+pcut_cer_hg_pi	  	  P.hgcer.npeSum <= 0.5
+pcut_cer_pi_both       	  pcut_cer_ng_pi && pcut_cer_hg_pi
+pcut_cer_elec_both     	  pcut_cer_ng_elec && pcut_cer_hg_elec
+pcut_cal_elec          	  P.cal.etracknorm > 0.6 && P.cal.etracknorm < 1.6
+pcut_cal_pi            	  P.cal.etracknorm <= 0.6 && P.cal.etracknorm > 0.
+pcut_elec_all          	  pcut_cer_ng_elec && pcut_cer_hg_elec && pcut_cal_elec
+pcut_pi_all            	  pcut_cer_ng_pi && pcut_cer_hg_pi && pcut_cal_pi
 
 shmsScinGood        P.hod.goodscinhit == 1
 shmsScinShould      shmsScinGood 
@@ -175,66 +175,66 @@ shmsScinDid         shmsScinShould && P.dc.ntrack > 0
 shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
 shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0
 
-goodHDC1x1     P.dc.1x1.nhit > 0 && P.dc.1x1.nhit < 3
-goodHDC1u2     P.dc.1u2.nhit > 0 && P.dc.1u2.nhit < 3
-goodHDC1u1     P.dc.1u1.nhit > 0 && P.dc.1u1.nhit < 3
-goodHDC1v1     P.dc.1v1.nhit > 0 && P.dc.1v1.nhit < 3
-goodHDC1v2     P.dc.1v2.nhit > 0 && P.dc.1v2.nhit < 3
-goodHDC1x2     P.dc.1x2.nhit > 0 && P.dc.1x2.nhit < 3
+pcut_goodHDC1x1     P.dc.1x1.nhit > 0 && P.dc.1x1.nhit < 3
+pcut_goodHDC1u2     P.dc.1u2.nhit > 0 && P.dc.1u2.nhit < 3
+pcut_goodHDC1u1     P.dc.1u1.nhit > 0 && P.dc.1u1.nhit < 3
+pcut_goodHDC1v1     P.dc.1v1.nhit > 0 && P.dc.1v1.nhit < 3
+pcut_goodHDC1v2     P.dc.1v2.nhit > 0 && P.dc.1v2.nhit < 3
+pcut_goodHDC1x2     P.dc.1x2.nhit > 0 && P.dc.1x2.nhit < 3
 
-goodHDC2x1     P.dc.2x1.nhit > 0 && P.dc.2x1.nhit < 3
-goodHDC2u2     P.dc.2u2.nhit > 0 && P.dc.2u2.nhit < 3
-goodHDC2u1     P.dc.2u1.nhit > 0 && P.dc.2u1.nhit < 3
-goodHDC2v1     P.dc.2v1.nhit > 0 && P.dc.2v1.nhit < 3
-goodHDC2v2     P.dc.2v2.nhit > 0 && P.dc.2v2.nhit < 3
-goodHDC2x2     P.dc.2x2.nhit > 0 && P.dc.2x2.nhit < 3
+pcut_goodHDC2x1     P.dc.2x1.nhit > 0 && P.dc.2x1.nhit < 3
+pcut_goodHDC2u2     P.dc.2u2.nhit > 0 && P.dc.2u2.nhit < 3
+pcut_goodHDC2u1     P.dc.2u1.nhit > 0 && P.dc.2u1.nhit < 3
+pcut_goodHDC2v1     P.dc.2v1.nhit > 0 && P.dc.2v1.nhit < 3
+pcut_goodHDC2v2     P.dc.2v2.nhit > 0 && P.dc.2v2.nhit < 3
+pcut_goodHDC2x2     P.dc.2x2.nhit > 0 && P.dc.2x2.nhit < 3
 
-goodHDC1     goodHDC1x1  && goodHDC1u2 && goodHDC1u1 && goodHDC1v1 && goodHDC1v2 && goodHDC1x2 
-goodHDC2     goodHDC2x1  && goodHDC2u2 && goodHDC2u1 && goodHDC2v1 && goodHDC2v2 && goodHDC2x2 
-bothGood     goodHDC1 && goodHDC2
+pcut_goodHDC1     pcut_goodHDC1x1  && pcut_goodHDC1u2 && pcut_goodHDC1u1 && pcut_goodHDC1v1 && pcut_goodHDC1v2 && pcut_goodHDC1x2 
+pcut_goodHDC2     pcut_goodHDC2x1  && pcut_goodHDC2u2 && pcut_goodHDC2u1 && pcut_goodHDC2v1 && pcut_goodHDC2v2 && pcut_goodHDC2x2 
+pcut_bothGood     pcut_goodHDC1 && pcut_goodHDC2
 
-realhdc1x1     goodHDC1x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc1u2     goodHDC1u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc1u1     goodHDC1u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc1v1     goodHDC1v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc1v2     goodHDC1v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc1x2     goodHDC1x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1x1     pcut_goodHDC1x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1u2     pcut_goodHDC1u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1u1     pcut_goodHDC1u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1v1     pcut_goodHDC1v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1v2     pcut_goodHDC1v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1x2     pcut_goodHDC1x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
 
-realhdc2x1     goodHDC2x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc2u2     goodHDC2u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc2u1     goodHDC2u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc2v1     goodHDC2v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc2v2     goodHDC2v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
-realhdc2x2     goodHDC2x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2x1     pcut_goodHDC2x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2u2     pcut_goodHDC2u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2u1     pcut_goodHDC2u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2v1     pcut_goodHDC2v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2v2     pcut_goodHDC2v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2x2     pcut_goodHDC2x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
 
-pFound1Track     P.dc.ntrack == 1
-pFound2Track     P.dc.ntrack == 2
-pFound3Track     P.dc.ntrack == 3
-pFound4Track     P.dc.ntrack == 4
+pcut_Found1Track     P.dc.ntrack == 1
+pcut_Found2Track     P.dc.ntrack == 2
+pcut_Found3Track     P.dc.ntrack == 3
+pcut_Found4Track     P.dc.ntrack == 4
 
-pCleanTrack      P.gtr.index > -1
-1pCleanTrack     P.gtr.index == 0
-2pCleanTrack     P.gtr.index == 1
-3pCleanTrack     P.gtr.index == 2
-4pCleanTrack     P.gtr.index == 3
+pcut_CleanTrack      P.gtr.index > -1
+pcut_Clean1Track     P.gtr.index == 0
+pcut_Clean2Track     P.gtr.index == 1
+pcut_Clean3Track     P.gtr.index == 2
+pcut_Clean4Track     P.gtr.index == 3
 
-pCleanTrack_cer_elec     (P.gtr.index > -1) && cer_elec_both
-p1hit1_cer_elec		 p1hit1 && cer_elec_both
-pCleanTrack_cal_elec     (P.gtr.index > -1) && cal_elec
-p1hit1_cal_elec          p1hit1 && cal_elec
+pcut_CleanTrack_cer_elec     (P.gtr.index > -1) && pcut_cer_elec_both
+pcut_p1hit1_cer_elec	     p1hit1 && pcut_cer_elec_both
+pcut_CleanTrack_cal_elec     (P.gtr.index > -1) && pcut_cal_elec
+pcut_p1hit1_cal_elec         p1hit1 && pcut_cal_elec
 
-anyhs1x     P.hod.1x.nhits > 0
-anyhs1y     P.hod.1y.nhits > 0
-anyhs2x     P.hod.2x.nhits > 0
-anyhs2y     P.hod.2y.nhits > 0
+pcut_anys1x     P.hod.1x.nhits > 0
+pcut_anys1y     P.hod.1y.nhits > 0
+pcut_anys2x     P.hod.2x.nhits > 0
+pcut_anys2y     P.hod.2y.nhits > 0
 
-goodps1x      P.hod.1x.nhits > 0 && P.hod.1x.nhits < 3
-goodps1y      P.hod.1y.nhits > 0 && P.hod.1y.nhits < 3
-goodps1       goodps1x && goodps1y
-goodps2x      P.hod.2x.nhits > 0 && P.hod.2x.nhits < 3
-goodps2y      P.hod.2y.nhits > 0 && P.hod.2y.nhits < 3
-goodps2       goodps2x && goodps2y
-goodps1s2     goodps1 && goodps2
+pcut_goods1x      P.hod.1x.nhits > 0 && P.hod.1x.nhits < 3
+pcut_goods1y      P.hod.1y.nhits > 0 && P.hod.1y.nhits < 3
+pcut_goods1       pcut_goods1x && pcut_goods1y
+pcut_goods2x      P.hod.2x.nhits > 0 && P.hod.2x.nhits < 3
+pcut_goods2y      P.hod.2y.nhits > 0 && P.hod.2y.nhits < 3
+pcut_goods2       pcut_goods2x && pcut_goods2y
+pcut_goods1s2     pcut_goods1 && pcut_goods2
 
 SHMS_hgcer_track_matched_region_1 P.hgcer.numTracksMatched[0]>0
 SHMS_hgcer_track_fired_region_1 P.hgcer.numTracksFired[0]>0
