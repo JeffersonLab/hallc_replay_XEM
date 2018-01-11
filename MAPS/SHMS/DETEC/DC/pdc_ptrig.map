@@ -12,8 +12,8 @@ REFINDEX=3
    0,   1,   1,   0  ! pAER
    1,   1,   2,   0  ! pHGCER
    2,   1,   3,   0  ! pNGCER
-   2,   1,   3,   0  ! pPSHWR
-  11,   1,   4,   0  ! pFADC_TREF_ROC2
+   3,   1,   4,   0  ! pPSHWR
+  11,   1,   5,   0  ! pFADC_TREF_ROC2
 
 SLOT=20
 REFINDEX=1
@@ -61,6 +61,14 @@ REFINDEX=0
   75,   2,  47,   1  ! hEL_HI
   76,   2,  48,   1  ! hEL_REAL
   77,   2,  49,   1  ! hEL_CLEAN
+  80,   2,  50,   1  ! pPRE40
+  81,   2,  51,   1  ! pPRE100
+  82,   2,  52,   1  ! pPRE150
+  83,   2,  53,   1  ! pPRE200
+  88,   2,  54,   1  ! hPRE40
+  89,   2,  55,   1  ! hPRE100
+  90,   2,  56,   1  ! hPRE150
+  91,   2,  57,   1  ! hPRE200
 
 ROC=6
 

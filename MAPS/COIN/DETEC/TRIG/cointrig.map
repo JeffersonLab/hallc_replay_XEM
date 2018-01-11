@@ -8,82 +8,91 @@ DETECTOR=30
 
 ROC=1
 
-!F250 module
+! F250 module
 SLOT=17
 REFINDEX=3
 ! chan    plane     bar    sig
-     8,       1,      1,     0!  hASUM
-     9,       1,      2,     0!  hBSUM
-     10,      1,      3,     0!  hCSUM
-     11,      1,      4,     0!  hDSUM
-     12,      1,      5,     0!  hPSHWR
-     13,      1,      6,     0!  hSHWR
-     14,      1,      7,     0!  hAERSUM
-     15,      1,      8,     0!  hCERSUM
+     8,       1,      1,     0 ! hASUM
+     9,       1,      2,     0 ! hBSUM
+    10,       1,      3,     0 ! hCSUM
+    11,       1,      4,     0 ! hDSUM
+    12,       1,      5,     0 ! hPSHWR
+    13,       1,      6,     0 ! hSHWR
+    14,       1,      7,     0 ! hAER
+    15,       1,      8,     0 ! hCER
 
+! F250 module
 SLOT=18
 REFINDEX=3
 ! chan    plane     bar    sig
-     11,   1000,      0,     3!  hFADC_TREF_ROC1
-     11,      1,      9,     0!  hFADC_TREF_ROC1
+    11,    1000,      0,     3 ! hFADC_TREF_ROC1
+    11,       1,      9,     0 ! hFADC_TREF_ROC1
 
-!CAEN1190 module
+! CAEN1190 module
 SLOT=2
 REFINDEX=0
 ! A0
 ! chan    plane     bar    sig
-     0,       2,      1,     1!  h1X
-     1,       2,      2,     1!  h1Y
-     2,       2,      3,     1!  h2X
-     3,       2,      4,     1!  h2Y
-     4,       2,      5,     1!  h1T
-     5,       2,      6,     1!  h2T
-     6,    1000,      0,     0!  hTref1
-     6,       2,      7,     1!  hT1
-     7,       2,      8,     1!  hASUM
-     8,       2,      9,     1!  hBSUM
-     9,       2,     10,     1!  hCSUM
-    10,       2,     11,     1!  hDSUM
-    11,       2,     12,     1!  hPSHWRLO
-    12,       2,     13,     1!  hPSHWRHI
-    13,       2,     14,     1!  hSHWR
-    14,       2,     15,     1!  hEDTM
-    15,       2,     16,     1!  hCERSUM
+     0,       2,      1,     1 ! h1X
+     1,       2,      2,     1 ! h1Y
+     2,       2,      3,     1 ! h2X
+     3,       2,      4,     1 ! h2Y
+     4,       2,      5,     1 ! h1T
+     5,       2,      6,     1 ! h2T
+     6,    1000,      0,     0 ! hTref1
+     6,       2,      7,     1 ! hT1
+     7,       2,      8,     1 ! hASUM
+     8,       2,      9,     1 ! hBSUM
+     9,       2,     10,     1 ! hCSUM
+    10,       2,     11,     1 ! hDSUM
+    11,       2,     12,     1 ! hPRLO
+    12,       2,     13,     1 ! hPRHI
+    13,       2,     14,     1 ! hSHWR
+    14,       2,     15,     1 ! hEDTM
+    15,       2,     16,     1 ! hCER
 ! A1
-    26,       2,     22,     1!  hTRIG1_ROC1
-    27,       2,     23,     1!  hTRIG2_ROC1
-    28,       2,     24,     1!  hTRIG3_ROC1
-    29,       2,     25,     1!  hTRIG4_ROC1
-    30,       2,     26,     1!  hTRIG5_ROC1
-    31,       2,     27,     1!  hTRIG6_ROC1
-    16,       2,     28,     1!  pTRIG1_ROC1
-    17,       2,     29,     1!  pTRIG2_ROC1
-    18,       2,     30,     1!  pTRIG3_ROC1
-    19,       2,     31,     1!  pTRIG4_ROC1
-    20,       2,     32,     1!  pTRIG5_ROC1
-    21,       2,     33,     1!  pTRIG6_ROC1
+    26,       2,     22,     1 ! hTRIG1_ROC1
+    27,       2,     23,     1 ! hTRIG2_ROC1
+    28,       2,     24,     1 ! hTRIG3_ROC1
+    29,       2,     25,     1 ! hTRIG4_ROC1
+    30,       2,     26,     1 ! hTRIG5_ROC1
+    31,       2,     27,     1 ! hTRIG6_ROC1
+    16,       2,     28,     1 ! pTRIG1_ROC1
+    17,       2,     29,     1 ! pTRIG2_ROC1
+    18,       2,     30,     1 ! pTRIG3_ROC1
+    19,       2,     31,     1 ! pTRIG4_ROC1
+    20,       2,     32,     1 ! pTRIG5_ROC1
+    21,       2,     33,     1 ! pTRIG6_ROC1
 ! B1
-    48,       2,     81,     1!  pSTOF_ROC1
-    49,       2,     82,     1!  pEL_LO_LO_ROC1
-    50,       2,     83,     1!  pEL_LO_ROC1
-    51,       2,     84,     1!  pEL_HI_ROC1
-    52,       2,     85,     1!  pEL_REAL_ROC1
-    53,       2,     86,     1!  pEL_CLEAN_ROC1
-    56,       2,     87,     1!  hSTOF_ROC1
-    57,       2,     88,     1!  hEL_LO_LO_ROC1
-    58,       2,     89,     1!  hEL_LO_ROC1
-    59,       2,     90,     1!  hEL_HI_ROC1
-    60,       2,     91,     1!  hEL_REAL_ROC1
-    61,       2,     92,     1!  hEL_CLEAN_ROC1
-    
+    48,       2,     83,     1 ! pSTOF_ROC1
+    49,       2,     84,     1 ! pEL_LO_LO_ROC1
+    50,       2,     85,     1 ! pEL_LO_ROC1
+    51,       2,     86,     1 ! pEL_HI_ROC1
+    52,       2,     87,     1 ! pEL_REAL_ROC1
+    53,       2,     88,     1 ! pEL_CLEAN_ROC1
+    56,       2,     89,     1 ! hSTOF_ROC1
+    57,       2,     90,     1 ! hEL_LO_LO_ROC1
+    58,       2,     91,     1 ! hEL_LO_ROC1
+    59,       2,     92,     1 ! hEL_HI_ROC1
+    60,       2,     93,     1 ! hEL_REAL_ROC1
+    61,       2,     94,     1 ! hEL_CLEAN_ROC1
+! C0
+    64,       2,     95,     1 ! pPRE40_ROC1
+    65,       2,     96,     1 ! pPRE100_ROC1
+    66,       2,     97,     1 ! pPRE150_ROC1
+    67,       2,     98,     1 ! pPRE200_ROC1
+    72,       2,     99,     1 ! hPRE40_ROC1
+    73,       2,    100,     1 ! hPRE100_ROC1
+    74,       2,    101,     1 ! hPRE150_ROC1
+    75,       2,    102,     1 ! hPRE200_ROC1
 
 !CAEN1190 module
 SLOT=20
 ! D1
 ! chan    plane     bar    sig
 REFINDEX=1
-   127,    1000,      0,     1!  hTref2
-   127,       2,     17,     1!  hT2
+   127,    1000,      0,     1 ! hTref2
+   127,       2,     17,     1 ! hT2
 
 ROC=3
 
@@ -105,59 +114,80 @@ SLOT=13
 
 ROC=2
 
+! F250 module
 SLOT=14
 REFINDEX=3
-   0,      1,     10,   0  ! pAERSUM
-   1,      1,     11,   0  ! pHGCERSUM
-   2,      1,     12,   0  ! pNGCERSUM
-  11,      1,     13,   0  ! pFADC_TREF_ROC2
+! chan    plane     bar    sig
+     0,       1,     10,     0 ! pAER
+     1,       1,     11,     0 ! pHGCER
+     2,       1,     12,     0 ! pNGCER
+     3,       1,     12,     0 ! pNGCER
+     4,       1,     13,     0 ! pPSHWR
+    11,       1,     14,     0 ! pFADC_TREF_ROC2
 
+! F250 module
 SLOT=20
 REFINDEX=1
-  15,   1000,      0,   1  ! pTRef1
-  15,      2,     34,   1  ! pT1
+! chan    plane     bar    sig
+    15,    1000,      0,     1 ! pTRef1
+    15,       2,     34,     1 ! pT1
 
+! CAEN1190 module
 SLOT=19
 REFINDEX=0
-  31,   1000,      0,   0  ! pTRef2
-  31,      2,     35,   1  ! pT2
-  32,      2,  	  36,   1  ! p1X
-  33,      2,     37,   1  ! p1Y
-  34,      2,     38,   1  ! p2X
-  35,      2,     39,   1  ! p2Y
-  36,      2,     40,   1  ! p1T
-  37,      2,     41,   1  ! p2T
-  38,      2,     42,   1  ! pT3
-  39,      2,     43,   1  ! pAERSUM
-  40,      2,     44,   1  ! pHGCERSUM
-  41,      2,     45,   1  ! pNGCERSUM
-  42,      2,     56,   1  ! pEDTM   
-  43,      2,     57,   1  ! pPRSHWRLO
-  44,      2,     58,   1  ! pPRSHWRHI
-  48,      2,     59,   1  ! pTRIG1_ROC2
-  49,      2,     60,   1  ! pTRIG2_ROC2
-  50,      2,     61,   1  ! pTRIG3_ROC2
-  51,      2,     62,   1  ! pTRIG4_ROC2
-  52,      2,     63,   1  ! pTRIG5_ROC2
-  53,      2,     64,   1  ! pTRIG6_ROC2
-  58,      2,     65,   1  ! hTRIG1_ROC2
-  59,      2,     66,   1  ! hTRIG2_ROC2
-  60,      2,     67,   1  ! hTRIG3_ROC2
-  61,      2,     68,   1  ! hTRIG4_ROC2
-  62,      2,     69,   1  ! hTRIG5_ROC2
-  63,      2,     70,   1  ! hTRIG6_ROC2
-  64,      2,     71,   1  ! pSTOF_ROC2
-  65,      2,     72,   1  ! pEL_LO_LO_ROC2
-  66,      2,     73,   1  ! pEL_LO_ROC2
-  67,      2,     74,   1  ! pEL_HI_ROC2
-  68,      2,     75,   1  ! pEL_REAL_ROC2
-  69,      2,     76,   1  ! pEL_CLEAN_ROC2
-  72,      2,     77,   1  ! hSTOF_ROC2
-  73,      2,     78,   1  ! hEL_LO_LO_ROC2
-  74,      2,     79,   1  ! hEL_LO_ROC2
-  75,      2,     80,   1  ! hEL_HI_ROC2
-  76,      2,     81,   1  ! hEL_REAL_ROC2
-  77,      2,     82,   1  ! hEL_CLEAN_ROC2
+! A1
+! chan    plane     bar    sig
+    31,   1000,       0,     0 ! pTRef2
+    31,      2,      35,     1 ! pT2
+! B0
+    32,      2,      36,     1 ! p1X
+    33,      2,      37,     1 ! p1Y
+    34,      2,      38,     1 ! p2X
+    35,      2,      39,     1 ! p2Y
+    36,      2,      40,     1 ! p1T
+    37,      2,      41,     1 ! p2T
+    38,      2,      42,     1 ! pT3
+    39,      2,      43,     1 ! pAER
+    40,      2,      44,     1 ! pHGCER
+    41,      2,      45,     1 ! pNGCER
+    42,      2,      56,     1 ! pEDTM   
+    43,      2,      57,     1 ! pPRLO
+    44,      2,      58,     1 ! pPRHI
+! B1
+    48,      2,      59,     1 ! pTRIG1_ROC2
+    49,      2,      60,     1 ! pTRIG2_ROC2
+    50,      2,      61,     1 ! pTRIG3_ROC2
+    51,      2,      62,     1 ! pTRIG4_ROC2
+    52,      2,      63,     1 ! pTRIG5_ROC2
+    53,      2,      64,     1 ! pTRIG6_ROC2
+    58,      2,      65,     1 ! hTRIG1_ROC2
+    59,      2,      66,     1 ! hTRIG2_ROC2
+    60,      2,      67,     1 ! hTRIG3_ROC2
+    61,      2,      68,     1 ! hTRIG4_ROC2
+    62,      2,      69,     1 ! hTRIG5_ROC2
+    63,      2,      70,     1 ! hTRIG6_ROC2
+    64,      2,      71,     1 ! pSTOF_ROC2
+! C0
+    65,      2,      72,     1 ! pEL_LO_LO_ROC2
+    66,      2,      73,     1 ! pEL_LO_ROC2
+    67,      2,      74,     1 ! pEL_HI_ROC2
+    68,      2,      75,     1 ! pEL_REAL_ROC2
+    69,      2,      76,     1 ! pEL_CLEAN_ROC2
+    72,      2,      77,     1 ! hSTOF_ROC2
+    73,      2,      78,     1 ! hEL_LO_LO_ROC2
+    74,      2,      79,     1 ! hEL_LO_ROC2
+    75,      2,      80,     1 ! hEL_HI_ROC2
+    76,      2,      81,     1 ! hEL_REAL_ROC2
+    77,      2,      82,     1 ! hEL_CLEAN_ROC2
+! C1
+    80,       2,    103,     1 ! pPRE40_ROC2
+    81,       2,    104,     1 ! pPRE100_ROC2
+    82,       2,    105,     1 ! pPRE150_ROC2
+    83,       2,    106,     1 ! pPRE200_ROC2
+    88,       2,    107,     1 ! hPRE40_ROC2
+    89,       2,    108,     1 ! hPRE100_ROC2
+    90,       2,    109,     1 ! hPRE150_ROC2
+    91,       2,    110,     1 ! hPRE200_ROC2
 
 ROC=6
 

@@ -65,6 +65,14 @@ REFINDEX=0
   59,   2,  43,   1  ! hEL_HI
   60,   2,  44,   1  ! hEL_REAL
   61,   2,  45,   1  ! hEL_CLEAN
+  64,   2,  46,   1  ! pPRE40
+  65,   2,  47,   1  ! pPRE100
+  66,   2,  48,   1  ! pPRE150
+  67,   2,  49,   1  ! pPRE200
+  72,   2,  50,   1  ! hPRE40
+  73,   2,  51,   1  ! hPRE100
+  74,   2,  52,   1  ! hPRE150
+  75,   2,  53,   1  ! hPRE200
 
 SLOT=20
 REFINDEX=1

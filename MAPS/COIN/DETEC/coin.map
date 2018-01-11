@@ -3778,8 +3778,8 @@ REFINDEX=3
   11,   1,   4,   0  ! hDSUM
   12,   1,   5,   0  ! hPSHWR
   13,   1,   6,   0  ! hSHWR
-  14,   1,   7,   0  ! hAERSUM
-  15,   1,   8,   0  ! hCERSUM
+  14,   1,   7,   0  ! hAER
+  15,   1,   8,   0  ! hCER
 
 SLOT=18
 REFINDEX=3
@@ -3800,11 +3800,11 @@ REFINDEX=0
    8,   2,   9,   1  ! hBSUM
    9,   2,  10,   1  ! hCSUM
   10,   2,  11,   1  ! hDSUM
-  11,   2,  12,   1  ! hPSHWRLO
-  12,   2,  13,   1  ! hPSHWRHI
+  11,   2,  12,   1  ! hPRLO
+  12,   2,  13,   1  ! hPRHI
   13,   2,  14,   1  ! hSHWR
   14,   2,  15,   1  ! hEDTM
-  15,   2,  16,   1  ! hCERSUM
+  15,   2,  16,   1  ! hCER
   26,   2,  22,   1  ! hTRIG1_ROC1
   27,   2,  23,   1  ! hTRIG2_ROC1
   28,   2,  24,   1  ! hTRIG3_ROC1
@@ -3817,18 +3817,26 @@ REFINDEX=0
   19,   2,  31,   1  ! pTRIG4_ROC1
   20,   2,  32,   1  ! pTRIG5_ROC1
   21,   2,  33,   1  ! pTRIG6_ROC1
-  48,   2,  81,   1  ! pSTOF_ROC1
-  49,   2,  82,   1  ! pEL_LO_LO_ROC1
-  50,   2,  83,   1  ! pEL_LO_ROC1
-  51,   2,  84,   1  ! pEL_HI_ROC1
-  52,   2,  85,   1  ! pEL_REAL_ROC1
-  53,   2,  86,   1  ! pEL_CLEAN_ROC1
-  56,   2,  87,   1  ! hSTOF_ROC1
-  57,   2,  88,   1  ! hEL_LO_LO_ROC1
-  58,   2,  89,   1  ! hEL_LO_ROC1
-  59,   2,  90,   1  ! hEL_HI_ROC1
-  60,   2,  91,   1  ! hEL_REAL_ROC1
-  61,   2,  92,   1  ! hEL_CLEAN_ROC1
+  48,   2,  83,   1  ! pSTOF_ROC1
+  49,   2,  84,   1  ! pEL_LO_LO_ROC1
+  50,   2,  85,   1  ! pEL_LO_ROC1
+  51,   2,  86,   1  ! pEL_HI_ROC1
+  52,   2,  87,   1  ! pEL_REAL_ROC1
+  53,   2,  88,   1  ! pEL_CLEAN_ROC1
+  56,   2,  89,   1  ! hSTOF_ROC1
+  57,   2,  90,   1  ! hEL_LO_LO_ROC1
+  58,   2,  91,   1  ! hEL_LO_ROC1
+  59,   2,  92,   1  ! hEL_HI_ROC1
+  60,   2,  93,   1  ! hEL_REAL_ROC1
+  61,   2,  94,   1  ! hEL_CLEAN_ROC1
+  64,   2,  95,   1  ! pPRE40_ROC1
+  65,   2,  96,   1  ! pPRE100_ROC1
+  66,   2,  97,   1  ! pPRE150_ROC1
+  67,   2,  98,   1  ! pPRE200_ROC1
+  72,   2,  99,   1  ! hPRE40_ROC1
+  73,   2, 100,   1  ! hPRE100_ROC1
+  74,   2, 101,   1  ! hPRE150_ROC1
+  75,   2, 102,   1  ! hPRE200_ROC1
 
 SLOT=20
 REFINDEX=1
@@ -3853,10 +3861,12 @@ ROC=2
 
 SLOT=14
 REFINDEX=3
-   0,   1,  10,   0  ! pAERSUM
-   1,   1,  11,   0  ! pHGCERSUM
-   2,   1,  12,   0  ! pNGCERSUM
-  11,   1,  13,   0  ! pFADC_TREF_ROC2
+   0,   1,  10,   0  ! pAER
+   1,   1,  11,   0  ! pHGCER
+   2,   1,  12,   0  ! pNGCER
+   3,   1,  12,   0  ! pNGCER
+   4,   1,  13,   0  ! pPSHWR
+  11,   1,  14,   0  ! pFADC_TREF_ROC2
 
 SLOT=20
 REFINDEX=1
@@ -3874,12 +3884,12 @@ REFINDEX=0
   36,   2,  40,   1  ! p1T
   37,   2,  41,   1  ! p2T
   38,   2,  42,   1  ! pT3
-  39,   2,  43,   1  ! pAERSUM
-  40,   2,  44,   1  ! pHGCERSUM
-  41,   2,  45,   1  ! pNGCERSUM
+  39,   2,  43,   1  ! pAER
+  40,   2,  44,   1  ! pHGCER
+  41,   2,  45,   1  ! pNGCER
   42,   2,  56,   1  ! pEDTM
-  43,   2,  57,   1  ! pPRSHWRLO
-  44,   2,  58,   1  ! pPRSHWRHI
+  43,   2,  57,   1  ! pPRLO
+  44,   2,  58,   1  ! pPRHI
   48,   2,  59,   1  ! pTRIG1_ROC2
   49,   2,  60,   1  ! pTRIG2_ROC2
   50,   2,  61,   1  ! pTRIG3_ROC2
@@ -3904,6 +3914,14 @@ REFINDEX=0
   75,   2,  80,   1  ! hEL_HI_ROC2
   76,   2,  81,   1  ! hEL_REAL_ROC2
   77,   2,  82,   1  ! hEL_CLEAN_ROC2
+  80,   2, 103,   1  ! pPRE40_ROC2
+  81,   2, 104,   1  ! pPRE100_ROC2
+  82,   2, 105,   1  ! pPRE150_ROC2
+  83,   2, 106,   1  ! pPRE200_ROC2
+  88,   2, 107,   1  ! hPRE40_ROC2
+  89,   2, 108,   1  ! hPRE100_ROC2
+  90,   2, 109,   1  ! hPRE150_ROC2
+  91,   2, 110,   1  ! hPRE200_ROC2
 
 ROC=6
 
