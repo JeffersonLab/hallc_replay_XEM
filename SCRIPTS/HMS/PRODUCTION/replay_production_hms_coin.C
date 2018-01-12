@@ -43,15 +43,13 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
-  TRG->AddDetector(hms);
-
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
+  HMS->SetEvtType(2);
+  HMS->AddEvtType(4);
+  HMS->AddEvtType(5);
+  HMS->AddEvtType(6);
+  HMS->AddEvtType(7);
   gHaApps->Add(HMS);
   // Add drift chambers to HMS apparatus
   THcDC* dc = new THcDC("dc", "Drift Chambers");
@@ -68,6 +66,14 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add calorimeter to HMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  hms->SetSpectName("H");
+  TRG->AddDetector(hms);
 
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");

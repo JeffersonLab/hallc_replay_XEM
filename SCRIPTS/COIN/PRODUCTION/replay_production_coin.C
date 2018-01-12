@@ -50,6 +50,11 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
+  SHMS->SetEvtType(1);
+  SHMS->AddEvtType(4);
+  SHMS->AddEvtType(5);
+  SHMS->AddEvtType(6);
+  SHMS->AddEvtType(7);
   gHaApps->Add(SHMS);
   // Add Noble Gas Cherenkov to SHMS apparatus
   THcCherenkov* pngcer = new THcCherenkov("ngcer", "Noble Gas Cherenkov");
@@ -105,7 +110,12 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   //=:=:=
 
   // Set up the equipment to be analyzed.
-  THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
+  THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
+  HMS->SetEvtType(2);
+  HMS->AddEvtType(4);
+  HMS->AddEvtType(5);
+  HMS->AddEvtType(6);
+  HMS->AddEvtType(7);
   gHaApps->Add(HMS);
   // Add drift chambers to HMS apparatus
   THcDC* hdc = new THcDC("dc", "Drift Chambers");
@@ -162,6 +172,9 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaApps->Add(TRG);
   // Add trigger detector to trigger apparatus
   THcTrigDet* coin = new THcTrigDet("coin", "Coincidence Trigger Information");
+  // Suppress missing reference time warnings for these event types
+  coin->SetEvtType(1);
+  coin->AddEvtType(2);
   TRG->AddDetector(coin); 
   // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");

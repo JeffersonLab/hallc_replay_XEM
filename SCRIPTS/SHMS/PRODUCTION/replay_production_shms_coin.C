@@ -43,17 +43,13 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
 
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-
-  
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
-  TRG->AddDetector(shms);
-
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
+  SHMS->SetEvtType(1);
+  SHMS->AddEvtType(4);
+  SHMS->AddEvtType(5);
+  SHMS->AddEvtType(6);
+  SHMS->AddEvtType(7);
   gHaApps->Add(SHMS);
   // Add Noble Gas Cherenkov to SHMS apparatus
   THcCherenkov* ngcer = new THcCherenkov("ngcer", "Noble Gas Cherenkov");
@@ -74,6 +70,15 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add calorimeter to SHMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(cal);
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
+  shms->SetSpectName("P");
+  TRG->AddDetector(shms);
 
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
