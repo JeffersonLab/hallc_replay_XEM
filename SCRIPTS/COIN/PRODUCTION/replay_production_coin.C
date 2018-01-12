@@ -92,6 +92,9 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
   pscaler->AddEvtType(1);
   pscaler->AddEvtType(4);
+  pscaler->AddEvtType(5);
+  pscaler->AddEvtType(6);
+  pscaler->AddEvtType(7);
   pscaler->AddEvtType(129);
   pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
@@ -142,6 +145,9 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
   hscaler->AddEvtType(2);
   hscaler->AddEvtType(4);
+  pscaler->AddEvtType(5);
+  pscaler->AddEvtType(6);
+  pscaler->AddEvtType(7);
   hscaler->AddEvtType(129);
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
