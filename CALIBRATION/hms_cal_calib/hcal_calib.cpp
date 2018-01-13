@@ -43,7 +43,7 @@ void hcal_calib(string RunNumber) {
  // E(Tail) vs E(Preshower) plot.
 
  Canvas->cd(2);
- theShowerCalib.hETAvsEPR->Draw();
+ theShowerCalib.hETAvsEPR->Draw("colz");
 
  // Normalized energy deposition after calibration.
 
@@ -58,7 +58,7 @@ void hcal_calib(string RunNumber) {
  // HMS delta(P) versus the calibrated energy deposition.
 
  Canvas->cd(4);
- theShowerCalib.hDPvsEcal->Draw();
+ theShowerCalib.hDPvsEcal->Draw("colz");
 
  // Calculate the analysis rate
  t = clock() - t;

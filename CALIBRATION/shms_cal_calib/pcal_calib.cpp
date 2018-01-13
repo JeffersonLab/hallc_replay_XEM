@@ -42,7 +42,7 @@ void pcal_calib(string RunNumber, int nstart=0, int nstop=999999999) {
   theShowerCalib.hEuncSel->DrawCopy("same");
 
   Canvas->cd(2);
-  theShowerCalib.hESHvsEPR->Draw();
+  theShowerCalib.hESHvsEPR->Draw("colz");
 
   // Normalized energy deposition after calibration.
 
@@ -57,7 +57,7 @@ void pcal_calib(string RunNumber, int nstart=0, int nstop=999999999) {
   // SHMS delta(P) versus the calibrated energy deposition.
 
   Canvas->cd(4);
-  theShowerCalib.hDPvsEcal->Draw();
+  theShowerCalib.hDPvsEcal->Draw("colz");
 
   // Save canvas in a pdf format.
   Canvas->Print(Form("%s_%d-%d.pdf",RunNumber.c_str(),nstart,nstop));
