@@ -1,2 +1,2 @@
-; Noble gas cherenkov gain factors run 488, July 11 2017 
-pngcer_adc_to_npe = 1.0/438.119/0.0195, 1.0/477.902/0.0195, 1.0/475.153/0.0195, 1.0/488.668/0.0195
+; Noble gas cherenkov gain factors run 1777
+pngcer_adc_to_npe = 0.40, 0.31, .38, .30
