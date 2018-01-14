@@ -5,7 +5,9 @@
 # 27Al gtargmass_amu=26.98
 #
 
-0-99999
+# 1722 is last December commissioning run
+
+0-1722
 gpbeam = 2.218
 gtargmass_amu=12.0107
 ppartmass = 0.00051099
@@ -103,3 +105,34 @@ ptheta_lab = 9.995
 ppcentral = 2.50971
 
 
+
+# start the Jan 12 commissioning
+
+
+1754-1778
+gpbeam = 6.418
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 15.0
+ppcentral = 3.0
+
+1781-1783
+gpbeam = 6.418
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 25.015
+ppcentral = 3.0
+
+1784-1788
+gpbeam = 6.418
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 25.015
+ppcentral = 1.4
+
+1789
+gpbeam = 6.418
+gtargmass_amu=2.014101
+ppartmass = 0.00051099
+ptheta_lab = 25.015
+ppcentral = 1.4

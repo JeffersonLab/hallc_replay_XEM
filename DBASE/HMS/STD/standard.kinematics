@@ -5,7 +5,9 @@
 # 27Al gtargmass_amu=26.98
 #
 
-0-99999
+# Run 1277 is last December 2017 HMS run
+
+0-1277
 gpbeam = 2.215
 gtargmass_amu=12.0107
 hpartmass = 0.00051099
@@ -272,3 +274,36 @@ hpcentral = 1.0
 gtargmass_amu=12.0107
 htheta_lab = -14.0
 hpcentral = 2.1
+
+
+# start the Jan 12 commissioning
+
+
+1289-1309
+
+gtargmass_amu=1.00794
+htheta_lab = -15.
+hpcentral = 3.0
+hpartmass = 0.00051099
+gpbeam = 6.418
+
+1312-1315
+gtargmass_amu=1.00794
+htheta_lab = -24.995
+hpcentral = 3.0
+hpartmass = 0.00051099
+gpbeam = 6.418
+
+1316-1324
+gtargmass_amu=1.00794
+htheta_lab = -24.995
+hpcentral = 1.4
+hpartmass = 0.00051099
+gpbeam = 6.418
+
+1325
+gtargmass_amu=2.014101
+htheta_lab = -24.995
+hpcentral = 1.4
+hpartmass = 0.00051099
+gpbeam = 6.418
