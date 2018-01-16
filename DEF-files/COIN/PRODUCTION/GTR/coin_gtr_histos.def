@@ -1,0 +1,5 @@
+############################
+#   TARGET
+############################
+TH2F hgtrz_vs_pgtrz   'HMS z_{tar} vs SHMS z_{tar}; SHMS z_{tar} / 0.1 cm; HMS z_{tar} / 0.1 cm;'  P.gtr.z H.gtr.z 300 -15 15 300 -15 15 coincut
+TH2F hgtry_vs_pgtry   'HMS y_{tar} vs SHMS y_{tar}; SHMS y_{tar} / 0.1 cm; HMS y_{tar} / 0.1 cm;'  P.gtr.y H.gtr.y 300 -15 15 300 -15 15 coincut

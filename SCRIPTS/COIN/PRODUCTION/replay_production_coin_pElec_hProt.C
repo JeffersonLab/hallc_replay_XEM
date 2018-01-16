@@ -1,4 +1,4 @@
-void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -85,14 +85,10 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(prp);
   THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
   gHaPhysics->Add(pext);
-  // Add Physics Module to calculate primary (scattered) beam kinematics
-  THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "P.rb");
-  gHaPhysics->Add(pkin_primary);
- THcHodoEff* peff = new THcHodoEff("phodeff"," SHMS hodo efficiency","P.hod");
+  // Add hodoscope efficiency
+  THcHodoEff* peff = new THcHodoEff("phodeff"," SHMS hodo efficiency","P.hod");
   gHaPhysics->Add(peff);
-  // Add Physics Module to calculate secondary (scattered) beam kinematics
-  // THcSecondaryKine* pkin_secondary = new THcSecondaryKine("P.kin.secondary", "SHMS Single Arm Kinematics", "P", "H.kin.primary");
-  // gHaPhysics->Add(pkin_secondary);
+
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
   pscaler->AddEvtType(1);
@@ -143,12 +139,7 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(hrp);
   THcExtTarCor* hext = new THcExtTarCor("H.extcor"," HMS extended target corrections","H","H.react");
   gHaPhysics->Add(hext);
-  // Add Physics Module to calculate primary (scattered) beam kinematics
-  // THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "H.rb");
-  // gHaPhysics->Add(hkin_primary);
-  // Add Physics Module to calculate secondary (scattered) beam kinematics
-  THcSecondaryKine* hkin_secondary = new THcSecondaryKine("H.kin.secondary", "HMS Single Arm Kinematics", "H", "P.kin.primary");
-  gHaPhysics->Add(hkin_secondary);
+  // Add hodoscope efficiency
   THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
   gHaPhysics->Add(heff);
   // Add event handler for scaler events
@@ -163,6 +154,30 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
+  //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+  // Kinematics Modules
+  //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+
+  // ---------------------------------
+  // electrons in SHMS, protons in HMS
+  // ---------------------------------
+  // Add Physics Module to calculate primary (scattered) beam kinematics
+  THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "P.rb");
+  gHaPhysics->Add(pkin_primary);
+  // Add Physics Module to calculate secondary (scattered) beam kinematics
+  THcSecondaryKine* hkin_secondary = new THcSecondaryKine("H.kin.secondary", "HMS Single Arm Kinematics", "H", "P.kin.primary");
+  gHaPhysics->Add(hkin_secondary);
+
+  // ---------------------------------
+  // electrons in HMS, protons in SHMS
+  // ---------------------------------
+  // Add Physics Module to calculate primary (scattered) beam kinematics
+  // THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "H.rb");
+  // gHaPhysics->Add(hkin_primary);
+  // Add Physics Module to calculate secondary (scattered) beam kinematics
+  // THcSecondaryKine* pkin_secondary = new THcSecondaryKine("P.kin.secondary", "SHMS Single Arm Kinematics", "P", "H.kin.primary");
+  // gHaPhysics->Add(pkin_secondary);
+  
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
   // Global Objects & Event Handlers
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
@@ -223,9 +238,9 @@ void replay_production_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file+
-  analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_production.def");
+  analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_production_pElec_hProt.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/coin_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/coin_production_pElec_hProt_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

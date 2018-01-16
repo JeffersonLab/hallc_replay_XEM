@@ -1,0 +1,37 @@
+block T.coin.*
+
+block H.cer.*
+block H.dc.*
+block H.tr.*
+block H.hod.*
+block H.cal.*
+block H.gtr.*
+block H.kin.*
+block H.rb.*
+block H.react.*
+
+block P.ngcer.*
+block P.dc.*
+block P.tr.*
+block P.hod.*
+block P.hgcer.*
+block P.aero.*
+block P.cal.*
+block P.gtr.*
+block P.kin.*
+block P.rb.*
+block P.react.*
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
+
+#include "DEF-files/COIN/PRODUCTION/GTR/coin_gtr_histos.def"
+#include "DEF-files/COIN/PRODUCTION/KIN/coin_hElec_pProt_kin_histos.def"
+#include "DEF-files/COIN/PRODUCTION/TRIG/coin_trig_histos.def"

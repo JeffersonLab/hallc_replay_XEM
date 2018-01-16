@@ -1,0 +1,50 @@
+#include "DEF-files/HMS/PRODUCTION/hstackana_production_cuts.def"
+#include "DEF-files/SHMS/PRODUCTION/pstackana_production_cuts.def"
+
+Block: RawDecode
+
+Pedestal_event       g.evtyp == 99
+SHMS_event           g.evtyp == 1
+HMS_event            g.evtyp == 2
+BOTH_SINGLES_event   g.evtyp == 3
+COIN_ONLY_event      g.evtyp == 4
+SHMS_COIN_event      g.evtyp == 5
+HMS_COIN_event       g.evtyp == 6 
+COIN_ALL_event       g.evtyp == 7
+ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
+
+RawDecode_master  ALL_events
+
+Block: Decode
+
+goodctime         ALL_events        #LOOSE CUT AROUND COINTIME PEAK (3 beam buckets)
+tightctime        ALL_events        #TIGHT CUT AROUND COINTIME PEAK (1 beam buckets)
+ranctime          ALL_events        #CUT AWAY FROM COINTIME PEAK (4 beam buckets)
+
+Decode_master     ALL_events
+
+Block: CoarseTracking
+CoarseTracking_master ALL_events
+
+Block: CoarseReconstruct
+CoarseReconstruct_master ALL_events
+
+Block: Tracking
+Tracking_master  ALL_events
+
+Block: Reconstruct
+Reconstruct_master ALL_events
+
+hcleantrack        H.gtr.index > -1
+pcleantrack        P.gtr.index > -1
+ccleantrack        hcleantrack && pcleantrack
+
+coincut            ccleantrack && goodctime
+tight_coin         ccleantrack && tightctime
+ran_coincut        ccleantrack && ranctime
+
+e_cut_cal          P.cal.etottracknorm > 0.6 && P.cal.etottracknorm < 2.0
+e_cut_cer          P.hgcer.npeSum > 5.0 && P.ngcer.npeSum > 15.0
+select_e_cut       e_cut_cal && e_cut_cer
+betacut_proton     H.gtr.beta > 0.6 && H.gtr.beta < 0.8
+coincut_ep         ccleantrack && select_e_cut && betacut_proton
