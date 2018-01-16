@@ -83,3 +83,13 @@ gtargmass_amu = 26.98
 
 1722
 gtargmass_amu = 1.00794
+
+1851-1855
+gpbeam = 6.405
+gtargmass_amu = 1.00794
+htheta_lab = -27.5
+ptheta_lab = 27.6
+hpcentral = 3.609
+ppcentral = 3.609
+hpartmass = 0.93827231
+ppartmass = 0.00051099
