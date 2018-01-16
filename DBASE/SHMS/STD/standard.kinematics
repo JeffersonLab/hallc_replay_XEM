@@ -135,4 +135,98 @@ gpbeam = 6.418
 gtargmass_amu=2.014101
 ppartmass = 0.00051099
 ptheta_lab = 25.015
+ppcentral = 1.4cd ..
+
+# Q2 defocussed tune
+1791
+gpbeam = 6.418
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 25.015
+ppcentral = 3.0
+
+1793
+gpbeam = 6.404
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 8.015
+ppcentral = 6.017
+
+1795
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 8.015
+ppcentral = 6.017
+
+#SIEVE Slit
+
+1796-1804
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 8.01
+ppcentral = 5.0
+
+#HMS/SHMS Angle and Position Matrix Optimization 
+
+1805-1806
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 15.0
+ppcentral = 3.5
+
+1807
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 15
+ppcentral = 3.5
+
+1808-1812
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 15.0
+ppcentral = 4.0
+
+
+
+1813-1814 
+gpbeam = 6.404
+gtargmass_amu=12.0107
+ppartmass = 0.00051099
+ptheta_lab = 22.045
+ppcentral = 3.2
+
+#Run Plan: Large Ytar: HMS/SHMS Angel and position Matrix Optimization (01/15/18)
+
+1815-1823
+gpbeam = 6.404
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =30.065
+ppcentral = 2.0
+
+1824-1828
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.035
+ppcentral = 3.0
+
+1829-1842
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.035
 ppcentral = 1.4
+
+
+1843-1845
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.035
+ppcentral = 3.0

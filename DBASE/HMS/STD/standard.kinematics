@@ -279,7 +279,7 @@ hpcentral = 2.1
 # start the Jan 12 commissioning
 
 
-1289-1309
+1289-1311
 
 gtargmass_amu=1.00794
 htheta_lab = -15.
@@ -307,3 +307,87 @@ htheta_lab = -24.995
 hpcentral = 1.4
 hpartmass = 0.00051099
 gpbeam = 6.418
+
+# Q2 defocussed tune
+1327
+gpbeam = 6.418
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -24.995
+hpcentral = 3.0
+
+# ep elastics 
+
+1329
+gpbeam = 6.418
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 5.205
+
+1330-1334
+gpbeam = 6.404
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.5
+
+#HMS/SHMS Angle and Position Matrix Optimization 
+1335
+gpbeam = 6.404
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.5
+
+1336
+gpbeam = 6.404
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -23.0
+hpcentral = 3.5
+
+1337-1341
+gpbeam = 6.404
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 4.0
+
+1342-1343
+gpbeam = 6.404
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -22.005
+hpcentral = 3.2
+
+#Run Plan: Large Ytar: HMS/SHMS Angel and position Matrix Optimaization (01/15/18)
+
+1342-1352
+gpbeam = 6.404 
+gtargmass_amu= 12.0107
+hpartmass = 0.00051099
+htheta_lab = -30.01
+hpcentral = 2.0
+
+1353-1358
+gpbeam = 6.404 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 3.0
+
+1359-1377
+gpbeam = 6.404 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 1.4
+
+
+1378-1381
+gpbeam = 6.404 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 3.

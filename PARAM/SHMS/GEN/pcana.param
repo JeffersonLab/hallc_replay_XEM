@@ -1,6 +1,6 @@
 ; Parameters we need to keep THcHallCSpectrometer Happy
-;p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
-p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_m015_rec.dat"
+p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_m015_rec.dat"
 
 
 

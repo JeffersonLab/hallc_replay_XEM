@@ -40,38 +40,54 @@ Ps6_factor = {ghconfig_ti_ps_factors[5]}
 * Triggers
 ***********
 
-=:=:=:=:=:=:=:=:
-= 3/4 Triggers
-=:=:=:=:=:=:=:=:
+=:=:=:=:=:=:=:  
+= 3/4 Trigger
+=:=:=:=:=:=:=:
 
-HMS 3/4 Triggers           : {H.hTRIG1.scaler} [ {H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]} ]
-Estimated HMS 3/4 Triggers : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
-HMS 3/4 Trigger Rate       : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
-Accepted HMS Triggers      : {TRIG1.npassed}
-HMS Event Types            : {HMS_Pretrig.npassed}
-
-HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {(TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
-HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+Total HMS 3/4 Triggers       : {H.hTRIG1.scaler}
+Pre-Scaled HMS 3/4 Triggers  : {(H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]):%.0f}
+Estimated HMS 3/4 Triggers   : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
+HMS 3/4 Trigger Rate         : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+Accepted HMS Triggers        : {TRIG1.npassed}
+HMS Event Types              : {HMS_Pretrig.npassed}
 
 =:=:=:=:=:=:=:=:=:=:=:=:
 = Physics 3/4 Triggers
 =:=:=:=:=:=:=:=:=:=:=:=:
 
-Physics Triggers           : {H.hTRIG1.scaler - H.EDTM.scaler}
-Estimated Physics Triggers : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
-Physics Trigger Rate       : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
-Accepted Physics Triggers  : {physics_accepted.npassed}
+Physics 3/4 Triggers           : {H.hTRIG1.scaler - H.EDTM.scaler}
+Estimated Physics 3/4 Triggers : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
+Physics 3/4 Trigger Rate       : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
+Accepted Physics Triggers      : {physics_accepted.npassed}
 
-=:=:=:=:=:=:=:=:
+=:=:=:=:=:=:=:=:  
 = HMS Triggers
-=:=:=:=:=:=:=:=:
+=:=:=:=:=:=:=:=: 
 
 hEL_LO_LO :	{H.hEL_LO_LO.scaler}	[ {(H.hEL_LO_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hEL_LO    :	{H.hEL_LO.scaler}	[ {(H.hEL_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hEL_HI    :	{H.hEL_HI.scaler}	[ {(H.hEL_HI.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hEL_REAL  :	{H.hEL_REAL.scaler}	[ {(H.hEL_REAL.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hEL_CLEAN :	{H.hEL_CLEAN.scaler}	[ {(H.hEL_CLEAN.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-hSTOF     :  	{H.hSTOF.scaler}	[ {(H.hSTOF.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hSTOF     :	{H.hSTOF.scaler}	[ {(H.hSTOF.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+hTRIG1 :  	{H.hTRIG1.scaler} 	[ {(H.hTRIG1.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG2 :  	{H.hTRIG2.scaler} 	[ {(H.hTRIG2.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG3 :  	{H.hTRIG3.scaler} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG4 : 	{H.hTRIG4.scaler} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG5 :  	{H.hTRIG5.scaler} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG6 :  	{H.hTRIG6.scaler} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:=:=:=:=: 
+= HMS Triggers
+=:=:=:=:=:=:=:=: 
+
+hEL_LO_LO :	{H.hEL_LO_LO.scaler}	[ {(H.hEL_LO_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_LO    :	{H.hEL_LO.scaler}	[ {(H.hEL_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_HI    :	{H.hEL_HI.scaler}	[ {(H.hEL_HI.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_REAL  :	{H.hEL_REAL.scaler}	[ {(H.hEL_REAL.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEL_CLEAN :	{H.hEL_CLEAN.scaler}	[ {(H.hEL_CLEAN.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+pSTOF     :	{H.pSTOF.scaler}	[ {(H.pSTOF.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 
 hTRIG1 :  	{H.hTRIG1.scaler} 	[ {(H.hTRIG1.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG2 :  	{H.hTRIG2.scaler} 	[ {(H.hTRIG2.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
@@ -79,24 +95,6 @@ hTRIG3 :  	{H.hTRIG3.scaler} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f}
 hTRIG4 :  	{H.hTRIG4.scaler} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG5 :  	{H.hTRIG5.scaler} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG6 :  	{H.hTRIG6.scaler} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-
-=:=:=:=:=:=:=:=:
-= SHMS Triggers
-=:=:=:=:=:=:=:=:
-
-pEL_LO_LO :	{H.pEL_LO_LO.scaler}	[ {(H.pEL_LO_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pEL_LO    :	{H.pEL_LO.scaler}	[ {(H.pEL_LO.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pEL_HI    :	{H.pEL_HI.scaler}	[ {(H.pEL_HI.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pEL_REAL  :	{H.pEL_REAL.scaler}	[ {(H.pEL_REAL.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pEL_CLEAN :	{H.pEL_CLEAN.scaler}	[ {(H.pEL_CLEAN.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pSTOF     :  	{H.pSTOF.scaler}	[ {(H.pSTOF.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-
-pTRIG1 :  	{H.pTRIG1.scaler} 	[ {(H.pTRIG1.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pTRIG2 :  	{H.pTRIG2.scaler} 	[ {(H.pTRIG2.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pTRIG3 :  	{H.pTRIG3.scaler} 	[ {(H.pTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pTRIG4 :  	{H.pTRIG4.scaler} 	[ {(H.pTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pTRIG5 :  	{H.pTRIG5.scaler} 	[ {(H.pTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-pTRIG6 :  	{H.pTRIG6.scaler} 	[ {(H.pTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 
 =:=:=:=:
 = EDTM
@@ -107,8 +105,43 @@ Estimated EDTM Triggers : {H.EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 EDTM Trigger Rate       : {H.EDTM.scalerRate/1000.:%.3f} kHz
 Accepted EDTM Triggers  : {edtm_accepted.npassed}
 
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+= Live/Dead Time Calculations
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
+HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
+HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
+
+Pre-Scaled Ps1 HMS Computer Live Time : {(TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 HMS Computer Dead Time : {100.0 - (TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+
+Pre-Scaled Ps2 HMS Computer Live Time : {(TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 HMS Computer Dead Time : {100.0 - (TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+
+Pre-Scaled Ps3 HMS Computer Live Time : {(TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 HMS Computer Dead Time : {100.0 - (TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+
 Total Live Time (EDTM) : {(edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+
+Pre-Scaled Ps1 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+
+Pre-Scaled Ps2 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+
+Pre-Scaled Ps3 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+
+OG 6 GeV Electronic Live Time (100, 150) : {100.0 - ((H.pPRE100.scaler - H.pPRE150.scaler)/H.pPRE100.scaler):%3.4f} %
+OG 6 GeV Electronic Dead Time (100, 150) : {((H.pPRE100.scaler - H.pPRE150.scaler)/H.pPRE100.scaler):%3.4f} %
+
+OG 6 GeV Electronic Live Time (100, 200) : {100.0 - ((H.pPRE100.scaler - H.pPRE200.scaler)/H.pPRE100.scaler):%3.4f} %
+OG 6 GeV Electronic Dead Time (100, 200) : {((H.pPRE100.scaler - H.pPRE200.scaler)/H.pPRE100.scaler):%3.4f} %
+
+OG 6 GeV Electronic Live Time (150, 200) : {100.0 - ((H.pPRE150.scaler - H.pPRE200.scaler)/H.pPRE150.scaler):%3.4f} %
+OG 6 GeV Electronic Dead Time (150, 200) : {((H.pPRE150.scaler - H.pPRE200.scaler)/H.pPRE150.scaler):%3.4f} %
+
 
 =:=:=:=:=:=:=:
 = Hodoscopes
