@@ -1,0 +1,28 @@
+Run #: {gen_run_number}
+
+
+1 MhZ Pulses : {P.1Mhz.scaler}
+Run Length   : {P.1Mhz.scalerTime:%.3f} sec
+
+***********
+* Beamline
+***********
+  
+BCM1 Current: {P.BCM1.scalerCurrent:%.3f} uA		  
+BCM2 Current: {P.BCM2.scalerCurrent:%.3f} uA		 
+Unser Current: {P.Unser.scalerCurrent:%.3f} uA		  
+
+With no cuts on BCM{gBCM_Current_threshold_index+1}.
+BCM1 Counts: {P.BCM1.scaler}		Total Charge: {P.BCM1.scalerCharge:%.3f} uC
+BCM2 Counts: {P.BCM2.scaler} 		Total Charge: {P.BCM2.scalerCharge:%.3f} uC	
+Unser Counts: {P.Unser.scaler} 		Total Charge: {P.Unser.scalerCharge:%.3f} uC
+
+Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {P.1Mhz.scalerTimeCut:%.3f}s, or {((P.1Mhz.scalerTimeCut/P.1Mhz.scalerTime)*100.):%.3f}% of total run time.
+BCM1 Counts: {P.BCM1.scalerCut} 	Total Charge: {P.BCM1.scalerChargeCut:%.3f} uC
+BCM2 Counts: {P.BCM2.scalerCut} 	Total Charge: {P.BCM2.scalerChargeCut:%.3f} uC
+Unser Counts: {P.Unser.scalerCut} 	Total Charge: {P.Unser.scalerChargeCut:%.3f} uC
+
+HMS Singles Triggers   :  {HMS_event.npassed}
+SHMS Singles Triggers  :  {SHMS_event.npassed}
+Coincidence Triggers   :  {COIN_event.npassed}
+All triggers           :  {ALL_events.npassed}

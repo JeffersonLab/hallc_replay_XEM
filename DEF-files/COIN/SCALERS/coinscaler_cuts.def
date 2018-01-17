@@ -1,0 +1,53 @@
+# Report file for SHMS stack
+
+Block: RawDecode
+
+Pedestal_event     g.evtyp == 99
+SHMS_event         g.evtyp == 1
+HMS_event          g.evtyp == 2
+COIN_event         g.evtyp >= 4&&g.evtyp<8
+
+SHMS_Pretrig  pTRIG1_ROC2 || pTRIG2_ROC2 || pTRIG3_ROC2
+HMS_Pretrig   pTRIG4_ROC2
+COIN_Pretrig  pTRIG6_ROC2 
+
+RawDecode_master  1
+
+Block: Decode
+
+pTRIG1_ROC2         T.coin.pTRIG1_ROC2_tdcTimeRaw > 0
+pTRIG2_ROC2         T.coin.pTRIG2_ROC2_tdcTimeRaw > 0
+pTRIG3_ROC2         T.coin.pTRIG3_ROC2_tdcTimeRaw > 0
+pTRIG4_ROC2         T.coin.pTRIG4_ROC2_tdcTimeRaw > 0
+pTRIG5_ROC2         T.coin.pTRIG5_ROC2_tdcTimeRaw > 0
+pTRIG6_ROC2         T.coin.pTRIG6_ROC2_tdcTimeRaw > 0
+
+pTRIG1_ROC1         T.coin.pTRIG1_ROC1_tdcTimeRaw > 0
+pTRIG2_ROC1         T.coin.pTRIG2_ROC1_tdcTimeRaw > 0
+pTRIG3_ROC1         T.coin.pTRIG3_ROC1_tdcTimeRaw > 0
+pTRIG4_ROC1         T.coin.pTRIG4_ROC1_tdcTimeRaw > 0
+pTRIG5_ROC1         T.coin.pTRIG5_ROC1_tdcTimeRaw > 0
+pTRIG6_ROC1         T.coin.pTRIG6_ROC1_tdcTimeRaw > 0
+
+shms_trigs             SHMS_event
+SHMS_edtm_accepted     T.coin.pEDTM_tdcTime != 0.0
+SHMS_physics_accepted  T.coin.pEDTM_tdcTime == 0.0
+HMS_edtm_accepted      T.coin.hEDTM_tdcTime != 0.0
+HMS_physics_accepted   T.coin.hEDTM_tdcTime == 0.0
+
+Decode_master     1
+
+Block: CoarseTracking
+CoarseTracking_master 1
+
+Block: CoarseReconstruct
+CoarseReconstruct_master 1
+
+Block: Tracking
+Tracking_master 1
+
+Block: Reconstruct
+Reconstruct_master 1
+
+Block: Physics
+Physics_master 1

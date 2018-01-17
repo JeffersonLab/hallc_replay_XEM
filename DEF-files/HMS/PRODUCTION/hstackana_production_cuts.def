@@ -12,6 +12,10 @@ HMS_COIN_event       g.evtyp == 6
 COIN_ALL_event       g.evtyp == 7
 ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
 
+RawDecode_master  1
+
+Block: Decode
+
 hcut_TRIG1        T.hms.hTRIG1_tdcTimeRaw > 0
 hcut_TRIG2        T.hms.hTRIG2_tdcTimeRaw > 0
 hcut_TRIG3        T.hms.hTRIG3_tdcTimeRaw > 0
@@ -20,10 +24,6 @@ HMS_Pretrig  hcut_TRIG1 || hcut_TRIG2 || hcut_TRIG3
 hms_trigs         HMS_event
 hcut_edtm_accepted     T.hms.hEDTM_tdcTime != 0.0
 hcut_physics_accepted  T.hms.hEDTM_tdcTime == 0.0
-
-RawDecode_master  1
-
-Block: Decode
 
 Decode_master     ALL_events
 
