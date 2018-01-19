@@ -230,3 +230,38 @@ gtargmass_amu= 1.00794
 ppartmass =  0.00051099
 ptheta_lab =25.035
 ppcentral = 3.0
+
+1966-1969
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =15.0
+ppcentral = 3.0
+
+1970-1979
+gpbeam = 6.404
+gtargmass_amu= 2.014101
+ppartmass =  0.00051099
+ptheta_lab =15.0
+ppcentral = 3.0
+
+1980-1991
+gpbeam = 6.404
+gtargmass_amu= 2.014101
+ppartmass =  0.00051099
+ptheta_lab =15.0
+ppcentral = 3.0
+
+1992-2000
+gpbeam = 6.404
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =15.0
+ppcentral = 3.0
+
+2001-2004
+gpbeam = 6.404
+gtargmass_amu= 26.98
+ppartmass =  0.00051099
+ptheta_lab =15.0
+ppcentral = 3.0
