@@ -25,6 +25,10 @@ BCM1 Counts: {H.BCM1.scalerCut} 	Total Charge: {H.BCM1.scalerChargeCut:%.3f} uC
 BCM2 Counts: {H.BCM2.scalerCut} 	Total Charge: {H.BCM2.scalerChargeCut:%.3f} uC
 Unser Counts: {H.Unser.scalerCut} 	Total Charge: {H.Unser.scalerChargeCut:%.3f} uC
 
+BCM1 Current: {H.BCM1.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		  
+BCM2 Current: {H.BCM2.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA	
+
+
 ********************
 * DAQ Configuration
 ********************
@@ -95,6 +99,13 @@ hTRIG3 :  	{H.hTRIG3.scaler} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f}
 hTRIG4 :  	{H.hTRIG4.scaler} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG5 :  	{H.hTRIG5.scaler} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG6 :  	{H.hTRIG6.scaler} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+hTRIG1_cut :  	{H.hTRIG1.scalerCut} 	[ {(H.hTRIG1.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG2_cut :  	{H.hTRIG2.scalerCut} 	[ {(H.hTRIG2.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG3_cut :  	{H.hTRIG3.scalerCut} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG4_cut :  	{H.hTRIG4.scalerCut} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG5_cut :  	{H.hTRIG5.scalerCut} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hTRIG6_cut :  	{H.hTRIG6.scalerCut} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 
 =:=:=:=:
 = EDTM

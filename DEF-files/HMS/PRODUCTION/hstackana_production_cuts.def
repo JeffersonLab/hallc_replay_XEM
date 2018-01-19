@@ -11,6 +11,7 @@ SHMS_COIN_event      g.evtyp == 5
 HMS_COIN_event       g.evtyp == 6 
 COIN_ALL_event       g.evtyp == 7
 ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
+ALL_HMS_events       HMS_event || COIN_ONLY_event || HMS_COIN_event || COIN_ALL_event
 
 RawDecode_master  1
 
@@ -25,10 +26,10 @@ hms_trigs         HMS_event
 hcut_edtm_accepted     T.hms.hEDTM_tdcTime != 0.0
 hcut_physics_accepted  T.hms.hEDTM_tdcTime == 0.0
 
-Decode_master     ALL_events
+Decode_master     ALL_HMS_events
 
 Block: CoarseTracking
-CoarseTracking_master ALL_events
+CoarseTracking_master ALL_HMS_events
 
 add cuts to stricter times and apply them to drift distances (HMS 6 GeV Drift Chambers)
 hcut_time_cut1                            H.dc.1x1.time > 0 && H.dc.1x1.time < 250
@@ -120,13 +121,13 @@ hTest1                hmsHitsPlanes && (!hSpacePoints)
 hTest2                hSpacePoints && (!hStubLT)
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_events
+CoarseReconstruct_master ALL_HMS_events
 
 Block: Tracking
-Tracking_master  ALL_events
+Tracking_master  ALL_HMS_events
 
 Block: Reconstruct
-Reconstruct_master ALL_events
+Reconstruct_master ALL_HMS_events
 hcut_cer_pmt1_elec        H.cer.npe[0]>.5
 hcut_cer_pmt2_elec        H.cer.npe[0]>.5
 hcut_cer_elec       	  H.cer.npeSum>.5
@@ -207,4 +208,4 @@ HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0
 
 
 Block: Physics
-Physics_master ALL_events
+Physics_master ALL_HMS_events

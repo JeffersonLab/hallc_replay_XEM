@@ -7,10 +7,6 @@ SHMS_event         g.evtyp == 1
 HMS_event          g.evtyp == 2
 COIN_event         g.evtyp >= 4&&g.evtyp<8
 
-SHMS_Pretrig  pTRIG1_ROC2 || pTRIG2_ROC2 || pTRIG3_ROC2
-HMS_Pretrig   pTRIG4_ROC2
-COIN_Pretrig  pTRIG6_ROC2 
-
 RawDecode_master  1
 
 Block: Decode
@@ -34,6 +30,10 @@ SHMS_edtm_accepted     T.coin.pEDTM_tdcTime != 0.0
 SHMS_physics_accepted  T.coin.pEDTM_tdcTime == 0.0
 HMS_edtm_accepted      T.coin.hEDTM_tdcTime != 0.0
 HMS_physics_accepted   T.coin.hEDTM_tdcTime == 0.0
+
+SHMS_Pretrig  pTRIG1_ROC2 || pTRIG2_ROC2 || pTRIG3_ROC2
+HMS_Pretrig   pTRIG4_ROC2
+COIN_Pretrig  pTRIG6_ROC2 
 
 Decode_master     1
 
