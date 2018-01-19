@@ -411,11 +411,11 @@ gpbeam = 6.404
 gtargmass_amu= 12.0107
 hpartmass = 0.00051099
 htheta_lab = -15.0
-hpcentral = 3.
+hpcentral = 3.5
 
-1424-1427
+1424-1436
 gpbeam = 6.404 
 gtargmass_amu=26.98
 hpartmass = 0.00051099
 htheta_lab = -15.0
-hpcentral = 3.
+hpcentral = 3.0
