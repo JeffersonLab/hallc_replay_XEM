@@ -79,10 +79,10 @@ coincut            ccleantrack && goodctime
 tight_coin         ccleantrack && tightctime
 ran_coincut        ccleantrack && ranctime
 
-e_cut_cal          P.cal.etottracknorm > 0.6 && P.cal.etottracknorm < 1.6
-e_cut_cer          P.hgcer.npeSum > 0.5
+e_cut_cal          H.cal.etottracknorm > 0.6 && H.cal.etottracknorm < 1.6
+e_cut_cer          H.cer.npeSum > 0.5
 select_e_cut       e_cut_cal && e_cut_cer
-betacut_proton     H.gtr.beta > 0.6 && H.gtr.beta < 0.8
+betacut_proton     P.gtr.beta > 0.6 && P.gtr.beta < 0.8
 coincut_ep         ccleantrack && select_e_cut && betacut_proton
 
 #include "DEF-files/HMS/PRODUCTION/hstackana_production_cuts.def"

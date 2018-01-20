@@ -32,6 +32,6 @@ TH1F c_pathcorr   'Cointime pathcorr; Cointime pathcorr (ns); Count / 1 ns;'  T.
 TH1F h_htrig_tdc  'pTRIG4_ROC1'  T.coin.hTRIG1_ROC1_tdcTimeRaw*0.1 1600 -800 800
 TH1F h_ptrig_tdc  'pTRIG4_ROC1'  T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1 1600 -800 800
 TH1F p_ptrig_tdc  'pTRIG1_ROC2'  T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1 1600 -800 800
-TH1F p_htrig_tdc  'pTRIG1_ROC2'  T.coin.hTRIG1_ROC2_tdcTimeRaw*0.1 1600 -800 800&&shms_trigs
+TH1F p_htrig_tdc  'pTRIG1_ROC2'  T.coin.hTRIG1_ROC2_tdcTimeRaw*0.1 1600 -800 800
 TH1F h_ctrig_tdc  'pTRIG1_ROC1-pTRIG4_ROC1'  T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw 1600 -800 800
 TH1F p_ctrig_tdc  'pTRIG1_ROC2-pTRIG4_ROC2'  T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw 1600 -800 800

@@ -146,9 +146,9 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
   hscaler->AddEvtType(2);
   hscaler->AddEvtType(4);
-  pscaler->AddEvtType(5);
-  pscaler->AddEvtType(6);
-  pscaler->AddEvtType(7);
+  hscaler->AddEvtType(5);
+  hscaler->AddEvtType(6);
+  hscaler->AddEvtType(7);
   hscaler->AddEvtType(129);
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
@@ -238,9 +238,9 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file+
-  analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_hElec_pProt_production.def");
+  analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_production_hElec_pProt.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/coin_hElec_pProt_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/coin_production_hElec_pProt_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

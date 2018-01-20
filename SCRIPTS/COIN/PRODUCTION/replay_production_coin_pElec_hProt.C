@@ -146,9 +146,9 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
   hscaler->AddEvtType(2);
   hscaler->AddEvtType(4);
-  pscaler->AddEvtType(5);
-  pscaler->AddEvtType(6);
-  pscaler->AddEvtType(7);
+  hscaler->AddEvtType(5);
+  hscaler->AddEvtType(6);
+  hscaler->AddEvtType(7);
   hscaler->AddEvtType(129);
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);

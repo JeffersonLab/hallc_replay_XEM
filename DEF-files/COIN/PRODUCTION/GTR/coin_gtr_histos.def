@@ -1,5 +1,6 @@
 ############################
 #   TARGET
 ############################
-TH2F hgtrz_vs_pgtrz   'HMS z_{tar} vs SHMS z_{tar}; SHMS z_{tar} / 0.1 cm; HMS z_{tar} / 0.1 cm;'  P.gtr.z H.gtr.z 300 -15 15 300 -15 15 coincut
-TH2F hgtry_vs_pgtry   'HMS y_{tar} vs SHMS y_{tar}; SHMS y_{tar} / 0.1 cm; HMS y_{tar} / 0.1 cm;'  P.gtr.y H.gtr.y 300 -15 15 300 -15 15 coincut
+TH2F hgtry_vs_pgtry   'HMS y_{tar} vs SHMS y_{tar}; SHMS y_{tar} / 0.1 cm; HMS y_{tar} / 0.1 cm;'  P.gtr.y H.gtr.y 200 -15 15 200 -15 15 coincut
+TH2F hgtryp_vs_pgtryp   'HMS y'_{tar} vs SHMS y'_{tar}; SHMS y'_{tar} / 0.1 cm; HMS y'_{tar} / 0.1 cm;'  P.gtr.ph H.gtr.ph 200 -0.1 0.1 200 -0.1 0.1 coincut
+TH2F hgtrxp_vs_pgtrxp   'HMS x'_{tar} vs SHMS x'_{tar}; SHMS x'_{tar} / 0.1 cm; HMS x'_{tar} / 0.1 cm;'  P.gtr.th H.gtr.th 200 -0.1 0.1 200 -0.1 0.1 coincut
