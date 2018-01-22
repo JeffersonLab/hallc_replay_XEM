@@ -4,4 +4,4 @@ gBCM_Offset = 250200,250100,393000,-2994.0,-1148.0,-154.3
 gBCM_Names="BCM1 BCM2 Unser BCM4A BCM4B BCM17"
 gBCM_Current_threshold=0.5
 ; index = 0 to gNumBCMs-1
-gBCM_Current_threshold_index=0
+gBCM_Current_threshold_index=3
