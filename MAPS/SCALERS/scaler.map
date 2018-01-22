@@ -214,6 +214,9 @@ hPRE200      0    4     4    11    1    -1  HMS PRE200
 10/15        0    4     4    15    1    -1  Empty
 
 # desc      hel crate slot start nchan page long-description
+hL1ACCP       0    4     4    16     1    -1  HMS L1 Accept
+
+# desc      hel crate slot start nchan page long-description
 pTRIG1       0    4     5    0     1    -1  SHMS TRIG1
 pTRIG2       0    4     5    1     1    -1  SHMS TRIG2
 pTRIG3       0    4     5    2     1    -1  SHMS TRIG3
@@ -491,6 +494,9 @@ hPRE200      0    5     5    11    1    -1  HMS PRE200
 11/13        0    5     5    13    1    -1  Empty
 11/14        0    5     5    14    1    -1  Empty
 11/15        0    5     5    15    1    -1  Empty
+
+# desc      hel crate slot start nchan page long-description
+pL1ACCP       0    5     5    16     1    -1  SHMS L1 Accept
 
 # desc      hel crate slot start nchan page long-description
 pTRIG1       0    5     6    0     1    -1  SHMS TRIG1
