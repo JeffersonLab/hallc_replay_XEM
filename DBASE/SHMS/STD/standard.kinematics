@@ -1,4 +1,4 @@
-#
+#SHMS
 # Need to set ptheta_lab to a POSITIVE value
 # 1h gtargmass_amu=1.00794
 # 12C gtargmass_amu=12.0107
@@ -265,3 +265,60 @@ gtargmass_amu= 26.98
 ppartmass =  0.00051099
 ptheta_lab =15.0
 ppcentral = 3.0
+
+
+2014-2020
+gpbeam = 6.404
+gtargmass_amu= 26.98
+ppartmass =  0.00051099
+ptheta_lab =17.0
+ppcentral = 5.112
+
+2071-2072
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =16.02
+ppcentral = 5.074
+
+2074
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =20.03
+ppcentral = 4.522
+
+2075-2077
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.02
+ppcentral = 3.0
+
+2078-2081
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.02
+ppcentral = 1.4
+
+2082-2084
+gpbeam = 6.404
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =25.02
+ppcentral = 1.4
+
+2085-2086
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =30.06
+ppcentral = 3.349
+
+2087-2088
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =35.06
+ppcentral = 2.869

@@ -1,4 +1,4 @@
-#
+# HMS
 # Need to set htheta_lab to a NEGATIVE value
 # 1h gtargmass_amu=1.00794
 # 12C gtargmass_amu=12.0107
@@ -419,3 +419,17 @@ gtargmass_amu=26.98
 hpartmass = 0.00051099
 htheta_lab = -15.0
 hpcentral = 3.0
+
+1437-1446
+gpbeam = 6.404 
+gtargmass_amu= 26.98
+hpartmass = 0.00051099
+htheta_lab = -22.0
+hpcentral = 2.131
+
+1448-1455
+gpbeam = 6.404 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0

@@ -1,4 +1,4 @@
-#
+# COIN
 # Need to set htheta_lab to a NEGATIVE value
 # Need to set ptheta_lab to a POSITIVE value
 # 1H   gtargmass_amu = 1.00794
@@ -236,7 +236,102 @@ ppcentral = 5.41*0.985
 ppartmass = 0.93827231
 hpartmass = 0.00051099
 
-1954-1959
-EDTM Check
+2022 - 2024
+gpbeam = 6.405
+gtargmass_amu = 1.00794
+htheta_lab = -45.1
+ptheta_lab = 17.1
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
 
+2042
+gpbeam = 6.405
+gtargmass_amu = 12.0107
+htheta_lab = -15.02
+ptheta_lab = 17.09
+hpcentral = 2.131
+ppcentral = 3.0*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
 
+2043-2044
+gpbeam = 6.405
+gtargmass_amu =  26.98
+htheta_lab = -15.02
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 3.0*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2045-2054
+gpbeam = 6.405
+gtargmass_amu = 1.00794 
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2055
+gpbeam = 6.405
+gtargmass_amu = 26.98 
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2056-2057
+gpbeam = 6.405
+gtargmass_amu = 12.0107
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2058-2060
+gpbeam = 6.405
+gtargmass_amu = 1.00794
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2061-2065
+gpbeam = 6.405
+gtargmass_amu = 12.0107
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2066
+gpbeam = 6.405
+gtargmass_amu = 1.00794
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.00051099
+
+2067-9999
+gpbeam = 6.405
+gtargmass_amu = 26.98
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
