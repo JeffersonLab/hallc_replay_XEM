@@ -154,6 +154,8 @@ variable 2 1 1 .hod.2x3.posScaler HMS 2X+ paddle 3
 variable 2 1 2 .hod.2x3.posScalerRate HMS 2X+ paddle 3
 variable 4 9 1 .hPRE100.scaler HMS PRE100
 variable 4 9 2 .hPRE100.scalerRate HMS PRE100
+variable 4 16 1 .hL1ACCP.scaler HMS L1 Accept
+variable 4 16 2 .hL1ACCP.scalerRate HMS L1 Accept
 variable 0 5 1 .hod.1x4.posScaler HMS 1X+ paddle 4
 variable 0 5 2 .hod.1x4.posScalerRate HMS 1X+ paddle 4
 variable 5 20 1 .pEL_REAL.scaler SHMS EL_REAL

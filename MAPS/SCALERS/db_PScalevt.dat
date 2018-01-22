@@ -137,6 +137,8 @@ variable 5 2 1 .pPRE150.scaler SHMS PRE150
 variable 5 2 2 .pPRE150.scalerRate SHMS PRE150
 variable 5 10 1 .hPRE150.scaler HMS PRE150
 variable 5 10 2 .hPRE150.scalerRate HMS PRE150
+variable 5 16 1 .pL1ACCP.scaler  SHMS L1 Accept
+variable 5 16 2 .pL1ACCP.scalerRate  SHMS L1 Accept
 variable 0 15 1 .Empty_3.scaler Empty
 variable 0 15 2 .Empty_3.scalerRate Empty
 variable 3 9 1 .hod.2y11.negScaler SHMS 2y- paddle 11
