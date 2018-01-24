@@ -1,0 +1,13 @@
+#!/bin/bash
+../../../hcana -q "yield_calc.C(2023,1,1)"
+../../../hcana -q "yield_calc.C(2046,1,1)"
+../../../hcana -q "yield_calc.C(2047,1,1)"
+../../../hcana -q "yield_calc.C(2048,1,1)"
+../../../hcana -q "yield_calc.C(2049,1,1)"
+../../../hcana -q "yield_calc.C(2050,1,1)"
+../../../hcana -q "yield_calc.C(2051,1,1)"
+../../../hcana -q "yield_calc.C(2052,1,1)"
+../../../hcana -q "yield_calc.C(2053,1,1)"
+../../../hcana -q "yield_calc.C(2054,1,1)"
+../../../hcana -q "yield_calc.C(2055,3,1)"
+../../../hcana -q "yield_calc.C(2056,2,1)"

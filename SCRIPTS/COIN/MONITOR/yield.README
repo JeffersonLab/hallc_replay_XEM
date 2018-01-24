@@ -1,0 +1,11 @@
+1) Calculate yield
+	1) ../hcana yield_calc.C
+	2) Enter run number
+	3) Enter index specifying target
+
+	It will warn you if you're overwriting a run already in coin_yield.root,
+	but this might be what you want to do!
+
+2) Plot yield per run
+	1) ../hcana yield_graph.C
+	2) Make sure yield hasn't fluctuated

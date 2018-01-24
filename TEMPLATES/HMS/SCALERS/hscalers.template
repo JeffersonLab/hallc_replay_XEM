@@ -64,17 +64,50 @@ Ps6_factor = {ghconfig_ti_ps_factors[5]}
 
 Total HMS 3/4 Triggers       : {H.hTRIG1.scaler}
 Pre-Scaled HMS 3/4 Triggers  : {(H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]):%.0f}
-Estimated HMS 3/4 Triggers   : {H.hTRIG1.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
 HMS 3/4 Trigger Rate         : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+Estimated HMS 3/4 Triggers   : {H.hTRIG1.scalerRate*H.1Mhz.scalerTime:%.0f}
 Accepted HMS Triggers        : {TRIG1.npassed}
 HMS Event Types              : {HMS_Pretrig.npassed}
+
+=:=:=:=:
+= EDTM
+=:=:=:=:
+
+EDTM Triggers           : {H.EDTM.scaler}
+Estimated EDTM Triggers : {H.EDTM.scalerRate*H.1Mhz.scalerTime:%.0f}
+EDTM Trigger Rate       : {H.EDTM.scalerRate/1000.:%.3f} kHz
+Accepted EDTM Triggers  : {edtm_accepted.npassed}
+
+=:=:=:=:=:=:=:=:
+= Level 1 Accept
+=:=:=:=:=:=:=:=:
+
+Number of L1A    : {H.hL1ACCP.scaler}
+L1A Rate         : {H.hL1ACCP.scalerRate/1000.:%.3f} kHz
+hTRIG1/L1A       : {H.hTRIG1.scaler/H.hL1ACCP.scaler}
+
+=:=:=:=:=:=:=:=:
+= Sanity Checks
+=:=:=:=:=:=:=:=:
+
+EDTM Scaler Counts      : {H.EDTM.scaler}
+EDTM Copy Scaler Counts : {H.EDTM_CP.scaler}
+Ratio                   : {H.EDTM.scaler/H.EDTM_CP.scaler}
+
+pTRIG1 Scaler Counts      : {H.pTRIG1.scaler}
+pTRIG1 Copy Scaler Counts : {H.pTRIG1_CP.scaler}
+Ratio                     : {H.pTRIG1.scaler/H.pTRIG1_CP.scaler}
+
+1 MHz Scaler Counts      : {H.1Mhz.scaler}
+1 MHz Copy Scaler Counts : {H.1MHz_CP.scaler}
+Ratio                    : {H.1Mhz.scaler/H.1MHz_CP.scaler}
 
 =:=:=:=:=:=:=:=:=:=:=:=:
 = Physics 3/4 Triggers
 =:=:=:=:=:=:=:=:=:=:=:=:
 
 Physics 3/4 Triggers           : {H.hTRIG1.scaler - H.EDTM.scaler}
-Estimated Physics 3/4 Triggers : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*(H.1Mhz.scaler/1000000.):%.0f}
+Estimated Physics 3/4 Triggers : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*H.1Mhz.scalerTime:%.0f}
 Physics 3/4 Trigger Rate       : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
 Accepted Physics Triggers      : {physics_accepted.npassed}
 
@@ -120,15 +153,6 @@ hTRIG3_cut :  	{H.hTRIG3.scalerCut} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000
 hTRIG4_cut :  	{H.hTRIG4.scalerCut} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG5_cut :  	{H.hTRIG5.scalerCut} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG6_cut :  	{H.hTRIG6.scalerCut} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
-
-=:=:=:=:
-= EDTM
-=:=:=:=:
-
-EDTM Triggers           : {H.EDTM.scaler}
-Estimated EDTM Triggers : {H.EDTM.scalerRate*(H.1Mhz.scaler/1000000.):%.0f}
-EDTM Trigger Rate       : {H.EDTM.scalerRate/1000.:%.3f} kHz
-Accepted EDTM Triggers  : {edtm_accepted.npassed}
 
 =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 = Live/Dead Time Calculations
