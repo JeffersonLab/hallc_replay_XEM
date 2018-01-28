@@ -67,6 +67,10 @@ int ScalerCalib::Run()
       PrintContainer(bcm17);
     }
   
+  outfile << "\n" << "\n";
+  outfile << "scal_read_event = ";
+  PrintContainer(evnum);
+
   //  outfile.close();
 
   return 0;
@@ -165,6 +169,8 @@ int ScalerCalib::FillContainer()
   for(Long64_t ientry=0; ientry<nentries; ientry++)
     {
       T->GetEntry(ientry);
+
+      if(evnumber < 0) continue;
 
       evnum.push_back(evnumber);
       bcm1.push_back(bcm1_current);
