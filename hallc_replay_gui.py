@@ -1,6 +1,11 @@
 #!/apps/python/python-2.7.1/bin/python
 
-import Tkinter as tk
+import sys
+
+if sys.version_info[0] < 3:
+    import Tkinter as tk
+else:	
+    import tkinter as tk
 import os
 
 root = tk.Tk()
@@ -30,27 +35,27 @@ def hms_var_states():
         hms_def_file_text.append("\n")
 
     if hcal_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"\n''')
     if hcer_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"\n''')
     if hdc_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"\n''')
     if hhodo_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"\n''')
     if hkin_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/KIN/hkin_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/KIN/hkin_histos.def"\n''')
     if hgtr_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/GTR/hgtr_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/GTR/hgtr_histos.def"\n''')
     if hraster_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/RASTER/hraster_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/RASTER/hraster_histos.def"\n''')
     if htrig_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"\n''')
-    if hepics_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EPICS/hepics_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"\n''')
+    if hepics_vars.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"\n''')
     if hreact_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/REACT/hreact_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/REACT/hreact_histos.def"\n''')
     if hpid_histos.get() == 1:
-	hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_histos.def"\n''')
    
     print ("Backing up current HMS Output DEF-file ...")
     command = "mv " + hms_def_filename + " " + hms_def_filename_bck
@@ -84,31 +89,31 @@ def shms_var_states():
         shms_def_file_text.append("\n")
 
     if paero_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"\n''')
     if pcal_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"\n''')
     if pdc_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"\n''')
-    if pepics_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"\n''')
+    if pepics_vars.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"\n''')
     if pgtr_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/hgtr_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_histos.def"\n''')
     if phgcer_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HGCER/phgcer_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HGCER/phgcer_histos.def"\n''')
     if phodo_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HODO/phodo_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HODO/phodo_histos.def"\n''')
     if pkin_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_histos.def"\n''')
     if pngcer_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"\n''')
     if praster_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/RASTER/praster_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/RASTER/praster_histos.def"\n''')
     if ptrig_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_histos.def"\n''')
     if preact_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/REACT/preact_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/REACT/preact_histos.def"\n''')
     if ppid_histos.get() == 1:
-	shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_histos.def"\n''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_histos.def"\n''')
    
     print ("Backing up current SHMS Output DEF-file ...")
     command = "mv " + shms_def_filename + " " + shms_def_filename_bck
@@ -127,7 +132,7 @@ def set_hms_production_defaults():
     hkin_histos.set(1)
     hgtr_histos.set(1)
     hraster_histos.set(1)
-    hepics_histos.set(1)
+    hepics_vars.set(1)
     hreact_histos.set(1)
     hpid_histos.set(1)
     hcalana_histos.set(0)
@@ -140,7 +145,7 @@ def set_shms_production_defaults():
     paero_histos.set(1)
     pcal_histos.set(1)
     pdc_histos.set(1)
-    pepics_histos.set(1)
+    pepics_vars.set(1)
     pgtr_histos.set(1)
     phgcer_histos.set(1)
     phodo_histos.set(1)
@@ -182,14 +187,14 @@ hkin_histos = tk.IntVar()
 hgtr_histos = tk.IntVar()
 hraster_histos = tk.IntVar()
 htrig_histos = tk.IntVar()
-hepics_histos = tk.IntVar()
+hepics_vars = tk.IntVar()
 hreact_histos = tk.IntVar()
 hpid_histos = tk.IntVar()
 
 paero_histos = tk.IntVar()
 pcal_histos = tk.IntVar()
 pdc_histos = tk.IntVar()
-pepics_histos = tk.IntVar()
+pepics_vars = tk.IntVar()
 pgtr_histos = tk.IntVar()
 phgcer_histos = tk.IntVar()
 phodo_histos = tk.IntVar()
@@ -297,7 +302,7 @@ irow=irow+1
 tk.Checkbutton(root, 
               text="Epics",
               padx = 20, 
-              variable=hepics_histos).grid(row=irow,column=icol,sticky=tk.W)
+              variable=hepics_vars).grid(row=irow,column=icol,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
               text="Reaction",
@@ -413,7 +418,7 @@ irow=irow+1
 tk.Checkbutton(root, 
               text="Epics",
               padx = 20, 
-              variable=pepics_histos).grid(row=irow,column=icol,sticky=tk.W)
+              variable=pepics_vars).grid(row=irow,column=icol,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
               text="Reaction",
