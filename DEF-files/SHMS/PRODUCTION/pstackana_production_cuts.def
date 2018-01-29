@@ -29,10 +29,13 @@ pcut_good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
 pcut_good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220
 pcut_good_S1_S2X_time     pcut_good_S1_time && pcut_good_S2X_time
 
-Decode_master     ALL_events
+ALL_SHMS_NO_EDTM          ALL_events && pcut_physics_accepted
+
+
+Decode_master     ALL_SHMS_NO_EDTM
 
 Block: CoarseTracking
-CoarseTracking_master ALL_events
+CoarseTracking_master ALL_SHMS_NO_EDTM
 
 # Add cuts to stricter times and apply them to drift distances 
 pcut_time_cut1      P.dc.1u1.time > 0 && P.dc.1u1.time < 250
@@ -148,13 +151,13 @@ pTest1     shmsHitsPlanes && (!pSpacePoints)
 pTest2	   pSpacePoints && (!pStubLT)
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_events
+CoarseReconstruct_master ALL_SHMS_NO_EDTM
 
 Block: Tracking
-Tracking_master  ALL_events
+Tracking_master  ALL_SHMS_NO_EDTM
 
 Block: Reconstruct
-Reconstruct_master ALL_events
+Reconstruct_master ALL_SHMS_NO_EDTM
 
 pcut_cer_ng_elec    	  P.ngcer.npeSum > 0.5
 pcut_cer_ng_pi      	  P.ngcer.npeSum <= 0.5
@@ -276,4 +279,4 @@ SHMS_aero_track_matched_tot P.aero.totNumTracksMatched>0
 SHMS_aero_track_fired_tot P.aero.totNumTracksFired>0
 
 Block: Physics
-Physics_master ALL_events
+Physics_master ALL_SHMS_NO_EDTM

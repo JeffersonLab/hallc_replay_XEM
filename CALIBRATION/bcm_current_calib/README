@@ -1,0 +1,19 @@
+This script runs over a scaler tree (TSH) and save bcm current values
+for BCM1, BCM2, (BCM4a, BCM4b, BCM17) as well as the event number 
+for each scaler event.
+
+How to make a parameter file for the average BCM current information
+
+- Use ROOT version 6.08 to use R__LOAD_LIBRARY
+- Do this once to make shared libraries (or after modifying the marco)
+> root -b
+root [0] .L ScalerCalib.C+
+
+To run a script:
+> roob -b
+root [0] .x run.C("/path/Scaler root output file");
+
+It prints out 
+      # of scaler read, 
+      average bcm current values for each bcm
+      corresponding event number for each scaler event

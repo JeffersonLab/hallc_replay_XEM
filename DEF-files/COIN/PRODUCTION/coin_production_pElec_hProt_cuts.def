@@ -57,19 +57,22 @@ pcut_good_S1_time         T.coin.p1T_tdcTime > 241 && T.coin.p1T_tdcTime < 243
 pcut_good_S2X_time        T.coin.p2X_tdcTime > 180 && T.coin.p2X_tdcTime < 220
 pcut_good_S1_S2X_time     pcut_good_S1_time && pcut_good_S2X_time
 
-Decode_master     ALL_events
+ALL_COIN_NO_EDTM  T.coin.hEDTM_tdcTime==0.0&&T.coin.pEDTM_tdcTime==0.0&&ALL_events
+
+
+Decode_master     ALL_COIN_NO_EDTM
 
 Block: CoarseTracking
-CoarseTracking_master ALL_events
+CoarseTracking_master ALL_COIN_NO_EDTM
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_events
+CoarseReconstruct_master ALL_COIN_NO_EDTM
 
 Block: Tracking
-Tracking_master  ALL_events
+Tracking_master  ALL_COIN_NO_EDTM
 
 Block: Reconstruct
-Reconstruct_master ALL_events
+Reconstruct_master ALL_COIN_NO_EDTM
 
 hcleantrack        H.gtr.index > -1
 pcleantrack        P.gtr.index > -1
