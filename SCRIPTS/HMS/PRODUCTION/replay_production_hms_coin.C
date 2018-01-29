@@ -103,6 +103,10 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 2");  
   hscaler->AddEvtType(2);
+  hscaler->AddEvtType(4);
+  hscaler->AddEvtType(5);
+  hscaler->AddEvtType(6);
+  hscaler->AddEvtType(7);
   hscaler->AddEvtType(129);
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);

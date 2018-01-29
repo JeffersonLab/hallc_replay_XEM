@@ -1,0 +1,35 @@
+These two scripts calculate and plot (vs run number) various quantities
+including yield per mC, live time, and efficiencies. These are all
+grabbed from report files using awk. This obviously makes STRONG assumptions
+about the structure of the template report file, so be careful.
+
+1) Grab monitored quantities
+        1) Run `./hcana SCRIPTS/COIN/MONITOR/coin_monitor_calc.C` 
+           in your hallc_replay directory
+        2) Enter run number
+        3) Enter index specifying target
+
+        It will warn you if you're overwriting a run already in coin_monitor.root,
+        but this might be what you want to do! For example, you might have added
+        something to the macro and need to add the new quantities for old runs.
+
+2) Plot monitored quantities vs run
+        1) Run `./hcana SCRIPTS/COIN/MONITOR/coin_monitor_graph.C` 
+           in your hallc_replay directory
+        2) Make sure nothing has fluctuated
+
+	*) If you prefer, you can specify a range of runs to graph
+	   e.g. `.x SCRIPTS/COIN/MONITOR/coin_monitor_graph.C(2185,2191)`
+
+TROUBLESHOOTING:
+If coin_monitor.root gets deleted, you can run coin_monitor_init.C to create an
+empty coin_monitor.root. Running this will also overwrite any existing data in
+a non-empty coin_monitor.root
+
+TO-DO:
+- Macro to delete a run's data from coin_monitor.root
+- Implement kinematic settings (different markers?)
+- Save as PDF 
+
+QUESTIONS/CONCERNS:
+Email matter@virginia.edu

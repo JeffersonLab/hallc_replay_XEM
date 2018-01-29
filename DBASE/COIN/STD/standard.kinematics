@@ -326,11 +326,33 @@ ppcentral = 5.122*0.985
 ppartmass = 0.93827231
 hpartmass = 0.00051099
 
-2067-9999
+2067-2068
 gpbeam = 6.405
 gtargmass_amu = 26.98
 htheta_lab = -45.11
 ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Carbon Hole, Jan 26 2018
+2081-2185
+gpbeam = 6.405
+gtargmass_amu =  12.0107
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#CT Experiment (E12-06-107)
+2186-9999
+gpbeam = 6.405
+gtargmass_amu =  12.0107
+htheta_lab = -45.145
+ptheta_lab = 17.11
 hpcentral = 2.131
 ppcentral = 5.122*0.985
 ppartmass = 0.93827231

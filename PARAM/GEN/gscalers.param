@@ -1,7 +1,9 @@
+# Please keep the order of BCM1 BCM2 BCM4A BCM4B BCM17 Unser
+# Some code in hcana depends on the order.
 gNumBCMs=6
-gBCM_Gain = 4574,3847,4166,13560,6456.,2154.
-gBCM_Offset = 250200,250100,393000,-2994.0,-1148.0,-154.3
+gBCM_Gain = 4574,3847,13560,6456.,2154.,4166
+gBCM_Offset = 250200,250100,-2994.0,-1148.0,-154.3,393000
 gBCM_Names="BCM1 BCM2 Unser BCM4A BCM4B BCM17"
-gBCM_Current_threshold=0.5
+gBCM_Current_threshold=20
 ; index = 0 to gNumBCMs-1
 gBCM_Current_threshold_index=3
