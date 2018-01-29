@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/apps/python/python-2.7.1/bin/python
 
 import sys
 
