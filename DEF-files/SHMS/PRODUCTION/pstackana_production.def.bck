@@ -1,3 +1,13 @@
+#include "DEF-files/SHMS/PRODUCTION/BLOCK/pblock_vars.def"
+
+#include "DEF-files/SHMS/TEST_STANDS/AERO/paeroana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/CAL/pcalana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/DC/pdcana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/HGCER/pgcerana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/HODO/phodoana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/NGCER/pngcerana_histos.def"
+#include "DEF-files/SHMS/TEST_STANDS/TRIG/ptrigana_histos.def"
+
 #include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"
