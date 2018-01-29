@@ -20,13 +20,14 @@ Block: Decode
 hcut_TRIG1        T.hms.hTRIG1_tdcTimeRaw > 0
 hcut_TRIG2        T.hms.hTRIG2_tdcTimeRaw > 0
 hcut_TRIG3        T.hms.hTRIG3_tdcTimeRaw > 0
-HMS_Pretrig  hcut_TRIG1 || hcut_TRIG2 || hcut_TRIG3
+HMS_Pretrig       hcut_TRIG1 || hcut_TRIG2 || hcut_TRIG3
 
-hms_trigs         HMS_event
+hms_trigs              HMS_event
 hcut_edtm_accepted     T.hms.hEDTM_tdcTime != 0.0
 hcut_physics_accepted  T.hms.hEDTM_tdcTime == 0.0
+ALL_HMS_NO_EDTM        ALL_HMS_events && hcut_physics_accepted
 
-Decode_master     ALL_HMS_events
+Decode_master          ALL_HMS_NO_EDTM
 
 Block: CoarseTracking
 CoarseTracking_master ALL_HMS_events
@@ -121,13 +122,13 @@ hTest1                hmsHitsPlanes && (!hSpacePoints)
 hTest2                hSpacePoints && (!hStubLT)
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_HMS_events
+CoarseReconstruct_master ALL_HMS_NO_EDTM
 
 Block: Tracking
-Tracking_master  ALL_HMS_events
+Tracking_master  ALL_HMS_NO_EDTM
 
 Block: Reconstruct
-Reconstruct_master ALL_HMS_events
+Reconstruct_master ALL_HMS_NO_EDTM
 hcut_cer_pmt1_elec        H.cer.npe[0]>.5
 hcut_cer_pmt2_elec        H.cer.npe[0]>.5
 hcut_cer_elec       	  H.cer.npeSum>.5
@@ -208,4 +209,4 @@ HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0
 
 
 Block: Physics
-Physics_master ALL_HMS_events
+Physics_master ALL_HMS_NO_EDTM

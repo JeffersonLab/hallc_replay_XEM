@@ -101,6 +101,7 @@ public:
   // Page utilites
   UInt_t  GetPageCount() { return pageInfo.size(); };
   pair <UInt_t,UInt_t> GetPageDim(UInt_t);
+  Bool_t IsLogxy(UInt_t page);
   Bool_t IsLogx(UInt_t page);
   Bool_t IsLogy(UInt_t page);
   Bool_t IsLogz(UInt_t page);

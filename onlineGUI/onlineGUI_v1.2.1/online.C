@@ -446,6 +446,18 @@ vector <TString> OnlineConfig::GetCutIdent() {
     return out;
 }
 
+Bool_t OnlineConfig::IsLogxy(UInt_t page) {
+    // Check if last word on line is "logxy"
+
+    UInt_t page_index = pageInfo[page].first;
+    Int_t word_index = sConfFile[page_index].size()-1;
+    if (word_index <= 0) return kFALSE;
+    TString option = sConfFile[page_index][word_index];
+    if(option == "logxy") return kTRUE;
+    return kFALSE;
+
+}
+
 Bool_t OnlineConfig::IsLogx(UInt_t page) {
     // Check if last word on line is "logx"
 
@@ -496,9 +508,10 @@ pair <UInt_t, UInt_t> OnlineConfig::GetPageDim(UInt_t page)
 
     UInt_t size1 = 2;
 
-    if (IsLogx(page)) size1 = 3;  // last word is "logy"
+    if (IsLogx(page)) size1 = 3;  // last word is "logx"
     if (IsLogy(page)) size1 = 3;  // last word is "logy"
-    if (IsLogz(page)) size1 = 3;  // last word is "logy"
+    if (IsLogz(page)) size1 = 3;  // last word is "logz"
+    if (IsLogxy(page)) size1 = 3;  // last word is "logxy"
 
     // If the dimensions are defined, return them.
     if(sConfFile[page_index].size()>size1-1) {
@@ -987,16 +1000,23 @@ void OnlineGUI::DoDraw()
     gStyle->SetOptStat(1110);
     gStyle->SetStatFontSize(0.1);
 #endif
-    if (fConfig->IsLogx(current_page)) {
+    if (fConfig->IsLogxy(current_page)) {
         gStyle->SetOptLogx(1);
-    } else {
-        gStyle->SetOptLogx(0);
-    }
-    if (fConfig->IsLogy(current_page)) {
         gStyle->SetOptLogy(1);
     } else {
-        gStyle->SetOptLogy(0);
+        if (fConfig->IsLogx(current_page)) {
+            gStyle->SetOptLogx(1);
+        } else {
+            gStyle->SetOptLogx(0);
+        }
+
+        if (fConfig->IsLogy(current_page)) {
+            gStyle->SetOptLogy(1);
+        } else {
+            gStyle->SetOptLogy(0);
+        }
     }
+
     if (fConfig->IsLogz(current_page)) {
         gStyle->SetOptLogz(1);
     } else {
