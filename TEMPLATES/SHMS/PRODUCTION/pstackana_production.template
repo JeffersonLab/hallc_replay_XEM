@@ -127,6 +127,34 @@ Accepted EDTM Triggers  : {pcut_edtm_accepted.npassed}
 Total Live Time (EDTM) : {(pcut_edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 Total Dead Time (EDTM) : {100.0 - (pcut_edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+= Live/Dead Time Calculations
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
+SHMS Computer Live Time : {(TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % 
+SHMS Computer Dead Time : {100.0 - (TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % 
+
+Pre-Scaled Ps1 SHMS Computer Live Time : {(TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 SHMS Computer Dead Time : {100.0 - (TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+
+Pre-Scaled Ps2 SHMS Computer Live Time : {(TRIG2.npassed / (P.pTRIG2.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 SHMS Computer Dead Time : {100.0 - (TRIG2.npassed / (P.pTRIG2.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+
+Pre-Scaled Ps3 SHMS Computer Live Time : {(TRIG3.npassed / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 SHMS Computer Dead Time : {100.0 - (TRIG3.npassed / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+
+Total Live Time (EDTM) : {(edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
+
+Pre-Scaled Ps1 Total Live Time (EDTM) : {(edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+
+Pre-Scaled Ps2 Total Live Time (EDTM) : {(edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+
+Pre-Scaled Ps3 Total Live Time (EDTM) : {(edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (P.EDTM.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+
 =:=:=:=:=:=:=:
 = Hodoscopes
 =:=:=:=:=:=:=:
