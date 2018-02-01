@@ -330,9 +330,116 @@ ppartmass =  0.00051099
 ptheta_lab =25.0
 ppcentral = 3.911
 
-2221-2225
+2221-2229
 gpbeam = 6.404
 gtargmass_amu= 1.00794
 ppartmass =  0.00051099
 ptheta_lab =25.0
 ppcentral = 3.911
+
+2230-2231
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.0
+ppcentral = 3.6
+
+2231-2231
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =25.0
+ppcentral = 3.349
+
+2232-2232
+gpbeam = 6.404
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =30.005
+ppcentral = 3.349
+
+2233-2234
+gpbeam = 6.404
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =22.0
+ppcentral = 3.2
+
+2235-2239
+gpbeam = 6.404
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =30.0
+ppcentral = 2
+
+#2241 -2247 are junk runs on LH2
+2241-2247
+gpbeam = 10.59
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =7.50
+ppcentral = 2
+
+#2248 is junk a run on CA-6%
+2248
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =7.50
+ppcentral = 2
+
+2249-2253
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =8.50
+ppcentral = 9.43
+
+2255-2255
+gpbeam = 10.59
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =8.49
+ppcentral = 9.43
+
+2256-2256
+gpbeam = 10.59
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =8.49
+ppcentral = 7.3
+
+2257-2258
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =8.49
+ppcentral = 7.3
+
+2259-2259
+gpbeam = 10.59
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =16.49
+ppcentral = 7.234
+
+2260-2262
+gpbeam = 10.59
+gtargmass_amu= 1.00794
+ppartmass =  0.00051099
+ptheta_lab =16.49
+ppcentral = 5.5
+
+2263-2264
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =16.49
+ppcentral = 5.5
+
+2265-2265
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =25.00
+ppcentral = 5.5

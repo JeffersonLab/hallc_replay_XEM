@@ -18,12 +18,12 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_production_all_%d_%d.root";
 
   //Load Global parameters
   // Add variables to global list.
@@ -72,20 +72,21 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Include golden track information
   THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
   gHaPhysics->Add(gtr);
-// Add Rastered Beam Apparatus
+  // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
   gHaApps->Add(beam);  
-  THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
+  THaReactionPoint* hrp= new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
-  THcExtTarCor* hext = new THcExtTarCor("H.extcor"," HMS extended target corrections","H","H.react");
+  THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");
   gHaPhysics->Add(hext);
-// Add Ideal Beam Apparatus
- // THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
- // gHaApps->Add(beam);
-  // Add Physics Module to calculate primary (scattered) beam kinematics
+  // Add Ideal Beam Apparatus
+  // THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
+  // gHaApps->Add(beam);
+  // Add physics module to calculate primary (scattered) beam kinematics
   THcPrimaryKine* hkin = new THcPrimaryKine("H.kin", "HMS Single Arm Kinematics", "H", "H.rb");
   gHaPhysics->Add(hkin);
-  THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
+  // Add physics module to calculate the hodoscope efficiencies
+  THcHodoEff* heff = new THcHodoEff("hhodeff", "HMS hodo efficiency", "H.hod");
   gHaPhysics->Add(heff);
 
   // Add handler for prestart event 125.
@@ -137,23 +138,23 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   analyzer->SetCountMode(2);    // 0 = counter is # of physics triggers
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
- analyzer->SetEvent(event);
- // Set EPICS event type
- analyzer->SetEpicsEvtType(180);
- // Define crate map
- analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
- // Define output ROOT file
- analyzer->SetOutFile(ROOTFileName.Data());
- // Define output DEF-file 
- analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production_all.def");
- // Define cuts file
- analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/hstackana_production_cuts.def");    // optional
- // File to record cuts accounting information for cuts
- analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));    // optional
- // Start the actual analysis.
- analyzer->Process(run);
- // Create report file from template.
- analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production.template",
-		       Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_production_%d_%d.report", RunNumber, MaxEvent));
+  analyzer->SetEvent(event);
+  // Set EPICS event type
+  analyzer->SetEpicsEvtType(180);
+  // Define crate map
+  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
+  // Define output ROOT file
+  analyzer->SetOutFile(ROOTFileName.Data());
+  // Define output DEF-file 
+  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production_all.def");
+  // Define cuts file
+  analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/hstackana_production_cuts.def");    // optional
+  // File to record cuts accounting information for cuts
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));    // optional
+  // Start the actual analysis.
+  analyzer->Process(run);
+  // Create report file from template.
+  analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production.template",
+			Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_production_%d_%d.report", RunNumber, MaxEvent));
 
 }

@@ -16,11 +16,11 @@ void Bean_counter_carbon(Int_t runNumber){
   int nentriesD = tt->GetEntries();
   cout<<"Entries:\t"<<nentriesD<<endl;
   TString fileO;
-   fileO += "/net/cdaq/cdaql3data/cdaq/hallc-online/run_"; //read the root file from data
+   fileO += "HISTOGRAMS/COIN/ROOT/run_"; //read the root file from data
    fileO += runNumber; //read the root file from data
    fileO += "_hists_coin.root"; //read the root file from data
 
-  TFile *fout = new TFile(fileO,"RECREATE");
+   //TFile *fout = new TFile(fileO,"RECREATE");
 
   gROOT->SetBatch(kTRUE);
 
@@ -221,7 +221,7 @@ void Bean_counter_carbon(Int_t runNumber){
 
   // can2->SaveAs("tmp.pdf");
 
-  fout->Write();
+  //fout->Write();
   //  fout->Close();
   cout << "-------------------------------------------------------------------------------------------------------" << endl;
   cout << "NOTE:>>>>  " << cnts <<"  <<<<<  GOOD EVENTS have passed all cuts (update the white board and excel sheet)" << endl;

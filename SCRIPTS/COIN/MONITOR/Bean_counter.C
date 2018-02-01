@@ -16,11 +16,11 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   int nentriesD = tt->GetEntries();
   cout<<"Entries:\t"<<nentriesD<<endl;
   TString fileO;
-   fileO += "/net/cdaq/cdaql3data/cdaq/hallc-online/run_"; //read the root file from data
+   fileO += "HISTOGRAMS/COIN/ROOT/run_"; //read the root file from data
    fileO += runNumber; //read the root file from data
    fileO += "_hists_coin.root"; //read the root file from data
 
-  TFile *fout = new TFile(fileO,"RECREATE");
+   //TFile *fout = new TFile(fileO,"RECREATE");
 
   gROOT->SetBatch(kTRUE);
 
@@ -133,7 +133,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   Double_t HhodoStartTimeMean = h1HhodoStartTime->GetMean();                     
 
  
-  Double_t pOffset = 3.0; //9.5 + 10;  // in ns                                  
+  Double_t pOffset = 1.5; //9.5 + 10;  // in ns                                  
   Double_t hOffset = 335;                                                        
   Double_t speedOfLight = 29.9792; // in cm/ns                                   
   Double_t SHMScentralPathLen = 18.1*100;  // SHMS Target to focal plane path length converted to cm  
@@ -251,7 +251,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
 
   // can2->SaveAs("tmp.pdf");
 
-  fout->Write();
+  //fout->Write();
   //  fout->Close();
   cout << "-------------------------------------------------------------------------------------------------------" << endl;
   cout << "NOTE:>>>>  " << cnts <<"  <<<<<  GOOD EVENTS have passed all cuts (update the white board and excel sheet)" << endl;

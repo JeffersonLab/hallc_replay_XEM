@@ -130,30 +130,29 @@ Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / H.EDTM.scaler)*1
 = Live/Dead Time Calculations
 =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
-HMS Computer Live Time : {(TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
-HMS Computer Dead Time : {100.0 - (TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
+HMS Computer Live Time : {(hcut_TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
+HMS Computer Dead Time : {100.0 - (hcut_TRIG1.npassed / H.hTRIG1.scaler)*100.0:%3.4f} % 
 
-Pre-Scaled Ps1 HMS Computer Live Time : {(TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
-Pre-Scaled Ps1 HMS Computer Dead Time : {100.0 - (TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 HMS Computer Live Time : {(hcut_TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 HMS Computer Dead Time : {100.0 - (hcut_TRIG1.npassed / (H.hTRIG1.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
 
-Pre-Scaled Ps2 HMS Computer Live Time : {(TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
-Pre-Scaled Ps2 HMS Computer Dead Time : {100.0 - (TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 HMS Computer Live Time : {(hcut_TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 HMS Computer Dead Time : {100.0 - (hcut_TRIG2.npassed / (H.hTRIG2.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
 
-Pre-Scaled Ps3 HMS Computer Live Time : {(TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
-Pre-Scaled Ps3 HMS Computer Dead Time : {100.0 - (TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 HMS Computer Live Time : {(hcut_TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 HMS Computer Dead Time : {100.0 - (hcut_TRIG3.npassed / (H.hTRIG3.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 
-Total Live Time (EDTM) : {(edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
-Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
+Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / H.EDTM.scaler)*100.0:%3.4f} %
 
-Pre-Scaled Ps1 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
-Pre-Scaled Ps1 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[0]))*100.0:%3.4f} %
 
-Pre-Scaled Ps2 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
-Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[1]))*100.0:%3.4f} %
 
-Pre-Scaled Ps3 Total Live Time (EDTM) : {(edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
-Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
-
+Pre-Scaled Ps3 Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 
 =:=:=:=:=:=:=:
 = Hodoscopes
