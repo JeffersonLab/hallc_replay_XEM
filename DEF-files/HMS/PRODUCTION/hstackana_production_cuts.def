@@ -48,7 +48,7 @@ hcut_time_cut12                           H.dc.2x2.time > 0 && H.dc.2x2.time < 2
 
 hmsDC1Planes_large  (H.dc.1x1.nhit+H.dc.1v2.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1u2.nhit) >20
 hmsDC2Planes_large  (H.dc.2x1.nhit+H.dc.2v2.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2u2.nhit) >20
-hmsDC1or2Pln_large hmsDC1Planes_large || hmsDC2Planes_large 
+hmsDCany_large 	    hmsDC1Planes_large || hmsDC2Planes_large 
 
 hmsDC1_1hit_x1                H.dc.1x1.nhit == 1
 hmsDC1_1hit_v2                H.dc.1v2.nhit == 1
@@ -136,11 +136,11 @@ hcut_cer_elec       	  H.cer.npeSum>.5
 hcut_cer_pi       	  H.cer.npeSum<.5
 
 HMSScinGood           H.hod.goodscinhit == 1
-HMSGoodBetanotrk      H.hod.betanotrack > 0.5
+HMSGoodBetanotrk      H.hod.betanotrack > 0.8 && H.hod.betanotrack < 1.3
 
 
-HMSScinShould         HMSScinGood 
-HMSScinShoulde        HMSScinGood && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
+HMSScinShould         HMSScinGood && HMSGoodBetanotrk && !hmsDCany_large
+HMSScinShoulde        HMSScinShould && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
 HMSScinShouldh        HMSScinGood && H.cal.etotnorm <0.6&& H.cal.etotnorm>0.0&& H.cer.npeSum < 0.5
 
 HMSScinDid            HMSScinShould && H.dc.ntrack > 0

@@ -53,7 +53,8 @@ pcut_time_cut12     P.dc.2u1.time > 0 && P.dc.2u1.time < 250
 
 shmsDC1Planes_large     (P.dc.1x1.nhit + P.dc.1u2.nhit + P.dc.1u1.nhit + P.dc.1v1.nhit + P.dc.1x2.nhit + P.dc.1v2.nhit) > 20
 shmsDC2Planes_large     (P.dc.2x1.nhit + P.dc.2u2.nhit + P.dc.2u1.nhit + P.dc.2v1.nhit + P.dc.2x2.nhit + P.dc.2v2.nhit) > 20 
-
+shmsDCany_large        shmsDC1Planes_large || shmsDC2Planes_large
+			
 shms_ch1_gt0           P.dc.Ch1.nhit > 0
 shms_ch2_gt0           P.dc.Ch2.nhit > 0
 shms_ch_gt0            P.dc.Ch2.nhit > 0  && P.dc.Ch1.nhit > 0
@@ -171,9 +172,11 @@ pcut_elec_all          	  pcut_cer_ng_elec && pcut_cer_hg_elec && pcut_cal_elec
 pcut_pi_all            	  pcut_cer_ng_pi && pcut_cer_hg_pi && pcut_cal_pi
 
 shmsScinGood        P.hod.goodscinhit == 1
-shmsScinShould      shmsScinGood 
-shmsScinShoulde     shmsScinGood &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
-shmsScinShouldh     shmsScinGood && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.5
+shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
+
+shmsScinShould      shmsScinGood && shmsGoodBetanotrk && !shmsDCany_large 
+shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
+shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
 shmsScinDid         shmsScinShould && P.dc.ntrack > 0
 shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
 shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0
