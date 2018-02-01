@@ -7,10 +7,10 @@
   pmax_pr_hits = 25, 25
 
 ; pminhit(i)   minimum number of hits in each space point (one for each chamber)
-pmin_hit = 5, 5
+pmin_hit = 4, 4
 ; hmin_combos(i) minimum number of pairs in each space point ( one per chamber)
 ; should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking (JRA)
-pmin_combos = 6, 6
+pmin_combos = 3, 3
 ; hspace_point_criterion(i) minimum separation of distinct space points
 ; recommended value for hspace_point_criterion ( based on meeting
 ; Feb 2003)
@@ -89,4 +89,4 @@ pntracks_max_fp = 10
   pyhiscin  = 7, 7
 ;  ptrack_eff_test_scin_planes is the number of planes nec needed to
 ;  set sweet spot to true. 4 is extra clean, 3 is good enough for e-'s.
-  ptrack_eff_test_num_scin_planes = 3
+  ptrack_eff_test_num_scin_planes = 4
