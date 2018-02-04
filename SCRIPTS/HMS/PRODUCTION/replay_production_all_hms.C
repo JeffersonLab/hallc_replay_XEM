@@ -69,16 +69,16 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
 
-  // Include golden track information
-  THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
-  gHaPhysics->Add(gtr);
-  // Add Rastered Beam Apparatus
+   // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
   gHaApps->Add(beam);  
   THaReactionPoint* hrp= new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
   THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");
   gHaPhysics->Add(hext);
+ // Include golden track information
+  THaGoldenTrack* gtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
+  gHaPhysics->Add(gtr);
   // Add Ideal Beam Apparatus
   // THaApparatus* beam = new THaIdealBeam("IB", "Ideal Beamline");
   // gHaApps->Add(beam);

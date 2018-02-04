@@ -75,9 +75,6 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(cal);
 
-  // Include golden track information
-  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(gtr);
   // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
@@ -85,6 +82,9 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(prp);
   THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
   gHaPhysics->Add(pext);
+  // Include golden track information
+  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
+  gHaPhysics->Add(gtr);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
   THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(kin);
