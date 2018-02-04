@@ -1,0 +1,79 @@
+hcut_cer_pmt1_elec        H.cer.npe[0]>.5
+hcut_cer_pmt2_elec        H.cer.npe[0]>.5
+hcut_cer_elec       	  H.cer.npeSum>.5
+hcut_cer_pi       	  H.cer.npeSum<.5
+
+HMSScinGood           H.hod.goodscinhit == 1
+HMSGoodBetanotrk      H.hod.betanotrack > 0.8 && H.hod.betanotrack < 1.3
+
+
+HMSScinShould         HMSScinGood && HMSGoodBetanotrk && !hmsDCany_large
+HMSScinShoulde        HMSScinShould && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
+HMSScinShouldh        HMSScinGood && H.cal.etotnorm <0.6&& H.cal.etotnorm>0.0&& H.cer.npeSum < 0.5
+
+HMSScinDid            HMSScinShould && H.dc.ntrack > 0
+HMSScinDide           HMSScinShoulde && H.dc.ntrack > 0
+HMSScinDidh           HMSScinShouldh && H.dc.ntrack > 0
+
+hcut_goodHDC1x1            H.dc.1x1.nhit > 0 && H.dc.1x1.nhit < 3
+hcut_goodHDC1v2            H.dc.1v2.nhit > 0 && H.dc.1v2.nhit < 3
+hcut_goodHDC1u1            H.dc.1u1.nhit > 0 && H.dc.1u1.nhit < 3
+hcut_goodHDC1v1            H.dc.1v1.nhit > 0 && H.dc.1v1.nhit < 3
+hcut_goodHDC1u2            H.dc.1u2.nhit > 0 && H.dc.1u2.nhit < 3
+hcut_goodHDC1x2            H.dc.1x2.nhit > 0 && H.dc.1x2.nhit < 3
+
+hcut_goodHDC2x1            H.dc.2x1.nhit > 0 && H.dc.2x1.nhit < 3
+hcut_goodHDC2v2            H.dc.2v2.nhit > 0 && H.dc.2v2.nhit < 3
+hcut_goodHDC2u1            H.dc.2u1.nhit > 0 && H.dc.2u1.nhit < 3
+hcut_goodHDC2v1            H.dc.2v1.nhit > 0 && H.dc.2v1.nhit < 3
+hcut_goodHDC2u2            H.dc.2u2.nhit > 0 && H.dc.2u2.nhit < 3
+hcut_goodHDC2x2            H.dc.2x2.nhit > 0 && H.dc.2x2.nhit < 3
+
+hcut_goodHDC1              hcut_goodHDC1x1  && hcut_goodHDC1v2 && hcut_goodHDC1u1 && hcut_goodHDC1v1 && hcut_goodHDC1u2 && hcut_goodHDC1x2 
+hcut_goodHDC2              hcut_goodHDC2x1  && hcut_goodHDC2v2 && hcut_goodHDC2u1 && hcut_goodHDC2v1 && hcut_goodHDC2u2 && hcut_goodHDC2x2 
+hcut_bothGood              hcut_goodHDC1 && hcut_goodHDC2
+
+hcut_realhdc1x1            hcut_goodHDC1x1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc1v2            hcut_goodHDC1v2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc1u1            hcut_goodHDC1u1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc1v1            hcut_goodHDC1v1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc1u2            hcut_goodHDC1u2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc1x2            hcut_goodHDC1x2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2x1            hcut_goodHDC2x1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2v2            hcut_goodHDC2v2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2u1     	   hcut_goodHDC2u1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2v1            hcut_goodHDC2v1 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2u2            hcut_goodHDC2u2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+hcut_realhdc2x2            hcut_goodHDC2x2 && ((H.dc.Ch1.spacepoints+H.dc.Ch2.spacepoints)>0)
+
+hcut_FoundTrack      	   H.dc.ntrack > 0
+hcut_Found1Track           H.dc.ntrack == 1
+hcut_Found2Track           H.dc.ntrack == 2
+hcut_Found3Track           H.dc.ntrack == 3
+hcut_Found4Track           H.dc.ntrack == 4
+
+hcut_CleanTrack            H.gtr.index > -1
+hcut_Clean1Track           H.gtr.index == 0
+hcut_Clean2Track           H.gtr.index == 1
+hcut_Clean3Track           H.gtr.index == 2
+hcut_Clean4Track           H.gtr.index == 3
+
+hcut_anys1x                H.hod.1x.nhits > 0
+hcut_anys1y                H.hod.1y.nhits > 0
+hcut_anys2x                H.hod.2x.nhits > 0
+hcut_anys2y                H.hod.2y.nhits > 0
+
+hcut_goods1x               H.hod.1x.nhits > 0 && H.hod.1x.nhits < 3
+hcut_goods1y               H.hod.1y.nhits > 0 && H.hod.1y.nhits < 3
+hcut_goods1                hcut_goods1x && hcut_goods1y
+hcut_goods2x               H.hod.2x.nhits > 0 && H.hod.2x.nhits < 3
+hcut_goods2y               H.hod.2y.nhits > 0 && H.hod.2y.nhits < 3
+hcut_goods2                hcut_goods2x && hcut_goods2y
+hcut_goods1s2              hcut_goods1 && hcut_goods2
+
+HMS_hcer_track_matched_region_1 H.cer.numTracksMatched[0]>0
+HMS_hcer_track_fired_region_1 H.cer.numTracksFired[0]>0
+HMS_hcer_track_matched_region_2 H.cer.numTracksMatched[1]>0
+HMS_hcer_track_fired_region_2 H.cer.numTracksFired[1]>0
+HMS_hcer_track_matched_tot H.cer.totNumTracksMatched>0
+HMS_hcer_track_fired_tot H.cer.totNumTracksFired>0

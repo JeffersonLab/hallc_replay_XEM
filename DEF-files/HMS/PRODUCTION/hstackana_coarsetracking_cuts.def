@@ -1,0 +1,90 @@
+#add cuts to stricter times and apply them to drift distances (HMS 6 GeV Drift Chambers)
+hcut_time_cut1                            H.dc.1x1.time > 0 && H.dc.1x1.time < 250
+hcut_time_cut2                            H.dc.1v2.time > 0 && H.dc.1v2.time < 250
+hcut_time_cut3                            H.dc.1u1.time > 0 && H.dc.1u1.time < 250
+hcut_time_cut4                            H.dc.1v1.time > 0 && H.dc.1v1.time < 250
+hcut_time_cut5                            H.dc.1u2.time > 0 && H.dc.1u2.time < 250
+hcut_time_cut6                            H.dc.1x2.time > 0 && H.dc.1x2.time < 250
+hcut_time_cut7                            H.dc.2x1.time > 0 && H.dc.2x1.time < 250
+hcut_time_cut8                            H.dc.2v2.time > 0 && H.dc.1v2.time < 250
+hcut_time_cut9                            H.dc.2u1.time > 0 && H.dc.2u1.time < 250
+hcut_time_cut10                           H.dc.2v1.time > 0 && H.dc.2v1.time < 250
+hcut_time_cut11                           H.dc.2u2.time > 0 && H.dc.2u2.time < 250
+hcut_time_cut12                           H.dc.2x2.time > 0 && H.dc.2x2.time < 250
+
+hmsDC1Planes_large  (H.dc.1x1.nhit+H.dc.1v2.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1u2.nhit) >20
+hmsDC2Planes_large  (H.dc.2x1.nhit+H.dc.2v2.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2u2.nhit) >20
+hmsDCany_large 	    hmsDC1Planes_large || hmsDC2Planes_large 
+
+hmsDC1_1hit_x1                H.dc.1x1.nhit == 1
+hmsDC1_1hit_v2                H.dc.1v2.nhit == 1
+hmsDC1_1hit_u1                H.dc.1u1.nhit == 1
+hmsDC1_1hit_v1                H.dc.1v1.nhit == 1
+hmsDC1_1hit_u2                H.dc.1u2.nhit == 1
+hmsDC1_1hit_x2                H.dc.1x2.nhit == 1
+
+hmsDC2_1hit_x1                H.dc.2x1.nhit == 1
+hmsDC2_1hit_v2                H.dc.2v2.nhit == 1
+hmsDC2_1hit_u1                H.dc.2u1.nhit == 1
+hmsDC2_1hit_v1                H.dc.2v1.nhit == 1
+hmsDC2_1hit_u2                H.dc.2u2.nhit == 1
+hmsDC2_1hit_x2                H.dc.2x2.nhit == 1
+
+h1hit1                H.dc.1x1.nhit >= 1
+h1hit2                H.dc.1v2.nhit >= 1
+h1hit3                H.dc.1u1.nhit >= 1
+h1hit4                H.dc.1v1.nhit >= 1
+h1hit5                H.dc.1u2.nhit >= 1
+h1hit6                H.dc.1x2.nhit >= 1
+
+h2hit1                H.dc.2x1.nhit >= 1
+h2hit2                H.dc.2v2.nhit >= 1
+h2hit3                H.dc.2u1.nhit >= 1
+h2hit4                H.dc.2v1.nhit >= 1
+h2hit5                H.dc.2u2.nhit >= 1
+h2hit6                H.dc.2x2.nhit >= 1
+
+hmsDC1Planes6hits   (H.dc.1x1.nhit+H.dc.1v2.nhit+H.dc.1u1.nhit+H.dc.1v1.nhit+H.dc.1x2.nhit+H.dc.1u2.nhit) ==6
+hmsDC2Planes6hits   (H.dc.2x1.nhit+H.dc.2v2.nhit+H.dc.2u1.nhit+H.dc.2v1.nhit+H.dc.2x2.nhit+H.dc.2u2.nhit )==6
+hmsDC1_5hits_x1     hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_x1     h1hit1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_v2     hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_v2     h1hit2&&hmsDC1_1hit_x1&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_u1     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_6hits_u1     h1hit3&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_v1     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2 
+hmsDC1_6hits_v1     h1hit4&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_x2&&hmsDC1_1hit_u2
+hmsDC1_5hits_x2     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_u2
+hmsDC1_6hits_x2     h1hit6&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_u2
+hmsDC1_5hits_u2     hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+hmsDC1_6hits_u2     h1hit5&&hmsDC1_1hit_x1&&hmsDC1_1hit_v2&&hmsDC1_1hit_u1&&hmsDC1_1hit_v1&&hmsDC1_1hit_x2
+
+hmsDC2_5hits_x1     hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_x1     h2hit1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_v2     hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_v2     h2hit2&&hmsDC2_1hit_x1&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_u1     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_6hits_u1     h2hit3&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_v1     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2 
+hmsDC2_6hits_v1     h2hit4&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_x2&&hmsDC2_1hit_u2
+hmsDC2_5hits_x2     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_u2
+hmsDC2_6hits_x2     h2hit6&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_u2
+hmsDC2_5hits_u2     hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+hmsDC2_6hits_u2     h2hit5&&hmsDC2_1hit_x1&&hmsDC2_1hit_v2&&hmsDC2_1hit_u1&&hmsDC2_1hit_v1&&hmsDC2_1hit_x2
+
+hms1HitsLt            H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && g.evtyp==1
+hms2HitsLt            H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1
+hmsHitsLt             H.dc.Ch1.nhit <= H.dc.Ch1.maxhits && H.dc.Ch2.nhit <= H.dc.Ch2.maxhits && g.evtyp==1
+hmsDC1PlanesGT        (h1hit1 + h1hit2 + h1hit3 + h1hit4 + h1hit5 + h1hit6 )>=5
+hmsDC2PlanesGT        (h2hit1 + h2hit2 + h2hit3 + h2hit4 + h2hit5 + h2hit6 )>=5
+hmsPlanesGT           hmsDC1PlanesGT && hmsDC2PlanesGT
+hmsHitsPlanes         (H.dc.Ch1.nhit <= H.dc.Ch1.maxhits) && (H.dc.Ch2.nhit <= H.dc.Ch2.maxhits) && hmsPlanesGT
+hSpacePoints          H.dc.Ch1.spacepoints >= 1 && H.dc.Ch2.spacepoints >=1
+hSpacePointsStub      H.dc.stubtest==1 && H.dc.Ch1.spacepoints >=1 && H.dc.Ch2.spacepoints >=1
+hFoundTrack           H.dc.ntrack>0 
+hStubLT               H.dc.stubtest==1
+f1HSpacePoints        hms1HitsLt && hmsDC1PlanesGT && H.dc.Ch1.spacepoints==0 && g.evtyp==1
+f2HSpacePoints        hms2HitsLt && hmsDC2PlanesGT && H.dc.Ch2.spacepoints==0 && g.evtyp==1
+hTest1                hmsHitsPlanes && (!hSpacePoints)
+hTest2                hSpacePoints && (!hStubLT)
+

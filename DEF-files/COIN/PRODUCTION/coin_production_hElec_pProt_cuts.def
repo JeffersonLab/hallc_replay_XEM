@@ -62,6 +62,8 @@ ALL_COIN_NO_EDTM  T.coin.hEDTM_tdcTime==0.0&&T.coin.pEDTM_tdcTime==0.0&&ALL_even
 Decode_master     ALL_COIN_NO_EDTM
 
 Block: CoarseTracking
+#include "DEF-files/SHMS/PRODUCTION/pstackana_coarsetracking_cuts.def"
+#include "DEF-files/HMS/PRODUCTION/hstackana_coarsetracking_cuts.def"
 CoarseTracking_master ALL_COIN_NO_EDTM
 
 Block: CoarseReconstruct
@@ -71,6 +73,8 @@ Block: Tracking
 Tracking_master  ALL_COIN_NO_EDTM
 
 Block: Reconstruct
+#include "DEF-files/SHMS/PRODUCTION/pstackana_reconstruction_cuts.def"
+#include "DEF-files/HMS/PRODUCTION/hstackana_reconstruction_cuts.def"
 Reconstruct_master ALL_COIN_NO_EDTM
 
 hcleantrack        H.gtr.index > -1
@@ -87,5 +91,3 @@ select_e_cut       e_cut_cal && e_cut_cer
 betacut_proton     P.gtr.beta > 0.6 && P.gtr.beta < 0.8
 coincut_ep         ccleantrack && select_e_cut && betacut_proton
 
-#include "DEF-files/HMS/PRODUCTION/hstackana_production_cuts.def"
-#include "DEF-files/SHMS/PRODUCTION/pstackana_production_cuts.def"

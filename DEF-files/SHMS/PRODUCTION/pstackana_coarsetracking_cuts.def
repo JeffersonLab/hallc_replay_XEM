@@ -1,0 +1,114 @@
+# Add cuts to stricter times and apply them to drift distances 
+pcut_time_cut1      P.dc.1u1.time > 0 && P.dc.1u1.time < 250
+pcut_time_cut2      P.dc.1u2.time > 0 && P.dc.1u2.time < 250
+pcut_time_cut3      P.dc.1x1.time > 0 && P.dc.1x1.time < 250
+pcut_time_cut4      P.dc.1x2.time > 0 && P.dc.1x2.time < 250
+pcut_time_cut5      P.dc.1v1.time > 0 && P.dc.1v1.time < 250
+pcut_time_cut6      P.dc.1v2.time > 0 && P.dc.1v2.time < 250
+pcut_time_cut7      P.dc.2v2.time > 0 && P.dc.2v2.time < 250
+pcut_time_cut8      P.dc.2v1.time > 0 && P.dc.2v1.time < 250
+pcut_time_cut9      P.dc.2x2.time > 0 && P.dc.2x2.time < 250
+pcut_time_cut10     P.dc.2x1.time > 0 && P.dc.2x1.time < 250
+pcut_time_cut11     P.dc.2u2.time > 0 && P.dc.2u2.time < 250
+pcut_time_cut12     P.dc.2u1.time > 0 && P.dc.2u1.time < 250
+
+shmsDC1Planes_large     (P.dc.1x1.nhit + P.dc.1u2.nhit + P.dc.1u1.nhit + P.dc.1v1.nhit + P.dc.1x2.nhit + P.dc.1v2.nhit) > 20
+shmsDC2Planes_large     (P.dc.2x1.nhit + P.dc.2u2.nhit + P.dc.2u1.nhit + P.dc.2v1.nhit + P.dc.2x2.nhit + P.dc.2v2.nhit) > 20 
+shmsDCany_large        shmsDC1Planes_large || shmsDC2Planes_large
+			
+shms_ch1_gt0           P.dc.Ch1.nhit > 0
+shms_ch2_gt0           P.dc.Ch2.nhit > 0
+shms_ch_gt0            P.dc.Ch2.nhit > 0  && P.dc.Ch1.nhit > 0
+shms_ch_gt4            P.dc.Ch2.nhit > 3  && P.dc.Ch1.nhit > 3
+shms_ch2_gt0_noch1     P.dc.Ch2.nhit > 0  && P.dc.Ch1.nhit == 0
+shms_ch1_gt0_noch2     P.dc.Ch1.nhit > 0  && P.dc.Ch2.nhit == 0
+shms_noch1_noch2       P.dc.Ch1.nhit == 0 && P.dc.Ch2.nhit == 0
+shms_ch_gt0_track      shms_ch_gt0 && P.dc.ntrack > 0
+shms_ch_gt4_track      shms_ch_gt4 && P.dc.ntrack > 0
+
+shms_ch1_gt0_gtime           P.dc.Ch1.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch2_gt0_gtime           P.dc.Ch2.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch_gt0_gtime            P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit > 0 && pcut_good_S1_S2X_time
+shms_ch_gt4_gtime            P.dc.Ch2.nhit > 3 && P.dc.Ch1.nhit > 3 && pcut_good_S1_S2X_time
+shms_ch2_gt0_noch1_gtime     P.dc.Ch2.nhit > 0 && P.dc.Ch1.nhit == 0 && pcut_good_S1_S2X_time
+shms_ch1_gt0_noch2_gtime     P.dc.Ch1.nhit > 0 && P.dc.Ch2.nhit == 0 && pcut_good_S1_S2X_time
+shms_noch1_noch2_gtime       P.dc.Ch1.nhit == 0 && P.dc.Ch2.nhit == 0 && pcut_good_S1_S2X_time
+shms_ch_gt0_track_gtime      shms_ch_gt0 && P.dc.ntrack > 0 && pcut_good_S1_S2X_time
+shms_ch_gt4_track_gtime      shms_ch_gt4 && P.dc.ntrack > 0 && pcut_good_S1_S2X_time
+
+shmsDC1_1hit_x1     P.dc.1x1.nhit == 1
+shmsDC1_1hit_u1     P.dc.1u1.nhit == 1
+shmsDC1_1hit_u2     P.dc.1u2.nhit == 1
+shmsDC1_1hit_v1     P.dc.1v1.nhit == 1
+shmsDC1_1hit_v2     P.dc.1v2.nhit == 1
+shmsDC1_1hit_x2     P.dc.1x2.nhit == 1
+
+shmsDC2_1hit_x1     P.dc.2x1.nhit == 1
+shmsDC2_1hit_u1	    P.dc.2u1.nhit == 1
+shmsDC2_1hit_u2     P.dc.2u2.nhit == 1
+shmsDC2_1hit_v1     P.dc.2v1.nhit == 1
+shmsDC2_1hit_v2     P.dc.2v2.nhit == 1
+shmsDC2_1hit_x2     P.dc.2x2.nhit == 1
+
+p1hit1     P.dc.1x1.nhit >= 1
+p1hit2     P.dc.1u1.nhit >= 1
+p1hit3     P.dc.1u2.nhit >= 1
+p1hit4     P.dc.1v1.nhit >= 1
+p1hit5     P.dc.1v2.nhit >= 1
+p1hit6     P.dc.1x2.nhit >= 1
+
+p2hit1     P.dc.2x1.nhit >= 1
+p2hit2     P.dc.2u1.nhit >= 1
+p2hit3     P.dc.2u2.nhit >= 1
+p2hit4     P.dc.2v1.nhit >= 1
+p2hit5     P.dc.2v2.nhit >= 1
+p2hit6     P.dc.2x2.nhit >= 1
+
+shmsDC1Planes6hits     shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_u2 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC2Planes6hits     shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_u2 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+
+shmsDC1_5hits_x1     shmsDC1_1hit_u1 && shmsDC1_1hit_u2 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_6hits_x1     p1hit1 && shmsDC1_1hit_u1 && shmsDC1_1hit_u2 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_5hits_u1     shmsDC1_1hit_x1 && shmsDC1_1hit_u2 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_6hits_u1     p1hit2 && shmsDC1_1hit_x1 && shmsDC1_1hit_u2 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_5hits_u2     shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_6hits_u2     p1hit3 && shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_v1 && shmsDC1_1hit_v2
+shmsDC1_5hits_v1     shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_u2 && shmsDC1_1hit_v2
+shmsDC1_6hits_v1     p1hit4 && shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_u2 && shmsDC1_1hit_v2
+shmsDC1_5hits_v2     shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_u2 && shmsDC1_1hit_v1
+shmsDC1_6hits_v2     p1hit5 && shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_x2 && shmsDC1_1hit_u2 && shmsDC1_1hit_v1
+shmsDC1_5hits_x2     shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_v1 && shmsDC1_1hit_u2 && shmsDC1_1hit_v2
+shmsDC1_6hits_x2     p1hit6 && shmsDC1_1hit_x1 && shmsDC1_1hit_u1 && shmsDC1_1hit_v1 && shmsDC1_1hit_u2 && shmsDC1_1hit_v2
+
+shmsDC2_5hits_x1     shmsDC2_1hit_u1 && shmsDC2_1hit_u2 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_6hits_x1     p2hit1 && shmsDC2_1hit_u1 && shmsDC2_1hit_u2 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_5hits_u1     shmsDC2_1hit_x1 && shmsDC2_1hit_u2 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_6hits_u1     p2hit2 && shmsDC2_1hit_x1 && shmsDC2_1hit_u2 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_5hits_u2     shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_6hits_u2     p2hit3 && shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_v1 && shmsDC2_1hit_v2
+shmsDC2_5hits_v1     shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_u2 && shmsDC2_1hit_v2
+shmsDC2_6hits_v1     p2hit4 && shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_u2 && shmsDC2_1hit_v2
+shmsDC2_5hits_v2     shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_u2 && shmsDC2_1hit_v1
+shmsDC2_6hits_v2     p2hit5 && shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_x2 && shmsDC2_1hit_u2 && shmsDC2_1hit_v1
+shmsDC2_5hits_x2     shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_v1 && shmsDC2_1hit_u2 && shmsDC2_1hit_v2
+shmsDC2_6hits_x2     p2hit6 && shmsDC2_1hit_x1 && shmsDC2_1hit_u1 && shmsDC2_1hit_v1 && shmsDC2_1hit_u2 && shmsDC2_1hit_v2
+
+shms1HitsLt     P.dc.Ch1.nhit <= P.dc.Ch1.maxhits && g.evtyp == 1
+shms2HitsLt     P.dc.Ch2.nhit <= P.dc.Ch2.maxhits && g.evtyp == 1
+shmsHitsLt      P.dc.Ch1.nhit <= P.dc.Ch1.maxhits && P.dc.Ch2.nhit <= P.dc.Ch2.maxhits && g.evtyp == 1
+
+shmsDC1PlanesGT     (p1hit1 + p1hit2 + p1hit3 + p1hit4 + p1hit5 + p1hit6 ) >= 5
+shmsDC2PlanesGT     (p2hit1 + p2hit2 + p2hit3 + p2hit4 + p2hit5 + p2hit6 ) >= 5
+shmsPlanesGT        shmsDC1PlanesGT && shmsDC2PlanesGT
+shmsHitsPlanes      (P.dc.Ch1.nhit <= 6) && (P.dc.Ch2.nhit <= 6) && shmsPlanesGT
+
+pSpacePoints         P.dc.Ch1.spacepoints >= 1 && P.dc.Ch2.spacepoints >= 1
+pSpacePointsStub     P.dc.stubtest == 1 && P.dc.Ch1.spacepoints >= 1 && P.dc.Ch2.spacepoints >= 1
+pcut_FoundTrack      P.dc.ntrack > 0 
+pStubLT              P.dc.stubtest == 1
+f1PSpacePoints       shms1HitsLt && shmsDC1PlanesGT && P.dc.Ch1.spacepoints == 0 && g.evtyp == 1
+f2PSpacePoints       shms2HitsLt && shmsDC2PlanesGT && P.dc.Ch2.spacepoints == 0 && g.evtyp == 1
+
+pTest1     shmsHitsPlanes && (!pSpacePoints)
+pTest2	   pSpacePoints && (!pStubLT)
+

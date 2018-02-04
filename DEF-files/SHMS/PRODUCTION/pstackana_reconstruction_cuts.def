@@ -1,0 +1,120 @@
+pcut_cer_ng_elec    	  P.ngcer.npeSum > 0.5
+pcut_cer_ng_pi      	  P.ngcer.npeSum <= 0.5
+pcut_cer_hg_elec	  P.hgcer.npeSum > 0.5
+pcut_cer_hg_pi	  	  P.hgcer.npeSum <= 0.5
+pcut_cer_pi_both       	  pcut_cer_ng_pi && pcut_cer_hg_pi
+pcut_cer_elec_both     	  pcut_cer_ng_elec && pcut_cer_hg_elec
+pcut_cal_elec          	  P.cal.etracknorm > 0.6 && P.cal.etracknorm < 1.6
+pcut_cal_pi            	  P.cal.etracknorm <= 0.6 && P.cal.etracknorm > 0.
+pcut_elec_all          	  pcut_cer_ng_elec && pcut_cer_hg_elec && pcut_cal_elec
+pcut_pi_all            	  pcut_cer_ng_pi && pcut_cer_hg_pi && pcut_cal_pi
+
+shmsScinGood        P.hod.goodscinhit == 1
+shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
+
+shmsScinShould      shmsScinGood && shmsGoodBetanotrk && !shmsDCany_large 
+shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
+shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
+shmsScinDid         shmsScinShould && P.dc.ntrack > 0
+shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
+shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0
+
+pcut_goodHDC1x1     P.dc.1x1.nhit > 0 && P.dc.1x1.nhit < 3
+pcut_goodHDC1u2     P.dc.1u2.nhit > 0 && P.dc.1u2.nhit < 3
+pcut_goodHDC1u1     P.dc.1u1.nhit > 0 && P.dc.1u1.nhit < 3
+pcut_goodHDC1v1     P.dc.1v1.nhit > 0 && P.dc.1v1.nhit < 3
+pcut_goodHDC1v2     P.dc.1v2.nhit > 0 && P.dc.1v2.nhit < 3
+pcut_goodHDC1x2     P.dc.1x2.nhit > 0 && P.dc.1x2.nhit < 3
+
+pcut_goodHDC2x1     P.dc.2x1.nhit > 0 && P.dc.2x1.nhit < 3
+pcut_goodHDC2u2     P.dc.2u2.nhit > 0 && P.dc.2u2.nhit < 3
+pcut_goodHDC2u1     P.dc.2u1.nhit > 0 && P.dc.2u1.nhit < 3
+pcut_goodHDC2v1     P.dc.2v1.nhit > 0 && P.dc.2v1.nhit < 3
+pcut_goodHDC2v2     P.dc.2v2.nhit > 0 && P.dc.2v2.nhit < 3
+pcut_goodHDC2x2     P.dc.2x2.nhit > 0 && P.dc.2x2.nhit < 3
+
+pcut_goodHDC1     pcut_goodHDC1x1  && pcut_goodHDC1u2 && pcut_goodHDC1u1 && pcut_goodHDC1v1 && pcut_goodHDC1v2 && pcut_goodHDC1x2 
+pcut_goodHDC2     pcut_goodHDC2x1  && pcut_goodHDC2u2 && pcut_goodHDC2u1 && pcut_goodHDC2v1 && pcut_goodHDC2v2 && pcut_goodHDC2x2 
+pcut_bothGood     pcut_goodHDC1 && pcut_goodHDC2
+
+pcut_realhdc1x1     pcut_goodHDC1x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1u2     pcut_goodHDC1u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1u1     pcut_goodHDC1u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1v1     pcut_goodHDC1v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1v2     pcut_goodHDC1v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc1x2     pcut_goodHDC1x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+
+pcut_realhdc2x1     pcut_goodHDC2x1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2u2     pcut_goodHDC2u2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2u1     pcut_goodHDC2u1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2v1     pcut_goodHDC2v1 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2v2     pcut_goodHDC2v2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+pcut_realhdc2x2     pcut_goodHDC2x2 && ((P.dc.Ch1.spacepoints + P.dc.Ch2.spacepoints) > 0)
+
+pcut_Found1Track     P.dc.ntrack == 1
+pcut_Found2Track     P.dc.ntrack == 2
+pcut_Found3Track     P.dc.ntrack == 3
+pcut_Found4Track     P.dc.ntrack == 4
+
+pcut_CleanTrack      P.gtr.index > -1
+pcut_Clean1Track     P.gtr.index == 0
+pcut_Clean2Track     P.gtr.index == 1
+pcut_Clean3Track     P.gtr.index == 2
+pcut_Clean4Track     P.gtr.index == 3
+
+pcut_CleanTrack_cer_elec     (P.gtr.index > -1) && pcut_cer_elec_both
+pcut_p1hit1_cer_elec	     p1hit1 && pcut_cer_elec_both
+pcut_CleanTrack_cal_elec     (P.gtr.index > -1) && pcut_cal_elec
+pcut_p1hit1_cal_elec         p1hit1 && pcut_cal_elec
+
+pcut_anys1x     P.hod.1x.nhits > 0
+pcut_anys1y     P.hod.1y.nhits > 0
+pcut_anys2x     P.hod.2x.nhits > 0
+pcut_anys2y     P.hod.2y.nhits > 0
+
+pcut_goods1x      P.hod.1x.nhits > 0 && P.hod.1x.nhits < 3
+pcut_goods1y      P.hod.1y.nhits > 0 && P.hod.1y.nhits < 3
+pcut_goods1       pcut_goods1x && pcut_goods1y
+pcut_goods2x      P.hod.2x.nhits > 0 && P.hod.2x.nhits < 3
+pcut_goods2y      P.hod.2y.nhits > 0 && P.hod.2y.nhits < 3
+pcut_goods2       pcut_goods2x && pcut_goods2y
+pcut_goods1s2     pcut_goods1 && pcut_goods2
+
+SHMS_hgcer_track_matched_region_1 P.hgcer.numTracksMatched[0]>0
+SHMS_hgcer_track_fired_region_1 P.hgcer.numTracksFired[0]>0
+SHMS_hgcer_track_matched_region_2 P.hgcer.numTracksMatched[1]>0
+SHMS_hgcer_track_fired_region_2 P.hgcer.numTracksFired[1]>0
+SHMS_hgcer_track_matched_region_3 P.hgcer.numTracksMatched[2]>0
+SHMS_hgcer_track_fired_region_3 P.hgcer.numTracksFired[2]>0
+SHMS_hgcer_track_matched_region_4 P.hgcer.numTracksMatched[3]>0
+SHMS_hgcer_track_fired_region_4 P.hgcer.numTracksFired[3]>0
+SHMS_hgcer_track_matched_tot P.hgcer.totNumTracksMatched>0
+SHMS_hgcer_track_fired_tot P.hgcer.totNumTracksFired>0
+
+SHMS_ngcer_track_matched_region_1 P.ngcer.numTracksMatched[0]>0
+SHMS_ngcer_track_fired_region_1 P.ngcer.numTracksFired[0]>0
+SHMS_ngcer_track_matched_region_2 P.ngcer.numTracksMatched[1]>0
+SHMS_ngcer_track_fired_region_2 P.ngcer.numTracksFired[1]>0
+SHMS_ngcer_track_matched_region_3 P.ngcer.numTracksMatched[2]>0
+SHMS_ngcer_track_fired_region_3 P.ngcer.numTracksFired[2]>0
+SHMS_ngcer_track_matched_region_4 P.ngcer.numTracksMatched[3]>0
+SHMS_ngcer_track_fired_region_4 P.ngcer.numTracksFired[3]>0
+SHMS_ngcer_track_matched_tot P.ngcer.totNumTracksMatched>0
+SHMS_ngcer_track_fired_tot P.ngcer.totNumTracksFired>0
+
+SHMS_aero_track_matched_region_1 P.aero.numTracksMatched[0]>0
+SHMS_aero_track_fired_region_1 P.aero.numTracksFired[0]>0
+SHMS_aero_track_matched_region_2 P.aero.numTracksMatched[1]>0
+SHMS_aero_track_fired_region_2 P.aero.numTracksFired[1]>0
+SHMS_aero_track_matched_region_3 P.aero.numTracksMatched[2]>0
+SHMS_aero_track_fired_region_3 P.aero.numTracksFired[2]>0
+SHMS_aero_track_matched_region_4 P.aero.numTracksMatched[3]>0
+SHMS_aero_track_fired_region_4 P.aero.numTracksFired[3]>0
+SHMS_aero_track_matched_region_5 P.aero.numTracksMatched[4]>0
+SHMS_aero_track_fired_region_5 P.aero.numTracksFired[4]>0
+SHMS_aero_track_matched_region_6 P.aero.numTracksMatched[5]>0
+SHMS_aero_track_fired_region_6 P.aero.numTracksFired[5]>0
+SHMS_aero_track_matched_region_7 P.aero.numTracksMatched[6]>0
+SHMS_aero_track_fired_region_7 P.aero.numTracksFired[6]>0
+SHMS_aero_track_matched_tot P.aero.totNumTracksMatched>0
+SHMS_aero_track_fired_tot P.aero.totNumTracksFired>0
