@@ -1,6 +1,6 @@
 {
-    TFile* newYieldF = new TFile("SCRIPTS/COIN/MONITOR/coin_monitor.root", "RECREATE");
-    TTree* TY_new = new TTree("Y","SCRIPTS/COIN/MONITOR/coin_monitor tree");
+    TFile* newYieldF = new TFile("ROOTfiles/coin_monitor.root", "RECREATE");
+    TTree* TY_new = new TTree("Y","coin_monitor tree");
     int run_new, tgt_new, kin_new, pN_trig_new, hN_trig_new;
     double pYpc_new, hYpc_new, pQ_new, hQ_new;
     double pHadTrackEff_new, pHadTrackEffErr_new, hElecTrackEff_new, hElecTrackEffErr_new;

@@ -1,5 +1,5 @@
 void coin_monitor_graph(int runMin = -1, int runMax = -1) {
-	TFile* yieldF = new TFile("SCRIPTS/COIN/MONITOR/coin_monitor.root","READ");
+	TFile* yieldF = new TFile("ROOTfiles/coin_monitor.root","READ");
 	TTree* TY=(TTree*)yieldF->Get("Y");
 
 	//gStyle->SetOptTitle(kFALSE);

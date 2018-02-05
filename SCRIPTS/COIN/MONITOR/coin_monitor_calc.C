@@ -120,7 +120,7 @@ void coin_monitor_calc(Int_t RunNumber = 0, Int_t TargetType = 0, Int_t Kinemati
 
 	// Open old data, copy to new tree.
 	// We skip if an old datum's run number matches the one the user specified.
-	TFile* newYieldF = new TFile("SCRIPTS/COIN/MONITOR/coin_monitor_new.root", "RECREATE");
+	TFile* newYieldF = new TFile("ROOTfiles/coin_monitor_new.root", "RECREATE");
 	TTree* TY_new = new TTree("Y","coin_monitor tree");
 	int run_new, tgt_new, kin_new, pN_trig_new, hN_trig_new;
 	double pYpc_new, hYpc_new, pQ_new, hQ_new;
@@ -143,7 +143,7 @@ void coin_monitor_calc(Int_t RunNumber = 0, Int_t TargetType = 0, Int_t Kinemati
 	TY_new->Branch("h3of4Eff",&h3of4Eff_new);
 	TY_new->Branch("roc2PS6liveTime",&roc2PS6liveTime_new);
 
-	TFile* yieldF = new TFile("SCRIPTS/COIN/MONITOR/coin_monitor.root","READ");
+	TFile* yieldF = new TFile("ROOTfiles/coin_monitor.root","READ");
 	TTree* TY_old = (TTree*)yieldF->Get("Y");
 
 	int run_old, tgt_old, kin_old, pN_trig_old, hN_trig_old;
@@ -219,5 +219,5 @@ void coin_monitor_calc(Int_t RunNumber = 0, Int_t TargetType = 0, Int_t Kinemati
 	// Rename new root file to old one
 	newYieldF->Write();
 	newYieldF->Close();
-	gSystem->Exec("mv SCRIPTS/COIN/MONITOR/coin_monitor_new.root SCRIPTS/COIN/MONITOR/coin_monitor.root");
+	gSystem->Exec("mv ROOTfiles/coin_monitor_new.root ROOTfiles/coin_monitor.root");
 }
