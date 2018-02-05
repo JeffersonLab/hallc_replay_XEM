@@ -139,7 +139,7 @@ void replay_production_hms_kpp(Int_t RunNumber=0, Int_t MaxEvent=0) {
  // Define output DEF-file 
  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production_kpp.def");
  // Define cuts file
- analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/hstackana_production_cuts_kpp.def");    // optional
+ analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts_kpp.def");    // optional
  // File to record cuts accounting information for cuts
  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));    // optional
  // Start the actual analysis.
