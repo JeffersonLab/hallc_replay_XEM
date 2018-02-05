@@ -1,3 +1,5 @@
+Block: CoarseTracking
+
 # Add cuts to stricter times and apply them to drift distances 
 pcut_time_cut1      P.dc.1u1.time > 0 && P.dc.1u1.time < 250
 pcut_time_cut2      P.dc.1u2.time > 0 && P.dc.1u2.time < 250

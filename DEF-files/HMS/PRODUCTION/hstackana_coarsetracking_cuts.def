@@ -1,3 +1,5 @@
+Block: CoarseTracking
+
 #add cuts to stricter times and apply them to drift distances (HMS 6 GeV Drift Chambers)
 hcut_time_cut1                            H.dc.1x1.time > 0 && H.dc.1x1.time < 250
 hcut_time_cut2                            H.dc.1v2.time > 0 && H.dc.1v2.time < 250
