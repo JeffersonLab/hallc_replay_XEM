@@ -22,31 +22,19 @@ calculating beam position
 ; Various fast raster quantities: gUse* are flags
 
 
- ; gfr_cal_mom  = 6.4  ; = beam momnetum during calibration run 
-   gfr_cal_mom  = 2.218  ; = beam momentum during Winter '17 run             
-      
- ; gfrxa_adcpercm = 97666.7;
- ; gfrxb_adcpercm = 97333.3;
- ; gfrya_adcpercm = 113667;
- ; gfryb_adcpercm = 114333;
+  gfr_cal_mom  = 6.4  ; = beam momnetum during jan 2018 3 pass 
+       
+  gfrya_adcpercm = (77755.-57411.)/.2;
+  gfryb_adcpercm = (71093.-52056.)/.2;
+  gfrxa_adcpercm = (75733.-51938.)/.2;
+  gfrxb_adcpercm =  (79778.-57293.)/.2;
 
- ; gfrxa_adc_zero_offset = 67800;
- ; gfrxb_adc_zero_offset = 69050;
- ; gfrya_adc_zero_offset = 67700;
- ; gfryb_adc_zero_offset = 67000;
+  gfrya_adc_zero_offset = (77755.+57411.)/2.;
+  gfryb_adc_zero_offset = (71093.+52056.)/2.;
+  gfrxa_adc_zero_offset = (75733.+51938.)/2.;
+  gfrxb_adc_zero_offset = (79778.+57293.)/2. ;
 
-  ; raster constants from Winter '17 Commissioning shms run 1565
-
-    gfrya_adcpercm = 56333.3;
-    gfryb_adcpercm = 56000;
-    gfrxa_adcpercm = 67000.0;
-    gfrxb_adcpercm = 62666.6;
-
-    gfrya_adc_zero_offset = 67200;
-    gfryb_adc_zero_offset = 65650;
-    gfrxa_adc_zero_offset = 65200;
-    gfrxb_adc_zero_offset = 67050;
-
+ 
 ; positions of FR magnets relative to target
   gfrx_dist  = 1375   ; cm
   gfry_dist  = 1337   ; cm
