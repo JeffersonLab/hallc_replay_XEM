@@ -154,6 +154,17 @@ Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (
 Pre-Scaled Ps3 Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 
+
+3/4      Pre-Trigger 50 ns Gate  : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+EL-REAL  Pre-Trigger 50 ns Gate  : {H.hTRIG2.scalerRate/1000.:%.3f} kHz
+EL-CLEAN Pre-Trigger 50 ns Gate  : {H.hTRIG3.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 100 ns Gate : {H.hPRE100.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 150 ns Gate : {H.hPRE150.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 200 ns Gate : {H.hPRE200.scalerRate/1000.:%.3f} kHz
+
 =:=:=:=:=:=:=:
 = Hodoscopes
 =:=:=:=:=:=:=:

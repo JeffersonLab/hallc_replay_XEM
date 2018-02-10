@@ -107,7 +107,12 @@ ppcentral = 2.50971
 
 
 # start the Jan 12 commissioning
-
+1751
+gpbeam = 6.43
+gtargmass_amu=1.00794
+ppartmass = 0.00051099
+ptheta_lab = 8.0
+ppcentral = 3.0
 
 1754-1778
 gpbeam = 6.430
@@ -135,7 +140,7 @@ gpbeam = 6.430
 gtargmass_amu=2.014101
 ppartmass = 0.00051099
 ptheta_lab = 25.015
-ppcentral = 1.4cd ..
+ppcentral = 1.4
 
 # Q2 defocussed tune
 1791

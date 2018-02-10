@@ -306,7 +306,7 @@ gtargmass_amu=2.014101
 htheta_lab = -24.995
 hpcentral = 1.4
 hpartmass = 0.00051099
-gpbeam = 6.430
+gpbeam = 6.43
 
 # Q2 defocussed tune
 1327

@@ -191,6 +191,16 @@ OG 6 GeV Electronic Dead Time (100, 200) : {((H.pPRE100.scaler - H.pPRE200.scale
 OG 6 GeV Electronic Live Time (150, 200) : {100.0 - ((H.pPRE150.scaler - H.pPRE200.scaler)/H.pPRE150.scaler):%3.4f} %
 OG 6 GeV Electronic Dead Time (150, 200) : {((H.pPRE150.scaler - H.pPRE200.scaler)/H.pPRE150.scaler):%3.4f} %
 
+3/4      Pre-Trigger 50 ns Gate  : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+EL-REAL  Pre-Trigger 50 ns Gate  : {H.hTRIG2.scalerRate/1000.:%.3f} kHz
+EL-CLEAN Pre-Trigger 50 ns Gate  : {H.hTRIG3.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 100 ns Gate : {H.hPRE100.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 150 ns Gate : {H.hPRE150.scalerRate/1000.:%.3f} kHz
+
+3/4 Pre-Trigger 200 ns Gate : {H.hPRE200.scalerRate/1000.:%.3f} kHz
+
 
 =:=:=:=:=:=:=:
 = Hodoscopes
