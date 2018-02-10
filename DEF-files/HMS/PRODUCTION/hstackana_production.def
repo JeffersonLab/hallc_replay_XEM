@@ -1,6 +1,8 @@
 #include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"
 #include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"
 #include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"
+#include "DEF-files/HMS/TEST_STANDS/DC/hdc_resid.def"
+#include "DEF-files/HMS/PRODUCTION/DC/hdc_eff_histos.def"
 #include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"
 #include "DEF-files/HMS/PRODUCTION/KIN/hkin_histos.def"
 #include "DEF-files/HMS/PRODUCTION/GTR/hgtr_histos.def"

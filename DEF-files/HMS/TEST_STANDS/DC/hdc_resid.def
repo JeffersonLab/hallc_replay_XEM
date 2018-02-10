@@ -1,0 +1,35 @@
+#-----------------------------
+# HMS DC RESIDUALS PER PLANE 
+#-----------------------------
+
+TH1F hdc1u1_residuals 'HMS 1U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[0]  200 -1.0 1.0
+TH1F hdc1u2_residuals 'HMS 1U2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[1]  200 -1.0 1.0
+TH1F hdc1x1_residuals 'HMS 1X1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[2]  200 -1.0 1.0
+TH1F hdc1x2_residuals 'HMS 1X2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[3]  200 -1.0 1.0
+TH1F hdc1v1_residuals 'HMS 1V1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[4]  200 -1.0 1.0
+TH1F hdc1v2_residuals 'HMS 1V2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[5]  200 -1.0 1.0
+
+TH1F hdc2v2_residuals 'HMS 2V2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[6]  200 -1.0 1.0
+TH1F hdc2v1_residuals 'HMS 2V1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[7]  200 -1.0 1.0
+TH1F hdc2x2_residuals 'HMS 2X2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[8]  200 -1.0 1.0
+TH1F hdc2x1_residuals 'HMS 2X1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[9]  200 -1.0 1.0
+TH1F hdc2u2_residuals 'HMS 2U2 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[10] 200 -1.0 1.0
+TH1F hdc2u1_residuals 'HMS 2U1 DC Residuals; Residuals (cm); Number of Entries / 0.01 cm' H.dc.residual[11] 200 -1.0 1.0
+
+#-----------------------------------
+# HMS DC RESIDUALS vs. Wire Number
+#-----------------------------------
+
+TH2F hdc1u1_residuals_vs_wirenum 'HMS 1U1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1u1.wirenum H.dc.residual[0] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc1u2_residuals_vs_wirenum 'HMS 1U2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1u2.wirenum H.dc.residual[1] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc1x1_residuals_vs_wirenum 'HMS 1X1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1x1.wirenum H.dc.residual[2] 102 0.5  102.5 200 -1.0 1.0
+TH2F hdc1x2_residuals_vs_wirenum 'HMS 1X2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1x2.wirenum H.dc.residual[3] 102 0.5  102.5 200 -1.0 1.0
+TH2F hdc1v1_residuals_vs_wirenum 'HMS 1V1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1v1.wirenum H.dc.residual[4] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc1v2_residuals_vs_wirenum 'HMS 1V2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.1v2.wirenum H.dc.residual[5] 96 0.5 96.5 200 -1.0 1.0
+
+TH2F hdc2v2_residuals_vs_wirenum 'HMS 2V2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2v2.wirenum H.dc.residual[6] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc2v1_residuals_vs_wirenum 'HMS 2V1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2v1.wirenum H.dc.residual[7] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc2x2_residuals_vs_wirenum 'HMS 2X2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2x2.wirenum H.dc.residual[8] 102 0.5  102.5 200 -1.0 1.0
+TH2F hdc2x1_residuals_vs_wirenum 'HMS 2X1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2x1.wirenum H.dc.residual[9] 102 0.5  102.5 200 -1.0 1.0
+TH2F hdc2u2_residuals_vs_wirenum 'HMS 2U2 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2u2.wirenum H.dc.residual[10] 96 0.5 96.5 200 -1.0 1.0
+TH2F hdc2u1_residuals_vs_wirenum 'HMS 2U1 DC Residuals vs. Wire Number; Wire Number; Residuals (cm)' H.dc.2u1.wirenum H.dc.residual[11] 96 0.5 96.5 200 -1.0 1.0
