@@ -380,9 +380,47 @@ ppartmass = 0.93827231
 hpartmass = 0.0005109
 
 #Ct Experiment (E12-06-107)
-2284-9999
+2284-2396
 gpbeam = 10.600
 gtargmass_amu =  12.0107
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+2397
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#cosmics/testing DAQ
+2398-2401
+
+#junk
+2402-2403
+
+#Color Transparency --Feb 13/H singles run
+2404-2405
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 14/H coincidence run
+2406-9999
+gpbeam = 10.600
+gtargmass_amu =  1.00794
 htheta_lab = -39.280
 ptheta_lab = 12.800
 hpcentral = 2.982
