@@ -40,6 +40,8 @@ def hms_var_states():
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"\n''')
     if hdc_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/TEST_STANDS/DC/hdc_resid.def"\n''')
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_eff_histos.def"\n''')
     if hhodo_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"\n''')
     if hkin_histos.get() == 1:
@@ -50,12 +52,16 @@ def hms_var_states():
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/RASTER/hraster_histos.def"\n''')
     if htrig_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"\n''')
-    if hepics_vars.get() == 1:
-        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"\n''')
     if hreact_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/REACT/hreact_histos.def"\n''')
     if hpid_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_histos.def"\n''')
+    if hgtr_histos.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/GTR/hgtr_vars.def"\n''')
+    if hpid_histos.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_vars.def"\n''')
+    if hepics_vars.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"\n''')
    
     print ("Backing up current HMS Output DEF-file ...")
     command = "mv " + hms_def_filename + " " + hms_def_filename_bck
@@ -94,8 +100,6 @@ def shms_var_states():
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"\n''')
     if pdc_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"\n''')
-    if pepics_vars.get() == 1:
-        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"\n''')
     if pgtr_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_histos.def"\n''')
     if phgcer_histos.get() == 1:
@@ -114,6 +118,12 @@ def shms_var_states():
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/REACT/preact_histos.def"\n''')
     if ppid_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_histos.def"\n''')
+    if pgtr_histos.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_vars.def"\n''')
+    if ppid_histos.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_vars.def"\n''')
+    if pepics_vars.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"\n''')
    
     print ("Backing up current SHMS Output DEF-file ...")
     command = "mv " + shms_def_filename + " " + shms_def_filename_bck
