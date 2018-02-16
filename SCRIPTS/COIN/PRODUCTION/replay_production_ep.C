@@ -75,9 +75,6 @@ void replay_production_ep (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcShower* pcal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(pcal);
 
-  // Include golden track information
-  THaGoldenTrack* pgtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(pgtr);
   // Add Rastered Beam Apparatus
   THaApparatus* pbeam = new THcRasteredBeam("P.rb", "SHMS Rastered Beamline");
   gHaApps->Add(pbeam);
@@ -85,6 +82,9 @@ void replay_production_ep (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(prp);
   THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
   gHaPhysics->Add(pext);
+  // Include golden track information
+  THaGoldenTrack* pgtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
+  gHaPhysics->Add(pgtr);
 
 
   // Hodoscope efficiency
@@ -130,17 +130,17 @@ void replay_production_ep (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcShower* hcal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(hcal);
 
-  // Include golden track information
-  THaGoldenTrack* hgtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
-  gHaPhysics->Add(hgtr);
-  // Add Rastered Beam Apparatus
+ // Add Rastered Beam Apparatus
   THaApparatus* hbeam = new THcRasteredBeam("H.rb", "HMS Rastered Beamline");
   gHaApps->Add(hbeam);
   THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
   gHaPhysics->Add(hrp);
   THcExtTarCor* hext = new THcExtTarCor("H.extcor"," HMS extended target corrections","H","H.react");
   gHaPhysics->Add(hext);
-  // Hodoscope efficiency
+  // Include golden track information
+  THaGoldenTrack* hgtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
+  gHaPhysics->Add(hgtr);
+   // Hodoscope efficiency
   THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
   gHaPhysics->Add(heff);
   // Add event handler for scaler events

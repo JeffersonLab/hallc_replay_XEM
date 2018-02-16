@@ -16,11 +16,11 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   int nentriesD = tt->GetEntries();
   cout<<"Entries:\t"<<nentriesD<<endl;
   TString fileO;
-   fileO += "/net/cdaq/cdaql3data/cdaq/hallc-online/run_"; //read the root file from data
+   fileO += "HISTOGRAMS/COIN/ROOT/run_"; //read the root file from data
    fileO += runNumber; //read the root file from data
    fileO += "_hists_coin.root"; //read the root file from data
 
-  TFile *fout = new TFile(fileO,"RECREATE");
+   //TFile *fout = new TFile(fileO,"RECREATE");
 
   gROOT->SetBatch(kTRUE);
 
@@ -31,14 +31,14 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   TH1D *h_hyptar = new TH1D("h_hyptar","HMS YPTAR (rad)",100,-0.08,0.08);
   TH1D *h_hytar = new TH1D("h_hytar","HMS YTAR (cm)",100,-12.0,12.0);
 
-  TH1D *h_pdelta = new TH1D("h_pdelta","SHMS DELTA (%)",100,-12,12);
+  TH1D *h_pdelta = new TH1D("h_pdelta","SHMS DELTA (%)",100,-15,15);
   TH1D *h_pxptar = new TH1D("h_pxptar","SHMS XPTAR (rad)",100,-0.06,0.06);
   TH1D *h_pyptar = new TH1D("h_pyptar","SHMS YPTAR (rad)",100,-0.06,0.06);
   TH1D *h_pytar = new TH1D("h_pytar","SHMS YTAR (cm)",100,-12.0,12.0);
 
-  TH1D *h_Emd = new TH1D("h_Emd","Missing Energy (GeV)",200,-0.2,0.2);
-  TH1D *h_Wd = new TH1D("h_Wd","W (GeV)", 150, 0, 2);
-  TH1D *h_pmd = new TH1D("h_pmd","Pm (GeV/c)", 100, -0.2, 0.2);
+  TH1D *h_Emd = new TH1D("h_Emd",Form("Missing Energy (GeV) Run:%d",runNumber),200,-0.15,0.25);
+  TH1D *h_Wd = new TH1D("h_Wd",Form("W (GeV) Run:%d",runNumber), 150, 0., 2.);
+  TH1D *h_pmd = new TH1D("h_pmd","Pm (GeV/c)", 100, -0.02, 0.35);
   TH1D *h1PcointimeROC1 = new TH1D("SHMS ROC1 Corrected Coin Time","SHMS ROC1 Corrected Coin Time; cointime [ns]", 200, -10, 10);    
   TH1D *h1PcointimeROC2 = new TH1D("SHMS ROC2 Corrected Coin Time","SHMS ROC2 Corrected Coin Time; cointime [ns]", 200, -10, 10); 
 
@@ -46,7 +46,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   Double_t HgtrX, HgtrTh, HgtrY, HgtrPh, hdelta, PgtrX, PgtrTh, PgtrY, PgtrPh, pdelta;
   Double_t HgtrBetaCalc, PgtrBetaCalc, evtType, PgtrP, HgtrP, PhodStatus, PhodStartTime, PhodfpHitsTime;
   Double_t cointime, HhodStatus, HhodStartTime, HhodfpHitsTime, SHMSpartMass, HMSpartMass;
-  Double_t pkinW, pEm, pPm, pbeta, hbeta, hcalepr, hcaletot, hcernpe, pcaletot, pcalepr, pcernpe;
+  Double_t pkinW, pEm, pPm, modPm, pbeta, hbeta, hcalepr, hcaletot, hcernpe, pcaletot, pcalepr, pcernpe;
   Double_t TcoinpTRIG1_ROC1_tdcTimeRaw, TcoinpTRIG4_ROC1_tdcTimeRaw, TcoinpTRIG1_ROC2_tdcTimeRaw;
   Double_t TcoinhTRIG1_ROC1_tdcTimeRaw, TcoinhTRIG1_ROC2_tdcTimeRaw, TcoinhTRIG4_ROC1_tdcTimeRaw;
   Double_t TcoinhTRIG4_ROC2_tdcTimeRaw, TcoinpTRIG4_ROC2_tdcTimeRaw;
@@ -78,7 +78,12 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   tt->SetBranchAddress("H.cal.etottracknorm", &hcaletot);                                          
   tt->SetBranchAddress("H.cer.npeSum", &hcernpe); 
   tt->SetBranchAddress("H.kin.primary.W", &pkinW);                                                    
-  tt->SetBranchAddress("P.kin.secondary.emiss", &pEm);                                                    
+  if (targ == 1) {                
+    tt->SetBranchAddress("P.kin.secondary.emiss", &pEm);                           
+  }
+  else if (targ == 2){
+    tt->SetBranchAddress("P.kin.secondary.emiss_nuc", &pEm);                          }                     
+
   tt->SetBranchAddress("P.kin.secondary.pmiss", &pPm);                                                    
                                                                                                               
   tt->SetBranchAddress("P.hod.goodstarttime", &PhodStatus);                                              
@@ -133,7 +138,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   Double_t HhodoStartTimeMean = h1HhodoStartTime->GetMean();                     
 
  
-  Double_t pOffset = 3.0; //9.5 + 10;  // in ns                                  
+  Double_t pOffset = 1.5; //9.5 + 10;  // in ns                                  
   Double_t hOffset = 335;                                                        
   Double_t speedOfLight = 29.9792; // in cm/ns                                   
   Double_t SHMScentralPathLen = 18.1*100;  // SHMS Target to focal plane path length converted to cm  
@@ -156,7 +161,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
     tt->GetEntry(kk);
     if (kk % 50000 == 0) cout << kk*100/nentriesD << "   % of data done" << endl;
       evtType = tt->GetLeaf("fEvtHdr.fEvtType")->GetValue(); 
-    if (pbeta>0.8 && pbeta<1.3 && hbeta>0.8 && hbeta<1.2 && hcernpe>0.1 && hcaletot >0.8 && hcaletot<1.2 && PhodStatus == 1 && HhodStatus ==1 && hdelta > -10 && hdelta < 10 && pdelta > -12 && pdelta < 12 && pcernpe < 0.1) 
+    if (pbeta>0.6 && pbeta<1.4 && hbeta>0.8 && hbeta<1.2 && hcernpe>0. && hcaletot >0.6 && hcaletot<2.0 && PhodStatus == 1 && HhodStatus ==1 && hdelta > -10 && hdelta < 10 && pdelta > -15 && pdelta < 15 && pcernpe < 0.1) 
     { 
 	DeltaHMSpathLength = 12.462*HgtrTh + 0.1138*HgtrTh*HgtrX - 0.0154*HgtrX - 72.292*HgtrTh*HgtrTh - 0.0000544*HgtrX*HgtrX - 116.52*HgtrPh*HgtrPh;               
       PgtrBetaCalc = PgtrP/sqrt(PgtrP*PgtrP + SHMSpartMass*SHMSpartMass);        
@@ -187,7 +192,7 @@ void Bean_counter(Int_t runNumber, Int_t targ){
       }
       else if (targ == 2)
       {
-       if (pkinW > 0.5 && pkinW < 1.5)
+	if (sqrt(pPm*pPm) < 0.6)
         {
         h_hdelta->Fill(hdelta);
         h_hxptar->Fill(HgtrPh);
@@ -197,9 +202,10 @@ void Bean_counter(Int_t runNumber, Int_t targ){
         h_pxptar->Fill(PgtrPh);
         h_pyptar->Fill(PgtrTh);
         h_pytar->Fill(PgtrY);
-        h_Emd->Fill(pEm+0.025);
+        h_Emd->Fill(pEm);
         h_Wd->Fill(pkinW);
-        h_pmd->Fill(pPm-0.04);
+        modPm = sqrt(pPm*pPm);
+        h_pmd->Fill(modPm);
         cnts++;
         }
       }
@@ -232,20 +238,25 @@ void Bean_counter(Int_t runNumber, Int_t targ){
   h_pytar->Draw();  
   //  can1->SaveAs("tmp1.pdf");
 
-  TCanvas *can2 = new TCanvas ("can2","can2");
+  TCanvas *can2 = new TCanvas ("can2",Form("can2 Run: %d",runNumber));
   can2->Divide(2,2);
   can2->cd(1);
+  h_Wd->SetFillColor(kBlue);
   h_Wd->Draw();
   can2->cd(2); 
+  h_Emd->SetFillColor(kBlue);
   h_Emd->Draw(); 
   can2->cd(3); 
+  h_pmd->SetFillColor(kBlue);
   h_pmd->Draw(); 
   can2->cd(4); 
+  h1PcointimeROC1->SetLineColor(kBlue);
+  h1PcointimeROC1->SetLineWidth(3);
   h1PcointimeROC1->Draw();
 
   // can2->SaveAs("tmp.pdf");
 
-  fout->Write();
+  //fout->Write();
   //  fout->Close();
   cout << "-------------------------------------------------------------------------------------------------------" << endl;
   cout << "NOTE:>>>>  " << cnts <<"  <<<<<  GOOD EVENTS have passed all cuts (update the white board and excel sheet)" << endl;

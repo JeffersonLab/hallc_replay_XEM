@@ -1,0 +1,26 @@
+# Report file for SHMS stack
+
+Block: RawDecode
+#include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_rawdecode_cuts.def"
+RawDecode_master  1
+
+Block: Decode
+#include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_decode_cuts.def"
+Decode_master     ALL_SHMS_NO_EDTM
+
+Block: CoarseTracking
+#include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_coarsetracking_cuts.def"
+CoarseTracking_master ALL_SHMS_NO_EDTM
+
+Block: CoarseReconstruct
+CoarseReconstruct_master ALL_SHMS_NO_EDTM
+
+Block: Tracking
+Tracking_master  ALL_SHMS_NO_EDTM
+
+Block: Reconstruct
+#include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_reconstruct_cuts.def"
+Reconstruct_master ALL_SHMS_NO_EDTM
+
+Block: Physics
+Physics_master ALL_SHMS_NO_EDTM

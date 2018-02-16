@@ -148,7 +148,7 @@ void replay_production_shms_kpp (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/pstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

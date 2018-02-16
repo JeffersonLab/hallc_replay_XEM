@@ -18,12 +18,12 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_production_all_%d_%d.root";
   
   // Load global parameters
   // Add variables to global list.
@@ -46,8 +46,6 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);
-
-  
   // Add trigger detector to trigger apparatus
   THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
   TRG->AddDetector(shms);
@@ -75,23 +73,22 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(cal);
 
-  // Include golden track information
-  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(gtr);
   // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
-  THaReactionPoint* prp= new THaReactionPoint("P.react"," SHMS reaction point","P","P.rb");
+  THaReactionPoint* prp= new THaReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
   gHaPhysics->Add(pext);
+  // Include golden track information
+  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
+  gHaPhysics->Add(gtr);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
   THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(kin);
- THcHodoEff* peff = new THcHodoEff("phodeff"," SHMS hodo efficiency","P.hod");
+  // Add physics module to calculate the hodoscope efficiencies
+  THcHodoEff* peff = new THcHodoEff("phodeff", "SHMS hodo efficiency", "P.hod");
   gHaPhysics->Add(peff);
-
-   
 
   // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
@@ -152,7 +149,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production_all.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/pstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

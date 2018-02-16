@@ -80,9 +80,6 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   shms->SetSpectName("P");
   TRG->AddDetector(shms);
 
-  // Include golden track information
-  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(gtr);
   // Add Rastered Beam Apparatus
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
@@ -90,6 +87,9 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(prp);
   THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
   gHaPhysics->Add(pext);
+  // Include golden track information
+  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
+  gHaPhysics->Add(gtr);
   // Add Physics Module to calculate primary (scattered beam - usually electrons) kinematics
   THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(kin);
@@ -107,6 +107,10 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
   pscaler->AddEvtType(1);
+  pscaler->AddEvtType(4);
+  pscaler->AddEvtType(5);
+  pscaler->AddEvtType(6);
+ pscaler->AddEvtType(7);
   pscaler->AddEvtType(129);
   pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
@@ -157,7 +161,7 @@ void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/pstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

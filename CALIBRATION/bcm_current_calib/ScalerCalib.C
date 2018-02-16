@@ -165,14 +165,18 @@ int ScalerCalib::FillContainer()
   T->SetBranchAddress(bname[3].c_str(), &bcm4b_current);
   T->SetBranchAddress(bname[4].c_str(), &bcm17_current);
 
+  const double kBig = 1.e38;
+
   Long64_t nentries = T->GetEntries();
   for(Long64_t ientry=0; ientry<nentries; ientry++)
     {
       T->GetEntry(ientry);
 
-      if(evnumber < 0) continue;
+      if(evnumber < 0)
+	evnum.push_back(kBig);
+      else
+	evnum.push_back(evnumber);
 
-      evnum.push_back(evnumber);
       bcm1.push_back(bcm1_current);
       bcm2.push_back(bcm2_current);
       bcm4a.push_back(bcm4a_current);

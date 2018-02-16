@@ -1,0 +1,41 @@
+#**********************
+# HMS Drift Chambers  *
+#**********************
+
+#------------------
+# HMS DC WIRE MAP for per wire efficiency
+#   first set with "should" cut
+#-----------------
+
+TH1F hdc1u1_wirenum_should 'HMS DC 1U1 Wiremap; Wire Number; Number of Entries'  H.dc.wireHitShould[0] 96 0.5 96.5  
+TH1F hdc1u2_wirenum_should 'HMS DC 1U2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[1] 96 0.5 96.5  
+TH1F hdc1x1_wirenum_should 'HMS DC 1X1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[2]  102 0.5  102.5
+TH1F hdc1x2_wirenum_should 'HMS DC 1X2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[3]  102 0.5  102.5 
+TH1F hdc1v1_wirenum_should 'HMS DC 1V1 Wiremap; Wire Number; Number of Entries'  H.dc.wireHitShould[4] 96 0.5 96.5 
+TH1F hdc1v2_wirenum_should 'HMS DC 1V2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[5] 96 0.5 96.5 
+
+TH1F hdc2v2_wirenum_should 'HMS DC 2V2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[6] 96 0.5 96.5 
+TH1F hdc2v1_wirenum_should 'HMS DC 2V1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[7] 96 0.5 96.5 
+TH1F hdc2x2_wirenum_should 'HMS DC 2X2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[8]  102 0.5  102.5 
+TH1F hdc2x1_wirenum_should 'HMS DC 2X1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[9]  102 0.5  102.5 
+TH1F hdc2u2_wirenum_should 'HMS DC 2U2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[10] 96 0.5 96.5 
+TH1F hdc2u1_wirenum_should 'HMS DC 2U1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitShould[11] 96 0.5 96.5 
+#------------------
+# HMS DC WIRE MAP for per wire efficiency
+#   first set with "did" cut
+#-----------------
+
+TH1F hdc1u1_wirenum_did 'HMS DC 1U1 Wiremap; Wire Number; Number of Entries'  H.dc.wireHitDid[0] 96 0.5 96.5  
+TH1F hdc1u2_wirenum_did 'HMS DC 1U2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[1] 96 0.5 96.5  
+TH1F hdc1x1_wirenum_did 'HMS DC 1X1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[2]  102 0.5  102.5
+TH1F hdc1x2_wirenum_did 'HMS DC 1X2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[3]  102 0.5  102.5 
+TH1F hdc1v1_wirenum_did 'HMS DC 1V1 Wiremap; Wire Number; Number of Entries'  H.dc.wireHitDid[4] 96 0.5 96.5 
+TH1F hdc1v2_wirenum_did 'HMS DC 1V2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[5] 96 0.5 96.5 
+
+TH1F hdc2v2_wirenum_did 'HMS DC 2V2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[6] 96 0.5 96.5 
+TH1F hdc2v1_wirenum_did 'HMS DC 2V1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[7] 96 0.5 96.5 
+TH1F hdc2x2_wirenum_did 'HMS DC 2X2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[8]  102 0.5  102.5 
+TH1F hdc2x1_wirenum_did 'HMS DC 2X1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[9]  102 0.5  102.5 
+TH1F hdc2u2_wirenum_did 'HMS DC 2U2 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[10] 96 0.5 96.5 
+TH1F hdc2u1_wirenum_did 'HMS DC 2U1 Wiremap; Wire Number; Number of Entries' H.dc.wireHitDid[11] 96 0.5 96.5 
+

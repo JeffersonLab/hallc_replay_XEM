@@ -1,0 +1,12 @@
+Block: RawDecode
+
+Pedestal_event       g.evtyp == 99
+SHMS_event           g.evtyp == 1
+HMS_event            g.evtyp == 2
+BOTH_SINGLES_event   g.evtyp == 3
+COIN_ONLY_event      g.evtyp == 4
+SHMS_COIN_event      g.evtyp == 5
+HMS_COIN_event       g.evtyp == 6 
+COIN_ALL_event       g.evtyp == 7
+ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
+ALL_SHMS_events      SHMS_event || COIN_ONLY_event || SHMS_COIN_event || COIN_ALL_event

@@ -1,0 +1,21 @@
+Block: Reconstruct
+
+hcleantrack        H.gtr.index > -1
+pcleantrack        P.gtr.index > -1
+ccleantrack        hcleantrack && pcleantrack
+
+coincut            ccleantrack && goodctime
+tight_coin         ccleantrack && tightctime
+ran_coincut        ccleantrack && ranctime
+
+he_cut_cal          H.cal.etottracknorm > 0.6 && H.cal.etottracknorm < 1.6
+he_cut_cer          H.cer.npeSum > 0.5
+hselect_e_cut       he_cut_cal && he_cut_cer
+hbetacut_proton     P.gtr.beta > 0.6 && P.gtr.beta < 0.8
+hcoincut_ep         ccleantrack && hselect_e_cut && hbetacut_proton
+
+pe_cut_cal          P.cal.etottracknorm > 0.6 && P.cal.etottracknorm < 1.6
+pe_cut_cer          P.hgcer.npeSum > 0.5
+pselect_e_cut       pe_cut_cal && pe_cut_cer
+pbetacut_proton     H.gtr.beta > 0.6 && H.gtr.beta < 0.8
+pcoincut_ep         ccleantrack && pselect_e_cut && pbetacut_proton

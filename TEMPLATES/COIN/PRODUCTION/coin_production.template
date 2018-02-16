@@ -475,6 +475,8 @@ f1pspacepoints                 : {f1PSpacePoints.npassed}
 f2pspacepoints                 : {f2PSpacePoints.npassed}
 ptest1=p hits/planes, f sp     : {pTest1.npassed}
 ptest2=p sp, f stubs           : {pTest2.npassed}
+pdcanylarge    		       : {shmsDCany_large.npassed}
+pgoodbetanotrk		       : {shmsGoodBetanotrk.npassed}
 pdid                           : {shmsScinDid.npassed}
 pdide                          : {shmsScinDide.npassed}
 pdidh                          : {shmsScinDidh.npassed}
@@ -612,6 +614,10 @@ f1hspacepoints                 :   {f1HSpacePoints.npassed}
 f2hspacepoints                 :   {f2HSpacePoints.npassed}
 htest1=p hits/planes, f sp     :   {hTest1.npassed}
 htest2=p sp, f stubs           :   {hTest2.npassed}
+hdcanylarge                    :   {hmsDCany_large.npassed}
+hdc16hits                      :   {hmsDC1Planes6hits.npassed}
+hdc26hits		       :   {hmsDC2Planes6hits.npassed}
+hgoodbetanotrk 		       :   {HMSGoodBetanotrk.npassed}
 hdid                           :   {HMSScinDid.npassed}
 hdide                          :   {HMSScinDide.npassed}
 hdidh                          :   {HMSScinDidh.npassed}

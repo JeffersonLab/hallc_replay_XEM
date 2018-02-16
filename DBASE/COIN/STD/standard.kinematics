@@ -7,7 +7,7 @@
 #
 
 0-99999
-gpbeam = 6.4
+gpbeam = 6.430
 gtargmass_amu=12.0107
 htheta_lab = -15.
 ptheta_lab = 15.
@@ -85,7 +85,7 @@ gtargmass_amu = 26.98
 gtargmass_amu = 1.00794
 
 1851-1867
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -27.5
 ptheta_lab = 27.6
@@ -95,7 +95,7 @@ hpartmass = 0.93827231
 ppartmass = 0.00051099
 
 1884-1892
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -20.0
 ptheta_lab = 20.0
@@ -105,7 +105,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 1893-1901
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -27.54
 ptheta_lab = 27.50
@@ -115,7 +115,7 @@ hpartmass = 0.93827231
 ppartmass = 0.00051099
 
 1902-1903
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -27.54
 ptheta_lab = 27.50
@@ -126,7 +126,7 @@ ppartmass = 0.00051099
 
 
 1904-1905
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -22.0
 ptheta_lab = 22.0
@@ -137,7 +137,7 @@ ppartmass = 0.00051099
 
 
 1906-1918
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -25.01
 ptheta_lab = 30.08
@@ -148,7 +148,7 @@ ppartmass = 0.00051099
 
 
 1919
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -22.01
 ptheta_lab = 22.06
@@ -158,7 +158,7 @@ hpartmass = 0.93827231
 ppartmass = 0.00051099
 
 1920
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -22.01
 ptheta_lab = 33.06
@@ -171,7 +171,7 @@ hpartmass = 0.00051099
 junk run
 
 1927
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -22.01
 ptheta_lab = 33.07
@@ -182,7 +182,7 @@ hpartmass = 0.00051099
 
 
 1928
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -35.0
 ptheta_lab = 22.05
@@ -192,12 +192,12 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 1929
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
-htheta_lab = -22.01
-ptheta_lab = 33.07
-hpcentral = 4.284
-ppcentral = 2.925*0.985
+htheta_lab = -35.0
+ptheta_lab = 22.04
+hpcentral = 2.869
+ppcentral = 4.38*0.985
 ppartmass = 0.93827231
 hpartmass = 0.00051099
 
@@ -217,8 +217,7 @@ EDTM Run
 Junk Run
 
 1951 - 1952
-gpbeam = 6.405
-gtarggpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -50.0
 ptheta_lab = 15.03
@@ -237,7 +236,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2022 - 2024
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -45.1
 ptheta_lab = 17.1
@@ -247,7 +246,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2042
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -15.02
 ptheta_lab = 17.09
@@ -257,7 +256,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2043-2044
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu =  26.98
 htheta_lab = -15.02
 ptheta_lab = 17.12
@@ -267,7 +266,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2045-2054
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794 
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -277,7 +276,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2055
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 26.98 
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -287,7 +286,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2056-2057
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -297,7 +296,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2058-2060
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -307,7 +306,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2061-2065
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 12.0107
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -317,7 +316,7 @@ ppartmass = 0.93827231
 hpartmass = 0.00051099
 
 2066
-gpbeam = 6.405
+gpbeam = 6.430
 gtargmass_amu = 1.00794
 htheta_lab = -45.11
 ptheta_lab = 17.12
@@ -326,12 +325,105 @@ ppcentral = 5.122*0.985
 ppartmass = 0.93827231
 hpartmass = 0.00051099
 
-2067-9999
-gpbeam = 6.405
+2067-2068
+gpbeam = 6.430
 gtargmass_amu = 26.98
 htheta_lab = -45.11
 ptheta_lab = 17.12
 hpcentral = 2.131
 ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Carbon Hole, Jan 26 2018
+2081-2185
+gpbeam = 6.430
+gtargmass_amu =  12.0107
+htheta_lab = -45.11
+ptheta_lab = 17.12
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Ct Experiment (E12-06-107)
+2186-2277
+gpbeam = 6.430
+gtargmass_amu =  12.0107
+htheta_lab = -45.145
+ptheta_lab = 17.11
+hpcentral = 2.131
+ppcentral = 5.122*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Ct Experiment (E12-06-107)
+2278-2281
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -23.186
+ptheta_lab = 21.625
+hpcentral = 5.539
+ppcentral = 5.925*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Ct Experiment (E12-06-107)
+2282-2283
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Ct Experiment (E12-06-107)
+2284-2396
+gpbeam = 10.600
+gtargmass_amu =  12.0107
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+2397
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#cosmics/testing DAQ
+2398-2401
+
+#junk
+2402-2403
+
+#Color Transparency --Feb 13/H singles run
+2404-2405
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 14/H coincidence run
+2406-9999
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
 ppartmass = 0.93827231
 hpartmass = 0.0005109
