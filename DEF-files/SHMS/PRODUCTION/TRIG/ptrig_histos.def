@@ -68,8 +68,8 @@ TH2D ptrig6rate_vs_time 'SHMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); pTRIG6 
 #SHMS TRIG PEDESTALS for HGC, NGC, PRESHWR
 #--------------------------------------------
 
-TH1F ptrig_phgc_sum_pped     'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 2 mV' T.shms.pHGCER_adcPed      500 0 1000  T.shms.pHGCER_adcPed>0.0
-TH1F ptrig_pngc_sum_pped     'SHMS Noble Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 2 mV' T.shms.pNGCER_adcPed      500 0 1000  T.shms.pNGCER_adcPed>0.0
-TH1F ptrig_prshwr_sum_pped   'SHMS Preshwr Sum FADC pulse Pedestal; Pulse Pedestal; Number of entries /2 mV'    T.shms.pPSHWR_adcPed      500 0 1000  T.shms.pPSHWR_adcPed>0.0
-TH1F ptrig_phgc_sum_MOD_pped 'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 2 mV' T.shms.pHGCER_MOD_adcPed  500 0 1000  T.shms.pHGCER_MOD_adcPed>0.0
-TH1F ptrig_pngc_sum_MOD_pped 'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 2 mV' T.shms.pNGCER_MOD_adcPed  500 0 1000  T.shms.pNGCER_MOD_adcPed>0.0
+TH1F ptrig_phgc_sum_pped     'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 0.25 mV' T.shms.pHGCER_adcPed      4000 0 1000  T.shms.pHGCER_adcPed>0.0
+TH1F ptrig_pngc_sum_pped     'SHMS Noble Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 0.25 mV' T.shms.pNGCER_adcPed      4000 0 1000  T.shms.pNGCER_adcPed>0.0
+TH1F ptrig_prshwr_sum_pped   'SHMS Preshwr Sum FADC pulse Pedestal; Pulse Pedestal; Number of entries / 0.25 mV'    T.shms.pPSHWR_adcPed     4000 0 1000  T.shms.pPSHWR_adcPed>0.0
+TH1F ptrig_phgc_sum_MOD_pped 'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 0.25 mV' T.shms.pHGCER_MOD_adcPed  4000 0 1000  T.shms.pHGCER_MOD_adcPed>0.0
+TH1F ptrig_pngc_sum_MOD_pped 'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 0.25 mV' T.shms.pNGCER_MOD_adcPed  4000 0 1000  T.shms.pNGCER_MOD_adcPed>0.0
