@@ -1,7 +1,0 @@
-; Default calibration files in general.param
-#include "PARAM/HMS/DC/CALIB/hdc_calib.param"
-#include "PARAM/HMS/DC/CALIB/hdc_tzero_per_wire.param"
-#include "PARAM/HMS/HODO/CALIB/hhodo_calib.param"'
-#include "PARAM/HMS/HODO/CALIB/htofcalib.param"
-#include "PARAM/HMS/CER/CALIB/hcer_calib.param"
-#include "PARAM/HMS/CAL/CALIB/hcal_calib.param"

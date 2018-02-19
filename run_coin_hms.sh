@@ -1,1 +1,0 @@
-run_coin_shms.sh

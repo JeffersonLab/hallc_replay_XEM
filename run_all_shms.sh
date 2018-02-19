@@ -1,1 +1,0 @@
-UTIL/SHELL/run_all_shms.sh

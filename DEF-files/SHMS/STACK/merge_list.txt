@@ -1,8 +1,0 @@
-BLOCK/pblock_vars.def
-NGCER/pngcer_histos.def
-DC/pdc_histos.def
-HODO/phodo_histos.def
-HGCER/phgcer_histos.def
-AERO/paero_histos.def
-CAL/pcal_histos.def
-TRIG/ptrig_histos.def

@@ -1,3 +1,0 @@
-; SHMS calibration files for run 487
-#include "PARAM/SHMS/NGCER/CALIB/KPP_Spring_2017/pngcer_calib_487.param"
-#include "PARAM/SHMS/HGCER/CALIB/KPP_Spring_2017/phgcer_calib_487.param"

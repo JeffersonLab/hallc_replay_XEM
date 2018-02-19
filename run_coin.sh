@@ -1,1 +1,0 @@
-UTIL/SHELL/run_coin.sh

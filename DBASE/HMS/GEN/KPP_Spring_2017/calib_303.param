@@ -1,5 +1,0 @@
-; HMS calibration files for run 303
-#include "PARAM/HMS/CER/CALIB/KPP_Spring_2017/hcer_calib_303.param"
-#include "PARAM/HMS/DC/CALIB/KPP_Spring_2017/hdc_calib_303.param"
-#include "PARAM/HMS/HODO/CALIB/KPP_Spring_2017/hhodo_calib_303.param"
-#include "PARAM/HMS/CAL/CALIB/KPP_Spring_2017/hcal_calib_303.param"

@@ -14,6 +14,8 @@ HISTOGRAMS/*
 REPORT_OUTPUT
 REPORT_OUTPUT/*
 log/*
+full_hms.sh
+full_shms.sh
 onlineGUI/Config/kpp_*
 *.d
 *.so
