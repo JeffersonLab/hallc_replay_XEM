@@ -6,7 +6,7 @@
 # 27Al gtargmass_amu = 26.98
 #
 
-0-99999
+0-1710
 gpbeam = 6.430
 gtargmass_amu=12.0107
 htheta_lab = -15.
@@ -418,12 +418,144 @@ ppartmass = 0.93827231
 hpartmass = 0.0005109
 
 #Color Transparency --Feb 14/H coincidence run
-2406-9999
+2406-2418
 gpbeam = 10.600
 gtargmass_amu =  1.00794
 htheta_lab = -39.280
 ptheta_lab = 12.800
 hpcentral = 2.982
 ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 15/H coincidence run
+2419-2419
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 16/H coincidence run
+2420-2429
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 17/H coincidence run
+2430-2435
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 17/H singles run
+2436-2437
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 17/Al coincidence run
+2438-2438
+gpbeam = 10.600
+gtargmass_amu =  26.98
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 17/C singles
+2439-2440
+gpbeam = 10.600
+gtargmass_amu =  12.0107
+htheta_lab = -39.280
+ptheta_lab = 12.800
+hpcentral = 2.982
+ppcentral = 8.505*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 17/C coincidence run
+2441-2445
+gpbeam = 10.600
+gtargmass_amu =  12.0107
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.278
+ppcentral = 7.001*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 18/C coincidence run
+2446-2451
+gpbeam = 10.600
+gtargmass_amu =  12.0107
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.478
+ppcentral = 7.001*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 18/H coincidence run
+2452-2454
+gpbeam = 10.600
+gtargmass_amu =  1.00794
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.478
+ppcentral = 7.001*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 18/Al coincidence run
+2455
+gpbeam = 10.600
+gtargmass_amu =  26.98
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.478
+ppcentral = 7.001*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 18/C coincidence run
+2456-2463
+gpbeam = 10.600
+gtargmass_amu = 12.0107
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.478
+ppcentral = 7.001*0.985
+ppartmass = 0.93827231
+hpartmass = 0.0005109
+
+#Color Transparency --Feb 18/C coincidence run
+2464-2464
+gpbeam = 10.600
+gtargmass_amu = 12.0107
+htheta_lab = -28.505
+ptheta_lab = 17.830
+hpcentral = 4.478
+ppcentral = 7.001*0.985
 ppartmass = 0.93827231
 hpartmass = 0.0005109
