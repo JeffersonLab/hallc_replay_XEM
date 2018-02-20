@@ -10,7 +10,7 @@ Decode_master          ALL_HMS_NO_EDTM
 
 Block: CoarseTracking
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_coarsetracking_cuts.def"
-CoarseTracking_master ALL_HMS_events
+CoarseTracking_master ALL_HMS_NO_events
 
 Block: CoarseReconstruct
 CoarseReconstruct_master ALL_HMS_NO_EDTM
