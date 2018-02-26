@@ -18,24 +18,19 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
   const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_scalers_%d_%d.root";
   
   // Load global parameters
-  // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/STD/standard.database");
-  // Load varibles from files to global list.
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  // g_ctp_parm_filename and g_decode_map_filename should now be defined.
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-  // Load params for HMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load("PARAM/TRIG/thms.param");
 
   // Load the Hall C style detector map
@@ -77,8 +72,9 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  //THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
   THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  // Set to read in Hall C run database parameters
+  run->SetRunParamClass("THcRunParameters");
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events

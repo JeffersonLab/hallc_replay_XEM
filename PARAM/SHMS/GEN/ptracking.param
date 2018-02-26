@@ -84,9 +84,9 @@ pntracks_max_fp = 10
 ;Derek added this for scintillator based fiducial cuts.  Everything from
 ;loscin to hiscin inclusive will be included as "good" scintillator hits.
   pxloscin  = 4, 4
-  pxhiscin  = 13, 13
-  pyloscin  = 4, 4
-  pyhiscin  = 7, 7
+  pxhiscin  = 11, 10
+  pyloscin  = 4, 6
+  pyhiscin  = 11, 14
 ;  ptrack_eff_test_scin_planes is the number of planes nec needed to
 ;  set sweet spot to true. 4 is extra clean, 3 is good enough for e-'s.
-  ptrack_eff_test_num_scin_planes = 4
+  ptrack_eff_test_num_scin_planes = 3

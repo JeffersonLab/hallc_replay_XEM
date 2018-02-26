@@ -14,13 +14,10 @@ HISTOGRAMS/*
 REPORT_OUTPUT
 REPORT_OUTPUT/*
 log/*
-full_hms.sh
-full_shms.sh
 onlineGUI/Config/kpp_*
 *.d
 *.so
 *Auto*
-run_*
 CALIBRATION/shms_cal_calib/pcal.param*
 CALIBRATION/hms_cal_calib/hcal.param*
 CALIBRATION/shms_cal_calib/calibrated.deb

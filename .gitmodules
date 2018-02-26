@@ -1,0 +1,12 @@
+[submodule "UTIL_OL"]
+	path = UTIL_OL
+	url = https://github.com/JeffersonLab/UTIL_OL
+	branch = master
+[submodule "UTIL_CT"]
+	path = UTIL_CT
+	url = https://github.com/JeffersonLab/UTIL_CT
+	branch = master
+[submodule "UTIL_F2_XEM"]
+	path = UTIL_F2_XEM
+	url = https://github.com/JeffersonLab/UTIL_F2_XEM
+	branch = master

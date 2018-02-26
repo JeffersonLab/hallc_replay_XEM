@@ -18,32 +18,29 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Create file name patterns.
   const char* RunFileNamePattern = "coin_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
   const char* ROOTFileNamePattern = "ROOTfiles/coin_replay_scalers_%d_%d.root";
 
   // Load global parameters
-  // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/STD/standard.database");
-  // Load varibles from files to global list.
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  // g_ctp_parm_filename and g_decode_map_filename should now be defined.
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   // Load params for SHMS coin configuration
   gHcParms->Load("PARAM/TRIG/tcoin.param");
-  // Load the Hall C detector map
-  gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
-    // Add trigger apparatus
+  // Load the Hall C detector map
+  gHcDetectorMap = new THcDetectorMap();
+  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
+
+  // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);
   // Add trigger detector to trigger apparatus
@@ -114,6 +111,8 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
   THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  // Set to read in Hall C run database parameters
+  run->SetRunParamClass("THcRunParameters");
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events

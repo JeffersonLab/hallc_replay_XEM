@@ -18,29 +18,23 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
   const char* ROOTFileNamePattern = "ROOTfiles/pdc_replay_%d.root";
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/STD/standard.database");
-
-  // Load varibles from files to global list.
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-
-  // g_ctp_parm_filename and g_decode_map_filename should now be defined.
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-  // Load params for the trigger apparatus
+  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load("PARAM/TRIG/tshms.param");
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  //gHcDetectorMap->Load(gHcParms->GetString("g_decode_map_filename"));
   gHcDetectorMap->Load("MAPS/SHMS/DETEC/DC/pdc_ptrig.map");
 
   // Set up the equipment to be analyzed.
@@ -60,7 +54,6 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
 
-
   // Set up the analyzer - we use the standard one,
   // but this could be an experiment-specific one as well.
   // The Analyzer controls the reading of the data, executes
@@ -75,7 +68,9 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Define the run(s) that we want to analyze.
   // We just set up one, but this could be many.
-  THaRun* run = new THaRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
+  // Set to read in Hall C run database parameters
+  run->SetRunParamClass("THcRunParameters");
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
@@ -90,14 +85,14 @@ void replay_pdc_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   analyzer->SetCountMode(2);    // 0 = counter is # of physics triggers
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
- analyzer->SetEvent(event);
- analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
- analyzer->SetOutFile(ROOTFileName.Data());
- analyzer->SetOdefFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana.def");
- analyzer->SetCutFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana_cuts.def");    // optional
+  analyzer->SetEvent(event);
+  analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
+  analyzer->SetOutFile(ROOTFileName.Data());
+  analyzer->SetOdefFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana.def");
+  analyzer->SetCutFile("DEF-files/SHMS/TEST_STANDS/DC/pdcana_cuts.def");    // optional
 
- // File to record cuts accounting information
- //analyzer->SetSummaryFile("summary_example.log");    // optional
+  // File to record cuts accounting information
+  //analyzer->SetSummaryFile("summary_example.log");    // optional
 
   // Start the actual analysis.
   analyzer->Process(run);

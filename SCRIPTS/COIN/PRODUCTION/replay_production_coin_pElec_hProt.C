@@ -18,31 +18,28 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // Create file name patterns.
   const char* RunFileNamePattern = "coin_all_%05d.dat";
   vector<TString> pathList;
-    pathList.push_back(".");
-    pathList.push_back("./raw");
-    pathList.push_back("./raw/../raw.copiedtotape");
-    pathList.push_back("./cache");
+  pathList.push_back(".");
+  pathList.push_back("./raw");
+  pathList.push_back("./raw/../raw.copiedtotape");
+  pathList.push_back("./cache");
 
   //const char* RunFileNamePattern = "raw/coin_all_%05d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/coin_replay_production_%d_%d.root";
   
   // Load global parameters
-  // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/STD/standard.database");
-  // Load varibles from files to global list.
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  // g_ctp_parm_filename and g_decode_map_filename should now be defined.
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
-  // Load params for SHMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
+  // Load params for COIN trigger configuration
   gHcParms->Load("PARAM/TRIG/tcoin.param");
+  // Load fadc debug parameters
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
-  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
   //=:=:=:=
   // SHMS 
@@ -75,19 +72,22 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   THcShower* pcal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(pcal);
 
-  // Add Rastered Beam Apparatus
-  THaApparatus* pbeam = new THcRasteredBeam("P.rb", "SHMS Rastered Beamline");
+  // Add rastered beam apparatus
+  THaApparatus* pbeam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(pbeam);
-  THaReactionPoint* prp= new THaReactionPoint("P.react"," SHMS reaction point","P","P.rb");
+  // Add physics modules
+  // Calculate reaction point
+  THaReactionPoint* prp = new THaReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor"," HMS extended target corrections","P","P.react");
+  // Calculate extended target corrections
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
   gHaPhysics->Add(pext);
-   // Include golden track information
+  // Calculate golden track quantites
   THaGoldenTrack* pgtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
   gHaPhysics->Add(pgtr);
- // Add hodoscope efficiency
-  THcHodoEff* peff = new THcHodoEff("phodeff"," SHMS hodo efficiency","P.hod");
-  gHaPhysics->Add(peff);
+  // Calculate the hodoscope efficiencies
+  THcHodoEff* peff = new THcHodoEff("phodeff", "SHMS hodo efficiency", "P.hod");
+  gHaPhysics->Add(peff);  
 
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
@@ -119,29 +119,33 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // Add hodoscope to HMS apparatus
   THcHodoscope* hhod = new THcHodoscope("hod", "Hodoscope");
   HMS->AddDetector(hhod);
-   // Add Cherenkov to HMS apparatus
+  // Add Cherenkov to HMS apparatus
   THcCherenkov* hcer = new THcCherenkov("cer", "Heavy Gas Cherenkov");
   HMS->AddDetector(hcer);
   // Add Aerogel Cherenkov to HMS apparatus
-  //THcAerogel* aero = new THcAerogel("aero", "Aerogel");
-  //HMS->AddDetector(aero);
+  // THcAerogel* haero = new THcAerogel("aero", "Aerogel");
+  // HMS->AddDetector(haero);
   // Add calorimeter to HMS apparatus
   THcShower* hcal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(hcal);
 
-  // Add Rastered Beam Apparatus
-  THaApparatus* hbeam = new THcRasteredBeam("H.rb", "HMS Rastered Beamline");
-  gHaApps->Add(hbeam);
-  THaReactionPoint* hrp= new THaReactionPoint("H.react"," HMS reaction point","H","H.rb");
+  // Add rastered beam apparatus
+  THaApparatus* hbeam = new THcRasteredBeam("H.rb", "Rastered Beamline");
+  gHaApps->Add(hbeam);  
+  // Add physics modules
+  // Calculate reaction point
+  THaReactionPoint* hrp = new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
-  THcExtTarCor* hext = new THcExtTarCor("H.extcor"," HMS extended target corrections","H","H.react");
+  // Calculate extended target corrections
+  THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");
   gHaPhysics->Add(hext);
-  // Include golden track information
+  // Calculate golden track quantities
   THaGoldenTrack* hgtr = new THaGoldenTrack("H.gtr", "HMS Golden Track", "H");
   gHaPhysics->Add(hgtr);
-  // Add hodoscope efficiency
-  THcHodoEff* heff = new THcHodoEff("hhodeff"," HMS hodo efficiency","H.hod");
+  // Calculate the hodoscope efficiencies
+  THcHodoEff* heff = new THcHodoEff("hhodeff", "HMS hodo efficiency", "H.hod");
   gHaPhysics->Add(heff);
+
   // Add event handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 4");  
   hscaler->AddEvtType(2);
@@ -161,28 +165,18 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // ---------------------------------
   // electrons in SHMS, protons in HMS
   // ---------------------------------
-  // Add Physics Module to calculate primary (scattered) beam kinematics
+  // Add physics module to calculate primary (scattered electrons) beam kinematics
   THcPrimaryKine* pkin_primary = new THcPrimaryKine("P.kin.primary", "SHMS Single Arm Kinematics", "P", "P.rb");
   gHaPhysics->Add(pkin_primary);
-  // Add Physics Module to calculate secondary (scattered) beam kinematics
+  // Add physics module to calculate secondary (scattered hadrons) beam kinematics
   THcSecondaryKine* hkin_secondary = new THcSecondaryKine("H.kin.secondary", "HMS Single Arm Kinematics", "H", "P.kin.primary");
   gHaPhysics->Add(hkin_secondary);
-
-  // ---------------------------------
-  // electrons in HMS, protons in SHMS
-  // ---------------------------------
-  // Add Physics Module to calculate primary (scattered) beam kinematics
-  // THcPrimaryKine* hkin_primary = new THcPrimaryKine("H.kin.primary", "HMS Single Arm Kinematics", "H", "H.rb");
-  // gHaPhysics->Add(hkin_primary);
-  // Add Physics Module to calculate secondary (scattered) beam kinematics
-  // THcSecondaryKine* pkin_secondary = new THcSecondaryKine("P.kin.secondary", "SHMS Single Arm Kinematics", "P", "H.kin.primary");
-  // gHaPhysics->Add(pkin_secondary);
-  
+ 
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
   // Global Objects & Event Handlers
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
-    // Add trigger apparatus
+  // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);
   // Add trigger detector to trigger apparatus
@@ -217,19 +211,18 @@ void replay_production_coin_pElec_hProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // Set to read in Hall C run database parameters
   run->SetRunParamClass("THcRunParameters");
   
-  // Eventually need to learn to skip over, or properly analyze
-  // the pedestal events
-  run->SetEventRange(1, MaxEvent);    // Physics Event number, does not
-                                      // include scaler or control events.
+  // Eventually need to learn to skip over, or properly analyze the pedestal events
+  run->SetEventRange(1, MaxEvent); // Physics Event number, does not include scaler or control events.
   run->SetNscan(1);
   run->SetDataRequired(0x7);
   run->Print();
 
   // Define the analysis parameters
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
-  analyzer->SetCountMode(2);    // 0 = counter is # of physics triggers
-                                // 1 = counter is # of all decode reads
-                                // 2 = counter is event number
+  analyzer->SetCountMode(2);  // 0 = counter is # of physics triggers
+                              // 1 = counter is # of all decode reads
+                              // 2 = counter is event number
+
   analyzer->SetEvent(event);
   // Set EPICS event type
   analyzer->SetEpicsEvtType(180);

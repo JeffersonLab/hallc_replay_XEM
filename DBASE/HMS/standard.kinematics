@@ -1,0 +1,548 @@
+# HMS
+# Need to set htheta_lab to a NEGATIVE value
+# 1h gtargmass_amu=1.00794
+# 12C gtargmass_amu=12.0107
+# 27Al gtargmass_amu=26.98
+#
+
+# Run 1277 is last December 2017 HMS run
+
+0-1277
+gpbeam = 2.221
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -25.005
+hpcentral = 1.6
+
+1117-1131
+htheta_lab = -25.005
+hpcentral = 1.6
+
+1132
+gtargmass_amu=1.00794
+htheta_lab = -25.005
+hpcentral = 1.6
+
+1133-1136
+htheta_lab = -25.005
+hpcentral = 1.6
+
+1137
+gtargmass_amu=0.0
+htheta_lab = -13.5
+hpcentral = 1.6
+
+1138-1139
+htheta_lab = -13.5
+hpcentral = 1.6
+
+1140-1144
+htheta_lab = -13.5
+hpcentral = 2.309
+
+1145-1149
+gtargmass_amu=1.00794
+htheta_lab = -13.51
+hpcentral = 2.309
+
+1150
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.293
+
+1151
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.259
+
+1152
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.234
+
+1153
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.211
+
+1154
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.187
+
+1155
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.180
+
+1156
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.165
+
+1157
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.182
+
+1158
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.142
+
+1159
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.120
+
+1160
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.099
+
+1161
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.078
+
+1162
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.057
+
+1163
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.037
+
+1164
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 2.017
+
+1165
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.998
+
+1166
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.979
+
+1167
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.960
+
+1168
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.942
+
+1169
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.924
+
+1170
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.906
+
+1171
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.889
+
+1172
+gtargmass_amu=1.00794
+htheta_lab = -13.5
+hpcentral = 1.889
+
+1173
+gtargmass_amu=1.00794
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1174
+gtargmass_amu=1.00794
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1175
+gtargmass_amu=1.00794
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1176
+gtargmass_amu=26.98
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1177
+gtargmass_amu=26.98
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1178-1194
+gtargmass_amu=12.0107
+htheta_lab = -21.94
+hpcentral = 1.6162
+
+1211-1213
+gtargmass_amu=1.00794
+htheta_lab = -21.94
+hpcentral = 0.9
+
+1214
+gtargmass_amu=12.0107
+htheta_lab = -42.96
+hpcentral = 0.9
+
+1215
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 1.20
+
+1216
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 1.20
+
+1217
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 1.04
+
+1218
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 1.04
+
+1219
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 0.92
+
+1220
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 0.92
+
+1221
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 0.80
+
+1222-1224
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 0.80
+
+1225
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 0.70
+
+1226
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 0.70
+
+1227
+gtargmass_amu=26.98
+htheta_lab = -42.96
+hpcentral = 0.60
+
+1228
+gtargmass_amu=1.00794
+htheta_lab = -42.96
+hpcentral = 0.60
+
+1239-1254
+gtargmass_amu=12.0107
+htheta_lab = -14.01
+hpcentral = 1.0
+
+1255-1268
+gtargmass_amu=12.0107
+htheta_lab = -14.0
+hpcentral = 1.0
+
+1269-1270
+gtargmass_amu=12.0107
+htheta_lab = -14.0
+hpcentral = 2.1
+
+
+# start the Jan 12 commissioning
+
+
+1289-1311
+
+gtargmass_amu=1.00794
+htheta_lab = -15.
+hpcentral = 3.0
+hpartmass = 0.00051099
+gpbeam = 6.430
+
+1312-1315
+gtargmass_amu=1.00794
+htheta_lab = -24.995
+hpcentral = 3.0
+hpartmass = 0.00051099
+gpbeam = 6.430
+
+1316-1324
+gtargmass_amu=1.00794
+htheta_lab = -24.995
+hpcentral = 1.4
+hpartmass = 0.00051099
+gpbeam = 6.430
+
+1325
+gtargmass_amu=2.014101
+htheta_lab = -24.995
+hpcentral = 1.4
+hpartmass = 0.00051099
+gpbeam = 6.43
+
+# Q2 defocussed tune
+1327
+gpbeam = 6.430
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -24.995
+hpcentral = 3.0
+
+# ep elastics 
+
+1329
+gpbeam = 6.430
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 5.205
+
+1330-1334
+gpbeam = 6.430
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.5
+
+#HMS/SHMS Angle and Position Matrix Optimization 
+1335
+gpbeam = 6.430
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.5
+
+1336
+gpbeam = 6.430
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -23.0
+hpcentral = 3.5
+
+1337-1341
+gpbeam = 6.430
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 4.0
+
+1342-1343
+gpbeam = 6.430
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = -22.005
+hpcentral = 3.2
+
+#Run Plan: Large Ytar: HMS/SHMS Angel and position Matrix Optimaization (01/15/18)
+
+1342-1352
+gpbeam = 6.430 
+gtargmass_amu= 12.0107
+hpartmass = 0.00051099
+htheta_lab = -30.01
+hpcentral = 2.0
+
+1353-1358
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 3.0
+
+1359-1377
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 1.4
+
+
+1378-1381
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -25.01
+hpcentral = 3.
+
+1394-1402
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.
+
+1403-1414
+gpbeam = 6.430 
+gtargmass_amu= 2.014101
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.
+
+1415-1423
+gpbeam = 6.430 
+gtargmass_amu= 12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.5
+
+1424-1436
+gpbeam = 6.430 
+gtargmass_amu=26.98
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 3.0
+
+1437-1446
+gpbeam = 6.430 
+gtargmass_amu= 26.98
+hpartmass = 0.00051099
+htheta_lab = -22.0
+hpcentral = 2.131
+
+1448-1455
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0
+
+1481-1492
+gpbeam = 6.430 
+gtargmass_amu=26.98
+hpartmass = 0.00051099
+htheta_lab = -64.99
+hpcentral = 1.0
+
+1493-1504
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0	
+
+1505-1505
+gpbeam = 6.430 
+gtargmass_amu= 26.98
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0	
+
+1506-1508
+gpbeam = 6.430 
+gtargmass_amu= 1.00794
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0	
+
+1509-9999
+gpbeam = 6.430 
+gtargmass_amu=26.98 
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 1.0	
+
+1510-1510
+gpbeam = 6.430 
+gtargmass_amu=12.0107 
+hpartmass = 0.00051099
+htheta_lab = -65.0
+hpcentral = 2.0	
+
+1511-1513
+gpbeam = 6.430 
+gtargmass_amu=12.0107 
+hpartmass = 0.00051099
+htheta_lab = 30.01
+hpcentral = 2.0	
+
+1519-1526
+gpbeam = 10.59 
+gtargmass_amu=1.00794 
+hpartmass = 0.00051099
+htheta_lab = 18.50
+hpcentral = 5.816
+
+1527-1528
+gpbeam = 10.59 
+gtargmass_amu=12.0107 
+hpartmass = 0.00051099
+htheta_lab = 18.50
+hpcentral = 5.816
+
+1529-1530
+gpbeam = 10.59 
+gtargmass_amu=1.00794 
+hpartmass = 0.00051099
+htheta_lab = 18.50
+hpcentral = 5.816
+
+1531-1532
+gpbeam = 10.59 
+gtargmass_amu=12.0107
+hpartmass = 0.00051099
+htheta_lab = 18.50
+hpcentral = 5.816
+
+ 
+1553-1555
+gpbeam = 10.59 
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -21.00
+hpcentral = 6.2
+
+1556-1559
+gpbeam = 10.59 
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -21.00
+hpcentral = 5.9
+
+1560-1561
+gpbeam = 10.59 
+gtargmass_amu=26.98
+hpartmass = 0.00051099
+htheta_lab = -21.00
+hpcentral = 5.7
+
+1562-1572
+gpbeam = 10.59 
+gtargmass_amu=1.00794
+hpartmass = 0.00051099
+htheta_lab = -21.00
+hpcentral = 5.7
+
+1573-9999
+gpbeam = 10.59 
+gtargmass_amu=26.98
+hpartmass = 0.00051099
+htheta_lab = -21.00
+hpcentral = 5.7
