@@ -3,7 +3,7 @@
 #********************
 
 # HMS CER GOOD Pulse Profile
-TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / mV' [I+1] H.cer.goodAdcPed 2 0.5 2.5 200 0 200
+TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / mV' [I+1] H.cer.goodAdcPed 2 0.5 2.5 200 0 200 H.cer.goodAdcPed>0.0
 
 # HMS CER Good Occupancy and Multiplity
 TH1F hcer_good_occ 'HMS Cherenkov Good Occupancy; PMT Number; Number of Entries' H.cer.numGoodAdcHits 2 0.5 2.5
