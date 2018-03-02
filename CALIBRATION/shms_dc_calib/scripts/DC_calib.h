@@ -57,9 +57,13 @@ class DC_calib
 
   TString ntrack;
   TString etracknorm; 
+  TString cernpe;
+  TString pELCLEAN;
 
   Double_t dc_ntrack;
   Double_t psh_etracknorm;
+  Double_t cer_npe;
+  Double_t pEL_CLEAN;
 
   Int_t wire;
   
@@ -70,6 +74,7 @@ class DC_calib
   Double_t wire_num[NPLANES][1000];
 
   Int_t nwires[NPLANES];
+
 
   //Declare variables to plot and save histo (dt = drift time)
   TString plane_dt_name;
@@ -147,6 +152,8 @@ class DC_calib
   Double_t **t_zero_err;
   
   //declare variables to make plot of tzero v. wire number
+  
+  Double_t weighted_avg[NPLANES];
   TGraphErrors *graph;
   TString graph_title;
   TCanvas *gr1_canv;
@@ -162,7 +169,10 @@ class DC_calib
   TString lookup_table;
   TString headers;
 
-
+  //Declare variables to apply constant offset in time
+  //HMS
+  Double_t offset;
+  Double_t max_wire_entry;
 
 };
 
