@@ -16,8 +16,8 @@ pngcer_dp_max = 25.0
 
 ; ADC time window cut values used to select "good" ADC events
 pngcer_adc_tdc_offset = 200.
-pngcer_adcTimeWindowMin = -1000.
-pngcer_adcTimeWindowMax = 1000.
+pngcer_adcTimeWindowMin = -1000.,-1000.,-1000.,-1000.
+pngcer_adcTimeWindowMax = 1000.,1000.,1000.,1000.
 
 ; ; NPE Threshold for "good" hit (for measureing effic.)
 pngcer_npe_thresh = 0.5
