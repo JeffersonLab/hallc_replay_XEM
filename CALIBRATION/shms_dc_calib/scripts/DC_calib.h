@@ -12,7 +12,7 @@ class DC_calib
  public:
   
   //consructor and destructor
-  DC_calib(TString a, TString b, const Int_t c, Long64_t d);
+  DC_calib(TString a, TString b, const Int_t c, Long64_t d, TString e);
   ~DC_calib();
 
 
@@ -38,6 +38,7 @@ class DC_calib
   Int_t run_NUM;
   Long64_t num_evts;
  
+  TString pid;
 
   TTree *tree;
   Long64_t nentries;
@@ -55,15 +56,19 @@ class DC_calib
   TString drifttime;
   TString wirenum;
 
-  TString ntrack;
-  TString etracknorm; 
-  TString cernpe;
-  TString pELCLEAN;
-
-  Double_t dc_ntrack;
-  Double_t psh_etracknorm;
+  TString cer_npe_name;
+  TString EL_CLEAN_name;
+ 
   Double_t cer_npe;
-  Double_t pEL_CLEAN;
+  Double_t EL_CLEAN;
+
+  Double_t hcer_npe;
+
+
+  //Boolean for PID cuts
+  Bool_t cer_elec;     //hms cerenkov cut
+  Bool_t elec_clean;    //e- clean trigger tdctime cut
+
 
   Int_t wire;
   
