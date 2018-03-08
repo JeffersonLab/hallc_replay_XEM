@@ -204,7 +204,8 @@ void DC_calib::GetDCLeafs()
     {
       cer_npe_name = "P.ngcer.npeSum";  
       EL_CLEAN_name = "T.shms.pEL_CLEAN_tdcTime";
-      
+      //EL_CLEAN_name = "T.coin.pEL_CLEAN_ROC2_tdcTime";
+
       tree->SetBranchAddress(cer_npe_name, &cer_npe);   
       tree->SetBranchAddress(EL_CLEAN_name, &EL_CLEAN);
     }
@@ -213,7 +214,8 @@ void DC_calib::GetDCLeafs()
     {
       cer_npe_name = "H.cer.npeSum";  
       EL_CLEAN_name = "T.hms.hEL_CLEAN_tdcTime";
-      
+      //EL_CLEAN_name = "T.coin.hEL_CLEAN_ROC2_tdcTime";
+
       tree->SetBranchAddress(cer_npe_name, &cer_npe);   
       tree->SetBranchAddress(EL_CLEAN_name, &EL_CLEAN);
         
@@ -356,31 +358,38 @@ void DC_calib::EventLoop()
       tree->GetEntry(i);  
 
 
+      //------READ USER 'pid' input to determine particle type to calibrate----------
+      
       //NO PID Cut, Set Bool_t to always kTRUE
       if(pid=="pid_kFALSE")
 	{
-	 
 	  cer_elec = 1;    
-	  elec_clean = 1;    //tdcTime>0
-	  
+	  elec_clean = 1;     
 	}
 
       //PID Cut, Set Bool_t to actual value, and see if it passes cut
       else if (pid=="pid_elec")
 	{
-	 
 	  cer_elec = cer_npe>1.0;
 	  elec_clean = EL_CLEAN>0;    //tdcTime>0
-	  
+	}
+
+      //PID Cut, hadron, Set Bool_t to actual value, and see if it passes cut
+      else if (pid=="pid_hadron")
+	{
+	  cer_elec = cer_npe<1.0;
+	  elec_clean = EL_CLEAN==0;    //tdcTime==0 
 	}
 
       else 
 	{
 	  cout << "Enter which particle to calibrate: " << endl;
-	  cout << "For electrons: 'pid_elec' " << endl; 
+	  cout << "For electrons: 'pid_elec' " << endl;
+	  cout << "For hadrons: 'pid_hadron' " << endl;	  
 	  cout << "NO PID Cuts: 'pid_KFALSE' " << endl;
 	}
-  
+
+      //----------------------------------------------------------------------------
 
       if (cer_elec&&elec_clean) 
 	{
@@ -657,7 +666,7 @@ void DC_calib::FitWireDriftTime()
 	  std_dev = fitted_cell_dt[ip][wire].GetStdDev();
 
 	  //Require sufficient events and NOT CRAZY! tzero values, otherwis, set t0 to ZERO
-	  if (abs(-y_int/m) < std_dev*5.0 && m > 0.0 && entries[ip][wire]>max_wire_entry)
+	  if (abs(-y_int/m) < std_dev*5.0 && m > 0.2 && entries[ip][wire]>max_wire_entry)
 	    {
 	      t_zero[ip][wire] = - y_int/m ;
 	      t_zero_err[ip][wire] = sqrt(y_int_err*y_int_err/(m*m) + y_int*y_int*m_err*m_err/(m*m*m*m) );
@@ -669,7 +678,7 @@ void DC_calib::FitWireDriftTime()
 
 	 
 	 
-	    else if (abs(-y_int/m)>=5.0*std_dev ||  m <= 0.0  || entries[ip][wire] <= max_wire_entry)
+	    else if (abs(-y_int/m)>=5.0*std_dev ||  m <= 0.2  || entries[ip][wire] <= max_wire_entry)
 		{
 		  
 		  t_zero[ip][wire] = 0.0;
@@ -923,14 +932,53 @@ void DC_calib::ApplyTZeroCorrection()
 {
   
  
-  //cout << "ApplyT0Corr  "<< endl;
+  cout << "ApplyT0Corr  "<< endl;
 
+  
   //Loop over all entries
   for(Long64_t i=0; i<num_evts; i++)
     {
-      tree->GetEntry(i);      
-      
-      
+      tree->GetEntry(i);
+
+      //----------READ USER 'pid' input to determine particle type to calibrate----------
+
+      //PID Cut, Set Bool_t to always kTRUE
+      if(pid=="pid_kFALSE")
+	{
+	 
+	  cer_elec = 1;    
+	  elec_clean = 1;    
+	  
+	}
+
+      //PID Cut, Set Bool_t to actual value, and see if it passes cut
+      else if (pid=="pid_elec")
+	{
+	 
+	  cer_elec = cer_npe>1.0;
+	  elec_clean = EL_CLEAN>0;    //tdcTime>0
+
+	}
+
+      //PID Cut, hadron, Set Bool_t to actual value, and see if it passes cut
+      else if (pid=="pid_hadron")
+	{
+	 
+	  cer_elec = cer_npe<1.0;
+	  elec_clean = EL_CLEAN==0;    //tdcTime==0
+	  
+	}
+
+      else 
+	{
+	  cout << "Enter which particle to calibrate: " << endl;
+	  cout << "For electrons: 'pid_elec' " << endl;
+	  cout << "For hadrons: 'pid_hadron' " << endl;	  
+	  cout << "NO PID Cuts: 'pid_KFALSE' " << endl;
+	}
+
+      //--------------------------------------------------------------------------------------
+	  
       if (cer_elec&&elec_clean) 
 	{
 	  

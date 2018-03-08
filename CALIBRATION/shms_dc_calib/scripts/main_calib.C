@@ -16,10 +16,10 @@ int main_calib()
   clock_t cl;
   cl = clock();
                                                                                                   
-                                                                                                  //pid_elec, pid_kFALSE (no PID cuts) 
+                                                                                                  //pid_elec, pid_hadron, pid_kFALSE (no PID cuts) 
                                                                                                   // |
                                                                                                   // v
-  DC_calib obj("HMS", "../../../ROOTfiles/hms_replay_production_all_1640_300000.root", 1640,290000, "pid_elec");
+  DC_calib obj("HMS", "../../../ROOTfiles/coin_replay_production_1866_-1_dcuncalib.root", 1866,1400000, "pid_hadron");
   
  
   obj.printInitVar();
