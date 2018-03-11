@@ -4,9 +4,9 @@
 
 #define NPLANES 12
 #define NBINS 400
-#define MINBIN -50.5
-#define MAXBIN 349.5
-#define TOTAL_BINS 274  
+#define MINBIN -50.0
+#define MAXBIN 350.0
+#define TOTAL_BINS 189  
 class DC_calib
 {
  public:
@@ -56,18 +56,27 @@ class DC_calib
   TString drifttime;
   TString wirenum;
 
-  TString cer_npe_name;
-  TString EL_CLEAN_name;
+  TString cal_etotnorm_leaf;   
+  TString cer_npe_leaf;
+  TString EL_CLEAN_leaf;
  
-  Double_t cer_npe;
-  Double_t EL_CLEAN;
+  Double_t cal_etot_norm;   //calorimeter normalized energy
+  Double_t cer_npe;       //cerenkon photoelectron Sum
+  Double_t EL_CLEAN;     //electron clean trigger
 
   Double_t hcer_npe;
 
+  //Boolean for checking if TBranch exists
+  Bool_t status_cal;
+  Bool_t status_cer;
+  Bool_t status_EL_clean;
 
   //Boolean for PID cuts
-  Bool_t cer_elec;     //hms cerenkov cut
+  Bool_t cal_elec;     //calorimeter normalized energy cut
+  Bool_t cer_elec;     //cerenkov cut
   Bool_t elec_clean;    //e- clean trigger tdctime cut
+
+ 
 
 
   Int_t wire;
@@ -155,7 +164,11 @@ class DC_calib
   Double_t std_dev;
   Double_t **t_zero;         
   Double_t **t_zero_err;
-  
+
+  //tzero with tdc offsets taken into account, 
+  //to be written into tzero param file
+  Double_t **t_zero_final; 
+
   //declare variables to make plot of tzero v. wire number
   
   Double_t weighted_avg[NPLANES];

@@ -16,11 +16,12 @@ int main_calib()
   clock_t cl;
   cl = clock();
                                                                                                   
-                                                                                                  //pid_elec, pid_hadron, pid_kFALSE (no PID cuts) 
+                                                                                                  //pid_elec, pid_hadron, pid_bkg pid_kFALSE (no PID cuts) 
                                                                                                   // |
                                                                                                   // v
-  DC_calib obj("HMS", "../../../ROOTfiles/coin_replay_production_1866_-1_dcuncalib.root", 1866,1400000, "pid_hadron");
-  
+  DC_calib obj("HMS", "../../../ROOTfiles/hms_replay_production_all_1856_dcuncal.root", 1856,2000000, "pid_kFALSE");
+// DC_calib obj("SHMS", "../../../ROOTfiles/shms_replay_production_all_2071_-1_dcuncalib.root", 2071, 3000000, "pid_bkg"); 
+
  
   obj.printInitVar();
   obj.SetPlaneNames();
@@ -29,12 +30,11 @@ int main_calib()
   obj.CreateHistoNames();
   obj.EventLoop();
   obj.Calculate_tZero();
-  obj.WriteTZeroParam();
   obj.ApplyTZeroCorrection();
+  obj.WriteTZeroParam();
   obj.WriteLookUpTable();
   obj.WriteToFile(1);  //set argument to (1) for debugging
-  
- 
+   
 
   //stop clock
  cl = clock() - cl;
