@@ -6,8 +6,8 @@ pcut_TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
 SHMS_Pretrig  pcut_TRIG1 || pcut_TRIG2 || pcut_TRIG3
 
 shms_trigs        SHMS_event
-pcut_edtm_accepted     T.shms.pEDTM_tdcTime != 0.0
-pcut_physics_accepted  T.shms.pEDTM_tdcTime == 0.0
+pcut_edtm_accepted     T.shms.pEDTM_tdcTimeRaw != 0.0
+pcut_physics_accepted  T.shms.pEDTM_tdcTimeRaw == 0.0
 
 pcut_good_S1_time         T.shms.p1T_tdcTime > 241 && T.shms.p1T_tdcTime < 243
 pcut_good_S2X_time        T.shms.p2X_tdcTime > 180 && T.shms.p2X_tdcTime < 220

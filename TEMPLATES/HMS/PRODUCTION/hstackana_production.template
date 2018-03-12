@@ -27,12 +27,12 @@ BCM17 Charge: {H.BCM17.scalerCharge:%.3f} uC
 Unser Charge: {H.Unser.scalerCharge:%.3f} uC
 
 Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1Mhz.scalerTimeCut:%.3f}s, or {((H.1Mhz.scalerTimeCut/H.1Mhz.scalerTime)*100.):%.3f}% of total run time.
-BCM1 Beam Cut Current: {H.BCM1.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		  
-BCM2 Beam Cut Current: {H.BCM2.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		 
-BCM4a Beam Cut Current: {H.BCM4A.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		  
-BCM4b Beam Cut Current: {H.BCM4B.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		 
-BCM17 Beam Cut Current: {H.BCM17.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		 
-Unser Beam Cut Current: {H.Unser.scalerCharge/H.1Mhz.scalerTime:%.3f} uA		  
+BCM1 Beam Cut Current: {H.BCM1.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		  
+BCM2 Beam Cut Current: {H.BCM2.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		 
+BCM4a Beam Cut Current: {H.BCM4A.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		  
+BCM4b Beam Cut Current: {H.BCM4B.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		 
+BCM17 Beam Cut Current: {H.BCM17.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		 
+Unser Beam Cut Current: {H.Unser.scalerChargeCut/H.1Mhz.scalerTimeCut:%.3f} uA		  
 
 BCM1  Beam Cut Charge: {H.BCM1.scalerChargeCut:%.3f} uC
 BCM2  Beam Cut Charge: {H.BCM2.scalerChargeCut:%.3f} uC

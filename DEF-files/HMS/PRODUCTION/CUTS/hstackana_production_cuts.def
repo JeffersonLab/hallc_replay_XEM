@@ -1,5 +1,3 @@
-# Report file for HMS stack
-
 Block: RawDecode
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_rawdecode_cuts.def"
 RawDecode_master  1
@@ -10,7 +8,7 @@ Decode_master          ALL_HMS_NO_EDTM
 
 Block: CoarseTracking
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_coarsetracking_cuts.def"
-CoarseTracking_master ALL_HMS_NO_events
+CoarseTracking_master ALL_HMS_NO_EDTM
 
 Block: CoarseReconstruct
 CoarseReconstruct_master ALL_HMS_NO_EDTM

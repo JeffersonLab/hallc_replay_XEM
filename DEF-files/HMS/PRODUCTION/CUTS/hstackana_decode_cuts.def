@@ -6,6 +6,6 @@ hcut_TRIG3        T.hms.hTRIG3_tdcTimeRaw > 0
 HMS_Pretrig       hcut_TRIG1 || hcut_TRIG2 || hcut_TRIG3
 
 hms_trigs              HMS_event
-hcut_edtm_accepted     T.hms.hEDTM_tdcTime != 0.0
-hcut_physics_accepted  T.hms.hEDTM_tdcTime == 0.0
+hcut_edtm_accepted     T.hms.hEDTM_tdcTimeRaw != 0.0
+hcut_physics_accepted  T.hms.hEDTM_tdcTimeRaw == 0.0
 ALL_HMS_NO_EDTM        ALL_HMS_events && hcut_physics_accepted
