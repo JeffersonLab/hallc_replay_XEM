@@ -18,19 +18,18 @@ class DC_calib
 
   //Define Functions
   void setup_Directory();
-  void printInitVar();
   void SetPlaneNames();
+  void SetTdcOffset();
   void GetDCLeafs();
   void AllocateDynamicArrays();
   void CreateHistoNames();
-  void EventLoop();
+  void EventLoop(string option);
   void WriteToFile(Int_t debug);
   void CalcT0Historical();
   void Calculate_tZero();
   void GetTwentyPercent_Peak();
   void FitWireDriftTime();
   void WriteTZeroParam();
-  void ApplyTZeroCorrection();
   void WriteLookUpTable();
 
 
@@ -53,32 +52,29 @@ class DC_calib
   
   TString base_name;
   TString ndatatime;
-  TString ndatawirenum;
   
   TString drifttime;
   TString wirenum;
 
   TString cal_etot_leaf;   
   TString cer_npe_leaf;
-  TString EL_CLEAN_leaf;
  
   Double_t cal_etot;   //calorimeter normalized energy
   Double_t cer_npe;       //cerenkon photoelectron Sum
-  Double_t EL_CLEAN;     //electron clean trigger
-
-  Double_t hcer_npe;
 
   //Boolean for checking if TBranch exists
   Bool_t status_cal;
   Bool_t status_cer;
-  Bool_t status_EL_clean;
+  
 
   //Boolean for PID cuts
   Bool_t cal_elec;     //calorimeter normalized energy cut
   Bool_t cer_elec;     //cerenkov cut
-  Bool_t elec_clean;    //e- clean trigger tdctime cut
-  Bool_t single_hit;    //single hit / event / plane to clean background
+  Bool_t good_event;    //single hit / event / plane o clean background
  
+  Int_t cnts_ch1;
+  Int_t cnts_ch2;
+  Int_t ngood_evts;
 
   //Variables for setting up a run_directory to keep track of calibration files
   const char* dir_log;
@@ -89,7 +85,6 @@ class DC_calib
   Int_t ndata_time[NPLANES];
   Double_t drift_time[NPLANES][1000];
 
-  Int_t ndata_wirenum[NPLANES];
   Double_t wire_num[NPLANES][1000];
 
   Int_t nwires[NPLANES];
@@ -194,7 +189,8 @@ class DC_calib
 
   //Declare variables to apply constant offset in time
   //HMS
-  Double_t offset;
+  Double_t **offset;
+  Double_t tdc_offset;
   Double_t max_wire_entry;
 
 };
