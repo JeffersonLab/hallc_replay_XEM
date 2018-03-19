@@ -24,6 +24,7 @@ class DC_calib
   void GetTwentyPercent_Card();  
   void FitCardDriftTime();
   void ApplyTZeroCorrectionPerCard(); 
+  Double_t GetCardT0_alternative(Int_t ith_plane, Int_t ith_card);
 
   //---Per Global/Per Wire methods 
   void setup_Directory();
@@ -216,7 +217,11 @@ class DC_calib
 
   Int_t plane_cards[NPLANES];    //number of disc. cards / plane
   Int_t card;
-  
+
+  //GetCardT0_alternative() method variables
+  Double_t maxContent_frac;
+  Double_t card_T0;
+
   //GetTwentyPercent_Card()/Fit Card methods variables
   Int_t binValLow; 
   Int_t binValHigh; 

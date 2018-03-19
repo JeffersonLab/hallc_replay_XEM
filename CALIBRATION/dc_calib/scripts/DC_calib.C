@@ -263,7 +263,7 @@ void DC_calib::SetPlaneNames()
       
       //per wire ONLY
       percent = 0.20;  ///set 20% of max drit time content to fit around
-      t0_err_thrs = 0;
+      t0_err_thrs = 15;
       max_wire_entry = 1000;
 
       tdc_offset = 115.;  
@@ -645,7 +645,7 @@ void DC_calib::CreateHistoNames()
 	      
 	      fitted_card_hist[ip][card].SetName(fitted_card_hist_name);
 	      fitted_card_hist[ip][card].SetTitle(fitted_card_hist_title);
-	      fitted_card_hist[ip][card].SetBins(200, MINBIN, MAXBIN);
+	      fitted_card_hist[ip][card].SetBins(NBINS, MINBIN, MAXBIN);
 	      fitted_card_hist[ip][card].SetXTitle("Drift Time (ns)");
 	      fitted_card_hist[ip][card].SetYTitle("Number of Entries / 1 ns");
 	      
@@ -970,8 +970,8 @@ void DC_calib::EventLoop(string option="")
       good_event=kFALSE;
       
 
-      //***good event definition***: cal_energy > 100 MeV, cer_npeSum > 1.0, 5/6 plane hits
-      good_event = cal_elec && cer_elec && cnts_ch1>4 && cnts_ch2>4;
+      //***good event definition***: cal_energy > 100 MeV, cer_npeSum > 1.0
+      good_event = cal_elec && cer_elec; //&& cnts_ch1>4 && cnts_ch2>4;
       
    
 	  // cout << "passed cut: " << i << endl;
@@ -1078,8 +1078,9 @@ void DC_calib::EventLoop(string option="")
 				      //Fill Corrected Card Drift Times
 				      dt_vs_wire_corr[ip].Fill(wire_num[ip][j], drift_time[ip][j] - t_zero_card[ip][card]);  
 				      corr_card_hist[ip][card].Fill(drift_time[ip][j]-t_zero_card[ip][card]);
-				      t_zero_final[ip][wire-1] = t_zero[ip][wire-1];
-
+   				      //t_zero_final[ip][wire-1] = t_zero_card[ip][card];
+				  
+				      
 				    } 
 				  
 				} //loop over cards
@@ -1247,7 +1248,7 @@ void DC_calib::FitWireDriftTime()
   //Loop over planes
   for (Int_t ip = 0; ip < NPLANES; ip++)
     {
-      cout << "pLANE: " << ip << endl;
+    
       //Loop over DC sense wires
       for (wire = 0; wire < nwires[ip]; wire++)
 	{
@@ -1348,9 +1349,19 @@ void DC_calib::GetTwentyPercent_Card()
 	
 	   binSearchHigh =  fitted_card_hist[ip][card].GetMaximumBin();           //returns bin value of maximum content
 	   wireBinContentMax[ip][card] = fitted_card_hist[ip][card].GetMaximum(); // return maximum histo bin content
-	   wireBinContentLow[ip][card]  = wireBinContentMax[ip][card]*0.20;        // Get content with 20% of max bin content
-	   wireBinContentHigh[ip][card] = wireBinContentMax[ip][card]*0.60;       // Get content with 60% of max bin content
+	   entries_card[ip][card] = fitted_card_hist[ip][card].GetEntries();      // return entries of card histograms
 
+	   //if (entries_card[ip][card] < 2000)
+	   //{
+	   //  wireBinContentLow[ip][card]  = wireBinContentMax[ip][card]*0.20;        // Get content with 10% of max bin content                                                          
+	   //  wireBinContentHigh[ip][card] = wireBinContentMax[ip][card]*0.40;       // Get content with 30% of max bin content              
+	   //   }
+
+	   //else if (entries_card[ip][card] >= 2000)
+	   //{
+	       wireBinContentLow[ip][card]  = wireBinContentMax[ip][card]*0.20;        // Get content with 20% of max bin content
+	       wireBinContentHigh[ip][card] = wireBinContentMax[ip][card]*0.60;       // Get content with 60% of max bin content
+	       //}
 	   
 	   // | content_of_desired_bin - (binSearch_HighContent-binSearchLowContent) | <= binDiffTherhold 
 	   fitted_card_hist[ip][card].GetBinWithContent(wireBinContentLow[ip][card],  binValLow,  binSearchLow, binSearchHigh, binDiffThreshLow); 
@@ -1385,16 +1396,85 @@ void DC_calib::GetTwentyPercent_Card()
 } //end  GetTwentyPercent_Card() method
 
 //___________________________________________________________________
+Double_t DC_calib::GetCardT0_alternative(Int_t ip, Int_t card)
+{
+
+  //NOTE**: This method must be called within FitCardDriftTime() method
+  // if the fit t0 error/card entries exceed a threshold
+  
+  //  cout << "Inside GetCardT0 Method . . ." << endl;
+  
+    cout << "Calling GetCardT0_alternative ( " << ip << " , " << card << " ) " << endl;
+ 
+  
+  binSearchHigh = fitted_card_hist[ip][card].GetMaximumBin();
+  maxContent_frac = fitted_card_hist[ip][card].GetBinContent(binSearchHigh) * 0.20;
+
+  //cout << "Maximum Bin Number: " << binSearchHigh << endl;
+  //cout << "Maximum Bin Content: " << fitted_card_hist[ip][card].GetBinContent(binSearchHigh) << endl;
+  //cout << "20% of Max Content: " << maxContent_frac << endl;
+
+  //cout << "****About to loop over bins**** ... " << endl;
+  //Loop over card drift time bins
+  for (Int_t bin=1; bin <= binSearchHigh; bin++)
+    {
+      content_bin = fitted_card_hist[ip][card].GetBinContent(bin);
+      
+      content.push_back(content_bin);
+      bin_num.push_back(bin);
+
+      //      cout << "bin: " << bin << endl;
+      // cout << "content size: " << content.size() << endl;
+      //  cout << "About to check content size " << endl;
+      if (content.size() == 10)
+	{
+	  counts = 0;
+
+	  //  cout << "About to loop over 5 bins " << endl;
+	  for (Int_t j=0; j<10; j++)
+	    {
+	      //cout << "content["<<j<<"]: " << content[j] << endl; 
+	      //cout << "max_Content frac: " << maxContent_frac << endl;
+	      //cout << "counts: " << counts << endl;
+	      if(content[j] > 0)
+		{
+		  counts = counts + 1;
+		  if(counts >=8) {goto stop;}
+		} //end 'if' statement
+	      
+	      content.clear();
+	      bin_num.clear();
+
+	    } //end loop over 5 bin sample
+
+	} //end 'if' stmnt checking content size
+
+    } //end loop over bins
+
+ stop:
+  // cout << "bin_num[0]:  " << bin_num[0] << endl;
+  card_T0 = fitted_card_hist[ip][card].GetXaxis()->GetBinCenter(bin_num[0]);
+  //cout << "card_T0 = " << card_T0 << endl;
+  return card_T0;
+
+
+}
+
+//___________________________________________________________________
 void DC_calib::FitCardDriftTime()
 {
+  cout << "Entering FitCardDriftTime Method . . ." << endl;
 
   for (Int_t ip = 0; ip < NPLANES; ip++)
     {
+
+      cout << "Plane : " << ip << endl;
     
      //Loop over DC cards
       for (card = 0; card < plane_cards[ip]; card++)
 	{
      
+	  cout << "card: " << card << endl;
 	  tZero_fit = new TF1("tZero_fit", "[0]*x + [1]", wireFitRangeLow[ip][card], wireFitRangeHigh[ip][card]);
        
 	  //Set Parameter Names and Values
@@ -1404,7 +1484,9 @@ void DC_calib::FitCardDriftTime()
 	  tZero_fit->SetParameter(1, 1.0);
       
 	  entries_card[ip][card] = fitted_card_hist[ip][card].GetEntries();
-       
+
+	  cout << "entries: " << entries_card[ip][card] << endl;
+
 	  //Fit Function in specified range
 	  fitted_card_hist[ip][card].Fit("tZero_fit", "QR");
        
@@ -1418,31 +1500,56 @@ void DC_calib::FitCardDriftTime()
 	  std_dev = fitted_card_hist[ip][card].GetStdDev();
       
 	  //Require sufficient events and NOT CRAZY! tzero values, otherwis, set t0 to ZERO
-	  if (abs(-y_int/m) < std_dev*5.0 && m > 0.0 && entries_card[ip][card]>max_wire_entry)
+	  if ((abs(-y_int/m) < std_dev*5.0 && m > 0.0 )  || entries_card[ip][card]>2000)
 	    {
 	 
 	      t_zero_card[ip][card] = - y_int/m ;
 	      t_zero_card_err[ip][card] = sqrt(y_int_err*y_int_err/(m*m) + y_int*y_int*m_err*m_err/(m*m*m*m) );
     
+	      //if error of t0 is bad  (15), then set t0 = 0, since it is liekly that #evts is very low and insignificant to be corrected
+	      if(t_zero_card_err[ip][card] > t0_err_thrs || entries_card[ip][card] <= 2000 || m < 0.0)
+		{
+		  t_zero_card[ip][card] = GetCardT0_alternative(ip, card);
+		  t_zero_card_err[ip][card] = 0.0;
+		  //cout << "About to execute GetCardT0_alternative() " << endl;
+		  cout << "plane: " << ip << " :: card: " << card << "t_zero_card: " << GetCardT0_alternative(ip, card) << endl;
+		  
+		}
+
+	    }
+
+	  //ensure to assign card tzero values to zero, if card entries are not sufficient                                                                                                                            
+	  else if (abs(-y_int/m)>=5.0*std_dev ||  m <= 0.0  || entries_card[ip][card] <= 2000)                                                                                                              
+	    {                                                                                                                                                                                                         	     	
+	      t_zero_card[ip][card] = GetCardT0_alternative(ip, card);  
+	      t_zero_card_err[ip][card] = 0.0;                                                                                                                           
+	      //cout << "About to execute GetCardT0_alternative() " << endl;                                                                                             
+	      cout << "plane: " << ip << " :: card: " << card << "t_zero_card: " << GetCardT0_alternative(ip, card) << endl;                       
+	    }                                                                                                                                                                                                         
+	  
+
 	      for(wire=1; wire<=nwires[ip]; wire++)
 		{
    
-		  if (wire >= wire_min[ip][card] && wire <=wire_max[ip][card])
+		  if (wire >= wire_min[ip][card] && wire <=wire_max[ip][card]) //entries_card[ip][card]>max_wire_entry)
 		    {
 		   
 		      t_zero[ip][wire-1] = t_zero_card[ip][card];
 		      t_zero_err[ip][wire-1] = t_zero_card_err[ip][card];
-		 
-		    }
-		  
+		      t_zero_final[ip][wire-1] = t_zero_card[ip][card];                                                                                                                                                                      
+                                                                                                                                                                                                        
+		    } //end 'if' statement for wire group selection
+		
+		
+		  //ensure to assign wire tzero values to zero, if card entries are not sufficient
+		  //else if (wire >= wire_min[ip][card] && wire <=wire_max[ip][card] && t_zero_card_err[ip][card] > t0_err_thrs)//entries_card[ip][card] <= max_wire_entry)
+		  //{
+		  //  t_zero[ip][wire-1] = 0;
+		  //  t_zero_final[ip][wire-1] = 0;                                                                                   
+														                                                                                      
+		  //}
+		    
 		} //end wire loop
-	    
-	    } //end 'if' statement
-	  
-	  else if (abs(-y_int/m)>=5.0*std_dev ||  m <= 0.0  || entries_card[ip][card] <= max_wire_entry)
-	    {
-	        t_zero[ip][card] = 0.0;
-	    }
 
 	}  //end loop over cards
     
