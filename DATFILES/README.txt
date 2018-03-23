@@ -10,6 +10,7 @@ HMS
 ~~~~~
 SHMS
 ~~~~~
+-shms-2017-optimized.dat: matrix elements optimized using runs 1808-2239 during commissioning run period. To use this matrix, one must change the pphi_offset in shmsflags.param to 4.83E-4 rad. This is a 5th order fit. Still using non-optimized delta. 
 -shms-2011-26cm-monte_q2_m015_rec.dat: matrix elements to reflect KPP run findings with Q2 at 1.5% low. 
 -SHMS_fr3_rec__order_3.dat: ideal matrix elements using 3rd order fit. 
 -SHMS_fr3_rec__order_4.dat: ideal matrix elements using 4th order fit.
