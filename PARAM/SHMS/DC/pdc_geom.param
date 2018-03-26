@@ -44,8 +44,8 @@ pdc_readoutTB = 1, -1, 1, -1, 1, -1
 
 ; x, y and z position of center for each wire chamber in cm.
 ; From survey C1771.
-pdc_xcenter = -0.036, 0.008 ;
-pdc_ycenter = 0.019, 0.013 ;
+pdc_xcenter = -0.036, 0.008;
+pdc_ycenter = 0.019-0.613, 0.013-0.613 ;
 
 pdc_1_zpos = -40 - 0.656 ;
 pdc_2_zpos =  40 - 0.668 ;
