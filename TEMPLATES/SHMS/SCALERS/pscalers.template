@@ -200,12 +200,10 @@ EL-REAL  Pre-Trigger 50 ns Gate  : {P.pTRIG2.scalerRate/1000.:%.3f} kHz
 EL-CLEAN Pre-Trigger 50 ns Gate  : {P.pTRIG3.scalerRate/1000.:%.3f} kHz
 
 3/4 Pre-Trigger 100 ns Gate : {P.pPRE100.scalerRate/1000.:%.3f} kHz
-
 3/4 Pre-Trigger 150 ns Gate : {P.pPRE150.scalerRate/1000.:%.3f} kHz
-
 3/4 Pre-Trigger 200 ns Gate : {P.pPRE200.scalerRate/1000.:%.3f} kHz
 
-=:=:=:=:=:=:=:
+x=:=:=:=:=:=:=:
 = Hodoscopes
 =:=:=:=:=:=:=:
 
