@@ -6,6 +6,7 @@ HMS
 -hms_recon_coeff.dat: Original, ideal, matrix elements prior to optimization.
 -hms_recon_coeff_opt2018.dat: Optimized matrix elements for delta +/- 10%.
 
+You must use the corresponding hmsflags file in the PARAM/*/GEN/ to keep offsets correct!!
 
 ~~~~~
 SHMS
