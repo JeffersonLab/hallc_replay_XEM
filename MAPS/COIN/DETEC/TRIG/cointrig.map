@@ -124,6 +124,9 @@ REFINDEX=3
      3,       1,     13,     0 ! pPSHWR
      4,       1,     15,     0 ! pHGCER_MOD
      5,       1,     16,     0 ! pNGCER_MOD
+     8,       1,     17,     0 ! pHEL_NEG
+     9,       1,     18,     0 ! pHEL_POS
+    10,       1,     19,     0 ! pHEL_MPS
     11,       1,     14,     0 ! pFADC_TREF_ROC2
 
 ! F250 module
