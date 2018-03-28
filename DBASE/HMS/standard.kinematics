@@ -1213,3 +1213,164 @@ gtargmass_amu =  2.014101
 hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
+
+1879-1924
+gpbeam = 10.59
+gtargmass_amu =  2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1925-1925
+gpbeam = 10.59
+gtargmass_amu =  2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1926-1928
+gpbeam = 10.59
+gtargmass_amu =  1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1929
+gpbeam = 10.59
+gtargmass_amu = 26.981539
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1930-1931
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1932
+gpbeam = 10.59
+gtargmass_amu = 26.981539
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1934-1936
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1937-1937
+gpbeam = 10.59
+gtargmass_amu = 26.981539
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1938-1940
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1941-9999
+gpbeam = 10.59
+gtargmass_amu = 26.981539
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1942-1946
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1947-1949
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1951-1963
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1965-1975
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1976-1978
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1979-1981
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1982-1984
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.05
+
+1985-1986
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1987-1990
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1991
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1992-1997
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+1998-1999
+gpbeam = 10.59
+gtargmass_amu =  26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2000-9999
+gpbeam = 10.59
+gtargmass_amu =  1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
