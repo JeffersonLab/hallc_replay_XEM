@@ -14,3 +14,7 @@
 	path = UTIL_ED
 	url = https://github.com/JeffersonLab/UTIL_ED
 	branch = master
+[submodule "UTIL_SIDIS"]
+	path = UTIL_SIDIS
+	url = https://github.com/JeffersonLab/UTIL_SIDIS
+	branch = master
