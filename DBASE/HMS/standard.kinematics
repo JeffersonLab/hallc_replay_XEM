@@ -1368,9 +1368,74 @@ hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
 
-2000-9999
+2000-2005
 gpbeam = 10.59
 gtargmass_amu =  1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2006-2006
+gpbeam = 10.59
+gtargmass_amu =  12.0107
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+
+2007-2008
+gpbeam = 10.59
+gtargmass_amu =  1.00794 
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2009-2009
+gpbeam = 10.59
+gtargmass_amu =  26.9815391  
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2010-2013
+gpbeam = 10.59
+gtargmass_amu =  2.014101  
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2014
+gpbeam = 10.59
+gtargmass_amu = 12.0107 
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+
+2015-2016
+gpbeam = 10.59
+gtargmass_amu = 2.014101 
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2017-2017
+gpbeam = 10.59
+gtargmass_amu = 26.9815391  
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2018-2019
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2020-9999
+gpbeam = 10.59
+gtargmass_amu = 12.0107
 hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
