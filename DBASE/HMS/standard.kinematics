@@ -1433,9 +1433,145 @@ hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
 
-2020-9999
+2020-2022
 gpbeam = 10.59
 gtargmass_amu = 12.0107
 hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
+
+2023-2023
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2024-2024
+gpbeam = 10.59
+gtargmass_amu = 26.9815391
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2025-2027
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2028-2028
+gpbeam = 10.59
+gtargmass_amu = 12.0107
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2029-2029
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2030-2030
+gpbeam = 10.59
+gtargmass_amu = 26.981539
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2031-2031
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2032-2032
+gpbeam = 10.59
+gtargmass_amu = 10.0102
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2033-2033
+gpbeam = 10.59
+gtargmass_amu = 11.01
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2034-2034
+gpbeam = 10.59
+gtargmass_amu = 9.012
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2035-2035
+gpbeam = 10.59
+gtargmass_amu = 12.0107 
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2036-2036
+gpbeam = 10.59
+gtargmass_amu = 1.00794   
+hpartmass = 0.00051099
+htheta_lab = -58.99
+hpcentral = 1.2
+
+2037-2044
+gpbeam = 10.59
+gtargmass_amu = 2.014101     
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 2.0
+
+2045-2050
+gpbeam = 10.59
+gtargmass_amu = 12.0107
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 2.0
+
+2051-2054
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 2.0
+
+2055-2057
+gpbeam = 10.59
+gtargmass_amu = 26.9815391 
+hpartmass = 0.00051099
+htheta_lab = -15.0
+hpcentral = 2.0
+
+2058-2059
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -24.995
+hpcentral = 634
+
+2060-2068
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -24.995
+hpcentral = 4.4
+
+2069-9999
+gpbeam = 10.59
+gtargmass_amu = 11.01
+hpartmass = 0.00051099
+htheta_lab = -20.94
+hpcentral = 5.539
+
+
+
