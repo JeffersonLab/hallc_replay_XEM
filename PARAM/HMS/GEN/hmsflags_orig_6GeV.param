@@ -14,8 +14,8 @@
 ;  CMOP matrix elements. If you do change then your hms sieve
 ;  plots will be screwed up.
   hdelta_offset = 0.       ; (%)   hdelta_tar = hdelta_tar + hdelta_offset
-  htheta_offset = 0.  ; (rad) hyp_tar = hyp_tar + htheta_offset
-  hphi_offset   = -4.946337367e-3 ; (rad) hxp_tar = hxp_tar + hphi_offset
+  htheta_offset = 4.83e-5  ; (rad) hyp_tar = hyp_tar + htheta_offset
+  hphi_offset   = -4.73e-3 ; (rad) hxp_tar = hxp_tar + hphi_offset
 ;
 
 ;saturation correction flag
@@ -30,7 +30,7 @@
                           ; Data taken with fields set by field00.f or later should set to 2000.
 ; These offsets are determined from elastic ep data.
 ; central field  correction
-  hpcentral_offset = 0.0 ;    
+  hpcentral_offset = -0.025   
   hthetacentral_offset = 0.000 ; (rad) 
   h_oopcentral_offset = 0.00  ; (rad)
 ; sets hpcentral = hpcentral * ( 1. + hpcentral_offset / 100. )
