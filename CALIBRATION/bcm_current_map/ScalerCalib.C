@@ -5,6 +5,9 @@
 
 using namespace std;
 
+const double kBig = 1.e38;
+const int NBCM = 5;
+
 ofstream outfile;
 
 //_________________________________
@@ -37,8 +40,18 @@ int ScalerCalib::Run()
       return -1;
     }
 
-  int pos = filename.find("scalers_");
-  runstr = (filename.substr(pos+8)).substr(0,4);
+  int pos;
+  pos = filename.find("scalers_");
+
+  if(pos == -1)
+    {
+      pos = filename.find("production_");
+      runstr = (filename.substr(pos+11)).substr(0,4);
+    }
+  else
+    {
+      runstr = (filename.substr(pos+8)).substr(0,4);  
+    }
 
   ofilename = "bcmcurrent_" + runstr + ".param";
   outfile.open(ofilename.c_str());
@@ -71,7 +84,7 @@ int ScalerCalib::Run()
   outfile << "scal_read_event = ";
   PrintContainer(evnum);
 
-  //  outfile.close();
+  outfile.close();
 
   return 0;
   
@@ -129,13 +142,15 @@ int ScalerCalib::FillContainer()
       return -1;      
     }
   
-  if(! file->GetListOfKeys()->Contains("TSH") )
+  string tname = "TS" + fName;
+
+  if(! file->GetListOfKeys()->Contains(tname.c_str()) )
     {
       cout << "ERROR: Couldn't find the Scaler Tree"  << endl;
       return -1;      
     }
 
-  TTree* T = (TTree*)file->Get("TSH");  
+  TTree* T = (TTree*)file->Get(tname.c_str());  
 
   double evnumber;
   double bcm1_current;
@@ -144,14 +159,14 @@ int ScalerCalib::FillContainer()
   double bcm4b_current;
   double bcm17_current;
 
-  string bname[5];
-  string sarray[5] = {".BCM1.scalerCurrent",
+  string bname[NBCM];
+  string sarray[NBCM] = {".BCM1.scalerCurrent",
 		      ".BCM2.scalerCurrent", 
 		      ".BCM4A.scalerCurrent",
 		      ".BCM4B.scalerCurrent",
 		      ".BCM17.scalerCurrent"};
 
-  for(int i=0; i<5; i++)
+  for(int i=0; i<NBCM; i++)
     {
       bname[i] = "";
       bname[i] += fName;
@@ -164,8 +179,6 @@ int ScalerCalib::FillContainer()
   T->SetBranchAddress(bname[2].c_str(), &bcm4a_current);
   T->SetBranchAddress(bname[3].c_str(), &bcm4b_current);
   T->SetBranchAddress(bname[4].c_str(), &bcm17_current);
-
-  const double kBig = 1.e38;
 
   Long64_t nentries = T->GetEntries();
   for(Long64_t ientry=0; ientry<nentries; ientry++)
