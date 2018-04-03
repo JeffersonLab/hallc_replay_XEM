@@ -3,4 +3,6 @@
 #**************
 
 block H.cal.etracknorm
+block H.cal.etotnorm
+block H.cal.etottracknorm
 block H.cer.npeSum
