@@ -1692,3 +1692,101 @@ gtargmass_amu =  2.014101
 ppartmass = 0.00051099
 ptheta_lab = 8.02
 ppcentral = 9.8
+
+3161-3163
+gpbeam = 10.59
+gtargmass_amu =  2.014101
+ppartmass = 0.00051099
+ptheta_lab = 8.02
+ppcentral = 9.8
+
+3203
+gpbeam = 10.59
+gtargmass_amu = 12.0107
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+3204-3205
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+3206-3215
+gpbeam = 10.59
+gtargmass_amu = 1.00794 
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+3216-3221
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+3222-3225
+gpbeam = 10.59
+gtargmass_amu = 12.0107 
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+
+3226-3226
+gpbeam = 10.59
+gtargmass_amu = 26.981539 
+ppartmass = 0.00051099
+ptheta_lab = 24.97
+ppcentral = 4.4
+
+
+#Date: April 3, 2018
+#SHMS Dipole Saturation Studies
+#Using Optics 1 target (-10, 0, +10) cm
+
+3227
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 8.7
+
+
+3228-3229
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 8.2
+
+3230-3230
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 7.7
+
+3231-3231
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 7.2
+
+3232-3232
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 6.7
+
+3233-9999
+gpbeam = 10.59
+gtargmass_amu = 12.000 
+ppartmass = 0.00051099
+ptheta_lab = 8.915
+ppcentral = 6.2

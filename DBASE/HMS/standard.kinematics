@@ -1566,12 +1566,83 @@ hpartmass = 0.00051099
 htheta_lab = -24.995
 hpcentral = 4.4
 
-2069-9999
+2072
 gpbeam = 10.59
-gtargmass_amu = 11.01
+gtargmass_amu = 12.0107
 hpartmass = 0.00051099
-htheta_lab = -20.94
-hpcentral = 5.539
+htheta_lab = -24.99
+hpcentral = 4.4
 
+2073-2074
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -24.99
+hpcentral = 4.4
 
+2075-2085
+gpbeam = 10.59
+gtargmass_amu = 1.00794
+hpartmass = 0.00051099
+htheta_lab = -24.99
+hpcentral = 4.4
 
+2086-2091
+gpbeam = 10.59
+gtargmass_amu = 2.014101
+hpartmass = 0.00051099
+htheta_lab = -24.99
+hpcentral = 4.4
+
+2092-2095
+gpbeam = 10.59
+gtargmass_amu = 12.0107
+hpartmass = 0.00051099
+htheta_lab = -24.99
+hpcentral = 4.4
+
+2096-2096
+gpbeam = 10.59
+gtargmass_amu =  26.981539
+hpartmass = 0.00051099
+htheta_lab = -24.99
+hpcentral = 4.4
+
+#Date: April 3, 2018
+#HMS Dipole Saturation Studies
+#Using Optics 1 target (-10, 0, +10) cm
+
+2097-2099
+gpbeam = 10.59
+gtargmass_amu =  12.000
+hpartmass = 0.00051099
+htheta_lab = -15.01
+hpcentral = 5.9
+
+2100-2101
+gpbeam = 10.59
+gtargmass_amu =  12.000
+hpartmass = 0.00051099
+htheta_lab = -15.01
+hpcentral = 5.7
+
+2100-2103
+gpbeam = 10.59
+gtargmass_amu =  12.000
+hpartmass = 0.00051099
+htheta_lab = -15.01
+hpcentral = 5.5
+
+2104-2104
+gpbeam = 10.59
+gtargmass_amu =  12.000
+hpartmass = 0.00051099
+htheta_lab = -15.01
+hpcentral = 5.3
+
+2105-2105
+gpbeam = 10.59
+gtargmass_amu =  12.000
+hpartmass = 0.00051099
+htheta_lab = -15.01
+hpcentral = 5.1
