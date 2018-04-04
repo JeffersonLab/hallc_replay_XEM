@@ -262,8 +262,8 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  Float_t esemimajor_axis = 0.28;
 	  Float_t esemiminor_axis = 0.04;*/
 	  Float_t eangle = 3.0*3.14159/4.0;
-	  Float_t ex_center = 0.375;
-	  Float_t ey_center = 0.360;
+	  Float_t ex_center = 0.490;
+	  Float_t ey_center = 0.400;
 	  Float_t esemimajor_axis = 0.38;
 	  Float_t esemiminor_axis = 0.05;
 	  if (pow((P_cal_fly_earray/p - ex_center)*cos(eangle) + (P_cal_pr_eplane/p - ey_center)*sin(eangle),2)/pow(esemimajor_axis,2) + 
@@ -290,9 +290,9 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  Float_t piy_center = 0.03;
 	  Float_t pisemimajor_axis = 0.1;
 	  Float_t pisemiminor_axis = 0.02;*/
-	  Float_t pix_center = 0.00;
-	  Float_t piy_center = 0.00;
-	  Float_t pisemimajor_axis = 0.01;
+	  Float_t pix_center = 0.30;
+	  Float_t piy_center = 0.05;
+	  Float_t pisemimajor_axis = 0.08;
 	  Float_t pisemiminor_axis = 0.02;
 	  if (pow((P_cal_fly_earray/p - pix_center)*cos(piangle) + (P_cal_pr_eplane/p - piy_center)*sin(piangle),2)/pow(pisemimajor_axis,2) + 
 	      pow((P_cal_fly_earray/p - pix_center)*sin(piangle) - (P_cal_pr_eplane/p - piy_center)*cos(piangle),2)/pow(pisemiminor_axis,2) < 1)

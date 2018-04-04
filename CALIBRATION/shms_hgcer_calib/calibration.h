@@ -14,6 +14,7 @@
 #include <TSelector.h>
 #include <TH1.h>
 #include <TH2.h>
+#include <TNtuple.h>
 
 const Int_t        fhgc_pmts = 4;
 const Int_t        fngc_pmts = 4;
@@ -67,8 +68,11 @@ public :
    TCanvas *final_spectra_combined;
    TCanvas *final_spectra_combined_mk2;
    TCanvas *scaled_poisson;
-   TCanvas *scaled_total;
-   
+   TCanvas *scaled_total;   
+
+   // Declaration of preprocessing quantities
+   Double_t  timing_mean[4];
+   Double_t  timing_std[4];
 
    // Declaration of leaf types
    Int_t           Ndata_P_aero_goodNegAdcPed;
@@ -623,6 +627,8 @@ public :
    Double_t        P_ngcer_goodAdcPulseIntRaw[4];   //[Ndata.P.ngcer.goodAdcPulseIntRaw]
    Int_t           Ndata_P_ngcer_goodAdcPulseTime;
    Double_t        P_ngcer_goodAdcPulseTime[4];   //[Ndata.P.ngcer.goodAdcPulseTime]
+   Int_t           Ndata_P_ngcer_goodAdcTdcDiffTime;
+   Double_t        P_ngcer_goodAdcTdcDiffTime[4];
    Int_t           Ndata_P_ngcer_npe;
    Double_t        P_ngcer_npe[4];   //[Ndata.P.ngcer.npe]
    Int_t           Ndata_P_ngcer_numGoodAdcHits;
@@ -1452,6 +1458,8 @@ public :
    TBranch        *b_P_ngcer_goodAdcPulseIntRaw;   //!
    TBranch        *b_Ndata_P_ngcer_goodAdcPulseTime;   //!
    TBranch        *b_P_ngcer_goodAdcPulseTime;   //!
+   TBranch        *b_Ndata_P_ngcer_goodAdcTdcDiffTime;
+   TBranch        *b_P_ngcer_goodAdcTdcDiffTime;
    TBranch        *b_Ndata_P_ngcer_npe;   //!
    TBranch        *b_P_ngcer_npe;   //!
    TBranch        *b_Ndata_P_ngcer_numGoodAdcHits;   //!
@@ -1727,7 +1735,7 @@ public :
    TBranch        *b_Event_Branch_fEvtHdr_fTargetPol;   //!
    TBranch        *b_Event_Branch_fEvtHdr_fRun;   //!
    
- calibration(TTree * /*tree*/ =0) : fChain(0) {fPulseInt = 0, fPulseInt_quad = 0, fCut_everything = 0, fCut_electron = 0, fCut_pion = 0, fBeta_Cut = 0, fBeta_Full = 0, fTiming_Cut = 0, fTiming_Full = 0, fFullRead = kFALSE, fFullShow = kFALSE, fNGC = kFALSE, fTrack = kFALSE, fCut = kFALSE, fPions = kFALSE;}
+ calibration(TTree * /*tree*/ =0) : fChain(0) {fPulseInt = 0, fPulseInt_quad = 0, fCut_everything = 0, fCut_electron = 0, fCut_pion = 0, fBeta_Cut = 0, fBeta_Full = 0, fTiming_Cut = 0, fTiming_Full = 0, fFullRead = kFALSE, fFullShow = kFALSE, fNGC = kFALSE, fTrack = kFALSE, fCut = kFALSE, fPions = kFALSE, timing_mean[0] = 0, timing_mean[1] = 0, timing_mean[2] = 0, timing_mean[3] = 0, timing_std[0] = 0, timing_std[1] = 0, timing_std[2] = 0, timing_std[3] = 0;}
    virtual ~calibration() { }
    virtual Int_t   Version() const { return 2; }
    virtual void    Begin(TTree *tree);
@@ -2316,6 +2324,8 @@ void calibration::Init(TTree *tree)
    fChain->SetBranchAddress("P.ngcer.goodAdcPulseIntRaw", P_ngcer_goodAdcPulseIntRaw, &b_P_ngcer_goodAdcPulseIntRaw);
    fChain->SetBranchAddress("Ndata.P.ngcer.goodAdcPulseTime", &Ndata_P_ngcer_goodAdcPulseTime, &b_Ndata_P_ngcer_goodAdcPulseTime);
    fChain->SetBranchAddress("P.ngcer.goodAdcPulseTime", P_ngcer_goodAdcPulseTime, &b_P_ngcer_goodAdcPulseTime);
+   fChain->SetBranchAddress("Ndata.P.ngcer.goodAdcTdcDiffTime", &Ndata_P_ngcer_goodAdcTdcDiffTime, &b_Ndata_P_ngcer_goodAdcTdcDiffTime);
+   fChain->SetBranchAddress("P.ngcer.goodAdcTdcDiffTime", P_ngcer_goodAdcTdcDiffTime, &b_P_ngcer_goodAdcTdcDiffTime);
    fChain->SetBranchAddress("Ndata.P.ngcer.npe", &Ndata_P_ngcer_npe, &b_Ndata_P_ngcer_npe);
    fChain->SetBranchAddress("P.ngcer.npe", P_ngcer_npe, &b_P_ngcer_npe);
    fChain->SetBranchAddress("Ndata.P.ngcer.numGoodAdcHits", &Ndata_P_ngcer_numGoodAdcHits, &b_Ndata_P_ngcer_numGoodAdcHits);
