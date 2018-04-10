@@ -48,6 +48,12 @@ TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 R
 TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
 TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
 
+#--------------------------------------
+# HMS DC Ref time vs Hodo Ref time
+#--------------------------------------
+
+
+TH2D dcref_vs_hodoref 'HMS HODO REF vs. DC REF; HODO REF time; DC REF time' T.hms.hT1_tdcTimeRaw T.hms.hDCREF2_tdcTimeRaw 100 1400 2600 100 14800 16000 
 
 #--------------------------------
 #HMS Trigger ADC Pulse pedestals
