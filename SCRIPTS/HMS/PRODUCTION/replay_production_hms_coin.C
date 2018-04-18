@@ -28,7 +28,7 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load Global parameters
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
