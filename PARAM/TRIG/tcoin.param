@@ -3,6 +3,12 @@ t_coin_numTdc = 110
 t_coin_tdcoffset = 300.
 t_coin_adc_tdc_offset = 200.
 t_coin_tdcchanperns = 0.1
+eHadCoinTime_Offset = 0.
+
+
+;NOTE: pTRIG1_ROC1, pTRIG4_ROC1, pTRIG1_ROC2, pTRIG4_ROC2 (tdcTimeRaw),  are hard-coded in THcTrigDet.cxx class
+;      These varibles and their indices are used for the coincidence time calculation, and should NOT change here.
+;      If you do change them, please make sure to modify the THcTrigDet.cxx class.
 
 ; bar num:           1     2     3     4      5     6     7   8        9           10    11     12     13        14            15         16         17       18       19
 t_coin_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAER hCER hFADC_TREF_ROC1 pAER pHGCER pNGCER pPSHWR pFADC_TREF_ROC2 pHGCER_MOD pNGCER_MOD pHEL_NEG pHEL_POS pHEL_MPS"

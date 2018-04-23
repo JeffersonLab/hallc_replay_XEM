@@ -6,7 +6,9 @@
 href_npaddles = 0
 href_nsperchan = 0.1
 href_offset = 0.0
-;
+
+;HMS Central Path Lenth from target to focal plane
+HMS_CentralPathLen = 22.*100   ; 22 m (or 2200 cm)
 
 hcal_num_layers = 4
 

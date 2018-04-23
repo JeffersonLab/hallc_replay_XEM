@@ -1,3 +1,7 @@
+;SHMS Central Path Lenth from target to focal plane
+SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
+
+
 ; Parameters we need to keep THcHallCSpectrometer Happy
 ;p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
 ;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_p20_rec.dat"

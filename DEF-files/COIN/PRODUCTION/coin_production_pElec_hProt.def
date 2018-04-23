@@ -1,5 +1,6 @@
 block T.coin.hTRIG*
 block T.coin.pTRIG*
+block CTime*
 
 block H.cer.*
 block H.dc.*
@@ -22,6 +23,7 @@ block P.gtr.*
 block P.kin.*
 block P.rb.*
 block P.react.*
+
 
 begin epics
 IBC3H00CRCUR4
