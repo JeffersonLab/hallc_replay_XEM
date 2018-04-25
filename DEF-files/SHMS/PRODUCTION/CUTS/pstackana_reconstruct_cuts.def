@@ -16,7 +16,8 @@ shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
 
 shmsScinShould      shmsScinGood && shmsGoodBetanotrk && !shmsDCany_large 
 shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
-shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
+#shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
+shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0.
 shmsScinDid         shmsScinShould && P.dc.ntrack > 0
 shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
 shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0

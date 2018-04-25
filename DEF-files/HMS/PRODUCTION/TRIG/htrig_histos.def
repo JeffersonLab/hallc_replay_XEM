@@ -52,8 +52,7 @@ TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 R
 # HMS DC Ref time vs Hodo Ref time
 #--------------------------------------
 
-
-TH2D dcref_vs_hodoref 'HMS HODO REF vs. DC REF; HODO REF time; DC REF time' T.hms.hT1_tdcTimeRaw T.hms.hDCREF2_tdcTimeRaw 100 1400 2600 100 14800 16000 
+TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 160 1400 3000 140 14800 16200
 
 #--------------------------------
 #HMS Trigger ADC Pulse pedestals

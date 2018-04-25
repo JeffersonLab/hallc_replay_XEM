@@ -14,3 +14,4 @@ block P.gtr.*
 block P.kin.*
 block P.rb.*
 block P.react.*
+#block P.bcm.*

@@ -193,8 +193,8 @@ void THcShowerCalib::Init() {
   //Reset ROOT and connect tree file.
 
   gROOT->Reset();
-
   char* fname = Form("ROOTfiles/hms_replay_%s.root",fRunNumber.c_str());
+  // char* fname = Form("ROOTfiles/coin_replay_production_%s.root",fRunNumber.c_str());
   cout << "THcShowerCalib::Init: Root file name = " << fname << endl;
 
   TFile *f = new TFile(fname);
