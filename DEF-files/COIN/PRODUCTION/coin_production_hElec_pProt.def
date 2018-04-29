@@ -1,4 +1,5 @@
 block T.coin.*
+block CTime*
 
 block H.cer.*
 block H.dc.*
