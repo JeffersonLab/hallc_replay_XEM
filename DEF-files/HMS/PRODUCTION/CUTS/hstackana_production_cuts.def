@@ -21,4 +21,5 @@ Block: Reconstruct
 Reconstruct_master ALL_HMS_NO_EDTM
 
 Block: Physics
+#include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_physics_cuts.def"
 Physics_master ALL_HMS_NO_EDTM

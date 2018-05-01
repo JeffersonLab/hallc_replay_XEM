@@ -22,3 +22,8 @@ Block: Reconstruct
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_reconstruct_cuts.def"
 #include "DEF-files/COIN/PRODUCTION/CUTS/coin_reconstruct_cuts.def"
 Reconstruct_master ALL_COIN_NO_EDTM
+
+Block: Physics
+#include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_physics_cuts.def"
+#include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_physics_cuts.def"
+Physics_master ALL_COIN_NO_EDTM

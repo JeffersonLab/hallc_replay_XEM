@@ -59,17 +59,6 @@ pcut_Found2Track     P.dc.ntrack == 2
 pcut_Found3Track     P.dc.ntrack == 3
 pcut_Found4Track     P.dc.ntrack == 4
 
-pcut_CleanTrack      P.gtr.index > -1
-pcut_Clean1Track     P.gtr.index == 0
-pcut_Clean2Track     P.gtr.index == 1
-pcut_Clean3Track     P.gtr.index == 2
-pcut_Clean4Track     P.gtr.index == 3
-
-pcut_CleanTrack_cer_elec     (P.gtr.index > -1) && pcut_cer_elec_both
-pcut_p1hit1_cer_elec	     p1hit1 && pcut_cer_elec_both
-pcut_CleanTrack_cal_elec     (P.gtr.index > -1) && pcut_cal_elec
-pcut_p1hit1_cal_elec         p1hit1 && pcut_cal_elec
-
 pcut_anys1x     P.hod.1x.nhits > 0
 pcut_anys1y     P.hod.1y.nhits > 0
 pcut_anys2x     P.hod.2x.nhits > 0

@@ -1,0 +1,12 @@
+Block: Physics
+
+pcut_CleanTrack      P.gtr.index > -1
+pcut_Clean1Track     P.gtr.index == 0
+pcut_Clean2Track     P.gtr.index == 1
+pcut_Clean3Track     P.gtr.index == 2
+pcut_Clean4Track     P.gtr.index == 3
+
+pcut_CleanTrack_cer_elec     (P.gtr.index > -1) && pcut_cer_elec_both
+pcut_p1hit1_cer_elec	     p1hit1 && pcut_cer_elec_both
+pcut_CleanTrack_cal_elec     (P.gtr.index > -1) && pcut_cal_elec
+pcut_p1hit1_cal_elec         p1hit1 && pcut_cal_elec
