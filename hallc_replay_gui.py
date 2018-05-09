@@ -163,8 +163,10 @@ def shms_var_states():
     if pepics_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"\n''')
     if pf2kin_vars.get() == 1:
-        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_vars.def"''')
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_vars.def"\n''')
    
+    shms_def_file_text.append('''\n''')
+    
     if ptshms_vars.get() == 1:
         shms_def_file_text.append('''block T.shms.*\n''')
     if pngcer_vars.get() == 1:
