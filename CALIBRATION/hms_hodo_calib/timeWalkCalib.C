@@ -243,7 +243,9 @@ void WriteFitParam(int runNUM)
   outParam << " " << endl;
   outParam << " ; use htofusinginvadc=1 if want invadc_offset " << endl;
   outParam << " ;  invadc_linear, and invadc_adc to be used " << endl;
-  outParam << "htofusinginvadc=1 " << endl;
+  outParam << "htofusinginvadc=0 " << endl;
+  outParam << " " << endl;
+  outParam << "TDC_threshold=" << tdcThresh << ". ;units of mV " << endl;
   outParam << " " << endl;
   
   //Fill 3D Par array
@@ -339,7 +341,7 @@ void timeWalkCalib(int run) {
 using namespace std;
 
 //prevent root from displaying graphs while executing
-  gROOT->SetBatch(1);
+// gROOT->SetBatch(1);
 
   // ROOT settings
   gStyle->SetTitleFontSize(fontSize);
