@@ -48,11 +48,16 @@ TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 R
 TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
 TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
 
+#--------------------------------------
+# HMS DC Ref time vs Hodo Ref time
+#--------------------------------------
+
+TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 160 1400 3000 140 14800 16200
 
 #--------------------------------
 #HMS Trigger ADC Pulse pedestals
 #--------------------------------
 
-TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 2 mV;' T.hms.hPSHWR_adcPed 500 0 1000  T.hms.hPSHWR_adcPed>0.0
-TH1F htrig_hshwr_adc_pped 'HMS Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 2 mV;' T.hms.hSHWR_adcPed 500 0 1000  T.hms.hSHWR_adcPed>0.0
-TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (mV); Counts / 2 mV;' T.hms.hCER_adcPed 500 0 1000   T.hms.hCER_adcPed>0.0
+TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hPSHWR_adcPed 400 0 200  T.hms.hPSHWR_adcPed>0.0
+TH1F htrig_hshwr_adc_pped 'HMS Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hSHWR_adcPed 400 0 200  T.hms.hSHWR_adcPed>0.0
+TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hCER_adcPed 400 0 200   T.hms.hCER_adcPed>0.0

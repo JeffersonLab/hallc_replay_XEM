@@ -54,12 +54,6 @@ hcut_Found2Track           H.dc.ntrack == 2
 hcut_Found3Track           H.dc.ntrack == 3
 hcut_Found4Track           H.dc.ntrack == 4
 
-hcut_CleanTrack            H.gtr.index > -1
-hcut_Clean1Track           H.gtr.index == 0
-hcut_Clean2Track           H.gtr.index == 1
-hcut_Clean3Track           H.gtr.index == 2
-hcut_Clean4Track           H.gtr.index == 3
-
 hcut_anys1x                H.hod.1x.nhits > 0
 hcut_anys1y                H.hod.1y.nhits > 0
 hcut_anys2x                H.hod.2x.nhits > 0

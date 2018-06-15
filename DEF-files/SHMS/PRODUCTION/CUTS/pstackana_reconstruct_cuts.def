@@ -16,7 +16,8 @@ shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
 
 shmsScinShould      shmsScinGood && shmsGoodBetanotrk && !shmsDCany_large 
 shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
-shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
+#shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
+shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0.
 shmsScinDid         shmsScinShould && P.dc.ntrack > 0
 shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
 shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0
@@ -57,17 +58,6 @@ pcut_Found1Track     P.dc.ntrack == 1
 pcut_Found2Track     P.dc.ntrack == 2
 pcut_Found3Track     P.dc.ntrack == 3
 pcut_Found4Track     P.dc.ntrack == 4
-
-pcut_CleanTrack      P.gtr.index > -1
-pcut_Clean1Track     P.gtr.index == 0
-pcut_Clean2Track     P.gtr.index == 1
-pcut_Clean3Track     P.gtr.index == 2
-pcut_Clean4Track     P.gtr.index == 3
-
-pcut_CleanTrack_cer_elec     (P.gtr.index > -1) && pcut_cer_elec_both
-pcut_p1hit1_cer_elec	     p1hit1 && pcut_cer_elec_both
-pcut_CleanTrack_cal_elec     (P.gtr.index > -1) && pcut_cal_elec
-pcut_p1hit1_cal_elec         p1hit1 && pcut_cal_elec
 
 pcut_anys1x     P.hod.1x.nhits > 0
 pcut_anys1y     P.hod.1y.nhits > 0

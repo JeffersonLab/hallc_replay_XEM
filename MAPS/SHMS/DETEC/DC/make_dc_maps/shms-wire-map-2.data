@@ -1,0 +1,116 @@
+## X plane
+## Wire 0 is top (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Xc3	15	0	
+cable	Xc4	31	16	
+cable	Xc5	47	32	
+cable	Xc2	48	63	
+cable	Xc1	64	78	15
+
+## X' plane
+## Wire 0 is top (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Xc2p	14	0	15
+cable	Xc1p	30	15	
+cable	Xc3p	31	46	
+cable	Xc4p	47	62	
+cable	Xc5p	63	78	
+
+## U plane
+## Wire 0 is upper right corner (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Uc4	14	0	15
+cable	Uc5	30	15	
+cable	Uc6	46	31	
+cable	Uc7	62	47	
+cable	Uc3	63	78	
+cable	Uc2	79	94	
+cable	Uc1	95	106	12,13,14,15
+
+## U' plane
+## Wire 0 is upper right corner (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Uc5p	11	0	12,13,14,15
+cable	Uc6p	27	12	
+cable	Uc7p	43	28	
+cable	Uc4p	44	59	
+cable	Uc3p	60	75	
+cable	Uc2p	76	91	
+cable	Uc1p	92	106	15
+
+## V plane
+## Wire 0 is upper left corner (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Vc4	14	0	15
+cable	Vc3	30	15	
+cable	Vc2	46	31	
+cable	Vc1	62	47	
+cable	Vc5	63	78	
+cable	Vc6	79	94	
+cable	Vc7	95	106	12,13,14,15
+
+## V' plane
+## Wire 0 is upper left corner (from beam perspective)
+#	cable	w_start	w_end	N/C
+cable	Vc3p	11	0	12,13,14,15
+cable	Vc2p	27	12
+cable	Vc1p	43	28
+cable	Vc4p	44	59
+cable	Vc5p	60	75
+cable	Vc6p	76	91
+cable	Vc7p	92	106	15
+
+## TDC mapping
+#	slot	conn	cable	ref
+tdc	12	A0	Xc5p
+tdc	12	A1	Uc7
+tdc	12	B0	Uc7p
+tdc	12	B1	Xc5
+tdc	12	C0	Vc7p	15
+tdc	12	C1	Uc6
+tdc	12	D0	Xc4p
+tdc	12	D1	Uc6p
+
+
+tdc	13	A0	Xc3p
+tdc	13	A1	Uc5
+tdc	13	B0	Vc5
+tdc	13	B1	Xc4
+tdc	13	C0	Vc7	15
+tdc	13	C1	Vc6p
+tdc	13	D0	Vc6
+tdc	13	D1	Vc5p
+
+
+tdc	14	A0	Xc3
+tdc	14	A1	Vc3
+tdc	14	B0	Xc1p
+tdc	14	B1	Uc2
+tdc	14	C0	Uc5p	15
+tdc	14	C1	Vc4p
+tdc	14	D0	Uc3p
+tdc	14	D1	Uc3
+
+
+tdc	15	A0	Uc4p
+tdc	15	A1	Xc2p
+tdc	15	B0	Vc4	15
+tdc	15	B1	Vc1
+tdc	15	C0	Uc4	15
+tdc	15	C1	Xc1
+tdc	15	D0	Vc1p
+tdc	15	D1	Uc1	15
+
+
+tdc	16	A0	Vc2
+tdc	16	A1	Uc1p	15
+tdc	16	B0	Vc2p
+tdc	16	B1	Xc2
+tdc	16	C0	Vc3p	15
+tdc	16	C1	Uc2p
+tdc	16	D0	NC
+tdc	16	D1	NC	15
+
+
+
+# vim: noexpandtab softtabstop=0 shiftwidth=8 tabstop=8

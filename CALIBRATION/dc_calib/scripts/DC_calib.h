@@ -4,72 +4,104 @@
 
 #define NPLANES 12
 #define NBINS 400
-#define MINBIN -50.5
-#define MAXBIN 349.5
-#define TOTAL_BINS 274  
+#define MINBIN -50.0
+#define MAXBIN 350.0
+#define TOTAL_BINS 189  
 class DC_calib
 {
  public:
   
   //consructor and destructor
-  DC_calib(TString a, TString b, const Int_t c, Long64_t d);
+  DC_calib(string a, TString b, const Int_t c, Long64_t d, TString e, string f);
   ~DC_calib();
 
 
   //Define Functions
-  void printInitVar();
+
+
+  //----Per-Card Methods
+  void GetCard();       
+  void GetTwentyPercent_Card();  
+  void FitCardDriftTime();
+  void ApplyTZeroCorrectionPerCard(); 
+  Double_t GetCardT0_alternative(Int_t ith_plane, Int_t ith_card);
+
+  //---Per Global/Per Wire methods 
+  void setup_Directory();
   void SetPlaneNames();
+  void SetTdcOffset();
   void GetDCLeafs();
   void AllocateDynamicArrays();
   void CreateHistoNames();
-  void EventLoop();
+  void EventLoop(string option);
   void WriteToFile(Int_t debug);
-  void CalcT0Historical();
+  // void CalcT0Historical();
   void Calculate_tZero();
   void GetTwentyPercent_Peak();
   void FitWireDriftTime();
   void WriteTZeroParam();
-  void ApplyTZeroCorrection();
   void WriteLookUpTable();
 
 
  private:
+
+  //Calibration mode
+  string mode;
  
   Int_t run_NUM;
   Long64_t num_evts;
  
+  TString pid;
 
   TTree *tree;
   Long64_t nentries;
   
   TString SPECTROMETER;
   TString spectre;
-  TString spec;
+  string spec;
   TString DETECTOR;
   TString plane_names[NPLANES];
-
+  string planes[NPLANES];
+  
   TString base_name;
   TString ndatatime;
-  TString ndatawirenum;
   
   TString drifttime;
   TString wirenum;
 
-  TString ntrack;
-  TString etracknorm; 
+  TString cal_etot_leaf;   
+  TString cer_npe_leaf;
+ 
+  Double_t cal_etot;   //calorimeter normalized energy
+  Double_t cer_npe;       //cerenkon photoelectron Sum
 
-  Double_t dc_ntrack;
-  Double_t psh_etracknorm;
+  //Boolean for checking if TBranch exists
+  Bool_t status_cal;
+  Bool_t status_cer;
+  
 
+  //Boolean for PID cuts
+  Bool_t cal_elec;     //calorimeter normalized energy cut
+  Bool_t cer_elec;     //cerenkov cut
+  Bool_t good_event;    //single hit / event / plane o clean background
+ 
+  Int_t cnts_ch1;
+  Int_t cnts_ch2;
+  Int_t ngood_evts;
+
+  //Variables for setting up a run_directory to keep track of calibration files
+  const char* dir_log;
+  const char* dir_log_name;
+  
   Int_t wire;
   
   Int_t ndata_time[NPLANES];
   Double_t drift_time[NPLANES][1000];
 
-  Int_t ndata_wirenum[NPLANES];
   Double_t wire_num[NPLANES][1000];
 
   Int_t nwires[NPLANES];
+
 
   //Declare variables to plot and save histo (dt = drift time)
   TString plane_dt_name;
@@ -121,7 +153,7 @@ class DC_calib
   Double_t **time_max;
   Double_t **twenty_perc_maxContent;
   Double_t **ref_time;
-
+ 
   //variables to be used in loop over bins for wire drift time
   Int_t content_bin;      //stores content for each bin
   Int_t counts;           //a counter used to count the number of bins that have >20% max bin content for a plane 
@@ -132,6 +164,7 @@ class DC_calib
 
   //Declare 'FIT' related variables
   Int_t **entries;               //wire drift time histo entries
+  Int_t **entries_card;
   Int_t binx;
   Double_t time_init;           //start fit value 
   Double_t time_final;          //end fit value
@@ -145,8 +178,20 @@ class DC_calib
   Double_t std_dev;
   Double_t **t_zero;         
   Double_t **t_zero_err;
+  Double_t **t_zero_card;         
+  Double_t **t_zero_card_err;
   
+  //tzero with tdc offsets taken into account, 
+  //to be written into tzero param file
+  Double_t **t_zero_final; 
+
+  //set limits on tzero fit procedure
+  Double_t percent;        //set % of drift_time max bin content to do fit
+  Double_t t0_err_thrs;    //set max error on t0 fit, as criteria for 'good' t0
+
   //declare variables to make plot of tzero v. wire number
+  
+  Double_t weighted_avg[NPLANES];
   TGraphErrors *graph;
   TString graph_title;
   TCanvas *gr1_canv;
@@ -162,7 +207,55 @@ class DC_calib
   TString lookup_table;
   TString headers;
 
+  //Declare variables to apply constant offset in time
+  //HMS
+  Double_t **offset;
+  Double_t tdc_offset;
+  Double_t max_wire_entry;
 
+  //---Per Card "SPECIFIC" Variables---
+
+  Int_t plane_cards[NPLANES];    //number of disc. cards / plane
+  Int_t card;
+
+  //GetCardT0_alternative() method variables
+  Double_t maxContent_frac;
+  Double_t card_T0;
+
+  //GetTwentyPercent_Card()/Fit Card methods variables
+  Int_t binValLow; 
+  Int_t binValHigh; 
+  Int_t binSearchLow; 
+  Int_t binSearchHigh;
+  Double_t binDiffThreshHigh; 
+  Double_t binDiffThreshLow;
+
+  Double_t **wireBinContentMax;
+  Double_t **wireBinContentLow;
+  Double_t **wireBinContentHigh;
+  Double_t **wireBinHigh;
+  Double_t **wireBinLow;
+  Double_t **wireFitRangeLow;
+  Double_t **wireFitRangeHigh;
+
+  //TStrings for Histo Names
+  TString card_hist_name;
+  TString card_hist_title;
+
+  TString fitted_card_hist_name;
+  TString fitted_card_hist_title;
+  
+  TString corr_card_hist_name;
+  TString corr_card_hist_title;
+
+
+  //Card Histograms
+  TH1F **card_hist; 
+  TH1F **corr_card_hist;
+  TH1F **fitted_card_hist;
+
+  Int_t **wire_min;
+  Int_t **wire_max;
 
 };
 

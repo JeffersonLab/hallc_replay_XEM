@@ -1,22 +1,35 @@
 Block: RawDecode
 
-Pedestal_event      g.evtyp == 99
-SHMS_trig_1_event   g.evtyp == 1
-SHMS_trig_2_event   g.evtyp == 2
-SHMS_trig_3_event   g.evtyp == 3
-SHMS_trig_4_event   g.evtyp == 4
-SHMS_trig_5_event   g.evtyp == 5
-SHMS_trig_6_event   g.evtyp == 6
-SHMS_event          SHMS_trig_1_event || SHMS_trig_2_event || SHMS_trig_3_event || SHMS_trig_4_event || SHMS_trig_5_event || SHMS_trig_6_event
+Pedestal_event       g.evtyp == 99
+SHMS_event           g.evtyp == 1
+HMS_event            g.evtyp == 2
+BOTH_SINGLES_event   g.evtyp == 3
+COIN_ONLY_event      g.evtyp == 4
+SHMS_COIN_event      g.evtyp == 5
+HMS_COIN_event       g.evtyp == 6 
+COIN_ALL_event       g.evtyp == 7
+ALL_events           SHMS_event || HMS_event || BOTH_SINGLES_event || COIN_ONLY_event || COIN_ALL_event
+ALL_SHMS_events      SHMS_event || COIN_ONLY_event || SHMS_COIN_event || COIN_ALL_event || HMS_COIN_event
 
 RawDecode_master 1
 
 Block: Decode
 
-Decode_master SHMS_event
+TRIG1         T.shms.pTRIG1_tdcTimeRaw > 0
+TRIG2         T.shms.pTRIG2_tdcTimeRaw > 0
+TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
+SHMS_Pretrig  TRIG1 || TRIG2 || TRIG3
+
+shms_trigs        ALL_SHMS_events
+edtm_accepted     T.shms.pEDTM_tdcTime != 0.0
+physics_accepted  T.shms.pEDTM_tdcTime == 0.0
+
+ALL_SHMS_NO_EDTM  ALL_SHMS_events && pcut_physics_accepted
+
+Decode_master ALL_SHMS_NO_EDTM
 
 Block: CoarseTracking
-CoarseTracking_master SHMS_event
+CoarseTracking_master ALL_SHMS_NO_EDTM
 
 Block: CoarseReconstruct
-CourseReconstruct SHMS_event
+CourseReconstruct ALL_SHMS_NO_EDTM

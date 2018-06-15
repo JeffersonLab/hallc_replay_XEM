@@ -3,5 +3,7 @@
 #**************
 
 block P.cal.etracknorm
+block P.cal.etotnorm
+block P.cal.etottracknorm
 block P.hgcer.npeSum
 block P.ngcer.npeSum

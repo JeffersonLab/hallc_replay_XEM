@@ -10,3 +10,11 @@
 	path = UTIL_F2_XEM
 	url = https://github.com/JeffersonLab/UTIL_F2_XEM
 	branch = master
+[submodule "UTIL_ED"]
+	path = UTIL_ED
+	url = https://github.com/JeffersonLab/UTIL_ED
+	branch = master
+[submodule "UTIL_SIDIS"]
+	path = UTIL_SIDIS
+	url = https://github.com/JeffersonLab/UTIL_SIDIS
+	branch = master

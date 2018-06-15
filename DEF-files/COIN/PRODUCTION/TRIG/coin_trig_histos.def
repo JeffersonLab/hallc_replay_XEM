@@ -1,21 +1,21 @@
 ############################
 #   BETA VS COINTIME
 ############################
-TH2F hgtr_beta_vs_ptrig_cointime 'HMS Beta vs pTRIG1_ROC2-pTRIG4_ROC2; cointime / 1 ns; HMS Beta / 0.01;'    T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw*0.1 H.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
-TH2F hgtr_beta_vs_htrig_cointime 'HMS Beta vs pTRIG1_ROC1-pTRIG4_ROC1; cointime / 1 ns; HMS Beta / 0.01;'    T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw*0.1 H.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
-TH2F pgtr_beta_vs_ptrig_cointime 'SHMS Beta vs pTRIG1_ROC2-pTRIG4_ROC2; cointime / 1 ns; SHMS Beta / 0.01;'  T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw*0.1 P.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
-TH2F pgtr_beta_vs_htrig_cointime 'SHMS Beta vs pTRIG1_ROC1-pTRIG4_ROC1; cointime / 1 ns; SHMS Beta / 0.01;'  T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw*0.1 P.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
+TH2F hgtr_beta_vs_ptrig_cointime 'HMS Beta vs pTRIG1_ROC2-pTRIG4_ROC2; cointime / 1 ns; HMS Beta / 0.01;'    0.1*(T.coin.pTRIG1_ROC2_tdcTimeRaw-T.coin.pTRIG4_ROC2_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) H.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
+TH2F hgtr_beta_vs_htrig_cointime 'HMS Beta vs pTRIG1_ROC1-pTRIG4_ROC1; cointime / 1 ns; HMS Beta / 0.01;'    0.1*(T.coin.pTRIG1_ROC1_tdcTimeRaw-T.coin.pTRIG4_ROC1_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) H.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
+TH2F pgtr_beta_vs_ptrig_cointime 'SHMS Beta vs pTRIG1_ROC2-pTRIG4_ROC2; cointime / 1 ns; SHMS Beta / 0.01;'  0.1*(T.coin.pTRIG1_ROC2_tdcTimeRaw-T.coin.pTRIG4_ROC2_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) P.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
+TH2F pgtr_beta_vs_htrig_cointime 'SHMS Beta vs pTRIG1_ROC1-pTRIG4_ROC1; cointime / 1 ns; SHMS Beta / 0.01;'  0.1*(T.coin.pTRIG1_ROC1_tdcTimeRaw-T.coin.pTRIG4_ROC1_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) P.gtr.beta 1600 -800 800 400 -2 2 ccleantrack
 
 
 ############################
 #   COINTIME
 ############################
-TH1F ptrig_cointime_ccleantrack 'SHMS cointime (ccleantrack); SHMS cointime (ns); Count / 1 ns;'  T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw*0.1 1600 -800 800 ccleantrack
-TH1F ptrig_cointime_coincut     'SHMS cointime (coincut); SHMS cointime (ns); Count / 1 ns;'      T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw*0.1 1600 -800 800 coincut
-TH1F ptrig_cointime_coincut_ep  'SHMS cointime (coincut_ep); SHMS cointime (ns); Count / 1 ns;'   T.coin.pTRIG1_ROC2_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC2_tdcTimeRaw*0.1 1600 -800 800 pcoincut_ep
-TH1F htrig_cointime_ccleantrack 'HMS cointime (ccleantrack); HMS cointime (ns); Count / 1 ns;'    T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw*0.1 1600 -800 800 ccleantrack
-TH1F htrig_cointime_coincut     'HMS cointime (coincut); HMS cointime (ns); Count / 1 ns;'        T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw*0.1 1600 -800 800 coincut
-TH1F htrig_cointime_coincut_ep  'HMS cointime (coincut_ep); HMS cointime (ns); Count / 1 ns;'     T.coin.pTRIG1_ROC1_tdcTimeRaw*0.1-T.coin.pTRIG4_ROC1_tdcTimeRaw*0.1 1600 -800 800 hcoincut_ep
+TH1F ptrig_cointime_ccleantrack 'SHMS cointime (ccleantrack); SHMS cointime (ns); Count / 1 ns;'  0.1*(T.coin.pTRIG1_ROC2_tdcTimeRaw-T.coin.pTRIG4_ROC2_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 ccleantrack
+TH1F ptrig_cointime_coincut     'SHMS cointime (coincut); SHMS cointime (ns); Count / 1 ns;'      0.1*(T.coin.pTRIG1_ROC2_tdcTimeRaw-T.coin.pTRIG4_ROC2_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 coincut
+TH1F ptrig_cointime_coincut_ep  'SHMS cointime (coincut_ep); SHMS cointime (ns); Count / 1 ns;'   0.1*(T.coin.pTRIG1_ROC2_tdcTimeRaw-T.coin.pTRIG4_ROC2_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 pcoincut_ep
+TH1F htrig_cointime_ccleantrack 'HMS cointime (ccleantrack); HMS cointime (ns); Count / 1 ns;'    0.1*(T.coin.pTRIG1_ROC1_tdcTimeRaw-T.coin.pTRIG4_ROC1_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 ccleantrack
+TH1F htrig_cointime_coincut     'HMS cointime (coincut); HMS cointime (ns); Count / 1 ns;'        0.1*(T.coin.pTRIG1_ROC1_tdcTimeRaw-T.coin.pTRIG4_ROC1_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 coincut
+TH1F htrig_cointime_coincut_ep  'HMS cointime (coincut_ep); HMS cointime (ns); Count / 1 ns;'     0.1*(T.coin.pTRIG1_ROC1_tdcTimeRaw-T.coin.pTRIG4_ROC1_tdcTimeRaw+P.hod.fpHitsTime-H.hod.fpHitsTime) 1600 -800 800 hcoincut_ep
 
 
 ############################

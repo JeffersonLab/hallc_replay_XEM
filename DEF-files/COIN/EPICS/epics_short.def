@@ -1,4 +1,4 @@
-block T.coin.*
+#block T.coin.*
 
 begin epics
 IBC3H00CRCUR4

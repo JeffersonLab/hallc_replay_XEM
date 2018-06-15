@@ -6,8 +6,8 @@
 # SHMS AERO FADC/NPE MONITORING
 #------------------------------
 
-TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 500 0 1000 P.aero.goodPosAdcPed>0.0
-TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 2 mV' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 500 0 1000 P.aero.goodNegAdcPed>0.0
+TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.5 mV' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 400 0 200 P.aero.goodPosAdcPed>0.0
+TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.5 mV' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 400 0 200 P.aero.goodNegAdcPed>0.0
 
 TH1F paero_good_occ_pos 'SHMS Aero+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.aero.numGoodPosAdcHits 7 0.5 7.5
 TH1F paero_good_occ_neg 'SHMS Aero- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.aero.numGoodNegAdcHits 7 0.5 7.5
