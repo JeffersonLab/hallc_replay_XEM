@@ -1,31 +1,49 @@
 How to calibrate HMS calorimeter with real electrons.
 
-The calibration scripts reside in
-hallc_replay/CALIBRATION/hms_cal_calib directory. They consist of 3
-header files called THcShHit.h,THcShTrack.h, THcShowerCalib.h, and a
-steering script hcal_calib.cpp.
+The calibration code resides in hallc_replay/CALIBRATION/hms_cal_calib
+directory. It consists of 3 header files called
+THcShHit.h,THcShTrack.h, THcShowerCalib.h, and a steering script
+hcal_calib.cpp. There is also an input file input.dat containing
+threshold parameters and initial gain constants necessary for
+calibration.
 
 The scripts work on root files from hcana analysis and make use of
 quantities pertained to tracking, gas Cherenkov, and TOF from
 hodoscopes. Hence it is convenient to calibrate on root files from
-full HMS analysis. The root files are assumed in a linked ROOTfiles
-directory, under names hms_replay_<run_number>.root.
+full HMS analysis. The root files are assumed to be in a linked
+ROOTfiles directory.
+
+Th input file contains thresholds on the quantities used in the
+calibration, such as HMS delta range, the hodoscope beta range,
+threshold on the gas Cherenkov signals, required minimum number of
+hits in the calorimeter channels in order to be calibrated, and
+initial gain constants. The gas Cherenkov signals and beta are used to
+select good electron events for calibration. The initial gain
+constants are used for additional clean up of the electron samples
+from hadron contamination (if any) left after PID with gas Cherenkov
+and beta. The code does not iterate the gain constants.  The user is
+free to modify cuts in the input file as needed. Caution must be
+exercised not to alter the format of the file.
+
+The steering script hcal_calib.cpp takes 3 parameters: prefix of the
+root file to be calibrated, last (-1 by default) and the first (0 by
+default) events to be used for calibration. The -1 value for last
+event number defaults to the number of entries in the root file.
 
 Once your hcana, hallc_replay and Root are set up, you can compile and
 run hcal_calib under hcana, by issuing command
 
-.x hcal_calib.cpp+("run number").
+.x hcal_calib.cpp+("Prefix"),
 
-For instance, for calibration on hms_replay_303.root file in
-ROOTfiles, the correct commad would be
+where Prefix is the prefix part in the name of root file.
 
-.x hcal_calib.cpp+("303") .
+For instance, for calibration with hms_replay_303.root file in
+ROOTfiles, the correct command would be
+
+.x hcal_calib.cpp+("hms_replay_303") .
 
 Upon calibration, a canvas with representative plots will pop up. The
 calibration constants will be written in output file
-hcal.param.<run_number>, in a format suitable for plugging them into
-your hcal.param file for subsequent use.
-
-If you want to modify selection cuts used in calibration (cuts on
-delta, beta, gas Cherenkov signals), you can find them at the
-beginning of THcShowerCalib.h file, in the #define directives.
+hcal.param.<Prefix>, in a format suitable for plugging them into your
+hcal.param file for subsequent use. The representative canvas is saved
+in a pdf file <Prefix>.pdf.
