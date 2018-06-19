@@ -10,17 +10,22 @@
 #include "TMath.h"
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <iomanip>
 
 #include "TROOT.h"
 #include "TFile.h"
 #include "TTree.h"
 
+#include "TF1.h"
+
 #include <time.h>
 
 #include <vector>
 
-#define D_CALO_FP 275.    //distance from FP to the Preshower
+#include <string>
+
+#define D_CALO_FP 292.64
 
 //Whole calorimeter fid. limits
 #define XMIN -60.
@@ -28,22 +33,12 @@
 #define YMIN -58.
 #define YMAX  58.
 
-#define DELTA_MIN -10   //SHMS nominal acceptance
-#define DELTA_MAX  22
-
 #define PR_ADC_THR 0
 #define SH_ADC_THR 0
 
-#define BETA_MIN 0.5
-#define BETA_MAX 1.5
-
-#define HGCER_NPE_MIN 2
-//#define NGCER_NPE_MIN 2
-#define NGCER_NPE_MIN 0.   //
-
-#define MIN_HIT_COUNT 5   //Minimum number of hits for a PMT to be calibrated.
-
 using namespace std;
+
+bool CollCut(double xptar , double ytar, double yptar, double delta);
 
 //
 // SHMS Calorimeter calibration class.
@@ -57,6 +52,7 @@ class THcPShowerCalib {
   THcPShowerCalib();
   ~THcPShowerCalib();
 
+  void ReadThresholds();
   void Init();
   bool ReadShRawTrack(THcPShTrack &trk, UInt_t ientry);
   void CalcThresholds();
@@ -71,18 +67,30 @@ class THcPShowerCalib {
   TH1F* hEcal;
   TH2F* hDPvsEcal;
   TH2F* hESHvsEPR;
+  ////
+  TH1F* hEPRunc;
+  TH2F* hETOTvsEPR;
+  TH2F* hETOTvsEPRunc;
+  TH2F* hESHvsEPRunc;
 
  private:
 
-  string fRunNumber;
+  string fPrefix;
   Double_t fLoThr;     // Low and high thresholds on the normalized uncalibrated
   Double_t fHiThr;     // energy deposition.
   UInt_t fNev;         // Number of processed events.
+
+  Double_t fDeltaMin, fDeltaMax;   // Delta range, %.
+  Double_t fBetaMin, fBetaMax;     // Beta range
+  Double_t fHGCerMin;              // Threshold heavy gas Cerenkov signal, p.e.
+  Double_t fNGCerMin;              // Threshold noble gas Cerenkov signal, p.e.
+  UInt_t fMinHitCount;             // Min. number of hits/chan. for calibration
 
   TTree* fTree;
   UInt_t fNentries;
   UInt_t fNstart;
   UInt_t fNstop;
+  Int_t  fNstopRequested;
 
   // Declaration of leaves types
 
@@ -102,6 +110,9 @@ class THcPShowerCalib {
   Double_t        P_tr_yp;
 
   Double_t        P_tr_tg_dp;
+  Double_t        P_tr_tg_ph;
+  Double_t        P_tr_tg_th;
+  Double_t        P_tr_tg_y;
 
   Double_t        P_hgcer_npe[4];
   Double_t        P_ngcer_npe[4];
@@ -122,6 +133,9 @@ class THcPShowerCalib {
   TBranch* b_P_tr_xp;
   TBranch* b_P_tr_yp;
   TBranch* b_P_tr_tg_dp;
+  TBranch* b_P_tr_tg_ph;
+  TBranch* b_P_tr_tg_th;
+  TBranch* b_P_tr_tg_y;
   TBranch* b_P_hgcer_npe;
   TBranch* b_P_ngcer_npe;
   TBranch* b_P_tr_beta;
@@ -152,10 +166,11 @@ THcPShowerCalib::THcPShowerCalib() {};
 
 //------------------------------------------------------------------------------
 
-THcPShowerCalib::THcPShowerCalib(string RunNumber, int nstart, int nstop) {
-  fRunNumber = RunNumber;
+THcPShowerCalib::THcPShowerCalib(string Prefix, int nstart, int nstop) {
+  fPrefix = Prefix;
   fNstart = nstart;
-  fNstop = nstop;
+  //  fNstop = nstop;  defined in Init
+  fNstopRequested = nstop;
 };
 
 //------------------------------------------------------------------------------
@@ -177,9 +192,7 @@ void THcPShowerCalib::SaveRawData() {
 
   THcPShTrack trk;
 
-  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
-  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
-       ientry<TMath::Min(fNstop,fNentries); ientry++) {
+  for (UInt_t ientry=fNstart; ientry<fNstop; ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
       trk.SetEs(falphaC);
@@ -194,13 +207,125 @@ void THcPShowerCalib::SaveRawData() {
 
 //------------------------------------------------------------------------------
 
+void THcPShowerCalib::ReadThresholds() {
+
+  //Read in threshold parameters and initial gains.
+
+  fDeltaMin = 0.;
+  fDeltaMax = 0.;
+  fBetaMin = 0.;
+  fBetaMax = 0.;
+  fHGCerMin = 999.;
+  fNGCerMin = 999.;
+  fMinHitCount = 999999;
+
+  for (UInt_t ipmt=0; ipmt<THcPShTrack::fNpmts; ipmt++) {
+    falpha0[ipmt] = 0.;
+  };
+
+  ifstream fin( "input.dat" );
+
+  string line;
+  istringstream iss;
+
+  getline(fin, line);  iss.str(line);
+  iss >> fDeltaMin >> fDeltaMax;
+  getline(fin, line);  iss.str(line);
+  iss >> fBetaMin >> fBetaMax;
+  getline(fin, line);  iss.str(line);
+  iss >> fHGCerMin;
+  getline(fin, line);  iss.str(line);
+  iss >> fNGCerMin;
+  getline(fin, line);  iss.str(line);
+  iss >> fMinHitCount;
+
+  getline(fin, line);
+  getline(fin, line);
+  getline(fin, line);
+ 
+  unsigned iblk = 0;
+
+  //Preshower
+  for (unsigned k=0; k<THcPShTrack::fNcols_pr; k++) {
+      for (unsigned j=0; j<THcPShTrack::fNrows_pr; j++) {
+
+	getline(fin, line, ',');
+	//	cout << "line=" << line << endl;
+	iss.str(line);
+	if (j==0) {
+	  string name;
+	  iss >> name >> name >> falpha0[iblk];
+	}
+	else {
+	  iss >> falpha0[iblk];
+	}
+
+	iss.clear();
+	iblk++;
+      }
+  }
+
+  //Shower
+  for (unsigned k=0; k<THcPShTrack::fNcols_sh; k++) {
+    for (unsigned j=0; j<THcPShTrack::fNrows_sh; j++) {
+
+	getline(fin, line, ',');
+	//	cout << "line=" << line << endl;
+	iss.str(line);
+	if (k==0 && j==0) {
+	  string name;
+	  iss >> name >> name >> falpha0[iblk];
+	}
+	else {
+	  iss >> falpha0[iblk];
+	}
+
+	iss.clear();
+	iblk++;
+    }
+  }
+
+  fin.close();
+
+  cout << "=================================================================\n";
+  cout << "Thresholds:" << endl;
+  cout << "  Delta min, max   = " << fDeltaMin << "  " << fDeltaMax << endl;
+  cout << "  Beta min, max    = " << fBetaMin << "  " << fBetaMax << endl;
+  cout << "  Heavy Gas Cerenkov min = " << fHGCerMin << endl;
+  cout << "  Noble Gas Cerenkov min = " << fNGCerMin << endl;
+  cout << "  Min. hit count   = " << fMinHitCount << endl;
+  cout << endl;
+
+  cout << "Initial gain constants:\n";
+
+  UInt_t j = 0;
+  for (UInt_t k=0; k<THcPShTrack::fNcols_pr; k++) {
+    k==0 ? cout << "pcal_neg_gain_cor =" : cout << "pcal_pos_gain_cor =";
+    for (UInt_t i=0; i<THcPShTrack::fNrows_pr; i++)
+      cout << fixed << setw(6) << setprecision(2) << falpha0[j++] << ",";
+    cout << endl;
+  }
+  for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
+    k==0 ? cout << "pcal_arr_gain_cor =" : cout << "                   ";
+    for (UInt_t i=0; i<THcPShTrack::fNrows_sh; i++)
+      cout << fixed << setw(6) << setprecision(2) << falpha0[j++] << ",";
+    cout << endl;
+  }
+
+  cout << "=================================================================\n";
+
+  //  getchar();
+}
+
+//------------------------------------------------------------------------------
+
 void THcPShowerCalib::Init() {
 
   //Reset ROOT and connect tree file.
 
   gROOT->Reset();
-  char* fname = Form("ROOTfiles/hms_replay_%s.root",fRunNumber.c_str());
-  // char* fname = Form("ROOTfiles/coin_replay_%s.root",fRunNumber.c_str());
+
+  char* fname = Form("ROOTfiles/%s.root",fPrefix.c_str());
   cout << "THcPShowerCalib::Init: Root file name = " << fname << endl;
 
   TFile *f = new TFile(fname);
@@ -208,6 +333,12 @@ void THcPShowerCalib::Init() {
 
   fNentries = fTree->GetEntries();
   cout << "THcPShowerCalib::Init: fNentries= " << fNentries << endl;
+
+  fNstopRequested<0 ? fNstop = fNentries :
+                      fNstop = TMath::Min(unsigned(fNstopRequested), fNentries);
+  cout << "                       fNstop   = " << fNstop << endl;
+
+  // Set branch addresses.
 
   fTree->SetBranchAddress("P.cal.pr.goodPosAdcPulseInt", P_pr_apos_p,
 			  &b_P_pr_apos_p);
@@ -224,6 +355,9 @@ void THcPShowerCalib::Init() {
   fTree->SetBranchAddress("P.tr.p", &P_tr_p,&b_P_tr_p);
 
   fTree->SetBranchAddress("P.tr.tg_dp", &P_tr_tg_dp,&b_P_tr_tg_dp);
+  fTree->SetBranchAddress("P.tr.tg_ph", &P_tr_tg_ph,&b_P_tr_tg_ph);
+  fTree->SetBranchAddress("P.tr.tg_th", &P_tr_tg_th,&b_P_tr_tg_th);
+  fTree->SetBranchAddress("P.tr.tg_y",  &P_tr_tg_y, &b_P_tr_tg_y);
  
   fTree->SetBranchAddress("P.hgcer.npe", P_hgcer_npe,&b_P_hgcer_npe);
   fTree->SetBranchAddress("P.ngcer.npe", P_ngcer_npe,&b_P_ngcer_npe);
@@ -239,12 +373,20 @@ void THcPShowerCalib::Init() {
 
   // Histogram declarations.
 
-  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 0.2);
+  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 2.);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 200, 0., 2.);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
-		       400,0.,2., 440,DELTA_MIN-1.,DELTA_MAX+1.);
+		       400,0.,2., 440,fDeltaMin-1.,fDeltaMax+1.);
   hESHvsEPR = new TH2F("hESHvsEPR", "E_{SH} versus E_{PR}",
 		       300,0.,1.5, 300,0.,1.5);
+  ////
+  hEPRunc = new TH1F("hEPRunc", "EPR/P uncalibrated", 500, 0., 0.2);
+  hETOTvsEPR = new TH2F("hETOTvsEPR", "E_{TOT} versus E_{PR}",
+		       300,0.,1.5, 300,0.,1.5);
+  hETOTvsEPRunc = new TH2F("hETOTvsEPRunc","E_{TOT} versus E_{PR} uncalibrated",
+			   500,0.,0.2, 500,0.,0.2);
+  hESHvsEPRunc = new TH2F("hESHvsEPRunc","E_{SH} versus E_{PR} uncalibrated",
+			   500,0.,0.2, 500,0.,0.2);
 
   // Initialize cumulative quantities.
   
@@ -261,14 +403,6 @@ void THcPShowerCalib::Init() {
       fQ[i][j] = 0.;
     }
   }
-
-  // Initial gains, 1 for all.
-
-  for (UInt_t ipmt=0; ipmt<THcPShTrack::fNpmts; ipmt++) {
-    falpha0[ipmt] = 1.;
-  };
-
-  // Unit gains.
 
   for (UInt_t ipmt=0; ipmt<THcPShTrack::fNpmts; ipmt++) {
     falpha1[ipmt] = 1.;
@@ -288,15 +422,13 @@ void THcPShowerCalib::CalcThresholds() {
   // histogram, establish +/-3 * RMS thresholds.
 
   //cout<< "THcPShowerCalib::CalcThresholds: FNentries = " << fNentries << endl;
-  cout << "THcPShowerCalib::CalcThresholds: fNstart = " << fNstart << " "
-       << "  fNstop = " << fNstop << endl;
+  //  cout << "THcPShowerCalib::CalcThresholds: fNstart = " << fNstart << " "
+  //       << "  fNstop = " << fNstop << endl;
 
   Int_t nev = 0;
   THcPShTrack trk;
 
-  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
-  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
-       ientry<TMath::Min(fNstop,fNentries); ientry++) {
+  for (UInt_t ientry=fNstart; ientry<fNstop; ientry++) {
 
     if ( ReadShRawTrack(trk, ientry)) {
 
@@ -306,22 +438,29 @@ void THcPShowerCalib::CalcThresholds() {
 	trk.SetEs(falpha0);             //Use initial gain constants here.
 	Double_t Enorm = trk.Enorm();
 
-	hEunc->Fill(Enorm);
 
-	nev++;
+	////
+	if (Enorm > 0.) {
+	  hEunc->Fill(Enorm);
+	  hETOTvsEPRunc->Fill(trk.EPRnorm(),Enorm);          ////
+	  hESHvsEPRunc->Fill(trk.EPRnorm(),trk.ESHnorm());   ////
+	  hEPRunc->Fill(trk.EPRnorm());                      ////
+	  nev++;
+	}
+
     //    if (nev%100000 == 0)
     //      cout << "CalcThreshods: nev=" << nev << "  Enorm=" << Enorm << endl;
     }
 
+    if (nev > 200000) break;
   };
 
-  Double_t mean = hEunc->GetMean();
-  Double_t rms = hEunc->GetRMS();
-  cout << "CalcThreshods: mean=" << mean << "  rms=" << rms << endl;
-
-  fLoThr = mean - 3.*rms;
-  fHiThr = mean + 3.*rms;
-
+  hEunc->Fit("gaus","0","",0.5, 1.5);       //do not plot
+  TF1 *fit = hEunc->GetFunction("gaus");
+  Double_t gmean  = fit->GetParameter(1);
+  Double_t gsigma = fit->GetParameter(2);
+  fLoThr = gmean - 3.*gsigma;
+  fHiThr = gmean + 3.*gsigma;
   cout << "CalcThreshods: fLoThr=" << fLoThr << "  fHiThr=" << fHiThr 
        << "  nev=" << nev << endl;
 
@@ -358,31 +497,44 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 
   if (P_tr_n != 1) return 0;
 
-  //  if (P_cal_nclust != 1) return 0;
-  //  if (P_cal_fly_nclust != 1) return 0;
+  bool good_trk =   P_tr_tg_dp > fDeltaMin &&
+                    P_tr_tg_dp < fDeltaMax;
 
-  bool good_trk =   P_tr_tg_dp > DELTA_MIN &&
-		    P_tr_tg_dp < DELTA_MAX &&
+  if (!good_trk) return 0;
+
+  good_trk = CollCut(P_tr_tg_th, P_tr_tg_y, P_tr_tg_ph, P_tr_tg_dp);
+
+  if (!good_trk) return 0;
+
+  good_trk =   good_trk && 
 		    P_tr_x + P_tr_xp*D_CALO_FP > XMIN &&
 		    P_tr_x + P_tr_xp*D_CALO_FP < XMAX &&
                     P_tr_y + P_tr_yp*D_CALO_FP > YMIN &&
 		    P_tr_y + P_tr_yp*D_CALO_FP < YMAX ;
   if (!good_trk) return 0;
 
-  bool good_ngcer = P_ngcer_npe[0] > NGCER_NPE_MIN ||
-		    P_ngcer_npe[1] > NGCER_NPE_MIN ||
-		    P_ngcer_npe[2] > NGCER_NPE_MIN ||
-		    P_ngcer_npe[3] > NGCER_NPE_MIN  ;
+  ////
+  if (P_cal_nclust !=1) return 0;
+  if (P_cal_fly_nclust !=1) return 0;
+
+  ////
+  good_trk = P_tr_xp > -0.045+0.0025*P_tr_x;
+  if (!good_trk) return 0;
+
+  bool good_ngcer = P_ngcer_npe[0] > fNGCerMin ||
+		    P_ngcer_npe[1] > fNGCerMin ||
+		    P_ngcer_npe[2] > fNGCerMin ||
+		    P_ngcer_npe[3] > fNGCerMin  ;
   if(!good_ngcer) return 0;
 
-  bool good_hgcer = P_hgcer_npe[0] > HGCER_NPE_MIN ||
-		    P_hgcer_npe[1] > HGCER_NPE_MIN ||
-		    P_hgcer_npe[2] > HGCER_NPE_MIN ||
-		    P_hgcer_npe[3] > HGCER_NPE_MIN  ;
+  bool good_hgcer = P_hgcer_npe[0] +
+		    P_hgcer_npe[1] +
+		    P_hgcer_npe[2] +
+		    P_hgcer_npe[3] > fHGCerMin  ;
   if(!good_hgcer) return 0;
 
-  bool good_beta = P_tr_beta > BETA_MIN &&
-                   P_tr_beta < BETA_MAX ;
+  bool good_beta = P_tr_beta > fBetaMin &&
+                   P_tr_beta < fBetaMax ;
   if(!good_beta) return 0;
 
   // Set track coordinates and slopes at the face of Preshower.
@@ -435,9 +587,7 @@ void THcPShowerCalib::ComposeVMs() {
 
   // Loop over the shower track events in the ntuples.
 
-  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
-  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
-       ientry<TMath::Min(fNstop,fNentries); ientry++) {
+  for (UInt_t ientry=fNstart; ientry<fNstop; ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
 
@@ -646,13 +796,13 @@ void THcPShowerCalib::SolveAlphas() {
   // correspondent elements 0, except self-correlation Q(i,i)=1.
 
   cout << endl;
-  cout << "Channels with hit number less than " << MIN_HIT_COUNT 
+  cout << "Channels with hit number less than " << fMinHitCount 
        << " will not be calibrated." << endl;
   cout << endl;
 
   for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) {
 
-    if (fHitCount[i] < MIN_HIT_COUNT) {
+    if (fHitCount[i] < fMinHitCount) {
       cout << "Channel " << i << ", " << fHitCount[i]
 	   << " hits, will not be calibrated." << endl;
       q0[i] = 0.;
@@ -725,9 +875,7 @@ void THcPShowerCalib::FillHEcal() {
 
   THcPShTrack trk;
 
-  //  for (UInt_t ientry=0; ientry<fNentries; ientry++) {
-  for (UInt_t ientry=TMath::Max(UInt_t(0),fNstart);
-       ientry<TMath::Min(fNstop,fNentries); ientry++) {
+  for (UInt_t ientry=fNstart; ientry<fNstop; ientry++) {
 
     if (ReadShRawTrack(trk, ientry)) {
       //    trk.Print(cout);
@@ -737,18 +885,19 @@ void THcPShowerCalib::FillHEcal() {
       Double_t delta = trk.GetDp();
       Double_t Enorm = trk.Enorm();
 
-      hEcal->Fill(Enorm);
-
-      hDPvsEcal->Fill(Enorm,delta,1.);
-
-      hESHvsEPR->Fill(trk.EPRnorm(), trk.ESHnorm());
-
-      //      output << Enorm*P/1000. << " " << P/1000. << " " << delta << " "
-      //	     << trk.GetX() << " " << trk.GetY() << endl;
-
-      nev++;
+      ////
+      if (Enorm>0.) {
+	hEcal->Fill(Enorm);
+	hDPvsEcal->Fill(Enorm,delta,1.);
+	hESHvsEPR->Fill(trk.EPRnorm(), trk.ESHnorm());
+	hETOTvsEPR->Fill(trk.EPRnorm(), trk.Enorm());      ////
+	//      output << Enorm*P/1000. << " " << P/1000. << " " << delta << " "
+	//	     << trk.GetX() << " " << trk.GetY() << endl;
+	nev++;
+      }
     }
 
+    if (nev > 200000) break;
   };
 
   //  output.close();
@@ -766,12 +915,13 @@ void THcPShowerCalib::SaveAlphas() {
   //
 
   ofstream output;
-  char* fname = Form("pcal.param.%s_%d-%d",fRunNumber.c_str(),fNstart,fNstop);
+  char* fname = Form("pcal.param.%s_%d_%d", fPrefix.c_str(),
+		     fNstart, fNstopRequested);
   cout << "SaveAlphas: fname=" << fname << endl;
 
   output.open(fname,ios::out);
 
-  output << "; Calibration constants for run " << fRunNumber 
+  output << "; Calibration constants for file " << fPrefix 
 	 << ", " << fNev << " events processed" << endl;
   output << endl;
 
@@ -785,13 +935,43 @@ void THcPShowerCalib::SaveAlphas() {
   }
 
   for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
-    k==0 ? output << "pcal_arr_gain_cor =" : output << "                  ";
+    k==0 ? output << "pcal_arr_gain_cor =" : output << "                   ";
     for (UInt_t i=0; i<THcPShTrack::fNrows_sh; i++)
       output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
     output << endl;
   }
 
   output.close();
+}
+
+//-----------------------------------------------------------------------------
+
+bool CollCut(double xptar, double ytar, double yptar, double delta) {
+
+// SHMS octagonal collimator cut.
+
+  const double FullHeight = 25.;   //cm
+  const double FullWidth  = 17.;
+  const double MidHeight  = 12.5;
+  const double MidWidth   =  8.5;
+
+  //Mark (04/16/18).
+  double yc = -0.019*(delta)+yptar*253.-40.*0.00052*(delta)+ytar;
+
+  double xc = xptar*253.;
+
+  if (xc > FullHeight/2.) return false;
+  if (xc < -FullHeight/2.) return false;
+  if (yc > FullWidth/2.) return false;
+  if (yc < -FullWidth/2.) return false;
+
+  double slope = (FullHeight-MidHeight)/(FullWidth-MidWidth);
+  if (xc > MidHeight/2. + slope*(yc+FullWidth/2.)) return false;
+  if (xc > FullHeight/2. - slope*(yc-MidWidth/2.)) return false;
+  if (xc < -FullHeight/2. + slope*(yc-MidWidth/2.)) return false;
+  if (xc < -MidHeight/2. - slope*(yc+FullWidth/2.)) return false;
+
+  return true;
 }
 
 #endif
