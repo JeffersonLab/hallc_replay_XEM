@@ -14,16 +14,18 @@ full SHMS analysis. The root files are assumed to be in a linked
 ROOTfiles directory.
 
 Th input file contains thresholds on the quantities used in the
-calibration, such as SHMS delta range, the hodoscope beta range,
+calibration, such as: SHMS delta range, the hodoscope beta range,
 thresholds on heavy and noble gas Cherenkov signals, required minimum
 number of hits in the calorimeter channels in order to be calibrated,
-and initial gain constants. The gas Cherenkov signals and beta are
-used to select good electron events for calibration. The initial gain
-constants are used for additional clean up of the electron samples
-from hadron contamination (if any) left after PID with gas Cherenkovs
-and beta. The code does not iterate the gain constants.  The user is
-free to modify cuts in the input file as needed. Caution must be
-exercised not to alter the format of the file.
+initial gain constants, and parameters for an auxiliary histogram of
+energy deposition calculated with initial gain constants. The gas
+Cherenkov signals and beta are used to select good electron events for
+calibration. Additional clean up of the electron sample from hadron
+contamination (if any) left after PID with gas Cherenkov-s and beta is
+done by a rough localization of the electron peak in the auxiliary
+histogram. Note that code does not iterate the gain constants.  The
+user is free to modify cuts in the input file as needed. Caution must
+be exercised not to alter the format of the file.
 
 The steering script pcal_calib.cpp takes 3 parameters: prefix of the
 root file to be calibrated, last (-1 by default) and the first (0 by

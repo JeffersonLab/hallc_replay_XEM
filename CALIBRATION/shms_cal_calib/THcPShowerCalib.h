@@ -85,6 +85,9 @@ class THcPShowerCalib {
   Double_t fHGCerMin;              // Threshold heavy gas Cerenkov signal, p.e.
   Double_t fNGCerMin;              // Threshold noble gas Cerenkov signal, p.e.
   UInt_t fMinHitCount;             // Min. number of hits/chan. for calibration
+  Double_t fEuncLoLo, fEuncHiHi;   // Range of uncalibrated Edep histogram
+  UInt_t fEuncNBin;                // Binning of uncalibrated Edep histogram
+  Double_t fEuncGFitLo,fEuncGFitHi;// Gaussian fit range of uncalib. Edep histo.
 
   TTree* fTree;
   UInt_t fNentries;
@@ -238,6 +241,12 @@ void THcPShowerCalib::ReadThresholds() {
   iss >> fNGCerMin;
   getline(fin, line);  iss.str(line);
   iss >> fMinHitCount;
+  getline(fin, line);  iss.str(line);
+  iss >> fEuncLoLo >> fEuncHiHi;
+  getline(fin, line);  iss.str(line);
+  iss >> fEuncNBin;
+  getline(fin, line);  iss.str(line);
+  iss >> fEuncGFitLo >> fEuncGFitHi;
 
   getline(fin, line);
   getline(fin, line);
@@ -294,6 +303,10 @@ void THcPShowerCalib::ReadThresholds() {
   cout << "  Heavy Gas Cerenkov min = " << fHGCerMin << endl;
   cout << "  Noble Gas Cerenkov min = " << fNGCerMin << endl;
   cout << "  Min. hit count   = " << fMinHitCount << endl;
+  cout << "  Uncalibrated histo. range and binning: " << fEuncLoLo << "  "
+       << fEuncHiHi << "  " << fEuncNBin << endl;
+  cout << "  Uncalibrated histo. fit range: " << fEuncGFitLo << "  "
+       << fEuncGFitHi << endl;
   cout << endl;
 
   cout << "Initial gain constants:\n";
@@ -373,7 +386,7 @@ void THcPShowerCalib::Init() {
 
   // Histogram declarations.
 
-  hEunc = new TH1F("hEunc", "Edep/P uncalibrated", 500, 0., 2.);
+  hEunc = new TH1F("hEunc","Edep/P uncalibrated",fEuncNBin,fEuncLoLo,fEuncHiHi);
   hEcal = new TH1F("hEcal", "Edep/P calibrated", 200, 0., 2.);
   hDPvsEcal = new TH2F("hDPvsEcal", "#DeltaP versus Edep/P ",
 		       400,0.,2., 440,fDeltaMin-1.,fDeltaMax+1.);
@@ -455,7 +468,11 @@ void THcPShowerCalib::CalcThresholds() {
     if (nev > 200000) break;
   };
 
-  hEunc->Fit("gaus","0","",0.5, 1.5);       //do not plot
+  //  hEunc->Fit("gaus","0","",fEuncGFitLo, fEuncGFitHi);    //fit, do not plot
+  hEunc->Fit("gaus","","",fEuncGFitLo, fEuncGFitHi);
+  hEunc->GetFunction("gaus")->SetLineColor(2);
+  hEunc->GetFunction("gaus")->SetLineWidth(1);
+  hEunc->GetFunction("gaus")->SetLineStyle(1);
   TF1 *fit = hEunc->GetFunction("gaus");
   Double_t gmean  = fit->GetParameter(1);
   Double_t gsigma = fit->GetParameter(2);
