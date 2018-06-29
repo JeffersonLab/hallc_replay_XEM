@@ -1,4 +1,7 @@
 ; SHMS calorimeter geometry parameters
+; Corrected by V.Tadevosyan 06/29/2018 according to
+; https://hallcweb.jlab.org/wiki/images/d/da/SHMS_Detector_Coordinates_120405.pdf
+; Rotation around Y axis by +2 deg. is not taken into account.
 
 pcal_array = 1
 pcal_layer_names = "pr fly"
@@ -7,12 +10,12 @@ pcal_num_layers = 1
 pcal_arr_nrows = 16
 pcal_arr_ncolumns = 14
 
-pcal_arr_front_x = 1.4
+pcal_arr_front_x = 0.
 pcal_arr_front_y = 0.
 pcal_arr_front_z = 306.44
 pcal_arr_xstep = 9.
 pcal_arr_ystep = 9.
-pcal_arr_zsize = 70.0
+pcal_arr_zsize = 50.0
 
 # Constants for the coordinate correction of SHMS Preshower energy depositions
 pcal_a_cor = 106.73
@@ -31,20 +34,20 @@ pcal_pr_zpos = 292.64
 
 pcal_pr_left  =  70.0
 pcal_pr_right = -70.0
-pcal_pr_top   = (-69.0-1.4)
-                 (-59.0-1.4)
-                 (-49.0-1.4)
-                 (-39.0-1.4)
-                 (-29.0-1.4)
-                 (-19.0-1.4)
-                 ( -9.0-1.4)
-                 (  1.0-1.4)
-                 ( 11.0-1.4)
-                 ( 21.0-1.4)
-                 ( 31.0-1.4)
-                 ( 41.0-1.4)
-                 ( 51.0-1.4)
-                 ( 61.0-1.4)
+pcal_pr_top   = -70.
+                -60.
+                -50.
+                -40.
+                -30.
+                -20.
+                -10.
+                  0.
+                 10.
+                 20.
+                 30.
+                 40.
+                 50.
+                 60.
 
 pcal_pos_cal_const = 0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
          0.001,0.001,0.001,0.001,0.001,0.001
