@@ -96,7 +96,7 @@ REFINDEX=0
 30,1,79 ! Plane U, wire 79
 31,1,80 ! Plane U, wire 80
 SLOT=2
-REFINDEX=4
+REFINDEX=0
 16,1,81 ! Plane U, wire 81
 17,1,82 ! Plane U, wire 82
 18,1,83 ! Plane U, wire 83
@@ -382,7 +382,7 @@ REFINDEX=0
 33,5,47 ! Plane V', wire 47
 32,5,48 ! Plane V', wire 48
 SLOT=2
-REFINDEX=4
+REFINDEX=0
 15,5,49 ! Plane V', wire 49
 14,5,50 ! Plane V', wire 50
 13,5,51 ! Plane V', wire 51
@@ -825,7 +825,7 @@ REFINDEX=0
 113,11,47 ! Plane U', wire 47
 112,11,48 ! Plane U', wire 48
 SLOT=2
-REFINDEX=4
+REFINDEX=0
 95,11,49 ! Plane U', wire 49
 94,11,50 ! Plane U', wire 50
 93,11,51 ! Plane U', wire 51
@@ -842,9 +842,6 @@ REFINDEX=4
 82,11,62 ! Plane U', wire 62
 81,11,63 ! Plane U', wire 63
 80,11,64 ! Plane U', wire 64
-SLOT=2
-REFINDEX=4
-127, 1000, 0, 4
 SLOT=17
 REFINDEX=0
 80,11,65 ! Plane U', wire 65
@@ -972,7 +969,7 @@ REFINDEX=0
 126,7,79 ! Plane V, wire 79
 127,7,80 ! Plane V, wire 80
 SLOT=2
-REFINDEX=4
+REFINDEX=0
 64,7,81 ! Plane V, wire 81
 65,7,82 ! Plane V, wire 82
 66,7,83 ! Plane V, wire 83
