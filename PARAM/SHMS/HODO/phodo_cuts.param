@@ -9,10 +9,36 @@ pcosmicflag=0
 ; if not set then defaults to use the raw pulse integral
 phodo_adc_mode=1
 
+; Set ptofusinginvadc=0 to use new hodo calibration parameters
+ptofusinginvadc=0
+; pstart_time_center center of allowed time window                             
+pstart_time_center = 32.                                                     
+
+; hstart_time_slop    1/2 width of time window                                  
+pstart_time_slop = 100.                                                       
+
+; pscin_tdc_min       minimum tdc value in hms scin                             
+pscin_tdc_min = -500                                                           
+
+; pscin_tdc_max       maximum allowed tdc value                                 
+pscin_tdc_max = 1000                                                        
+
+; pscin_tdc_to_time   scin tdc time per channel                                 
+pscin_tdc_to_time = 0.09766 ; 0.1 (See Log Entry 3574348)                                                   
+
+; tof and you figured out good values
+ptof_tolerance = 100.0
+                                                                               
+; shms_tof_params                                                              
+; pnum_scin_counters, phodo_zpos, phodo_center_coord, phodo_width               
+; are all calculated within p_init_scin                                         
+;    phodo_pos_coord and phodo_neg_coord are not yet used                                                                                                    
+phodo_slop = 2.,  2.,  4.,  4.    
 
 ; phodo_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the tdc after reference time subtraction to between 0 and 4000 channels.
-phodo_tdc_offset = 1860, 2000, 2060, 2000
+;phodo_tdc_offset = 1860, 2000, 2060, 2000
+phodo_tdc_offset = 2000, 2000, 2000, 2000
 
 ; phodo_adc_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the ADC pulse time after reference time subtraction to a reasonable time (ns).
@@ -61,72 +87,50 @@ phodo_PosAdcTimeWindowMax = 200., 200., 200., 200.
  200., 200., 200., 200.,
  200., 200., 200., 200.,
  200., 200., 200., 200.,
-phodo_NegAdcTimeWindowMin = -35., -12., -15., -200.,
- -35., -12., -15., -6.,
- -35., -12., -15., -6.,
- -35., -12., -15., -3.,
- -35., -12., -15., -3.,
- -35., -12., -15., -3.,
- -35., -12., -15., -3.,
- -35., -12., -15., -3.,
- -35., -12., -10., -3.,
- -32., -12., -15., 0.,
- -35., -15., -15., 0.,
- -35., -15., -15., 0.,
- -200., -200., -200., 0.,
- -200., -200., -200., -3.,
- -200., -200., -200., 0.,
- -200., -200., -200., 0.,
- -200., -200., -200., -3.,
- -200., -200., -200., -200.,
- -200., -200., -200., -200.,
- -200., -200., -200., -200.,
- -200., -200., -200., -200.,
 
-phodo_NegAdcTimeWindowMax = -15., 10., 5., 200.
- -15., 10., 5., 16.,
- -15., 5., 5., 16.,
- -15., 5., 5., 16.,
- -15., 5., 5., 14.,
- -15., 5., 5., 14.,
- -15., 5., 5., 14.,
- -15., 5., 5., 14.,
- -15., 5., 7., 14.,
- -14., 5., 5., 19.,
- -15., 7., 5., 19.,
- -17., 7., 5., 19.,
- 200., 200., 200., 19.,
- 200., 200., 200., 14.,
- 200., 200., 200., 14.,
- 200., 200., 200., 14.,
- 200., 200., 200., 12.,
+phodo_NegAdcTimeWindowMax = 200., 200., 200., 200.
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
+ 200., 200., 200., 200.,
  200., 200., 200., 200.,
  200., 200., 200., 200.,
  200., 200., 200., 200.,
  200., 200., 200., 200.,
 
-; pstart_time_center  center of allowed time window                             
-pstart_time_center = 32.                                                     
+phodo_NegAdcTimeWindowMin = -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
+ -200., -200., -200., -200.,
 
-; hstart_time_slop    1/2 width of time window                                  
-pstart_time_slop = 100.                                                       
 
-; pscin_tdc_min       minimum tdc value in hms scin                             
-pscin_tdc_min = -500                                                           
 
-; pscin_tdc_max       maximum allowed tdc value                                 
-pscin_tdc_max = 1000                                                        
-
-; pscin_tdc_to_time   scin tdc time per channel                                 
-pscin_tdc_to_time = 0.1                                                   
-
-; tof and you figured out good values
-ptof_tolerance = 100.0
-                                                                               
-; shms_tof_params                                                              
-; pnum_scin_counters, phodo_zpos, phodo_center_coord, phodo_width               
-; are all calculated within p_init_scin                                         
-;    phodo_pos_coord and phodo_neg_coord are not yet used                                                                                                    
-phodo_slop = 2.,  2.,  4.,  4.    
-
-ptofusinginvadc=1
