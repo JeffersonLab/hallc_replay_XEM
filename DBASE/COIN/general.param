@@ -14,7 +14,7 @@ cminch=2.54
 ; Note: hmsflags.param includes spectrometer offsets and options.
 #include "PARAM/HMS/GEN/hcana.param"
 #include "PARAM/HMS/GEN/hdebug.param"
-#include "PARAM/HMS/GEN/hmsflags_opt2018.param"
+#include "PARAM/HMS/GEN/hmsflags.param"
 #include "PARAM/HMS/GEN/htracking.param"
 #include "PARAM/HMS/GEN/h_reftime_cut.param"
 
@@ -37,6 +37,8 @@ cminch=2.54
 #include "PARAM/HMS/DC/hdc_calib.param"
 #include "PARAM/HMS/DC/hdc_tzero_per_wire.param"
 #include "PARAM/HMS/HODO/hhodo_calib.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib.param"
 #include "PARAM/HMS/AERO/haero_calib.param"
 #include "PARAM/HMS/CAL/hcal_calib.param"
 
@@ -69,6 +71,8 @@ cminch=2.54
 #include "PARAM/SHMS/DC/pdc_calib.param"
 #include "PARAM/SHMS/DC/pdc_tzero_per_wire.param"
 #include "PARAM/SHMS/HODO/phodo_calib.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib.param"
 #include "PARAM/SHMS/HGCER/phgcer_calib.param"
 #include "PARAM/SHMS/AERO/paero_calib.param"
 #include "PARAM/SHMS/CAL/pcal_calib.param"
