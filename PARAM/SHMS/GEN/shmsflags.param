@@ -11,16 +11,18 @@
 ;  CMOP matrix elements. If you do change then your shms sieve
 ;  plots will be screwed up.
 
-pdelta_offset = 0.0
-ptheta_offset = 0.0
-pphi_offset = -8.681269905E-4
+; do not change pdelta_offset from zero, use ppcentral_offset
+pdelta_offset = 0.0; (%)   hdelta_tar = hdelta_tar + hdelta_offset
+; 
+ptheta_offset = 0.0 ; (rad) hyp_tar = hyp_tar + htheta_offset
+pphi_offset = -8.681269905E-4; (rad) hxp_tar = hxp_tar + hphi_offset
 
 ; The following offsets are applied to the central kinematic variables
-; These might be modified by an experiment
-;  after doing calibration with elastic ep.
-
+;      ptheta_lab=htheta_lab + pthetacentral_offset/degree 
 pthetacentral_offset = 0.0
 p_oopcentral_offset = 0.0
+;  SHMS central momentum offset determined from carbon elastic data fall 2017
+; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
 ppcentral_offset = 0.0
 
 

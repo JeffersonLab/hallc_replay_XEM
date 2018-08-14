@@ -8,5 +8,5 @@ SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
 ;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_m015_rec.dat"
 ;p_recon_coeff_filename = "DATFILES/shms_dipole_2plow.dat"
 ;p_recon_coeff_filename = "DATFILES/shms-2017-optimized.dat"
-p_recon_coeff_filename = "DATFILES/shms-2017-optimized_2plow.dat"
+p_recon_coeff_filename = "DATFILES/shms-2017-optimized_delta_newfit3.dat"
 
