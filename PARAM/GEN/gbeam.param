@@ -9,8 +9,26 @@
   gbeam_y  = +0.00
   gbeam_yp = +0.00
 
+; Add new variables for Hall C BPM A, B, and C, based on HARP calibration
+; Edward Brash - August 5, 2018
+;
+  gbpmxa_slope = -1.00111
+  gbpmxa_off   = -0.12309
+  gbpmxb_slope = -1.24023
+  gbpmxb_off   = -0.061674
+  gbpmxc_slope = -0.940987
+  gbpmxc_off   = -1.00727
+  gbpmya_slope = 0.957734
+  gbpmya_off   = -0.441772
+  gbpmyb_slope = 1.19394
+  gbpmyb_off   = 0.190904
+  gbpmyc_slope = 0.842774
+  gbpmyc_off   = 0.549787
+
 ;positions of BPMs relative to target (from survey 2017)
-gbpm_zpos = 370.82, 224.96, 129.3 ; cm
+gbpma_zpos = 370.82 ; cm
+gbpmb_zpos = 224.96 ; cm
+gbpmc_zpos = 129.30 ; cm
 
 
 ;             Fast Raster calibration constants

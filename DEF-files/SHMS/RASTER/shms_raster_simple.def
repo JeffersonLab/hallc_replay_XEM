@@ -10,6 +10,11 @@ formula FRXB_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
 formula FRYA_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
 formula FRYB_V P.rb.raster.frybRawAdc*(1./4096.)/25.
 
+formula FRXApos P.rb.raster.fr_xa
+formula FRXBpos P.rb.raster.fr_xb
+formula FRYApos P.rb.raster.fr_ya
+formula FRYBpos P.rb.raster.fr_yb
+
 TH1F pFRXA 'SHMS FRXA; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 1000 0 100000
 
 TH1F pFRXA_V 'SHMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
