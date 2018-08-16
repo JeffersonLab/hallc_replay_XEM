@@ -1,0 +1,25 @@
+# Calibrating the Cherenkov
+* To automatically run the calibration
+```
+root -l "run_cal.C(RunNumber,NumEvents,COIN)"
+```
+* Where COIN == 1 indicates the file was a full coincident replay
+* If options are left blank, user will be prompted for a value
+* To manually run the scripts:
+* Link your ROOT file
+* Run the script with options (listed after script is executed)
+```
+root -l ../../ROOTfiles/hms_replay_488_-1.root
+T->Process("calibration.C+", "options");
+```
+* Or, if you want to run using PROOF
+```
+root -l
+TChain ch("T");
+ch.Add("/path/to/ROOTfile");
+TProof::Open(""); \\For PROOF-lite, adjust accordingly for PROOF
+ch.SetProof();
+ch.Process("calibration.C+", "options");
+```
+### Options for the calibration script are (case/spelling important):
+* **showall** - display all calibration details (lots of windows)
