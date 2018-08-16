@@ -2,6 +2,27 @@
 // Author: Eric Pooser, pooser@jlab.org
 
 #include <time.h>
+#include <TSystem.h>
+#include <TString.h>
+#include "TFile.h"
+#include "TTree.h"
+#include <TNtuple.h>
+#include "TCanvas.h"
+#include <iostream>
+#include <fstream>
+#include "TMath.h"
+#include "TH1F.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TGraph.h>
+#include <TROOT.h>
+#include <TMath.h>
+#include <TLegend.h>
+#include <TPaveLabel.h>
+#include <TProfile.h>
+#include <TPolyLine.h>
+#include <TObjArray.h>
+#include <TF1.h>
 
 // Declare replay data file and output file
 TFile *replayFile, *outFile;
@@ -31,7 +52,7 @@ static const TString signalNames[nSignals] = {"Adc", "Tdc"};
 static const TString adcData[nAdcSignals]  = {"ErrorFlag", "PulseTimeRaw", "PulseAmp"};
 static const TString tdcData[nTdcSignals]  = {"TimeRaw"};
 
-static const Double_t tdcChanToTime   = 0.100;                    // Units of ns
+static const Double_t tdcChanToTime   = 0.09766;                    // Units of ns
 static const Double_t adcChanToTime   = 0.0625;                   // Units of ns
 static const Double_t adcDynamicRange = 1000.0;                   // Units of mV
 static const Double_t nAdcChan        = 4096.0;                   // Units of ADC channels
@@ -45,7 +66,7 @@ static const Double_t refAdcPulseTimeCutLow  = 210.0;  // Units of ns
 static const Double_t refAdcPulseTimeCutHigh = 225.0;  // Units of ns
 static const Double_t adcTdcTimeDiffCutLow   = -100.0; // Units of ns
 static const Double_t adcTdcTimeDiffCutHigh  = 100.0;  // Units of ns
-static const Double_t calEtotCutVal          = 0.100;  // Units of GeV
+static const Double_t calEtotCutVal          = 2.0;  // Units of GeV
 static const Double_t cerNpeSumCutVal        = 1.5;    // Units of NPE
 // static const Double_t adcTdcTimeDiffCutLow   = -6000.0;  // Units of ns
 // static const Double_t adcTdcTimeDiffCutHigh  = 1000.0;  // Units of ns
@@ -177,7 +198,7 @@ void generatePlots(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
   
 } // generatePlots()
 
-void timeWalkHistos(Int_t runNum) {
+void timeWalkHistos(TString inputname, Int_t runNum) {
 
   // Global ROOT settings
   gStyle->SetOptFit();
@@ -192,12 +213,19 @@ void timeWalkHistos(Int_t runNum) {
 
   // Obtain the replay data file and create new output ROOT file
     
-  replayFile = new TFile(Form("ROOTfiles/shms_replay_production_all_%d_-1.root", runNum), "READ");
+  replayFile = new TFile(inputname, "READ");
   // replayFile = new TFile(Form("ROOTfiles/shms_coin_replay_production_%d_-1.root", runNum), "READ");
-  
-  outFile    = new TFile("timeWalkHistos_temp.root", "RECREATE");
+   
+  outFile    = new TFile("timeWalkHistos.root", "RECREATE");
   // Obtain the tree
   rawDataTree = dynamic_cast <TTree*> (replayFile->Get("T"));
+
+
+  Double_t phod_1xnhits;
+  Double_t phod_1ynhits;
+  Double_t phod_2xnhits;
+  Double_t phod_2ynhits;
+
   // Acquire the trigger apparatus data
   rawDataTree->SetBranchAddress("T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw", &refAdcPulseTimeRaw);
   rawDataTree->SetBranchAddress("T.shms.pFADC_TREF_ROC2_adcPulseAmp",     &refAdcPulseAmp);
@@ -205,10 +233,20 @@ void timeWalkHistos(Int_t runNum) {
   rawDataTree->SetBranchAddress("T.shms.pT1_tdcTimeRaw", &refT1TdcTimeRaw);
   rawDataTree->SetBranchAddress("T.shms.pT2_tdcTimeRaw", &refT2TdcTimeRaw);
   rawDataTree->SetBranchAddress("T.shms.pT3_tdcTimeRaw", &refT3TdcTimeRaw);
-  rawDataTree->SetBranchAddress("P.cal.etot", &calEtot);
-  rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
-  // Loop over the planes, sides, signals, leafs, and fill data arrays
+  // rawDataTree->SetBranchAddress("P.cal.etot", &calEtot);
+  // rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
+
+  rawDataTree->SetBranchAddress("P.hod.1x.nhits", &phod_1xnhits);
+  rawDataTree->SetBranchAddress("P.hod.1y.nhits", &phod_1ynhits);
+  rawDataTree->SetBranchAddress("P.hod.2x.nhits", &phod_2xnhits);
+  rawDataTree->SetBranchAddress("P.hod.2y.nhits", &phod_2ynhits);
+
+ 
+
+// Loop over the planes, sides, signals, leafs, and fill data arrays
   for(UInt_t iplane = 0; iplane < nPlanes; iplane++) {
+    
+
     for(UInt_t iside = 0; iside < nSides; iside++) {
       // Generate directory structure and histograms
       for(UInt_t ipaddle = 0; ipaddle < nbars[iplane]; ipaddle++)
@@ -265,19 +303,25 @@ void timeWalkHistos(Int_t runNum) {
     } // Side loop
   } // Plane loop
 
-  // Loop over the events and fill histograms
-  // nentries = rawDataTree->GetEntries();
-  nentries = 100000;
+  Bool_t good_hits;
+  
+    // Loop over the events and fill histograms
+  nentries = rawDataTree->GetEntries();
+  //nentries = ;
   cout << "\n******************************************"    << endl;
   cout << nentries << " Events Will Be Processed"           << endl;
   cout << "******************************************\n"    << endl;
   for (ievent = 0; ievent < nentries; ievent++) {
     // Acquire the event from the data tree
     rawDataTree->GetEntry(ievent);
+  
+    good_hits = phod_1xnhits==1&&phod_1ynhits==1&&phod_2xnhits==1&&phod_2ynhits==1;
+
     // Fiducial PID cuts
-    calEtotCut   = (calEtot   < calEtotCutVal);
-    cerNpeSumCut = (cerNpeSum < cerNpeSumCutVal);
-    if (calEtotCut || cerNpeSumCut) continue;
+    //   calEtotCut   = (calEtot   < calEtotCutVal);
+    //cerNpeSumCut = (cerNpeSum < cerNpeSumCutVal);
+    // if (calEtotCut || cerNpeSumCut) continue;
+    if (!good_hits) continue;
     // Fill trigger apparatus histos
     h1_refAdcPulseTimeRaw->Fill(refAdcPulseTimeRaw*adcChanToTime);
     h1_refAdcPulseAmp->Fill(refAdcPulseAmp);
@@ -424,6 +468,6 @@ void timeWalkHistos(Int_t runNum) {
   outFile->Write();
   //outFile->Close();
 
-  return 0;
+  //return 0;
 
 } // time_walk_calib()

@@ -1,21 +1,51 @@
 // Macro to perform time-walk fits and extract the calibration parameters
 // Author: Eric Pooser, pooser@jlab.org
+#include <TSystem.h>
+#include <TString.h>
+#include "TFile.h"
+#include "TTree.h"
+#include <TNtuple.h>
+#include "TCanvas.h"
+#include <iostream>
+#include <fstream>
+#include "TMath.h"
+#include "TH1F.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TGraph.h>
+#include <TROOT.h>
+#include <TMath.h>
+#include <TLegend.h>
+#include <TPaveLabel.h>
+#include <TPaveText.h>
+#include <TProfile.h>
+#include <TPolyLine.h>
+#include <TObjArray.h>
+#include <TMultiGraph.h>
+#include <TF1.h>
 
 // Declare ROOT files
-TFile *histoFile, *outFile;
+TFile *histoFile; 
+ 
+
+// Declare Output  Parameter File
+ofstream outParam;
 
 // Declare constants
 static const UInt_t nPlanes    = 4;
 static const UInt_t nSides     = 2;
 static const UInt_t nBarsMax   = 21;
-static const UInt_t nTwFitPars = 3;
+static const UInt_t nTwFitPars = 2;
 
 static const Double_t tdcThresh      = 120.0;  // 30 mV in units of FADC channels
 static const Double_t twFitRangeLow  = 20.0;
-static const Double_t twFitRangeHigh = 400.0;
-static const Double_t c0twParInit    = -35.0;
-static const Double_t c1twParInit    = 5.0;
-static const Double_t c2twParInit    = 0.25;
+static const Double_t twFitRangeHigh = 200.0;
+static const Double_t c0twParInit    = 1.0;
+static const Double_t c1twParInit    = 1.0;
+
+//Parameter values to be written to param file
+Double_t c1[nPlanes][nSides][nBarsMax] = {0.};
+Double_t c2[nPlanes][nSides][nBarsMax] = {0.};
 
 static const Double_t fontSize     = 0.05;
 static const Double_t yTitleOffset = 0.75;
@@ -23,24 +53,28 @@ static const Double_t markerSize   = 2.0;
 static const Double_t minScale     = 0.75;
 static const Double_t maxScale     = 0.75;
 
-static const UInt_t lineWidth = 4;
+static const UInt_t lineWidth = 2;
 static const UInt_t lineStyle = 7;
 
 static const UInt_t  nbars[nPlanes]      = {13, 13, 14, 21};
 static const TString planeNames[nPlanes] = {"1x", "1y", "2x", "2y"};
 static const TString sideNames[nSides]   = {"pos", "neg"};
-static const TString twFitParNames[nTwFitPars]  = {"c_{0}", "c_{1}", "c_{2}"};
+static const TString twFitParNames[nTwFitPars]  = {"c_{1}", "c_{2}"};
+
 
 // Declare directories
 TDirectory *dataDir, *planeDir[nPlanes], *sideDir[nPlanes][nSides];
 TDirectory *twDir[nPlanes][nSides];
 // Declare fits
 TF1 *twFit[nPlanes][nSides][nBarsMax], *avgParFit[nPlanes][nSides][nTwFitPars];
+TFitResultPtr fitResult;
+
 // Declare arrays
 Double_t paddleIndex[nPlanes][nSides][nBarsMax];
 Double_t twFitPar[nPlanes][nSides][nTwFitPars][nBarsMax], twFitParErr[nPlanes][nSides][nTwFitPars][nBarsMax];
 Double_t avgPar[nPlanes][nSides][nTwFitPars];
 Double_t minPar[nPlanes][nSides][nTwFitPars], maxPar[nPlanes][nSides][nTwFitPars];
+Double_t chi2ndf[nPlanes][nSides][nBarsMax];
 // Declare canvases
 TCanvas *twFitCan[nPlanes][nSides], *twFitParCan[nTwFitPars];
 // Declare histos
@@ -94,7 +128,7 @@ TCanvas *makeCan(UInt_t numColumns, UInt_t numRows, UInt_t winWidth, UInt_t winH
 
 // Define the time-walk fit function
 Double_t twFitFunc(Double_t *a, Double_t *c) {
-  Double_t twFitVal = c[0] + c[1]/(TMath::Power((a[0]/tdcThresh), c[2]));
+  Double_t twFitVal = c[0]+1./(TMath::Power((a[0]/tdcThresh), c[1] ));
   return twFitVal;
 } // twFitFunc()
 
@@ -114,17 +148,26 @@ Double_t calcMinOrMax(Double_t *array, UInt_t iplane, TString minOrmax) {
 void doTwFits(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
   // Draw fits on canvas
   twFitCan[iplane][iside]->cd(ipaddle+1);
-  gPad->SetLogz();
+  //gPad->SetLogz();
   h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle]->Draw("COLZ");
   gPad->Modified(); gPad->Update();
+  
   // Declare and initialize the fits
   twFit[iplane][iside][ipaddle] = new TF1("twFit", twFitFunc, twFitRangeLow, twFitRangeHigh, nTwFitPars);
   for (UInt_t ipar = 0; ipar < nTwFitPars; ipar++)
     twFit[iplane][iside][ipaddle]->SetParName(ipar, twFitParNames[ipar]);
-  twFit[iplane][iside][ipaddle]->SetParameters(c0twParInit, c1twParInit, c2twParInit);
+  twFit[iplane][iside][ipaddle]->SetParameter(0,c0twParInit);
+  twFit[iplane][iside][ipaddle]->SetParameter(1,c1twParInit);
   // Perform the fits and scream if it failed
-  Int_t twFitStatus = h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle]->Fit("twFit", "REQ");	
-  if (twFitStatus != 0) 
+  Int_t entry =  h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle]->GetEntries();
+  int twFitStatus;
+  if (entry!=0)
+    {  
+      fitResult = h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle]->Fit("twFit", "SREQ");	
+      // fitResult->Print("V");
+      twFitStatus = int(fitResult);
+    }
+  else if (twFitStatus!= 0) 
     cout << "ERROR: Time Walk Fit Failed!!! " << "Status = " << twFitStatus << " For Plane: " <<  planeNames[iplane] << " Side: " << sideNames[iside] << " Paddle: " << ipaddle+1 << endl;		
   // Create text box to display fir parameters
   twFitParText[iplane][iside][ipaddle] = new TPaveText(0.4, 0.6, 0.895, 0.895, "NBNDC");
@@ -134,7 +177,9 @@ void doTwFits(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
     twFitPar[iplane][iside][ipar][ipaddle]    = twFit[iplane][iside][ipaddle]->GetParameter(ipar);
     twFitParErr[iplane][iside][ipar][ipaddle] = twFit[iplane][iside][ipaddle]->GetParError(ipar);
     twFitParText[iplane][iside][ipaddle]->AddText(Form(twFitParNames[ipar]+" = %.2f #pm %.2f", twFitPar[iplane][iside][ipar][ipaddle], twFitParErr[iplane][iside][ipar][ipaddle]));
-  } // Parameter loop
+ } // Parameter loop
+    twFitParText[iplane][iside][ipaddle]->AddText(Form("#chi^{2}/NDF = %.2f", twFit[iplane][iside][ipaddle]->GetChisquare()/twFit[iplane][iside][ipaddle]->GetNDF()));
+   
   // Draw the fit parameter text
   twFitParText[iplane][iside][ipaddle]->SetFillColor(kWhite);
   twFitParText[iplane][iside][ipaddle]->SetTextAlign(12);
@@ -155,8 +200,7 @@ void calcParAvg(UInt_t iplane, UInt_t iside) {
     if (iside == 1) addColorToFitLine(lineStyle, lineWidth, kBlue, avgParFit[iplane][iside][ipar]);
     // Initialize the parameters
     if (ipar == 0) avgParFit[iplane][iside][ipar]->SetParameter(0, c0twParInit);
-    if (ipar == 1) avgParFit[iplane][iside][ipar]->SetParameter(0, c1twParInit);
-    if (ipar == 2) avgParFit[iplane][iside][ipar]->SetParameter(0, c2twParInit);
+    if (ipar == 1) avgParFit[iplane][iside][ipar]->SetParameter(1, c1twParInit);
     // Perform the least squares fit 
     Int_t avgParFitStatus = twFitParGraph[iplane][iside][ipar]->Fit("avgParFit", "REQ");
     if (avgParFitStatus != 0) 
@@ -222,13 +266,116 @@ void drawParams(UInt_t iplane) {
   return;
 } // drawParams
 
+
+//Add a method to Get Fit Parameters
+void WriteFitParam(int runNUM)
+{
+
+  TString outPar_Name = Form("../../PARAM/SHMS/HODO/phodo_TWcalib_%d.param", runNUM);
+  outParam.open(outPar_Name);
+  outParam << ";SHMS Hodoscopes Time Walk Output Parameter File" << endl;
+  outParam << " " << endl;
+  outParam << "pTDC_threshold=" << tdcThresh  << " ;units of mV" <<endl;
+  //outPARAM << "ptofusinginvadc=0" << endl;  //set to zero to NOT use old hodo parameters
+  outParam << " " << endl;
+
+  //Fill 3D Par array
+  for (UInt_t iplane=0; iplane < nPlanes; iplane++)
+    {
+      
+      for (UInt_t iside=0; iside < nSides; iside++) {
+	      
+
+	for(UInt_t ipaddle = 0; ipaddle < nbars[iplane]; ipaddle++) {
+	 
+	  c1[iplane][iside][ipaddle] = twFit[iplane][iside][ipaddle]->GetParameter("c_{1}");
+	  c2[iplane][iside][ipaddle] = twFit[iplane][iside][ipaddle]->GetParameter("c_{2}");
+	  chi2ndf[iplane][iside][ipaddle] =  twFit[iplane][iside][ipaddle]->GetChisquare()/twFit[iplane][iside][ipaddle]->GetNDF();
+
+	} //end paddle loop
+
+      } //end side loop
+    
+    } //end plane loop
+
+  //Wrtie to Param FIle
+   
+  outParam << ";Param c1-Pos" << endl;
+  outParam << "; " << setw(12) << "1x " << setw(15) << "1y " << setw(15) << "2x " << setw(15) << "2y " << endl;
+  outParam << "pc1_Pos = ";
+  //Loop over all paddles
+  for(UInt_t ipaddle = 0; ipaddle < nBarsMax; ipaddle++) {
+    //Write c1-Pos values
+    if(ipaddle==0){
+      outParam << c1[0][0][ipaddle] << ", " << setw(15) << c1[1][0][ipaddle] << ", "  << setw(15) << c1[2][0][ipaddle] << ", " << setw(15) << c1[3][0][ipaddle] << fixed << endl; 
+    }
+    else {
+      outParam << setw(17) << c1[0][0][ipaddle] << ", " << setw(15) << c1[1][0][ipaddle] << ", "  << setw(15) << c1[2][0][ipaddle] << ", " << setw(15) << c1[3][0][ipaddle] << fixed << endl;    
+    }
+  } //end loop over paddles
+  
+  outParam << " " << endl;
+  outParam << ";Param c1-Neg" << endl;
+  outParam << "; " << setw(12) << "1x " << setw(15) << "1y " << setw(15) << "2x " << setw(15) << "2y " << endl;
+  outParam << "pc1_Neg = ";                                                                                                                                                                            
+  //Loop over all paddles
+  for(UInt_t ipaddle = 0; ipaddle < nBarsMax; ipaddle++) { 
+    //Write c1-Neg values
+    if(ipaddle==0){
+      outParam << c1[0][1][ipaddle] << ", " << setw(15) << c1[1][1][ipaddle] << ", "  << setw(15) << c1[2][1][ipaddle] << ", " << setw(15) << c1[3][1][ipaddle] << fixed << endl; 
+    }
+    else {
+      outParam << setw(17) << c1[0][1][ipaddle] << ", " << setw(15) << c1[1][1][ipaddle] << ", "  << setw(15) << c1[2][1][ipaddle] << ", " << setw(15) << c1[3][1][ipaddle] << fixed << endl;
+    }
+} //end loop over paddles
+  
+  outParam << " " << endl;
+  outParam << ";Param c2-Pos" << endl;
+  outParam << "; " << setw(12) << "1x " << setw(15) << "1y " << setw(15) << "2x " << setw(15) << "2y " << endl;
+  outParam << "pc2_Pos = ";                                                                                                                                                                            
+  //Loop over all paddles
+  for(UInt_t ipaddle = 0; ipaddle < nBarsMax; ipaddle++) { 
+    //Write c2-Pos values
+    if(ipaddle==0)
+      {
+	outParam << c2[0][0][ipaddle] << ", " << setw(15) << c2[1][0][ipaddle] << ", "  << setw(15) << c2[2][0][ipaddle] << ", " << setw(15) << c2[3][0][ipaddle] << fixed << endl; 
+      }
+    else {
+      outParam << setw(17) << c2[0][0][ipaddle] << ", " << setw(15) << c2[1][0][ipaddle] << ", "  << setw(15) << c2[2][0][ipaddle] << ", " << setw(15) << c2[3][0][ipaddle] << fixed << endl;                                            
+    }
+  } //end loop over paddles
+  
+  outParam << " " << endl;
+  outParam << ";Param c2-Neg" << endl;
+  outParam << "; " << setw(12) << "1x " << setw(15) << "1y " << setw(15) << "2x " << setw(15) << "2y " << endl;
+  outParam << "pc2_Neg = ";                                                                                                                                                                            
+  //Loop over all paddles
+  for(UInt_t ipaddle = 0; ipaddle < nBarsMax; ipaddle++) { 
+    //Write c2-Neg values
+    if (ipaddle==0){
+      outParam << c2[0][1][ipaddle] << ", " << setw(15) << c2[1][1][ipaddle] << ", "  << setw(15) << c2[2][1][ipaddle] << ", " << setw(15) << c2[3][1][ipaddle] << fixed << endl; 
+    }
+    else{
+      outParam << setw(17) << c2[0][1][ipaddle] << ", " << setw(15) << c2[1][1][ipaddle] << ", "  << setw(15) << c2[2][1][ipaddle] << ", " << setw(15) << c2[3][1][ipaddle] << fixed << endl;
+    }
+  } //end loop over paddles
+  
+  outParam.close();
+
+
+} //end method
+
 //=:=:=:=:=
 //=: Main
 //=:=:=:=:=
 
-void timeWalkCalib() {
+void timeWalkCalib(int run) {
 
-  // ROOT settings
+
+  //prevent root from displaying graphs while executing
+  //gROOT->SetBatch(1);
+ 
+ // ROOT settings
   gStyle->SetTitleFontSize(fontSize);
   gStyle->SetLabelSize(fontSize, "XY");
   gStyle->SetTitleSize(fontSize, "XY");
@@ -285,8 +432,15 @@ void timeWalkCalib() {
     // Draw the time-walk parameter graphs
     drawParams(iplane);
   } // Plane loop 
-  return;
-} // timeWalkFits()
+ 
+ 
+  //Write to a param file
+  WriteFitParam(run);
+  
+ 
+
+} // timeWalkCalib()
+
 
 
 
