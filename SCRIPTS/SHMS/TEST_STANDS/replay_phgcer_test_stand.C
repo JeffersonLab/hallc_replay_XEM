@@ -35,7 +35,7 @@ void replay_phgcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/HGCER/phgcer_ptrig.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
 
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
@@ -43,6 +43,9 @@ void replay_phgcer_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add Cherenkov to SHMS apparatus
   THcCherenkov* hgcer = new THcCherenkov("hgcer", "Heavy Gas Cherenkov");
   SHMS->AddDetector(hgcer);
+  // Add hodoscope to SHMS apparatus
+  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  SHMS->AddDetector(hod);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");

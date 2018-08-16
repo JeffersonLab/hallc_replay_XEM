@@ -35,7 +35,7 @@ void replay_phodo_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/HODO/phodo_ptrig.map");
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
   
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");

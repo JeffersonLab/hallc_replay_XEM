@@ -99,7 +99,7 @@ void replay_production_shms_coin_all (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add event handler for EPICS events
-  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
+  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 182");
   gHaEvtHandlers->Add(hcepics);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
@@ -149,7 +149,7 @@ void replay_production_shms_coin_all (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   analyzer->SetEvent(event);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(180);
+  analyzer->SetEpicsEvtType(182);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file
@@ -159,11 +159,11 @@ void replay_production_shms_coin_all (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define cuts file
   analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
   // File to record accounting information for cuts
-  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_coin_all_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
   analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production.template",
-  			Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  			Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_coin_all_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }

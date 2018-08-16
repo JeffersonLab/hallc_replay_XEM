@@ -35,7 +35,7 @@ gbpmc_zpos = 129.30 ; cm
 ;             =================================
   gusefr               = 1  
 ; flag if 1 fast raster data used with average beam pos and angles in
-calculating beam position
+; calculating beam position
 ; if 0 then only use average beam pos and angles in calculating beam position
 ; Various fast raster quantities: gUse* are flags
 

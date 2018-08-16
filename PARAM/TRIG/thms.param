@@ -1,11 +1,11 @@
 t_hms_numAdc = 9
-t_hms_numTdc = 54
+t_hms_numTdc = 55
 t_hms_tdcoffset=300.
 t_hms_adc_tdc_offset=300.
-t_hms_tdcchanperns=0.1
+t_hms_tdcchanperns=0.09766
 
 ; bar num:          1     2     3     4     5      6     7    8        9
 t_hms_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAER hCER hFADC_TREF_ROC1"
 
-; bar num:         1   2   3   4   5   6   7    8     9     10    11   12    13    14    15    16  17    18      19      20      21      22      23     24     25     26     27     28     29     30     31     32     33     34     35      36     37      38      39      40        41      42     43       44       45       46     47      48      49      50     51      52      53     54   
-t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPRLO hPRHI hSHWR hEDTM hCER hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4 hDCREF5 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6 pTRIG1 pTRIG2 pTRIG3 pTRIG4 pTRIG5 pTRIG6 pSTOF pEL_LO_LO pEL_LO pEL_HI pEL_REAL pEL_CLEAN hSTOF hEL_LO_LO hEL_LO hEL_HI hEL_REAL hEL_CLEAN pPRE40 pPRE100 pPRE150 pPRE200 hPRE40 hPRE100 hPRE150 hPRE200"
+; bar num:         1   2   3   4   5   6   7    8     9     10    11   12    13    14    15    16  17    18      19      20      21      22      23     24     25     26     27     28     29     30     31     32     33     34     35      36     37      38      39      40        41      42     43       44       45       46    47    48      49      50     51      52      53     54       55
+t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPRLO hPRHI hSHWR hEDTM hCER hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4 hDCREF5 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6 pTRIG1 pTRIG2 pTRIG3 pTRIG4 pTRIG5 pTRIG6 pSTOF pEL_LO_LO pEL_LO pEL_HI pEL_REAL pEL_CLEAN hSTOF hEL_LO_LO hEL_LO hEL_HI hEL_REAL hEL_CLEAN  hT3 pPRE40 pPRE100 pPRE150 pPRE200 hPRE40 hPRE100 hPRE150 hPRE200"

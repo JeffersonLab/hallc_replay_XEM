@@ -3,7 +3,7 @@
 #********************
 
 # HMS CER GOOD Pulse Profile
-TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.5 mV' [I+1] H.cer.goodAdcPed 2 0.5 2.5 400 0 200 H.cer.goodAdcPed>0.0
+TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] H.cer.goodAdcPed 2 0.5 2.5 200 100 150 H.cer.goodAdcPed>0.0
 
 # HMS CER Good Occupancy and Multiplity
 TH1F hcer_good_occ 'HMS Cherenkov Good Occupancy; PMT Number; Number of Entries' H.cer.numGoodAdcHits 2 0.5 2.5
@@ -16,15 +16,16 @@ TH2F hcer_npe 'HMS Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number
 TH1F hcer_tot_npe 'HMS Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.cer.npeSum 100 0 50 H.cer.npeSum>0.0 
 
 #--------------------------
-# HMS Gas CER TRACK MATCHING
+# HMS CER TRACK MATCHING
 #--------------------------
 
 TH1F hcer_trk_match 'HMS  Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' H.cer.numTracksMatched 2 0.5 2.5
 TH1F hcer_trk_fired 'HMS  Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' H.cer.numTracksFired 2 0.5 2.5
 
 #--------------------------
-# HMS Gas CER TRACK PROJECTION
+# HMS CER TRACK PROJECTION
 #--------------------------
+
 TH1F hcer_xtrack  'HMS Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' H.cer.xAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
 TH1F hcer_ytrack  'HMS Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' H.cer.yAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
 TH2F hcer_xytrack 'HMS Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' H.cer.yAtCer H.cer.xAtCer 120 -60 60 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0

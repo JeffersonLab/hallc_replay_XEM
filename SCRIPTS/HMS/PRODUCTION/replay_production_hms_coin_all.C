@@ -1,4 +1,4 @@
-void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -23,12 +23,12 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_coin_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/hms_coin_replay_production_all_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
@@ -40,7 +40,14 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
-  
+
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
+
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
   HMS->SetEvtType(2);
@@ -64,14 +71,6 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Add calorimeter to HMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
-
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
-  hms->SetSpectName("H");
-  TRG->AddDetector(hms);
 
   // Add rastered beam apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
@@ -144,7 +143,6 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   analyzer->SetCountMode(2);  // 0 = counter is # of physics triggers
                               // 1 = counter is # of all decode reads
                               // 2 = counter is event number
-  
   analyzer->SetEvent(event);
   // Set EPICS event type
   analyzer->SetEpicsEvtType(182);
@@ -153,15 +151,15 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define output DEF-file 
-  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production.def");
+  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production_all.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def");    // optional
   // File to record cuts accounting information for cuts
-  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_coin_production_%d_%d.report", RunNumber, MaxEvent));    // optional
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_coin_all_production_%d_%d.report", RunNumber, MaxEvent));    // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template.
   analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production.template",
-			Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_coin_production_%d_%d.report", RunNumber, MaxEvent));
+			Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_coin_all_production_%d_%d.report", RunNumber, MaxEvent));
 
 }

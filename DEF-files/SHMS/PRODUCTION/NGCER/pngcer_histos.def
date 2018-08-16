@@ -6,7 +6,7 @@
 # SHMS NGC FADC/NPE MONITORING
 #-----------------------------
 
-TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.5 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 400 0 200  P.ngcer.goodAdcPed>0.0
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 200 100 150  P.ngcer.goodAdcPed>0.0
 
 TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Good Occupancy; PMT Number; Number of Good ADC Hits' P.ngcer.numGoodAdcHits 4 0.5 4.5
 TH1F pngcer_good_mult 'SHMS Noble Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.ngcer.totNumGoodAdcHits 4 0.5 4.5

@@ -35,14 +35,17 @@ void replay_paero_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/AERO/paero_ptrig.map");
-
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
+  
   // Set up the equipment to be analyzed.
   THaApparatus* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add aeroscope to SHMS apparatus
   THcAerogel* aero = new THcAerogel("aero", "Aerogel");
   SHMS->AddDetector(aero);
+  // Add hodoscope to SHMS apparatus
+  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  SHMS->AddDetector(hod);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");

@@ -10,13 +10,28 @@ formula FRXB_V H.rb.raster.frxbRawAdc*(1./4096.)/25.
 formula FRYA_V H.rb.raster.fryaRawAdc*(1./4096.)/25.
 formula FRYB_V H.rb.raster.frybRawAdc*(1./4096.)/25.
 
-TH1F hFRXA 'HMS FRXA; FRXA RAW ADC (chan); Counts' H.rb.raster.frxaRawAdc 1000 0 100000
-TH1F hFRXA_V 'HMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0
-TH1F hFRXB 'HMS FRXB; FRXB RAW ADC (chan); Counts' H.rb.raster.frxbRawAdc 1000 0 100000
-TH1F hFRXB_V 'HMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0
-TH1F hFRYA 'HMS FRYA; FRYA RAW ADC (chan); Counts' H.rb.raster.fryaRawAdc 1000 0 100000
-TH1F hFRYA_V 'HMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0
-TH1F hFRYB 'HMS FRYB; FRYB RAW ADC (chan); Counts' H.rb.raster.frybRawAdc 1000 0 100000
-TH1F hFRYB_V 'HMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0
-TH2F hFRA_XvsY 'HMS FRA X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 1000 0 1.0 1000 0 1.0
-TH2F hFRB_XvsY 'HMS FRB X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 1000 0 1.0 1000 0 1.0
+TH1F hFRXA 'HMS FRXA; FRXA RAW ADC (chan); Counts' H.rb.raster.frxaRawAdc 1000 0 100000 H.dc.ntrack>0
+TH1F hFRXA_V 'HMS FRXA; FRXA RAW ADC (Volts); Counts' FRXA_V 1000 0 1.0 H.dc.ntrack>0
+TH1F hFRYA 'HMS FRYA; FRYA RAW ADC (chan); Counts' H.rb.raster.fryaRawAdc 1000 0 100000 H.dc.ntrack>0
+TH1F hFRYA_V 'HMS FRYA; FRYA RAW ADC (Volts); Counts' FRYA_V 1000 0 1.0 H.dc.ntrack>0
+
+TH1F hFRXB 'HMS FRXB; FRXB RAW ADC (chan); Counts' H.rb.raster.frxbRawAdc 1000 0 100000 H.dc.ntrack>0
+TH1F hFRXB_V 'HMS FRXB; FRXB RAW ADC (Volts); Counts' FRXB_V 1000 0 1.0 H.dc.ntrack>0
+TH1F hFRYB 'HMS FRYB; FRYB RAW ADC (chan); Counts' H.rb.raster.frybRawAdc 1000 0 100000 H.dc.ntrack>0
+TH1F hFRYB_V 'HMS FRYB; FRYB RAW ADC (Volts); Counts' FRYB_V 1000 0 1.0 H.dc.ntrack>0
+
+TH1F hFRXA 'HMS FRXA; FRXA ADC (chan); Counts' H.rb.raster.frxa_adc 100 -50000 50000 H.dc.ntrack>0
+TH1F hFRXB 'HMS FRXB; FRXB ADC (chan); Counts' H.rb.raster.frxb_adc 100 -50000 50000 H.dc.ntrack>0
+TH1F hFRYA 'HMS FRYA; FRYA ADC (chan); Counts' H.rb.raster.frya_adc 100 -50000 50000 H.dc.ntrack>0
+TH1F hFRYB 'HMS FRYB; FRYB ADC (chan); Counts' H.rb.raster.fryb_adc 100 -50000 50000 H.dc.ntrack>0
+
+TH1F hFRXApos 'HMS FRXApos; FRXA POS (CM); Counts' H.rb.raster.fr_xa 100 -0.5 0.5 H.dc.ntrack>0
+TH1F hFRXBpos 'HMS FRXBpos; FRXB POS (CM); Counts' H.rb.raster.fr_xb 100 -0.5 0.5 H.dc.ntrack>0
+TH1F hFRYApos 'HMS FRYApos; FRYA POS (CM); Counts' H.rb.raster.fr_ya 100 -0.5 0.5 H.dc.ntrack>0
+TH1F hFRYBpos 'HMS FRYBpos; FRYB POS (CM); Counts' H.rb.raster.fr_yb 100 -0.5 0.5 H.dc.ntrack>0
+
+TH2F hFRAraw_XvsY 'HMS FRA Raw X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 100 0 1.0 100 0 1.0 H.dc.ntrack>0
+TH2F hFRBraw_XvsY 'HMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 100 0 1.0 100 0 1.0 H.dc.ntrack>0
+
+TH2F hFRApos_XvsY 'HMS FRA X vs Y; FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 40 -0.2 0.2 40 -0.2 0.2 H.dc.ntrack>0
+TH2F hFRBpos_XvsY 'HMS FRB X vs Y; FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 40 -0.2 0.2 40 -0.2 0.2 H.dc.ntrack>0

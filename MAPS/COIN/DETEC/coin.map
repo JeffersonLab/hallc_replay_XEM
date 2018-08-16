@@ -3833,6 +3833,7 @@ REFINDEX=0
   59,   2,  92,   1  ! hEL_HI_ROC1
   60,   2,  93,   1  ! hEL_REAL_ROC1
   61,   2,  94,   1  ! hEL_CLEAN_ROC1
+  63,   2, 112,   1  ! hT3
   64,   2,  95,   1  ! pPRE40_ROC1
   65,   2,  96,   1  ! pPRE100_ROC1
   66,   2,  97,   1  ! pPRE150_ROC1

@@ -1,0 +1,8 @@
+#**************************************
+# Extended Target Correction Histograms
+#**************************************
+
+TH1F hextcor_xsieve 'HMS Extended Target Correction X-Sieve; X_{sieve} (cm); Number of Entries / 0.1 cm' H.extcor.xsieve 300 -15 15 hcut_CleanTrack
+TH1F hextcor_ysieve 'HMS Extended Target Correction Y-Sieve; Y_{sieve} (cm); Number of Entries / 0.1 cm' H.extcor.ysieve 200 -10 10 hcut_CleanTrack
+
+TH2F hextcor_xysieve 'HMS Extended Target Correction XY-Sieve; Y_{sieve} / 0.1 cm; X_{sieve} / 0.1 cm' H.extcor.ysieve H.extcor.xsieve 200 -10 10 300 -15 15 hcut_CleanTrack

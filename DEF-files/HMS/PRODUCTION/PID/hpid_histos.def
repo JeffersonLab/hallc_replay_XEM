@@ -20,13 +20,13 @@ TH2F hcal_npe_etracknorm 'HMS Cer Npe vs. Cal E/p; Normalized Track Energy Depos
 TH2F hcer_vs_hpreShwr      'HMS Cer NPE Sum vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; Cer NPE Sum / 0.5' H.cal.1pr.eplane H.cer.npeSum 400 0 4 80 0 40 H.cal.1pr.eplane>0.0&&H.cer.npeSum>0.0 
 TH2F hcer_vs_hpreShwr_elec 'HMS Electron Cer NPE Sum vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; Cer NPE Sum / 0.5' H.cal.1pr.eplane H.cer.npeSum 400 0 4 80 0 40 hcut_CleanTrack&&hcut_cer_elec
 TH2F hcer_vs_hpreShwr_pi   'HMS Pion Cer NPE Sum vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; Cer NPE Sum / 0.5' H.cal.1pr.eplane H.cer.npeSum 400 0 4 80 0 40 hcut_CleanTrack&&hcut_cer_pi
-TH2F hcal_hshwr_vs_hpreShwr      'HMS Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 1200 0 12 H.cal.1pr.eplane>0.0&&(H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane)>0.0 
-TH2F hcal_hshwr_vs_hpreShwr_elec 'HMS Electron Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 1200 0 12 hcut_CleanTrack&&hcut_cer_elec
-TH2F hcal_hshwr_vs_hpreShwr_pi   'HMS Pion Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 1200 0 12 hcut_CleanTrack&&hcut_cer_pi
+TH2F hcal_hshwr_vs_hpreShwr      'HMS Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 800 0 8 H.cal.1pr.eplane>0.0&&(H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane)>0.0 
+TH2F hcal_hshwr_vs_hpreShwr_elec 'HMS Electron Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 800 0 8 hcut_CleanTrack&&hcut_cer_elec
+TH2F hcal_hshwr_vs_hpreShwr_pi   'HMS Pion Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' H.cal.1pr.eplane (H.cal.2ta.eplane+H.cal.3ta.eplane+H.cal.4ta.eplane) 400 0 4 800 0 8 hcut_CleanTrack&&hcut_cer_pi
 
-TH2F hcal_delta_etracknorm      'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 240 -25. 35. hcut_CleanTrack
-TH2F hcal_delta_etracknorm_elec 'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 240 -25. 35. hcut_CleanTrack&&hcut_cer_elec
-TH2F hcal_delta_etracknorm_pi   'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 240 -25. 35. hcut_CleanTrack&&hcut_cer_pi
+TH2F hcal_delta_etracknorm      'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 96 -12. 12. hcut_CleanTrack
+TH2F hcal_delta_etracknorm_elec 'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 96 -12. 12. hcut_CleanTrack&&hcut_cer_elec
+TH2F hcal_delta_etracknorm_pi   'HMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' H.cal.etracknorm H.gtr.dp 60 0. 1.5 96 -12. 12. hcut_CleanTrack&&hcut_cer_pi
 
 #---------------------------
 #  CLUSTERING PLOTS
@@ -48,6 +48,8 @@ TH2F hcal_xytrack      'HMS Cal Track X vs Track Y; Track Y / 1 cm; Track X / 1 
 TH2F hcal_xyclusttrack 'HMS Cal Cluster X vs Cluster Y; Cluster Y / 1 cm; Cluster X / 1 cm' H.cal.yclusttrack H.cal.xclusttrack 200 -100 100 200 -100 100 H.cal.nclusttrack>-1&&H.dc.ntrack>0
 TH2F hcal_xtrack_vs_etrack 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack
 TH2F hcal_ytrack_vs_etrack 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack
+TH2F hcal_xtrack_vs_etracknorm 'HMS Calorimeter xtrack vs Normalized Track Energy; Track Energy Deposition (Gev) / 0.01 GeV; X Track (cm) / 1 cm' H.cal.etracknorm H.cal.xtrack 150 0 1.5 130 -65 65 hcut_CleanTrack
+TH2F hcal_ytrack_vs_etracknorm 'HMS Calorimeter ytrack vs Normalized Track Energy; Track Energy Deposition (Gev) / 0.01 GeV; Y Track (cm) / 1 cm' H.cal.etracknorm H.cal.ytrack 150 0 1.5 70 -35 35 hcut_CleanTrack
 
 TH2F hcal_xtrack_vs_etrack_elec 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec
 TH2F hcal_ytrack_vs_etrack_elec 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec

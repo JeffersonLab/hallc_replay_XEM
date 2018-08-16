@@ -35,14 +35,17 @@ void replay_hcal_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/CAL/hcal_htrig.map");
-
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
+  
   // Set up the equipment to be analyzed.
   THaApparatus* HMS = new THcHallCSpectrometer("H", "HMS");
   gHaApps->Add(HMS);
   // Add Calorimeter to HMS apparatus
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
+  // Add hodoscope to HMS apparatus
+  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
+  HMS->AddDetector(hod);
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");

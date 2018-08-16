@@ -35,8 +35,8 @@ void replay_ptrig_test_stand(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Load the Hall C style detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/TRIG/ptrig.map");
-
+  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
+  
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);
