@@ -1,7 +1,4 @@
 
-; use htofusinginvadc=1 if want invadc_offset
-;  invadc_linear, and invadc_adc to be used
-htofusinginvadc=1
 
 hhodo_pos_invadc_offset =   -0.00,   -0.00,   -1.02,   -2.75
                             -0.00,   -1.47,   -1.00,   -3.24
