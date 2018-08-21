@@ -35,3 +35,13 @@ TH2F pFRBraw_XvsY 'SHMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volt
 
 TH2F pFRApos_XvsY 'SHMS FRA X vs Y; FRA X Position (cm); FRA Y Position (cm)' P.rb.raster.fr_xa P.rb.raster.fr_ya 40 -0.2 0.2 40 -0.2 0.2 P.dc.ntrack>0
 TH2F pFRBpos_XvsY 'SHMS FRB X vs Y; FRB X Position (cm); FRB Y Position (cm)' P.rb.raster.fr_xb P.rb.raster.fr_yb 40 -0.2 0.2 40 -0.2 0.2 P.dc.ntrack>0
+
+TH1F hBPMA_X 'Beam BPMA_X ; BPMA_X  (CM); Counts' P.rb.raster.fr_xbpmA 300 -.3 .3
+TH1F hBPMB_X 'Beam BPMB_X ; BPMB_X  (CM); Counts' P.rb.raster.fr_xbpmB 300 -.3 .3
+TH1F hBPMC_X 'Beam BPMC_X ; BPMC_X  (CM); Counts' P.rb.raster.fr_xbpmC 300 -.3 .3
+TH1F hBPMT_X 'Beam BPMT_X ; BPM_X projected to target  (CM); Counts' P.rb.raster.fr_xbpm_tar 300 -.3 .3
+TH1F hBPMA_Y 'Beam BPMA_Y ; BPMA_Y  (CM); Counts' P.rb.raster.fr_ybpmA 300 -.3 .3
+TH1F hBPMB_Y 'Beam BPMB_Y ; BPMB_Y  (CM); Counts' P.rb.raster.fr_ybpmB 300 -.3 .3
+TH1F hBPMC_Y 'Beam BPMC_Y ; BPMC_Y  (CM); Counts' P.rb.raster.fr_ybpmC 300 -.3 .3
+TH1F hBPMT_Y 'Beam BPMT_Y ; BPM_Y projected to target  (CM); Counts' P.rb.raster.fr_ybpm_tar 300 -.3 .3
+
