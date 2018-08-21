@@ -38,9 +38,9 @@ bpm_calibration(const char* finname  = "harp_info.txt"){
   
   
    
-  Double_t bpmAz = 370.826; // unit cm , from survey 
-  Double_t bpmBz = 224.968; // unit cm , from survey 
-  Double_t bpmCz = 129.314; // unit cm , from survey 
+  Double_t bpmAz = 320.17; // unit cm , from survey Fall 2018
+  Double_t bpmBz = 224.81; // unit cm , from survey 
+  Double_t bpmCz = 129.38; // unit cm , from survey 
   
   Double_t ibcm1;
   Double_t bpmAxpos,bpmAypos,bpmBxpos,bpmBypos,bpmCxpos,bpmCypos;
