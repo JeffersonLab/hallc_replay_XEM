@@ -65,3 +65,7 @@ TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw
 TH1F htrig_hpreShwr_adc_pped 'HMS Pre-Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hPSHWR_adcPed 400 0 200  T.hms.hPSHWR_adcPed>0.0
 TH1F htrig_hshwr_adc_pped 'HMS Shower Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hSHWR_adcPed 400 0 200  T.hms.hSHWR_adcPed>0.0
 TH1F htrig_hcersum_adc_pped 'HMS Cherenkov Sum Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hCER_adcPed 400 0 200   T.hms.hCER_adcPed>0.0
+TH1F htrig_hASum_adc_pped 'HMS Pre-Shower A Shower Plane Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hASUM_adcPed 400 0 200  T.hms.hASUM_adcPed>0.0
+TH1F htrig_hBSum_adc_pped 'HMS Pre-Shower B Shower Plane Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hBSUM_adcPed 400 0 200  T.hms.hBSUM_adcPed>0.0
+TH1F htrig_hCSum_adc_pped 'HMS Pre-Shower C Shower Plane Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hCSUM_adcPed 400 0 200  T.hms.hCSUM_adcPed>0.0
+TH1F htrig_hDSum_adc_pped 'HMS Pre-Shower D Shower Plane Pulse Pedestal;  Pulse Pedestal (mV); Counts / 0.5 mV;' T.hms.hDSUM_adcPed 400 0 200  T.hms.hDSUM_adcPed>0.0

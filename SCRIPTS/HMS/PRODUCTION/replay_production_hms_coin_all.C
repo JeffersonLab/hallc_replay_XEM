@@ -1,4 +1,4 @@
-void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {

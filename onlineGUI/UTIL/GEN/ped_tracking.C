@@ -2,7 +2,9 @@
 #include "TFile.h"
 #include "TH1D.h"
 
+
 void ped_tracking(TString golden_file="", TString detector="", TString spect="", Double_t polarity=0){
+
 
   if (golden_file=="") {
     cout << "Enter golden run root file name: " << endl;
@@ -39,18 +41,24 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   if (histname.Contains("hcal_h") && polarity==1) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_pos");
   if (histname.Contains("hcal_h") && polarity==2) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_neg");
 
+
+  TH2F* H1_ped_vs_pmt; 
+  TH2F* H2_ped_vs_pmt; 
+
+  TString protorootpath = Form("%s",gDirectory->GetPath());
+
+  H2_ped_vs_pmt = (TH2F*) gDirectory->Get(histname.Data());
+
   TFile* f1= new TFile(golden_file,"READ");
   if (f1->IsZombie()) {
     cout << "Cannot find : " << golden_file << endl;
     return;
   } 
-    
-  TH2F* H1_ped_vs_pmt; 
-  TH2F* H2_ped_vs_pmt; 
 
   f1->GetObject(histname.Data(),H1_ped_vs_pmt); 
-  H2_ped_vs_pmt = (TH2F*) gDirectory->Get(histname.Data());
 
+  gDirectory->cd(Form("%s",protorootpath.Data()));
+  
   TH1D* H1_pmt;
   TH1D* H2_pmt;
 
@@ -69,7 +77,8 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   Double_t H1_ped_peak[H1_pmt->GetSize()-2];
   Double_t H2_ped_peak[H2_pmt->GetSize()-2];
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize()-2); ipmt++) {
-    if (H1_ped[ipmt]->GetEntries() != 0) {
+
+    if (H1_ped[ipmt]->GetEntries() > 25) {
       TSpectrum *s = new TSpectrum(1);
       gSystem->RedirectOutput("/dev/null","a");
       s->Search(H1_ped[ipmt], 1.0, "nobackground&&nodraw", 0.001);
@@ -86,7 +95,8 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
     else {
       H1_ped_peak[ipmt] = 1e+38;
     }
-    if (H2_ped[ipmt]->GetEntries() != 0) {
+
+    if (H2_ped[ipmt]->GetEntries() > 25) {
       TSpectrum *s = new TSpectrum(1);
       gSystem->RedirectOutput("/dev/null","a");
       s->Search(H2_ped[ipmt], 1.0, "nobackground&&nodraw", 0.001);
@@ -124,7 +134,9 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
     H2_pmt->SetBinError(ipmt+1,Gaussian->GetParameter(2));
   }
 
-  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("Difference in %s;PMT Number;Pedestal Shift (mV)",detector.Data()),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
+  gSystem->RedirectOutput("/dev/null","a");
+  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("Difference in %s %s;PMT Number;Pedestal Shift (mV)",detector.Data(),(polarity == 1) ? "pos" : "neg"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
+  gSystem->RedirectOutput(0);
 
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize()-2); ipmt++) {
     Ped_Difference->SetBinContent(ipmt+1,(H1_pmt->GetBinContent(ipmt+1)-H2_pmt->GetBinContent(ipmt+1)));
@@ -135,10 +147,12 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   Ped_Difference->SetAxisRange(-5,5,"Y");
   Ped_Difference->SetMarkerStyle(8);
   Ped_Difference->SetMarkerSize(1);
-  Ped_Difference->Draw("PE1");
+  Ped_Difference->DrawClone("PE1");
   gPad->Update();
   TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-2,gPad->GetUxmax(),-2);
   Lower_Limit->SetLineColor(kBlue); Lower_Limit->SetLineWidth(2); Lower_Limit->Draw();
   TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+2,gPad->GetUxmax(),+2);
   Upper_Limit->SetLineColor(kRed); Upper_Limit->SetLineWidth(2); Upper_Limit->Draw();
+
+  Ped_Difference->~TH1D();
 }
