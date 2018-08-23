@@ -46,11 +46,11 @@ TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.h
 # HMS Trigger Rate vs. 1MHz Clock Time
 #--------------------------------------
 
-TH2D htrig1rate_vs_time 'HMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); hTRIG1 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG1.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig2rate_vs_time 'HMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); hTRIG2 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG2.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG3.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1Mhz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
+TH2D htrig1rate_vs_time 'HMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); hTRIG1 Rate (Hz)' H.1MHz.scalerTime H.hTRIG1.scalerRate 350 0 7000 500 0 200000 
+TH2D htrig2rate_vs_time 'HMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); hTRIG2 Rate (Hz)' H.1MHz.scalerTime H.hTRIG2.scalerRate 350 0 7000 500 0 200000 
+TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 Rate (Hz)' H.1MHz.scalerTime H.hTRIG3.scalerRate 350 0 7000 500 0 200000 
+TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1MHz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
+TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1MHz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
 
 #--------------------------------------
 # HMS DC Ref time vs Hodo Ref time

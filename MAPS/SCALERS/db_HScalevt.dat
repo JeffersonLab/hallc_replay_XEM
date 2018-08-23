@@ -95,17 +95,18 @@ variable 5 26 1 .hEL_LO.scaler HMS EL_LO
 variable 5 26 2 .hEL_LO.scalerRate HMS EL_LO
 variable 4 7 1 .pTRIG1_CP.scaler pTRIG1 Copy
 variable 4 7 2 .pTRIG1_CP.scalerRate pTRIG1 Copy
-variable 6 25 1 .BCM4A.scaler BCM4a
-variable 6 25 2 .BCM4A.scalerRate BCM4a
-variable 6 25 3 .BCM4A.scalerCurrent BCM4a
-variable 6 25 4 .BCM4A.scalerCharge BCM4a
-variable 6 26 1 .BCM4B.scaler BCM4b
-variable 6 26 2 .BCM4B.scalerRate BCM4b
-variable 6 26 3 .BCM4B.scalerCurrent BCM4b
-variable 6 26 4 .BCM4B.scalerCharge BCM4b
-variable 6 31 1 .1Mhz.scaler 1MHz
-variable 6 31 2 .1Mhz.scalerRate 1MHz
-variable 6 31 5 .1Mhz.scalerTime 1MHz
+variable 6 25 1 .BCM4A.scaler BCM4A
+variable 6 25 2 .BCM4A.scalerRate BCM4A
+variable 6 25 3 .BCM4A.scalerCurrent BCM4A
+variable 6 25 4 .BCM4A.scalerCharge BCM4A
+variable 6 29 1 .BCM4B.scaler BCM4B
+variable 6 29 2 .BCM4B.scalerRate BCM4B
+variable 6 29 3 .BCM4B.scalerCurrent BCM4B
+variable 6 29 4 .BCM4B.scalerCharge BCM4B
+variable 6 26 1 .BCM4C.scaler BCM4C
+variable 6 26 2 .BCM4C.scalerRate BCM4C
+variable 6 26 3 .BCM4C.scalerCurrent BCM4C
+variable 6 26 4 .BCM4C.scalerCharge BCM4C
 variable 6 21 1 .Empty_58.scaler Empty
 variable 6 21 2 .Empty_58.scalerRate Empty
 variable 6 22 1 .Empty_59.scaler Empty
@@ -156,6 +157,9 @@ variable 4 12 1 .Empty_26.scaler Empty
 variable 4 12 2 .Empty_26.scalerRate Empty
 variable 5 28 1 .hEL_REAL.scaler HMS EL_REAL
 variable 5 28 2 .hEL_REAL.scalerRate HMS EL_REAL
+variable 6 31 1 .1MHz.scaler 1MHz
+variable 6 31 2 .1MHz.scalerRate 1MHz
+variable 6 31 5 .1MHz.scalerTime 1MHz
 variable 3 21 1 .hod.2y4.negScaler HMS 2Y- paddle 4
 variable 3 21 2 .hod.2y4.negScalerRate HMS 2Y- paddle 4
 variable 3 5 1 .hod.2y4.posScaler HMS 2Y+ paddle 4
@@ -312,10 +316,6 @@ variable 2 20 1 .hod.2x2.negScaler HMS 2X- paddle 2
 variable 2 20 2 .hod.2x2.negScalerRate HMS 2X- paddle 2
 variable 4 16 1 .hL1ACCP.scaler HMS L1 Accept
 variable 4 16 2 .hL1ACCP.scalerRate HMS L1 Accept
-variable 6 29 1 .BCM17.scaler BCM17
-variable 6 29 2 .BCM17.scalerRate BCM17
-variable 6 29 3 .BCM17.scalerCurrent BCM17
-variable 6 29 4 .BCM17.scalerCharge BCM17
 variable 5 24 1 .hSTOF.scaler HMS STOF
 variable 5 24 2 .hSTOF.scalerRate HMS STOF
 variable 1 23 1 .hod.1y8.negScaler HMS 1Y- paddle 8
@@ -396,8 +396,9 @@ variable 1 5 1 .hod.1y4.posScaler HMS 1Y+ paddle 4
 variable 1 5 2 .hod.1y4.posScalerRate HMS 1Y+ paddle 4
 variable 1 21 1 .hod.1y4.negScaler HMS 1Y- paddle 4
 variable 1 21 2 .hod.1y4.negScalerRate HMS 1Y- paddle 4
-variable 4 5 1 .1MHz_CP.scaler 1 Mhz Copy
-variable 4 5 2 .1MHz_CP.scalerRate 1 Mhz Copy
+variable 4 5 1 .1MHz_CP.scaler 1 MHz Copy
+variable 4 5 2 .1MHz_CP.scalerRate 1 MHz Copy
+variable 4 5 5 .1MHz_CP.scalerTime 1 MHz Copy
 variable 0 22 1 .hod.1x6.negScaler HMS 1X- paddle 6
 variable 0 22 2 .hod.1x6.negScalerRate HMS 1X- paddle 6
 variable 0 6 1 .hod.1x6.posScaler HMS 1X+ paddle 6

@@ -203,7 +203,7 @@ pPRE100      0    4     4    1     1    -1  SHMS PRE100
 pPRE150      0    4     4    2     1    -1  SHMS PRE150
 pPRE200      0    4     4    3     1    -1  SHMS PRE200
 10/4         0    4     4    4     1    -1  Empty
-1MHz_CP      0    4     4    5     1    -1  1 Mhz Copy
+1MHz_CP      0    4     4    5     1    -1  1 MHz Copy
 EDTM_CP      0    4     4    6     1    -1  EDTM Copy
 pTRIG1_CP    0    4     4    7     1    -1  pTRIG1 Copy
 hPRE40       0    4     4    8     1    -1  HMS PRE40
@@ -291,13 +291,13 @@ CER          0    4     6    15    1    -1  HMS CER
 21/22        0    4     6    22    1    -1  Empty
 21/23        0    4     6    23    1    -1  Empty
 21/24        0    4     6    24    1    -1  Empty
-BCM4A        0    4     6    25    1    -1  BCM4a
-BCM4B        0    4     6    26    1    -1  BCM4b
+BCM4A        0    4     6    25    1    -1  BCM4A
+BCM4C        0    4     6    26    1    -1  BCM4C
 BCM1         0    4     6    27    1    -1  BCM1
 BCM2         0    4     6    28    1    -1  BCM2 
-BCM17        0    4     6    29    1    -1  BCM17
+BCM4B        0    4     6    29    1    -1  BCM4B
 Unser        0    4     6    30    1    -1  Unser
-1Mhz         0    4     6    31    1    -1  1MHz  
+1MHz         0    4     6    31    1    -1  1MHz
                                         
 # desc      hel crate slot start nchan page long-description
 clock        0    4     7    1     1    -1  clock   
@@ -586,20 +586,20 @@ PRHI         0    5     7    12    1    -1  SHMS PRHI
 13/22        0    5     7    22    1    -1  Empty
 13/23        0    5     7    23    1    -1  Empty
 13/24        0    5     7    24    1    -1  Empty
-BCM4A        0    5     7    25    1    -1  BCM4a
-BCM4B        0    5     7    26    1    -1  BCM4b
+BCM4A        0    5     7    25    1    -1  BCM4A
+BCM4C        0    5     7    26    1    -1  BCM4C
 BCM1         0    5     7    27    1    -1  BCM1
 BCM2         0    5     7    28    1    -1  BCM2
-BCM17        0    5     7    29    1    -1  BCM17
+BCM4B        0    5     7    29    1    -1  BCM4B
 Unser        0    5     7    30    1    -1  Unser
-1Mhz         0    5     7    31    1    -1  1MHz
+1MHz         0    5     7    31    1    -1  1MHz
 
 # desc        hel crate slot start nchan page long-description
 pBCM1_posHel   0    5     8    0     1    -1  SHMS BCM1 Hel+
 14/01          0    5     8    1     1    -1  Empty
 pBCM2_posHel   0    5     8    2     1    -1  SHMS BCM2 Hel+
 14/03          0    5     8    3     1    -1  Empty
-pBCM17_posHel  0    5     8    4     1    -1  SHMS BCM17 Hel+
+pBCM4B_posHel  0    5     8    4     1    -1  SHMS BCM4B Hel+
 14/05          0    5     8    5     1    -1  Empty
 pUnser_posHel  0    5     8    6     1    -1  SHMS Unser Hel+
 14/07          0    5     8    7     1    -1  Empty
@@ -607,33 +607,33 @@ p1MHz_posHel   0    5     8    8     1    -1  SHMS 1MHz Hel+
 14/09          0    5     8    9     1    -1  Empty
 pBCM4A_posHel  0    5     8    10    1    -1  SHMS BCM4A Hel+
 14/11          0    5     8    11    1    -1  Empty
-pBCM4B_posHel  0    5     8    12    1    -1  SHMS BCM4B Hel+
+pBCM4C_posHel  0    5     8    12    1    -1  SHMS BCM4C Hel+
 14/13          0    5     8    13    1    -1  Empty
-pTRIG6_posHel  0    5     8    14    1    -1  SHMS TRIG6 Hel+
+14/14          0    5     8    14    1    -1  Empty
 pL1ACCP_posHel 0    5     8    15    1    -1  SHMS L1 Accept Hel+
-14/16          0    5     8    16    1    -1  Empty
-14/17          0    5     8    17    1    -1  Empty
-14/18          0    5     8    18    1    -1  Empty
-14/19          0    5     8    19    1    -1  Empty
-14/20          0    5     8    20    1    -1  Empty
-14/21          0    5     8    21    1    -1  Empty
+pTRIG1_posHel  0    5     8    16    1    -1  SHMS TRIG1 Hel+
+pTRIG2_posHel  0    5     8    17    1    -1  SHMS TRIG2 Hel+
+pTRIG3_posHel  0    5     8    18    1    -1  SHMS TRIG3 Hel+
+pTRIG4_posHel  0    5     8    19    1    -1  SHMS TRIG4 Hel+
+pTRIG5_posHel  0    5     8    20    1    -1  SHMS TRIG5 Hel+
+pTRIG6_posHel  0    5     8    21    1    -1  SHMS TRIG6 Hel+
 14/22          0    5     8    22    1    -1  Empty
 14/23          0    5     8    23    1    -1  Empty
 14/24          0    5     8    24    1    -1  Empty
 14/25          0    5     8    25    1    -1  Empty
-14/26          0    5     8    26    1    -1  Empty
-14/27          0    5     8    27    1    -1  Empty
-14/28          0    5     8    28    1    -1  Empty
-14/29          0    5     8    29    1    -1  Empty
-14/30          0    5     8    30    1    -1  Empty
-14/31          0    5     8    31    1    -1  Empty
+hTRIG1_posHel  0    5     8    26    1    -1  HMS TRIG1 Hel+
+hTRIG2_posHel  0    5     8    27    1    -1  HMS TRIG2 Hel+
+hTRIG3_posHel  0    5     8    28    1    -1  HMS TRIG3 Hel+
+hTRIG4_posHel  0    5     8    29    1    -1  HMS TRIG4 Hel+
+hTRIG5_posHel  0    5     8    30    1    -1  HMS TRIG5 Hel+
+hTRIG6_posHel  0    5     8    31    1    -1  HMS TRIG6 Hel+
 
 # desc        hel crate slot start nchan page long-description
 pBCM1_negHel   0    5     9    0     1    -1  SHMS BCM1 Hel-
 15/01          0    5     9    1     1    -1  Empty
 pBCM2_negHel   0    5     9    2     1    -1  SHMS BCM2 Hel-
 15/03          0    5     9    3     1    -1  Empty
-pBCM17_negHel  0    5     9    4     1    -1  SHMS BCM17 Hel-
+pBCM4B_negHel  0    5     9    4     1    -1  SHMS BCM4B Hel-
 15/05          0    5     9    5     1    -1  Empty
 pUnser_negHel  0    5     9    6     1    -1  SHMS Unser Hel-
 15/07          0    5     9    7     1    -1  Empty
@@ -641,26 +641,26 @@ p1MHz_negHel   0    5     9    8     1    -1  SHMS 1MHz Hel-
 15/09          0    5     9    9     1    -1  Empty
 pBCM4A_negHel  0    5     9    10    1    -1  SHMS BCM4A Hel-
 15/11          0    5     9    11    1    -1  Empty
-pBCM4B_negHel  0    5     9    12    1    -1  SHMS BCM4B Hel-
+pBCM4C_negHel  0    5     9    12    1    -1  SHMS BCM4C Hel-
 15/13          0    5     9    13    1    -1  Empty
-pTRIG6_negHel  0    5     9    14    1    -1  SHMS TRIG6 Hel-
+15/14          0    5     9    14    1    -1  Empty
 pL1ACCP_negHel 0    5     9    15    1    -1  SHMS L1 Accept Hel-
-15/16          0    5     9    16    1    -1  Empty
-15/17          0    5     9    17    1    -1  Empty
-15/18          0    5     9    18    1    -1  Empty
-15/19          0    5     9    19    1    -1  Empty
-15/20          0    5     9    20    1    -1  Empty
-15/21          0    5     9    21    1    -1  Empty
-15/22          0    5     9    22    1    -1  Empty
-15/23          0    5     9    23    1    -1  Empty
-15/24          0    5     9    24    1    -1  Empty
-15/25          0    5     9    25    1    -1  Empty
-15/26          0    5     9    26    1    -1  Empty
-15/27          0    5     9    27    1    -1  Empty
-15/28          0    5     9    28    1    -1  Empty
-15/29          0    5     9    29    1    -1  Empty
-15/30          0    5     9    30    1    -1  Empty
-15/31          0    5     9    31    1    -1  Empty
+pTRIG1_negHel  0    5     9    16    1    -1  SHMS TRIG1 Hel-
+pTRIG2_negHel  0    5     9    17    1    -1  SHMS TRIG2 Hel-
+pTRIG3_negHel  0    5     9    18    1    -1  SHMS TRIG3 Hel-
+pTRIG4_negHel  0    5     9    19    1    -1  SHMS TRIG4 Hel-
+pTRIG5_negHel  0    5     9    20    1    -1  SHMS TRIG5 Hel-
+pTRIG6_negHel  0    5     9    21    1    -1  SHMS TRIG6 Hel-
+14/22          0    5     9    22    1    -1  Empty
+14/23          0    5     9    23    1    -1  Empty
+14/24          0    5     9    24    1    -1  Empty
+14/25          0    5     9    25    1    -1  Empty
+hTRIG1_negHel  0    5     9    26    1    -1  HMS TRIG1 Hel-
+hTRIG2_negHel  0    5     9    27    1    -1  HMS TRIG2 Hel-
+hTRIG3_negHel  0    5     9    28    1    -1  HMS TRIG3 Hel-
+hTRIG4_negHel  0    5     9    29    1    -1  HMS TRIG4 Hel-
+hTRIG5_negHel  0    5     9    30    1    -1  HMS TRIG5 Hel-
+hTRIG6_negHel  0    5     9    31    1    -1  HMS TRIG6 Hel-
 
 # desc      hel crate slot start nchan page long-description
 clock        0    5     10    1     1    -1  clock

@@ -94,5 +94,5 @@ with open(xscalerMapName, 'r') as fi:
                     if name[1:4] == "BCM" or name[1:6] == "Unser":
                         print >>fo, 'variable', slot, chan, 3, printname+'Current', comment
                         print >>fo, 'variable', slot, chan, 4, printname+'Charge', comment
-                    elif name[1:5] == "1Mhz":
+                    elif name[1:5] == "1MHz":
                         print >>fo, 'variable', slot, chan, 5, printname+'Time', comment
