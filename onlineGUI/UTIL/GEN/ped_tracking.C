@@ -41,7 +41,6 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   if (histname.Contains("hcal_h") && polarity==1) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_pos");
   if (histname.Contains("hcal_h") && polarity==2) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_neg");
 
-
   TH2F* H1_ped_vs_pmt; 
   TH2F* H2_ped_vs_pmt; 
 
@@ -134,8 +133,10 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
     H2_pmt->SetBinError(ipmt+1,Gaussian->GetParameter(2));
   }
 
+
+
   gSystem->RedirectOutput("/dev/null","a");
-  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("Difference in %s %s;PMT Number;Pedestal Shift (mV)",detector.Data(),(polarity == 1) ? "pos" : "neg"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
+  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s %s;PMT Number; Difference of Pedestal Means (mV)",detector.Data(),(polarity == 1) ? "+" : "-"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
   gSystem->RedirectOutput(0);
 
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize()-2); ipmt++) {
@@ -150,9 +151,9 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   Ped_Difference->DrawClone("PE1");
   gPad->Update();
   TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-2,gPad->GetUxmax(),-2);
-  Lower_Limit->SetLineColor(kBlue); Lower_Limit->SetLineWidth(2); Lower_Limit->Draw();
+  Lower_Limit->SetLineColor(kRed); Lower_Limit->SetLineWidth(3); Lower_Limit->SetLineStyle(2); Lower_Limit->Draw();
   TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+2,gPad->GetUxmax(),+2);
-  Upper_Limit->SetLineColor(kRed); Upper_Limit->SetLineWidth(2); Upper_Limit->Draw();
+  Upper_Limit->SetLineColor(kRed); Upper_Limit->SetLineWidth(3); Upper_Limit->SetLineStyle(2); Upper_Limit->Draw();
 
   Ped_Difference->~TH1D();
 }
