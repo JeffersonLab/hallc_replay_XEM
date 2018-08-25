@@ -54,15 +54,21 @@ pntracks_max_fp = 10
   psel_ndegreesmin = 1
 
 
-; pstat_maxchisq          chisquared limit for tracks used to measure hodo. eff.
-  pstat_maxchisq = 10.
 ; if both psel_using_scin = 0 and psel_using_prune = 0 then best chi2 track is used.
 ; psel_using_scin         uses scintillator for track selection
   psel_using_scin = 0
 ; psel_using_prune         using prune
   psel_using_prune = 0
-; pstat_slop              distance from center of scin. to count as expecting hit
+
+; parameters used in selecting tracks for Hodoscope efficiency in THcHodoEff.cxx
+;   HodoEff_CalEnergy_Cut  cut on the track energy (GeV)
+;   pstat_maxchisq          chisquared limit for tracks used to measure hodo. eff.
+;   pstat_slop  (cm)       track distance from center of scin. to count as expecting hit
+  pstat_maxchisq = 10.
+  pHodoEff_CalEnergy_Cut = 0.050
   pstat_slop = 2.
+
+
 ; pstat_mineff            warning level for scin. effic.
   pstat_mineff = .95
 ; pstat_cal_maxchisq      cpisquared limit for tracks used to measure cal. eff.
