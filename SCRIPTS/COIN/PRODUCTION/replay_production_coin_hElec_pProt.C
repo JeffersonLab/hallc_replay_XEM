@@ -84,7 +84,7 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHaApps->Add(pbeam);
   // Add physics modules
   // Calculate reaction point
-  THaReactionPoint* prp = new THaReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
+  THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
   // Calculate extended target corrections
   THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
@@ -141,7 +141,7 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHaApps->Add(hbeam);  
   // Add physics modules
   // Calculate reaction point
-  THaReactionPoint* hrp = new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
+  THcReactionPoint* hrp = new THcReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
   // Calculate extended target corrections
   THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");

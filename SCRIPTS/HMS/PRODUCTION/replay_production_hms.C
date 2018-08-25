@@ -78,7 +78,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHaApps->Add(beam);  
   // Add physics modules
   // Calculate reaction point
-  THaReactionPoint* hrp = new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
+  THcReactionPoint* hrp = new THcReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
   // Calculate extended target corrections
   THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");
