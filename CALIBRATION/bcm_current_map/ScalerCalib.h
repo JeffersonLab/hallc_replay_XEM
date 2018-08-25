@@ -44,7 +44,7 @@ class ScalerCalib {
   ScalerContainer bcm2;
   ScalerContainer bcm4a;
   ScalerContainer bcm4b;
-  ScalerContainer bcm17;
+  ScalerContainer bcm4c;
 
   ClassDef(ScalerCalib,0)
 

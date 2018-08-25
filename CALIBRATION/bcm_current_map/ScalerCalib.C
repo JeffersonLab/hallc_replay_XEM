@@ -76,8 +76,8 @@ int ScalerCalib::Run()
       PrintContainer(bcm4b);
 
       outfile << "\n" << "\n";
-      outfile << "scal_read_bcm17_current = ";
-      PrintContainer(bcm17);
+      outfile << "scal_read_bcm4c_current = ";
+      PrintContainer(bcm4c);
     }
   
   outfile << "\n" << "\n";
@@ -157,14 +157,14 @@ int ScalerCalib::FillContainer()
   double bcm2_current;
   double bcm4a_current;
   double bcm4b_current;
-  double bcm17_current;
+  double bcm4c_current;
 
   string bname[NBCM];
   string sarray[NBCM] = {".BCM1.scalerCurrent",
 		      ".BCM2.scalerCurrent", 
 		      ".BCM4A.scalerCurrent",
 		      ".BCM4B.scalerCurrent",
-		      ".BCM17.scalerCurrent"};
+		      ".BCM4C.scalerCurrent"};
 
   for(int i=0; i<NBCM; i++)
     {
@@ -178,7 +178,7 @@ int ScalerCalib::FillContainer()
   T->SetBranchAddress(bname[1].c_str(), &bcm2_current);
   T->SetBranchAddress(bname[2].c_str(), &bcm4a_current);
   T->SetBranchAddress(bname[3].c_str(), &bcm4b_current);
-  T->SetBranchAddress(bname[4].c_str(), &bcm17_current);
+  T->SetBranchAddress(bname[4].c_str(), &bcm4c_current);
 
   Long64_t nentries = T->GetEntries();
   for(Long64_t ientry=0; ientry<nentries; ientry++)
@@ -194,7 +194,7 @@ int ScalerCalib::FillContainer()
       bcm2.push_back(bcm2_current);
       bcm4a.push_back(bcm4a_current);
       bcm4b.push_back(bcm4b_current);
-      bcm17.push_back(bcm17_current);
+      bcm4c.push_back(bcm4c_current);
 
     }
 
@@ -213,7 +213,7 @@ void ScalerCalib::ClearContainers()
   bcm2.clear();
   bcm4a.clear();
   bcm4b.clear();
-  bcm17.clear();
+  bcm4c.clear();
 
 }
 
