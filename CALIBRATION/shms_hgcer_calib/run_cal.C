@@ -38,15 +38,16 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0, Int_t coin = 0)
   cout << "\n\n";
 
   TChain ch("T");
-  if (coin == 1) ch.Add(Form("../../ROOTfiles/coin_replay_production_%d_%d.root", RunNumber, NumEvents));
+  if (coin == 1) ch.Add(Form("../../ROOTfiles/shms_coin_replay_production_all_%d_%d.root", RunNumber, NumEvents));
   else ch.Add(Form("../../ROOTfiles/shms_replay_production_all_%d_%d.root", RunNumber, NumEvents));
-  TProof *proof = TProof::Open("");
+  TProof *proof = TProof::Open("workers=4");
   proof->SetProgressDialog(0);  
   ch.SetProof();
 
   if (calib_option != "NA")
     {
       //Perform a "preprocess" of replay to extact timing information
+      /*
       ch.Process("preprocess.C+",calib_option);
       if (calib_option.Contains("showall"))
 	{
@@ -68,7 +69,7 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0, Int_t coin = 0)
 	  calib_option.Append(Form(" %f %f",timing_row_content[0],timing_row_content[1]));
 	}
       preprocess_file.Close();
-
+      */
       //Start calibration process
       ch.Process("calibration.C+",calib_option);
 
@@ -97,5 +98,5 @@ void run_cal(Int_t RunNumber = 0, Int_t NumEvents = 0, Int_t coin = 0)
 	}
     }
 
-  if (eff_option != "NA") ch.Process("efficiencies.C+",eff_option);
+  //if (eff_option != "NA") ch.Process("efficiencies.C+",eff_option);
 }
