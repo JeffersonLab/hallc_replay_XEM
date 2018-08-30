@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/apps/python/python-2.7.1/bin/python
-=======
-#!/usr/bin/python3.6
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
+#!/usr/bin/python
 
 import sys
 
@@ -38,56 +34,45 @@ def hms_var_states():
     if (hcerana_histos.get() == 1) or (hdcana_histos.get() == 1) or (hhodoana_histos.get() == 1) or (hcalana_histos.get() == 1) or (htrigana_histos.get() == 1):
         hms_def_file_text.append("\n")
 
+    if htrig_histos.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"\n''')
     if hcal_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CAL/hcal_histos.def"\n''')
     if hcer_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/CER/hcer_histos.def"\n''')
     if hdc_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_histos.def"\n''')
-        hms_def_file_text.append('''#include "DEF-files/HMS/TEST_STANDS/DC/hdc_resid.def"\n''')
+        #hms_def_file_text.append('''#include "DEF-files/HMS/TEST_STANDS/DC/hdc_resid.def"\n''')
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/DC/hdc_eff_histos.def"\n''')
     if hhodo_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/HODO/hhodo_histos.def"\n''')
+    
+    hms_def_file_text.append('''\n''')
+   
     if hkin_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/KIN/hkin_histos.def"\n''')
     if hgtr_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/GTR/hgtr_histos.def"\n''')
     if hraster_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/RASTER/hraster_histos.def"\n''')
-    if htrig_histos.get() == 1:
-        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_histos.def"\n''')
     if hreact_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/REACT/hreact_histos.def"\n''')
     if hpid_histos.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_histos.def"\n''')
-<<<<<<< HEAD
-
-    if hgtr_vars.get() == 1:
-=======
+    if hextcor_histos.get() == 1:
+        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EXTCOR/hextcor_histos.def"\n''')
     
     hms_def_file_text.append('''\n''')
 
-    if hf2gtr_vars.get() == 1:
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
-        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/GTR/hgtr_vars.def"\n''')
     if hpid_vars.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/PID/hpid_vars.def"\n''')
     if hepics_vars.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"\n''')
-<<<<<<< HEAD
-
-=======
     if hf2kin_vars.get() == 1:
         hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/KIN/hkin_vars.def"\n''')
 
     hms_def_file_text.append('''\n''')
     
-    if hf2block_vars.get() == 1:
-        hms_def_file_text.append('''#include "DEF-files/HMS/PRODUCTION/BLOCK/hblock_vars.def"\n''')
-
-    hms_def_file_text.append('''\n''')
-    
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
     if hthms_vars.get() == 1:
         hms_def_file_text.append('''block T.hms.*\n''')
     if hcer_vars.get() == 1:
@@ -140,53 +125,51 @@ def shms_var_states():
     if (paeroana_histos.get() == 1) or (pcalana_histos.get() == 1) or (pdcana_histos.get() == 1) or (phgcerana_histos.get() == 1) or (phodoana_histos.get() == 1) or ( pngcerana_histos.get() == 1) or (ptrigana_histos.get() == 1):
         shms_def_file_text.append("\n")
 
+    if ptrig_histos.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_histos.def"\n''')
     if paero_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/AERO/paero_histos.def"\n''')
     if pcal_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/CAL/pcal_histos.def"\n''')
     if pdc_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"\n''')
-    if pgtr_histos.get() == 1:
-        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_histos.def"\n''')
     if phgcer_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HGCER/phgcer_histos.def"\n''')
+    if pngcer_histos.get() == 1:
+        shms_def_file_text.append('''# #include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"\n''')
     if phodo_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/HODO/phodo_histos.def"\n''')
+    
+    shms_def_file_text.append('''\n''')
+    
     if pkin_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_histos.def"\n''')
-    if pngcer_histos.get() == 1:
-        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"\n''')
+    if pgtr_histos.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_histos.def"\n''')
     if praster_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/RASTER/praster_histos.def"\n''')
-    if ptrig_histos.get() == 1:
-        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_histos.def"\n''')
     if preact_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/REACT/preact_histos.def"\n''')
     if ppid_histos.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_histos.def"\n''')
-<<<<<<< HEAD
-=======
+    if pextcor_histos.get() == 1:
+        shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EXTCOR/pextcor_histos.def"\n''')
     
     shms_def_file_text.append('''\n''')
     
     if pf2dc_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/DC/pdc_vars.def"\n''')
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
     if pf2gtr_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/GTR/pgtr_vars.def"\n''')
     if ppid_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/PID/ppid_vars.def"\n''')
     if pepics_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"\n''')
-<<<<<<< HEAD
-   
-=======
     if pf2kin_vars.get() == 1:
         shms_def_file_text.append('''#include "DEF-files/SHMS/PRODUCTION/KIN/pkin_vars.def"\n''')
    
     shms_def_file_text.append('''\n''')
     
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
     if ptshms_vars.get() == 1:
         shms_def_file_text.append('''block T.shms.*\n''')
     if pngcer_vars.get() == 1:
@@ -231,18 +214,14 @@ def set_hms_production_defaults():
     hraster_histos.set(1)
     hreact_histos.set(1)
     hpid_histos.set(1)
+    hextcor_histos.set(1)
     hcalana_histos.set(0)
     hcerana_histos.set(0)
     hdcana_histos.set(0)
     hhodoana_histos.set(0)
     htrigana_histos.set(0)
     hepics_vars.set(1)
-    hf2gtr_vars.set(1)
-<<<<<<< HEAD
-=======
     hf2kin_vars.set(1)
-    hf2block_vars.set(1)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
     hpid_vars.set(1)
     hthms_vars.set(0)
     hcal_vars.set(0)
@@ -268,6 +247,7 @@ def set_shms_production_defaults():
     ptrig_histos.set(1)
     preact_histos.set(1)
     ppid_histos.set(1)
+    pextcor_histos.set(1)
     paeroana_histos.set(0)
     pcalana_histos.set(0)
     pdcana_histos.set(0)
@@ -276,11 +256,8 @@ def set_shms_production_defaults():
     pngcerana_histos.set(0)
     ptrigana_histos.set(0)
     pepics_vars.set(1)
-<<<<<<< HEAD
-=======
     pf2dc_vars.set(1)
     pf2kin_vars.set(1)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
     pf2gtr_vars.set(1)
     ppid_vars.set(1)
     ptshms_vars.set(0)
@@ -343,13 +320,9 @@ hraster_histos = tk.IntVar()
 htrig_histos = tk.IntVar()
 hreact_histos = tk.IntVar()
 hpid_histos = tk.IntVar()
+hextcor_histos = tk.IntVar()
 hepics_vars = tk.IntVar()
-hf2gtr_vars = tk.IntVar()
-<<<<<<< HEAD
-=======
 hf2kin_vars = tk.IntVar()
-hf2block_vars = tk.IntVar()
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 hpid_vars = tk.IntVar()
 
 paero_histos = tk.IntVar()
@@ -364,12 +337,10 @@ praster_histos = tk.IntVar()
 ptrig_histos = tk.IntVar()
 preact_histos = tk.IntVar()
 ppid_histos = tk.IntVar()
+pextcor_histos = tk.IntVar()
 pepics_vars = tk.IntVar()
-<<<<<<< HEAD
-=======
 pf2dc_vars = tk.IntVar()
 pf2kin_vars = tk.IntVar()
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 pf2gtr_vars = tk.IntVar()
 ppid_vars = tk.IntVar()
 
@@ -500,7 +471,12 @@ tk.Checkbutton(root,
               text="PID",
               padx = 20, 
               variable=hpid_histos).grid(row=irow,column=icol,sticky=tk.W)
-irow=irow+5
+irow=irow+1
+tk.Checkbutton(root, 
+              text="EXTCOR",
+              padx = 20, 
+              variable=hextcor_histos).grid(row=irow,column=icol,sticky=tk.W)
+irow=irow+4
 tk.Label(root, 
         text="""HMS Variables:""",
         justify = tk.LEFT,
@@ -516,7 +492,7 @@ tk.Label(root,
         padx = 20).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 EPICS",
+              text="EPICS",
               padx = 20, 
               variable=hepics_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
@@ -525,43 +501,29 @@ tk.Checkbutton(root,
               variable=hthms_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 Tracking",
+              text="PID",
               padx = 20, 
-              variable=hf2gtr_vars).grid(row=irow,column=icol,sticky=tk.W)
+              variable=hpid_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
               text="Calorimeter",
               padx = 20, 
               variable=hcal_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 PID",
+              text="Kinematics",
               padx = 20, 
-              variable=hpid_vars).grid(row=irow,column=icol,sticky=tk.W)
+              variable=hf2kin_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
               text="Cerenkov",
               padx = 20, 
               variable=hcer_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-<<<<<<< HEAD
-=======
-              text="F2 Kinematics",
-              padx = 20, 
-              variable=hf2kin_vars).grid(row=irow,column=icol,sticky=tk.W)
-tk.Checkbutton(root, 
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
               text="Drift Chambers",
               padx = 20, 
               variable=hdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-<<<<<<< HEAD
-=======
-              text="F2 Block",
-              padx = 20, 
-              variable=hf2block_vars).grid(row=irow,column=icol,sticky=tk.W)
-tk.Checkbutton(root, 
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
               text="Hodoscope",
               padx = 20, 
               variable=hhodo_vars).grid(row=irow,column=icol+1,sticky=tk.W)
@@ -701,7 +663,12 @@ tk.Checkbutton(root,
               text="PID",
               padx = 20, 
               variable=ppid_histos).grid(row=irow,column=icol,sticky=tk.W)
-irow=irow+3
+irow=irow+1
+tk.Checkbutton(root, 
+              text="EXTCOR",
+              padx = 20, 
+              variable=pextcor_histos).grid(row=irow,column=icol,sticky=tk.W)
+irow=irow+2
 tk.Label(root, 
         text="""SHMS Variables:""",
         justify = tk.LEFT,
@@ -717,7 +684,7 @@ tk.Label(root,
         padx = 20).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 EPICS",
+              text="EPICS",
               padx = 20, 
               variable=pepics_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
@@ -726,7 +693,7 @@ tk.Checkbutton(root,
               variable=ptshms_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 Tracking",
+              text="Tracking",
               padx = 20, 
               variable=pf2gtr_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
@@ -735,7 +702,7 @@ tk.Checkbutton(root,
               variable=paero_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-              text="F2 PID",
+              text="PID",
               padx = 20, 
               variable=ppid_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
@@ -744,94 +711,57 @@ tk.Checkbutton(root,
               variable=pcal_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-<<<<<<< HEAD
-=======
-              text="F2 Drift Chambers",
+              text="Drift Chambers",
               padx = 20, 
               variable=pf2dc_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
               text="Drift Chambers",
               padx = 20, 
               variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
 tk.Checkbutton(root, 
-<<<<<<< HEAD
-              text="Heavy Gas Cerenkov",
-              padx = 20, 
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
-              text="F2 Kinematics",
+              text="Kinematics",
               padx = 20, 
               variable=pf2kin_vars).grid(row=irow,column=icol,sticky=tk.W)
 tk.Checkbutton(root, 
               text="Heavy Gas Cerenkov",
               padx = 20, 
               variable=phgcer_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Hodoscope",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=phodo_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Noble Gas Cerenkov",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=pngcer_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Trigger",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=ptrig_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Kinematics",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=pkin_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Tracking",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=pgtr_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Raster",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=praster_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+1
 tk.Checkbutton(root, 
               text="Reaction",
               padx = 20, 
-<<<<<<< HEAD
-              variable=pdc_vars).grid(row=irow,column=icol+1,sticky=tk.W)
-=======
               variable=preact_vars).grid(row=irow,column=icol+1,sticky=tk.W)
->>>>>>> ea7dce27681c9c5fb0104f1dabb58ca956ddacea
 irow=irow+3
 tk.Button(root, text='SHMS Production Default', command=set_shms_production_defaults,justify=tk.LEFT,padx=20).grid(row=irow,column=icol+1,sticky=tk.W)
 irow=irow+1
