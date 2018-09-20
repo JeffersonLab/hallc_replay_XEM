@@ -5,465 +5,465 @@ map 3801 5 9 00600920 ffffffff 12
 map 3801 5 10 00800a20 ffffffff 12
 map 3801 5 11 00a00b20 ffffffff 12
 map 3801 5 12 00c00c20 ffffffff 12 31 1000000
-variable 5 19 1 .pEL_HI.scaler SHMS EL_HI
-variable 5 19 2 .pEL_HI.scalerRate SHMS EL_HI
-variable 3 3 1 .hod.2y7.posScaler HMS 2Y+ paddle 7
-variable 3 3 2 .hod.2y7.posScalerRate HMS 2Y+ paddle 7
-variable 6 12 1 .PRHI.scaler HMS PRHI
-variable 6 12 2 .PRHI.scalerRate HMS PRHI
-variable 3 19 1 .hod.2y7.negScaler HMS 2Y- paddle 7
-variable 3 19 2 .hod.2y7.negScalerRate HMS 2Y- paddle 7
-variable 0 13 1 .hod.1x12.posScaler HMS 1X+ paddle 12
-variable 0 13 2 .hod.1x12.posScalerRate HMS 1X+ paddle 12
-variable 0 29 1 .hod.1x12.negScaler HMS 1X- paddle 12
-variable 0 29 2 .hod.1x12.negScalerRate HMS 1X- paddle 12
-variable 2 8 1 .hod.2x9.posScaler HMS 2X+ paddle 9
-variable 2 8 2 .hod.2x9.posScalerRate HMS 2X+ paddle 9
-variable 2 24 1 .hod.2x9.negScaler HMS 2X- paddle 9
-variable 2 24 2 .hod.2x9.negScalerRate HMS 2X- paddle 9
-variable 5 27 1 .hEL_HI.scaler HMS EL_HI
-variable 5 27 2 .hEL_HI.scalerRate HMS EL_HI
-variable 1 19 1 .hod.1y7.negScaler HMS 1Y- paddle 7
-variable 1 19 2 .hod.1y7.negScalerRate HMS 1Y- paddle 7
-variable 1 3 1 .hod.1y7.posScaler HMS 1Y+ paddle 7
-variable 1 3 2 .hod.1y7.posScalerRate HMS 1Y+ paddle 7
-variable 6 0 1 .S1X.scaler HMS S1X
-variable 6 0 2 .S1X.scalerRate HMS S1X
-variable 6 1 1 .S1Y.scaler HMS S1Y
-variable 6 1 2 .S1Y.scalerRate HMS S1Y
-variable 1 9 1 .Empty.scaler Empty
-variable 1 9 2 .Empty.scalerRate Empty
-variable 1 29 1 .Empty_10.scaler Empty
-variable 1 29 2 .Empty_10.scalerRate Empty
-variable 1 30 1 .Empty_11.scaler Empty
-variable 1 30 2 .Empty_11.scalerRate Empty
-variable 1 31 1 .Empty_12.scaler Empty
-variable 1 31 2 .Empty_12.scalerRate Empty
-variable 3 9 1 .Empty_13.scaler Empty
-variable 3 9 2 .Empty_13.scalerRate Empty
-variable 3 10 1 .Empty_14.scaler Empty
-variable 3 10 2 .Empty_14.scalerRate Empty
-variable 3 11 1 .Empty_15.scaler Empty
-variable 3 11 2 .Empty_15.scalerRate Empty
-variable 3 13 1 .Empty_16.scaler Empty
-variable 3 13 2 .Empty_16.scalerRate Empty
-variable 3 14 1 .Empty_17.scaler Empty
-variable 3 14 2 .Empty_17.scalerRate Empty
-variable 3 15 1 .Empty_18.scaler Empty
-variable 3 15 2 .Empty_18.scalerRate Empty
-variable 3 25 1 .Empty_19.scaler Empty
-variable 3 25 2 .Empty_19.scalerRate Empty
-variable 0 19 1 .hod.1x7.negScaler HMS 1X- paddle 7
-variable 0 19 2 .hod.1x7.negScalerRate HMS 1X- paddle 7
-variable 0 3 1 .hod.1x7.posScaler HMS 1X+ paddle 7
-variable 0 3 2 .hod.1x7.posScalerRate HMS 1X+ paddle 7
-variable 0 31 1 .hod.1x16.negScaler HMS 1X- paddle 16
-variable 0 31 2 .hod.1x16.negScalerRate HMS 1X- paddle 16
-variable 0 15 1 .hod.1x16.posScaler HMS 1X+ paddle 16
-variable 0 15 2 .hod.1x16.posScalerRate HMS 1X+ paddle 16
-variable 2 9 1 .hod.2x11.posScaler HMS 2X+ paddle 11
-variable 2 9 2 .hod.2x11.posScalerRate HMS 2X+ paddle 11
-variable 3 17 1 .hod.2y3.negScaler HMS 2Y- paddle 3
-variable 3 17 2 .hod.2y3.negScalerRate HMS 2Y- paddle 3
-variable 2 25 1 .hod.2x11.negScaler HMS 2X- paddle 11
-variable 2 25 2 .hod.2x11.negScalerRate HMS 2X- paddle 11
-variable 3 1 1 .hod.2y3.posScaler HMS 2Y+ paddle 3
-variable 3 1 2 .hod.2y3.posScalerRate HMS 2Y+ paddle 3
-variable 5 18 1 .pEL_LO.scaler SHMS EL_LO
-variable 5 18 2 .pEL_LO.scalerRate SHMS EL_LO
-variable 4 2 1 .pPRE150.scaler SHMS PRE150
-variable 4 2 2 .pPRE150.scalerRate SHMS PRE150
-variable 4 0 1 .pPRE40.scaler SHMS PRE40
-variable 4 0 2 .pPRE40.scalerRate SHMS PRE40
-variable 3 7 1 .hod.2y8.posScaler HMS 2Y+ paddle 8
-variable 3 7 2 .hod.2y8.posScalerRate HMS 2Y+ paddle 8
-variable 3 23 1 .hod.2y8.negScaler HMS 2Y- paddle 8
-variable 3 23 2 .hod.2y8.negScalerRate HMS 2Y- paddle 8
-variable 6 30 1 .Unser.scaler Unser
-variable 6 30 2 .Unser.scalerRate Unser
-variable 6 30 3 .Unser.scalerCurrent Unser
-variable 6 30 4 .Unser.scalerCharge Unser
-variable 0 9 1 .hod.1x11.posScaler HMS 1X+ paddle 11
-variable 0 9 2 .hod.1x11.posScalerRate HMS 1X+ paddle 11
-variable 0 25 1 .hod.1x11.negScaler HMS 1X- paddle 11
-variable 0 25 2 .hod.1x11.negScalerRate HMS 1X- paddle 11
-variable 2 21 1 .hod.2x4.negScaler HMS 2X- paddle 4
-variable 2 21 2 .hod.2x4.negScalerRate HMS 2X- paddle 4
-variable 2 5 1 .hod.2x4.posScaler HMS 2X+ paddle 4
-variable 2 5 2 .hod.2x4.posScalerRate HMS 2X+ paddle 4
-variable 5 26 1 .hEL_LO.scaler HMS EL_LO
-variable 5 26 2 .hEL_LO.scalerRate HMS EL_LO
-variable 4 7 1 .pTRIG1_CP.scaler pTRIG1 Copy
-variable 4 7 2 .pTRIG1_CP.scalerRate pTRIG1 Copy
-variable 6 25 1 .BCM4A.scaler BCM4A
-variable 6 25 2 .BCM4A.scalerRate BCM4A
-variable 6 25 3 .BCM4A.scalerCurrent BCM4A
-variable 6 25 4 .BCM4A.scalerCharge BCM4A
-variable 6 29 1 .BCM4B.scaler BCM4B
-variable 6 29 2 .BCM4B.scalerRate BCM4B
-variable 6 29 3 .BCM4B.scalerCurrent BCM4B
-variable 6 29 4 .BCM4B.scalerCharge BCM4B
-variable 6 26 1 .BCM4C.scaler BCM4C
-variable 6 26 2 .BCM4C.scalerRate BCM4C
-variable 6 26 3 .BCM4C.scalerCurrent BCM4C
-variable 6 26 4 .BCM4C.scalerCharge BCM4C
-variable 6 21 1 .Empty_58.scaler Empty
-variable 6 21 2 .Empty_58.scalerRate Empty
-variable 6 22 1 .Empty_59.scaler Empty
-variable 6 22 2 .Empty_59.scalerRate Empty
-variable 6 17 1 .Empty_54.scaler Empty
-variable 6 17 2 .Empty_54.scalerRate Empty
-variable 6 18 1 .Empty_55.scaler Empty
-variable 6 18 2 .Empty_55.scalerRate Empty
-variable 6 19 1 .Empty_56.scaler Empty
-variable 6 19 2 .Empty_56.scalerRate Empty
-variable 6 20 1 .Empty_57.scaler Empty
-variable 6 20 2 .Empty_57.scalerRate Empty
-variable 5 23 1 .Empty_50.scaler Empty
-variable 5 23 2 .Empty_50.scalerRate Empty
-variable 5 30 1 .Empty_51.scaler Empty
-variable 5 30 2 .Empty_51.scalerRate Empty
-variable 5 31 1 .Empty_52.scaler Empty
-variable 5 31 2 .Empty_52.scalerRate Empty
-variable 6 16 1 .Empty_53.scaler Empty
-variable 6 16 2 .Empty_53.scalerRate Empty
-variable 1 1 1 .hod.1y3.posScaler HMS 1Y+ paddle 3
-variable 1 1 2 .hod.1y3.posScalerRate HMS 1Y+ paddle 3
-variable 1 17 1 .hod.1y3.negScaler HMS 1Y- paddle 3
-variable 1 17 2 .hod.1y3.negScalerRate HMS 1Y- paddle 3
-variable 0 8 1 .hod.1x9.posScaler HMS 1X+ paddle 9
-variable 0 8 2 .hod.1x9.posScalerRate HMS 1X+ paddle 9
-variable 0 24 1 .hod.1x9.negScaler HMS 1X- paddle 9
-variable 0 24 2 .hod.1x9.negScalerRate HMS 1X- paddle 9
-variable 4 15 1 .Empty_29.scaler Empty
-variable 4 15 2 .Empty_29.scalerRate Empty
-variable 4 14 1 .Empty_28.scaler Empty
-variable 4 14 2 .Empty_28.scalerRate Empty
-variable 2 27 1 .hod.2x15.negScaler HMS 2X- paddle 15
-variable 2 27 2 .hod.2x15.negScalerRate HMS 2X- paddle 15
-variable 3 26 1 .Empty_20.scaler Empty
-variable 3 26 2 .Empty_20.scalerRate Empty
-variable 3 30 1 .Empty_23.scaler Empty
-variable 3 30 2 .Empty_23.scalerRate Empty
-variable 3 29 1 .Empty_22.scaler Empty
-variable 3 29 2 .Empty_22.scalerRate Empty
-variable 4 4 1 .Empty_25.scaler Empty
-variable 4 4 2 .Empty_25.scalerRate Empty
-variable 3 31 1 .Empty_24.scaler Empty
-variable 3 31 2 .Empty_24.scalerRate Empty
-variable 2 11 1 .hod.2x15.posScaler HMS 2X+ paddle 15
-variable 2 11 2 .hod.2x15.posScalerRate HMS 2X+ paddle 15
-variable 4 12 1 .Empty_26.scaler Empty
-variable 4 12 2 .Empty_26.scalerRate Empty
-variable 5 28 1 .hEL_REAL.scaler HMS EL_REAL
-variable 5 28 2 .hEL_REAL.scalerRate HMS EL_REAL
-variable 6 31 1 .1MHz.scaler 1MHz
-variable 6 31 2 .1MHz.scalerRate 1MHz
-variable 6 31 5 .1MHz.scalerTime 1MHz
-variable 3 21 1 .hod.2y4.negScaler HMS 2Y- paddle 4
-variable 3 21 2 .hod.2y4.negScalerRate HMS 2Y- paddle 4
-variable 3 5 1 .hod.2y4.posScaler HMS 2Y+ paddle 4
-variable 3 5 2 .hod.2y4.posScalerRate HMS 2Y+ paddle 4
-variable 0 27 1 .hod.1x15.negScaler HMS 1X- paddle 15
-variable 0 27 2 .hod.1x15.negScalerRate HMS 1X- paddle 15
-variable 0 11 1 .hod.1x15.posScaler HMS 1X+ paddle 15
-variable 0 11 2 .hod.1x15.posScalerRate HMS 1X+ paddle 15
-variable 2 7 1 .hod.2x8.posScaler HMS 2X+ paddle 8
-variable 2 7 2 .hod.2x8.posScalerRate HMS 2X+ paddle 8
-variable 2 23 1 .hod.2x8.negScaler HMS 2X- paddle 8
-variable 2 23 2 .hod.2x8.negScalerRate HMS 2X- paddle 8
-variable 5 29 1 .hEL_CLEAN.scaler HMS EL_CLEAN
-variable 5 29 2 .hEL_CLEAN.scalerRate HMS EL_CLEAN
-variable 2 17 1 .hod.2x3.negScaler HMS 2X- paddle 3
-variable 2 17 2 .hod.2x3.negScalerRate HMS 2X- paddle 3
-variable 2 1 1 .hod.2x3.posScaler HMS 2X+ paddle 3
-variable 2 1 2 .hod.2x3.posScalerRate HMS 2X+ paddle 3
-variable 4 9 1 .hPRE100.scaler HMS PRE100
-variable 4 9 2 .hPRE100.scalerRate HMS PRE100
-variable 0 5 1 .hod.1x4.posScaler HMS 1X+ paddle 4
-variable 0 5 2 .hod.1x4.posScalerRate HMS 1X+ paddle 4
-variable 5 20 1 .pEL_REAL.scaler SHMS EL_REAL
-variable 5 20 2 .pEL_REAL.scalerRate SHMS EL_REAL
-variable 1 24 1 .hod.1y9.negScaler HMS 1Y- paddle 9
-variable 1 24 2 .hod.1y9.negScalerRate HMS 1Y- paddle 9
-variable 1 8 1 .hod.1y9.posScaler HMS 1Y+ paddle 9
-variable 1 8 2 .hod.1y9.posScalerRate HMS 1Y+ paddle 9
-variable 6 24 1 .Empty_61.scaler Empty
-variable 6 24 2 .Empty_61.scalerRate Empty
-variable 6 23 1 .Empty_60.scaler Empty
-variable 6 23 2 .Empty_60.scalerRate Empty
-variable 6 7 1 .ASUM.scaler HMS ASUM
-variable 6 7 2 .ASUM.scalerRate HMS ASUM
-variable 1 6 1 .hod.1y6.posScaler HMS 1Y+ paddle 6
-variable 1 6 2 .hod.1y6.posScalerRate HMS 1Y+ paddle 6
-variable 1 22 1 .hod.1y6.negScaler HMS 1Y- paddle 6
-variable 1 22 2 .hod.1y6.negScalerRate HMS 1Y- paddle 6
-variable 0 21 1 .hod.1x4.negScaler HMS 1X- paddle 4
-variable 0 21 2 .hod.1x4.negScalerRate HMS 1X- paddle 4
-variable 5 25 1 .hEL_LO_LO.scaler HMS EL_LO_LO
-variable 5 25 2 .hEL_LO_LO.scalerRate HMS EL_LO_LO
-variable 2 29 1 .hod.2x12.negScaler HMS 2X- paddle 12
-variable 2 29 2 .hod.2x12.negScalerRate HMS 2X- paddle 12
-variable 2 13 1 .hod.2x12.posScaler HMS 2X+ paddle 12
-variable 2 13 2 .hod.2x12.posScalerRate HMS 2X+ paddle 12
-variable 1 26 1 .Empty_8.scaler Empty
-variable 1 26 2 .Empty_8.scalerRate Empty
-variable 1 27 1 .Empty_9.scaler Empty
-variable 1 27 2 .Empty_9.scalerRate Empty
-variable 1 10 1 .Empty_2.scaler Empty
-variable 1 10 2 .Empty_2.scalerRate Empty
-variable 1 15 1 .Empty_6.scaler Empty
-variable 1 15 2 .Empty_6.scalerRate Empty
-variable 1 25 1 .Empty_7.scaler Empty
-variable 1 25 2 .Empty_7.scalerRate Empty
-variable 1 13 1 .Empty_4.scaler Empty
-variable 1 13 2 .Empty_4.scalerRate Empty
-variable 1 14 1 .Empty_5.scaler Empty
-variable 1 14 2 .Empty_5.scalerRate Empty
-variable 3 24 1 .hod.2y9.negScaler HMS 2Y- paddle 9
-variable 3 24 2 .hod.2y9.negScalerRate HMS 2Y- paddle 9
-variable 3 8 1 .hod.2y9.posScaler HMS 2Y+ paddle 9
-variable 3 8 2 .hod.2y9.posScalerRate HMS 2Y+ paddle 9
-variable 5 14 1 .hTRIG5.scaler HMS TRIG5
-variable 5 14 2 .hTRIG5.scalerRate HMS TRIG5
-variable 5 13 1 .hTRIG4.scaler HMS TRIG4
-variable 5 13 2 .hTRIG4.scalerRate HMS TRIG4
-variable 5 15 1 .hTRIG6.scaler HMS TRIG6
-variable 5 15 2 .hTRIG6.scalerRate HMS TRIG6
-variable 5 10 1 .hTRIG1.scaler HMS TRIG1
-variable 5 10 2 .hTRIG1.scalerRate HMS TRIG1
-variable 5 12 1 .hTRIG3.scaler HMS TRIG3
-variable 5 12 2 .hTRIG3.scalerRate HMS TRIG3
-variable 5 11 1 .hTRIG2.scaler HMS TRIG2
-variable 5 11 2 .hTRIG2.scalerRate HMS TRIG2
-variable 6 4 1 .S1XS1Y.scaler HMS S1T
-variable 6 4 2 .S1XS1Y.scalerRate HMS S1T
-variable 0 12 1 .hod.1x10.posScaler HMS 1X+ paddle 10
-variable 0 12 2 .hod.1x10.posScalerRate HMS 1X+ paddle 10
-variable 0 28 1 .hod.1x10.negScaler HMS 1X- paddle 10
-variable 0 28 2 .hod.1x10.negScalerRate HMS 1X- paddle 10
-variable 5 21 1 .pEL_CLEAN.scaler SHMS EL_CLEAN
-variable 5 21 2 .pEL_CLEAN.scalerRate SHMS EL_CLEAN
-variable 6 28 1 .BCM2.scaler BCM2
-variable 6 28 2 .BCM2.scalerRate BCM2
-variable 6 28 3 .BCM2.scalerCurrent BCM2
-variable 6 28 4 .BCM2.scalerCharge BCM2
-variable 6 27 1 .BCM1.scaler BCM1
-variable 6 27 2 .BCM1.scalerRate BCM1
-variable 6 27 3 .BCM1.scalerCurrent BCM1
-variable 6 27 4 .BCM1.scalerCharge BCM1
-variable 2 3 1 .hod.2x7.posScaler HMS 2X+ paddle 7
-variable 2 3 2 .hod.2x7.posScalerRate HMS 2X+ paddle 7
-variable 2 19 1 .hod.2x7.negScaler HMS 2X- paddle 7
-variable 2 19 2 .hod.2x7.negScalerRate HMS 2X- paddle 7
-variable 4 8 1 .hPRE40.scaler HMS PRE40
-variable 4 8 2 .hPRE40.scalerRate HMS PRE40
-variable 1 2 1 .hod.1y5.posScaler HMS 1Y+ paddle 5
-variable 1 2 2 .hod.1y5.posScalerRate HMS 1Y+ paddle 5
-variable 1 18 1 .hod.1y5.negScaler HMS 1Y- paddle 5
-variable 1 18 2 .hod.1y5.negScalerRate HMS 1Y- paddle 5
-variable 1 20 1 .hod.1y2.negScaler HMS 1Y- paddle 2
-variable 1 20 2 .hod.1y2.negScalerRate HMS 1Y- paddle 2
-variable 1 4 1 .hod.1y2.posScaler HMS 1Y+ paddle 2
-variable 1 4 2 .hod.1y2.posScalerRate HMS 1Y+ paddle 2
-variable 4 25 1 .Empty_38.scaler Empty
-variable 4 25 2 .Empty_38.scalerRate Empty
-variable 4 26 1 .Empty_39.scaler Empty
-variable 4 26 2 .Empty_39.scalerRate Empty
-variable 4 19 1 .Empty_32.scaler Empty
-variable 4 19 2 .Empty_32.scalerRate Empty
-variable 4 20 1 .Empty_33.scaler Empty
-variable 4 20 2 .Empty_33.scalerRate Empty
-variable 4 17 1 .Empty_30.scaler Empty
-variable 4 17 2 .Empty_30.scalerRate Empty
-variable 4 18 1 .Empty_31.scaler Empty
-variable 4 18 2 .Empty_31.scalerRate Empty
-variable 4 23 1 .Empty_36.scaler Empty
-variable 4 23 2 .Empty_36.scalerRate Empty
-variable 4 24 1 .Empty_37.scaler Empty
-variable 4 24 2 .Empty_37.scalerRate Empty
-variable 4 21 1 .Empty_34.scaler Empty
-variable 4 21 2 .Empty_34.scalerRate Empty
-variable 4 22 1 .Empty_35.scaler Empty
-variable 4 22 2 .Empty_35.scalerRate Empty
-variable 0 0 1 .hod.1x1.posScaler HMS 1X+ paddle 1
-variable 0 0 2 .hod.1x1.posScalerRate HMS 1X+ paddle 1
-variable 0 16 1 .hod.1x1.negScaler HMS 1X- paddle 1
-variable 0 16 2 .hod.1x1.negScalerRate HMS 1X- paddle 1
-variable 1 11 1 .Empty_3.scaler Empty
-variable 1 11 2 .Empty_3.scalerRate Empty
-variable 3 27 1 .Empty_21.scaler Empty
-variable 3 27 2 .Empty_21.scalerRate Empty
-variable 3 2 1 .hod.2y5.posScaler HMS 2Y+ paddle 5
-variable 3 2 2 .hod.2y5.posScalerRate HMS 2Y+ paddle 5
-variable 3 18 1 .hod.2y5.negScaler HMS 2Y- paddle 5
-variable 3 18 2 .hod.2y5.negScalerRate HMS 2Y- paddle 5
-variable 2 15 1 .hod.2x16.posScaler HMS 2X+ paddle 16
-variable 2 15 2 .hod.2x16.posScalerRate HMS 2X+ paddle 16
-variable 2 31 1 .hod.2x16.negScaler HMS 2X- paddle 16
-variable 2 31 2 .hod.2x16.negScalerRate HMS 2X- paddle 16
-variable 4 11 1 .hPRE200.scaler HMS PRE200
-variable 4 11 2 .hPRE200.scalerRate HMS PRE200
-variable 4 13 1 .Empty_27.scaler Empty
-variable 4 13 2 .Empty_27.scalerRate Empty
-variable 0 30 1 .hod.1x14.negScaler HMS 1X- paddle 14
-variable 0 30 2 .hod.1x14.negScalerRate HMS 1X- paddle 14
-variable 0 14 1 .hod.1x14.posScaler HMS 1X+ paddle 14
-variable 0 14 2 .hod.1x14.posScalerRate HMS 1X+ paddle 14
-variable 2 4 1 .hod.2x2.posScaler HMS 2X+ paddle 2
-variable 2 4 2 .hod.2x2.posScalerRate HMS 2X+ paddle 2
-variable 2 20 1 .hod.2x2.negScaler HMS 2X- paddle 2
-variable 2 20 2 .hod.2x2.negScalerRate HMS 2X- paddle 2
-variable 4 16 1 .hL1ACCP.scaler HMS L1 Accept
-variable 4 16 2 .hL1ACCP.scalerRate HMS L1 Accept
-variable 5 24 1 .hSTOF.scaler HMS STOF
-variable 5 24 2 .hSTOF.scalerRate HMS STOF
-variable 1 23 1 .hod.1y8.negScaler HMS 1Y- paddle 8
-variable 1 23 2 .hod.1y8.negScalerRate HMS 1Y- paddle 8
-variable 1 7 1 .hod.1y8.posScaler HMS 1Y+ paddle 8
-variable 1 7 2 .hod.1y8.posScalerRate HMS 1Y+ paddle 8
-variable 5 6 1 .Empty_45.scaler Empty
-variable 5 6 2 .Empty_45.scalerRate Empty
-variable 0 4 1 .hod.1x2.posScaler HMS 1X+ paddle 2
-variable 0 4 2 .hod.1x2.posScalerRate HMS 1X+ paddle 2
-variable 0 20 1 .hod.1x2.negScaler HMS 1X- paddle 2
-variable 0 20 2 .hod.1x2.negScalerRate HMS 1X- paddle 2
-variable 1 16 1 .hod.1y1.negScaler HMS 1Y- paddle 1
-variable 1 16 2 .hod.1y1.negScalerRate HMS 1Y- paddle 1
-variable 1 0 1 .hod.1y1.posScaler HMS 1Y+ paddle 1
-variable 1 0 2 .hod.1y1.posScalerRate HMS 1Y+ paddle 1
-variable 0 18 1 .hod.1x5.negScaler HMS 1X- paddle 5
-variable 0 18 2 .hod.1x5.negScalerRate HMS 1X- paddle 5
-variable 0 2 1 .hod.1x5.posScaler HMS 1X+ paddle 5
-variable 0 2 2 .hod.1x5.posScalerRate HMS 1X+ paddle 5
-variable 5 17 1 .pEL_LO_LO.scaler SHMS EL_LO_LO
-variable 5 17 2 .pEL_LO_LO.scalerRate SHMS EL_LO_LO
-variable 1 28 1 .hod.1y10.negScaler HMS 1Y- paddle 10
-variable 1 28 2 .hod.1y10.negScalerRate HMS 1Y- paddle 10
-variable 1 12 1 .hod.1y10.posScaler HMS 1Y+ paddle 10
-variable 1 12 2 .hod.1y10.posScalerRate HMS 1Y+ paddle 10
-variable 5 4 1 .pTRIG5.scaler SHMS TRIG5
-variable 5 4 2 .pTRIG5.scalerRate SHMS TRIG5
-variable 5 3 1 .pTRIG4.scaler SHMS TRIG4
-variable 5 3 2 .pTRIG4.scalerRate SHMS TRIG4
-variable 5 5 1 .pTRIG6.scaler SHMS TRIG6
-variable 5 5 2 .pTRIG6.scalerRate SHMS TRIG6
-variable 5 0 1 .pTRIG1.scaler SHMS TRIG1
-variable 5 0 2 .pTRIG1.scalerRate SHMS TRIG1
-variable 5 2 1 .pTRIG3.scaler SHMS TRIG3
-variable 5 2 2 .pTRIG3.scalerRate SHMS TRIG3
-variable 5 1 1 .pTRIG2.scaler SHMS TRIG2
-variable 5 1 2 .pTRIG2.scalerRate SHMS TRIG2
-variable 2 10 1 .hod.2x13.posScaler HMS 2X+ paddle 13
-variable 2 10 2 .hod.2x13.posScalerRate HMS 2X+ paddle 13
-variable 3 16 1 .hod.2y1.negScaler HMS 2Y- paddle 1
-variable 3 16 2 .hod.2y1.negScalerRate HMS 2Y- paddle 1
-variable 2 26 1 .hod.2x13.negScaler HMS 2X- paddle 13
-variable 2 26 2 .hod.2x13.negScalerRate HMS 2X- paddle 13
-variable 3 0 1 .hod.2y1.posScaler HMS 2Y+ paddle 1
-variable 3 0 2 .hod.2y1.posScalerRate HMS 2Y+ paddle 1
-variable 3 28 1 .hod.2y10.negScaler HMS 2Y- paddle 10
-variable 3 28 2 .hod.2y10.negScalerRate HMS 2Y- paddle 10
-variable 3 12 1 .hod.2y10.posScaler HMS 2Y+ paddle 10
-variable 3 12 2 .hod.2y10.posScalerRate HMS 2Y+ paddle 10
-variable 3 6 1 .hod.2y6.posScaler HMS 2Y+ paddle 6
-variable 3 6 2 .hod.2y6.posScalerRate HMS 2Y+ paddle 6
-variable 3 22 1 .hod.2y6.negScaler HMS 2Y- paddle 6
-variable 3 22 2 .hod.2y6.negScalerRate HMS 2Y- paddle 6
-variable 4 1 1 .pPRE100.scaler SHMS PRE100
-variable 4 1 2 .pPRE100.scalerRate SHMS PRE100
-variable 0 26 1 .hod.1x13.negScaler HMS 1X- paddle 13
-variable 0 26 2 .hod.1x13.negScalerRate HMS 1X- paddle 13
-variable 0 10 1 .hod.1x13.posScaler HMS 1X+ paddle 13
-variable 0 10 2 .hod.1x13.posScalerRate HMS 1X+ paddle 13
-variable 2 22 1 .hod.2x6.negScaler HMS 2X- paddle 6
-variable 2 22 2 .hod.2x6.negScalerRate HMS 2X- paddle 6
-variable 2 6 1 .hod.2x6.posScaler HMS 2X+ paddle 6
-variable 2 6 2 .hod.2x6.posScalerRate HMS 2X+ paddle 6
-variable 4 10 1 .hPRE150.scaler HMS PRE150
-variable 4 10 2 .hPRE150.scalerRate HMS PRE150
-variable 6 9 1 .CSUM.scaler HMS CSUM
-variable 6 9 2 .CSUM.scalerRate HMS CSUM
-variable 2 0 1 .hod.2x1.posScaler HMS 2X+ paddle 1
-variable 2 0 2 .hod.2x1.posScalerRate HMS 2X+ paddle 1
-variable 2 16 1 .hod.2x1.negScaler HMS 2X- paddle 1
-variable 2 16 2 .hod.2x1.negScalerRate HMS 2X- paddle 1
-variable 6 14 1 .EDTM.scaler HMS EDTM
-variable 6 14 2 .EDTM.scalerRate HMS EDTM
-variable 4 3 1 .pPRE200.scaler SHMS PRE200
-variable 4 3 2 .pPRE200.scalerRate SHMS PRE200
-variable 1 5 1 .hod.1y4.posScaler HMS 1Y+ paddle 4
-variable 1 5 2 .hod.1y4.posScalerRate HMS 1Y+ paddle 4
-variable 1 21 1 .hod.1y4.negScaler HMS 1Y- paddle 4
-variable 1 21 2 .hod.1y4.negScalerRate HMS 1Y- paddle 4
-variable 4 5 1 .1MHz_CP.scaler 1 MHz Copy
-variable 4 5 2 .1MHz_CP.scalerRate 1 MHz Copy
-variable 4 5 5 .1MHz_CP.scalerTime 1 MHz Copy
-variable 0 22 1 .hod.1x6.negScaler HMS 1X- paddle 6
-variable 0 22 2 .hod.1x6.negScalerRate HMS 1X- paddle 6
-variable 0 6 1 .hod.1x6.posScaler HMS 1X+ paddle 6
-variable 0 6 2 .hod.1x6.posScalerRate HMS 1X+ paddle 6
-variable 3 20 1 .hod.2y2.negScaler HMS 2Y- paddle 2
-variable 3 20 2 .hod.2y2.negScalerRate HMS 2Y- paddle 2
-variable 2 12 1 .hod.2x10.posScaler HMS 2X+ paddle 10
-variable 2 12 2 .hod.2x10.posScalerRate HMS 2X+ paddle 10
-variable 3 4 1 .hod.2y2.posScaler HMS 2Y+ paddle 2
-variable 3 4 2 .hod.2y2.posScalerRate HMS 2Y+ paddle 2
-variable 2 28 1 .hod.2x10.negScaler HMS 2X- paddle 10
-variable 2 28 2 .hod.2x10.negScalerRate HMS 2X- paddle 10
-variable 6 13 1 .SHLO.scaler HMS SHLO
-variable 6 13 2 .SHLO.scalerRate HMS SHLO
-variable 6 15 1 .CER.scaler HMS CER
-variable 6 15 2 .CER.scalerRate HMS CER
-variable 2 18 1 .hod.2x5.negScaler HMS 2X- paddle 5
-variable 2 18 2 .hod.2x5.negScalerRate HMS 2X- paddle 5
-variable 2 2 1 .hod.2x5.posScaler HMS 2X+ paddle 5
-variable 2 2 2 .hod.2x5.posScalerRate HMS 2X+ paddle 5
-variable 5 16 1 .pSTOF.scaler SHMS STOF
-variable 5 16 2 .pSTOF.scalerRate SHMS STOF
-variable 4 6 1 .EDTM_CP.scaler EDTM Copy
-variable 4 6 2 .EDTM_CP.scalerRate EDTM Copy
-variable 6 11 1 .PRLO.scaler HMS PRLO
-variable 6 11 2 .PRLO.scalerRate HMS PRLO
-variable 5 22 1 .Empty_49.scaler Empty
-variable 5 22 2 .Empty_49.scalerRate Empty
-variable 5 9 1 .Empty_48.scaler Empty
-variable 5 9 2 .Empty_48.scalerRate Empty
-variable 4 30 1 .Empty_43.scaler Empty
-variable 4 30 2 .Empty_43.scalerRate Empty
-variable 4 29 1 .Empty_42.scaler Empty
-variable 4 29 2 .Empty_42.scalerRate Empty
-variable 4 28 1 .Empty_41.scaler Empty
-variable 4 28 2 .Empty_41.scalerRate Empty
-variable 4 27 1 .Empty_40.scaler Empty
-variable 4 27 2 .Empty_40.scalerRate Empty
-variable 5 8 1 .Empty_47.scaler Empty
-variable 5 8 2 .Empty_47.scalerRate Empty
-variable 5 7 1 .Empty_46.scaler Empty
-variable 5 7 2 .Empty_46.scalerRate Empty
-variable 6 8 1 .BSUM.scaler HMS BSUM
-variable 6 8 2 .BSUM.scalerRate HMS BSUM
-variable 4 31 1 .Empty_44.scaler Empty
-variable 4 31 2 .Empty_44.scalerRate Empty
-variable 0 1 1 .hod.1x3.posScaler HMS 1X+ paddle 3
-variable 0 1 2 .hod.1x3.posScalerRate HMS 1X+ paddle 3
-variable 0 17 1 .hod.1x3.negScaler HMS 1X- paddle 3
-variable 0 17 2 .hod.1x3.negScalerRate HMS 1X- paddle 3
-variable 6 10 1 .DSUM.scaler HMS DSUM
-variable 6 10 2 .DSUM.scalerRate HMS DSUM
-variable 6 5 1 .S2XS2Y.scaler HMS S2T
-variable 6 5 2 .S2XS2Y.scalerRate HMS S2T
-variable 0 23 1 .hod.1x8.negScaler HMS 1X- paddle 8
-variable 0 23 2 .hod.1x8.negScalerRate HMS 1X- paddle 8
-variable 0 7 1 .hod.1x8.posScaler HMS 1X+ paddle 8
-variable 0 7 2 .hod.1x8.posScalerRate HMS 1X+ paddle 8
-variable 2 30 1 .hod.2x14.negScaler HMS 2X- paddle 14
-variable 2 30 2 .hod.2x14.negScalerRate HMS 2X- paddle 14
-variable 2 14 1 .hod.2x14.posScaler HMS 2X+ paddle 14
-variable 2 14 2 .hod.2x14.posScalerRate HMS 2X+ paddle 14
-variable 6 3 1 .S2Y.scaler HMS S2Y
-variable 6 3 2 .S2Y.scalerRate HMS S2Y
-variable 6 2 1 .S2X.scaler HMS S2X
-variable 6 2 2 .S2X.scalerRate HMS S2X
-variable 6 6 1 .hTREF1.scaler HMS TREF1
-variable 6 6 2 .hTREF1.scalerRate HMS TREF1
+variable 11 19 1 .pEL_HI.scaler SHMS EL_HI
+variable 11 19 2 .pEL_HI.scalerRate SHMS EL_HI
+variable 9 3 1 .hod.2y7.posScaler HMS 2Y+ paddle 7
+variable 9 3 2 .hod.2y7.posScalerRate HMS 2Y+ paddle 7
+variable 12 12 1 .PRHI.scaler HMS PRHI
+variable 12 12 2 .PRHI.scalerRate HMS PRHI
+variable 9 19 1 .hod.2y7.negScaler HMS 2Y- paddle 7
+variable 9 19 2 .hod.2y7.negScalerRate HMS 2Y- paddle 7
+variable 6 13 1 .hod.1x12.posScaler HMS 1X+ paddle 12
+variable 6 13 2 .hod.1x12.posScalerRate HMS 1X+ paddle 12
+variable 6 29 1 .hod.1x12.negScaler HMS 1X- paddle 12
+variable 6 29 2 .hod.1x12.negScalerRate HMS 1X- paddle 12
+variable 8 8 1 .hod.2x9.posScaler HMS 2X+ paddle 9
+variable 8 8 2 .hod.2x9.posScalerRate HMS 2X+ paddle 9
+variable 8 24 1 .hod.2x9.negScaler HMS 2X- paddle 9
+variable 8 24 2 .hod.2x9.negScalerRate HMS 2X- paddle 9
+variable 11 27 1 .hEL_HI.scaler HMS EL_HI
+variable 11 27 2 .hEL_HI.scalerRate HMS EL_HI
+variable 7 19 1 .hod.1y7.negScaler HMS 1Y- paddle 7
+variable 7 19 2 .hod.1y7.negScalerRate HMS 1Y- paddle 7
+variable 7 3 1 .hod.1y7.posScaler HMS 1Y+ paddle 7
+variable 7 3 2 .hod.1y7.posScalerRate HMS 1Y+ paddle 7
+variable 12 0 1 .S1X.scaler HMS S1X
+variable 12 0 2 .S1X.scalerRate HMS S1X
+variable 12 1 1 .S1Y.scaler HMS S1Y
+variable 12 1 2 .S1Y.scalerRate HMS S1Y
+variable 7 9 1 .Empty.scaler Empty
+variable 7 9 2 .Empty.scalerRate Empty
+variable 7 29 1 .Empty_10.scaler Empty
+variable 7 29 2 .Empty_10.scalerRate Empty
+variable 7 30 1 .Empty_11.scaler Empty
+variable 7 30 2 .Empty_11.scalerRate Empty
+variable 7 31 1 .Empty_12.scaler Empty
+variable 7 31 2 .Empty_12.scalerRate Empty
+variable 9 9 1 .Empty_13.scaler Empty
+variable 9 9 2 .Empty_13.scalerRate Empty
+variable 9 10 1 .Empty_14.scaler Empty
+variable 9 10 2 .Empty_14.scalerRate Empty
+variable 9 11 1 .Empty_15.scaler Empty
+variable 9 11 2 .Empty_15.scalerRate Empty
+variable 9 13 1 .Empty_16.scaler Empty
+variable 9 13 2 .Empty_16.scalerRate Empty
+variable 9 14 1 .Empty_17.scaler Empty
+variable 9 14 2 .Empty_17.scalerRate Empty
+variable 9 15 1 .Empty_18.scaler Empty
+variable 9 15 2 .Empty_18.scalerRate Empty
+variable 9 25 1 .Empty_19.scaler Empty
+variable 9 25 2 .Empty_19.scalerRate Empty
+variable 6 19 1 .hod.1x7.negScaler HMS 1X- paddle 7
+variable 6 19 2 .hod.1x7.negScalerRate HMS 1X- paddle 7
+variable 6 3 1 .hod.1x7.posScaler HMS 1X+ paddle 7
+variable 6 3 2 .hod.1x7.posScalerRate HMS 1X+ paddle 7
+variable 6 31 1 .hod.1x16.negScaler HMS 1X- paddle 16
+variable 6 31 2 .hod.1x16.negScalerRate HMS 1X- paddle 16
+variable 6 15 1 .hod.1x16.posScaler HMS 1X+ paddle 16
+variable 6 15 2 .hod.1x16.posScalerRate HMS 1X+ paddle 16
+variable 8 9 1 .hod.2x11.posScaler HMS 2X+ paddle 11
+variable 8 9 2 .hod.2x11.posScalerRate HMS 2X+ paddle 11
+variable 9 17 1 .hod.2y3.negScaler HMS 2Y- paddle 3
+variable 9 17 2 .hod.2y3.negScalerRate HMS 2Y- paddle 3
+variable 8 25 1 .hod.2x11.negScaler HMS 2X- paddle 11
+variable 8 25 2 .hod.2x11.negScalerRate HMS 2X- paddle 11
+variable 9 1 1 .hod.2y3.posScaler HMS 2Y+ paddle 3
+variable 9 1 2 .hod.2y3.posScalerRate HMS 2Y+ paddle 3
+variable 11 18 1 .pEL_LO.scaler SHMS EL_LO
+variable 11 18 2 .pEL_LO.scalerRate SHMS EL_LO
+variable 10 2 1 .pPRE150.scaler SHMS PRE150
+variable 10 2 2 .pPRE150.scalerRate SHMS PRE150
+variable 10 0 1 .pPRE40.scaler SHMS PRE40
+variable 10 0 2 .pPRE40.scalerRate SHMS PRE40
+variable 9 7 1 .hod.2y8.posScaler HMS 2Y+ paddle 8
+variable 9 7 2 .hod.2y8.posScalerRate HMS 2Y+ paddle 8
+variable 9 23 1 .hod.2y8.negScaler HMS 2Y- paddle 8
+variable 9 23 2 .hod.2y8.negScalerRate HMS 2Y- paddle 8
+variable 12 30 1 .Unser.scaler Unser
+variable 12 30 2 .Unser.scalerRate Unser
+variable 12 30 3 .Unser.scalerCurrent Unser
+variable 12 30 4 .Unser.scalerCharge Unser
+variable 6 9 1 .hod.1x11.posScaler HMS 1X+ paddle 11
+variable 6 9 2 .hod.1x11.posScalerRate HMS 1X+ paddle 11
+variable 6 25 1 .hod.1x11.negScaler HMS 1X- paddle 11
+variable 6 25 2 .hod.1x11.negScalerRate HMS 1X- paddle 11
+variable 8 21 1 .hod.2x4.negScaler HMS 2X- paddle 4
+variable 8 21 2 .hod.2x4.negScalerRate HMS 2X- paddle 4
+variable 8 5 1 .hod.2x4.posScaler HMS 2X+ paddle 4
+variable 8 5 2 .hod.2x4.posScalerRate HMS 2X+ paddle 4
+variable 11 26 1 .hEL_LO.scaler HMS EL_LO
+variable 11 26 2 .hEL_LO.scalerRate HMS EL_LO
+variable 10 7 1 .pTRIG1_CP.scaler pTRIG1 Copy
+variable 10 7 2 .pTRIG1_CP.scalerRate pTRIG1 Copy
+variable 12 25 1 .BCM4A.scaler BCM4A
+variable 12 25 2 .BCM4A.scalerRate BCM4A
+variable 12 25 3 .BCM4A.scalerCurrent BCM4A
+variable 12 25 4 .BCM4A.scalerCharge BCM4A
+variable 12 29 1 .BCM4B.scaler BCM4B
+variable 12 29 2 .BCM4B.scalerRate BCM4B
+variable 12 29 3 .BCM4B.scalerCurrent BCM4B
+variable 12 29 4 .BCM4B.scalerCharge BCM4B
+variable 12 26 1 .BCM4C.scaler BCM4C
+variable 12 26 2 .BCM4C.scalerRate BCM4C
+variable 12 26 3 .BCM4C.scalerCurrent BCM4C
+variable 12 26 4 .BCM4C.scalerCharge BCM4C
+variable 12 21 1 .Empty_58.scaler Empty
+variable 12 21 2 .Empty_58.scalerRate Empty
+variable 12 22 1 .Empty_59.scaler Empty
+variable 12 22 2 .Empty_59.scalerRate Empty
+variable 12 17 1 .Empty_54.scaler Empty
+variable 12 17 2 .Empty_54.scalerRate Empty
+variable 12 18 1 .Empty_55.scaler Empty
+variable 12 18 2 .Empty_55.scalerRate Empty
+variable 12 19 1 .Empty_56.scaler Empty
+variable 12 19 2 .Empty_56.scalerRate Empty
+variable 12 20 1 .Empty_57.scaler Empty
+variable 12 20 2 .Empty_57.scalerRate Empty
+variable 11 23 1 .Empty_50.scaler Empty
+variable 11 23 2 .Empty_50.scalerRate Empty
+variable 11 30 1 .Empty_51.scaler Empty
+variable 11 30 2 .Empty_51.scalerRate Empty
+variable 11 31 1 .Empty_52.scaler Empty
+variable 11 31 2 .Empty_52.scalerRate Empty
+variable 12 16 1 .Empty_53.scaler Empty
+variable 12 16 2 .Empty_53.scalerRate Empty
+variable 7 1 1 .hod.1y3.posScaler HMS 1Y+ paddle 3
+variable 7 1 2 .hod.1y3.posScalerRate HMS 1Y+ paddle 3
+variable 7 17 1 .hod.1y3.negScaler HMS 1Y- paddle 3
+variable 7 17 2 .hod.1y3.negScalerRate HMS 1Y- paddle 3
+variable 6 8 1 .hod.1x9.posScaler HMS 1X+ paddle 9
+variable 6 8 2 .hod.1x9.posScalerRate HMS 1X+ paddle 9
+variable 6 24 1 .hod.1x9.negScaler HMS 1X- paddle 9
+variable 6 24 2 .hod.1x9.negScalerRate HMS 1X- paddle 9
+variable 10 15 1 .Empty_29.scaler Empty
+variable 10 15 2 .Empty_29.scalerRate Empty
+variable 10 14 1 .Empty_28.scaler Empty
+variable 10 14 2 .Empty_28.scalerRate Empty
+variable 8 27 1 .hod.2x15.negScaler HMS 2X- paddle 15
+variable 8 27 2 .hod.2x15.negScalerRate HMS 2X- paddle 15
+variable 9 26 1 .Empty_20.scaler Empty
+variable 9 26 2 .Empty_20.scalerRate Empty
+variable 9 30 1 .Empty_23.scaler Empty
+variable 9 30 2 .Empty_23.scalerRate Empty
+variable 9 29 1 .Empty_22.scaler Empty
+variable 9 29 2 .Empty_22.scalerRate Empty
+variable 10 4 1 .Empty_25.scaler Empty
+variable 10 4 2 .Empty_25.scalerRate Empty
+variable 9 31 1 .Empty_24.scaler Empty
+variable 9 31 2 .Empty_24.scalerRate Empty
+variable 8 11 1 .hod.2x15.posScaler HMS 2X+ paddle 15
+variable 8 11 2 .hod.2x15.posScalerRate HMS 2X+ paddle 15
+variable 10 12 1 .Empty_26.scaler Empty
+variable 10 12 2 .Empty_26.scalerRate Empty
+variable 11 28 1 .hEL_REAL.scaler HMS EL_REAL
+variable 11 28 2 .hEL_REAL.scalerRate HMS EL_REAL
+variable 12 31 1 .1MHz.scaler 1MHz
+variable 12 31 2 .1MHz.scalerRate 1MHz
+variable 12 31 5 .1MHz.scalerTime 1MHz
+variable 9 21 1 .hod.2y4.negScaler HMS 2Y- paddle 4
+variable 9 21 2 .hod.2y4.negScalerRate HMS 2Y- paddle 4
+variable 9 5 1 .hod.2y4.posScaler HMS 2Y+ paddle 4
+variable 9 5 2 .hod.2y4.posScalerRate HMS 2Y+ paddle 4
+variable 6 27 1 .hod.1x15.negScaler HMS 1X- paddle 15
+variable 6 27 2 .hod.1x15.negScalerRate HMS 1X- paddle 15
+variable 6 11 1 .hod.1x15.posScaler HMS 1X+ paddle 15
+variable 6 11 2 .hod.1x15.posScalerRate HMS 1X+ paddle 15
+variable 8 7 1 .hod.2x8.posScaler HMS 2X+ paddle 8
+variable 8 7 2 .hod.2x8.posScalerRate HMS 2X+ paddle 8
+variable 8 23 1 .hod.2x8.negScaler HMS 2X- paddle 8
+variable 8 23 2 .hod.2x8.negScalerRate HMS 2X- paddle 8
+variable 11 29 1 .hEL_CLEAN.scaler HMS EL_CLEAN
+variable 11 29 2 .hEL_CLEAN.scalerRate HMS EL_CLEAN
+variable 8 17 1 .hod.2x3.negScaler HMS 2X- paddle 3
+variable 8 17 2 .hod.2x3.negScalerRate HMS 2X- paddle 3
+variable 8 1 1 .hod.2x3.posScaler HMS 2X+ paddle 3
+variable 8 1 2 .hod.2x3.posScalerRate HMS 2X+ paddle 3
+variable 10 9 1 .hPRE100.scaler HMS PRE100
+variable 10 9 2 .hPRE100.scalerRate HMS PRE100
+variable 6 5 1 .hod.1x4.posScaler HMS 1X+ paddle 4
+variable 6 5 2 .hod.1x4.posScalerRate HMS 1X+ paddle 4
+variable 11 20 1 .pEL_REAL.scaler SHMS EL_REAL
+variable 11 20 2 .pEL_REAL.scalerRate SHMS EL_REAL
+variable 7 24 1 .hod.1y9.negScaler HMS 1Y- paddle 9
+variable 7 24 2 .hod.1y9.negScalerRate HMS 1Y- paddle 9
+variable 7 8 1 .hod.1y9.posScaler HMS 1Y+ paddle 9
+variable 7 8 2 .hod.1y9.posScalerRate HMS 1Y+ paddle 9
+variable 12 24 1 .Empty_61.scaler Empty
+variable 12 24 2 .Empty_61.scalerRate Empty
+variable 12 23 1 .Empty_60.scaler Empty
+variable 12 23 2 .Empty_60.scalerRate Empty
+variable 12 7 1 .ASUM.scaler HMS ASUM
+variable 12 7 2 .ASUM.scalerRate HMS ASUM
+variable 7 6 1 .hod.1y6.posScaler HMS 1Y+ paddle 6
+variable 7 6 2 .hod.1y6.posScalerRate HMS 1Y+ paddle 6
+variable 7 22 1 .hod.1y6.negScaler HMS 1Y- paddle 6
+variable 7 22 2 .hod.1y6.negScalerRate HMS 1Y- paddle 6
+variable 6 21 1 .hod.1x4.negScaler HMS 1X- paddle 4
+variable 6 21 2 .hod.1x4.negScalerRate HMS 1X- paddle 4
+variable 11 25 1 .hEL_LO_LO.scaler HMS EL_LO_LO
+variable 11 25 2 .hEL_LO_LO.scalerRate HMS EL_LO_LO
+variable 8 29 1 .hod.2x12.negScaler HMS 2X- paddle 12
+variable 8 29 2 .hod.2x12.negScalerRate HMS 2X- paddle 12
+variable 8 13 1 .hod.2x12.posScaler HMS 2X+ paddle 12
+variable 8 13 2 .hod.2x12.posScalerRate HMS 2X+ paddle 12
+variable 7 26 1 .Empty_8.scaler Empty
+variable 7 26 2 .Empty_8.scalerRate Empty
+variable 7 27 1 .Empty_9.scaler Empty
+variable 7 27 2 .Empty_9.scalerRate Empty
+variable 7 10 1 .Empty_2.scaler Empty
+variable 7 10 2 .Empty_2.scalerRate Empty
+variable 7 15 1 .Empty_6.scaler Empty
+variable 7 15 2 .Empty_6.scalerRate Empty
+variable 7 25 1 .Empty_7.scaler Empty
+variable 7 25 2 .Empty_7.scalerRate Empty
+variable 7 13 1 .Empty_4.scaler Empty
+variable 7 13 2 .Empty_4.scalerRate Empty
+variable 7 14 1 .Empty_5.scaler Empty
+variable 7 14 2 .Empty_5.scalerRate Empty
+variable 9 24 1 .hod.2y9.negScaler HMS 2Y- paddle 9
+variable 9 24 2 .hod.2y9.negScalerRate HMS 2Y- paddle 9
+variable 9 8 1 .hod.2y9.posScaler HMS 2Y+ paddle 9
+variable 9 8 2 .hod.2y9.posScalerRate HMS 2Y+ paddle 9
+variable 11 14 1 .hTRIG5.scaler HMS TRIG5
+variable 11 14 2 .hTRIG5.scalerRate HMS TRIG5
+variable 11 13 1 .hTRIG4.scaler HMS TRIG4
+variable 11 13 2 .hTRIG4.scalerRate HMS TRIG4
+variable 11 15 1 .hTRIG6.scaler HMS TRIG6
+variable 11 15 2 .hTRIG6.scalerRate HMS TRIG6
+variable 11 10 1 .hTRIG1.scaler HMS TRIG1
+variable 11 10 2 .hTRIG1.scalerRate HMS TRIG1
+variable 11 12 1 .hTRIG3.scaler HMS TRIG3
+variable 11 12 2 .hTRIG3.scalerRate HMS TRIG3
+variable 11 11 1 .hTRIG2.scaler HMS TRIG2
+variable 11 11 2 .hTRIG2.scalerRate HMS TRIG2
+variable 12 4 1 .S1XS1Y.scaler HMS S1T
+variable 12 4 2 .S1XS1Y.scalerRate HMS S1T
+variable 6 12 1 .hod.1x10.posScaler HMS 1X+ paddle 10
+variable 6 12 2 .hod.1x10.posScalerRate HMS 1X+ paddle 10
+variable 6 28 1 .hod.1x10.negScaler HMS 1X- paddle 10
+variable 6 28 2 .hod.1x10.negScalerRate HMS 1X- paddle 10
+variable 11 21 1 .pEL_CLEAN.scaler SHMS EL_CLEAN
+variable 11 21 2 .pEL_CLEAN.scalerRate SHMS EL_CLEAN
+variable 12 28 1 .BCM2.scaler BCM2
+variable 12 28 2 .BCM2.scalerRate BCM2
+variable 12 28 3 .BCM2.scalerCurrent BCM2
+variable 12 28 4 .BCM2.scalerCharge BCM2
+variable 12 27 1 .BCM1.scaler BCM1
+variable 12 27 2 .BCM1.scalerRate BCM1
+variable 12 27 3 .BCM1.scalerCurrent BCM1
+variable 12 27 4 .BCM1.scalerCharge BCM1
+variable 8 3 1 .hod.2x7.posScaler HMS 2X+ paddle 7
+variable 8 3 2 .hod.2x7.posScalerRate HMS 2X+ paddle 7
+variable 8 19 1 .hod.2x7.negScaler HMS 2X- paddle 7
+variable 8 19 2 .hod.2x7.negScalerRate HMS 2X- paddle 7
+variable 10 8 1 .hPRE40.scaler HMS PRE40
+variable 10 8 2 .hPRE40.scalerRate HMS PRE40
+variable 7 2 1 .hod.1y5.posScaler HMS 1Y+ paddle 5
+variable 7 2 2 .hod.1y5.posScalerRate HMS 1Y+ paddle 5
+variable 7 18 1 .hod.1y5.negScaler HMS 1Y- paddle 5
+variable 7 18 2 .hod.1y5.negScalerRate HMS 1Y- paddle 5
+variable 7 20 1 .hod.1y2.negScaler HMS 1Y- paddle 2
+variable 7 20 2 .hod.1y2.negScalerRate HMS 1Y- paddle 2
+variable 7 4 1 .hod.1y2.posScaler HMS 1Y+ paddle 2
+variable 7 4 2 .hod.1y2.posScalerRate HMS 1Y+ paddle 2
+variable 10 25 1 .Empty_38.scaler Empty
+variable 10 25 2 .Empty_38.scalerRate Empty
+variable 10 26 1 .Empty_39.scaler Empty
+variable 10 26 2 .Empty_39.scalerRate Empty
+variable 10 19 1 .Empty_32.scaler Empty
+variable 10 19 2 .Empty_32.scalerRate Empty
+variable 10 20 1 .Empty_33.scaler Empty
+variable 10 20 2 .Empty_33.scalerRate Empty
+variable 10 17 1 .Empty_30.scaler Empty
+variable 10 17 2 .Empty_30.scalerRate Empty
+variable 10 18 1 .Empty_31.scaler Empty
+variable 10 18 2 .Empty_31.scalerRate Empty
+variable 10 23 1 .Empty_36.scaler Empty
+variable 10 23 2 .Empty_36.scalerRate Empty
+variable 10 24 1 .Empty_37.scaler Empty
+variable 10 24 2 .Empty_37.scalerRate Empty
+variable 10 21 1 .Empty_34.scaler Empty
+variable 10 21 2 .Empty_34.scalerRate Empty
+variable 10 22 1 .Empty_35.scaler Empty
+variable 10 22 2 .Empty_35.scalerRate Empty
+variable 6 0 1 .hod.1x1.posScaler HMS 1X+ paddle 1
+variable 6 0 2 .hod.1x1.posScalerRate HMS 1X+ paddle 1
+variable 6 16 1 .hod.1x1.negScaler HMS 1X- paddle 1
+variable 6 16 2 .hod.1x1.negScalerRate HMS 1X- paddle 1
+variable 7 11 1 .Empty_3.scaler Empty
+variable 7 11 2 .Empty_3.scalerRate Empty
+variable 9 27 1 .Empty_21.scaler Empty
+variable 9 27 2 .Empty_21.scalerRate Empty
+variable 9 2 1 .hod.2y5.posScaler HMS 2Y+ paddle 5
+variable 9 2 2 .hod.2y5.posScalerRate HMS 2Y+ paddle 5
+variable 9 18 1 .hod.2y5.negScaler HMS 2Y- paddle 5
+variable 9 18 2 .hod.2y5.negScalerRate HMS 2Y- paddle 5
+variable 8 15 1 .hod.2x16.posScaler HMS 2X+ paddle 16
+variable 8 15 2 .hod.2x16.posScalerRate HMS 2X+ paddle 16
+variable 8 31 1 .hod.2x16.negScaler HMS 2X- paddle 16
+variable 8 31 2 .hod.2x16.negScalerRate HMS 2X- paddle 16
+variable 10 11 1 .hPRE200.scaler HMS PRE200
+variable 10 11 2 .hPRE200.scalerRate HMS PRE200
+variable 10 13 1 .Empty_27.scaler Empty
+variable 10 13 2 .Empty_27.scalerRate Empty
+variable 6 30 1 .hod.1x14.negScaler HMS 1X- paddle 14
+variable 6 30 2 .hod.1x14.negScalerRate HMS 1X- paddle 14
+variable 6 14 1 .hod.1x14.posScaler HMS 1X+ paddle 14
+variable 6 14 2 .hod.1x14.posScalerRate HMS 1X+ paddle 14
+variable 8 4 1 .hod.2x2.posScaler HMS 2X+ paddle 2
+variable 8 4 2 .hod.2x2.posScalerRate HMS 2X+ paddle 2
+variable 8 20 1 .hod.2x2.negScaler HMS 2X- paddle 2
+variable 8 20 2 .hod.2x2.negScalerRate HMS 2X- paddle 2
+variable 10 16 1 .hL1ACCP.scaler HMS L1 Accept
+variable 10 16 2 .hL1ACCP.scalerRate HMS L1 Accept
+variable 11 24 1 .hSTOF.scaler HMS STOF
+variable 11 24 2 .hSTOF.scalerRate HMS STOF
+variable 7 23 1 .hod.1y8.negScaler HMS 1Y- paddle 8
+variable 7 23 2 .hod.1y8.negScalerRate HMS 1Y- paddle 8
+variable 7 7 1 .hod.1y8.posScaler HMS 1Y+ paddle 8
+variable 7 7 2 .hod.1y8.posScalerRate HMS 1Y+ paddle 8
+variable 11 6 1 .Empty_45.scaler Empty
+variable 11 6 2 .Empty_45.scalerRate Empty
+variable 6 4 1 .hod.1x2.posScaler HMS 1X+ paddle 2
+variable 6 4 2 .hod.1x2.posScalerRate HMS 1X+ paddle 2
+variable 6 20 1 .hod.1x2.negScaler HMS 1X- paddle 2
+variable 6 20 2 .hod.1x2.negScalerRate HMS 1X- paddle 2
+variable 7 16 1 .hod.1y1.negScaler HMS 1Y- paddle 1
+variable 7 16 2 .hod.1y1.negScalerRate HMS 1Y- paddle 1
+variable 7 0 1 .hod.1y1.posScaler HMS 1Y+ paddle 1
+variable 7 0 2 .hod.1y1.posScalerRate HMS 1Y+ paddle 1
+variable 6 18 1 .hod.1x5.negScaler HMS 1X- paddle 5
+variable 6 18 2 .hod.1x5.negScalerRate HMS 1X- paddle 5
+variable 6 2 1 .hod.1x5.posScaler HMS 1X+ paddle 5
+variable 6 2 2 .hod.1x5.posScalerRate HMS 1X+ paddle 5
+variable 11 17 1 .pEL_LO_LO.scaler SHMS EL_LO_LO
+variable 11 17 2 .pEL_LO_LO.scalerRate SHMS EL_LO_LO
+variable 7 28 1 .hod.1y10.negScaler HMS 1Y- paddle 10
+variable 7 28 2 .hod.1y10.negScalerRate HMS 1Y- paddle 10
+variable 7 12 1 .hod.1y10.posScaler HMS 1Y+ paddle 10
+variable 7 12 2 .hod.1y10.posScalerRate HMS 1Y+ paddle 10
+variable 11 4 1 .pTRIG5.scaler SHMS TRIG5
+variable 11 4 2 .pTRIG5.scalerRate SHMS TRIG5
+variable 11 3 1 .pTRIG4.scaler SHMS TRIG4
+variable 11 3 2 .pTRIG4.scalerRate SHMS TRIG4
+variable 11 5 1 .pTRIG6.scaler SHMS TRIG6
+variable 11 5 2 .pTRIG6.scalerRate SHMS TRIG6
+variable 11 0 1 .pTRIG1.scaler SHMS TRIG1
+variable 11 0 2 .pTRIG1.scalerRate SHMS TRIG1
+variable 11 2 1 .pTRIG3.scaler SHMS TRIG3
+variable 11 2 2 .pTRIG3.scalerRate SHMS TRIG3
+variable 11 1 1 .pTRIG2.scaler SHMS TRIG2
+variable 11 1 2 .pTRIG2.scalerRate SHMS TRIG2
+variable 8 10 1 .hod.2x13.posScaler HMS 2X+ paddle 13
+variable 8 10 2 .hod.2x13.posScalerRate HMS 2X+ paddle 13
+variable 9 16 1 .hod.2y1.negScaler HMS 2Y- paddle 1
+variable 9 16 2 .hod.2y1.negScalerRate HMS 2Y- paddle 1
+variable 8 26 1 .hod.2x13.negScaler HMS 2X- paddle 13
+variable 8 26 2 .hod.2x13.negScalerRate HMS 2X- paddle 13
+variable 9 0 1 .hod.2y1.posScaler HMS 2Y+ paddle 1
+variable 9 0 2 .hod.2y1.posScalerRate HMS 2Y+ paddle 1
+variable 9 28 1 .hod.2y10.negScaler HMS 2Y- paddle 10
+variable 9 28 2 .hod.2y10.negScalerRate HMS 2Y- paddle 10
+variable 9 12 1 .hod.2y10.posScaler HMS 2Y+ paddle 10
+variable 9 12 2 .hod.2y10.posScalerRate HMS 2Y+ paddle 10
+variable 9 6 1 .hod.2y6.posScaler HMS 2Y+ paddle 6
+variable 9 6 2 .hod.2y6.posScalerRate HMS 2Y+ paddle 6
+variable 9 22 1 .hod.2y6.negScaler HMS 2Y- paddle 6
+variable 9 22 2 .hod.2y6.negScalerRate HMS 2Y- paddle 6
+variable 10 1 1 .pPRE100.scaler SHMS PRE100
+variable 10 1 2 .pPRE100.scalerRate SHMS PRE100
+variable 6 26 1 .hod.1x13.negScaler HMS 1X- paddle 13
+variable 6 26 2 .hod.1x13.negScalerRate HMS 1X- paddle 13
+variable 6 10 1 .hod.1x13.posScaler HMS 1X+ paddle 13
+variable 6 10 2 .hod.1x13.posScalerRate HMS 1X+ paddle 13
+variable 8 22 1 .hod.2x6.negScaler HMS 2X- paddle 6
+variable 8 22 2 .hod.2x6.negScalerRate HMS 2X- paddle 6
+variable 8 6 1 .hod.2x6.posScaler HMS 2X+ paddle 6
+variable 8 6 2 .hod.2x6.posScalerRate HMS 2X+ paddle 6
+variable 10 10 1 .hPRE150.scaler HMS PRE150
+variable 10 10 2 .hPRE150.scalerRate HMS PRE150
+variable 12 9 1 .CSUM.scaler HMS CSUM
+variable 12 9 2 .CSUM.scalerRate HMS CSUM
+variable 8 0 1 .hod.2x1.posScaler HMS 2X+ paddle 1
+variable 8 0 2 .hod.2x1.posScalerRate HMS 2X+ paddle 1
+variable 8 16 1 .hod.2x1.negScaler HMS 2X- paddle 1
+variable 8 16 2 .hod.2x1.negScalerRate HMS 2X- paddle 1
+variable 12 14 1 .EDTM.scaler HMS EDTM
+variable 12 14 2 .EDTM.scalerRate HMS EDTM
+variable 10 3 1 .pPRE200.scaler SHMS PRE200
+variable 10 3 2 .pPRE200.scalerRate SHMS PRE200
+variable 7 5 1 .hod.1y4.posScaler HMS 1Y+ paddle 4
+variable 7 5 2 .hod.1y4.posScalerRate HMS 1Y+ paddle 4
+variable 7 21 1 .hod.1y4.negScaler HMS 1Y- paddle 4
+variable 7 21 2 .hod.1y4.negScalerRate HMS 1Y- paddle 4
+variable 10 5 1 .1MHz_CP.scaler 1 MHz Copy
+variable 10 5 2 .1MHz_CP.scalerRate 1 MHz Copy
+variable 10 5 5 .1MHz_CP.scalerTime 1 MHz Copy
+variable 6 22 1 .hod.1x6.negScaler HMS 1X- paddle 6
+variable 6 22 2 .hod.1x6.negScalerRate HMS 1X- paddle 6
+variable 6 6 1 .hod.1x6.posScaler HMS 1X+ paddle 6
+variable 6 6 2 .hod.1x6.posScalerRate HMS 1X+ paddle 6
+variable 9 20 1 .hod.2y2.negScaler HMS 2Y- paddle 2
+variable 9 20 2 .hod.2y2.negScalerRate HMS 2Y- paddle 2
+variable 8 12 1 .hod.2x10.posScaler HMS 2X+ paddle 10
+variable 8 12 2 .hod.2x10.posScalerRate HMS 2X+ paddle 10
+variable 9 4 1 .hod.2y2.posScaler HMS 2Y+ paddle 2
+variable 9 4 2 .hod.2y2.posScalerRate HMS 2Y+ paddle 2
+variable 8 28 1 .hod.2x10.negScaler HMS 2X- paddle 10
+variable 8 28 2 .hod.2x10.negScalerRate HMS 2X- paddle 10
+variable 12 13 1 .SHLO.scaler HMS SHLO
+variable 12 13 2 .SHLO.scalerRate HMS SHLO
+variable 12 15 1 .CER.scaler HMS CER
+variable 12 15 2 .CER.scalerRate HMS CER
+variable 8 18 1 .hod.2x5.negScaler HMS 2X- paddle 5
+variable 8 18 2 .hod.2x5.negScalerRate HMS 2X- paddle 5
+variable 8 2 1 .hod.2x5.posScaler HMS 2X+ paddle 5
+variable 8 2 2 .hod.2x5.posScalerRate HMS 2X+ paddle 5
+variable 11 16 1 .pSTOF.scaler SHMS STOF
+variable 11 16 2 .pSTOF.scalerRate SHMS STOF
+variable 10 6 1 .EDTM_CP.scaler EDTM Copy
+variable 10 6 2 .EDTM_CP.scalerRate EDTM Copy
+variable 12 11 1 .PRLO.scaler HMS PRLO
+variable 12 11 2 .PRLO.scalerRate HMS PRLO
+variable 11 22 1 .Empty_49.scaler Empty
+variable 11 22 2 .Empty_49.scalerRate Empty
+variable 11 9 1 .Empty_48.scaler Empty
+variable 11 9 2 .Empty_48.scalerRate Empty
+variable 10 30 1 .Empty_43.scaler Empty
+variable 10 30 2 .Empty_43.scalerRate Empty
+variable 10 29 1 .Empty_42.scaler Empty
+variable 10 29 2 .Empty_42.scalerRate Empty
+variable 10 28 1 .Empty_41.scaler Empty
+variable 10 28 2 .Empty_41.scalerRate Empty
+variable 10 27 1 .Empty_40.scaler Empty
+variable 10 27 2 .Empty_40.scalerRate Empty
+variable 11 8 1 .Empty_47.scaler Empty
+variable 11 8 2 .Empty_47.scalerRate Empty
+variable 11 7 1 .Empty_46.scaler Empty
+variable 11 7 2 .Empty_46.scalerRate Empty
+variable 12 8 1 .BSUM.scaler HMS BSUM
+variable 12 8 2 .BSUM.scalerRate HMS BSUM
+variable 10 31 1 .Empty_44.scaler Empty
+variable 10 31 2 .Empty_44.scalerRate Empty
+variable 6 1 1 .hod.1x3.posScaler HMS 1X+ paddle 3
+variable 6 1 2 .hod.1x3.posScalerRate HMS 1X+ paddle 3
+variable 6 17 1 .hod.1x3.negScaler HMS 1X- paddle 3
+variable 6 17 2 .hod.1x3.negScalerRate HMS 1X- paddle 3
+variable 12 10 1 .DSUM.scaler HMS DSUM
+variable 12 10 2 .DSUM.scalerRate HMS DSUM
+variable 12 5 1 .S2XS2Y.scaler HMS S2T
+variable 12 5 2 .S2XS2Y.scalerRate HMS S2T
+variable 6 23 1 .hod.1x8.negScaler HMS 1X- paddle 8
+variable 6 23 2 .hod.1x8.negScalerRate HMS 1X- paddle 8
+variable 6 7 1 .hod.1x8.posScaler HMS 1X+ paddle 8
+variable 6 7 2 .hod.1x8.posScalerRate HMS 1X+ paddle 8
+variable 8 30 1 .hod.2x14.negScaler HMS 2X- paddle 14
+variable 8 30 2 .hod.2x14.negScalerRate HMS 2X- paddle 14
+variable 8 14 1 .hod.2x14.posScaler HMS 2X+ paddle 14
+variable 8 14 2 .hod.2x14.posScalerRate HMS 2X+ paddle 14
+variable 12 3 1 .S2Y.scaler HMS S2Y
+variable 12 3 2 .S2Y.scalerRate HMS S2Y
+variable 12 2 1 .S2X.scaler HMS S2X
+variable 12 2 2 .S2X.scalerRate HMS S2X
+variable 12 6 1 .hTREF1.scaler HMS TREF1
+variable 12 6 2 .hTREF1.scalerRate HMS TREF1

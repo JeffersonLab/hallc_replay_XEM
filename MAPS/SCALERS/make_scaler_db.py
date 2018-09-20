@@ -81,7 +81,8 @@ with open(xscalerMapName, 'r') as fi:
                 detPrefix = name[2:5]
                 if specprefix == channel.spec and slot<nslots:
                     chan = channel.chan
-                    slot = channel.slot-firstslot
+                    # slot = channel.slot-firstslot
+                    slot = channel.slot
                     comment = channel.comment
                     if detPrefix == "hod":
                         printHodoName = "." + detPrefix + "." + name[5:10] + "."
