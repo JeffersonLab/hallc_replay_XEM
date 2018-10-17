@@ -653,7 +653,7 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
  
  outPARAM << "; HMS Hodoscope Parameter File Containing propagation velocities per paddle " << endl;
  outPARAM << "; and signal cable time diff. offsets per paddle " << endl;
- outPARAM << " " << endl;
+ outPARAM << Form("; Run %d ", runNUM) << endl;
  outPARAM << " " << endl;
  outPARAM << " " << endl;
  

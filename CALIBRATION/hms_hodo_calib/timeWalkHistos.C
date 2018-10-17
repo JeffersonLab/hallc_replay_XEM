@@ -197,7 +197,7 @@ void generatePlots(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
   
 } // generatePlots()
 
-void timeWalkHistos(TString inputname,Int_t runNum) {
+void timeWalkHistos(TString inputname,Int_t runNum, string SPEC_flg) {    //SPEC_flg ---> "hms"  or "coin"
 
   // Global ROOT settings
   gStyle->SetOptFit();
@@ -222,11 +222,11 @@ void timeWalkHistos(TString inputname,Int_t runNum) {
   // Obtain the tree
   rawDataTree = dynamic_cast <TTree*> (replayFile->Get("T"));
   // Acquire the trigger apparatus data
-  rawDataTree->SetBranchAddress("T.hms.hFADC_TREF_ROC1_adcPulseTimeRaw", &refAdcPulseTimeRaw);
-  rawDataTree->SetBranchAddress("T.hms.hFADC_TREF_ROC1_adcPulseAmp",     &refAdcPulseAmp);
-  rawDataTree->SetBranchAddress("T.hms.hFADC_TREF_ROC1_adcMultiplicity", &refAdcMultiplicity);
-  rawDataTree->SetBranchAddress("T.hms.hT1_tdcTimeRaw", &refT1TdcTimeRaw);
-  rawDataTree->SetBranchAddress("T.hms.hT2_tdcTimeRaw", &refT2TdcTimeRaw);
+  rawDataTree->SetBranchAddress(Form("T.%s.hFADC_TREF_ROC1_adcPulseTimeRaw", SPEC_flg.c_str()), &refAdcPulseTimeRaw);
+  rawDataTree->SetBranchAddress(Form("T.%s.hFADC_TREF_ROC1_adcPulseAmp", SPEC_flg.c_str()),     &refAdcPulseAmp);
+  rawDataTree->SetBranchAddress(Form("T.%s.hFADC_TREF_ROC1_adcMultiplicity", SPEC_flg.c_str()), &refAdcMultiplicity);
+  rawDataTree->SetBranchAddress(Form("T.%s.hT1_tdcTimeRaw", SPEC_flg.c_str()), &refT1TdcTimeRaw);
+  rawDataTree->SetBranchAddress(Form("T.%s.hT2_tdcTimeRaw", SPEC_flg.c_str()), &refT2TdcTimeRaw);
   rawDataTree->SetBranchAddress("H.cal.etot", &calEtot);
   rawDataTree->SetBranchAddress("H.cer.npeSum", &cerNpeSum);
   // Loop over the planes, sides, signals, leafs, and fill data arrays

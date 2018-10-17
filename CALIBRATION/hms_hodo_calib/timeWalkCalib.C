@@ -266,7 +266,7 @@ void WriteFitParam(int runNUM)
 
   TString outPar_Name = Form("../../PARAM/HMS/HODO/hhodo_TWcalib_%d.param", runNUM);
   outParam.open(outPar_Name);
-  outParam << ";HMS Hodoscopes Output Parameter File" << endl;
+  outParam << Form(";HMS Hodoscopes Output Parameter File: Run %d", runNUM) << endl;
   outParam << " " << endl;
   //  outParam << "htofusinginvadc=0 " << " ;set to zero to NOT read old style hodo calib parameters" << endl;
   outParam << "hTDC_threshold=" << tdcThresh << ". ;units of mV " << endl;

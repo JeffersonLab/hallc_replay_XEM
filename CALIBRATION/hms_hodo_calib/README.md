@@ -11,11 +11,15 @@ The two codes have different parameters and it is possible to switch between the
 
 ## Instructions
 
-1. Replay the data with ptofusinginvadc=0 and need to have T.* and H.hod.* in the tree.
+1. Replay the data with ptofusinginvadc=0 and need to have T.hms.* and H.hod.* in the tree. 
+   Go to: PARAM/HMS/GEN/h_fadc_debug.param, and set hhodo_debug_adc = 1 --->  Use the correct hodo raw leafs variables 
+
+(In case you are calibrating HMS hodo using a coincidence run, then make sure to include T.coin.*)
+
 
 2. Determine the time walk correction parameters
 
-     a. Start "root -l" and then  .x timeWalkHistos.C+("entire_root_filename",runnumber)
+     a. Start "root -l" and then  .x timeWalkHistos.C+("current_dir/to/ROOT_filename.root", Run_Number, "hms") ---> If doing coincidence, then "hms"->"coin"
 
      b. This creats the file: timeWalkHistos.root
 
@@ -25,15 +29,17 @@ The two codes have different parameters and it is possible to switch between the
 
 3.  Replay the data with ptofusinginvadc=0 and the new parameter files (the simplest is to copy phodo_TWcalib_runnumber.param to phodo_TWcalib.param).
 
-4. Determine the the effective propagation speeed in the paddle, the time difference between the positive and negative PMTs and then the relative time difference of all paddles compared to paddle 7 in plane S1X. The script
+4. Determine the effective propagation speed in the paddle, the time difference between the positive and negative PMTs and then the relative time difference of all paddles compared to paddle 7 in plane S1X. The script
 puts cuts on H.cal.etracknorm, H.hgcer.npeSum and H.hod.betanotrack to select electrons. These cuts are hard coded as  etrknrm_low_cut = 0.7, npngcer_npeSum_low_cut = 0.7 , betanotrack_low_cut = 0.5 and betanotrack_hi_cut = 1.5. These may need to be modified. The event must have a track. 
 
-     a.  Start "root -l" and then  .x  fitHodoCalib.C+("entire_root_filename",runnumber)     
+*** Make sure to have included H.hgcer.* and H.cal.etracknorm in the ROOT tree
 
-      b.  This creates the parameter file "../../PARAM/HMS/HODO/hhodo_Vpcalib_runnumber.param"
+     a.  Start "root -l" and then  .x  fitHodoCalib.C+("current_dir/to/ROOT_filename.root",Run_Number)     
 
-     c. It also creates the root file HodoCalibPlots_runnumber.root
+     b.  This creates the parameter file "../../PARAM/HMS/HODO/hhodo_Vpcalib_runnumber.param"
 
-     d. To analyze cosmic data :  .x  fitHodoCalib.C+("entire_root_filename",runnumber,kTRUE) 
+     c.  It also creates the root file HodoCalibPlots_runnumber.root
 
-     e. For csomic data the spped of light is set to -30 cm/ns and the PID cut is just on P.hod.betanotrack with the default of betanotrack_low_cut = -1.2 and betanotrack_hi_cut = -.7
+     d.  To analyze cosmic data :  .x  fitHodoCalib.C+("current_dir/to/ROOT_filename.root",Run_Number,kTRUE) 
+
+     e. For cosmic data the speed of light is set to -30 cm/ns and the PID cut is just on P.hod.betanotrack with the default of betanotrack_low_cut = -1.2 and betanotrack_hi_cut = -.7
