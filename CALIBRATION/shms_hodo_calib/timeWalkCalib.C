@@ -273,10 +273,9 @@ void WriteFitParam(int runNUM)
 
   TString outPar_Name = Form("../../PARAM/SHMS/HODO/phodo_TWcalib_%d.param", runNUM);
   outParam.open(outPar_Name);
-  outParam << ";SHMS Hodoscopes Time Walk Output Parameter File" << endl;
+  outParam << Form(";SHMS Hodoscopes Time Walk Output Parameter File: Run %d", runNUM) << endl;
   outParam << " " << endl;
   outParam << "pTDC_threshold=" << tdcThresh  << " ;units of mV" <<endl;
-  //outPARAM << "ptofusinginvadc=0" << endl;  //set to zero to NOT use old hodo parameters
   outParam << " " << endl;
 
   //Fill 3D Par array
