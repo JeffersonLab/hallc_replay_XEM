@@ -57,6 +57,7 @@ REFINDEX=0
   19,   2,  32,   1  ! pTRIG4
   20,   2,  33,   1  ! pTRIG5
   21,   2,  34,   1  ! pTRIG6
+  47,   2,  47,   1  ! hT3
   48,   2,  35,   1  ! pSTOF
   49,   2,  36,   1  ! pEL_LO_LO
   50,   2,  37,   1  ! pEL_LO
@@ -69,7 +70,6 @@ REFINDEX=0
   59,   2,  44,   1  ! hEL_HI
   60,   2,  45,   1  ! hEL_REAL
   61,   2,  46,   1  ! hEL_CLEAN
-  63,   2,  47,   1  ! hT3
   64,   2,  48,   1  ! pPRE40
   65,   2,  49,   1  ! pPRE100
   66,   2,  50,   1  ! pPRE150

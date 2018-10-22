@@ -1,20 +1,38 @@
 #------------------
+# SHMS DC RAW WIRE MAP
+#------------------
+
+TH1F pdc1u1_rawwirenum 'SHMS DC 1U1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1u1.raw.wirenum 107 0.5 107.5
+TH1F pdc1u2_rawwirenum 'SHMS DC 1U2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1u2.raw.wirenum 107 0.5 107.5
+TH1F pdc1x1_rawwirenum 'SHMS DC 1X1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1x1.raw.wirenum  79 0.5  79.5
+TH1F pdc1x2_rawwirenum 'SHMS DC 1X2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1x2.raw.wirenum  79 0.5  79.5
+TH1F pdc1v1_rawwirenum 'SHMS DC 1V1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1v1.raw.wirenum 107 0.5 107.5
+TH1F pdc1v2_rawwirenum 'SHMS DC 1V2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1v2.raw.wirenum 107 0.5 107.5
+
+TH1F pdc2v2_rawwirenum 'SHMS DC 2V2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2v2.raw.wirenum 107 0.5 107.5
+TH1F pdc2v1_rawwirenum 'SHMS DC 2V1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2v1.raw.wirenum 107 0.5 107.5
+TH1F pdc2x2_rawwirenum 'SHMS DC 2X2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2x2.raw.wirenum  79 0.5  79.5
+TH1F pdc2x1_rawwirenum 'SHMS DC 2X1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2x1.raw.wirenum  79 0.5  79.5
+TH1F pdc2u2_rawwirenum 'SHMS DC 2U2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2u2.raw.wirenum 107 0.5 107.5
+TH1F pdc2u1_rawwirenum 'SHMS DC 2U1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2u1.raw.wirenum 107 0.5 107.5
+
+#------------------
 # SHMS DC WIRE MAP
 #------------------
 
-TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
-TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
-TH1F pdc1x1_wirenum 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.1x1.wirenum  79 0.5  79.5
-TH1F pdc1x2_wirenum 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.1x2.wirenum  79 0.5  79.5
-TH1F pdc1v1_wirenum 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries' P.dc.1v1.wirenum 107 0.5 107.5
-TH1F pdc1v2_wirenum 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.1v2.wirenum 107 0.5 107.5
+TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
+TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
+TH1F pdc1x1_wirenum 'SHMS DC 1X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1x1.wirenum  79 0.5  79.5
+TH1F pdc1x2_wirenum 'SHMS DC 1X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1x2.wirenum  79 0.5  79.5
+TH1F pdc1v1_wirenum 'SHMS DC 1V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1v1.wirenum 107 0.5 107.5
+TH1F pdc1v2_wirenum 'SHMS DC 1V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1v2.wirenum 107 0.5 107.5
 
-TH1F pdc2v2_wirenum 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.2v2.wirenum 107 0.5 107.5
-TH1F pdc2v1_wirenum 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.2v1.wirenum 107 0.5 107.5
-TH1F pdc2x2_wirenum 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.2x2.wirenum  79 0.5  79.5
-TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.2x1.wirenum  79 0.5  79.5
-TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
-TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
+TH1F pdc2v2_wirenum 'SHMS DC 2V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2v2.wirenum 107 0.5 107.5
+TH1F pdc2v1_wirenum 'SHMS DC 2V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2v1.wirenum 107 0.5 107.5
+TH1F pdc2x2_wirenum 'SHMS DC 2X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2x2.wirenum  79 0.5  79.5
+TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2x1.wirenum  79 0.5  79.5
+TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
+TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
 
 #------------------------------
 # SHMS DC DRIFT TIME PER PLANE 

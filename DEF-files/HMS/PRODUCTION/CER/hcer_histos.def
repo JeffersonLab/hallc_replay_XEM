@@ -13,22 +13,22 @@ TH1F hcer_good_mult 'HMS Cherenkov Good Multiplicity; Number of PMTs Hit; Total 
 TH2F hcer_npe 'HMS Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] H.cer.npe 2 0.5 2.5 100 0 50 H.cer.npe>0.0 
 
 # HMS CER Total Number of  P.E.
-TH1F hcer_tot_npe 'HMS Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.cer.npeSum 100 0 50 H.cer.npeSum>0.0 
+# TH1F hcer_tot_npe 'HMS Cherenkov Total Number of Photoelectrons; Total Number of Photoelectrons; Number of Entries / 0.5 Photoelectrons' H.cer.npeSum 100 0 50 H.cer.npeSum>0.0 
 
 #--------------------------
 # HMS CER TRACK MATCHING
 #--------------------------
 
-TH1F hcer_trk_match 'HMS  Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' H.cer.numTracksMatched 2 0.5 2.5
-TH1F hcer_trk_fired 'HMS  Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' H.cer.numTracksFired 2 0.5 2.5
+# TH1F hcer_trk_match 'HMS  Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' H.cer.numTracksMatched 2 0.5 2.5
+# TH1F hcer_trk_fired 'HMS  Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' H.cer.numTracksFired 2 0.5 2.5
 
 #--------------------------
 # HMS CER TRACK PROJECTION
 #--------------------------
 
-TH1F hcer_xtrack  'HMS Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' H.cer.xAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
-TH1F hcer_ytrack  'HMS Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' H.cer.yAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
-TH2F hcer_xytrack 'HMS Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' H.cer.yAtCer H.cer.xAtCer 120 -60 60 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
+# TH1F hcer_xtrack  'HMS Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' H.cer.xAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
+# TH1F hcer_ytrack  'HMS Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' H.cer.yAtCer 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
 
+TH2F hcer_xytrack 'HMS Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' H.cer.yAtCer H.cer.xAtCer 120 -60 60 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
 TH2F hcer_x_vs_npe 'HMS Cherenkov X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' H.cer.npeSum H.cer.xAtCer 100 0 50 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0
 TH2F hcer_y_vs_npe 'HMS Cherenkov Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' H.cer.npeSum H.cer.yAtCer 100 0 50 120 -60 60 H.cer.xAtCer!=0.0&&H.cer.yAtCer!=0

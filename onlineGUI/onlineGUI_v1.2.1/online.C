@@ -1914,38 +1914,39 @@ void OnlineGUI::PrintPages() {
     if(!useJPG) fCanvas->Print(filename+"]");
     //
 
-    cout << "Writing histograms to root file '" << filename << "'." << endl;
+    // filename.Resize(filename.Last('.'));
+    // filename += ".root";
+    // TFile* hroot = new TFile(filename,"recreate");
 
-    filename.Resize(filename.Last('.'));
-    filename += ".root";
-    TFile* hroot = new TFile(filename,"recreate");
+    // cout << "Writing histograms to root file '" << filename << "'." << endl;
 
-    UInt_t pageCount = fConfig->GetPageCount();
-    for (UInt_t iPage=0; iPage<pageCount; ++iPage) {
-        UInt_t drawCount = fConfig->GetDrawCount(iPage);
-        for (UInt_t iDraw=0; iDraw<drawCount; ++iDraw) {
-            TString macro = fConfig->GetDrawCommand(iPage, iDraw).macro;
-            if (macro != "") {
-                TString histName = macro.Remove(0, macro.First('\"')+1);
-                histName.Resize(macro.First('\"'));
+    // UInt_t pageCount = fConfig->GetPageCount();
+    // for (UInt_t iPage=0; iPage<pageCount; ++iPage) {
+    //     UInt_t drawCount = fConfig->GetDrawCount(iPage);
+    //     for (UInt_t iDraw=0; iDraw<drawCount; ++iDraw) {
+    //         TString macro = fConfig->GetDrawCommand(iPage, iDraw).macro;
+    //         if (macro != "") {
 
-                fRootFile.RootFile->cd();
-                TH1F* h1f = dynamic_cast<TH1F*>(gDirectory->Get(histName));
-                TH2F* h2f = dynamic_cast<TH2F*>(gDirectory->Get(histName));
-                hroot->cd();
+    // 	        TString histName = macro.Remove(0, macro.First('\"')+1);
+    //             histName.Resize(macro.First('\"'));
+	  		
+    //             fRootFile.RootFile->cd();
+    //             TH1F* h1f = dynamic_cast<TH1F*>(gDirectory->Get(histName));
+    //             TH2F* h2f = dynamic_cast<TH2F*>(gDirectory->Get(histName));
+    //             hroot->cd();
 
-                if (h1f) h1f->Write();
-                else if (h2f) h2f->Write();
-                else cout << histName << " not found!" << endl;
-            }
-        }
-    }
+    //             if (h1f) h1f->Write();
+    //             else if (h2f) h2f->Write();
+    //             // else cout << histName << " not found!" << endl;
+    //         }
+    //     }
+    // }
 
-    hroot->Write();
-    hroot->Close();
-    delete hroot;
+    // hroot->Write();
+    // hroot->Close();
+    // delete hroot;
 
-    cout << "Root file '" << filename << "' done." << endl;
+    // cout << "Root file '" << filename << "' done." << endl;
 
     //
 #ifdef STANDALONE

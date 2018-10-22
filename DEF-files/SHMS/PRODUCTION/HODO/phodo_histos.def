@@ -85,15 +85,15 @@ TH1F phodo_beta 'SHMS Hodo Beta; Beta; Number of Entries / 0.015' P.hod.beta 100
 TH1F phodo_fpHitsTime 'SHMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' P.hod.fpHitsTime 90 0 90 
 TH1F phodo_starttime 'SHMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' P.hod.starttime 90 0 90
 TH1F phodo_good_startime 'SHMS Hodo Good Start Flag; Good Start Flag (=1 is good); Number of Entries' P.hod.goodstarttime 5 0 5
-TH1F phodo_1x_fptime 'SHMS 1x fptime' P.hod.1x.fptime 100 0. 50. P.dc.ntrack>0
-TH1F phodo_1y_fptime 'SHMS 1y fptime' P.hod.1y.fptime 100 0. 50. P.dc.ntrack>0
-TH1F phodo_2x_fptime 'SHMS 2x fptime' P.hod.2x.fptime 100 0. 50. P.dc.ntrack>0
-TH1F phodo_2y_fptime 'SHMS 2y fptime' P.hod.2y.fptime 100 0. 50. P.dc.ntrack>0
-TH1F phodo_1x_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.1x.DiffDisTrack 100 -10. 10.
-TH1F phodo_1y_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.1y.DiffDisTrack 100 -10. 10.
-TH1F phodo_2x_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.2x.DiffDisTrack 100 -10. 10.
-TH1F phodo_2y_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.2y.DiffDisTrack 100 -10. 10.
-TH2F phodo_1x_diffdistrack_v_xtrack 'SHMS Hodo Diff Distance track (cm) versus Track X (cm)'  P.hod.1x.DiffDisTrack P.hod.1x.TrackXPos 100 -10. 10. 240 -60 60
-TH2F phodo_1y_diffdistrack_v_ytrack 'SHMS Hodo Diff Distance track (cm) versus Track Y (cm)'  P.hod.1y.DiffDisTrack P.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
-TH2F phodo_2x_diffdistrack_v_xtrack 'SHMS Hodo Diff Distance track (cm) versus Track X (cm)'  P.hod.2x.DiffDisTrack P.hod.2x.TrackXPos 100 -10. 10. 240 -60 60
-TH2F phodo_2y_diffdistrack_v_ytrack 'SHMS Hodo Diff Distance track (cm) versus Track Y (cm)'  P.hod.2y.DiffDisTrack P.hod.2y.TrackXPos 100 -10. 10. 240 -60 60
+# TH1F phodo_1x_fptime 'SHMS 1x fptime' P.hod.1x.fptime 100 0. 50. P.dc.ntrack>0
+# TH1F phodo_1y_fptime 'SHMS 1y fptime' P.hod.1y.fptime 100 0. 50. P.dc.ntrack>0
+# TH1F phodo_2x_fptime 'SHMS 2x fptime' P.hod.2x.fptime 100 0. 50. P.dc.ntrack>0
+# TH1F phodo_2y_fptime 'SHMS 2y fptime' P.hod.2y.fptime 100 0. 50. P.dc.ntrack>0
+# TH1F phodo_1x_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.1x.DiffDisTrack 100 -10. 10.
+# TH1F phodo_1y_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.1y.DiffDisTrack 100 -10. 10.
+# TH1F phodo_2x_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.2x.DiffDisTrack 100 -10. 10.
+# TH1F phodo_2y_diffdistrack 'SHMS Hodo Diff Distance track (cm)' P.hod.2y.DiffDisTrack 100 -10. 10.
+# TH2F phodo_1x_diffdistrack_v_xtrack 'SHMS Hodo Diff Distance track (cm) versus Track X (cm)'  P.hod.1x.DiffDisTrack P.hod.1x.TrackXPos 100 -10. 10. 240 -60 60
+# TH2F phodo_1y_diffdistrack_v_ytrack 'SHMS Hodo Diff Distance track (cm) versus Track Y (cm)'  P.hod.1y.DiffDisTrack P.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
+# TH2F phodo_2x_diffdistrack_v_xtrack 'SHMS Hodo Diff Distance track (cm) versus Track X (cm)'  P.hod.2x.DiffDisTrack P.hod.2x.TrackXPos 100 -10. 10. 240 -60 60
+# TH2F phodo_2y_diffdistrack_v_ytrack 'SHMS Hodo Diff Distance track (cm) versus Track Y (cm)'  P.hod.2y.DiffDisTrack P.hod.2y.TrackXPos 100 -10. 10. 240 -60 60

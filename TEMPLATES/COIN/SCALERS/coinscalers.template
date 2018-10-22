@@ -38,12 +38,12 @@ HMS BCM4C Charge: {H.BCM4C.scalerCharge:%.3f} uC
 HMS Unser Charge: {H.Unser.scalerCharge:%.3f} uC
 
 Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1MHz.scalerTimeCut:%.3f}s, or {((H.1MHz.scalerTimeCut/H.1MHz.scalerTime)*100.):%.3f}% of total run time.
-HMS BCM1 Beam Cut Current: {H.BCM1.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
-HMS BCM2 Beam Cut Current: {H.BCM2.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS BCM4A Beam Cut Current: {H.BCM4A.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
-HMS BCM4B Beam Cut Current: {H.BCM4B.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS BCM4C Beam Cut Current: {H.BCM4C.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS Unser Beam Cut Current: {H.Unser.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
+HMS BCM1 Beam Cut Current: {H.BCM1.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM2 Beam Cut Current: {H.BCM2.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4A Beam Cut Current: {H.BCM4A.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM4B Beam Cut Current: {H.BCM4B.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4C Beam Cut Current: {H.BCM4C.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS Unser Beam Cut Current: {H.Unser.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
 
 HMS BCM1  Beam Cut Charge: {H.BCM1.scalerChargeCut:%.3f} uC
 HMS BCM2  Beam Cut Charge: {H.BCM2.scalerChargeCut:%.3f} uC
@@ -69,12 +69,12 @@ SHMS BCM4C Charge: {P.BCM4C.scalerCharge:%.3f} uC
 SHMS Unser Charge: {P.Unser.scalerCharge:%.3f} uC
 
 Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {P.1MHz.scalerTimeCut:%.3f}s, or {((P.1MHz.scalerTimeCut/P.1MHz.scalerTime)*100.):%.3f}% of total run time.
-SHMS BCM1 Beam Cut Current: {P.BCM1.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
-SHMS BCM2 Beam Cut Current: {P.BCM2.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS BCM4A Beam Cut Current: {P.BCM4A.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
-SHMS BCM4B Beam Cut Current: {P.BCM4B.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS BCM4C Beam Cut Current: {P.BCM4C.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS Unser Beam Cut Current: {P.Unser.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
+SHMS BCM1 Beam Cut Current: {P.BCM1.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM2 Beam Cut Current: {P.BCM2.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4A Beam Cut Current: {P.BCM4A.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM4B Beam Cut Current: {P.BCM4B.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4C Beam Cut Current: {P.BCM4C.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS Unser Beam Cut Current: {P.Unser.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
 
 SHMS BCM1  Beam Cut Charge: {P.BCM1.scalerChargeCut:%.3f} uC
 SHMS BCM2  Beam Cut Charge: {P.BCM2.scalerChargeCut:%.3f} uC
@@ -82,6 +82,10 @@ SHMS BCM4A Beam Cut Charge: {P.BCM4A.scalerChargeCut:%.3f} uC
 SHMS BCM4B Beam Cut Charge: {P.BCM4B.scalerChargeCut:%.3f} uC		 
 SHMS BCM4C Beam Cut Charge: {P.BCM4C.scalerChargeCut:%.3f} uC		 
 SHMS Unser Beam Cut Charge: {P.Unser.scalerChargeCut:%.3f} uC
+
+SHMS TRIG1 cut rate : {P.pTRIG1.scalerCut/P.1MHz.scalerTimeCut/1000} kHz
+SHMS TRIG3 cut rate : {P.pTRIG3.scalerCut/P.1MHz.scalerTimeCut/1000} kHz
+SHMS TRIG5 cut rate : {P.pTRIG5.scalerCut/P.1MHz.scalerTimeCut/1000} kHz
  
 
 ********************
@@ -109,6 +113,10 @@ Estimated SHMS 3/4 Triggers   : {P.pTRIG1.scalerRate*P.1MHz.scalerTime:%.0f}
 SHMS 3/4 Trigger Rate         : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
 Accepted SHMS Triggers        : {pTRIG1_ROC2.npassed}
 SHMS Event Types              : {SHMS_Pretrig.npassed}
+
+
+SHMS TRIG5 Computer Live Time : {(pTRIG5_ROC2.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {(pTRIG5_ROC2.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
+SHMS TRIG5 Computer Dead Time : {100.0 - (pTRIG5_ROC2.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {100.0 - (pTRIG5_ROC2.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
 
 =:=:=:=:=:=:=:=:=:  
 = HMS 3/4 Trigger
@@ -305,6 +313,9 @@ ROC2 Pre-Scaled Ps3 ROC2 Computer Dead Time : {100.0 - (pTRIG3_ROC2.npassed / (P
 
 ROC2 Pre-Scaled Ps4 ROC2 Computer Live Time : {(pTRIG4_ROC2.npassed / (P.pTRIG4.scaler/gpconfig_ti_ps_factors[3]))*100.0:%3.4f} %
 ROC2 Pre-Scaled Ps4 ROC2 Computer Dead Time : {100.0 - (pTRIG4_ROC2.npassed / (P.pTRIG4.scaler/gpconfig_ti_ps_factors[3]))*100.0:%3.4f} %
+
+ROC2 Pre-Scaled Ps5 ROC2 Computer Live Time : {(pTRIG5_ROC2.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps5 ROC2 Computer Dead Time : {100.0 - (pTRIG5_ROC2.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %
 
 ROC2 Pre-Scaled Ps6 ROC2 Computer Live Time : {(pTRIG6_ROC2.npassed / (P.pTRIG6.scaler/gpconfig_ti_ps_factors[5]))*100.0:%3.4f} %
 ROC2 Pre-Scaled Ps6 ROC2 Computer Dead Time : {100.0 - (pTRIG6_ROC2.npassed / (P.pTRIG6.scaler/gpconfig_ti_ps_factors[5]))*100.0:%3.4f} %

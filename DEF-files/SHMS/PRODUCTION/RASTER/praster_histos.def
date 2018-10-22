@@ -10,28 +10,28 @@ formula FRXBraw_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
 formula FRYAraw_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
 formula FRYBraw_V P.rb.raster.frybRawAdc*(1./4096.)/25.
 
-TH1F pFRXAraw 'SHMS FRXA Raw; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 100 0 100000 P.dc.ntrack>0
-TH1F pFRXAraw_V 'SHMS FRXA Raw; FRXA RAW ADC (Volts); Counts' FRXAraw_V 100 0 1.0 P.dc.ntrack>0
-TH1F pFRYAraw 'SHMS FRYA Raw; FRYA RAW ADC (chan); Counts' P.rb.raster.fryaRawAdc 100 0 100000 P.dc.ntrack>0
-TH1F pFRYAraw_V 'SHMS FRYA Raw; FRYA RAW ADC (Volts); Counts' FRYAraw_V 100 0 1.0 P.dc.ntrack>0
+# TH1F pFRXAraw 'SHMS FRXA Raw; FRXA RAW ADC (chan); Counts' P.rb.raster.frxaRawAdc 100 0 100000 P.dc.ntrack>0
+# TH1F pFRXAraw_V 'SHMS FRXA Raw; FRXA RAW ADC (Volts); Counts' FRXAraw_V 100 0 1.0 P.dc.ntrack>0
+# TH1F pFRYAraw 'SHMS FRYA Raw; FRYA RAW ADC (chan); Counts' P.rb.raster.fryaRawAdc 100 0 100000 P.dc.ntrack>0
+# TH1F pFRYAraw_V 'SHMS FRYA Raw; FRYA RAW ADC (Volts); Counts' FRYAraw_V 100 0 1.0 P.dc.ntrack>0
 
-TH1F pFRXBraw 'SHMS FRXB Raw; FRXB RAW ADC (chan); Counts' P.rb.raster.frxbRawAdc 100 0 100000 P.dc.ntrack>0
-TH1F pFRXBraw_V 'SHMS FRXB Raw; FRXB RAW ADC (Volts); Counts' FRXBraw_V 100 0 1.0 P.dc.ntrack>0
-TH1F pFRYBraw 'SHMS FRYB Raw; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 100 0 100000 P.dc.ntrack>0
-TH1F pFRYBraw_V 'SHMS FRYB Raw; FRYB RAW ADC (Volts); Counts' FRYBraw_V 100 0 1.0 P.dc.ntrack>0
+# TH1F pFRXBraw 'SHMS FRXB Raw; FRXB RAW ADC (chan); Counts' P.rb.raster.frxbRawAdc 100 0 100000 P.dc.ntrack>0
+# TH1F pFRXBraw_V 'SHMS FRXB Raw; FRXB RAW ADC (Volts); Counts' FRXBraw_V 100 0 1.0 P.dc.ntrack>0
+# TH1F pFRYBraw 'SHMS FRYB Raw; FRYB RAW ADC (chan); Counts' P.rb.raster.frybRawAdc 100 0 100000 P.dc.ntrack>0
+# TH1F pFRYBraw_V 'SHMS FRYB Raw; FRYB RAW ADC (Volts); Counts' FRYBraw_V 100 0 1.0 P.dc.ntrack>0
 
-TH1F pFRXA 'SHMS FRXA; FRXA ADC (chan); Counts' P.rb.raster.frxa_adc 100 -50000 50000 P.dc.ntrack>0
-TH1F pFRXB 'SHMS FRXB; FRXB ADC (chan); Counts' P.rb.raster.frxb_adc 100 -50000 50000 P.dc.ntrack>0
-TH1F pFRYA 'SHMS FRYA; FRYA ADC (chan); Counts' P.rb.raster.frya_adc 100 -50000 50000 P.dc.ntrack>0
-TH1F pFRYB 'SHMS FRYB; FRYB ADC (chan); Counts' P.rb.raster.fryb_adc 100 -50000 50000 P.dc.ntrack>0
+# TH1F pFRXA 'SHMS FRXA; FRXA ADC (chan); Counts' P.rb.raster.frxa_adc 100 -50000 50000 P.dc.ntrack>0
+# TH1F pFRXB 'SHMS FRXB; FRXB ADC (chan); Counts' P.rb.raster.frxb_adc 100 -50000 50000 P.dc.ntrack>0
+# TH1F pFRYA 'SHMS FRYA; FRYA ADC (chan); Counts' P.rb.raster.frya_adc 100 -50000 50000 P.dc.ntrack>0
+# TH1F pFRYB 'SHMS FRYB; FRYB ADC (chan); Counts' P.rb.raster.fryb_adc 100 -50000 50000 P.dc.ntrack>0
 
-TH1F pFRXApos 'SHMS FRXApos; FRXA POS (CM); Counts' P.rb.raster.fr_xa 100 -0.5 0.5 P.dc.ntrack>0
-TH1F pFRXBpos 'SHMS FRXBpos; FRXB POS (CM); Counts' P.rb.raster.fr_xb 100 -0.5 0.5 P.dc.ntrack>0
-TH1F pFRYApos 'SHMS FRYApos; FRYA POS (CM); Counts' P.rb.raster.fr_ya 100 -0.5 0.5 P.dc.ntrack>0
-TH1F pFRYBpos 'SHMS FRYBpos; FRYB POS (CM); Counts' P.rb.raster.fr_yb 100 -0.5 0.5 P.dc.ntrack>0
+# TH1F pFRXApos 'SHMS FRXApos; FRXA POS (CM); Counts' P.rb.raster.fr_xa 100 -0.5 0.5 P.dc.ntrack>0
+# TH1F pFRXBpos 'SHMS FRXBpos; FRXB POS (CM); Counts' P.rb.raster.fr_xb 100 -0.5 0.5 P.dc.ntrack>0
+# TH1F pFRYApos 'SHMS FRYApos; FRYA POS (CM); Counts' P.rb.raster.fr_ya 100 -0.5 0.5 P.dc.ntrack>0
+# TH1F pFRYBpos 'SHMS FRYBpos; FRYB POS (CM); Counts' P.rb.raster.fr_yb 100 -0.5 0.5 P.dc.ntrack>0
 
-TH2F pFRAraw_XvsY 'SHMS FRA Raw X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
-TH2F pFRBraw_XvsY 'SHMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
+# TH2F pFRAraw_XvsY 'SHMS FRA Raw X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
+# TH2F pFRBraw_XvsY 'SHMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 100 0 1.0 100 0 1.0 P.dc.ntrack>0
 
 TH2F pFRApos_XvsY 'SHMS FRA X vs Y; FRA X Position (cm); FRA Y Position (cm)' P.rb.raster.fr_xa P.rb.raster.fr_ya 40 -0.2 0.2 40 -0.2 0.2 P.dc.ntrack>0
 TH2F pFRBpos_XvsY 'SHMS FRB X vs Y; FRB X Position (cm); FRB Y Position (cm)' P.rb.raster.fr_xb P.rb.raster.fr_yb 40 -0.2 0.2 40 -0.2 0.2 P.dc.ntrack>0

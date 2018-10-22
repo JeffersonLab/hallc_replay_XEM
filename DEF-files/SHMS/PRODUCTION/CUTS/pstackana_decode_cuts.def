@@ -3,6 +3,8 @@ Block: Decode
 pcut_TRIG1         T.shms.pTRIG1_tdcTimeRaw > 0
 pcut_TRIG2         T.shms.pTRIG2_tdcTimeRaw > 0
 pcut_TRIG3         T.shms.pTRIG3_tdcTimeRaw > 0
+pcut_TRIG4         T.shms.pTRIG3_tdcTimeRaw > 0
+pcut_TRIG5         T.shms.pTRIG5_tdcTimeRaw > 0
 SHMS_Pretrig  pcut_TRIG1 || pcut_TRIG2 || pcut_TRIG3
 
 shms_trigs        SHMS_event

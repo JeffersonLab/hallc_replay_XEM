@@ -1,6 +1,6 @@
-**************************
-* Drift Chamber Variables
-**************************
+#**************************
+#* Drift Chamber Variables
+#**************************
 
 block P.dc.x_fp
 block P.dc.xp_fp

@@ -103,22 +103,25 @@ void ped_tracking_trigger(TString golden_file="",TString trigger="", TString spe
   proto_sigma = Gaussian->GetParameter(2);
 
   gSystem->RedirectOutput("/dev/null","a");
-  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s Trigger Leg;%s; Difference of Pedestal Means (mV)",trigger.Data(),histname.Data()),1,0.5,1.5);
+  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s Trigger Leg;%s; (Gold -Present) Ped Means (mV)",trigger.Data(),histname.Data()),1,0.5,1.5);
   gSystem->RedirectOutput(0);
 
   Ped_Difference->SetBinContent(1,golden_mean - proto_mean);
   Ped_Difference->SetBinError(1,sqrt(pow(golden_sigma,2)+pow(proto_sigma,2)));
   
+  Double_t histmaxdiff = TMath::Abs(golden_mean - proto_mean)*1.2; 
+  if (histmaxdiff < 15) histmaxdiff = 15;
+
   //Start Drawing
   gStyle->SetOptStat(0);
-  Ped_Difference->SetAxisRange(-5,5,"Y");
+  Ped_Difference->SetAxisRange(-histmaxdiff,histmaxdiff,"Y");
   Ped_Difference->SetMarkerStyle(8);
   Ped_Difference->SetMarkerSize(1);
   Ped_Difference->DrawClone("PE1");
   gPad->Update();
-  TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-2,gPad->GetUxmax(),-2);
+  TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-3.5,gPad->GetUxmax(),-3.5);
   Lower_Limit->SetLineColor(kRed); Lower_Limit->SetLineWidth(3); Lower_Limit->SetLineStyle(2); Lower_Limit->Draw();
-  TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+2,gPad->GetUxmax(),+2);
+  TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+3.5,gPad->GetUxmax(),+3.5);
   Upper_Limit->SetLineColor(kRed); Upper_Limit->SetLineWidth(3); Upper_Limit->SetLineStyle(2); Upper_Limit->Draw();
 
   Ped_Difference->~TH1D();

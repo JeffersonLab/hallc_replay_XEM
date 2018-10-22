@@ -21,7 +21,18 @@
 #define MaxAdc 40.   //pC
 #define NBin   1000
 
-void paero_calib(string fname) {
+void paero_calib(string rootname = "") {
+
+  if (rootname=="") {
+  cout << "Please enter root file name...\n";
+  cin >> rootname;
+  }
+  
+  string fname = "../../ROOTfiles/" + rootname + ".root";
+  TString outputpdf;
+  outputpdf = "OUTPUT/" + rootname + ".pdf";
+  TString outputpng;
+  outputpng = "OUTPUT/" + rootname + ".png";
 
   TFile *f = new TFile(fname.c_str());
   TTree* tree;
@@ -55,17 +66,22 @@ void paero_calib(string fname) {
       hpos[i]->Fill(adc_pos[i], 1.);
       hneg[i]->Fill(adc_neg[i], 1.);
     }
+    
+    cout << "Entry " << ientry << "/" << nentries << '\n';
 
   }
 
   TCanvas* c1 = new TCanvas("adc_spec", "fADC spectra", 600, 800);
   c1->Divide(2,NPMT);
 
-  double flo_neg[NPMT] { 8., 8.,10., 8., 7., 5., 8.};
-  double fhi_neg[NPMT] {16.,13.,18.,14.,15.,10.,18.};
 
-  double flo_pos[NPMT] { 5., 6., 8.,10., 5., 6., 5.};
-  double fhi_pos[NPMT] {10.,12.,14.,17.,10.,12.,11.};
+  //ADC                {-1, -2, -3, -4, -5, -6, -7}
+  double flo_neg[NPMT] { 9., 7.,8., 8., 6., 5., 8.};
+  double fhi_neg[NPMT] {17.,14.,18.,15.,15.,12.,16.};
+
+  //ADC                {+1, +2, +3, +4, +5, +6, +7}
+  double flo_pos[NPMT] { 5., 6., 7.,9., 6., 7., 7.};
+  double fhi_pos[NPMT] {9.,14.,14.,17.,14.,14.,14.};
 
   float gain_pos[NPMT] {NPMT*0.};
   float gain_neg[NPMT] {NPMT*0.};
@@ -77,7 +93,7 @@ void paero_calib(string fname) {
       hpos[i]->Fit("gaus","","",flo_pos[i],fhi_pos[i]);
       hpos[i]->GetFunction("gaus")->SetLineColor(2);
       hpos[i]->GetFunction("gaus")->SetLineWidth(2);
-      gain_pos[i] = hpos[i]->GetFunction("gaus")->GetParameter(1);
+      gain_pos[i] = hpos[i]->GetFunction("gaus")->GetParameter(1);      
     }
     else
       hpos[i]->Draw();
@@ -86,11 +102,14 @@ void paero_calib(string fname) {
       hneg[i]->Fit("gaus","","",flo_neg[i],fhi_neg[i]);
       hneg[i]->GetFunction("gaus")->SetLineColor(2);
       hneg[i]->GetFunction("gaus")->SetLineWidth(2);
-      gain_neg[i] = hneg[i]->GetFunction("gaus")->GetParameter(1);
+      gain_neg[i] = hneg[i]->GetFunction("gaus")->GetParameter(1);    
     }
     else
       hneg[i]->Draw();
   }
+  
+  c1->Print(outputpdf);
+  c1->Print(outputpng);
 
   ofstream of;
   of.open("gain.r",ios::out);

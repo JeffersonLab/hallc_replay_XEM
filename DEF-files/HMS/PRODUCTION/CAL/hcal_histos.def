@@ -13,11 +13,11 @@ TH1F hcal_hD_good_occ_pos 'HMS hD+ Good Occupancy; PMT Number; Number of Entries
 # Good Multiplicity 
 TH1F hcal_hA_good_mult_pos 'HMS hA+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.1pr.totNumGoodPosAdcHits 13 0.5 13.5
 TH1F hcal_hA_good_mult_neg 'HMS hA- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT' H.cal.1pr.totNumGoodNegAdcHits 13 0.5 13.5
-TH1F hcal_hA_good_mult 'HMS hA Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.1pr.totnumGoodAdcHits 26 0.5 26.5
+# TH1F hcal_hA_good_mult 'HMS hA Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.1pr.totnumGoodAdcHits 26 0.5 26.5
 
 TH1F hcal_hB_good_mult_pos 'HMS hB+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.2ta.totNumGoodPosAdcHits 13 0.5 13.5
 TH1F hcal_hB_good_mult_neg 'HMS hB- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits / PMT' H.cal.2ta.totNumGoodNegAdcHits 13 0.5 13.5
-TH1F hcal_hB_good_mult 'HMS hB Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.2ta.totnumGoodAdcHits 26 0.5 26.5
+# TH1F hcal_hB_good_mult 'HMS hB Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits / PMT' H.cal.2ta.totnumGoodAdcHits 26 0.5 26.5
 
 TH1F hcal_hC_good_mult_pos 'HMS hC+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.3ta.totNumGoodPosAdcHits 13 0.5 13.5
 TH1F hcal_hD_good_mult_pos 'HMS hD+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits / PMT' H.cal.4ta.totNumGoodPosAdcHits 13 0.5 13.5
@@ -29,4 +29,3 @@ TH2F hcal_hB_good_pped_vs_pmt_pos 'HMS hB+ Good Pulse Pedestal vs. PMT Number; P
 TH2F hcal_hB_good_pped_vs_pmt_neg 'HMS hB- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.2ta.goodNegAdcPed 13 0.5 13.5 200 100 150 H.cal.2ta.goodNegAdcPed>0.0
 TH2F hcal_hC_good_pped_vs_pmt_pos 'HMS hC+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.3ta.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.3ta.goodPosAdcPed>0.0
 TH2F hcal_hD_good_pped_vs_pmt_pos 'HMS hD+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.4ta.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.4ta.goodPosAdcPed>0.0
-

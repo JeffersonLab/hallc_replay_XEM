@@ -20,5 +20,7 @@ phgcer_npe_thresh = 0.5
 # ADC time window cut values used to select "good" ADC events
 phgcer_adc_tdc_offset   =  200.0
 
-phgcer_adcTimeWindowMin = -1000.0, -1000.0, -1000.0, -1000.0
-phgcer_adcTimeWindowMax =  1000.0,  1000.0,  1000.0,  1000.0
+phgcer_adcTimeWindowMin = -40.0, -40.0, -40.0, -40.0
+phgcer_adcTimeWindowMax =  40.0,  40.0,  40.0,  40.0
+;phgcer_adcTimeWindowMin =   7.0,   5.0,   5.0,   5.0
+;phgcer_adcTimeWindowMax =  15.0,  13.0,  13.0,  13.0

@@ -2,7 +2,7 @@
 # Extended Target Correction Histograms
 #**************************************
 
-TH1F pextcor_xsieve 'SHMS Extended Target Correction X-Sieve; X_{sieve} (cm); Number of Entries / 0.1 cm' P.extcor.xsieve 300 -15 15 pcut_CleanTrack
-TH1F pextcor_ysieve 'SHMS Extended Target Correction Y-Sieve; Y_{sieve} (cm); Number of Entries / 0.1 cm' P.extcor.ysieve 200 -10 10 pcut_CleanTrack
+# TH1F pextcor_xsieve 'SHMS Extended Target Correction X-Sieve; X_{sieve} (cm); Number of Entries / 0.1 cm' P.extcor.xsieve 300 -15 15 pcut_CleanTrack
+# TH1F pextcor_ysieve 'SHMS Extended Target Correction Y-Sieve; Y_{sieve} (cm); Number of Entries / 0.1 cm' P.extcor.ysieve 200 -10 10 pcut_CleanTrack
 
 TH2F pextcor_xysieve 'SHMS Extended Target Correction XY-Sieve; Y_{sieve} / 0.1 cm; X_{sieve} / 0.1 cm' P.extcor.ysieve P.extcor.xsieve 200 -10 10 300 -15 15 pcut_CleanTrack

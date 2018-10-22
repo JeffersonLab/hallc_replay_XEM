@@ -12,22 +12,22 @@ TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; PMT Number; Numbe
 TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
 
 TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov NPE vs. PMT Number; PMT Number; NPE / 0.5 Photoelectrons' [I+1] P.hgcer.npe 4 0.5 4.5 60 0 30 P.hgcer.npe>0.0 
-TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total NPE; Total NPE; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 100 0 50 P.hgcer.npeSum>0.0 
+# TH1F phgcer_tot_npe 'SHMS Heavy Gas Cherenkov Total NPE; Total NPE; Number of Entries / 0.5 Photoelectrons' P.hgcer.npeSum 100 0 50 P.hgcer.npeSum>0.0 
 
 #-------------------------
 # SHMS HGC TRACK MATCHING
 #-------------------------
 
-sTH1F phgcer_trk_match 'SHMS Heavy Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' P.hgcer.numTracksMatched 4 0.5 4.5
-sTH1F phgcer_trk_fired 'SHMS Heavy Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' P.hgcer.numTracksFired 4 0.5 4.5
+# sTH1F phgcer_trk_match 'SHMS Heavy Gas Cherenkov Track Matches; PMT Number; Number of Tracks Matched' P.hgcer.numTracksMatched 4 0.5 4.5
+# sTH1F phgcer_trk_fired 'SHMS Heavy Gas Cherenkov Tracks Fired; PMT Number; Number of Tracks Fired' P.hgcer.numTracksFired 4 0.5 4.5
 
 #--------------------------
 # SHMS HGC TRACK PROJECTION
 #--------------------------
 
-TH1F phgcer_xtrack  'SHMS Heavy Gas Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' P.hgcer.xAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
-TH1F phgcer_ytrack  'SHMS Heavy Gas Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' P.hgcer.yAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
-TH2F phgcer_xytrack 'SHMS Heavy Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.hgcer.yAtCer P.hgcer.xAtCer 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+# TH1F phgcer_xtrack  'SHMS Heavy Gas Cherenkov Tracking X; X (cm); Number of Entries / 1 cm' P.hgcer.xAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+# TH1F phgcer_ytrack  'SHMS Heavy Gas Cherenkov Tracking Y; Y (cm); Number of Entries / 1 cm' P.hgcer.yAtCer 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
 
+TH2F phgcer_xytrack 'SHMS Heavy Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.hgcer.yAtCer P.hgcer.xAtCer 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
 TH2F phgcer_x_vs_npe 'SHMS Heavy Gas Cherenkov X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.hgcer.npeSum P.hgcer.xAtCer 60 0 30 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
 TH2F phgcer_y_vs_npe 'SHMS Heavy Gas Cherenkov Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.hgcer.npeSum P.hgcer.yAtCer 60 0 30 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0

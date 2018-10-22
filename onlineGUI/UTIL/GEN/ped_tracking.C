@@ -136,23 +136,34 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
 
 
   gSystem->RedirectOutput("/dev/null","a");
-  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s %s;PMT Number; Difference of Pedestal Means (mV)",detector.Data(),(polarity == 1) ? "+" : "-"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
+  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s %s;PMT Number;  (Gold - Present) Ped Means (mV)",detector.Data(),(polarity == 1) ? "+" : "-"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
   gSystem->RedirectOutput(0);
 
+  Double_t histmaxdiff = 0.; 
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize()-2); ipmt++) {
-    Ped_Difference->SetBinContent(ipmt+1,(H1_pmt->GetBinContent(ipmt+1)-H2_pmt->GetBinContent(ipmt+1)));
+    Double_t peddiff=(H1_pmt->GetBinContent(ipmt+1)-H2_pmt->GetBinContent(ipmt+1));
+    if (TMath::Abs(peddiff) == 1e+38) {
+      if (H1_pmt->GetBinContent(ipmt+1) == 1e+38) {
+             peddiff =-H2_pmt->GetBinContent(ipmt+1);
+     }
+      if (H2_pmt->GetBinContent(ipmt+1) == 1e+38) peddiff =H1_pmt->GetBinContent(ipmt+1);
+    }
+    Ped_Difference->SetBinContent(ipmt+1,peddiff);
+    if ( TMath::Abs( peddiff ) >histmaxdiff) histmaxdiff=TMath::Abs(peddiff);
     Ped_Difference->SetBinError(ipmt+1,sqrt(pow(H1_pmt->GetBinError(ipmt+1),2)+pow(H2_pmt->GetBinError(ipmt+1),2)));
   }
+  histmaxdiff = histmaxdiff*1.2;
+    if (histmaxdiff < 15) histmaxdiff = 15;
   //Start Drawing
   gStyle->SetOptStat(0);
-  Ped_Difference->SetAxisRange(-5,5,"Y");
+  Ped_Difference->SetAxisRange(-histmaxdiff,histmaxdiff,"Y");
   Ped_Difference->SetMarkerStyle(8);
   Ped_Difference->SetMarkerSize(1);
   Ped_Difference->DrawClone("PE1");
   gPad->Update();
-  TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-2,gPad->GetUxmax(),-2);
+  TLine *Lower_Limit = new TLine(gPad->GetUxmin(),-3.5,gPad->GetUxmax(),-3.5);
   Lower_Limit->SetLineColor(kRed); Lower_Limit->SetLineWidth(3); Lower_Limit->SetLineStyle(2); Lower_Limit->Draw();
-  TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+2,gPad->GetUxmax(),+2);
+  TLine *Upper_Limit = new TLine(gPad->GetUxmin(),+3.5,gPad->GetUxmax(),+3.5);
   Upper_Limit->SetLineColor(kRed); Upper_Limit->SetLineWidth(3); Upper_Limit->SetLineStyle(2); Upper_Limit->Draw();
 
   Ped_Difference->~TH1D();

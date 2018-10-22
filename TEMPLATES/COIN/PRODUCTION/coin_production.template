@@ -37,12 +37,12 @@ HMS BCM4C Charge: {H.BCM4C.scalerCharge/1000.:%.3f} mC
 HMS Unser Charge: {H.Unser.scalerCharge/1000.:%.3f} mC
 
 Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1MHz.scalerTimeCut:%.3f}s, or {((H.1MHz.scalerTimeCut/H.1MHz.scalerTime)*100.):%.3f}% of total run time.
-HMS BCM1 Beam Cut Current: {H.BCM1.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
-HMS BCM2 Beam Cut Current: {H.BCM2.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS BCM4A Beam Cut Current: {H.BCM4A.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
-HMS BCM4B Beam Cut Current: {H.BCM4B.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS BCM4C Beam Cut Current: {H.BCM4C.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
-HMS Unser Beam Cut Current: {H.Unser.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
+HMS BCM1 Beam Cut Current: {H.BCM1.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM2 Beam Cut Current: {H.BCM2.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4A Beam Cut Current: {H.BCM4A.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM4B Beam Cut Current: {H.BCM4B.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4C Beam Cut Current: {H.BCM4C.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS Unser Beam Cut Current: {H.Unser.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
 
 HMS BCM1  Beam Cut Charge: {H.BCM1.scalerChargeCut/1000. :%.3f} mC
 HMS BCM2  Beam Cut Charge: {H.BCM2.scalerChargeCut/1000.:%.3f} mC
@@ -68,12 +68,12 @@ SHMS BCM4C Charge: {P.BCM4C.scalerCharge/1000.:%.3f} mC
 SHMS Unser Charge: {P.Unser.scalerCharge/1000.:%.3f} mC
 
 Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {P.1MHz.scalerTimeCut:%.3f}s, or {((P.1MHz.scalerTimeCut/P.1MHz.scalerTime)*100.):%.3f}% of total run time.
-SHMS BCM1 Beam Cut Current: {P.BCM1.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
-SHMS BCM2 Beam Cut Current: {P.BCM2.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS BCM4A Beam Cut Current: {P.BCM4A.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
-SHMS BCM4B Beam Cut Current: {P.BCM4B.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS BCM4C Beam Cut Current: {P.BCM4C.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
-SHMS Unser Beam Cut Current: {P.Unser.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
+SHMS BCM1 Beam Cut Current: {P.BCM1.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM2 Beam Cut Current: {P.BCM2.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4A Beam Cut Current: {P.BCM4A.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM4B Beam Cut Current: {P.BCM4B.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4C Beam Cut Current: {P.BCM4C.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS Unser Beam Cut Current: {P.Unser.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
 
 SHMS BCM1  Beam Cut Charge: {P.BCM1.scalerChargeCut/1000.:%.3f} mC
 SHMS BCM2  Beam Cut Charge: {P.BCM2.scalerChargeCut/1000.:%.3f} mC
@@ -138,24 +138,24 @@ HMS Accepted Physics Triggers       : {HMS_physics_accepted.npassed}
 = Coin Trigger TDC Data scalers
 =:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
 
-Coin ROC2 pTRIG1 passed: {pTRIG1_ROC2.npassed}
-Coin ROC2 pTRIG2 passed: {pTRIG2_ROC2.npassed}
-Coin ROC2 pTRIG3 passed: {pTRIG3_ROC2.npassed}
-Coin ROC2 pTRIG4 passed: {pTRIG4_ROC2.npassed}
-Coin ROC2 pTRIG5 passed: {pTRIG5_ROC2.npassed}
-Coin ROC2 pTRIG6 passed: {pTRIG6_ROC2.npassed}
+Coin ROC2 pTRIG1 Accepted Triggers : {pTRIG1_ROC2.npassed}
+Coin ROC2 pTRIG2 Accepted Triggers : {pTRIG2_ROC2.npassed}
+Coin ROC2 pTRIG3 Accepted Triggers : {pTRIG3_ROC2.npassed}
+Coin ROC2 pTRIG4 Accepted Triggers : {pTRIG4_ROC2.npassed}
+Coin ROC2 pTRIG5 Accepted Triggers : {pTRIG5_ROC2.npassed}
+Coin ROC2 pTRIG6 Accepted Triggers : {pTRIG6_ROC2.npassed}
 
-Coin ROC1 pTRIG1 passed: {pTRIG1_ROC1.npassed}
-Coin ROC1 pTRIG2 passed: {pTRIG2_ROC1.npassed}
-Coin ROC1 pTRIG3 passed: {pTRIG3_ROC1.npassed}
-Coin ROC1 pTRIG4 passed: {pTRIG4_ROC1.npassed}
-Coin ROC1 pTRIG5 passed: {pTRIG5_ROC1.npassed}
-Coin ROC1 pTRIG6 passed: {pTRIG6_ROC1.npassed}
+Coin ROC1 pTRIG1 Accepted Triggers : {pTRIG1_ROC1.npassed}
+Coin ROC1 pTRIG2 Accepted Triggers : {pTRIG2_ROC1.npassed}
+Coin ROC1 pTRIG3 Accepted Triggers : {pTRIG3_ROC1.npassed}
+Coin ROC1 pTRIG4 Accepted Triggers : {pTRIG4_ROC1.npassed}
+Coin ROC1 pTRIG5 Accepted Triggers : {pTRIG5_ROC1.npassed}
+Coin ROC1 pTRIG6 Accepted Triggers : {pTRIG6_ROC1.npassed}
 
-HMS  Singles Triggers  :  {HMS_event.npassed}
+HMS Singles Triggers   :  {HMS_event.npassed}
 SHMS Singles Triggers  :  {SHMS_event.npassed}
-Coincidence  Triggers  :  {COIN_ONLY_event.npassed}
-All triggers           :  {ALL_events.npassed}
+Coincidence Triggers   :  {ALL_COIN_events.npassed}
+All Triggers           :  {ALL_events.npassed}
 
 =:=:=:=:=:=:=:=:=:=:=:=: 
 = SHMS Trigger Scalers
@@ -168,19 +168,19 @@ SHMS_pEL_REAL  :    {P.pEL_REAL.scaler} [ {(P.pEL_REAL.scaler/P.1MHz.scalerTime)
 SHMS_pEL_CLEAN :    {P.pEL_CLEAN.scaler}    [ {(P.pEL_CLEAN.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
 SHMS_pSTOF     :    {P.pSTOF.scaler}    [ {(P.pSTOF.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
-SHMS_pTRIG1 :   {P.pTRIG1.scaler}   [ {(P.pTRIG1.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_pTRIG2 :   {P.pTRIG2.scaler}   [ {(P.pTRIG2.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_pTRIG3 :   {P.pTRIG3.scaler}   [ {(P.pTRIG3.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_pTRIG4 :   {P.pTRIG4.scaler}   [ {(P.pTRIG4.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_pTRIG5 :   {P.pTRIG5.scaler}   [ {(P.pTRIG5.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_pTRIG6 :   {P.pTRIG6.scaler}   [ {(P.pTRIG6.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG1 Pre-triggers :  {P.pTRIG1.scaler}   [ {(P.pTRIG1.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG2 Pre-triggers :  {P.pTRIG2.scaler}   [ {(P.pTRIG2.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG3 Pre-triggers :  {P.pTRIG3.scaler}   [ {(P.pTRIG3.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG4 Pre-triggers :  {P.pTRIG4.scaler}   [ {(P.pTRIG4.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG5 Pre-triggers :  {P.pTRIG5.scaler}   [ {(P.pTRIG5.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG6 Pre-triggers :  {P.pTRIG6.scaler}   [ {(P.pTRIG6.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
-SHMS_hTRIG1 :   {P.hTRIG1.scaler}   [ {(P.hTRIG1.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_hTRIG2 :   {P.hTRIG2.scaler}   [ {(P.hTRIG2.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_hTRIG3 :   {P.hTRIG3.scaler}   [ {(P.hTRIG3.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_hTRIG4 :   {P.hTRIG4.scaler}   [ {(P.hTRIG4.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_hTRIG5 :   {P.hTRIG5.scaler}   [ {(P.hTRIG5.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
-SHMS_hTRIG6 :   {P.hTRIG6.scaler}   [ {(P.hTRIG6.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG1 Pre-scaled Pre-triggers :  {(P.pTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}   [ {((P.pTRIG1.scaler/gHC_ti_ps_factors[0])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG2 Pre-scaled Pre-triggers :  {(P.pTRIG2.scaler/gHC_ti_ps_factors[1]):%.0f}   [ {((P.pTRIG2.scaler/gHC_ti_ps_factors[1])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG3 Pre-scaled Pre-triggers :  {(P.pTRIG3.scaler/gHC_ti_ps_factors[2]):%.0f}   [ {((P.pTRIG3.scaler/gHC_ti_ps_factors[2])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG4 Pre-scaled Pre-triggers :  {(P.pTRIG4.scaler/gHC_ti_ps_factors[3]):%.0f}   [ {((P.pTRIG4.scaler/gHC_ti_ps_factors[3])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG5 Pre-scaled Pre-triggers :  {(P.pTRIG5.scaler/gHC_ti_ps_factors[4]):%.0f}   [ {((P.pTRIG5.scaler/gHC_ti_ps_factors[4])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG6 Pre-scaled Pre-triggers :  {(P.pTRIG6.scaler/gHC_ti_ps_factors[5]):%.0f}   [ {((P.pTRIG6.scaler/gHC_ti_ps_factors[5])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
 =:=:=:=:=:=:=:=:=:=:=:  
 = HMS Trigger Scalers
@@ -193,19 +193,19 @@ HMS_hEL_REAL  : {H.hEL_REAL.scaler} [ {(H.hEL_REAL.scaler/H.1MHz.scalerTime)/100
 HMS_hEL_CLEAN : {H.hEL_CLEAN.scaler}    [ {(H.hEL_CLEAN.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
 HMS_hSTOF     : {H.hSTOF.scaler}    [ {(H.hSTOF.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
-HMS_hTRIG1 :    {H.hTRIG1.scaler}   [ {(H.hTRIG1.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_hTRIG2 :    {H.hTRIG2.scaler}   [ {(H.hTRIG2.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_hTRIG3 :    {H.hTRIG3.scaler}   [ {(H.hTRIG3.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_hTRIG4 :    {H.hTRIG4.scaler}   [ {(H.hTRIG4.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_hTRIG5 :    {H.hTRIG5.scaler}   [ {(H.hTRIG5.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_hTRIG6 :    {H.hTRIG6.scaler}   [ {(H.hTRIG6.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG1 Pre-triggers :   {H.pTRIG1.scaler}   [ {(H.pTRIG1.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG2 Pre-triggers :   {H.pTRIG2.scaler}   [ {(H.pTRIG2.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG3 Pre-triggers :   {H.pTRIG3.scaler}   [ {(H.pTRIG3.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG4 Pre-triggers :   {H.pTRIG4.scaler}   [ {(H.pTRIG4.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG5 Pre-triggers :   {H.pTRIG5.scaler}   [ {(H.pTRIG5.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG6 Pre-triggers :   {H.pTRIG6.scaler}   [ {(H.pTRIG6.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
-HMS_pTRIG1 :    {H.pTRIG1.scaler}   [ {(H.pTRIG1.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_pTRIG2 :    {H.pTRIG2.scaler}   [ {(H.pTRIG2.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_pTRIG3 :    {H.pTRIG3.scaler}   [ {(H.pTRIG3.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_pTRIG4 :    {H.pTRIG4.scaler}   [ {(H.pTRIG4.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_pTRIG5 :    {H.pTRIG5.scaler}   [ {(H.pTRIG5.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
-HMS_pTRIG6 :    {H.pTRIG6.scaler}   [ {(H.pTRIG6.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG1 Pre-scaled Pre-triggers :  {(H.pTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}   [ {((H.pTRIG1.scaler/gHC_ti_ps_factors[0])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG2 Pre-scaled Pre-triggers :  {(H.pTRIG2.scaler/gHC_ti_ps_factors[1]):%.0f}   [ {((H.pTRIG2.scaler/gHC_ti_ps_factors[1])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG3 Pre-scaled Pre-triggers :  {(H.pTRIG3.scaler/gHC_ti_ps_factors[2]):%.0f}   [ {((H.pTRIG3.scaler/gHC_ti_ps_factors[2])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG4 Pre-scaled Pre-triggers :  {(H.pTRIG4.scaler/gHC_ti_ps_factors[3]):%.0f}   [ {((H.pTRIG4.scaler/gHC_ti_ps_factors[3])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG5 Pre-scaled Pre-triggers :  {(H.pTRIG5.scaler/gHC_ti_ps_factors[4]):%.0f}   [ {((H.pTRIG5.scaler/gHC_ti_ps_factors[4])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG6 Pre-scaled Pre-triggers :  {(H.pTRIG6.scaler/gHC_ti_ps_factors[5]):%.0f}   [ {((H.pTRIG6.scaler/gHC_ti_ps_factors[5])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
 
 =:=:=:=:
 = EDTM

@@ -1,0 +1,41 @@
+#**********************
+# SHMS Drift Chambers  *
+#**********************
+
+#------------------
+# SHMS DC WIRE MAP for per wire efficiency
+#   first set with "should" cut
+#-----------------
+
+TH1F pdc1u1_wirenum_should 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitShould[0] 107 0.5 107.5
+TH1F pdc1u2_wirenum_should 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[1]  107 0.5 107.5
+TH1F pdc1x1_wirenum_should 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[2]   79 0.5  79.5
+TH1F pdc1x2_wirenum_should 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[3]   79 0.5  79.5 
+TH1F pdc1v1_wirenum_should 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitShould[4] 107 0.5 107.5
+TH1F pdc1v2_wirenum_should 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[5]  107 0.5 107.5
+													             
+TH1F pdc2v2_wirenum_should 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[6]  107 0.5 107.5
+TH1F pdc2v1_wirenum_should 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[7]  107 0.5 107.5
+TH1F pdc2x2_wirenum_should 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[8]   79 0.5  79.5 
+TH1F pdc2x1_wirenum_should 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[9]   79 0.5  79.5 
+TH1F pdc2u2_wirenum_should 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[10] 107 0.5 107.5
+TH1F pdc2u1_wirenum_should 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[11] 107 0.5 107.5 
+#------------------
+# SHMS DC WIRE MAP for per wire efficiency
+#   first set with "did" cut
+#-----------------
+
+TH1F pdc1u1_wirenum_did 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitDid[0] 107 0.5 107.5 
+TH1F pdc1u2_wirenum_did 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[1]  107 0.5 107.5 
+TH1F pdc1x1_wirenum_did 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[2]   79 0.5  79.5 
+TH1F pdc1x2_wirenum_did 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[3]   79 0.5  79.5 
+TH1F pdc1v1_wirenum_did 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitDid[4] 107 0.5 107.5 
+TH1F pdc1v2_wirenum_did 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[5]  107 0.5 107.5 
+												               
+TH1F pdc2v2_wirenum_did 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[6]  107 0.5 107.5 
+TH1F pdc2v1_wirenum_did 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[7]  107 0.5 107.5 
+TH1F pdc2x2_wirenum_did 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[8]   79 0.5  79.5 
+TH1F pdc2x1_wirenum_did 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[9]   79 0.5  79.5 
+TH1F pdc2u2_wirenum_did 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[10] 107 0.5 107.5 
+TH1F pdc2u1_wirenum_did 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[11] 107 0.5 107.5 
+

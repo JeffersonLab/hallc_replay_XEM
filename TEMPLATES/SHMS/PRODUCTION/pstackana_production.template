@@ -66,8 +66,9 @@ SHMS 3/4 Trigger Rate       : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
 Accepted SHMS Triggers      : {pcut_TRIG1.npassed}
 SHMS Event Types            : {SHMS_Pretrig.npassed}
 
-SHMS Computer Live Time : {(pcut_TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {(pcut_TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
-SHMS Computer Dead Time : {100.0 - (pcut_TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (pcut_TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+
+SHMS TRIG5 Computer Live Time : {(pcut_TRIG5.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {(pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
+SHMS TRIG5 Computer Dead Time : {100.0 - (pcut_TRIG5.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {100.0 - (pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
 
 =:=:=:=:=:=:=:=:=:=:=:=:
 = Physics 3/4 Triggers
@@ -134,14 +135,14 @@ Total Dead Time (EDTM) : {100.0 - (pcut_edtm_accepted.npassed / P.EDTM.scaler)*1
 SHMS Computer Live Time : {(pcut_TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % 
 SHMS Computer Dead Time : {100.0 - (pcut_TRIG1.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % 
 
-Pre-Scaled Ps1 SHMS Computer Live Time : {(pcut_TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
-Pre-Scaled Ps1 SHMS Computer Dead Time : {100.0 - (pcut_TRIG1.npassed / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 SHMS Computer Live Time : {((pcut_TRIG1.npassed-pcut_TRIG5.npassed) / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
+Pre-Scaled Ps1 SHMS Computer Dead Time : {100.0 - ( (pcut_TRIG1.npassed-pcut_TRIG5.npassed) / (P.pTRIG1.scaler/gpconfig_ti_ps_factors[0]))*100.0:%3.4f} %
 
-Pre-Scaled Ps2 SHMS Computer Live Time : {(pcut_TRIG2.npassed / (P.pTRIG2.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
-Pre-Scaled Ps2 SHMS Computer Dead Time : {100.0 - (pcut_TRIG2.npassed / (P.pTRIG2.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %
+Pre-Scaled Ps3 SHMS Computer Live Time : {((pcut_TRIG3.npassed-pcut_TRIG5.npassed) / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps3 SHMS Computer Dead Time : {100.0 - ((pcut_TRIG3.npassed-pcut_TRIG5.npassed) / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 
-Pre-Scaled Ps3 SHMS Computer Live Time : {(pcut_TRIG3.npassed / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
-Pre-Scaled Ps3 SHMS Computer Dead Time : {100.0 - (pcut_TRIG3.npassed / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %
+Pre-Scaled Ps5 SHMS Computer Live Time : {(pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %
+Pre-Scaled Ps5 SHMS Computer Dead Time : {100.0 - (pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %
 
 Total Live Time (EDTM) : {(pcut_edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %
 Total Dead Time (EDTM) : {100.0 - (pcut_edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %

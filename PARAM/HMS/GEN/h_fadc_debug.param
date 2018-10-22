@@ -1,5 +1,5 @@
-hcer_debug_adc = 0
-hcal_debug_adc = 0
-hhodo_debug_adc = 0
-hdc_debug_adc = 0
+hcer_debug_adc = 1
+hcal_debug_adc = 1
+hhodo_debug_adc = 1
+hdc_debug_adc = 1
 haero_debug_adc = 0

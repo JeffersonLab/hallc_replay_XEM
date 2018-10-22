@@ -3,14 +3,14 @@
 # TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
 #-------------------------------------------------------------------------------------
 
-TH1F hcal_etrack 'HMS Calorimeter Total Track Energy; Track Energy Deposition (GeV); Number of Entries / 0.1 GeV' H.cal.etrack 100 0 10 H.cal.etrack>0.0 
-TH1F hcal_etracknorm 'HMS Calorimeter Normalized Track Energy; Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0
-TH1F hcal_etracknorm_track 'HMS Calorimeter Normalized Track Energy (Ntrack > 0); Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0&&H.dc.ntrack>0
-TH1F hcal_etracknorm_track_elec 'HMS Cal E/p Elec (npeSum>.5 && abs(del)<8); E/p; Entries / 0.005' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum>.5&&H.cer.npeSum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
-TH1F hcal_etracknorm_track_pion 'HMS Cal E/p Pion (npeSum<.5 && abs(del)<8); E/p; Entries / 0.005' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum<.5&&H.cer.npeSum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
-TH1F hcal_etrack_track_elec 'HMS Cal Electron Energy (npeSum>.5 && abs(del)<8); etrack; Entries / 0.005' H.cal.etrack 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum>.5&&H.cer.npeSum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
-TH1F hcal_etrack_track_pion 'HMS Cal Pion Energy (npeSum<.5 && abs(del)<8); etrack; Entries / 0.005' H.cal.etrack 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum<.5&&H.cer.npeSum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
-TH2F hcal_etot_etrack  'HMS Cal energy vs. track energy; Track Energy Deposition (GeV) / 0.005 GeV; Total Energy (GeV) / 0.005 GeV' H.cal.etrack H.cal.etot 1000 0. 5. 1000 0. 5. H.dc.ntrack>0
+# TH1F hcal_etrack 'HMS Calorimeter Total Track Energy; Track Energy Deposition (GeV); Number of Entries / 0.1 GeV' H.cal.etrack 100 0 10 H.cal.etrack>0.0 
+# TH1F hcal_etracknorm 'HMS Calorimeter Normalized Track Energy; Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0
+# TH1F hcal_etracknorm_track 'HMS Calorimeter Normalized Track Energy (Ntrack > 0); Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0&&H.dc.ntrack>0
+# TH1F hcal_etracknorm_track_elec 'HMS Cal E/p Elec (npeSum>.5 && abs(del)<8); E/p; Entries / 0.005' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum>.5&&H.cer.npeSum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+# TH1F hcal_etracknorm_track_pion 'HMS Cal E/p Pion (npeSum<.5 && abs(del)<8); E/p; Entries / 0.005' H.cal.etracknorm 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum<.5&&H.cer.npeSum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+# TH1F hcal_etrack_track_elec 'HMS Cal Electron Energy (npeSum>.5 && abs(del)<8); etrack; Entries / 0.005' H.cal.etrack 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum>.5&&H.cer.npeSum>.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+# TH1F hcal_etrack_track_pion 'HMS Cal Pion Energy (npeSum<.5 && abs(del)<8); etrack; Entries / 0.005' H.cal.etrack 300 0. 1.5 H.dc.ntrack>0&&H.cer.npeSum<.5&&H.cer.npeSum<.5&&H.gtr.dp>-8.&&H.gtr.dp<8.
+# TH2F hcal_etot_etrack  'HMS Cal energy vs. track energy; Track Energy Deposition (GeV) / 0.005 GeV; Total Energy (GeV) / 0.005 GeV' H.cal.etrack H.cal.etot 1000 0. 5. 1000 0. 5. H.dc.ntrack>0
 TH2F hcal_npe_etracknorm 'HMS Cer Npe vs. Cal E/p; Normalized Track Energy Deposition / 0.005; cer NPE / 0.025 NPE' H.cal.etracknorm H.cer.npeSum 300 0. 1.5 60 0. 15. H.dc.ntrack>0
 
 #-------------------------------
@@ -32,40 +32,40 @@ TH2F hcal_delta_etracknorm_pi   'HMS Delta vs. Cal E/p; Normalized Track Energy 
 #  CLUSTERING PLOTS
 #---------------------------
 
-TH1F hcal_xclusttrack 'HMS Cal Cluster X Pos; Cluster X (cm); Entries / 1 cm' H.cal.xclusttrack 200 -100. 100. H.cal.nclusttrack>-1
-TH1F hcal_xdiff       'HMS Cal Cluster X - Track X; Cluster X - Track X (cm); Entries / 0.2 cm' H.cal.xclusttrack-H.cal.xtrack 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH2F hcal_xdiff_v_xtr 'HMS Cal (Cluster X- Track X) vs. (Track X); Track X (cm) / 0.2 cm; Cluster X - Track X (cm) / 0.2 cm' H.cal.xtrack H.cal.xclusttrack-H.cal.xtrack 1000 -100. 100. 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH1F hcal_xtrack      'HMS Cal Track X; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH1F hcal_xtrack1     'HMS Cal Track x pos with no matching clust; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
-TH1F hcal_xtrack2     'HMS Cal Track x pos with no matching clust number of cluster=1; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
-TH1F hcal_yclusttrack 'HMS Cal Cluster y Pos; Cluster y (cm); Entries / 1 cm' H.cal.yclusttrack 200 -100. 100. H.cal.nclusttrack>-1
-TH1F hcal_ydiff       'HMS Cal Cluster y - Track y; Cluster y - Track y (cm); Entries / 0.2 cm' H.cal.yclusttrack-H.cal.ytrack 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH2F hcal_ydiff_v_ytr 'HMS Cal (Cluster y - Track y) vs. (Track y); Track y (cm) / 0.2 cm; Cluster y - Track y (cm) / 0.2 cm' H.cal.ytrack H.cal.yclusttrack-H.cal.ytrack 1000 -100. 100. 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH1F hcal_ytrack      'HMS Cal Track y; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH1F hcal_ytrack1     'HMS Cal Track y pos with no matching clust; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
-TH1F hcal_ytrack2     'HMS Cal Track y pos with no matching clust number of cluster=1; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
-TH2F hcal_xytrack      'HMS Cal Track X vs Track Y; Track Y / 1 cm; Track X / 1 cm' H.cal.ytrack H.cal.xtrack 200 -100 100 200 -100 100 H.dc.ntrack>0
-TH2F hcal_xyclusttrack 'HMS Cal Cluster X vs Cluster Y; Cluster Y / 1 cm; Cluster X / 1 cm' H.cal.yclusttrack H.cal.xclusttrack 200 -100 100 200 -100 100 H.cal.nclusttrack>-1&&H.dc.ntrack>0
-TH2F hcal_xtrack_vs_etrack 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack
-TH2F hcal_ytrack_vs_etrack 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack
+# TH1F hcal_xclusttrack 'HMS Cal Cluster X Pos; Cluster X (cm); Entries / 1 cm' H.cal.xclusttrack 200 -100. 100. H.cal.nclusttrack>-1
+# TH1F hcal_xdiff       'HMS Cal Cluster X - Track X; Cluster X - Track X (cm); Entries / 0.2 cm' H.cal.xclusttrack-H.cal.xtrack 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH2F hcal_xdiff_v_xtr 'HMS Cal (Cluster X- Track X) vs. (Track X); Track X (cm) / 0.2 cm; Cluster X - Track X (cm) / 0.2 cm' H.cal.xtrack H.cal.xclusttrack-H.cal.xtrack 1000 -100. 100. 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH1F hcal_xtrack      'HMS Cal Track X; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH1F hcal_xtrack1     'HMS Cal Track x pos with no matching clust; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+# TH1F hcal_xtrack2     'HMS Cal Track x pos with no matching clust number of cluster=1; Track X (cm); Entries / 0.2 cm' H.cal.xtrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+# TH1F hcal_yclusttrack 'HMS Cal Cluster y Pos; Cluster y (cm); Entries / 1 cm' H.cal.yclusttrack 200 -100. 100. H.cal.nclusttrack>-1
+# TH1F hcal_ydiff       'HMS Cal Cluster y - Track y; Cluster y - Track y (cm); Entries / 0.2 cm' H.cal.yclusttrack-H.cal.ytrack 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH2F hcal_ydiff_v_ytr 'HMS Cal (Cluster y - Track y) vs. (Track y); Track y (cm) / 0.2 cm; Cluster y - Track y (cm) / 0.2 cm' H.cal.ytrack H.cal.yclusttrack-H.cal.ytrack 1000 -100. 100. 200 -50. 50. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH1F hcal_ytrack      'HMS Cal Track y; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH1F hcal_ytrack1     'HMS Cal Track y pos with no matching clust; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+# TH1F hcal_ytrack2     'HMS Cal Track y pos with no matching clust number of cluster=1; Track y (cm); Entries / 0.2 cm' H.cal.ytrack 1000 -100. 100. H.cal.nclusttrack==-1&&H.cal.nclust==0&&H.gtr.dp>-8.&&H.gtr.dp<8.&&H.dc.ntrack>0
+# TH2F hcal_xytrack      'HMS Cal Track X vs Track Y; Track Y / 1 cm; Track X / 1 cm' H.cal.ytrack H.cal.xtrack 200 -100 100 200 -100 100 H.dc.ntrack>0
+# TH2F hcal_xyclusttrack 'HMS Cal Cluster X vs Cluster Y; Cluster Y / 1 cm; Cluster X / 1 cm' H.cal.yclusttrack H.cal.xclusttrack 200 -100 100 200 -100 100 H.cal.nclusttrack>-1&&H.dc.ntrack>0
+# TH2F hcal_xtrack_vs_etrack 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack
+# TH2F hcal_ytrack_vs_etrack 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack
 TH2F hcal_xtrack_vs_etracknorm 'HMS Calorimeter xtrack vs Normalized Track Energy; Track Energy Deposition (Gev) / 0.01 GeV; X Track (cm) / 1 cm' H.cal.etracknorm H.cal.xtrack 150 0 1.5 130 -65 65 hcut_CleanTrack
 TH2F hcal_ytrack_vs_etracknorm 'HMS Calorimeter ytrack vs Normalized Track Energy; Track Energy Deposition (Gev) / 0.01 GeV; Y Track (cm) / 1 cm' H.cal.etracknorm H.cal.ytrack 150 0 1.5 70 -35 35 hcut_CleanTrack
 
-TH2F hcal_xtrack_vs_etrack_elec 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec
-TH2F hcal_ytrack_vs_etrack_elec 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec
-TH2F hcal_xtrack_vs_etrack_pi 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_pi
-TH2F hcal_ytrack_vs_etrack_pi 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_pi
+# TH2F hcal_xtrack_vs_etrack_elec 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec
+# TH2F hcal_ytrack_vs_etrack_elec 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_elec
+# TH2F hcal_xtrack_vs_etrack_pi 'HMS Calorimeter xtrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; X Track (cm) / 1 cm' H.cal.etrack H.cal.xtrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_pi
+# TH2F hcal_ytrack_vs_etrack_pi 'HMS Calorimeter ytrack vs total track energy; Track Energy Deposition (Gev) / 0.1 GeV; Y Track (cm) / 1 cm' H.cal.etrack H.cal.ytrack 100 0 10 200 -100 100 hcut_CleanTrack&&hcut_cer_pi
 
 
 #**********************
 # HMS Drift Chambers  *
 #**********************
 
-TH1F hdc_trk_beta_elec  'HMS DC ElectronTrack Beta; Beta; Number of Entires'  H.tr.beta 300 -1.5 1.5 hcut_CleanTrack&&hcut_cer_elec
-TH1F hdc_trk_beta_pi    'HMS DC Pion Track Beta; Beta; Number of Entires'     H.tr.beta 300 -1.5 1.5 hcut_CleanTrack&&hcut_cer_pi
+# TH1F hdc_trk_beta_elec  'HMS DC ElectronTrack Beta; Beta; Number of Entires'  H.tr.beta 300 -1.5 1.5 hcut_CleanTrack&&hcut_cer_elec
+# TH1F hdc_trk_beta_pi    'HMS DC Pion Track Beta; Beta; Number of Entires'     H.tr.beta 300 -1.5 1.5 hcut_CleanTrack&&hcut_cer_pi
 
-TH1F hdc_trk_mom_elec   'HMS DC Electron Track Momentum; P (GeV); Number of Entires / 10 MeV' H.tr.p 600 0 6 hcut_CleanTrack&&hcut_cer_elec
-TH1F hdc_trk_mom_pi     'HMS DC Pion Track Momentum; P (GeV); Number of Entires / 10 MeV'     H.tr.p 600 0 6 hcut_CleanTrack&&hcut_cer_pi
+# TH1F hdc_trk_mom_elec   'HMS DC Electron Track Momentum; P (GeV); Number of Entires / 10 MeV' H.tr.p 600 0 6 hcut_CleanTrack&&hcut_cer_elec
+# TH1F hdc_trk_mom_pi     'HMS DC Pion Track Momentum; P (GeV); Number of Entires / 10 MeV'     H.tr.p 600 0 6 hcut_CleanTrack&&hcut_cer_pi
 
 #----------------------------------------------------------------
 # HMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
@@ -76,12 +76,12 @@ TH1F hhodo_beta 'HMS Hodo Beta; Beta; Number of Entries / 0.015' H.hod.beta 100 
 TH1F hhodo_fpHitsTime 'HMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' H.hod.fpHitsTime 90 0 90 
 TH1F hhodo_starttime 'HMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' H.hod.starttime 90 0 90
 TH1F hhodo_good_startime 'HMS Hodo Good Start Flag; Good Start Time Flag (=1 is good); Number of Entries' H.hod.goodstarttime 5 0 5
-#TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
-TH1F hhodo_1x_diffdistrack 'HMS Hodo 1X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1x.DiffDisTrack 100 -10. 10.
-TH1F hhodo_1y_diffdistrack 'HMS Hodo 1Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1y.DiffDisTrack 100 -10. 10.
-TH1F hhodo_2x_diffdistrack 'HMS Hodo 2X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2x.DiffDisTrack 100 -10. 10.
-TH1F hhodo_2y_diffdistrack 'HMS Hodo 2Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2y.DiffDisTrack 100 -10. 10.
-TH2F hhodo_1x_diffdistrack_v_xtrack 'HMS Hodo 1X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.1x.DiffDisTrack H.hod.1x.TrackXPos 100 -10. 10. 200 -100 100
-TH2F hhodo_1y_diffdistrack_v_ytrack 'HMS Hodo 1Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.1y.DiffDisTrack H.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
-TH2F hhodo_2x_diffdistrack_v_xtrack 'HMS Hodo 2X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.2x.DiffDisTrack H.hod.2x.TrackXPos 100 -10. 10. 200 -100 100
-TH2F hhodo_2y_diffdistrack_v_ytrack 'HMS Hodo 2Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.2y.DiffDisTrack H.hod.2y.TrackYPos 100 -10. 10. 240 -60 60
+# TH2F hhodo_xhod_vs_yhod 'HMS Hodo Projected X vs. Y; Y_hodo(cm) / 1mm; X_hodo(cm) / 1mm' H.hod.y_hodo H.hod.x_hodo 1000 -50 50 1000 -50 50
+# TH1F hhodo_1x_diffdistrack 'HMS Hodo 1X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1x.DiffDisTrack 100 -10. 10.
+# TH1F hhodo_1y_diffdistrack 'HMS Hodo 1Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.1y.DiffDisTrack 100 -10. 10.
+# TH1F hhodo_2x_diffdistrack 'HMS Hodo 2X Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2x.DiffDisTrack 100 -10. 10.
+# TH1F hhodo_2y_diffdistrack 'HMS Hodo 2Y Diff Distance track (cm); Diff distance (cm); Counts ' H.hod.2y.DiffDisTrack 100 -10. 10.
+# TH2F hhodo_1x_diffdistrack_v_xtrack 'HMS Hodo 1X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.1x.DiffDisTrack H.hod.1x.TrackXPos 100 -10. 10. 200 -100 100
+# TH2F hhodo_1y_diffdistrack_v_ytrack 'HMS Hodo 1Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.1y.DiffDisTrack H.hod.1y.TrackYPos 100 -10. 10. 240 -60 60
+# TH2F hhodo_2x_diffdistrack_v_xtrack 'HMS Hodo 2X Diff Distance track (cm) versus Track X (cm); Diff distance (cm); X track (cm)'  H.hod.2x.DiffDisTrack H.hod.2x.TrackXPos 100 -10. 10. 200 -100 100
+# TH2F hhodo_2y_diffdistrack_v_ytrack 'HMS Hodo 2Y Diff Distance track (cm) versus Track Y (cm); Diff distance (cm); Y track (cm)'  H.hod.2y.DiffDisTrack H.hod.2y.TrackYPos 100 -10. 10. 240 -60 60

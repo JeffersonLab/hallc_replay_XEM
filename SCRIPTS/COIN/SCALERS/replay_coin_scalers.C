@@ -1,4 +1,4 @@
-void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0,Int_t FirstEvent=1) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -116,7 +116,7 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Eventually need to learn to skip over, or properly analyze
   // the pedestal events
-  run->SetEventRange(1, MaxEvent);    // Physics Event number, does not
+  run->SetEventRange(FirstEvent, MaxEvent);    // Physics Event number, does not
                                       // include scaler or control events.
   run->SetNscan(1);
   run->SetDataRequired(0x7);
@@ -128,6 +128,7 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
   analyzer->SetEvent(event);
+  analyzer->SetMarkInterval(100000);
   // Set EPICS event type
   analyzer->SetEpicsEvtType(180);
   // Define crate map

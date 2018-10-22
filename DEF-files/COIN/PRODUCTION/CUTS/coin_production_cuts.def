@@ -1,29 +1,29 @@
 Block: RawDecode
 #include "DEF-files/COIN/PRODUCTION/CUTS/coin_rawdecode_cuts.def"
-RawDecode_master  ALL_events
+RawDecode_master ALL_events
 
 Block: Decode
 #include "DEF-files/COIN/PRODUCTION/CUTS/coin_decode_cuts.def"
-Decode_master     ALL_COIN_NO_EDTM
+Decode_master ALL_events_NO_EDTM
 
 Block: CoarseTracking
 #include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_coarsetracking_cuts.def"
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_coarsetracking_cuts.def"
-CoarseTracking_master ALL_COIN_NO_EDTM
+CoarseTracking_master ALL_events_NO_EDTM
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_COIN_NO_EDTM
+CoarseReconstruct_master ALL_events_NO_EDTM
 
 Block: Tracking
-Tracking_master  ALL_COIN_NO_EDTM
+Tracking_master ALL_events_NO_EDTM
 
 Block: Reconstruct
 #include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_reconstruct_cuts.def"
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_reconstruct_cuts.def"
 #include "DEF-files/COIN/PRODUCTION/CUTS/coin_reconstruct_cuts.def"
-Reconstruct_master ALL_COIN_NO_EDTM
+Reconstruct_master ALL_events_NO_EDTM
 
 Block: Physics
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_physics_cuts.def"
 #include "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_physics_cuts.def"
-Physics_master ALL_COIN_NO_EDTM
+Physics_master ALL_events_NO_EDTM

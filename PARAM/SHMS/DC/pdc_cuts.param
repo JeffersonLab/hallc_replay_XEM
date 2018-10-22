@@ -16,5 +16,5 @@ pdc_fix_lr = 1
 pdc_fix_propcorr = 1
 
 ; Zero time correction for each plane in ns that is added to TDC time.
-pdc_plane_time_zero = 1270.0, 1270.0, 1270.0, 1270.0, 1270.0, 1270.0
-                      1270.0, 1270.0, 1270.0, 1270.0, 1270.0, 1270.0
+pdc_plane_time_zero = 1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25.
+                      1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25., 1270.0+25.

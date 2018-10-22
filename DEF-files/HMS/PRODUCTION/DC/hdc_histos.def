@@ -1,24 +1,41 @@
 #**********************
 # HMS Drift Chambers  *
 #**********************
+#------------------
+# HMS DC Raw WIRE MAP
+#------------------
+
+TH1F hdc1u1_rawwirenum 'HMS DC 1U1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1u1.raw.wirenum 96 0.5 96.5
+TH1F hdc1u2_rawwirenum 'HMS DC 1U2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1u2.raw.wirenum 96 0.5 96.5
+TH1F hdc1x1_rawwirenum 'HMS DC 1X1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1x1.raw.wirenum  102 0.5  102.5
+TH1F hdc1x2_rawwirenum 'HMS DC 1X2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1x2.raw.wirenum  102 0.5  102.5
+TH1F hdc1v1_rawwirenum 'HMS DC 1V1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1v1.raw.wirenum 96 0.5 96.5
+TH1F hdc1v2_rawwirenum 'HMS DC 1V2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.1v2.raw.wirenum 96 0.5 96.5
+
+TH1F hdc2v2_rawwirenum 'HMS DC 2V2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2v2.raw.wirenum 96 0.5 96.5
+TH1F hdc2v1_rawwirenum 'HMS DC 2V1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2v1.raw.wirenum 96 0.5 96.5
+TH1F hdc2x2_rawwirenum 'HMS DC 2X2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2x2.raw.wirenum  102 0.5  102.5
+TH1F hdc2x1_rawwirenum 'HMS DC 2X1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2x1.raw.wirenum  102 0.5  102.5
+TH1F hdc2u2_rawwirenum 'HMS DC 2U2 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2u2.raw.wirenum 96 0.5 96.5
+TH1F hdc2u1_rawwirenum 'HMS DC 2U1 Raw Wiremap; Wire Number (all hits); Number of Entries' H.dc.2u1.raw.wirenum 96 0.5 96.5
 
 #------------------
 # HMS DC WIRE MAP
 #------------------
 
-TH1F hdc1u1_wirenum 'HMS DC 1U1 Wiremap; Wire Number; Number of Entries' H.dc.1u1.wirenum 96 0.5 96.5
-TH1F hdc1u2_wirenum 'HMS DC 1U2 Wiremap; Wire Number; Number of Entries' H.dc.1u2.wirenum 96 0.5 96.5
-TH1F hdc1x1_wirenum 'HMS DC 1X1 Wiremap; Wire Number; Number of Entries' H.dc.1x1.wirenum  102 0.5  102.5
-TH1F hdc1x2_wirenum 'HMS DC 1X2 Wiremap; Wire Number; Number of Entries' H.dc.1x2.wirenum  102 0.5  102.5
-TH1F hdc1v1_wirenum 'HMS DC 1V1 Wiremap; Wire Number; Number of Entries' H.dc.1v1.wirenum 96 0.5 96.5
-TH1F hdc1v2_wirenum 'HMS DC 1V2 Wiremap; Wire Number; Number of Entries' H.dc.1v2.wirenum 96 0.5 96.5
+TH1F hdc1u1_wirenum 'HMS DC 1U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1u1.wirenum 96 0.5 96.5
+TH1F hdc1u2_wirenum 'HMS DC 1U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1u2.wirenum 96 0.5 96.5
+TH1F hdc1x1_wirenum 'HMS DC 1X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1x1.wirenum  102 0.5  102.5
+TH1F hdc1x2_wirenum 'HMS DC 1X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1x2.wirenum  102 0.5  102.5
+TH1F hdc1v1_wirenum 'HMS DC 1V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1v1.wirenum 96 0.5 96.5
+TH1F hdc1v2_wirenum 'HMS DC 1V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.1v2.wirenum 96 0.5 96.5
 
-TH1F hdc2v2_wirenum 'HMS DC 2V2 Wiremap; Wire Number; Number of Entries' H.dc.2v2.wirenum 96 0.5 96.5
-TH1F hdc2v1_wirenum 'HMS DC 2V1 Wiremap; Wire Number; Number of Entries' H.dc.2v1.wirenum 96 0.5 96.5
-TH1F hdc2x2_wirenum 'HMS DC 2X2 Wiremap; Wire Number; Number of Entries' H.dc.2x2.wirenum  102 0.5  102.5
-TH1F hdc2x1_wirenum 'HMS DC 2X1 Wiremap; Wire Number; Number of Entries' H.dc.2x1.wirenum  102 0.5  102.5
-TH1F hdc2u2_wirenum 'HMS DC 2U2 Wiremap; Wire Number; Number of Entries' H.dc.2u2.wirenum 96 0.5 96.5
-TH1F hdc2u1_wirenum 'HMS DC 2U1 Wiremap; Wire Number; Number of Entries' H.dc.2u1.wirenum 96 0.5 96.5
+TH1F hdc2v2_wirenum 'HMS DC 2V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2v2.wirenum 96 0.5 96.5
+TH1F hdc2v1_wirenum 'HMS DC 2V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2v1.wirenum 96 0.5 96.5
+TH1F hdc2x2_wirenum 'HMS DC 2X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2x2.wirenum  102 0.5  102.5
+TH1F hdc2x1_wirenum 'HMS DC 2X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2x1.wirenum  102 0.5  102.5
+TH1F hdc2u2_wirenum 'HMS DC 2U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2u2.wirenum 96 0.5 96.5
+TH1F hdc2u1_wirenum 'HMS DC 2U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' H.dc.2u1.wirenum 96 0.5 96.5
 
 #------------------------------
 # HMS DC DRIFT TIME PER PLANE 

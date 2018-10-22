@@ -2,34 +2,34 @@
 # Trigger Apparatus *
 #********************
 
-TH1F htrig_h1x_tdc_mult 'HMS h1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1X_tdcMultiplicity 11 0 11
-TH1F htrig_h1y_tdc_mult 'HMS h1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1Y_tdcMultiplicity 11 0 11
-TH1F htrig_h2x_tdc_mult 'HMS h2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2X_tdcMultiplicity 11 0 11
-TH1F htrig_h2y_tdc_mult 'HMS h2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2Y_tdcMultiplicity 11 0 11
+# TH1F htrig_h1x_tdc_mult 'HMS h1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1X_tdcMultiplicity 11 0 11
+# TH1F htrig_h1y_tdc_mult 'HMS h1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1Y_tdcMultiplicity 11 0 11
+# TH1F htrig_h2x_tdc_mult 'HMS h2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2X_tdcMultiplicity 11 0 11
+# TH1F htrig_h2y_tdc_mult 'HMS h2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2Y_tdcMultiplicity 11 0 11
 
-TH1F htrig_h1T_tdc_mult 'HMS h1x/h1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1T_tdcMultiplicity 11 0 11
-TH1F htrig_h2T_tdc_mult 'HMS h2x/h2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2T_tdcMultiplicity 11 0 11
+# TH1F htrig_h1T_tdc_mult 'HMS h1x/h1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h1T_tdcMultiplicity 11 0 11
+# TH1F htrig_h2T_tdc_mult 'HMS h2x/h2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.hms.h2T_tdcMultiplicity 11 0 11
 
-TH1F htrig_hT1_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 2, Channel 6); TDC Multiplicity; Counts / 1' T.hms.hT1_tdcMultiplicity 11 0 11
-TH1F htrig_hT2_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 20, Channel 127); TDC Multiplicity; Counts / 1' T.hms.hT2_tdcMultiplicity 11 0 11
-TH1F htrig_hT3_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 2, Channel 63); TDC Multiplicity; Counts / 1' T.hms.hT3_tdcMultiplicity 11 0 11
+# TH1F htrig_hT1_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 2, Channel 6); TDC Multiplicity; Counts / 1' T.hms.hT1_tdcMultiplicity 11 0 11
+# TH1F htrig_hT2_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 20, Channel 127); TDC Multiplicity; Counts / 1' T.hms.hT2_tdcMultiplicity 11 0 11
+# TH1F htrig_hT3_tdc_mult 'HMS h1x/h1y/h2x/h2y Coincidence TDC Multiplicity (Slot 2, Channel 63); TDC Multiplicity; Counts / 1' T.hms.hT3_tdcMultiplicity 11 0 11
 
 TH1F htrig_h1x_good_tdc 'HMS h1x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h1X_tdcTime 800 0 800 
 TH1F htrig_h1y_good_tdc 'HMS h1y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h1Y_tdcTime 800 0 800 
 TH1F htrig_h2x_good_tdc 'HMS h2x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h2X_tdcTime 800 0 800 
 TH1F htrig_h2y_good_tdc 'HMS h2y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h2Y_tdcTime 800 0 800 
 
-TH1F htrig_h1T_good_tdc 'HMS h1x/h1y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h1T_tdcTime 350 0 3500 
-TH1F htrig_h2T_good_tdc 'HMS h2x/h2y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h2T_tdcTime 350 0 3500 
+# TH1F htrig_h1T_good_tdc 'HMS h1x/h1y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h1T_tdcTime 350 0 3500 
+# TH1F htrig_h2T_good_tdc 'HMS h2x/h2y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.hms.h2T_tdcTime 350 0 3500 
 
 TH1F htrig_hT1_good_tdc 'HMS hT1 Good TDC Time (Slot 2, Channel 6); Good Time (ns); Counts / 1 ns'  T.hms.hT1_tdcTime 350 0 3500 
 TH1F htrig_hT2_good_tdc 'HMS hT2 Good TDC Time (Slot 20, Channel 127); Good Time (ns); Counts / 1 ns' T.hms.hT2_tdcTime 350 0 3500
 TH1F htrig_hT3_good_tdc 'HMS hT3 Good TDC Time (Slot 2, Channel 63); Good Time (ns); Counts / 1 ns' T.hms.hT3_tdcTime 350 0 3500
 
-TH2F htrig_ch1xy_ch2x 'HMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.hms.h1T_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
-TH2F htrig_ch1x_ch2x 'HMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)' T.hms.h1X_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
-TH2F htrig_ch1y_ch2x 'HMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.hms.h1Y_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
-TH2F htrig_ch1y_ch1x 'HMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)' T.hms.h1X_tdcTime T.hms.h1Y_tdcTime 200 100 300 200 100 300 
+# TH2F htrig_ch1xy_ch2x 'HMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.hms.h1T_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
+# TH2F htrig_ch1x_ch2x 'HMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)' T.hms.h1X_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
+# TH2F htrig_ch1y_ch2x 'HMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)' T.hms.h1Y_tdcTime T.hms.h2X_tdcTime 200 100 300 200 100 300 
+# TH2F htrig_ch1y_ch1x 'HMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)' T.hms.h1X_tdcTime T.hms.h1Y_tdcTime 200 100 300 200 100 300 
 
 TH1F htrig_hFADC_TREF_ROC1_good_tdc 'HMS hFADC_TREF_ROC1 Good Pulse Time; Good Pulse Time (ns); Counts / 1 ns' T.hms.hFADC_TREF_ROC1_adcPulseTime 800 0 800
 
@@ -37,26 +37,27 @@ TH1F htrig_hFADC_TREF_ROC1_good_tdc 'HMS hFADC_TREF_ROC1 Good Pulse Time; Good P
 # HMS DC TRIG Reference Time
 #----------------------------
 
-TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF1_tdcTime 2000 0 2000
-TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF2_tdcTime 2000 0 2000
-TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF3_tdcTime 2000 0 2000
-TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF4_tdcTime 2000 0 2000
+TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF1_tdcTime 2300 0 2300
+TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF2_tdcTime 2300 0 2300
+TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF3_tdcTime 2300 0 2300
+TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF4_tdcTime 2300 0 2300
 
 #--------------------------------------
 # HMS Trigger Rate vs. 1MHz Clock Time
 #--------------------------------------
 
-TH2D htrig1rate_vs_time 'HMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); hTRIG1 Rate (Hz)' H.1MHz.scalerTime H.hTRIG1.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig2rate_vs_time 'HMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); hTRIG2 Rate (Hz)' H.1MHz.scalerTime H.hTRIG2.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 Rate (Hz)' H.1MHz.scalerTime H.hTRIG3.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1MHz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
-TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1MHz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
+# TH2D htrig1rate_vs_time 'HMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); hTRIG1 Rate (Hz)' H.1MHz.scalerTime H.hTRIG1.scalerRate 350 0 7000 500 0 200000 
+# TH2D htrig2rate_vs_time 'HMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); hTRIG2 Rate (Hz)' H.1MHz.scalerTime H.hTRIG2.scalerRate 350 0 7000 500 0 200000 
+# TH2D htrig3rate_vs_time 'HMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); hTRIG3 Rate (Hz)' H.1MHz.scalerTime H.hTRIG3.scalerRate 350 0 7000 500 0 200000 
+# TH2D htrig4rate_vs_time 'HMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); hTRIG4 Rate (Hz)' H.1MHz.scalerTime H.hTRIG4.scalerRate 350 0 7000 500 0 200000 
+# TH2D htrig6rate_vs_time 'HMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); hTRIG6 Rate (Hz)' H.1MHz.scalerTime H.hTRIG6.scalerRate 350 0 7000 500 0 200000 
 
 #--------------------------------------
 # HMS DC Ref time vs Hodo Ref time
 #--------------------------------------
 
-TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 160 1400 3000 140 14800 16200
+# TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 160 1400 3000 140 14800 16200
+TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 200 3000 5000 130 16500 17800
 
 #--------------------------------
 # HMS Trigger ADC Pulse pedestals

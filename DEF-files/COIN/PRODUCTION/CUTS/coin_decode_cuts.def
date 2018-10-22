@@ -1,32 +1,32 @@
 Block: Decode
 
-pTRIG1_ROC2         T.coin.pTRIG1_ROC2_tdcTimeRaw > 0
-pTRIG2_ROC2         T.coin.pTRIG2_ROC2_tdcTimeRaw > 0
-pTRIG3_ROC2         T.coin.pTRIG3_ROC2_tdcTimeRaw > 0
-pTRIG4_ROC2         T.coin.pTRIG4_ROC2_tdcTimeRaw > 0
-pTRIG5_ROC2         T.coin.pTRIG5_ROC2_tdcTimeRaw > 0
-pTRIG6_ROC2         T.coin.pTRIG6_ROC2_tdcTimeRaw > 0
+pTRIG1_ROC2         T.coin.pTRIG1_ROC2_tdcTime > -10000.0 && T.coin.pTRIG1_ROC2_tdcTime < 10000.0
+pTRIG2_ROC2         T.coin.pTRIG2_ROC2_tdcTime > -10000.0 && T.coin.pTRIG2_ROC2_tdcTime < 10000.0
+pTRIG3_ROC2         T.coin.pTRIG3_ROC2_tdcTime > -10000.0 && T.coin.pTRIG3_ROC2_tdcTime < 10000.0
+pTRIG4_ROC2         T.coin.pTRIG4_ROC2_tdcTime > -10000.0 && T.coin.pTRIG4_ROC2_tdcTime < 10000.0
+pTRIG5_ROC2         T.coin.pTRIG5_ROC2_tdcTime > -10000.0 && T.coin.pTRIG5_ROC2_tdcTime < 10000.0
+pTRIG6_ROC2         T.coin.pTRIG6_ROC2_tdcTime > -10000.0 && T.coin.pTRIG6_ROC2_tdcTime < 10000.0
 
-pTRIG1_ROC1         T.coin.pTRIG1_ROC1_tdcTimeRaw > 0
-pTRIG2_ROC1         T.coin.pTRIG2_ROC1_tdcTimeRaw > 0
-pTRIG3_ROC1         T.coin.pTRIG3_ROC1_tdcTimeRaw > 0
-pTRIG4_ROC1         T.coin.pTRIG4_ROC1_tdcTimeRaw > 0
-pTRIG5_ROC1         T.coin.pTRIG5_ROC1_tdcTimeRaw > 0
-pTRIG6_ROC1         T.coin.pTRIG6_ROC1_tdcTimeRaw > 0
+pTRIG1_ROC1         T.coin.pTRIG1_ROC1_tdcTime > -10000.0 && T.coin.pTRIG1_ROC1_tdcTime < 10000.0
+pTRIG2_ROC1         T.coin.pTRIG2_ROC1_tdcTime > -10000.0 && T.coin.pTRIG2_ROC1_tdcTime < 10000.0
+pTRIG3_ROC1         T.coin.pTRIG3_ROC1_tdcTime > -10000.0 && T.coin.pTRIG3_ROC1_tdcTime < 10000.0
+pTRIG4_ROC1         T.coin.pTRIG4_ROC1_tdcTime > -10000.0 && T.coin.pTRIG4_ROC1_tdcTime < 10000.0
+pTRIG5_ROC1         T.coin.pTRIG5_ROC1_tdcTime > -10000.0 && T.coin.pTRIG5_ROC1_tdcTime < 10000.0
+pTRIG6_ROC1         T.coin.pTRIG6_ROC1_tdcTime > -10000.0 && T.coin.pTRIG6_ROC1_tdcTime < 10000.0
 
-hTRIG1_ROC2         T.coin.hTRIG1_ROC2_tdcTimeRaw > 0
-hTRIG2_ROC2         T.coin.hTRIG2_ROC2_tdcTimeRaw > 0
-hTRIG3_ROC2         T.coin.hTRIG3_ROC2_tdcTimeRaw > 0
-hTRIG4_ROC2         T.coin.hTRIG4_ROC2_tdcTimeRaw > 0
-hTRIG5_ROC2         T.coin.hTRIG5_ROC2_tdcTimeRaw > 0
-hTRIG6_ROC2         T.coin.hTRIG6_ROC2_tdcTimeRaw > 0
+hTRIG1_ROC2         T.coin.hTRIG1_ROC2_tdcTime > -10000.0 && T.coin.hTRIG1_ROC2_tdcTime < 10000.0
+hTRIG2_ROC2         T.coin.hTRIG2_ROC2_tdcTime > -10000.0 && T.coin.hTRIG2_ROC2_tdcTime < 10000.0
+hTRIG3_ROC2         T.coin.hTRIG3_ROC2_tdcTime > -10000.0 && T.coin.hTRIG3_ROC2_tdcTime < 10000.0
+hTRIG4_ROC2         T.coin.hTRIG4_ROC2_tdcTime > -10000.0 && T.coin.hTRIG4_ROC2_tdcTime < 10000.0
+hTRIG5_ROC2         T.coin.hTRIG5_ROC2_tdcTime > -10000.0 && T.coin.hTRIG5_ROC2_tdcTime < 10000.0
+hTRIG6_ROC2         T.coin.hTRIG6_ROC2_tdcTime > -10000.0 && T.coin.hTRIG6_ROC2_tdcTime < 10000.0
 
-hTRIG1_ROC1         T.coin.hTRIG1_ROC1_tdcTimeRaw > 0
-hTRIG2_ROC1         T.coin.hTRIG2_ROC1_tdcTimeRaw > 0
-hTRIG3_ROC1         T.coin.hTRIG3_ROC1_tdcTimeRaw > 0
-hTRIG4_ROC1         T.coin.hTRIG4_ROC1_tdcTimeRaw > 0
-hTRIG5_ROC1         T.coin.hTRIG5_ROC1_tdcTimeRaw > 0
-hTRIG6_ROC1         T.coin.hTRIG6_ROC1_tdcTimeRaw > 0
+hTRIG1_ROC1         T.coin.hTRIG1_ROC1_tdcTime > -10000.0 && T.coin.hTRIG1_ROC1_tdcTime < 10000.0 
+hTRIG2_ROC1         T.coin.hTRIG2_ROC1_tdcTime > -10000.0 && T.coin.hTRIG2_ROC1_tdcTime < 10000.0 
+hTRIG3_ROC1         T.coin.hTRIG3_ROC1_tdcTime > -10000.0 && T.coin.hTRIG3_ROC1_tdcTime < 10000.0 
+hTRIG4_ROC1         T.coin.hTRIG4_ROC1_tdcTime > -10000.0 && T.coin.hTRIG4_ROC1_tdcTime < 10000.0 
+hTRIG5_ROC1         T.coin.hTRIG5_ROC1_tdcTime > -10000.0 && T.coin.hTRIG5_ROC1_tdcTime < 10000.0 
+hTRIG6_ROC1         T.coin.hTRIG6_ROC1_tdcTime > -10000.0 && T.coin.hTRIG6_ROC1_tdcTime < 10000.0 
 
 shms_trigs             SHMS_event
 hms_trigs              HMS_event
@@ -43,4 +43,5 @@ pcut_good_S1_time         T.coin.p1T_tdcTime > 241 && T.coin.p1T_tdcTime < 243
 pcut_good_S2X_time        T.coin.p2X_tdcTime > 180 && T.coin.p2X_tdcTime < 220
 pcut_good_S1_S2X_time     pcut_good_S1_time && pcut_good_S2X_time
 
-ALL_COIN_NO_EDTM  T.coin.hEDTM_tdcTime==0.0&&T.coin.pEDTM_tdcTime==0.0&&ALL_events
+ALL_COIN_events_NO_EDTM  T.coin.hEDTM_tdcTime == 0.0 && T.coin.pEDTM_tdcTime == 0.0 && ALL_COIN_events
+ALL_events_NO_EDTM  T.coin.hEDTM_tdcTime == 0.0 && T.coin.pEDTM_tdcTime == 0.0 && ALL_events

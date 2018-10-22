@@ -22,5 +22,5 @@ hcer_npe_thresh = 0.5
 ; ADC time window cut values used to select "good" ADC events
 hcer_adc_tdc_offset= 0.
 
-hcer_adcTimeWindowMin = -1000., -1000.
-hcer_adcTimeWindowMax =  1000.,  1000.
+hcer_adcTimeWindowMin =  60., 60.
+hcer_adcTimeWindowMax =  150., 150.

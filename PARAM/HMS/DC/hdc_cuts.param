@@ -9,10 +9,10 @@ hsel_using_scin  = 0
 
 
 ; TDC window limits for each plane.
-hdc_tdc_min_win = -30000, -30000, -30000, -30000, -30000, -30000
-                  -30000, -30000, -30000, -30000, -30000, -30000
-hdc_tdc_max_win = 30000, 30000, 30000, 30000, 30000, 30000
-                  30000, 30000, 30000, 30000, 30000, 30000
+hdc_tdc_min_win = -14000, -14000, -14000, -14000, -14000, -14000
+                  -14000, -14000, -14000, -14000, -14000, -14000
+hdc_tdc_max_win = -11000, -11000, -11000, -11000, -11000, -11000
+                  -11000, -11000, -11000, -11000, -11000, -11000
 
 hdc_fix_lr = 1 ; Let hit have different L/R assignment for different space point
 hdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
@@ -20,5 +20,5 @@ hdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
 
 
 ; Zero time correction for each plane in ns that is added to TDC time.
-  hdc_plane_time_zero = 1366.0,1366.0,1366.0,1366.0,1366.0,1366.0,
-   		       	 1366.0,1366.0,1366.0,1366.0,1366.0,1366.0
+  hdc_plane_time_zero = 1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.,
+   		       	 1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.,1316.0+45.

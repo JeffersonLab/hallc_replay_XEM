@@ -1,3 +1,5 @@
-; SHMS aerogel gain factors from 0.5% C production run 1585
-paero_pos_gain = 1./7.56425, 1./10.3021, 1./11.0215, 1./13.746, 1./10.4022, 1./11.2585, 1./11.7267
-paero_neg_gain = 1./12.1112, 1./11.9825, 1./12.3054, 1./12.5971, 1./11.6322, 1./8.2361, 1./12.8493
+
+; SHMS aerogel gain factors from 0.5% C production run 4698
+: SHMS aerogel gain fators from LH2 production 4965 
+paero_neg_gain = 1./13.0561, 1./10.9350, 1./12.7182, 1./11.8223, 1./10.5835, 1./8.43767, 1./12.9098, 
+paero_pos_gain = 1./7.32454, 1./9.78246, 1./10.4120, 1./12.7322, 1./10.4748, 1./10.6406, 1./10.6904, 

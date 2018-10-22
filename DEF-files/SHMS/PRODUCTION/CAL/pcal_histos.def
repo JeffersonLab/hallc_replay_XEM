@@ -10,7 +10,7 @@ TH1F pcal_prshwr_good_occ_pos 'SHMS PreShower+ Good Occupancy; PMT Number; Numbe
 TH1F pcal_prshwr_good_occ_neg 'SHMS PreShower- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.cal.pr.numGoodNegAdcHits 14 0.5 14.5
 TH1F pcal_prshwr_good_mult_pos 'SHMS PreShower+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.cal.pr.totNumGoodPosAdcHits 14 0.5 14.5
 TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
-TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.cal.pr.totnumGoodAdcHits 28 0.5 28.5
+# TH1F pcal_prshwr_good_mult 'SHMS PreShower Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.cal.pr.totnumGoodAdcHits 28 0.5 28.5
 
 TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Good ADC Hits' P.cal.fly.numGoodAdcHits 224 0.5 224.5
 TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; Numer of PMTs Hit; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 40 0.5 40.5

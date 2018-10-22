@@ -176,7 +176,7 @@ Bool_t calibration::Process(Long64_t entry)
     {
       //Require loose cut on particle velocity
       fBeta_Full->Fill(P_tr_beta[itrack]);
-      if (TMath::Abs(P_tr_beta[itrack] - 1.0) > 0.5) return kTRUE;
+      if (TMath::Abs(P_tr_beta[itrack] - 1.0) > 0.2) return kTRUE;
       fBeta_Cut->Fill(P_tr_beta[itrack]);
 
       //Filling the histograms
@@ -184,7 +184,7 @@ Bool_t calibration::Process(Long64_t entry)
 	{	  
 	  //Perform a loose timing cut
 	  fTiming_Full->Fill(P_hgcer_goodAdcTdcDiffTime[ipmt]);
-	  if (P_hgcer_goodAdcTdcDiffTime[ipmt] > 20.0 || P_hgcer_goodAdcTdcDiffTime[ipmt] < -20.0) continue;
+	  if (P_hgcer_goodAdcTdcDiffTime[ipmt] > 13.0 || P_hgcer_goodAdcTdcDiffTime[ipmt] < 7.0) continue;
 	  fTiming_Cut->Fill(P_hgcer_goodAdcTdcDiffTime[ipmt]);
 
 	  //Cuts to remove entries corresponding to a PMT not registering a hit
@@ -487,6 +487,10 @@ void calibration::Terminate()
   TF1 *Gauss1 = new TF1("Gauss1",gauss,-10,200,3);
   Gauss1->SetParNames("Amplitude","Mean","Std. Dev.");
 
+  //Sum of two Gaussians to determine SPE with minimal systematics
+  TF1 *Gauss2 = new TF1("Gauss2",gauss,2,10,6);
+  Gauss2->SetParNames("Amplitude 1","Mean 1","Std. Dev. 1","Amplitude 2","Mean 2","Std. Dev. 2");
+
   //Sum of three Gaussians to determine NPE spacing
   TF1 *Gauss3 = new TF1("Gauss3",gauss,0.5,3.5,9);
   Gauss3->SetParNames("Amplitude 1","Mean 1","Std. Dev. 1","Amplitude 2","Mean 2","Std. Dev. 2","Amplitude 3","Mean 3","Std. Dev. 3");
@@ -552,17 +556,23 @@ void calibration::Terminate()
 		  if (xpeaks[1] < xpeaks[0]) xpeaks[1] = xpeaks[0];
 
 		  //Use the peak to fit the SPE with a Gaussian to determine the mean
-		  Gauss1->SetRange(xpeaks[0]-3, xpeaks[0]+3);
-		  Gauss1->SetParameter(1, xpeaks[0]);
-		  Gauss1->SetParameter(2, 10.);
-		  Gauss1->SetParLimits(0, 0., 2000.);
-		  Gauss1->SetParLimits(1, xpeaks[0]-3, xpeaks[0]+3);
-		  Gauss1->SetParLimits(2, 0.5, 10.);
-		  fFullShow ? PulseInt_quad[iquad][ipmt]->Fit("Gauss1","RQ") : PulseInt_quad[iquad][ipmt]->Fit("Gauss1","RQN");
+		  Gauss2->SetRange(xpeaks[0]-3, xpeaks[0]+10);
+		  Gauss2->SetParameter(1, xpeaks[0]);
+		  Gauss2->SetParameter(2, 10.);
+		  Gauss2->SetParameter(1, xpeaks[1]);
+		  Gauss2->SetParameter(2, 10.);
+		  Gauss2->SetParLimits(0, 0., 2000.);
+		  Gauss2->SetParLimits(1, xpeaks[0]-3, xpeaks[0]+3);
+		  Gauss2->SetParLimits(2, 0.5, 10.);
+		  Gauss2->SetParLimits(3, 0., 2000.);
+		  Gauss2->SetParLimits(4, xpeaks[1]-3, xpeaks[1]+3);
+		  Gauss2->SetParLimits(5, 0.5, 10.);
+		  fFullShow ? PulseInt_quad[iquad][ipmt]->Fit("Gauss2","RQ") : PulseInt_quad[iquad][ipmt]->Fit("Gauss2","RQN");
 		  //if (fFullShow) PulseInt_quad[iquad][ipmt]->GetXaxis()->SetRangeUser(0,20);
 
 		  //Store the mean of the SPE in the mean array provided it is not zero and passes a loose statistical cut. Note that indexing by ipad-1 is for convienience 
-		  if (xpeaks[0] > 2.0 && PulseInt_quad[iquad][ipmt]->GetBinContent(PulseInt_quad[iquad][ipmt]->GetXaxis()->FindBin(xpeaks[1])) > 90) mean[ipad-1] = Gauss1->GetParameter(1); 
+		  cout << xpeaks[0] << "   " << PulseInt_quad[iquad][ipmt]->GetBinContent(PulseInt_quad[iquad][ipmt]->GetXaxis()->FindBin(xpeaks[0])) << endl;
+		  if (xpeaks[0] > 2.0 && PulseInt_quad[iquad][ipmt]->GetBinContent(PulseInt_quad[iquad][ipmt]->GetXaxis()->FindBin(xpeaks[0])) > 90) mean[ipad-1] = Gauss2->GetParameter(1); 
 		  ipad++;
 		}
 	    }

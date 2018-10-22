@@ -26,8 +26,8 @@ TH1F ptrig_p1y_good_tdc 'SHMS p1y Good TDC Time; Good TDC Time (ns); Counts / 1 
 TH1F ptrig_p2x_good_tdc 'SHMS p2x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p2X_tdcTime 800 0 800 
 TH1F ptrig_p2y_good_tdc 'SHMS p2y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p2Y_tdcTime 800 0 800 
 
-TH1F ptrig_p1T_good_tdc 'SHMS p1x/p1y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p1T_tdcTime 800 0 800 
-TH1F ptrig_p2T_good_tdc 'SHMS p2x/p2y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p2T_tdcTime 800 0 800 
+# TH1F ptrig_p1T_good_tdc 'SHMS p1x/p1y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p1T_tdcTime 800 0 800 
+# TH1F ptrig_p2T_good_tdc 'SHMS p2x/p2y Coincidence Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.shms.p2T_tdcTime 800 0 800 
 
 TH1F ptrig_pT1_good_tdc 'SHMS pT1 Good TDC Time (Slot 20, Channel 15); Good TDC Time (ns); Counts / 1 ns' T.shms.pT1_tdcTime 800 0 800 
 TH1F ptrig_pT2_good_tdc 'SHMS pT2 Good TDC Time (Slot 19, Channel 31); Good TDC Time (ns); Counts / 1 ns' T.shms.pT2_tdcTime 800 0 800 
@@ -35,22 +35,22 @@ TH1F ptrig_pT3_good_tdc 'SHMS pT3 Good TDC Time (Slot 19, Channel 38); Good TDC 
 
 TH1F ptrig_pFADC_TREF_ROC2_good_tdc 'SHMS pFADC_TREF_ROC2 Good Pulse Time; Good Pulse Time (ns); Counts / 1 ns' T.shms.pFADC_TREF_ROC2_adcPulseTime 800 0 800 
 
-TH2F ptrig_ch1xy_ch2x 'SHMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.shms.p1T_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
-TH2F ptrig_ch1x_ch2x  'SHMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)'   T.shms.p1X_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
-TH2F ptrig_ch1y_ch2x  'SHMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)'   T.shms.p1Y_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
-TH2F ptrig_ch1y_ch1x  'SHMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)'   T.shms.p1X_tdcTime T.shms.p1Y_tdcTime 200 100 300 200 100 300 
+# TH2F ptrig_ch1xy_ch2x 'SHMS Hodo Trig; 1X1Y Trig (ns); 2X Trig (ns)' T.shms.p1T_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
+# TH2F ptrig_ch1x_ch2x  'SHMS Hodo Trig; 1X Trig (ns); 2X Trig (ns)'   T.shms.p1X_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
+# TH2F ptrig_ch1y_ch2x  'SHMS Hodo Trig; 1Y Trig (ns); 2X Trig (ns)'   T.shms.p1Y_tdcTime T.shms.p2X_tdcTime 200 100 300 200 100 300 
+# TH2F ptrig_ch1y_ch1x  'SHMS Hodo Trig; 1X Trig (ns); 1Y Trig (ns)'   T.shms.p1X_tdcTime T.shms.p1Y_tdcTime 200 100 300 200 100 300 
 
-TH1F ptrig_p1x_tdc_mult 'SHMS p1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1X_tdcMultiplicity 11 0 11
-TH1F ptrig_p1y_tdc_mult 'SHMS p1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1Y_tdcMultiplicity 11 0 11
-TH1F ptrig_p2x_tdc_mult 'SHMS p2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2X_tdcMultiplicity 11 0 11
-TH1F ptrig_p2y_tdc_mult 'SHMS p2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2Y_tdcMultiplicity 11 0 11
+# TH1F ptrig_p1x_tdc_mult 'SHMS p1x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1X_tdcMultiplicity 11 0 11
+# TH1F ptrig_p1y_tdc_mult 'SHMS p1y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1Y_tdcMultiplicity 11 0 11
+# TH1F ptrig_p2x_tdc_mult 'SHMS p2x TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2X_tdcMultiplicity 11 0 11
+# TH1F ptrig_p2y_tdc_mult 'SHMS p2y TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2Y_tdcMultiplicity 11 0 11
 
-TH1F ptrig_p1T_tdc_mult 'SHMS p1x/p1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1T_tdcMultiplicity 11 0 11
-TH1F ptrig_p2T_tdc_mult 'SHMS p2x/p2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2T_tdcMultiplicity 11 0 11
+# TH1F ptrig_p1T_tdc_mult 'SHMS p1x/p1y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p1T_tdcMultiplicity 11 0 11
+# TH1F ptrig_p2T_tdc_mult 'SHMS p2x/p2y Coincidence TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.p2T_tdcMultiplicity 11 0 11
 
-TH1F ptrig_pT1_tdc_mult 'SHMS pT1 TDC Multiplicity (Slot 20, Channel 15); TDC Multiplicity; Counts / 1' T.shms.pT1_tdcMultiplicity 11 0 11
-TH1F ptrig_pT2_tdc_mult 'SHMS pT2 TDC Multiplicity (Slot 19, Channel 31); TDC Multiplicity; Counts / 1' T.shms.pT2_tdcMultiplicity 11 0 11
-TH1F ptrig_pT3_tdc_mult 'SHMS pT3 TDC Multiplicity (Slot 19, Channel 38); TDC Multiplicity; Counts / 1' T.shms.pT3_tdcMultiplicity 11 0 11
+# TH1F ptrig_pT1_tdc_mult 'SHMS pT1 TDC Multiplicity (Slot 20, Channel 15); TDC Multiplicity; Counts / 1' T.shms.pT1_tdcMultiplicity 11 0 11
+# TH1F ptrig_pT2_tdc_mult 'SHMS pT2 TDC Multiplicity (Slot 19, Channel 31); TDC Multiplicity; Counts / 1' T.shms.pT2_tdcMultiplicity 11 0 11
+# TH1F ptrig_pT3_tdc_mult 'SHMS pT3 TDC Multiplicity (Slot 19, Channel 38); TDC Multiplicity; Counts / 1' T.shms.pT3_tdcMultiplicity 11 0 11
 
 TH1F ptrig_pFADC_TREF_ROC2_ptime_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; ADC Multiplicity; Counts / 1' T.shms.pFADC_TREF_ROC2_adcMultiplicity 11 0 11
 
@@ -58,11 +58,11 @@ TH1F ptrig_pFADC_TREF_ROC2_ptime_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; AD
 # SHMS Trigger Rate vs. 1 Mhz Clock Time
 #----------------------------------------
 
-TH2D ptrig1rate_vs_time 'SHMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); pTRIG1 Rate (Hz)' P.1MHz.scalerTime P.pTRIG1.scalerRate 350 0 7000 500 0 200000 
-TH2D ptrig2rate_vs_time 'SHMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); pTRIG2 Rate (Hz)' P.1MHz.scalerTime P.pTRIG2.scalerRate 350 0 7000 500 0 200000 
-TH2D ptrig3rate_vs_time 'SHMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); pTRIG3 Rate (Hz)' P.1MHz.scalerTime P.pTRIG3.scalerRate 350 0 7000 500 0 200000 
-TH2D ptrig4rate_vs_time 'SHMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); pTRIG4 Rate (Hz)' P.1MHz.scalerTime P.pTRIG4.scalerRate 350 0 7000 500 0 200000 
-TH2D ptrig6rate_vs_time 'SHMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); pTRIG6 Rate (Hz)' P.1MHz.scalerTime P.pTRIG6.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig1rate_vs_time 'SHMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); pTRIG1 Rate (Hz)' P.1MHz.scalerTime P.pTRIG1.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig2rate_vs_time 'SHMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); pTRIG2 Rate (Hz)' P.1MHz.scalerTime P.pTRIG2.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig3rate_vs_time 'SHMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); pTRIG3 Rate (Hz)' P.1MHz.scalerTime P.pTRIG3.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig4rate_vs_time 'SHMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); pTRIG4 Rate (Hz)' P.1MHz.scalerTime P.pTRIG4.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig6rate_vs_time 'SHMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); pTRIG6 Rate (Hz)' P.1MHz.scalerTime P.pTRIG6.scalerRate 350 0 7000 500 0 200000 
 
 #--------------------------------------------
 #SHMS TRIG PEDESTALS for HGC, NGC, PRESHWR
