@@ -78,6 +78,7 @@ REFINDEX=0
     75,       2,     47,     1 ! hEL_HI
     76,       2,     48,     1 ! hEL_REAL
     77,       2,     49,     1 ! hEL_CLEAN
+    79,       2,     58,     1 ! pRF
 ! C1
     80,       2,     50,     1 ! pPRE40
     81,       2,     51,     1 ! pPRE100
