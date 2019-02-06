@@ -34,7 +34,9 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
   if (histname.Contains("hodo") && histname.Contains("2y") && polarity==2) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_neg");
   if (histname.Contains("aero") && polarity==1) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_pos");
   if (histname.Contains("aero") && polarity==2) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_neg");
-  if (histname.Contains("cer")) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt");
+  if (histname.Contains("hcer"))  histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt");
+  if (histname.Contains("hgcer")) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt");
+  if (histname.Contains("ngcer")) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt");
   if (histname.Contains("_prshwr") && polarity==1) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_pos");
   if (histname.Contains("_prshwr") && polarity==2) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt_neg");
   if (histname.Contains("_shwr")) histname = Form("%s%s",histname.Data(),"_good_pped_vs_pmt");
@@ -136,7 +138,7 @@ void ped_tracking(TString golden_file="", TString detector="", TString spect="",
 
 
   gSystem->RedirectOutput("/dev/null","a");
-  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s %s;PMT Number;  (Gold - Present) Ped Means (mV)",detector.Data(),(polarity == 1) ? "+" : "-"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
+  TH1D* Ped_Difference = new TH1D("Ped_Difference",Form("%s %s;PMT Number;  (Golden - Present) Pedestal Mean (mV)",detector.Data(),(polarity == 1) ? "+" : "-"),(H1_pmt->GetSize()-2),0.5,(H1_pmt->GetSize()-2)+0.5);
   gSystem->RedirectOutput(0);
 
   Double_t histmaxdiff = 0.; 

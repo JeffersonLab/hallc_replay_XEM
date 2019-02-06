@@ -57,7 +57,7 @@ TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.h
 #--------------------------------------
 
 # TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 160 1400 3000 140 14800 16200
-TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 200 3000 5000 130 16500 17800
+TH2D hms_dcref_vs_hodoref 'HMS HODO REF (hT2) vs. HMS DC REF 1; hT2 TDC Time Raw; DCREF1 TDC Time Raw' T.hms.hT2_tdcTimeRaw T.hms.hDCREF1_tdcTimeRaw 200 2000 5000 200 15000 18000
 
 #--------------------------------
 # HMS Trigger ADC Pulse pedestals

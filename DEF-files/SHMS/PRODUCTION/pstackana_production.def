@@ -4,7 +4,7 @@
 #include "DEF-files/SHMS/PRODUCTION/DC/pdc_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/DC/pdc_eff_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/HGCER/phgcer_histos.def"
-# #include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"
+#include "DEF-files/SHMS/PRODUCTION/NGCER/pngcer_histos.def"
 #include "DEF-files/SHMS/PRODUCTION/HODO/phodo_histos.def"
 
 #include "DEF-files/SHMS/PRODUCTION/KIN/pkin_histos.def"

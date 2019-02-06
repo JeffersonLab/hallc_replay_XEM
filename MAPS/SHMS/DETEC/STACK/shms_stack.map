@@ -30,6 +30,7 @@ SLOT=20
 REFINDEX=1
   15,1000,   0,   1  ! pTRef1
   15,   2,   1,   1  ! pT1
+  63,   2,  59,   1  ! pHODO_RF  
 
 SLOT=19
 REFINDEX=0

@@ -1,0 +1,753 @@
+Run #: {gen_run_number}
+
+**************************
+* General Run Information
+**************************
+Beam energy : {gpbeam}
+Target mass (amu) : {gtargmass_amu} 
+
+HMS Particle Mass : {hpartmass}
+HMS P Central : {hpcentral}
+HMS Angle : {htheta_lab}
+
+SHMS Particle Mass : {ppartmass}
+SHMS P Central : {ppcentral}
+SHMS Angle : {ptheta_lab}
+
+SHMS Run Length   : {P.1MHz.scalerTime:%.3f} sec
+HMS  Run Length   : {H.1MHz.scalerTime:%.3f} sec
+
+***********
+* Beamline
+***********
+ With no cuts on BCM{gBCM_Current_threshold_index+1}.
+  
+HMS BCM1 Current: {H.BCM1.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
+HMS BCM2 Current: {H.BCM2.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
+HMS BCM4A Current: {H.BCM4A.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
+HMS BCM4B Current: {H.BCM4B.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
+HMS BCM4C Current: {H.BCM4C.scalerCharge/H.1MHz.scalerTime:%.3f} uA		 
+HMS Unser Current: {H.Unser.scalerCharge/H.1MHz.scalerTime:%.3f} uA		  
+
+HMS BCM1  Charge: {H.BCM1.scalerCharge/1000.:%.3f} mC
+HMS BCM2  Charge: {H.BCM2.scalerCharge/1000.:%.3f} mC	
+HMS BCM4A Charge: {H.BCM4A.scalerCharge/1000.:%.3f} mC		  
+HMS BCM4B Charge: {H.BCM4B.scalerCharge/1000.:%.3f} mC		 
+HMS BCM4C Charge: {H.BCM4C.scalerCharge/1000.:%.3f} mC		 
+HMS Unser Charge: {H.Unser.scalerCharge/1000.:%.3f} mC
+
+Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {H.1MHz.scalerTimeCut:%.3f}s, or {((H.1MHz.scalerTimeCut/H.1MHz.scalerTime)*100.):%.3f}% of total run time.
+HMS BCM1 Beam Cut Current: {H.BCM1.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM2 Beam Cut Current: {H.BCM2.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4A Beam Cut Current: {H.BCM4A.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+HMS BCM4B Beam Cut Current: {H.BCM4B.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS BCM4C Beam Cut Current: {H.BCM4C.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		 
+HMS Unser Beam Cut Current: {H.Unser.scalerChargeCut/H.1MHz.scalerTimeCut:%.3f} uA		  
+
+HMS BCM1  Beam Cut Charge: {H.BCM1.scalerChargeCut/1000. :%.3f} mC
+HMS BCM2  Beam Cut Charge: {H.BCM2.scalerChargeCut/1000.:%.3f} mC
+HMS BCM4A Beam Cut Charge: {H.BCM4A.scalerChargeCut/1000.:%.3f} mC		  
+HMS BCM4B Beam Cut Charge: {H.BCM4B.scalerChargeCut/1000.:%.3f} mC		 
+HMS BCM4C Beam Cut Charge: {H.BCM4C.scalerChargeCut/1000.:%.3f} mC		 
+HMS Unser Beam Cut Charge: {H.Unser.scalerChargeCut/1000.:%.3f} mC
+ 
+ With no cuts on BCM{gBCM_Current_threshold_index+1}.
+  
+SHMS BCM1 Current: {P.BCM1.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
+SHMS BCM2 Current: {P.BCM2.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
+SHMS BCM4A Current: {P.BCM4A.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
+SHMS BCM4B Current: {P.BCM4B.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
+SHMS BCM4C Current: {P.BCM4C.scalerCharge/P.1MHz.scalerTime:%.3f} uA		 
+SHMS Unser Current: {P.Unser.scalerCharge/P.1MHz.scalerTime:%.3f} uA		  
+
+SHMS BCM1  Charge: {P.BCM1.scalerCharge/1000.:%.3f} mC
+SHMS BCM2  Charge: {P.BCM2.scalerCharge/1000.:%.3f} mC	
+SHMS BCM4A Charge: {P.BCM4A.scalerCharge/1000.:%.3f} mC		  
+SHMS BCM4B Charge: {P.BCM4B.scalerCharge/1000.:%.3f} mC		 
+SHMS BCM4C Charge: {P.BCM4C.scalerCharge/1000.:%.3f} mC		 
+SHMS Unser Charge: {P.Unser.scalerCharge/1000.:%.3f} mC
+
+Cut on BCM{gBCM_Current_threshold_index+1} current of {gBCM_Current_threshold} uA. Beam over threshold for {P.1MHz.scalerTimeCut:%.3f}s, or {((P.1MHz.scalerTimeCut/P.1MHz.scalerTime)*100.):%.3f}% of total run time.
+SHMS BCM1 Beam Cut Current: {P.BCM1.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM2 Beam Cut Current: {P.BCM2.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4A Beam Cut Current: {P.BCM4A.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+SHMS BCM4B Beam Cut Current: {P.BCM4B.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS BCM4C Beam Cut Current: {P.BCM4C.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		 
+SHMS Unser Beam Cut Current: {P.Unser.scalerChargeCut/P.1MHz.scalerTimeCut:%.3f} uA		  
+
+SHMS BCM1  Beam Cut Charge: {P.BCM1.scalerChargeCut/1000.:%.3f} mC
+SHMS BCM2  Beam Cut Charge: {P.BCM2.scalerChargeCut/1000.:%.3f} mC
+SHMS BCM4A Beam Cut Charge: {P.BCM4A.scalerChargeCut/1000.:%.3f} mC		  
+SHMS BCM4B Beam Cut Charge: {P.BCM4B.scalerChargeCut/1000.:%.3f} mC		 
+SHMS BCM4C Beam Cut Charge: {P.BCM4C.scalerChargeCut/1000.:%.3f} mC		 
+SHMS Unser Beam Cut Charge: {P.Unser.scalerChargeCut/1000.:%.3f} mC
+ 
+
+********************
+* DAQ Configuration
+********************
+
+Ps1_factor = {gHC_ti_ps_factors[0]}
+Ps2_factor = {gHC_ti_ps_factors[1]}
+Ps3_factor = {gHC_ti_ps_factors[2]}
+Ps4_factor = {gHC_ti_ps_factors[3]}
+Ps5_factor = {gHC_ti_ps_factors[4]}
+Ps6_factor = {gHC_ti_ps_factors[5]}
+
+*********** 
+* Triggers 
+***********
+
+=:=:=:=:=:=:=:  
+= 3/4 Trigger
+=:=:=:=:=:=:=:
+
+Total SHMS 3/4 Triggers       : {P.pTRIG1.scaler}
+Pre-Scaled SHMS 3/4 Triggers  : {(P.pTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}
+Estimated SHMS 3/4 Triggers   : {P.pTRIG1.scalerRate*(P.1MHz.scaler/1000000.):%.0f}
+SHMS 3/4 Trigger Rate         : {P.pTRIG1.scalerRate/1000.:%.3f} kHz
+Accepted SHMS Triggers        : {pTRIG1_ROC2.npassed}
+
+SHMS Computer Live Time : {(pTRIG1_ROC2.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {(pTRIG1_ROC2.npassed / (P.pTRIG1.scaler/gHC_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+SHMS Computer Dead Time : {100.0 - (pTRIG1_ROC2.npassed / P.pTRIG1.scaler)*100.0:%3.4f} % [ {100.0 - (pTRIG1_ROC2.npassed / (P.pTRIG1.scaler/gHC_ti_ps_factors[0]))*100.0:%3.4f} %  ]
+
+Total HMS 3/4 Triggers        : {H.hTRIG1.scaler} [ {H.hTRIG1.scaler/gHC_ti_ps_factors[0]} ]
+Pre-Scaled HMS 3/4 Triggers   : {(H.hTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}
+Estimated HMS 3/4 Triggers    : {H.hTRIG1.scalerRate*(H.1MHz.scaler/1000000.):%.0f}
+HMS 3/4 Trigger Rate          : {H.hTRIG1.scalerRate/1000.:%.3f} kHz
+
+=:=:=:=:=:=:=:=:=:=:=:=:
+= Physics 3/4 Triggers
+=:=:=:=:=:=:=:=:=:=:=:=:
+
+SHMS Physics 3/4 Triggers           : {P.pTRIG1.scaler - P.EDTM.scaler}
+SHMS Estimated Physics 3/4 Triggers : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)*(P.1MHz.scaler/1000000.):%.0f}
+SHMS Physics 3/4 Trigger Rate       : {(P.pTRIG1.scalerRate - P.EDTM.scalerRate)/1000.:%.3f} kHz
+
+HMS Physics 3/4 Triggers            : {H.hTRIG1.scaler - H.EDTM.scaler}
+HMS Estimated Physics Triggers      : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)*(H.1MHz.scaler/1000000.):%.0f}
+HMS Physics Trigger Rate            : {(H.hTRIG1.scalerRate - H.EDTM.scalerRate)/1000.:%.3f} kHz
+
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+= Coin Trigger TDC Data scalers
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
+Coin ROC2 pTRIG1 Accepted Triggers : {pTRIG1_ROC2.npassed}
+Coin ROC2 pTRIG2 Accepted Triggers : {pTRIG2_ROC2.npassed}
+Coin ROC2 pTRIG3 Accepted Triggers : {pTRIG3_ROC2.npassed}
+Coin ROC2 pTRIG4 Accepted Triggers : {pTRIG4_ROC2.npassed}
+Coin ROC2 pTRIG5 Accepted Triggers : {pTRIG5_ROC2.npassed}
+Coin ROC2 pTRIG6 Accepted Triggers : {pTRIG6_ROC2.npassed}
+
+HMS Singles Triggers   :  {HMS_event.npassed}
+SHMS Singles Triggers  :  {SHMS_event.npassed}
+Coincidence Triggers   :  {ALL_COIN_events.npassed}
+All Triggers           :  {ALL_events.npassed}
+
+=:=:=:=:=:=:=:=:=:=:=:=: 
+= SHMS Trigger Scalers
+=:=:=:=:=:=:=:=:=:=:=:=: 
+
+SHMS_pEL_LO_LO :    {P.pEL_LO_LO.scaler}    [ {(P.pEL_LO_LO.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pEL_LO    :    {P.pEL_LO.scaler}   [ {(P.pEL_LO.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pEL_HI    :    {P.pEL_HI.scaler}   [ {(P.pEL_HI.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pEL_REAL  :    {P.pEL_REAL.scaler} [ {(P.pEL_REAL.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pEL_CLEAN :    {P.pEL_CLEAN.scaler}    [ {(P.pEL_CLEAN.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pSTOF     :    {P.pSTOF.scaler}    [ {(P.pSTOF.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+SHMS_pTRIG1 Pre-triggers :  {P.pTRIG1.scaler}   [ {(P.pTRIG1.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG2 Pre-triggers :  {P.pTRIG2.scaler}   [ {(P.pTRIG2.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG3 Pre-triggers :  {P.pTRIG3.scaler}   [ {(P.pTRIG3.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG4 Pre-triggers :  {P.pTRIG4.scaler}   [ {(P.pTRIG4.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG5 Pre-triggers :  {P.pTRIG5.scaler}   [ {(P.pTRIG5.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG6 Pre-triggers :  {P.pTRIG6.scaler}   [ {(P.pTRIG6.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+SHMS_pTRIG1 Pre-scaled Pre-triggers :  {(P.pTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}   [ {((P.pTRIG1.scaler/gHC_ti_ps_factors[0])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG2 Pre-scaled Pre-triggers :  {(P.pTRIG2.scaler/gHC_ti_ps_factors[1]):%.0f}   [ {((P.pTRIG2.scaler/gHC_ti_ps_factors[1])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG3 Pre-scaled Pre-triggers :  {(P.pTRIG3.scaler/gHC_ti_ps_factors[2]):%.0f}   [ {((P.pTRIG3.scaler/gHC_ti_ps_factors[2])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG4 Pre-scaled Pre-triggers :  {(P.pTRIG4.scaler/gHC_ti_ps_factors[3]):%.0f}   [ {((P.pTRIG4.scaler/gHC_ti_ps_factors[3])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG5 Pre-scaled Pre-triggers :  {(P.pTRIG5.scaler/gHC_ti_ps_factors[4]):%.0f}   [ {((P.pTRIG5.scaler/gHC_ti_ps_factors[4])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHMS_pTRIG6 Pre-scaled Pre-triggers :  {(P.pTRIG6.scaler/gHC_ti_ps_factors[5]):%.0f}   [ {((P.pTRIG6.scaler/gHC_ti_ps_factors[5])/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:=:=:=:=:=:=:=:  
+= HMS Trigger Scalers
+=:=:=:=:=:=:=:=:=:=:=: 
+
+HMS_hEL_LO_LO : {H.hEL_LO_LO.scaler}    [ {(H.hEL_LO_LO.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_hEL_LO    : {H.hEL_LO.scaler}   [ {(H.hEL_LO.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_hEL_HI    : {H.hEL_HI.scaler}   [ {(H.hEL_HI.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_hEL_REAL  : {H.hEL_REAL.scaler} [ {(H.hEL_REAL.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_hEL_CLEAN : {H.hEL_CLEAN.scaler}    [ {(H.hEL_CLEAN.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_hSTOF     : {H.hSTOF.scaler}    [ {(H.hSTOF.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+HMS_pTRIG1 Pre-triggers :   {H.pTRIG1.scaler}   [ {(H.pTRIG1.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG2 Pre-triggers :   {H.pTRIG2.scaler}   [ {(H.pTRIG2.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG3 Pre-triggers :   {H.pTRIG3.scaler}   [ {(H.pTRIG3.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG4 Pre-triggers :   {H.pTRIG4.scaler}   [ {(H.pTRIG4.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG5 Pre-triggers :   {H.pTRIG5.scaler}   [ {(H.pTRIG5.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG6 Pre-triggers :   {H.pTRIG6.scaler}   [ {(H.pTRIG6.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+HMS_pTRIG1 Pre-scaled Pre-triggers :  {(H.pTRIG1.scaler/gHC_ti_ps_factors[0]):%.0f}   [ {((H.pTRIG1.scaler/gHC_ti_ps_factors[0])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG2 Pre-scaled Pre-triggers :  {(H.pTRIG2.scaler/gHC_ti_ps_factors[1]):%.0f}   [ {((H.pTRIG2.scaler/gHC_ti_ps_factors[1])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG3 Pre-scaled Pre-triggers :  {(H.pTRIG3.scaler/gHC_ti_ps_factors[2]):%.0f}   [ {((H.pTRIG3.scaler/gHC_ti_ps_factors[2])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG4 Pre-scaled Pre-triggers :  {(H.pTRIG4.scaler/gHC_ti_ps_factors[3]):%.0f}   [ {((H.pTRIG4.scaler/gHC_ti_ps_factors[3])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG5 Pre-scaled Pre-triggers :  {(H.pTRIG5.scaler/gHC_ti_ps_factors[4]):%.0f}   [ {((H.pTRIG5.scaler/gHC_ti_ps_factors[4])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+HMS_pTRIG6 Pre-scaled Pre-triggers :  {(H.pTRIG6.scaler/gHC_ti_ps_factors[5]):%.0f}   [ {((H.pTRIG6.scaler/gHC_ti_ps_factors[5])/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:
+= EDTM
+=:=:=:=:
+
+SHMS EDTM Triggers           : {P.EDTM.scaler}
+SHMS Estimated EDTM Triggers : {P.EDTM.scalerRate*(P.1MHz.scaler/1000000.):%.0f}
+SHMS EDTM Trigger Rate       : {P.EDTM.scalerRate/1000.:%.3f} kHz
+
+HMS EDTM Triggers            : {H.EDTM.scaler}
+HMS Estimated EDTM Triggers  : {H.EDTM.scalerRate*(H.1MHz.scaler/1000000.):%.0f}
+HMS EDTM Trigger Rate        : {H.EDTM.scalerRate/1000.:%.3f} kHz
+
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+= Live/Dead Time Calculations
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:
+
+ROC2 Pre-Scaled Ps1 ROC2 Computer Live Time : {(pTRIG1_ROC2.npassed / (P.pTRIG1.scaler/gHC_ti_ps_factors[0]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps1 ROC2 Computer Dead Time : {100.0 - (pTRIG1_ROC2.npassed / (P.pTRIG1.scaler/gHC_ti_ps_factors[0]))*100.0:%3.4f} %
+
+ROC2 Pre-Scaled Ps2 ROC2 Computer Live Time : {(pTRIG2_ROC2.npassed / (P.pTRIG2.scaler/gHC_ti_ps_factors[1]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps2 ROC2 Computer Dead Time : {100.0 - (pTRIG2_ROC2.npassed / (P.pTRIG2.scaler/gHC_ti_ps_factors[1]))*100.0:%3.4f} %
+
+ROC2 Pre-Scaled Ps3 ROC2 Computer Live Time : {(pTRIG3_ROC2.npassed / (P.pTRIG3.scaler/gHC_ti_ps_factors[2]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps3 ROC2 Computer Dead Time : {100.0 - (pTRIG3_ROC2.npassed / (P.pTRIG3.scaler/gHC_ti_ps_factors[2]))*100.0:%3.4f} %
+
+ROC2 Pre-Scaled Ps4 ROC2 Computer Live Time : {(pTRIG4_ROC2.npassed / (P.pTRIG4.scaler/gHC_ti_ps_factors[3]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps4 ROC2 Computer Dead Time : {100.0 - (pTRIG4_ROC2.npassed / (P.pTRIG4.scaler/gHC_ti_ps_factors[3]))*100.0:%3.4f} %
+
+ROC2 Pre-Scaled Ps6 ROC2 Computer Live Time : {(pTRIG6_ROC2.npassed / (P.pTRIG6.scaler/gHC_ti_ps_factors[5]))*100.0:%3.4f} %
+ROC2 Pre-Scaled Ps6 ROC2 Computer Dead Time : {100.0 - (pTRIG6_ROC2.npassed / (P.pTRIG6.scaler/gHC_ti_ps_factors[5]))*100.0:%3.4f} %
+
+ROC2 OG 6 GeV Electronic Live Time (100, 150) : {100.0 - ((P.pPRE100.scaler - P.pPRE150.scaler)/P.pPRE100.scaler):%3.4f} %
+ROC2 OG 6 GeV Electronic Dead Time (100, 150) : {((P.pPRE100.scaler - P.pPRE150.scaler)/P.pPRE100.scaler):%3.4f} %
+
+ROC2 OG 6 GeV Electronic Live Time (100, 200) : {100.0 - ((P.pPRE100.scaler - P.pPRE200.scaler)/P.pPRE100.scaler):%3.4f} %
+ROC2 OG 6 GeV Electronic Dead Time (100, 200) : {((P.pPRE100.scaler - P.pPRE200.scaler)/P.pPRE100.scaler):%3.4f} %
+
+ROC2 OG 6 GeV Electronic Live Time (150, 200) : {100.0 - ((P.pPRE150.scaler - P.pPRE200.scaler)/P.pPRE150.scaler):%3.4f} %
+ROC2 OG 6 GeV Electronic Dead Time (150, 200) : {((P.pPRE150.scaler - P.pPRE200.scaler)/P.pPRE150.scaler):%3.4f} %
+
+=:=:=:=:=:=:=:
+= Hodoscopes
+=:=:=:=:=:=:=:
+
+P1X    : {P.S1X.scaler} [ {(P.S1X.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1X 
+P1Y    : {P.S1Y.scaler} [ {(P.S1Y.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P1Y
+P2X    : {P.S2X.scaler} [ {(P.S2X.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2X
+P2Y    : {P.S2Y.scaler} [ {(P.S2Y.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of P2Y
+
+P1XP1Y : {P.S1XS1Y.scaler} [ {(P.S1XS1Y.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between P1X and P1Y planes 
+P2XP2Y : {P.S2XS2Y.scaler} [ {(P.S2XS2Y.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between P2X and P2Y planes                                           
+
+H1X    : {H.S1X.scaler} [ {(H.S1X.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of H1X 
+H1Y    : {H.S1Y.scaler} [ {(H.S1Y.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of H1Y
+H2X    : {H.S2X.scaler} [ {(H.S2X.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of H2X
+H2Y    : {H.S2Y.scaler} [ {(H.S2Y.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] AND between + and - sides of H2Y
+
+H1XH1Y : {H.S1XS1Y.scaler} [ {(H.S1XS1Y.scaler/H.1MHz.scalerTime)/1000.:%.3f}  kHz ] AND between H1X and H1Y planes 
+H2XH2Y : {H.S2XS2Y.scaler} [ {(H.S2XS2Y.scaler/H.1MHz.scalerTime)/1000.:%.3f}  kHz ] AND between H2X and H2Y planes
+
+=:=:=:=:=:=:=:=:=:=:=:=:=
+= Aerogel, HGC, NGC, CAL
+=:=:=:=:=:=:=:=:=:=:=:=:=
+
+=:=:=:=:=
+= SHMS
+=:=:=:=:=
+AERO : {P.AERO.scaler}  [ {(P.AERO.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] Aerogel sum currently not available
+HGC  : {P.HCER.scaler}  [ {(P.HCER.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+NGC  : {P.NCER.scaler}  [ {(P.NCER.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+PRLO : {P.PRLO.scaler}  [ {(P.PRLO.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+PRHI : {P.PRHI.scaler}  [ {(P.PRHI.scaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:=
+= HMS
+=:=:=:=:=
+CER  : {H.CER.scaler}   [ {(H.CER.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+PRLO : {H.PRLO.scaler}  [ {(H.PRLO.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+PRHI : {H.PRHI.scaler}  [ {(H.PRHI.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+SHLO : {H.SHLO.scaler}  [ {(H.SHLO.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+ASUM : {H.ASUM.scaler}  [ {(H.ASUM.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+BSUM : {H.BSUM.scaler}  [ {(H.BSUM.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+CSUM : {H.CSUM.scaler}  [ {(H.CSUM.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+DSUM :  H.DSUM.scaler}  [ {(H.DSUM.scaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+
+******************************
+* SHMS TRACKING EFFICIENCIES *
+******************************
+
+ptrig                          : {SHMS_event.npassed}
+
+
+
+****************************
+* Calorimeter Efficiencies *
+****************************
+
+=:=:=:=:=
+= SHMS  =
+=:=:=:=:=
+Efficiencies for calorimeter is the fraction of times block was hit when track
+with chisquared/dof < {pstat_cal_maxchisq:%5.1f} came within {pstat_cal_slop:%4.1f} cm of the center.
+and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
+
+
+//Tracks passing chisquared cut = (pstat_cal_numevents:%7d) (in previous template, do we need this here?)
+
+shmsPreShower        Counts: {P.cal.stat_trksum1} eff : {P.cal.stat_hitsum1 / P.cal.stat_trksum1}
+shmsShowerArray      Counts: {P.cal.stat_trksum_array} eff : {P.cal.stat_hitsum_array / P.cal.stat_trksum_array}
+
+=:=:=:=:=
+=  HMS  =
+=:=:=:=:=
+Efficiencies for calorimeter is the fraction of times block was hit when track
+with chisquared/dof < {hstat_cal_maxchisq:%5.1f} came within {hstat_cal_slop:%4.1f} cm of the center.
+and scal_npe_sum  > 3.0 (hardwired). (is this still true?)
+
+
+//Tracks passing chisquared cut = (hstat_cal_numevents:%7d) (in previous template, do we need this here?)
+
+hA       Counts: {H.cal.stat_trksum1} eff : {H.cal.stat_hitsum1 / H.cal.stat_trksum1}
+hB       Counts: {H.cal.stat_trksum2} eff : {H.cal.stat_hitsum2 / H.cal.stat_trksum2}
+hC       Counts: {H.cal.stat_trksum3} eff : {H.cal.stat_hitsum3 / H.cal.stat_trksum3}
+hD       Counts: {H.cal.stat_trksum4} eff : {H.cal.stat_hitsum4 / H.cal.stat_trksum4}
+
+**************************
+* Hodoscope Efficiencies * 
+**************************
+
+=:=:=:=:=
+= SHMS  =
+=:=:=:=:=
+Efficiencies for hodoscopes is the fraction of times scin. was hit when track
+with chisquared/dof < {pstat_maxchisq:%5.1f} came within {pstat_slop:%4.1f} cm of the center.
+
+//Tracks passing chisquared cut = (pstat_numevents) (in previous template, do we still need this?)
+
+Plane 1: {phodo_plane_AND_eff[0]}
+Plane 2: {phodo_plane_AND_eff[1]}
+Plane 3: {phodo_plane_AND_eff[2]}
+Plane 4: {phodo_plane_AND_eff[3]}
+
+S1XY : {phodo_s1XY_eff}
+S2XY : {phodo_s2XY_eff}
+
+STOF: {phodo_stof_eff}
+
+3_of_4 EFF : {phodo_3_of_4_eff}
+4_of_4 EFF : {phodo_4_of_4_eff}
+
+Scint       Pos eff     Neg eff     OR eff      AND eff      Hits
+-----------------------------------------------------------------------------------------------------------
+P1X1        {phodo_pos_eff[0]}      {phodo_neg_eff[0]}       {phodo_or_eff[0]}       {phodo_and_eff[0]}             {phodo_gold_hits[0]}
+P1X2        {phodo_pos_eff[4]}      {phodo_neg_eff[4]}       {phodo_or_eff[4]}       {phodo_and_eff[4]}        {phodo_gold_hits[4]}
+P1X3        {phodo_pos_eff[8]}      {phodo_neg_eff[8]}       {phodo_or_eff[8]}       {phodo_and_eff[8]}            {phodo_gold_hits[8]}
+P1X4        {phodo_pos_eff[12]}     {phodo_neg_eff[12]}          {phodo_or_eff[12]}          {phodo_and_eff[12]}           {phodo_gold_hits[12]}
+P1X5        {phodo_pos_eff[16]}     {phodo_neg_eff[16]}          {phodo_or_eff[16]}          {phodo_and_eff[16]}           {phodo_gold_hits[16]}
+P1X6        {phodo_pos_eff[20]}     {phodo_neg_eff[20]}          {phodo_or_eff[20]}          {phodo_and_eff[20]}           {phodo_gold_hits[20]}
+P1X7        {phodo_pos_eff[24]}         {phodo_neg_eff[24]}          {phodo_or_eff[24]}          {phodo_and_eff[24]}           {phodo_gold_hits[24]}
+P1X8        {phodo_pos_eff[28]}         {phodo_neg_eff[28]}          {phodo_or_eff[28]}          {phodo_and_eff[28]}           {phodo_gold_hits[28]}
+P1X9        {phodo_pos_eff[32]}     {phodo_neg_eff[32]}          {phodo_or_eff[32]}          {phodo_and_eff[32]}           {phodo_gold_hits[32]}
+P1X10       {phodo_pos_eff[36]}         {phodo_neg_eff[36]}          {phodo_or_eff[36]}          {phodo_and_eff[36]}           {phodo_gold_hits[36]}
+P1X11       {phodo_pos_eff[40]}         {phodo_neg_eff[40]}          {phodo_or_eff[40]}          {phodo_and_eff[40]}           {phodo_gold_hits[40]}
+P1X12       {phodo_pos_eff[44]}         {phodo_neg_eff[44]}          {phodo_or_eff[44]}          {phodo_and_eff[44]}           {phodo_gold_hits[44]}
+P1X13       {phodo_pos_eff[48]}         {phodo_neg_eff[48]}          {phodo_or_eff[48]}          {phodo_and_eff[48]}           {phodo_gold_hits[48]}
+
+P1Y1        {phodo_pos_eff[1]}      {phodo_neg_eff[1]}       {phodo_or_eff[1]}       {phodo_and_eff[1]}        {phodo_gold_hits[1]}
+P1Y2        {phodo_pos_eff[5]}      {phodo_neg_eff[5]}       {phodo_or_eff[5]}       {phodo_and_eff[5]}            {phodo_gold_hits[5]}
+P1Y3        {phodo_pos_eff[9]}      {phodo_neg_eff[9]}       {phodo_or_eff[9]}       {phodo_and_eff[9]}            {phodo_gold_hits[9]}
+P1Y4        {phodo_pos_eff[13]}         {phodo_neg_eff[13]}          {phodo_or_eff[13]}          {phodo_and_eff[13]}           {phodo_gold_hits[13]}
+P1Y5        {phodo_pos_eff[17]}         {phodo_neg_eff[17]}          {phodo_or_eff[17]}          {phodo_and_eff[17]}           {phodo_gold_hits[17]}
+P1Y6        {phodo_pos_eff[21]}         {phodo_neg_eff[21]}          {phodo_or_eff[21]}          {phodo_and_eff[21]}           {phodo_gold_hits[21]}
+P1Y7        {phodo_pos_eff[25]}         {phodo_neg_eff[25]}          {phodo_or_eff[25]}          {phodo_and_eff[25]}           {phodo_gold_hits[25]}
+P1Y8        {phodo_pos_eff[29]}         {phodo_neg_eff[29]}          {phodo_or_eff[29]}          {phodo_and_eff[29]}           {phodo_gold_hits[29]}
+P1Y9        {phodo_pos_eff[33]}         {phodo_neg_eff[33]}          {phodo_or_eff[33]}          {phodo_and_eff[33]}           {phodo_gold_hits[33]}
+P1Y10       {phodo_pos_eff[37]}         {phodo_neg_eff[37]}          {phodo_or_eff[37]}          {phodo_and_eff[37]}           {phodo_gold_hits[37]}
+P1Y11       {phodo_pos_eff[41]}         {phodo_neg_eff[41]}          {phodo_or_eff[41]}          {phodo_and_eff[41]}           {phodo_gold_hits[41]}
+P1Y12       {phodo_pos_eff[45]}         {phodo_neg_eff[45]}          {phodo_or_eff[45]}          {phodo_and_eff[45]}           {phodo_gold_hits[45]}
+P1Y13       {phodo_pos_eff[49]}         {phodo_neg_eff[49]}          {phodo_or_eff[49]}          {phodo_and_eff[49]}           {phodo_gold_hits[49]}
+
+P2X1        {phodo_pos_eff[2]}      {phodo_neg_eff[2]}       {phodo_or_eff[2]}       {phodo_and_eff[2]}            {phodo_gold_hits[2]}
+P2X2        {phodo_pos_eff[6]}      {phodo_neg_eff[6]}       {phodo_or_eff[6]}       {phodo_and_eff[6]}        {phodo_gold_hits[6]}
+P2X3        {phodo_pos_eff[10]}         {phodo_neg_eff[10]}          {phodo_or_eff[10]}      {phodo_and_eff[10]}           {phodo_gold_hits[10]}
+P2X4        {phodo_pos_eff[14]}         {phodo_neg_eff[14]}      {phodo_or_eff[14]}          {phodo_and_eff[14]}           {phodo_gold_hits[14]}
+P2X5        {phodo_pos_eff[18]}         {phodo_neg_eff[18]}          {phodo_or_eff[18]}          {phodo_and_eff[18]}           {phodo_gold_hits[18]}
+P2X6        {phodo_pos_eff[22]}     {phodo_neg_eff[22]}      {phodo_or_eff[22]}          {phodo_and_eff[22]}           {phodo_gold_hits[22]}
+P2X7        {phodo_pos_eff[26]}         {phodo_neg_eff[26]}      {phodo_or_eff[26]}      {phodo_and_eff[26]}           {phodo_gold_hits[26]}
+P2X8        {phodo_pos_eff[30]}         {phodo_neg_eff[30]}      {phodo_or_eff[30]}          {phodo_and_eff[30]}           {phodo_gold_hits[30]}
+P2X9        {phodo_pos_eff[34]}         {phodo_neg_eff[34]}      {phodo_or_eff[34]}      {phodo_and_eff[34]}           {phodo_gold_hits[34]}
+P2X10       {phodo_pos_eff[38]}     {phodo_neg_eff[38]}      {phodo_or_eff[38]}      {phodo_and_eff[38]}           {phodo_gold_hits[38]}
+P2X11       {phodo_pos_eff[42]}         {phodo_neg_eff[42]}      {phodo_or_eff[42]}      {phodo_and_eff[42]}           {phodo_gold_hits[42]}
+P2X12       {phodo_pos_eff[46]}         {phodo_neg_eff[46]}      {phodo_or_eff[46]}      {phodo_and_eff[46]}           {phodo_gold_hits[46]}
+P2X13       {phodo_pos_eff[50]}         {phodo_neg_eff[50]}      {phodo_or_eff[50]}      {phodo_and_eff[50]}           {phodo_gold_hits[50]}
+P2X14       {phodo_pos_eff[54]}         {phodo_neg_eff[54]}      {phodo_or_eff[54]}      {phodo_and_eff[54]}           {phodo_gold_hits[54]}
+
+P2Y1        {phodo_pos_eff[3]}      {phodo_neg_eff[3]}       {phodo_or_eff[3]}           {phodo_and_eff[3]}        {phodo_gold_hits[3]}
+P2Y2        {phodo_pos_eff[7]}      {phodo_neg_eff[7]}       {phodo_or_eff[7]}       {phodo_and_eff[7]}            {phodo_gold_hits[7]}
+P2Y3        {phodo_pos_eff[11]}         {phodo_neg_eff[11]}      {phodo_or_eff[11]}          {phodo_and_eff[11]}           {phodo_gold_hits[11]}
+P2Y4        {phodo_pos_eff[15]}         {phodo_neg_eff[15]}          {phodo_or_eff[15]}          {phodo_and_eff[15]}           {phodo_gold_hits[15]}
+P2Y5        {phodo_pos_eff[19]}         {phodo_neg_eff[19]}      {phodo_or_eff[19]}          {phodo_and_eff[19]}           {phodo_gold_hits[19]}
+P2Y6        {phodo_pos_eff[23]}         {phodo_neg_eff[23]}          {phodo_or_eff[23]}          {phodo_and_eff[23]}           {phodo_gold_hits[23]}
+P2Y7        {phodo_pos_eff[27]}         {phodo_neg_eff[27]}          {phodo_or_eff[27]}          {phodo_and_eff[27]}           {phodo_gold_hits[27]}
+P2Y8        {phodo_pos_eff[31]}         {phodo_neg_eff[31]}          {phodo_or_eff[31]}          {phodo_and_eff[31]}           {phodo_gold_hits[31]}
+P2Y9        {phodo_pos_eff[35]}         {phodo_neg_eff[35]}          {phodo_or_eff[35]}          {phodo_and_eff[35]}           {phodo_gold_hits[35]}
+P2Y10       {phodo_pos_eff[39]}         {phodo_neg_eff[39]}          {phodo_or_eff[39]}          {phodo_and_eff[39]}           {phodo_gold_hits[39]}
+P2Y11       {phodo_pos_eff[43]}         {phodo_neg_eff[43]}          {phodo_or_eff[43]}          {phodo_and_eff[43]}           {phodo_gold_hits[43]}
+P2Y12       {phodo_pos_eff[47]}         {phodo_neg_eff[47]}          {phodo_or_eff[47]}          {phodo_and_eff[47]}           {phodo_gold_hits[47]}
+P2Y13       {phodo_pos_eff[51]}         {phodo_neg_eff[51]}          {phodo_or_eff[51]}          {phodo_and_eff[51]}           {phodo_gold_hits[51]}
+P2Y14       {phodo_pos_eff[55]}         {phodo_neg_eff[55]}          {phodo_or_eff[55]}          {phodo_and_eff[55]}           {phodo_gold_hits[55]}
+P2Y15       {phodo_pos_eff[59]}         {phodo_neg_eff[59]}          {phodo_or_eff[59]}          {phodo_and_eff[59]}           {phodo_gold_hits[59]}
+P2Y16       {phodo_pos_eff[63]}         {phodo_neg_eff[63]}          {phodo_or_eff[63]}      {phodo_and_eff[63]}           {phodo_gold_hits[63]}
+P2Y17       {phodo_pos_eff[67]}         {phodo_neg_eff[67]}          {phodo_or_eff[67]}          {phodo_and_eff[67]}           {phodo_gold_hits[67]}
+P2Y18       {phodo_pos_eff[71]}         {phodo_neg_eff[71]}          {phodo_or_eff[71]}          {phodo_and_eff[71]}           {phodo_gold_hits[71]}
+P2Y19       {phodo_pos_eff[75]}         {phodo_neg_eff[75]}          {phodo_or_eff[75]}          {phodo_and_eff[75]}           {phodo_gold_hits[75]}
+P2Y20       {phodo_pos_eff[79]}         {phodo_neg_eff[79]}          {phodo_or_eff[79]}          {phodo_and_eff[79]}           {phodo_gold_hits[79]}
+P2Y21       {phodo_pos_eff[83]}         {phodo_neg_eff[83]}      {phodo_or_eff[83]}          {phodo_and_eff[83]}           {phodo_gold_hits[83]}
+
+
+=:=:=:=:=
+=  HMS  =
+=:=:=:=:=
+Efficiencies for hodoscopes is the fraction of times scin. was hit when track
+with chisquared/dof < {hstat_maxchisq:%5.1f} came within {hstat_slop:%4.1f} cm of the center.
+
+//Tracks passing chisquared cut = (stat_numevents) (in previous template, do we still need this?)
+
+Plane 1: {hhodo_plane_AND_eff[0]}
+Plane 2: {hhodo_plane_AND_eff[1]}
+Plane 3: {hhodo_plane_AND_eff[2]}
+Plane 4: {hhodo_plane_AND_eff[3]}
+
+S1XY : {hhodo_s1XY_eff}
+S2XY : {hhodo_s2XY_eff}
+
+STOF: {hhodo_stof_eff}
+
+3_of_4 EFF : {hhodo_3_of_4_eff}
+4_of_4 EFF : {hhodo_4_of_4_eff}
+
+*HODO EFF*
+Scint       Pos eff     Neg eff     OR eff      AND eff      Hits
+-----------------------------------------------------------------------------------------------------------
+H1X1        {hhodo_pos_eff[0]}      {hhodo_neg_eff[0]}       {hhodo_or_eff[0]}       {hhodo_and_eff[0]}             {hhodo_gold_hits[0]}
+H1X2        {hhodo_pos_eff[4]}      {hhodo_neg_eff[4]}       {hhodo_or_eff[4]}       {hhodo_and_eff[4]}        {hhodo_gold_hits[4]}
+H1X3        {hhodo_pos_eff[8]}      {hhodo_neg_eff[8]}       {hhodo_or_eff[8]}       {hhodo_and_eff[8]}            {hhodo_gold_hits[8]}
+H1X4        {hhodo_pos_eff[12]}     {hhodo_neg_eff[12]}          {hhodo_or_eff[12]}          {hhodo_and_eff[12]}           {hhodo_gold_hits[12]}
+H1X5        {hhodo_pos_eff[16]}     {hhodo_neg_eff[16]}          {hhodo_or_eff[16]}          {hhodo_and_eff[16]}           {hhodo_gold_hits[16]}
+H1X6        {hhodo_pos_eff[20]}     {hhodo_neg_eff[20]}          {hhodo_or_eff[20]}          {hhodo_and_eff[20]}           {hhodo_gold_hits[20]}
+H1X7        {hhodo_pos_eff[24]}         {hhodo_neg_eff[24]}          {hhodo_or_eff[24]}          {hhodo_and_eff[24]}           {hhodo_gold_hits[24]}
+H1X8        {hhodo_pos_eff[28]}         {hhodo_neg_eff[28]}          {hhodo_or_eff[28]}          {hhodo_and_eff[28]}           {hhodo_gold_hits[28]}
+H1X9        {hhodo_pos_eff[32]}     {hhodo_neg_eff[32]}          {hhodo_or_eff[32]}          {hhodo_and_eff[32]}           {hhodo_gold_hits[32]}
+H1X10       {hhodo_pos_eff[36]}         {hhodo_neg_eff[36]}          {hhodo_or_eff[36]}          {hhodo_and_eff[36]}           {hhodo_gold_hits[36]}
+H1X11       {hhodo_pos_eff[40]}         {hhodo_neg_eff[40]}          {hhodo_or_eff[40]}          {hhodo_and_eff[40]}           {hhodo_gold_hits[40]}
+H1X12       {hhodo_pos_eff[44]}         {hhodo_neg_eff[44]}          {hhodo_or_eff[44]}          {hhodo_and_eff[44]}           {hhodo_gold_hits[44]}
+H1X13       {hhodo_pos_eff[48]}         {hhodo_neg_eff[48]}          {hhodo_or_eff[48]}          {hhodo_and_eff[48]}           {hhodo_gold_hits[48]}
+H1X14       {hhodo_pos_eff[52]}         {hhodo_neg_eff[52]}          {hhodo_or_eff[52]}          {hhodo_and_eff[52]}           {hhodo_gold_hits[52]}
+H1X15       {hhodo_pos_eff[56]}         {hhodo_neg_eff[56]}          {hhodo_or_eff[56]}          {hhodo_and_eff[56]}           {hhodo_gold_hits[56]}
+H1X16       {hhodo_pos_eff[60]}         {hhodo_neg_eff[60]}          {hhodo_or_eff[60]}          {hhodo_and_eff[60]}           {hhodo_gold_hits[60]}
+
+H1Y1        {hhodo_pos_eff[1]}      {hhodo_neg_eff[1]}       {hhodo_or_eff[1]}       {hhodo_and_eff[1]}        {hhodo_gold_hits[1]}
+H1Y2        {hhodo_pos_eff[5]}      {hhodo_neg_eff[5]}       {hhodo_or_eff[5]}       {hhodo_and_eff[5]}            {hhodo_gold_hits[5]}
+H1Y3        {hhodo_pos_eff[9]}      {hhodo_neg_eff[9]}       {hhodo_or_eff[9]}       {hhodo_and_eff[9]}            {hhodo_gold_hits[9]}
+H1Y4        {hhodo_pos_eff[13]}         {hhodo_neg_eff[13]}          {hhodo_or_eff[13]}          {hhodo_and_eff[13]}           {hhodo_gold_hits[13]}
+H1Y5        {hhodo_pos_eff[17]}         {hhodo_neg_eff[17]}          {hhodo_or_eff[17]}          {hhodo_and_eff[17]}           {hhodo_gold_hits[17]}
+H1Y6        {hhodo_pos_eff[21]}         {hhodo_neg_eff[21]}          {hhodo_or_eff[21]}          {hhodo_and_eff[21]}           {hhodo_gold_hits[21]}
+H1Y7        {hhodo_pos_eff[25]}         {hhodo_neg_eff[25]}          {hhodo_or_eff[25]}          {hhodo_and_eff[25]}           {hhodo_gold_hits[25]}
+H1Y8        {hhodo_pos_eff[29]}         {hhodo_neg_eff[29]}          {hhodo_or_eff[29]}          {hhodo_and_eff[29]}           {hhodo_gold_hits[29]}
+H1Y9        {hhodo_pos_eff[33]}         {hhodo_neg_eff[33]}          {hhodo_or_eff[33]}          {hhodo_and_eff[33]}           {hhodo_gold_hits[33]}
+H1Y10       {hhodo_pos_eff[37]}         {hhodo_neg_eff[37]}          {hhodo_or_eff[37]}          {hhodo_and_eff[37]}           {hhodo_gold_hits[37]}
+
+H2X1        {hhodo_pos_eff[2]}      {hhodo_neg_eff[2]}       {hhodo_or_eff[2]}       {hhodo_and_eff[2]}            {hhodo_gold_hits[2]}
+H2X2        {hhodo_pos_eff[6]}      {hhodo_neg_eff[6]}       {hhodo_or_eff[6]}       {hhodo_and_eff[6]}        {hhodo_gold_hits[6]}
+H2X3        {hhodo_pos_eff[10]}         {hhodo_neg_eff[10]}          {hhodo_or_eff[10]}      {hhodo_and_eff[10]}           {hhodo_gold_hits[10]}
+H2X4        {hhodo_pos_eff[14]}         {hhodo_neg_eff[14]}      {hhodo_or_eff[14]}          {hhodo_and_eff[14]}           {hhodo_gold_hits[14]}
+H2X5        {hhodo_pos_eff[18]}         {hhodo_neg_eff[18]}          {hhodo_or_eff[18]}          {hhodo_and_eff[18]}           {hhodo_gold_hits[18]}
+H2X6        {hhodo_pos_eff[22]}     {hhodo_neg_eff[22]}      {hhodo_or_eff[22]}          {hhodo_and_eff[22]}           {hhodo_gold_hits[22]}
+H2X7        {hhodo_pos_eff[26]}         {hhodo_neg_eff[26]}      {hhodo_or_eff[26]}      {hhodo_and_eff[26]}           {hhodo_gold_hits[26]}
+H2X8        {hhodo_pos_eff[30]}         {hhodo_neg_eff[30]}      {hhodo_or_eff[30]}          {hhodo_and_eff[30]}           {hhodo_gold_hits[30]}
+H2X9        {hhodo_pos_eff[34]}         {hhodo_neg_eff[34]}      {hhodo_or_eff[34]}      {hhodo_and_eff[34]}           {hhodo_gold_hits[34]}
+H2X10       {hhodo_pos_eff[38]}     {hhodo_neg_eff[38]}      {hhodo_or_eff[38]}      {hhodo_and_eff[38]}           {hhodo_gold_hits[38]}
+H2X11       {hhodo_pos_eff[42]}         {hhodo_neg_eff[42]}      {hhodo_or_eff[42]}      {hhodo_and_eff[42]}           {hhodo_gold_hits[42]}
+H2X12       {hhodo_pos_eff[46]}         {hhodo_neg_eff[46]}      {hhodo_or_eff[46]}      {hhodo_and_eff[46]}           {hhodo_gold_hits[46]}
+H2X13       {hhodo_pos_eff[50]}         {hhodo_neg_eff[50]}      {hhodo_or_eff[50]}      {hhodo_and_eff[50]}           {hhodo_gold_hits[50]}
+H2X14       {hhodo_pos_eff[54]}         {hhodo_neg_eff[54]}      {hhodo_or_eff[54]}      {hhodo_and_eff[54]}           {hhodo_gold_hits[54]}
+H2X15       {hhodo_pos_eff[58]}         {hhodo_neg_eff[58]}      {hhodo_or_eff[58]}      {hhodo_and_eff[58]}           {hhodo_gold_hits[58]}
+H2X16       {hhodo_pos_eff[62]}         {hhodo_neg_eff[62]}      {hhodo_or_eff[62]}      {hhodo_and_eff[62]}           {hhodo_gold_hits[62]}
+
+H2Y1        {hhodo_pos_eff[3]}      {hhodo_neg_eff[3]}       {hhodo_or_eff[3]}           {hhodo_and_eff[3]}        {hhodo_gold_hits[3]}
+H2Y2        {hhodo_pos_eff[7]}      {hhodo_neg_eff[7]}       {hhodo_or_eff[7]}       {hhodo_and_eff[7]}            {hhodo_gold_hits[7]}
+H2Y3        {hhodo_pos_eff[11]}         {hhodo_neg_eff[11]}      {hhodo_or_eff[11]}          {hhodo_and_eff[11]}           {hhodo_gold_hits[11]}
+H2Y4        {hhodo_pos_eff[15]}         {hhodo_neg_eff[15]}          {hhodo_or_eff[15]}          {hhodo_and_eff[15]}           {hhodo_gold_hits[15]}
+H2Y5        {hhodo_pos_eff[19]}         {hhodo_neg_eff[19]}      {hhodo_or_eff[19]}          {hhodo_and_eff[19]}           {hhodo_gold_hits[19]}
+H2Y6        {hhodo_pos_eff[23]}         {hhodo_neg_eff[23]}          {hhodo_or_eff[23]}          {hhodo_and_eff[23]}           {hhodo_gold_hits[23]}
+H2Y7        {hhodo_pos_eff[27]}         {hhodo_neg_eff[27]}          {hhodo_or_eff[27]}          {hhodo_and_eff[27]}           {hhodo_gold_hits[27]}
+H2Y8        {hhodo_pos_eff[31]}         {hhodo_neg_eff[31]}          {hhodo_or_eff[31]}          {hhodo_and_eff[31]}           {hhodo_gold_hits[31]}
+H2Y9        {hhodo_pos_eff[35]}         {hhodo_neg_eff[35]}          {hhodo_or_eff[35]}          {hhodo_and_eff[35]}           {hhodo_gold_hits[35]}
+H2Y10       {hhodo_pos_eff[39]}         {hhodo_neg_eff[39]}          {hhodo_or_eff[39]}          {hhodo_and_eff[39]}           {hhodo_gold_hits[39]}
+
+*******************
+* Hardware Scalers
+*******************
+
+=:=:=:=:=:=:=:=:=:=
+=    HODOSCOPES   =
+=:=:=:=:=:=:=:=:=:=
+
+=:=:=:=:=
+= SHMS  =
+=:=:=:=:=
+Scint   Counts      Rate
+P1X1+:  {P.hod.1x1.posScaler} [ {(P.hod.1x1.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X2+:  {P.hod.1x2.posScaler} [ {(P.hod.1x2.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X3+:  {P.hod.1x3.posScaler} [ {(P.hod.1x3.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X4+:  {P.hod.1x4.posScaler} [ {(P.hod.1x4.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X5+:  {P.hod.1x5.posScaler} [ {(P.hod.1x5.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X6+:  {P.hod.1x6.posScaler} [ {(P.hod.1x6.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X7+:  {P.hod.1x7.posScaler} [ {(P.hod.1x7.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X8+:  {P.hod.1x8.posScaler} [ {(P.hod.1x8.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X9+:  {P.hod.1x9.posScaler} [ {(P.hod.1x9.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X10+: {P.hod.1x10.posScaler} [ {(P.hod.1x10.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X11+: {P.hod.1x11.posScaler} [ {(P.hod.1x11.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] 
+P1X12+: {P.hod.1x12.posScaler} [ {(P.hod.1x12.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X13+: {P.hod.1x13.posScaler} [ {(P.hod.1x13.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P1X1-:  {P.hod.1x1.negScaler} [ {(P.hod.1x1.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X2-:  {P.hod.1x2.negScaler} [ {(P.hod.1x2.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X3-:  {P.hod.1x3.negScaler} [ {(P.hod.1x3.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X4-:  {P.hod.1x4.negScaler} [ {(P.hod.1x4.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X5-:  {P.hod.1x5.negScaler} [ {(P.hod.1x5.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X6-:  {P.hod.1x6.negScaler} [ {(P.hod.1x6.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X7-:  {P.hod.1x7.negScaler} [ {(P.hod.1x7.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X8-:  {P.hod.1x8.negScaler} [ {(P.hod.1x8.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X9-:  {P.hod.1x9.negScaler} [ {(P.hod.1x9.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X10-: {P.hod.1x10.negScaler} [ {(P.hod.1x10.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X11-: {P.hod.1x11.negScaler} [ {(P.hod.1x11.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X12-: {P.hod.1x12.negScaler} [ {(P.hod.1x12.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1X13-: {P.hod.1x13.negScaler} [ {(P.hod.1x13.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+ 
+P1Y1+:  {P.hod.1y1.posScaler} [ {(P.hod.1y1.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y2+:  {P.hod.1y2.posScaler} [ {(P.hod.1y2.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y3+:  {P.hod.1y3.posScaler} [ {(P.hod.1y3.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y4+:  {P.hod.1y4.posScaler} [ {(P.hod.1y4.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y5+:  {P.hod.1y5.posScaler} [ {(P.hod.1y5.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y6+:  {P.hod.1y6.posScaler} [ {(P.hod.1y6.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y7+:  {P.hod.1y7.posScaler} [ {(P.hod.1y7.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y8+:  {P.hod.1y8.posScaler} [ {(P.hod.1y8.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y9+:  {P.hod.1y9.posScaler} [ {(P.hod.1y9.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y10+: {P.hod.1y10.posScaler} [ {(P.hod.1y10.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y11+: {P.hod.1y11.posScaler} [ {(P.hod.1y11.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y12+: {P.hod.1y12.posScaler} [ {(P.hod.1y12.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y13+: {P.hod.1y13.posScaler} [ {(P.hod.1y13.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P1Y1-:  {P.hod.1y1.negScaler} [ {(P.hod.1y1.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y2-:  {P.hod.1y2.negScaler} [ {(P.hod.1y2.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y3-:  {P.hod.1y3.negScaler} [ {(P.hod.1y3.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y4-:  {P.hod.1y4.negScaler} [ {(P.hod.1y4.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y5-:  {P.hod.1y5.negScaler} [ {(P.hod.1y5.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y6-:  {P.hod.1y6.negScaler} [ {(P.hod.1y6.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y7-:  {P.hod.1y7.negScaler} [ {(P.hod.1y7.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y8-:  {P.hod.1y8.negScaler} [ {(P.hod.1y8.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y9-:  {P.hod.1y9.negScaler} [ {(P.hod.1y9.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y10-: {P.hod.1y10.negScaler} [ {(P.hod.1y10.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y11-: {P.hod.1y11.negScaler} [ {(P.hod.1y11.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y12-: {P.hod.1y12.negScaler} [ {(P.hod.1y12.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P1Y13-: {P.hod.1y13.negScaler} [ {(P.hod.1y13.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P2X1+:  {P.hod.2x1.posScaler} [ {(P.hod.2x1.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X2+:  {P.hod.2x2.posScaler} [ {(P.hod.2x2.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X3+:  {P.hod.2x3.posScaler} [ {(P.hod.2x3.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X4+:  {P.hod.2x4.posScaler} [ {(P.hod.2x4.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X5+:  {P.hod.2x5.posScaler} [ {(P.hod.2x5.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X6+:  {P.hod.2x6.posScaler} [ {(P.hod.2x6.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X7+:  {P.hod.2x7.posScaler} [ {(P.hod.2x7.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X8+:  {P.hod.2x8.posScaler} [ {(P.hod.2x8.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X9+:  {P.hod.2x9.posScaler} [ {(P.hod.2x9.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X10+: {P.hod.2x10.posScaler} [ {(P.hod.2x10.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X11+: {P.hod.2x11.posScaler} [ {(P.hod.2x11.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X12+: {P.hod.2x12.posScaler} [ {(P.hod.2x12.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X13+: {P.hod.2x13.posScaler} [ {(P.hod.2x13.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X14+: {P.hod.2x14.posScaler} [ {(P.hod.2x14.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P2X1-:  {P.hod.2x1.negScaler} [ {(P.hod.2x1.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X2-:  {P.hod.2x2.negScaler} [ {(P.hod.2x2.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X3-:  {P.hod.2x3.negScaler} [ {(P.hod.2x3.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X4-:  {P.hod.2x4.negScaler} [ {(P.hod.2x4.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X5-:  {P.hod.2x5.negScaler} [ {(P.hod.2x5.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X6-:  {P.hod.2x6.negScaler} [ {(P.hod.2x6.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X7-:  {P.hod.2x7.negScaler} [ {(P.hod.2x7.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X8-:  {P.hod.2x8.negScaler} [ {(P.hod.2x8.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X9-:  {P.hod.2x9.negScaler} [ {(P.hod.2x9.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X10-: {P.hod.2x10.negScaler} [ {(P.hod.2x10.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X11-: {P.hod.2x11.negScaler} [ {(P.hod.2x11.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X12-: {P.hod.2x12.negScaler} [ {(P.hod.2x12.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X13-: {P.hod.2x13.negScaler} [ {(P.hod.2x13.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2X14-: {P.hod.2x14.negScaler} [ {(P.hod.2x14.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P2Y1+:  {P.hod.2y1.posScaler} [ {(P.hod.2y1.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y2+:  {P.hod.2y2.posScaler} [ {(P.hod.2y2.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y3+:  {P.hod.2y3.posScaler} [ {(P.hod.2y3.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ] 
+P2Y4+:  {P.hod.2y4.posScaler} [ {(P.hod.2y4.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y5+:  {P.hod.2y5.posScaler} [ {(P.hod.2y5.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y6+:  {P.hod.2y6.posScaler} [ {(P.hod.2y6.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y7+:  {P.hod.2y7.posScaler} [ {(P.hod.2y7.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y8+:  {P.hod.2y8.posScaler} [ {(P.hod.2y8.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y9+:  {P.hod.2y9.posScaler} [ {(P.hod.2y9.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y10+: {P.hod.2y10.posScaler} [ {(P.hod.2y10.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y11+: {P.hod.2y11.posScaler} [ {(P.hod.2y11.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y12+: {P.hod.2y12.posScaler} [ {(P.hod.2y12.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y13+: {P.hod.2y13.posScaler} [ {(P.hod.2y13.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y14+: {P.hod.2y14.posScaler} [ {(P.hod.2y14.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y15+: {P.hod.2y15.posScaler} [ {(P.hod.2y15.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y16+: {P.hod.2y16.posScaler} [ {(P.hod.2y16.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y17+: {P.hod.2y17.posScaler} [ {(P.hod.2y17.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y18+: {P.hod.2y18.posScaler} [ {(P.hod.2y18.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y19+: {P.hod.2y19.posScaler} [ {(P.hod.2y19.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y20+: {P.hod.2y20.posScaler} [ {(P.hod.2y20.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y21+: {P.hod.2y21.posScaler} [ {(P.hod.2y21.posScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+P2Y1-:  {P.hod.2y1.negScaler} [ {(P.hod.2y1.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y2-:  {P.hod.2y2.negScaler} [ {(P.hod.2y2.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y3-:  {P.hod.2y3.negScaler} [ {(P.hod.2y3.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y4-:  {P.hod.2y4.negScaler} [ {(P.hod.2y4.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y5-:  {P.hod.2y5.negScaler} [ {(P.hod.2y5.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y6-:  {P.hod.2y6.negScaler} [ {(P.hod.2y6.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y7-:  {P.hod.2y7.negScaler} [ {(P.hod.2y7.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y8-:  {P.hod.2y8.negScaler} [ {(P.hod.2y8.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y9-:  {P.hod.2y9.negScaler} [ {(P.hod.2y9.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y10-: {P.hod.2y10.negScaler} [ {(P.hod.2y10.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y11-: {P.hod.2y11.negScaler} [ {(P.hod.2y11.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y12-: {P.hod.2y12.negScaler} [ {(P.hod.2y12.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y13-: {P.hod.2y13.negScaler} [ {(P.hod.2y13.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y14-: {P.hod.2y14.negScaler} [ {(P.hod.2y14.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y15-: {P.hod.2y15.negScaler} [ {(P.hod.2y15.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y16-: {P.hod.2y16.negScaler} [ {(P.hod.2y16.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y17-: {P.hod.2y17.negScaler} [ {(P.hod.2y17.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y18-: {P.hod.2y18.negScaler} [ {(P.hod.2y18.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y19-: {P.hod.2y19.negScaler} [ {(P.hod.2y19.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y20-: {P.hod.2y20.negScaler} [ {(P.hod.2y20.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+P2Y21-: {P.hod.2y21.negScaler} [ {(P.hod.2y21.negScaler/P.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+
+=:=:=:=:=
+=  HMS  =
+=:=:=:=:=
+Scint   Counts      Rate
+H1X1+:  {H.hod.1x1.posScaler} [ {(H.hod.1x1.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X2+:  {H.hod.1x2.posScaler} [ {(H.hod.1x2.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X3+:  {H.hod.1x3.posScaler} [ {(H.hod.1x3.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X4+:  {H.hod.1x4.posScaler} [ {(H.hod.1x4.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X5+:  {H.hod.1x5.posScaler} [ {(H.hod.1x5.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X6+:  {H.hod.1x6.posScaler} [ {(H.hod.1x6.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X7+:  {H.hod.1x7.posScaler} [ {(H.hod.1x7.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X8+:  {H.hod.1x8.posScaler} [ {(H.hod.1x8.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X9+:  {H.hod.1x9.posScaler} [ {(H.hod.1x9.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X10+: {H.hod.1x10.posScaler} [ {(H.hod.1x10.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X11+: {H.hod.1x11.posScaler} [ {(H.hod.1x11.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] 
+H1X12+: {H.hod.1x12.posScaler} [ {(H.hod.1x12.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X13+: {H.hod.1x13.posScaler} [ {(H.hod.1x13.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X14+: {H.hod.1x14.posScaler} [ {(H.hod.1x14.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X15+: {H.hod.1x15.posScaler} [ {(H.hod.1x15.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X16+: {H.hod.1x16.posScaler} [ {(H.hod.1x16.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H1X1-:  {H.hod.1x1.negScaler} [ {(H.hod.1x1.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X2-:  {H.hod.1x2.negScaler} [ {(H.hod.1x2.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X3-:  {H.hod.1x3.negScaler} [ {(H.hod.1x3.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X4-:  {H.hod.1x4.negScaler} [ {(H.hod.1x4.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X5-:  {H.hod.1x5.negScaler} [ {(H.hod.1x5.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X6-:  {H.hod.1x6.negScaler} [ {(H.hod.1x6.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X7-:  {H.hod.1x7.negScaler} [ {(H.hod.1x7.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X8-:  {H.hod.1x8.negScaler} [ {(H.hod.1x8.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X9-:  {H.hod.1x9.negScaler} [ {(H.hod.1x9.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X10-: {H.hod.1x10.negScaler} [ {(H.hod.1x10.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X11-: {H.hod.1x11.negScaler} [ {(H.hod.1x11.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X12-: {H.hod.1x12.negScaler} [ {(H.hod.1x12.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X13-: {H.hod.1x13.negScaler} [ {(H.hod.1x13.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X14-: {H.hod.1x14.negScaler} [ {(H.hod.1x14.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X15-: {H.hod.1x15.negScaler} [ {(H.hod.1x15.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1X16-: {H.hod.1x16.negScaler} [ {(H.hod.1x16.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+ 
+H1Y1+:  {H.hod.1y1.posScaler} [ {(H.hod.1y1.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y2+:  {H.hod.1y2.posScaler} [ {(H.hod.1y2.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y3+:  {H.hod.1y3.posScaler} [ {(H.hod.1y3.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y4+:  {H.hod.1y4.posScaler} [ {(H.hod.1y4.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y5+:  {H.hod.1y5.posScaler} [ {(H.hod.1y5.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y6+:  {H.hod.1y6.posScaler} [ {(H.hod.1y6.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y7+:  {H.hod.1y7.posScaler} [ {(H.hod.1y7.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y8+:  {H.hod.1y8.posScaler} [ {(H.hod.1y8.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y9+:  {H.hod.1y9.posScaler} [ {(H.hod.1y9.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y10+: {H.hod.1y10.posScaler} [ {(H.hod.1y10.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H1Y1-:  {H.hod.1y1.negScaler} [ {(H.hod.1y1.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y2-:  {H.hod.1y2.negScaler} [ {(H.hod.1y2.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y3-:  {H.hod.1y3.negScaler} [ {(H.hod.1y3.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y4-:  {H.hod.1y4.negScaler} [ {(H.hod.1y4.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y5-:  {H.hod.1y5.negScaler} [ {(H.hod.1y5.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y6-:  {H.hod.1y6.negScaler} [ {(H.hod.1y6.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y7-:  {H.hod.1y7.negScaler} [ {(H.hod.1y7.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y8-:  {H.hod.1y8.negScaler} [ {(H.hod.1y8.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y9-:  {H.hod.1y9.negScaler} [ {(H.hod.1y9.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H1Y10-: {H.hod.1y10.negScaler} [ {(H.hod.1y10.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H2X1+:  {H.hod.2x1.posScaler} [ {(H.hod.2x1.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X2+:  {H.hod.2x2.posScaler} [ {(H.hod.2x2.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X3+:  {H.hod.2x3.posScaler} [ {(H.hod.2x3.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X4+:  {H.hod.2x4.posScaler} [ {(H.hod.2x4.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X5+:  {H.hod.2x5.posScaler} [ {(H.hod.2x5.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X6+:  {H.hod.2x6.posScaler} [ {(H.hod.2x6.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X7+:  {H.hod.2x7.posScaler} [ {(H.hod.2x7.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X8+:  {H.hod.2x8.posScaler} [ {(H.hod.2x8.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X9+:  {H.hod.2x9.posScaler} [ {(H.hod.2x9.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X10+: {H.hod.2x10.posScaler} [ {(H.hod.2x10.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X11+: {H.hod.2x11.posScaler} [ {(H.hod.2x11.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X12+: {H.hod.2x12.posScaler} [ {(H.hod.2x12.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X13+: {H.hod.2x13.posScaler} [ {(H.hod.2x13.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X14+: {H.hod.2x14.posScaler} [ {(H.hod.2x14.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X15+: {H.hod.2x15.posScaler} [ {(H.hod.2x15.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X16+: {H.hod.2x16.posScaler} [ {(H.hod.2x16.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H2X1-:  {H.hod.2x1.negScaler} [ {(H.hod.2x1.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X2-:  {H.hod.2x2.negScaler} [ {(H.hod.2x2.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X3-:  {H.hod.2x3.negScaler} [ {(H.hod.2x3.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X4-:  {H.hod.2x4.negScaler} [ {(H.hod.2x4.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X5-:  {H.hod.2x5.negScaler} [ {(H.hod.2x5.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X6-:  {H.hod.2x6.negScaler} [ {(H.hod.2x6.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X7-:  {H.hod.2x7.negScaler} [ {(H.hod.2x7.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X8-:  {H.hod.2x8.negScaler} [ {(H.hod.2x8.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X9-:  {H.hod.2x9.negScaler} [ {(H.hod.2x9.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X10-: {H.hod.2x10.negScaler} [ {(H.hod.2x10.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X11-: {H.hod.2x11.negScaler} [ {(H.hod.2x11.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X12-: {H.hod.2x12.negScaler} [ {(H.hod.2x12.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X13-: {H.hod.2x13.negScaler} [ {(H.hod.2x13.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X14-: {H.hod.2x14.negScaler} [ {(H.hod.2x14.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X15-: {H.hod.2x15.negScaler} [ {(H.hod.2x15.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2X16-: {H.hod.2x16.negScaler} [ {(H.hod.2x16.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H2Y1+:  {H.hod.2y1.posScaler} [ {(H.hod.2y1.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y2+:  {H.hod.2y2.posScaler} [ {(H.hod.2y2.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y3+:  {H.hod.2y3.posScaler} [ {(H.hod.2y3.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ] 
+H2Y4+:  {H.hod.2y4.posScaler} [ {(H.hod.2y4.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y5+:  {H.hod.2y5.posScaler} [ {(H.hod.2y5.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y6+:  {H.hod.2y6.posScaler} [ {(H.hod.2y6.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y7+:  {H.hod.2y7.posScaler} [ {(H.hod.2y7.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y8+:  {H.hod.2y8.posScaler} [ {(H.hod.2y8.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y9+:  {H.hod.2y9.posScaler} [ {(H.hod.2y9.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y10+: {H.hod.2y10.posScaler} [ {(H.hod.2y10.posScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+
+H2Y1-:  {H.hod.2y1.negScaler} [ {(H.hod.2y1.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y2-:  {H.hod.2y2.negScaler} [ {(H.hod.2y2.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y3-:  {H.hod.2y3.negScaler} [ {(H.hod.2y3.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y4-:  {H.hod.2y4.negScaler} [ {(H.hod.2y4.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y5-:  {H.hod.2y5.negScaler} [ {(H.hod.2y5.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y6-:  {H.hod.2y6.negScaler} [ {(H.hod.2y6.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y7-:  {H.hod.2y7.negScaler} [ {(H.hod.2y7.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y8-:  {H.hod.2y8.negScaler} [ {(H.hod.2y8.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y9-:  {H.hod.2y9.negScaler} [ {(H.hod.2y9.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
+H2Y10-: {H.hod.2y10.negScaler} [ {(H.hod.2y10.negScaler/H.1MHz.scalerTime)/1000.:%.3f} kHz ]
