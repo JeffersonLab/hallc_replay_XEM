@@ -37,10 +37,10 @@ TH1F htrig_hFADC_TREF_ROC1_good_tdc 'HMS hFADC_TREF_ROC1 Good Pulse Time; Good P
 # HMS DC TRIG Reference Time
 #----------------------------
 
-TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF1_tdcTime 2300 0 2300
-TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF2_tdcTime 2300 0 2300
-TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF3_tdcTime 2300 0 2300
-TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF4_tdcTime 2300 0 2300
+TH1F htrig_hdc_ref1 'HMS DC Reference Time 1; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF1_tdcTime 2500 0 2500
+TH1F htrig_hdc_ref2 'HMS DC Reference Time 2; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF2_tdcTime 2500 0 2500
+TH1F htrig_hdc_ref3 'HMS DC Reference Time 3; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF3_tdcTime 2500 0 2500
+TH1F htrig_hdc_ref4 'HMS DC Reference Time 4; TDC Time (ns); Counts / 1 ns;' T.hms.hDCREF4_tdcTime 2500 0 2500
 
 #--------------------------------------
 # HMS Trigger Rate vs. 1MHz Clock Time
