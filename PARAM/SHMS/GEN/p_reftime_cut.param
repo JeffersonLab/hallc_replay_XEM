@@ -21,13 +21,13 @@
 
 ; from run 4716
 
-pdc_tdcrefcut=-14500.
+pdc_tdcrefcut=-15200.
 phodo_tdcrefcut=-4000.
 
-phodo_adcrefcut=-5000.
-pngcer_adcrefcut=-5000.
-phgcer_adcrefcut=-5000.
-paero_adcrefcut=-5000.
-pcal_adcrefcut=-5000.
+phodo_adcrefcut=-5500.
+pngcer_adcrefcut=-5500.
+phgcer_adcrefcut=-5500.
+paero_adcrefcut=-5500.
+pcal_adcrefcut=-5500.
 
 

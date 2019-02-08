@@ -20,5 +20,6 @@ pngcer_npe_thresh = 0.5
 ; ADC time window cut values used to select "good" ADC events
 pngcer_adc_tdc_offset   =  200.0
 
-pngcer_adcTimeWindowMin = -1000.0, -1000.0, -1000.0, -1000.0
-pngcer_adcTimeWindowMax =  1000.0,  1000.0,  1000.0,  1000.0
+; Burcu's cuts 
+pngcer_adcTimeWindowMin = -100.0, -100.0, -100.0, -100.0
+pngcer_adcTimeWindowMax =  100.0,  100.0,  100.0,  100.0
