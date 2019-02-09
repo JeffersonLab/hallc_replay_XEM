@@ -1,0 +1,51 @@
+---------[ 2015-01-01 01:00:00]
+
+pdcref1 crate 6  6  79 
+pdcref2 crate 6  7  79 
+pdcref3 crate 6  8  79 
+pdcref4 crate 6  9  79 
+pdcref5 crate 6  10  79 
+pdcref6 crate 6  11  47
+pdcref7 crate 6  12  47 
+pdcref8 crate 6  13  47 
+pdcref9 crate 6  14  15 
+pdcref10 crate 6  15  47
+phodoref1   crate 2 20 15
+phodoref2   crate 2 19 31
+pfadcref1   crate 2 14 11
+ptrigref1 crate 2 20 15
+ptrigref2 crate 2 19 31
+pedtm     crate 2 19 42
+hfadcref1   crate 1 18 11
+htrigref1  crate 1 2 6
+htrigref2  crate 1 20 127
+htrigref3  crate 1 2 63
+hhodoref1  crate 1 20 127
+hdcref1    crate 3 8 15
+hdcref2    crate 3 16 63
+hdcref3    crate 3 4 111
+hdcref4    crate 3 13 95
+htrig1     crate 1 2 26
+htrig2     crate 1 2 27
+htrig3     crate 1 2 28
+htrig4     crate 1 2 29
+htrig5     crate 1 2 30
+htrig6     crate 1 2 31
+ptrig1     crate 2 19 48
+ptrig2     crate 2 19 49
+ptrig3     crate 2 19 50
+ptrig4     crate 2 19 51
+ptrig5     crate 2 19 52 
+ptrig6     crate 2 19 53
+pRF_ROC2   crate 2 19 79
+hstof      crate 1 2 56
+helreal      crate 1 2 60
+helclean      crate 1 2 61
+hhodostof   crate 1 20 111
+hs1x        crate 1 2 0
+hs1y        crate 1 2 1
+hs2x        crate 1 2 2
+hs2y        crate 1 2 3 
+
+
+
