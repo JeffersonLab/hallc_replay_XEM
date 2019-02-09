@@ -2,11 +2,3 @@
 	path = UTIL_OL
 	url = https://github.com/JeffersonLab/UTIL_OL
 	branch = master
-[submodule "UTIL_KAONLT"]
-	path = UTIL_KAONLT
-	url = https://github.com/JeffersonLab/UTIL_KAONLT
-	branch = master
-[submodule "UTIL_SIDIS"]
-	path = UTIL_SIDIS
-	url = https://github.com/JeffersonLab/UTIL_SIDIS
-	branch = master
