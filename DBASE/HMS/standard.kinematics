@@ -1277,7 +1277,7 @@ hpartmass = 0.00051099
 htheta_lab = -58.99
 hpcentral = 1.2
 
-1941-9999
+1941-1941
 gpbeam = 10.59
 gtargmass_amu = 26.981539
 hpartmass = 0.00051099
@@ -1656,9 +1656,19 @@ htheta_lab = -13.505
 hpcentral = 5.27
 
 
-4697
-gpbeam = 10.59
+2366-2368
+gpbeam = 10.6
 gtargmass_amu =  1.00794
 hpartmass = 0.00051099
-htheta_lab = -13.505
-hpcentral = 5.27
+htheta_lab = -21.0
+hpcentral = 4.75
+
+#NEGATIVE POLARITY INELASTIC
+
+2369-99999
+gpbeam = 10.6
+gtargmass_amu =  1.00794
+hpartmass = 0.00051099
+htheta_lab = -21.0
+hpcentral = 4.1
+

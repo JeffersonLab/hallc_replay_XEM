@@ -1,0 +1,50 @@
+# Version: 2
+D.crate = pdcref1 , 6 , 6 , 79, \
+pdcref2 , 6,  7,  79 , \
+pdcref3  ,6  ,8  ,79  , \
+pdcref4  ,6  ,9  ,79  , \
+pdcref5  ,6  ,10  ,79  , \
+pdcref6  ,6  ,11  ,47 , \
+pdcref7  ,6  ,12  ,47  , \
+pdcref8  ,6  ,13  ,47  , \
+pdcref9  ,6  ,14  ,15  , \
+pdcref10 , 6  ,15  ,47 , \
+phodoref1    ,2 ,20 ,15 , \
+phodoref2    ,2 ,19 ,31 , \
+pfadcref1    ,2 ,14 ,11 , \
+ptrigref1  ,2 ,20 ,15 , \
+ptrigref2  ,2 ,19 ,31 , \
+pedtm      ,2 ,19 ,42 , \
+hfadcref1    ,1 ,18 ,11 , \
+htrigref1   ,1 ,2 ,6 , \
+htrigref2   ,1 ,20 ,127 , \
+htrigref3   ,1 ,2 ,63 , \
+hhodoref1   ,1 ,20 ,127 , \
+hdcref1     ,3 ,8 ,15 , \
+hdcref2     ,3 ,16 ,63 , \
+hdcref3     ,3 ,4 ,111 , \
+hdcref4     ,3 ,13 ,95 , \
+htrig1      ,1 ,2 ,26 , \
+htrig2      ,1 ,2 ,27 , \
+htrig3      ,1 ,2 ,28 , \
+htrig4      ,1 ,2 ,29 , \
+htrig5      ,1 ,2 ,30 , \
+htrig6      ,1 ,2 ,31 , \
+ptrig1      ,2 ,19 ,48 , \
+ptrig2      ,2 ,19 ,49 , \
+ptrig3      ,2 ,19 ,50 , \
+ptrig4      ,2 ,19 ,51 , \
+ptrig5      ,2 ,19 ,52  , \
+ptrig6      ,2 ,19 ,53 , \
+pRF_ROC2    ,2 ,19 ,79 , \
+hstof       ,1 ,2 ,56 , \
+helreal       ,1 ,2 ,60 , \
+helclean       ,1 ,2 ,61 , \
+hhodostof    ,1 ,20 ,111 , \
+hs1x         ,1 ,2 ,0 , \
+hs1y         ,1 ,2 ,1 , \
+hs2x         ,1 ,2 ,2 , \
+hs2y         ,1 ,2 ,3 
+
+
+
