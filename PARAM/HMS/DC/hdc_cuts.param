@@ -1,5 +1,5 @@
 ;Utilize per wire tzero offsets, 1 means true
-h_using_tzero_per_wire = 1
+h_using_tzero_per_wire = 0
 
 ; TEST STAND PARAMETER
 ; Custom parameter which should be loaded when aiming to analyze HMS DC
