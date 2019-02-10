@@ -26,5 +26,5 @@ hcer_adc_tdc_offset= 0.
 ;hcer_adcTimeWindowMax =  180., 180.
 
 ;Burcu's cut from run 7041
-hcer_adcTimeWindowMin =   100.,  100.
-hcer_adcTimeWindowMax =  160., 160.
+hcer_adcTimeWindowMin =   -200.,  -200.
+hcer_adcTimeWindowMax =  200., 200.
