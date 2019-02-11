@@ -1802,9 +1802,37 @@ ppcentral = 4.75
 
 #NEGATIVE POLARITY INELASTIC
 
-7110-99999
+7110-7124
 gpbeam = 10.6
 gtargmass_amu = 1.00794 
 ppartmass = 0.00051099
 ptheta_lab = 25.0
+ppcentral = 3.5
+
+7125-7128
+gpbeam = 10.6
+gtargmass_amu = 1.00794 
+ppartmass = 0.00051099
+ptheta_lab = 29.99
+ppcentral = 3.5
+
+7130-7131
+gpbeam = 10.6
+gtargmass_amu = 1.00794 
+ppartmass = 0.00051099
+ptheta_lab = 20.1
+ppcentral = 4.3
+
+7132-7135
+gpbeam = 10.6
+gtargmass_amu = 1.00794 
+ppartmass = 0.00051099
+ptheta_lab = 16.4
+ppcentral = 4.08
+
+7136-99999
+gpbeam = 10.6
+gtargmass_amu = 1.00794 
+ppartmass = 0.00051099
+ptheta_lab = 24.995
 ppcentral = 3.5
