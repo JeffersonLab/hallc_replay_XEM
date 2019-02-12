@@ -2,14 +2,6 @@
 #include "TH1D.h"
 #include <iostream>
 
-// Modified version of ped_tracking.C (modified by Sylvester Joosten)
-// The original ped_tracking.C displays the difference between the mean
-// of a Gaussian fit for all channels. Of course this runs into issues when
-// certain channels see very little counts. To mitigate this issue, we decide to
-// add a second set of points corresponding to the difference of the pedestal
-// means instead.
-// Both versions currently only consider histograms with more than 25 counts.
-
 void ped_tracking_improved(TString golden_file = "", TString detector = "",
                            TString spect = "", Double_t polarity = 0) {
 
@@ -107,7 +99,6 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
 
   Double_t H1_ped_peak[H1_pmt->GetSize() - 2];
   Double_t H2_ped_peak[H2_pmt->GetSize() - 2];
-
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize() - 2); ipmt++) {
 
     if (H1_ped[ipmt]->GetEntries() > 25) {
@@ -148,19 +139,8 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
   Gaussian->SetParLimits(0, 0, 1000);
   Gaussian->SetParLimits(2, 0, 2);
 
-  TH1D* Ped_Difference =
-      new TH1D("Ped_Difference",
-               Form("%s %s;PMT Number;  (Golden - Present) Pedestal Mean (mV)",
-                    detector.Data(), (polarity == 1) ? "+" : "-"),
-               (H1_pmt->GetSize() - 2), 0.5, (H1_pmt->GetSize() - 2) + 0.5);
-  TH1D* Ped_Difference_LowStat =
-      new TH1D("Ped_Difference",
-               Form("%s %s;PMT Number;  (Golden - Present) Pedestal Mean Low "
-                    "Statistics (mV)",
-                    detector.Data(), (polarity == 1) ? "+" : "-"),
-               (H1_pmt->GetSize() - 2), 0.5, (H1_pmt->GetSize() - 2) + 0.5);
-
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize() - 2); ipmt++) {
+    Gaussian->SetParameter(1, H1_ped_peak[ipmt]);
     gSystem->RedirectOutput("/dev/null", "a");
     H1_ped[ipmt]->Fit(Gaussian, "QMN");
     gSystem->RedirectOutput(0);
@@ -174,6 +154,19 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
     H2_pmt->SetBinError(ipmt + 1, Gaussian->GetParameter(2));
   }
 
+  gSystem->RedirectOutput("/dev/null", "a");
+  TH1D* Ped_Difference =
+      new TH1D("Ped_Difference",
+               Form("%s %s;PMT Number;  (Golden - Present) Pedestal Mean (mV)",
+                    detector.Data(), (polarity == 1) ? "+" : "-"),
+               (H1_pmt->GetSize() - 2), 0.5, (H1_pmt->GetSize() - 2) + 0.5);
+  TH1D* Ped_Difference_Zero =
+      new TH1D("Ped_Difference_Zero",
+               Form("%s %s;PMT Number;  (Golden - Present) Pedestal Mean (mV)",
+                    detector.Data(), (polarity == 1) ? "+" : "-"),
+               (H1_pmt->GetSize() - 2), 0.5, (H1_pmt->GetSize() - 2) + 0.5);
+  gSystem->RedirectOutput(0);
+
   Double_t histmaxdiff = 0.;
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize() - 2); ipmt++) {
     Double_t peddiff =
@@ -184,9 +177,12 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
       }
       if (H2_pmt->GetBinContent(ipmt + 1) == 1e+38)
         peddiff = H1_pmt->GetBinContent(ipmt + 1);
-      Ped_Difference_LowStat->SetBinContent(ipmt + 1, peddiff);
+      Ped_Difference_Zero->SetBinContent(ipmt + 1, peddiff);
+      Ped_Difference_Zero->SetBinError(
+          ipmt + 1, sqrt(pow(H1_pmt->GetBinError(ipmt + 1), 2) +
+                         pow(H2_pmt->GetBinError(ipmt + 1), 2)));
     } else {
-      Ped_Difference_LowStat->SetBinContent(ipmt + 1, -99999999999);
+      Ped_Difference_Zero->SetBinContent(ipmt + 1, 666e6);
     }
     Ped_Difference->SetBinContent(ipmt + 1, peddiff);
     if (TMath::Abs(peddiff) > histmaxdiff)
@@ -194,9 +190,6 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
     Ped_Difference->SetBinError(ipmt + 1,
                                 sqrt(pow(H1_pmt->GetBinError(ipmt + 1), 2) +
                                      pow(H2_pmt->GetBinError(ipmt + 1), 2)));
-    Ped_Difference_LowStat->SetBinError(
-        ipmt + 1, sqrt(pow(H1_pmt->GetBinError(ipmt + 1), 2) +
-                       pow(H2_pmt->GetBinError(ipmt + 1), 2)));
   }
   histmaxdiff = histmaxdiff * 1.2;
   if (histmaxdiff < 15)
@@ -207,13 +200,12 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
   Ped_Difference->SetMarkerStyle(8);
   Ped_Difference->SetMarkerSize(1);
   Ped_Difference->DrawClone("PE1");
-  Ped_Difference_LowStat->SetAxisRange(-histmaxdiff, histmaxdiff, "Y");
-  Ped_Difference_LowStat->SetMarkerStyle(8);
-  Ped_Difference_LowStat->SetMarkerColor(kGray);
-  Ped_Difference_LowStat->SetLineColor(kGray);
-  Ped_Difference_LowStat->SetMarkerSize(1);
-  Ped_Difference_LowStat->DrawClone("PE1same");
-
+  Ped_Difference_Zero->SetAxisRange(-histmaxdiff, histmaxdiff, "Y");
+  Ped_Difference_Zero->SetMarkerStyle(8);
+  Ped_Difference_Zero->SetMarkerColor(kGray);
+  Ped_Difference_Zero->SetLineColor(kGray);
+  Ped_Difference_Zero->SetMarkerSize(1);
+  Ped_Difference_Zero->DrawClone("PE1same");
   gPad->Update();
   TLine* Lower_Limit =
       new TLine(gPad->GetUxmin(), -3.5, gPad->GetUxmax(), -3.5);
@@ -229,5 +221,5 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
   Upper_Limit->Draw();
 
   delete Ped_Difference;
-  delete Ped_Difference_LowStat;
+  delete Ped_Difference_Zero;
 }
