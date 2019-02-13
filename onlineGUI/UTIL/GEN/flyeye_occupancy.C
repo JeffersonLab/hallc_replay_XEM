@@ -17,7 +17,7 @@ void flyeye_occupancy(TString hist1name) {
 
   if (!cal2d) {
     //    cal2d = new TH2F("cal2d","SHMS Calormeter occupancy ; Y (cm) ;X (cm)",14,-63,63,16,-72,72);
-        cal2d = new TH2F("cal2d","SHMS Shower  Cccupancy ; Row Number ;  Col Number",14,0,14,16,0,16);
+        cal2d = new TH2F("cal2d","SHMS Shower  Occupancy ; Col Number ;  Row Number",14,0,14,16,0,16);
      for (Int_t iblk = 0; iblk < (H1->GetSize()-2); iblk++) {
       Int_t col = iblk/cal_nrows+1;
       Int_t row = iblk%cal_nrows+1;
