@@ -16,7 +16,7 @@ cminch=2.54
 #include "PARAM/HMS/GEN/hdebug.param"
 #include "PARAM/HMS/GEN/hmsflags.param"
 #include "PARAM/HMS/GEN/htracking.param"
-#include "PARAM/HMS/GEN/h_reftime_cut.param"
+#include "PARAM/HMS/GEN/h_reftime_cut_hmsdaq.param"
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"
