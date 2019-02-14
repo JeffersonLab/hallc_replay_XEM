@@ -1,11 +1,9 @@
 ;Utilize per wire tzero offsets, 1 means true
-h_using_tzero_per_wire = 0
+h_using_tzero_per_wire = 1
 
 ; TEST STAND PARAMETER
 ; Custom parameter which should be loaded when aiming to analyze HMS DC
 ; data with no tracking 
-hsel_using_scin  = 0
-; hsel_using_prune = 0
 
 
 ; TDC window limits for each plane.
@@ -15,10 +13,10 @@ hsel_using_scin  = 0
                   -10700, -10700, -10700, -10700, -10700, -10700
 
 ; Burcu's cuts from run 7041
-hdc_tdc_min_win = -14000, -14000, -14000, -14000, -14000, -14000
-                  -14000, -14000, -14000, -14000, -14000, -14000
-hdc_tdc_max_win = -10000, -10000, -10000, -10000, -10000, -10000
-                  -10000, -10000, -10000, -10000, -10000, -10000
+hdc_tdc_min_win = -13400, -13400, -13400, -13400, -13400, -13400
+                  -13400, -13400, -13400, -13400, -13400, -13400
+hdc_tdc_max_win = -11500, -11500, -11500, -11500, -11500, -11500
+                  -11500, -11500, -11500, -11500, -11500, -11500
 
 hdc_fix_lr = 1 ; Let hit have different L/R assignment for different space point
 hdc_fix_propcorr = 1 ; do propagation along wire each time hit appeears
