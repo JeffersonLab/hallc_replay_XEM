@@ -3,8 +3,7 @@ p_using_tzero_per_wire = 1
 
 ; TEST-STAND PARAMETERS
 ; Custom parameter file which should be loaded when aiming to analyze HMS DC
-; data with no tracking.
-psel_using_scin = 0
+; data with no tracking
 
 ; TDC window limits for each plane.
 ;pdc_tdc_min_win = -13000, -13000, -13000, -13000, -13000, -13000
@@ -13,10 +12,10 @@ psel_using_scin = 0
 ;                  -11200, -11200, -11200, -11200, -11200, -11200
 
 ;Burcu's cuts from cosmic run 7078
-pdc_tdc_min_win = -13400, -13400, -13400, -13400, -13400, -13400
-                  -13400, -13400, -13400, -13400, -13400, -13400
-pdc_tdc_max_win = -10400, -10400, -10400, -10400, -10400, -10400
-                  -10400, -10400, -10400, -10400, -10400, -10400
+pdc_tdc_min_win = -12800, -12800, -12800, -12800, -12800, -12800
+                  -12800, -12800, -12800, -12800, -12800, -12800
+pdc_tdc_max_win = -10800, -10800, -10800, -10800, -10800, -10800
+                  -10800, -10800, -10800, -10800, -10800, -10800
 
 pdc_fix_lr = 1
 pdc_fix_propcorr = 1

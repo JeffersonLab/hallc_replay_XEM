@@ -7,10 +7,10 @@
   pmax_pr_hits = 25, 25
 
 ; pminhit(i)   minimum number of hits in each space point (one for each chamber)
-pmin_hit = 4, 4
+pmin_hit = 5,5
 ; hmin_combos(i) minimum number of pairs in each space point ( one per chamber)
 ; should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking (JRA)
-pmin_combos = 3, 3
+pmin_combos = 4.4
 ; hspace_point_criterion(i) minimum separation of distinct space points
 ; recommended value for hspace_point_criterion ( based on meeting
 ; Feb 2003)
@@ -33,25 +33,13 @@ pntracks_max_fp = 10
   psingle_stub = 0
 
 ; No small angle approximation for cosmic ray tests
-  pSmallAngleApprox = 0
+  pSmallAngleApprox = 1
+;
+ when selecting stub for chamber 
+;  be sure stub_xp - stub_x*fRatio_xpfp_to_xfp < pstub_max_xpdiff
+;   fRatio_xpfp_to_xfp is set in THcDriftChamber::ReadDatabase according to the spectrometer
+pstub_max_xpdiff=.2
 
-; Crude track selection criteria in h_physics
-; psel_chi2_fpperdegmax   maximum chi2 per degree of freedom for track
-  psel_chi2_fpperdegmax = 2000000.
-; psel_dedx1min           minimum dedx to chose best track in scin 1
-  psel_dedx1min = -100000
-; psel_dedx1max           maximum dedx to chose best track in scin 1
-  psel_dedx1max = 1000000.
-; psel_betamin            minimum track beta to chose best track
-  psel_betamin  = -100000
-; psel_betamax            maximum track beta to chose best track
-  psel_betamax  = 100000.
-; psel_etmin              minimum track et to chose best track
-  psel_etmin = 0.05
-; psel_etmax              maximum track et to chose best track
-  psel_etmax = 100000.
-; psel_ndegreesmin        minimum number of degrees of freedom for track
-  psel_ndegreesmin = 1
 
 
 ; if both psel_using_scin = 0 and psel_using_prune = 0 then best chi2 track is used.
@@ -92,7 +80,7 @@ pntracks_max_fp = 10
   pxloscin  = 4, 4
   pxhiscin  = 11, 10
   pyloscin  = 4, 6
-  pyhiscin  = 11, 14
+  pyhiscin  = 11, 16
 ;  ptrack_eff_test_scin_planes is the number of planes nec needed to
 ;  set sweet spot to true. 4 is extra clean, 3 is good enough for e-'s.
-  ptrack_eff_test_num_scin_planes = 3
+  ptrack_eff_test_num_scin_planes = 4

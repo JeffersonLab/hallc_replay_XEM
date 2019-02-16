@@ -1,3 +1,3 @@
 0-99999
 g_ctp_parm_filename       = "DBASE/COIN/general.param"
-g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
+g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"

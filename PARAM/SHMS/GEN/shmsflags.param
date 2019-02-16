@@ -19,10 +19,10 @@ pphi_offset = -8.681269905E-4; (rad) hxp_tar = hxp_tar + hphi_offset
 
 ; The following offsets are applied to the central kinematic variables
 ;      ptheta_lab=htheta_lab + pthetacentral_offset/degree 
-pthetacentral_offset = 0.0
+pthetacentral_offset = 0.000
 p_oopcentral_offset = 0.0
 ;  SHMS central momentum offset determined from carbon elastic data fall 2017
 ; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
-ppcentral_offset = 0.0
+ppcentral_offset = -0.4
 
 
