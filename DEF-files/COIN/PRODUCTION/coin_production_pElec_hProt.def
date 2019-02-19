@@ -1,5 +1,4 @@
-block T.coin.hTRIG*
-block T.coin.pTRIG*
+block T.coin.*
 block CTime*
 
 block H.cer.*

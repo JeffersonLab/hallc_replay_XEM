@@ -29,11 +29,20 @@
 ;paero_adcrefcut=-5500.
 ;pcal_adcrefcut=-5500.
 
-;singles daq
-pdc_tdcrefcut=-14000.
-phodo_tdcrefcut=-4000.
-phodo_adcrefcut=-5200.
-pngcer_adcrefcut=-5200.
-phgcer_adcrefcut=-5200.
-paero_adcrefcut=-5200.
-pcal_adcrefcut=-5200.
+;singles
+;pdc_tdcrefcut=-15000.
+;phodo_tdcrefcut=-4000.
+;phodo_adcrefcut=-5200.
+;pngcer_adcrefcut=-5200.
+;phgcer_adcrefcut=-5200.
+;paero_adcrefcut=-5200.
+;pcal_adcrefcut=-5200.
+
+;JPsiCoin, KIN 2-0 (Used run 7221, rad out)
+;pdc_tdcrefcut=-15000.
+;phodo_tdcrefcut=-4300.
+;phodo_adcrefcut=-5500.
+;pngcer_adcrefcut=-5500.
+;phgcer_adcrefcut=-5500.
+;paero_adcrefcut=-5500.
+;pcal_adcrefcut=-5500.
