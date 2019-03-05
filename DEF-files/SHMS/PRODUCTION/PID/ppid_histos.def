@@ -60,7 +60,7 @@ TH2F pcal_shw_vs_prshw      'SHMS Shower vs. PreShower Energy Deposition; PreSho
 # TH2F pcal_shw_vs_prshw_elec 'SHMS Electron Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' P.cal.pr.eplane P.cal.fly.earray 400 0 4 1200 0 12 pcut_CleanTrack&&pcut_cer_hg_elec&&pcut_cal_elec
 # TH2F pcal_shw_vs_prshw_pi   'SHMS Pion Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' P.cal.pr.eplane P.cal.fly.earray 400 0 4 1200 0 12 pcut_CleanTrack&&pcut_cer_hg_pi&&pcut_cal_pi
 
-TH2F pcal_delta_etracknorm      'SHMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' P.cal.etracknorm P.gtr.dp 60 0. 1.5 152 -25. 13. pcut_CleanTrack
+TH2F pcal_delta_etracknorm      'SHMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' P.cal.etracknorm P.gtr.dp 60 0. 1.5 128 -10. 22. pcut_CleanTrack
 # TH2F pcal_delta_etracknorm_elec 'SHMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' P.cal.etracknorm P.gtr.dp 60 0. 1.5 152 -25. 13. pcut_CleanTrack&&pcut_cer_hg_elec&&pcut_cal_elec
 # TH2F pcal_delta_etracknorm_pi   'SHMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' P.cal.etracknorm P.gtr.dp 60 0. 1.5 152 -25. 13. pcut_CleanTrack&&pcut_cer_hg_pi&&pcut_cal_pi
 

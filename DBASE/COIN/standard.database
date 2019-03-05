@@ -1,3 +1,59 @@
-0-99999
+0-6008
+g_ctp_parm_filename       = "DBASE/COIN/general_pt.param"
+0-6180
+g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
+0-5417
+g_ctp_map_filename = "MAPS/COIN/DETEC/coin.map"
+0-5417
+g_ctp_trigdet_filename = "PARAM/TRIG/tcoin.param"
+
+5418-6008
+g_ctp_trigdet_filename = "PARAM/TRIG/tcoin_fall18_hRF.param"
+
+# CSV experiment
+6009-6999
 g_ctp_parm_filename       = "DBASE/COIN/general.param"
+6181-6999
+g_ctp_kinematics_filename = "db2/auto_standard_coin.kinematics"
+5418-6999
+g_ctp_map_filename = "MAPS/COIN/DETEC/coin_fall18.map"
+
+6009-6999
+g_ctp_trigdet_filename = "PARAM/TRIG/tcoin_fall18.param"
+
+
+# jpsi experiment
+# phase 1 kinematics
+7000-7273
+g_ctp_parm_filename       = "DBASE/COIN/general_7000.param"
 g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
+g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
+
+# phase 2 kinematics
+7274-7307
+g_ctp_parm_filename       = "DBASE/COIN/general_7274.param"
+g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
+g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
+
+# phase 3 kinematics
+7308-7408
+g_ctp_parm_filename       = "DBASE/COIN/general_7308.param"
+g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
+g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
+
+# phase 1 kinematics
+7409-7429
+g_ctp_parm_filename       = "DBASE/COIN/general_7000.param"
+g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
+g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
+
+# phase 2 kinematics
+7430-99999
+g_ctp_parm_filename       = "DBASE/COIN/general_7274.param"
+g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
+g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"

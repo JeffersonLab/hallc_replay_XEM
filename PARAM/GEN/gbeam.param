@@ -13,17 +13,29 @@
 ; Updated  by Dave Gaskell
 ;
   gbpmxa_slope = -0.98
-  gbpmxa_off   = -0.05+0.21
+  gbpmxa_off   = +0.21
+  gbpmxa_off   = -0.05+0.32
+  gbpmxa_off   = 0.28 
   gbpmxb_slope = -1.12
   gbpmxb_off   = +0.08+0.12
+  gbpmxb_off   = +0.08+0.38
+  gbpmxb_off   = 0.47
   gbpmxc_slope = -0.96
   gbpmxc_off   = -0.89-0.29
+  gbpmxc_off   = -0.89+.09
+  gbpmxc_off   = -0.63
   gbpmya_slope = 0.97
   gbpmya_off   = -0.20+0.36
+  gbpmya_off   = -0.20+0.38
+  gbpmya_off   = -0.09
   gbpmyb_slope = 1.17
   gbpmyb_off   = 0.38+0.36
+  gbpmyb_off   = 0.38-.13
+  gbpmyb_off   = 0.02
   gbpmyc_slope = 0.87
   gbpmyc_off   = 0.47+0.31
+  gbpmyc_off   = 0.47-.76
+  gbpmyc_off   = -0.13
 
 ;positions of BPMs relative to target (from Fall 2018 survey)
 gbpma_zpos = 320.17 ; cm

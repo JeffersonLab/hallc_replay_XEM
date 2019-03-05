@@ -1,6 +1,6 @@
 Block: Physics
 
-pcut_CleanTrack      P.gtr.index > -1
+pcut_CleanTrack      P.gtr.index > -1 && P.gtr.dp > -10.0 && P.gtr.dp < 22.0
 pcut_Clean1Track     P.gtr.index == 0
 pcut_Clean2Track     P.gtr.index == 1
 pcut_Clean3Track     P.gtr.index == 2

@@ -67,8 +67,13 @@ Accepted SHMS Triggers          : {pcut_TRIG1.npassed}
 SHMS Event Types                : {SHMS_Pretrig.npassed}
 
 
-SHMS TRIG5 Computer Live Time : {(pcut_TRIG5.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {(pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
-SHMS TRIG5 Computer Dead Time : {100.0 - (pcut_TRIG5.npassed / P.pTRIG5.scaler)*100.0:%3.4f} % [ {100.0 - (pcut_TRIG5.npassed / (P.pTRIG5.scaler/gpconfig_ti_ps_factors[4]))*100.0:%3.4f} %  ]
+SHMS TRIG2 Computer Live Time : {((pcut_TRIG2.npassed) / (P.pTRIG2.scaler/gpconfig_ti_ps_factors[1]))*100.0:%3.4f} %  
+
+SHMS TRIG3 Computer Live Time : {((pcut_TRIG3.npassed) / (P.pTRIG3.scaler/gpconfig_ti_ps_factors[2]))*100.0:%3.4f} %  
+
+
+SHMS TRIG6 Computer Live Time : {(pcut_TRIG6.npassed / P.pTRIG6.scaler)*100.0:%3.4f} % 
+SHMS TRIG6 Computer Dead Time : {100.0 - (pcut_TRIG6.npassed / P.pTRIG6.scaler)*100.0:%3.4f} % 
 
 =:=:=:=:=:=:=:=:=:=:=:=:
 = Physics 3/4 Triggers
@@ -121,8 +126,7 @@ pTRIG6 :  	{P.pTRIG6.scalerCut} 	[ {(P.pTRIG6.scalerCut/P.1MHz.scalerTimeCut)/10
 =:=:=:=:
 
 EDTM Triggers           : {P.EDTM.scaler}
-Estimated EDTM Triggers : {P.EDTM.scalerCut*(P.1MHz.scaler/1000000.):%.0f}
-EDTM Trigger Rate       : {P.EDTM.scalerRate/1000.:%.3f} kHz
+EDTM Trigger Rate       : {P.EDTM.scalerCut/P.1MHz.scalerTimeCut/1000.:%.3f} kHz
 Accepted EDTM Triggers  : {pcut_edtm_accepted.npassed}
 
 Total Live Time (EDTM) : {(pcut_edtm_accepted.npassed / P.EDTM.scaler)*100.0:%3.4f} %

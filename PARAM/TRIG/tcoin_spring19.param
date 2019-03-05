@@ -1,0 +1,47 @@
+t_coin_numAdc = 19
+t_coin_numTdc = 115
+
+t_coin_tdcoffset = 300.
+t_coin_adc_tdc_offset = 200.
+
+t_coin_tdcchanperns = 0.09766
+eHadCoinTime_Offset = 0.
+
+t_coin_trig_tdcrefcut = -4800.
+t_coin_trig_adcrefcut = -5000.
+
+;NOTE: pTRIG1_ROC1, pTRIG4_ROC1, pTRIG1_ROC2, pTRIG4_ROC2 (tdcTimeRaw),  are hard-coded in THcTrigDet.cxx class
+;      These varibles and their indices are used for the coincidence time calculation, and should NOT change here.
+;      If you do change them, please make sure to modify the THcTrigDet.cxx class.
+
+; bar num:           1     2     3     4      5     6     7   8        9           10    11     12     13        14            15         16         17       18       19
+t_coin_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAER hCER hFADC_TREF_ROC1 pAER pHGCER pNGCER pPSHWR pFADC_TREF_ROC2 pHGCER_MOD pNGCER_MOD pHEL_NEG pHEL_POS pHEL_MPS"
+ 
+; bar num:          1   2   3   4   5   6   7    8     9     10    11   12    13    14    15    16  17    18      19      20      21        22         23          24          25          26          27          28           29         30          31          32          33       34  35  36  37  38  39  40  41  42   43    44     45     46      47      48      49      50      51      52      53      54       55     56      57     58        59          60          61          62          63          64         65          66          67          68          69         70           71          72            73          74            75            76           77          78            79          80          81            82             83           84            85          86           87            88           89           90           91          92           93           94             95           96           97           98          99          100          101          102          103         104          105          106          107         108          109          110       111    112 113   114      115          
+t_coin_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPRLO hPRHI hSHWR hEDTM hCER hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4 hTRIG1_ROC1 hTRIG2_ROC1 hTRIG3_ROC1 hTRIG4_ROC1 hTRIG5_ROC1 hTRIG6_ROC1 pTRIG1_ROC1 pTRIG2_ROC1 pTRIG3_ROC1 pTRIG4_ROC1 pTRIG5_ROC1 pTRIG6_ROC1 pT1 pT2 p1X p1Y p2X p2Y p1T p2T pT3 pAER pHGCER pNGCER pDCREF1 pDCREF2 pDCREF3 pDCREF4 pDCREF5 pDCREF6 pDCREF7 pDCREF8 pDCREF9 pDCREF10 pEDTM  pPRLO  pPRHI  pTRIG1_ROC2 pTRIG2_ROC2 pTRIG3_ROC2 pTRIG4_ROC2 pTRIG5_ROC2 pTRIG6_ROC2 hTRIG1_ROC2 hTRIG2_ROC2 hTRIG3_ROC2 hTRIG4_ROC2 hTRIG5_ROC2 hTRIG6_ROC2 pSTOF_ROC2 pEL_LO_LO_ROC2 pEL_LO_ROC2 pEL_HI_ROC2 pEL_REAL_ROC2 pEL_CLEAN_ROC2 hSTOF_ROC2 hEL_LO_LO_ROC2 hEL_LO_ROC2 hEL_HI_ROC2 hEL_REAL_ROC2 hEL_CLEAN_ROC2 pSTOF_ROC1 pEL_LO_LO_ROC1 pEL_LO_ROC1 pEL_HI_ROC1 pEL_REAL_ROC1 pEL_CLEAN_ROC1 hSTOF_ROC1 hEL_LO_LO_ROC1 hEL_LO_ROC1 hEL_HI_ROC1 hEL_REAL_ROC1 hEL_CLEAN_ROC1 pPRE40_ROC1 pPRE100_ROC1 pPRE150_ROC1 pPRE200_ROC1 hPRE40_ROC1 hPRE100_ROC1 hPRE150_ROC1 hPRE200_ROC1 pPRE40_ROC2 pPRE100_ROC2 pPRE150_ROC2 pPRE200_ROC2 hPRE40_ROC2 hPRE100_ROC2 hPRE150_ROC2 hPRE200_ROC2 hDCREF5 hRF pRF hHODO_RF pHODO_RF"
+
+t_coin_TdcTimeWindowMin =    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+			     0,    0,    0,    0,    0,    0, 1800,    0,    0,    0,
+			     0,    0,    0,    0,    0,    0,    0, 4200,    0,    0,
+			  4200,	   0, 	 0,    0, 4800,    0, 	 0,    0,    0,    0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0,    0,	   0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0, 5500,    0,
+			     0, 5500, 	 0,    0,    0,    0, 	 0,    0,    0,    0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0,    0,    0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0,    0,    0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0,    0,    0,
+			     0,    0, 	 0,    0,    0,    0, 	 0,    0,    0,    0,
+			     0,	   0, 	 0,    0,    0
+
+t_coin_TdcTimeWindowMax = 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000,   6200, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000,   6200, 100000, 100000,
+			    6200, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,   7000, 100000,
+			  100000,   7000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+			  100000, 100000, 100000, 100000, 100000

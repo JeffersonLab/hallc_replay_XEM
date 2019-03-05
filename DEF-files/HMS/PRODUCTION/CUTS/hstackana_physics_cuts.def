@@ -1,5 +1,6 @@
 Block: Physics
-hcut_CleanTrack            H.gtr.index > -1
+
+hcut_CleanTrack            H.gtr.index > -1 && H.gtr.dp > -8.0 && H.gtr.dp < 8.0
 hcut_Clean1Track           H.gtr.index == 0
 hcut_Clean2Track           H.gtr.index == 1
 hcut_Clean3Track           H.gtr.index == 2

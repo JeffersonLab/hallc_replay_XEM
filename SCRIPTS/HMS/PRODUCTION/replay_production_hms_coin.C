@@ -1,4 +1,4 @@
-void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0, Int_t FirstEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -134,7 +134,7 @@ void replay_production_hms_coin(Int_t RunNumber=0, Int_t MaxEvent=0) {
   run->SetRunParamClass("THcRunParameters");
   
   // Eventually need to learn to skip over, or properly analyze the pedestal events
-  run->SetEventRange(1, MaxEvent); // Physics Event number, does not include scaler or control events.
+  run->SetEventRange(FirstEvent, MaxEvent); // Physics Event number, does not include scaler or control events.
   run->SetNscan(1);
   run->SetDataRequired(0x7);
   run->Print();

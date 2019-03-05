@@ -4,8 +4,8 @@
 # Kinematic Quantities
 #*****************************************
 
-TH1F hkin_q2 'HMS Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.Q2 400 0 20
-TH1F hkin_omega 'HMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' H.kin.omega 200 0 10
-TH1F hkin_w2 'HMS W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.W2 200 0 10
-TH1F hkin_w  'HMS W; W (GeV); Number of Entries / 0.050 GeV' H.kin.W 100 0 5
-TH1F hkin_theta 'HMS Scattering Angle Theta; HMS Scattering Angle (deg); Number of Entries / 0.25 deg' H.kin.scat_ang_deg 260 0 65
+TH1F hkin_q2 'HMS Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.Q2 400 0 20 hcut_CleanTrack
+TH1F hkin_omega 'HMS Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' H.kin.omega 200 0 10 hcut_CleanTrack
+TH1F hkin_w2 'HMS W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' H.kin.W2 200 0 10 hcut_CleanTrack
+TH1F hkin_w  'HMS W; W (GeV); Number of Entries / 0.050 GeV' H.kin.W 100 0 5 hcut_CleanTrack
+TH1F hkin_theta 'HMS Scattering Angle Theta; HMS Scattering Angle (deg); Number of Entries / 0.25 deg' H.kin.scat_ang_deg 260 0 65 hcut_CleanTrack

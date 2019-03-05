@@ -15,11 +15,12 @@
 ;  plots will be screwed up.
   hdelta_offset = 0.       ; (%)   hdelta_tar = hdelta_tar + hdelta_offset
   htheta_offset = 0.  ; (rad) hyp_tar = hyp_tar + htheta_offset
-  hphi_offset   = -4.946337367e-3 ; (rad) hxp_tar = hxp_tar + hphi_offset
+;  hphi_offset   = -4.946337367e-3 ; (rad) hxp_tar = hxp_tar + hphi_offset
+hphi_offset = 0.
 ;
 
 ;saturation correction flag
-  hsatcorr = 2000 ; 
+;  hsatcorr = 2000 ; 
                           ; a correction to hsdelta event by event
                           ; for a problem in setting Q3 current.
                           ; There was an unknown zero offset in the Q3 current.
