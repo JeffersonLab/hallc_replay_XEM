@@ -213,7 +213,7 @@ hPRE200      0    4     4    11    1    -1  HMS PRE200
 10/12        0    4     4    12    1    -1  Empty
 10/13        0    4     4    13    1    -1  Empty
 10/14        0    4     4    14    1    -1  Empty
-HAModStat    0    4     4    15    1    -1  Hall A Modulation Status
+10/15        0    4     4    15    1    -1  Empty
 hL1ACCP      0    4     4    16    1    -1  HMS L1 Accept
 10/17        0    4     4    17    1    -1  Empty
 10/18        0    4     4    18    1    -1  Empty
@@ -508,7 +508,7 @@ hPRE200      0    5     5    11    1    -1  HMS PRE200
 11/12        0    5     5    12    1    -1  Empty
 11/13        0    5     5    13    1    -1  Empty
 11/14        0    5     5    14    1    -1  Empty
-HAModStat    0    5     5    15    1    -1  Hall A Modulation Status
+11/15        0    5     5    15    1    -1  Empty
 pL1ACCP      0    5     5    16    1    -1  SHMS L1 Accept
 pEDTM_V2     0    5     5    17    1    -1  SHMS EDTM V2
 11/18        0    5     5    18    1    -1  Empty
