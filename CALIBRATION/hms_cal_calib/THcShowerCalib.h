@@ -346,10 +346,10 @@ void THcShowerCalib::Init() {
 			  &b_H_cal_4ta_apos_p);
 
   fTree->SetBranchAddress("H.dc.ntrack", &H_tr_n,&b_H_tr_n);
-  fTree->SetBranchAddress("H.gtr.x_fp",&H_tr_x,&b_H_tr_x);
-  fTree->SetBranchAddress("H.gtr.y_fp",&H_tr_y,&b_H_tr_y);
-  fTree->SetBranchAddress("H.gtr.xp_fp",&H_tr_xp,&b_H_tr_xp);
-  fTree->SetBranchAddress("H.gtr.yp_fp",&H_tr_yp,&b_H_tr_yp);
+  fTree->SetBranchAddress("H.dc.x_fp",&H_tr_x,&b_H_tr_x);
+  fTree->SetBranchAddress("H.dc.y_fp",&H_tr_y,&b_H_tr_y);
+  fTree->SetBranchAddress("H.dc.xp_fp",&H_tr_xp,&b_H_tr_xp);
+  fTree->SetBranchAddress("H.dc.yp_fp",&H_tr_yp,&b_H_tr_yp);
   fTree->SetBranchAddress("H.gtr.p",&H_tr_p,&b_H_tr_p);
 
   fTree->SetBranchAddress("H.gtr.dp", &H_tr_tg_dp,&b_H_tr_tg_dp);

@@ -365,10 +365,10 @@ void THcPShowerCalib::Init() {
 			  &b_P_sh_a_p);
 
   fTree->SetBranchAddress("P.dc.ntrack", &P_tr_n,&b_P_tr_n);
-  fTree->SetBranchAddress("P.gtr.x_fp", &P_tr_x,&b_P_tr_x);
-  fTree->SetBranchAddress("P.gtr.y_fp", &P_tr_y,&b_P_tr_y);
-  fTree->SetBranchAddress("P.gtr.xp_fp",&P_tr_xp,&b_P_tr_xp);
-  fTree->SetBranchAddress("P.gtr.yp_fp",&P_tr_yp,&b_P_tr_yp);
+  fTree->SetBranchAddress("P.dc.x_fp", &P_tr_x,&b_P_tr_x);
+  fTree->SetBranchAddress("P.dc.y_fp", &P_tr_y,&b_P_tr_y);
+  fTree->SetBranchAddress("P.dc.xp_fp",&P_tr_xp,&b_P_tr_xp);
+  fTree->SetBranchAddress("P.dc.yp_fp",&P_tr_yp,&b_P_tr_yp);
   fTree->SetBranchAddress("P.gtr.p", &P_tr_p,&b_P_tr_p);
 
   fTree->SetBranchAddress("P.gtr.dp", &P_tr_tg_dp,&b_P_tr_tg_dp);
