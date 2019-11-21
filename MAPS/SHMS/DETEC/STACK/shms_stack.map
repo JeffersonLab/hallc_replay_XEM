@@ -21,16 +21,16 @@ REFINDEX=3
    3,   1,   4,   0  ! pPSHWR
    4,   1,   6,   0  ! pHGCER_MOD
    5,   1,   7,   0  ! pNGCER_MOD
-   8,   1,   8,   0  ! pHEL_NEG
-   9,   1,   9,   0  ! pHEL_POS
-  10,   1,  10,   0  ! pHEL_MPS
+   7,   1,   8,   0  ! pHEL_QRT
+   8,   1,   9,   0  ! pHEL_NEG
+   9,   1,  10,   0  ! pHEL_POS
+  10,   1,  11,   0  ! pHEL_MPS
   11,   1,   5,   0  ! pFADC_TREF_ROC2
 
 SLOT=20
 REFINDEX=1
   15,1000,   0,   1  ! pTRef1
   15,   2,   1,   1  ! pT1
-  63,   2,  59,   1  ! pHODO_RF  
 
 SLOT=19
 REFINDEX=0
