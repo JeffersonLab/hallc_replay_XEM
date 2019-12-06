@@ -10,6 +10,8 @@ pcal_ADCmode = 1
 ; FADC pulse time window cuts
 pcal_adc_tdc_offset=200.
 
+; fall 2019 startup
+; varaible = P.cal.pr.goodPos(Neg)AdcTdcDiffTime
 pcal_pos_AdcTimeWindowMin = -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30.
 pcal_neg_AdcTimeWindowMin = -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30., -30.
 
@@ -24,8 +26,10 @@ pcal_AdcPosThreshold = 0.
 pcal_arr_ADCmode = 1
 
 pcal_arr_adc_tdc_offset = 200.0
+
 ; FADC pulse time window cuts
-; Shower time window cuts from runs 2484, 2788, 3072
+; fall 2019 startup
+; varaible = P.cal.fly.goodAdcTdcDiffTime
 pcal_arr_AdcTimeWindowMin = -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20.,
 			    -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20.,
 			    -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20., -20.,

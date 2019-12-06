@@ -8,15 +8,19 @@
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
 
-;hdc_tdcrefcut=-19000.
-;hhodo_tdcrefcut=-1000.
-;hhodo_adcrefcut=-2500.
-;hcer_adcrefcut=-2500.
-;hcal_adcrefcut=-2500.
+; no cuts
+; hdc_tdcrefcut=-100000.
+; hhodo_tdcrefcut=-100000.
+; hhodo_adcrefcut=-100000.
+; hcer_adcrefcut=-100000.
+; hcal_adcrefcut=-100000.
 
-;J/Psi coin daq
-hdc_tdcrefcut=-17100.
-hhodo_tdcrefcut=-4000.
-hhodo_adcrefcut=-6300.
-hcer_adcrefcut=-6300.
-hcal_adcrefcut=-6300.
+; determined for fall 2019 startup
+; cut variable = hDCREF2
+hdc_tdcrefcut=-20000.
+; cut variable = hT2
+hhodo_tdcrefcut=-1750.
+; cut variable = hFADC_TREF_ROC1
+hhodo_adcrefcut=-4100.
+hcer_adcrefcut=-4100.
+hcal_adcrefcut=-4100.

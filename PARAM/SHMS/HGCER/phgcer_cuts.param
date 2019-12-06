@@ -17,8 +17,10 @@ phgcer_dp_max = 25.0
 ; NPE Threshold for "good" hit (for measureing effic.)
 phgcer_npe_thresh = 0.5
 
-# ADC time window cut values used to select "good" ADC events
+; ADC time window cut values used to select "good" ADC events
 phgcer_adc_tdc_offset   =  200.0
 
-phgcer_adcTimeWindowMin = -20.0, -20.0, -20.0, -20.0
+; fall 2019 startup
+; cut variable is P.hgcer.goodAdcTdcDiffTime
+phgcer_adcTimeWindowMin = -60.0, -60.0, -60.0, -60.0
 phgcer_adcTimeWindowMax =  80.0,  80.0,  80.0,  80.0

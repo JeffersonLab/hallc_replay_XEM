@@ -10,3 +10,5 @@ SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
 ;p_recon_coeff_filename = "DATFILES/shms-2017-optimized.dat"
 p_recon_coeff_filename = "DATFILES/shms-2017-optimized_delta_newfit3.dat"
 
+; fall 2019 defocused tune -> Q2 current set to 120% of nominal tune
+; p_recon_coeff_filename = "DATFILES/shms-2017-26cm-monte_quads_p18_q2_120_rec.dat"

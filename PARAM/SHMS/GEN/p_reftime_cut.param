@@ -8,41 +8,23 @@
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
 
-; from run 4698
+; no cuts
+; pdc_tdcrefcut=-100000.
+; phodo_tdcrefcut=-100000.
+; phodo_adcrefcut=-100000.
+; pngcer_adcrefcut=-100000.
+; phgcer_adcrefcut=-100000.
+; paero_adcrefcut=-100000.
+; pcal_adcrefcut=-100000.
 
-;pdc_tdcrefcut=-13000.
-;phodo_tdcrefcut=-3000.
-
-;phodo_adcrefcut=-200./.0625
-;pngcer_adcrefcut=-200./.0625
-;phgcer_adcrefcut=-200./.0625
-;paero_adcrefcut=-200./.0625
-;pcal_adcrefcut=-200./.0625
-
-; from run 4716
-
-;pdc_tdcrefcut=-15200.
-;phodo_tdcrefcut=-4000.
-;phodo_adcrefcut=-5500.
-;pngcer_adcrefcut=-5500.
-;phgcer_adcrefcut=-5500.
-;paero_adcrefcut=-5500.
-;pcal_adcrefcut=-5500.
-
-;singles
-;pdc_tdcrefcut=-15000.
-;phodo_tdcrefcut=-4000.
-;phodo_adcrefcut=-5200.
-;pngcer_adcrefcut=-5200.
-;phgcer_adcrefcut=-5200.
-;paero_adcrefcut=-5200.
-;pcal_adcrefcut=-5200.
-
-;JPsiCoin, KIN 2-0 (Used run 7221, rad out)
-;pdc_tdcrefcut=-15000.
-;phodo_tdcrefcut=-4300.
-;phodo_adcrefcut=-5500.
-;pngcer_adcrefcut=-5500.
-;phgcer_adcrefcut=-5500.
-;paero_adcrefcut=-5500.
-;pcal_adcrefcut=-5500.
+; determined for fall 2019 startup
+; cut variable = pDCREF(min)
+pdc_tdcrefcut=-15200.
+; cut variable = pT1
+phodo_tdcrefcut=-4300.
+; cut variable = pFADC_TREF_ROC2
+phodo_adcrefcut=-5500.
+pngcer_adcrefcut=-5500.
+phgcer_adcrefcut=-5500.
+paero_adcrefcut=-5500.
+pcal_adcrefcut=-5500.

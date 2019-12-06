@@ -51,16 +51,16 @@ gbpmc_zpos = 129.38 ; cm
 ; if 0 then only use average beam pos and angles in calculating beam position
 ; Various fast raster quantities: gUse* are flags
 
-; Raster constants determined from coin run 4556 on Aug 20, 2018
-gfr_cal_mom  = 8.518
-gfrxa_adc_zero_offset = 64150
-gfrxb_adc_zero_offset = 66250
-gfrya_adc_zero_offset = 67700
-gfryb_adc_zero_offset = 64100
-gfrxa_adcpercm = 158000
-gfrxb_adcpercm = 147000
-gfrya_adcpercm = 155500
-gfryb_adcpercm = 157500
+; Raster constants for initial pol target setup Nov 22, 2019
+gfr_cal_mom  = 10.36
+gfrxa_adc_zero_offset = 64310
+gfrxb_adc_zero_offset = 67210
+gfrya_adc_zero_offset = 67500
+gfryb_adc_zero_offset = 61840
+gfrxa_adcpercm = 96000
+gfrxb_adcpercm = 97086
+gfrya_adcpercm = 88300
+gfryb_adcpercm = 84800
 
  
  

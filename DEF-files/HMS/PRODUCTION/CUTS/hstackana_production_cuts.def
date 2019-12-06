@@ -1,25 +1,31 @@
 Block: RawDecode
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_rawdecode_cuts.def"
-RawDecode_master  1
+RawDecode_master 1
 
 Block: Decode
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_decode_cuts.def"
-Decode_master          ALL_HMS_NO_EDTM
+# Decode_master ALL_HMS_NO_EDTM
+Decode_master 1
 
 Block: CoarseTracking
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_coarsetracking_cuts.def"
-CoarseTracking_master ALL_HMS_NO_EDTM
+# CoarseTracking_master ALL_HMS_NO_EDTM
+CoarseTracking_master 1
 
 Block: CoarseReconstruct
-CoarseReconstruct_master ALL_HMS_NO_EDTM
+# CoarseReconstruct_master ALL_HMS_NO_EDTM
+CoarseReconstruct_master 1
 
 Block: Tracking
-Tracking_master  ALL_HMS_NO_EDTM
+# Tracking_master ALL_HMS_NO_EDTM
+Tracking_master 1
 
 Block: Reconstruct
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_reconstruct_cuts.def"
-Reconstruct_master ALL_HMS_NO_EDTM
+# Reconstruct_master ALL_HMS_NO_EDTM
+Reconstruct_master 1
 
 Block: Physics
 #include "DEF-files/HMS/PRODUCTION/CUTS/hstackana_physics_cuts.def"
-Physics_master ALL_HMS_NO_EDTM
+# Physics_master ALL_HMS_NO_EDTM
+Physics_master 1

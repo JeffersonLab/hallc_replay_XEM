@@ -14,6 +14,9 @@ SHMS
 -shms-2019-newopt-Jan19.dat : includes new optimization that excludes the 4 GeV runs used previously and uses a 6th order fit.
 
 - shms-2017-optimized_delta_newfit3.dat : The xptar,ytar,yptar matrix elements are the same as shms-2017-optimized-2plow.dat . The delta matrix was optimized using carbon elastic data taken during fall 2017. The carbon elastic data determined that the dipole momentum was being set 1.7% too low for the Dec 2017 - May 2018 running period. The magnet field setting program will changed before running in Aug 2018 so that  all magnets were shifted by 1.7%.
+
+- shms-2017-26cm-monte_quads_p18_q2_120_rec.dat  : COSY reconstruction matrix
+    elements with Q2 at +20% above standard tune for defocussed running.
  
 
 

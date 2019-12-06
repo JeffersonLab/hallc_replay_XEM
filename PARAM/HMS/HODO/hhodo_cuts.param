@@ -15,19 +15,13 @@ htofusinginvadc=0
 ; hstart_time_center  center of allowed time window (ns)
    hstart_time_center = 32.                                                     
 ; hstart_time_slop    1/2 width of time window                                  
-   hstart_time_slop = 100.                                                       
+   hstart_time_slop = 100.      
 
-; hscin_tdc_min       minimum tdc value in hms scin                             
-;    hscin_tdc_min = -500                                                           
-
-; with 4698
-    hscin_tdc_min = -50                                                           
-
-; hscin_tdc_max       maximum allowed tdc value                                 
-;   hscin_tdc_max = 4000                                                         
-
-; with 4698
-   hscin_tdc_max = 800                                                         
+; pscin_tdc_min min/max H.hod.GoodPos(Neg)TdcTimeUnCorr
+; note that the params below are factor of 10 higher than
+; what is present in the respective leaf 
+hscin_tdc_min = 0
+hscin_tdc_max = 1200
 
 ; hscin_tdc_to_time   scin tdc time per channel                                 
    hscin_tdc_to_time = 0.09766   ;0.1 was before Dave Mack found the correct conversion in C1190 Manual (May 14, 2018); (See HC Log Entry 3574348)
@@ -50,6 +44,8 @@ hhodo_adc_tdc_offset = 200., 200., 200., 200.
 
 ;Determined from JPSI Coin RUN 7221. Feb 16, 2019 --Carlos
 ; HMS Hodoscope Parameter File Containing TimeWindow Min/Max Cuts 
+
+; variables = H.hod.(1x, 1y, 2x, 2y).GoodNeg(Pos)AdcTdcDiffTime
 
 ;                              1x                 1y              2x              2y 
 hhodo_PosAdcTimeWindowMin = -28-10,             -30,             -26,             -27

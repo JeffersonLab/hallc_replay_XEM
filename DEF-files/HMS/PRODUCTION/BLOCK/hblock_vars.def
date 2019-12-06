@@ -2,6 +2,7 @@
 # Block Definitions *
 #********************
 
+block D.*
 block T.hms.*
 block H.cer.*
 block H.dc.*

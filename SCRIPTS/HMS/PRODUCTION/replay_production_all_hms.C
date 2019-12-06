@@ -41,6 +41,10 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
 
+  // Add the dec data class for debugging
+  Podd::DecData *decData = new Podd::DecData("D", "Decoder Raw Data");
+  gHaApps->Add(decData);
+
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
   gHaApps->Add(TRG);

@@ -20,14 +20,7 @@ pngcer_npe_thresh = 0.5
 ; ADC time window cut values used to select "good" ADC events
 pngcer_adc_tdc_offset   =  200.0
 
-; Burcu's cuts 
-;pngcer_adcTimeWindowMin = -100.0, -100.0, -100.0, -100.0
-;pngcer_adcTimeWindowMax =  100.0,  100.0,  100.0,  100.0
-
-; Burcu+Simona's cuts 
-;pngcer_adcTimeWindowMin = 22.0, 22.0, 22.0, 40.0
-;pngcer_adcTimeWindowMax = 37.0, 37.0, 37.0, 50.0
-
-;Carlos. Determined from Run JPSi Coin Run 7221.  Feb 16, 2019
-pngcer_adcTimeWindowMin = 20.0, 20.0, 20.0, 30.0
-pngcer_adcTimeWindowMax = 50.0, 50.0, 50.0, 60.0
+; fall 2019 startup
+; cut variable is P.ngcer.goodAdcTdcDiffTime
+pngcer_adcTimeWindowMin = -20.0, -20.0, -20.0, -20.0
+pngcer_adcTimeWindowMax = 80.0, 80.0, 80.0, 80.0

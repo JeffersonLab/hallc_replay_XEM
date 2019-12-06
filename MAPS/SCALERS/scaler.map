@@ -26,7 +26,8 @@ xscaler-pagename HMS 4:'HMS Trigger & Beamline'
 xscaler-pagename HMS 5:'HMS Trigger'
 xscaler-pagename HMS 6:'HMS Trigger'
 
-xscaler-clock HMS slot:7 chan:1 rate:60 
+xscaler-clock HMS slot:6 chan:31 rate:1000000
+#xscaler-clock HMS slot:7 chan:13 rate:60 
 #####################################################################
 
 # Setup for Hall C testing SHMS hodoscopes, etc.
@@ -43,7 +44,8 @@ xscaler-pagename SHMS 4:'SHMS Trigger & Beamline'
 xscaler-pagename SHMS 5:'SHMS Trigger'
 xscaler-pagename SHMS 6:'SHMS Trigger'
 
-xscaler-clock SHMS slot:10 chan:1 rate:60
+xscaler-clock SHMS slot:7 chan:31 rate:1000000
+#xscaler-clock SHMS slot:8 chan:13 rate:60
 #####################################################################
 
 # HMS tabs
@@ -297,9 +299,6 @@ BCM4B        0    4     6    29    1    -1  BCM4B
 Unser        0    4     6    30    1    -1  Unser
 1MHz         0    4     6    31    1    -1  1MHz
                                         
-# desc      hel crate slot start nchan page long-description
-clock        0    4     7    1     1    -1  clock   
-
 # SHMS tabs
 # for SHMS the crate is 5 
 # let hel=0 always
@@ -591,6 +590,3 @@ BCM2         0    5     7    28    1    -1  BCM2
 BCM4B        0    5     7    29    1    -1  BCM4B
 Unser        0    5     7    30    1    -1  Unser
 1MHz         0    5     7    31    1    -1  1MHz
-
-# desc      hel crate slot start nchan page long-description
-clock        0    5     10    1     1    -1  clock

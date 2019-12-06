@@ -6,8 +6,6 @@ map 3801 8 10 03000a20 ffffffff 13
 map 3801 8 11 03200b20 ffffffff 13
 map 3801 8 12 03400c20 ffffffff 13
 map 3801 8 13 03600d20 ffffffff 13 31 1000000
-map 3801 8 14 03800e20 ffffffff 13
-map 3801 8 15 03a00f20 ffffffff 13
 variable 12 24 1 .hSTOF.scaler HMS STOF
 variable 12 24 2 .hSTOF.scalerRate HMS STOF
 variable 9 31 1 .hod.2y16.posScaler SHMS 2y+ paddle 16
