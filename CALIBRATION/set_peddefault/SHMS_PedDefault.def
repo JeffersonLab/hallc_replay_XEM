@@ -1,0 +1,16 @@
+TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 200 100 150  P.hgcer.goodAdcPed>0.0
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble  Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 200 100 150  P.ngcer.goodAdcPed>0.0
+TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.25 mV' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 200 100 150 P.aero.goodPosAdcPed>0.0
+TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.25 mV' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 200 100 150 P.aero.goodNegAdcPed>0.0
+TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 200 100 150 P.hod.1x.GoodPosAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 200 100 150 P.hod.1y.GoodPosAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 200 100 150 P.hod.2x.GoodPosAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 200 100 150 P.hod.2y.GoodPosAdcPed>0.0
+TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 200 100 150 P.hod.1x.GoodNegAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 200 100 150 P.hod.1y.GoodNegAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 200 100 150 P.hod.2x.GoodNegAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 200 100 150 P.hod.2y.GoodNegAdcPed>0.0
+TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 200 100 150 P.cal.pr.goodPosAdcPed>0.0
+TH2F pcal_prshwr_good_pped_vs_pmt_neg 'SHMS PreShower- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.pr.goodNegAdcPed 14 0.5 14.5 200 100 150 P.cal.pr.goodNegAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 200 100 150 P.cal.fly.goodAdcPed>0.0
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 200 100 150  P.ngcer.goodAdcPed>0.0

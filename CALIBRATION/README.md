@@ -30,6 +30,8 @@
 
 9. shms_hgcer_calib : Contains scripts to calibrate hte NPE/ADC conversion parameters for SHMS Gas Cerenkovs.
 
+10. set_peddefault : Contains script to determine the default pedestals for each SHMS and HMS detector.
+
 
 
 
