@@ -82,32 +82,32 @@ hdc_wire_counting = 0, 0, 0, 0, 0, 0
                     0, 0, 0, 0, 0, 0
 
 ; x position in cm defaults to global
-hdc_xpos = hdc_xcenter[0]
+hdc_xpos = hdc_xcenter[0]-0.01
+           hdc_xcenter[0]
+           hdc_xcenter[0]+0.005
            hdc_xcenter[0]
            hdc_xcenter[0]
            hdc_xcenter[0]
-           hdc_xcenter[0]
-           hdc_xcenter[0]
+           hdc_xcenter[1]+0.01
            hdc_xcenter[1]
            hdc_xcenter[1]
            hdc_xcenter[1]
-           hdc_xcenter[1]
-           hdc_xcenter[1]
-           hdc_xcenter[1]
+           hdc_xcenter[1]-0.015
+           hdc_xcenter[1]-0.003
            
 ; y position in cm defaults to global
-hdc_ypos = hdc_ycenter[0]
+hdc_ypos = hdc_ycenter[0]+0.0015
+           hdc_ycenter[0]
+           hdc_ycenter[0]-0.002
            hdc_ycenter[0]
            hdc_ycenter[0]
            hdc_ycenter[0]
-           hdc_ycenter[0]
-           hdc_ycenter[0]
            hdc_ycenter[1]
            hdc_ycenter[1]
            hdc_ycenter[1]
            hdc_ycenter[1]
-           hdc_ycenter[1]
-           hdc_ycenter[1]
+           hdc_ycenter[1]+0.015
+           hdc_ycenter[1]+0.001
 
 ; z position in cm of each plane measured from focal plane.
 ; From technical drawings.
