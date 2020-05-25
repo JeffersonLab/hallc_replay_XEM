@@ -20,8 +20,8 @@ pcal_arr_zsize = 50.0
 # Constants for the coordinate correction of SHMS Preshower energy depositions
 pcal_a_cor = 106.73
 pcal_b_cor = 2.329
-pcal_c_cor = 0 0
-pcal_d_cor = 0 0
+pcal_c_cor = 0,0
+pcal_d_cor = 0,0
 
 ; Parameters copied from HMS
 ; Slope in x position.  Allowed distance between track and edge of block
