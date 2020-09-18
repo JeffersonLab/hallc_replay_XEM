@@ -1,0 +1,58 @@
+map 3801 8 4 02800420 ffffffff 4 8 1000000
+variable 4 0 1 .BCM1_Hel.scaler SHMS BCM1 Hel+/-
+variable 4 0 2 .BCM1_Hel.scalerRate SHMS BCM1 Hel+/-
+variable 4 0 3 .BCM1_Hel.scalerCurrent SHMS BCM1 Hel+/-
+variable 4 0 4 .BCM1_Hel.scalerCharge SHMS BCM1 Hel+/-
+variable 4 1 1 .Empty.scaler Empty
+variable 4 1 2 .Empty.scalerRate Empty
+variable 4 2 1 .BCM2_Hel.scaler SHMS BCM2 Hel+/-
+variable 4 2 2 .BCM2_Hel.scalerRate SHMS BCM2 Hel+/-
+variable 4 2 3 .BCM2_Hel.scalerCurrent SHMS BCM2 Hel+/-
+variable 4 2 4 .BCM2_Hel.scalerCharge SHMS BCM2 Hel+/-
+variable 4 25 1 .Empty_2.scaler Empty
+variable 4 25 2 .Empty_2.scalerRate Empty
+variable 4 4 1 .BCM4B_Hel.scaler SHMS BCM4B Hel+/-
+variable 4 4 2 .BCM4B_Hel.scalerRate SHMS BCM4B Hel+/-
+variable 4 4 3 .BCM4B_Hel.scalerCurrent SHMS BCM4B Hel+/-
+variable 4 4 4 .BCM4B_Hel.scalerCharge SHMS BCM4B Hel+/-
+variable 4 6 1 .Unser_Hel.scaler SHMS Unser Hel+/-
+variable 4 6 2 .Unser_Hel.scalerRate SHMS Unser Hel+/-
+variable 4 6 3 .Unser_Hel.scalerCurrent SHMS Unser Hel+/-
+variable 4 6 4 .Unser_Hel.scalerCharge SHMS Unser Hel+/-
+variable 4 8 1 .1MHz_Hel.scaler SHMS 1MHz Hel+/-
+variable 4 8 2 .1MHz_Hel.scalerRate SHMS 1MHz Hel+/-
+variable 4 8 5 .1MHz_Hel.scalerTime SHMS 1MHz Hel+/-
+variable 4 10 1 .BCM4A_Hel.scaler SHMS BCM4A Hel+/-
+variable 4 10 2 .BCM4A_Hel.scalerRate SHMS BCM4A Hel+/-
+variable 4 10 3 .BCM4A_Hel.scalerCurrent SHMS BCM4A Hel+/-
+variable 4 10 4 .BCM4A_Hel.scalerCharge SHMS BCM4A Hel+/-
+variable 4 12 1 .BCM4C_Hel.scaler SHMS BCM4C Hel+/-
+variable 4 12 2 .BCM4C_Hel.scalerRate SHMS BCM4C Hel+/-
+variable 4 12 3 .BCM4C_Hel.scalerCurrent SHMS BCM4C Hel+/-
+variable 4 12 4 .BCM4C_Hel.scalerCharge SHMS BCM4C Hel+/-
+variable 4 15 1 .pL1ACCP_Hel.scaler SHMS L1 Accept Hel+/-
+variable 4 15 2 .pL1ACCP_Hel.scalerRate SHMS L1 Accept Hel+/-
+variable 4 16 1 .pTRIG1_Hel.scaler SHMS TRIG1 Hel+/-
+variable 4 16 2 .pTRIG1_Hel.scalerRate SHMS TRIG1 Hel+/-
+variable 4 17 1 .pTRIG2_Hel.scaler SHMS TRIG2 Hel+/-
+variable 4 17 2 .pTRIG2_Hel.scalerRate SHMS TRIG2 Hel+/-
+variable 4 18 1 .pTRIG3_Hel.scaler SHMS TRIG3 Hel+/-
+variable 4 18 2 .pTRIG3_Hel.scalerRate SHMS TRIG3 Hel+/-
+variable 4 19 1 .pTRIG4_Hel.scaler SHMS TRIG4 Hel+/-
+variable 4 19 2 .pTRIG4_Hel.scalerRate SHMS TRIG4 Hel+/-
+variable 4 20 1 .pTRIG5_Hel.scaler SHMS TRIG5 Hel+/-
+variable 4 20 2 .pTRIG5_Hel.scalerRate SHMS TRIG5 Hel+/-
+variable 4 21 1 .pTRIG6_Hel.scaler SHMS TRIG6 Hel+/-
+variable 4 21 2 .pTRIG6_Hel.scalerRate SHMS TRIG6 Hel+/-
+variable 4 26 1 .hTRIG1_Hel.scaler HMS TRIG1 Hel+/-
+variable 4 26 2 .hTRIG1_Hel.scalerRate HMS TRIG1 Hel+/-
+variable 4 27 1 .hTRIG2_Hel.scaler HMS TRIG2 Hel+/-
+variable 4 27 2 .hTRIG2_Hel.scalerRate HMS TRIG2 Hel+/-
+variable 4 28 1 .hTRIG3_Hel.scaler HMS TRIG3 Hel+/-
+variable 4 28 2 .hTRIG3_Hel.scalerRate HMS TRIG3 Hel+/-
+variable 4 29 1 .hTRIG4_Hel.scaler HMS TRIG4 Hel+/-
+variable 4 29 2 .hTRIG4_Hel.scalerRate HMS TRIG4 Hel+/-
+variable 4 30 1 .hTRIG5_Hel.scaler HMS TRIG5 Hel+/-
+variable 4 30 2 .hTRIG5_Hel.scalerRate HMS TRIG5 Hel+/-
+variable 4 31 1 .hTRIG6_Hel.scaler HMS TRIG6 Hel+/-
+variable 4 31 2 .hTRIG6_Hel.scalerRate HMS TRIG6 Hel+/-

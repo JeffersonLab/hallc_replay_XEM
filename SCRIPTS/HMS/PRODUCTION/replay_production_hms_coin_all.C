@@ -112,6 +112,15 @@ void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
+
+  /*
+  // Add event handler for helicity scalers  THcHelicityScaler *hhelscaler = new THcHelicityScaler("H", "Hall C helicity scaler");
+  //hhelscaler->SetDebugFile("HHelScaler.txt");
+  hhelscaler->SetROC(5);
+  hhelscaler->SetUseFirstEvent(kTRUE);
+  gHaEvtHandlers->Add(hhelscaler);
+  */
+  
   // Add event handler for DAQ configuration event
   THcConfigEvtHandler *hconfig = new THcConfigEvtHandler("hconfig", "Hall C configuration event handler");
   gHaEvtHandlers->Add(hconfig);

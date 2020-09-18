@@ -110,6 +110,16 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
 
+  /*
+  //Add SHMS event handler for helicity scalers
+  THcHelicityScaler *phelscaler = new THcHelicityScaler("P", "Hall C helicity scaler");
+  //phelscaler->SetDebugFile("PHelScaler.txt");
+  phelscaler->SetROC(8);
+  phelscaler->SetUseFirstEvent(kTRUE);
+  gHaEvtHandlers->Add(phelscaler);
+  */
+
+  
   //=:=:=
   // HMS 
   //=:=:=
@@ -167,6 +177,15 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
+  /*
+  // Add HMS event handler for helicity scalers
+  THcHelicityScaler *hhelscaler = new THcHelicityScaler("H", "Hall C helicity scaler");
+  //hhelscaler->SetDebugFile("HHelScaler.txt");
+  hhelscaler->SetROC(5);
+  hhelscaler->SetUseFirstEvent(kTRUE);
+  gHaEvtHandlers->Add(hhelscaler);
+  */
+  
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
   // Kinematics Modules
   //=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=

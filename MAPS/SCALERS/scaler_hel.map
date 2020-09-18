@@ -1,0 +1,80 @@
+# This file: helicity_scaler_tests.map
+# Author: Carlos Yero, Jlab
+# Contains helicity signals map for
+# a helicity scaler in HMS (slot 19) and SHMS (slot3)
+# These module will remain fixed in their locations
+# for a long long time
+
+# for HMS the crate is 4
+# let hel=1 always
+
+# desc       hel crate slot start nchan page long-description (HMS +, -, and MPS helicity states read in for every channel of Helicity Scaler. VALID as of 10/24/2018)
+BCM1_Hel      1   4    19     0	   1    -1   HMS BCM1 Hel+/-	    
+19/01         1	  4    19     1	   1	-1   Empty		    
+BCM2_Hel      1	  4    19     2	   1	-1   HMS BCM2 Hel+/-	    
+19/03         1	  4    19     3	   1	-1   Empty		    
+BCM4B_Hel     1	  4    19     4    1	-1   HMS BCM4B Hel+/-	    
+19/05         1	  4    19     5    1	-1   Empty		    
+Unser_Hel     1	  4    19     6    1	-1   HMS Unser Hel+/-	    
+19/07         1	  4    19     7    1	-1   Empty		    
+1MHz_Hel      1	  4    19     8    1	-1   HMS 1MHz Hel+/-	    
+19/09         1	  4    19     9    1	-1   Empty		    
+BCM4A_Hel     1	  4    19     10   1	-1   HMS BCM4A Hel+/-	    
+19/11         1	  4    19     11   1	-1   Empty		    
+BCM4C_Hel     1	  4    19     12   1	-1   HMS BCM4C Hel+/-	    
+19/13         1	  4    19     13   1	-1   Empty		    
+19/14         1	  4    19     14   1	-1   Empty		    
+hL1ACCP_Hel   1	  4    19     15   1	-1   HMS L1 Accept Hel+/-   
+pTRIG1_Hel    1	  4    19     16   1	-1   SHMS TRIG1 Hel+/-	    
+pTRIG2_Hel    1	  4    19     17   1	-1   SHMS TRIG2 Hel+/-	    
+pTRIG3_Hel    1	  4    19     18   1	-1   SHMS TRIG3 Hel+/-	    
+pTRIG4_Hel    1	  4    19     19   1	-1   SHMS TRIG4 Hel+/-	    
+pTRIG5_Hel    1	  4    19     20   1	-1   SHMS TRIG5 Hel+/-	    
+pTRIG6_Hel    1	  4    19     21   1	-1   SHMS TRIG6 Hel+/-	    
+19/22         1	  4    19     22   1	-1   Empty		    
+19/23         1	  4    19     23   1	-1   Empty		    
+19/24         1	  4    19     24   1	-1   Empty		    
+19/25         1	  4    19     25   1	-1   Empty		    
+hTRIG1_Hel    1	  4    19     26   1	-1   HMS TRIG1 Hel+/-	    
+hTRIG2_Hel    1	  4    19     27   1	-1   HMS TRIG2 Hel+/-	    
+hTRIG3_Hel    1	  4    19     28   1	-1   HMS TRIG3 Hel+/-	    
+hTRIG4_Hel    1	  4    19     29   1	-1   HMS TRIG4 Hel+/-	    
+hTRIG5_Hel    1	  4    19     30   1	-1   HMS TRIG5 Hel+/-	    
+hTRIG6_Hel    1	  4    19     31   1	-1   HMS TRIG6 Hel+/-
+
+# for SHMS the crate is 5 
+# let hel=1 always
+
+# desc        hel crate slot start nchan page long-description  (SHMS +, -, and MPS helicity states are read in for each channel. Helicity Scaler as of 10/24/2018)
+BCM1_Hel      1    5     4    0     1    -1  SHMS BCM1 Hel+/-
+4/01          1    5     4    1     1    -1  Empty
+BCM2_Hel      1    5     4    2     1    -1  SHMS BCM2 Hel+/-
+4/03          1    5     4    3     1    -1  Empty
+BCM4B_Hel     1    5     4    4     1    -1  SHMS BCM4B Hel+/-
+4/05          1    5     4    5     1    -1  Empty
+Unser_Hel     1    5     4    6     1    -1  SHMS Unser Hel+/-
+4/07          1    5     4    7     1    -1  Empty
+1MHz_Hel      1    5     4    8     1    -1  SHMS 1MHz Hel+/-
+4/09          1    5     4    9     1    -1  Empty
+BCM4A_Hel     1    5     4    10    1    -1  SHMS BCM4A Hel+/-
+4/11          1    5     4    11    1    -1  Empty
+BCM4C_Hel     1    5     4    12    1    -1  SHMS BCM4C Hel+/-
+4/13          1    5     4    13    1    -1  Empty
+4/14          1    5     4    14    1    -1  Empty
+pL1ACCP_Hel   1    5     4    15    1    -1  SHMS L1 Accept Hel+/-
+pTRIG1_Hel    1    5     4    16    1    -1  SHMS TRIG1 Hel+/-
+pTRIG2_Hel    1    5     4    17    1    -1  SHMS TRIG2 Hel+/-
+pTRIG3_Hel    1    5     4    18    1    -1  SHMS TRIG3 Hel+/-
+pTRIG4_Hel    1    5     4    19    1    -1  SHMS TRIG4 Hel+/-
+pTRIG5_Hel    1    5     4    20    1    -1  SHMS TRIG5 Hel+/-
+pTRIG6_Hel    1    5     4    21    1    -1  SHMS TRIG6 Hel+/-
+4/22          1    5     4    22    1    -1  Empty
+4/23          1    5     4    23    1    -1  Empty
+4/24          1    5     4    24    1    -1  Empty
+4/25          1    5     4    25    1    -1  Empty
+hTRIG1_Hel    1    5     4    26    1    -1  HMS TRIG1 Hel+/-
+hTRIG2_Hel    1    5     4    27    1    -1  HMS TRIG2 Hel+/-
+hTRIG3_Hel    1    5     4    28    1    -1  HMS TRIG3 Hel+/-
+hTRIG4_Hel    1    5     4    29    1    -1  HMS TRIG4 Hel+/-
+hTRIG5_Hel    1    5     4    30    1    -1  HMS TRIG5 Hel+/-
+hTRIG6_Hel    1    5     4    31    1    -1  HMS TRIG6 Hel+/-
