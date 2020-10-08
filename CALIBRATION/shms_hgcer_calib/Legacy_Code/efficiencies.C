@@ -171,10 +171,10 @@ void efficiencies::SlaveBegin(TTree * /*tree*/)
   fBeta_Full = new TH1F("Beta_Full", "Full beta for events;Beta;Counts", 1000, -5, 5);
   GetOutputList()->Add(fBeta_Full);
 
-  fTiming_Cut = new TH1F("Timing_Cut", "Timing cut used for 'good' hits;Time (ns);Counts", 10000, -40, 0);
+  fTiming_Cut = new TH1F("Timing_Cut", "Timing cut used for 'good' hits;Time (ns);Counts", 500, -100, 100);
   GetOutputList()->Add(fTiming_Cut);
 
-  fTiming_Full = new TH1F("Timing_Full", "Full timing information for events;Time (ns);Counts", 10000, -40, 0);
+  fTiming_Full = new TH1F("Timing_Full", "Full timing information for events;Time (ns);Counts", 500, -100, 100);
   GetOutputList()->Add(fTiming_Full);
 
   //Histograms examining particle ID cuts
@@ -214,16 +214,15 @@ Bool_t efficiencies::Process(Long64_t entry)
   //if (entry % 100000 == 0) printf("Processing Entry number %lld\n",entry);
 
   //Get the entry to loop over 
-  b_Ndata_P_tr_p->GetEntry(entry);
+  fReader.SetEntry(entry);
 
   //Require only one good track reconstruction for the event
-  if (Ndata_P_tr_p != 1) return kTRUE;
+  if (*Ndata_P_tr_beta != 1) return kTRUE;
 
   //Redundant requirement, but useful if multiple tracks are eventually allowed
-  for (Int_t itrack = 0; itrack < Ndata_P_tr_p; itrack++)
+  for (Int_t itrack = 0; itrack < *Ndata_P_tr_beta; itrack++)
     {
       //Require loose cut on particle velocity
-      b_P_tr_beta->GetEntry(entry);
       fBeta_Full->Fill(P_tr_beta[itrack]);
       if (TMath::Abs(P_tr_beta[itrack] - 1.0) > 0.2) return kTRUE;
       fBeta_Cut->Fill(P_tr_beta[itrack]);
@@ -232,27 +231,20 @@ Bool_t efficiencies::Process(Long64_t entry)
       for (Int_t ipmt = 0; ipmt < hgc_pmts; ipmt++)
 	{
 	  //Require the signal passes a timing cut
-	  fNGC ? b_P_ngcer_goodAdcPulseTime->GetEntry(entry) : b_P_hgcer_goodAdcTdcDiffTime->GetEntry(entry);
-	  fTiming_Full->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcTdcDiffTime[ipmt]);
-	  if (fNGC ? P_ngcer_goodAdcPulseTime[ipmt] < 50 || P_ngcer_goodAdcPulseTime[ipmt] > 125 :
-	  P_hgcer_goodAdcTdcDiffTime[ipmt] > -17.0 || P_hgcer_goodAdcTdcDiffTime[ipmt] < -30.0) continue;
-	  fTiming_Cut->Fill(fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : P_hgcer_goodAdcTdcDiffTime[ipmt]);
+	  fTiming_Full->Fill(/*fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : */P_hgcer_goodAdcTdcDiffTime[ipmt]);
+	  if (/*fNGC ? P_ngcer_goodAdcPulseTime[ipmt] < 50 || P_ngcer_goodAdcPulseTime[ipmt] > 125 :*/
+	  P_hgcer_goodAdcTdcDiffTime[ipmt] > 38.0 || P_hgcer_goodAdcTdcDiffTime[ipmt] < 30.0) continue;
+	  fTiming_Cut->Fill(/*fNGC ?  P_ngcer_goodAdcPulseTime[ipmt] : */P_hgcer_goodAdcTdcDiffTime[ipmt]);
 
 	  //Require the signal passes a tracking cut, with a threshold NPE cut as well
-	  fNGC ? b_P_ngcer_numTracksFired->GetEntry(entry) : b_P_hgcer_numTracksFired->GetEntry(entry);
-	  if (fNGC ? P_ngcer_numTracksFired[ipmt] == 0.0 : P_hgcer_numTracksFired[ipmt] == 0.0) continue;
+	  if (/*fNGC ? P_ngcer_numTracksFired[ipmt] == 0.0 :*/ P_hgcer_numTracksFired[ipmt] == 0.0) continue;
 
 	  //Begin particle identification using calorimeter and NGC
-	  fNGC ? b_P_ngcer_npe->GetEntry(entry) : b_P_hgcer_npe->GetEntry(entry);	  
-	  fNGC ? b_P_hgcer_npeSum->GetEntry(entry) : b_P_ngcer_npeSum->GetEntry(entry);
-	  b_P_cal_fly_earray->GetEntry(entry);
-	  b_P_cal_pr_eplane->GetEntry(entry);
-	  b_P_gtr_dp->GetEntry(entry);
 	  Float_t central_p = 2.2;
-	  Float_t p = ((P_gtr_dp/100.0)*central_p) + central_p;
+	  Float_t p = ((P_gtr_dp[itrack]/100.0)*central_p) + central_p;
 
 	  //Visualize what we have to cut with
-	  fFly_Pr_Full->Fill(P_cal_fly_earray/p, P_cal_pr_eplane/p);
+	  fFly_Pr_Full->Fill(*P_cal_fly_earray/p, *P_cal_pr_eplane/p);
 
 	  //Perform cut for electrons
 	  //Cut on Shower vs preshower is a tilted ellipse, this requires an angle of rotation (in radians), x/y center, semimajor and semiminor axis
@@ -266,19 +258,19 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  Float_t ey_center = 0.400;
 	  Float_t esemimajor_axis = 0.38;
 	  Float_t esemiminor_axis = 0.05;
-	  if (pow((P_cal_fly_earray/p - ex_center)*cos(eangle) + (P_cal_pr_eplane/p - ey_center)*sin(eangle),2)/pow(esemimajor_axis,2) + 
-	      pow((P_cal_fly_earray/p - ex_center)*sin(eangle) - (P_cal_pr_eplane/p - ey_center)*cos(eangle),2)/pow(esemiminor_axis,2) < 1)
+	  if (pow((*P_cal_fly_earray/p - ex_center)*cos(eangle) + (*P_cal_pr_eplane/p - ey_center)*sin(eangle),2)/pow(esemimajor_axis,2) + 
+	      pow((*P_cal_fly_earray/p - ex_center)*sin(eangle) - (*P_cal_pr_eplane/p - ey_center)*cos(eangle),2)/pow(esemiminor_axis,2) < 1)
 	    {
-	      if (!fChercut || (fChercut && (fNGC ? P_hgcer_npeSum > fHGC_cut : P_ngcer_npeSum > fNGC_cut))) //condition if cut on other Cherenkov if desired
+	      /*if (!fChercut || (fChercut && (fNGC ? P_hgcer_npeSum > fHGC_cut : P_ngcer_npeSum > fNGC_cut)))*/ //condition if cut on other Cherenkov if desired
 		{
-		  fFly_Pr_eCut->Fill(P_cal_fly_earray/p, P_cal_pr_eplane/p);
-		  fNPE_eNoDet[ipmt]->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
-		  fNPE_Full_eNoDet->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
+		  fFly_Pr_eCut->Fill(*P_cal_fly_earray/p, *P_cal_pr_eplane/p);
+		  fNPE_eNoDet[ipmt]->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
+		  fNPE_Full_eNoDet->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
 	      
-		  if (fNGC ? P_ngcer_npe[ipmt] > fNGC_cut : P_hgcer_npe[ipmt] > fHGC_cut)  //Cut on detector to determine efficiency
+		  if (/*fNGC ? P_ngcer_npe[ipmt] > fNGC_cut : */P_hgcer_npe[ipmt] > fHGC_cut)  //Cut on detector to determine efficiency
 		    {
-		      fNPE_eDet[ipmt]->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
-		      fNPE_Full_eDet->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
+		      fNPE_eDet[ipmt]->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
+		      fNPE_Full_eDet->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
 		    }
 		}
 	    }
@@ -294,19 +286,19 @@ Bool_t efficiencies::Process(Long64_t entry)
 	  Float_t piy_center = 0.05;
 	  Float_t pisemimajor_axis = 0.08;
 	  Float_t pisemiminor_axis = 0.02;
-	  if (pow((P_cal_fly_earray/p - pix_center)*cos(piangle) + (P_cal_pr_eplane/p - piy_center)*sin(piangle),2)/pow(pisemimajor_axis,2) + 
-	      pow((P_cal_fly_earray/p - pix_center)*sin(piangle) - (P_cal_pr_eplane/p - piy_center)*cos(piangle),2)/pow(pisemiminor_axis,2) < 1)
+	  if (pow((*P_cal_fly_earray/p - pix_center)*cos(piangle) + (*P_cal_pr_eplane/p - piy_center)*sin(piangle),2)/pow(pisemimajor_axis,2) + 
+	      pow((*P_cal_fly_earray/p - pix_center)*sin(piangle) - (*P_cal_pr_eplane/p - piy_center)*cos(piangle),2)/pow(pisemiminor_axis,2) < 1)
 	    {
-	      if (!fChercut || (fChercut && (fNGC ? P_hgcer_npeSum < fHGC_cut : P_ngcer_npeSum < fNGC_cut))) //condition if cut on other Cherenkov is desired
+	      /*if (!fChercut || (fChercut && (fNGC ? P_hgcer_npeSum < fHGC_cut : P_ngcer_npeSum < fNGC_cut)))*/ //condition if cut on other Cherenkov is desired
 		{
-		  fFly_Pr_piCut->Fill(P_cal_fly_earray/p, P_cal_pr_eplane/p);
-		  fNPE_piNoDet[ipmt]->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
-		  fNPE_Full_piNoDet->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
+		  fFly_Pr_piCut->Fill(*P_cal_fly_earray/p, *P_cal_pr_eplane/p);
+		  fNPE_piNoDet[ipmt]->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
+		  fNPE_Full_piNoDet->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
 	      		 
-		  if (fNGC ? P_ngcer_npe[ipmt] > fNGC_cut : P_hgcer_npe[ipmt] > fHGC_cut)   //Cut on detector to determine efficiency
+		  if (/*fNGC ? P_ngcer_npe[ipmt] > fNGC_cut :*/ P_hgcer_npe[ipmt] > fHGC_cut)   //Cut on detector to determine efficiency
 		    {
-		      fNPE_piDet[ipmt]->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
-		      fNPE_Full_piDet->Fill(fNGC ? P_ngcer_npe[ipmt] : P_hgcer_npe[ipmt]);
+		      fNPE_piDet[ipmt]->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
+		      fNPE_Full_piDet->Fill(/*fNGC ? P_ngcer_npe[ipmt] :*/ P_hgcer_npe[ipmt]);
 		    }
 		}
 	    }
