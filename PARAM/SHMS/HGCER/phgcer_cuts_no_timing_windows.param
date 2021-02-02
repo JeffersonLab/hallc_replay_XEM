@@ -1,0 +1,8 @@
+;SHMS Heavy Gas Cherenkov Cut parameters for removing timing windows
+
+; ADC time window cut values used to select "good" ADC events
+phgcer_adc_tdc_offset = 200.0
+
+;Wide open timing windows
+phgcer_adcTimeWindowMin = -1000.0, -1000.0, -1000.0, -1000.0
+phgcer_adcTimeWindowMax = 1000.0, 1000.0, 1000.0, 1000.0

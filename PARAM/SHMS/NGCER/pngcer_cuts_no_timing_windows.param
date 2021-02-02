@@ -1,0 +1,8 @@
+;SHMS Noble Gas Cherenkov Cut parameters for removing timing windows
+
+; ADC time window cut values used to select "good" ADC events
+pngcer_adc_tdc_offset = 200.
+
+;Wide open Timing Windows
+pngcer_adcTimeWindowMin = -1000., -1000., -1000., -1000.
+pngcer_adcTimeWindowMax = 1000., 1000., 1000., 1000.
