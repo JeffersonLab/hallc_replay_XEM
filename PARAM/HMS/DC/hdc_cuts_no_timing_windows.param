@@ -1,0 +1,7 @@
+;HMS Drift Chamber Cut parameters for removing timing windows
+
+; TDC window limits for each plane.
+hdc_tdc_min_win = -30000, -30000, -30000, -30000, -30000, -30000
+                  -30000, -30000, -30000, -30000, -30000, -30000
+hdc_tdc_max_win = 30000, 30000, 30000, 30000, 30000, 30000
+                  30000, 30000, 30000, 30000, 30000, 30000

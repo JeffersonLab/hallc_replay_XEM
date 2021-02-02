@@ -1,0 +1,7 @@
+;SHMS DC Cut parameters for removing timing windows
+
+;Wide open TDC timing window
+pdc_tdc_min_win = -16000, -16000, -16000, -16000, -16000, -16000
+                  -16000, -16000, -16000, -16000, -16000, -16000
+pdc_tdc_max_win = -2000, -2000, -2000, -2000, -2000, -2000
+                  -2000, -2000, -2000, -2000, -2000, -2000

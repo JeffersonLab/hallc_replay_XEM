@@ -1,0 +1,83 @@
+#---------------------------------------------------------
+#        Drift Chamber Raw TDC for hcana update
+#---------------------------------------------------------
+
+#--------------------
+#  Drift Chamber 1
+#--------------------
+
+TH1F hdc_1u1_rawtdc 'HMS DC 1u1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000
+TH1F hdc_1u1_nhit 'HMS DC 1U1 NHit; Number of Hits Per Event; Counts' H.dc.1u1.nhit 10 -0.5 9.5
+TH1F hdc_1u1_rawtdc_nhit1 'HMS DC 1u1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==1
+TH1F hdc_1u1_rawtdc_nhit2 'HMS DC 1u1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==2
+TH1F hdc_1u1_rawtdc_nhit3 'HMS DC 1u1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==3
+
+TH1F hdc_1u2_rawtdc 'HMS DC 1u2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000
+TH1F hdc_1u2_nhit 'HMS DC 1U2 NHit; Number of Hits Per Event; Counts' H.dc.1u2.nhit 10 -0.5 9.5
+TH1F hdc_1u2_rawtdc_nhit1 'HMS DC 1u2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==1
+TH1F hdc_1u2_rawtdc_nhit2 'HMS DC 1u2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==2
+TH1F hdc_1u2_rawtdc_nhit3 'HMS DC 1u2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==3
+
+TH1F hdc_1x1_rawtdc 'HMS DC 1x1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000
+TH1F hdc_1x1_nhit 'HMS DC 1X1 NHit; Number of Hits Per Event; Counts' H.dc.1x1.nhit 10 -0.5 9.5
+TH1F hdc_1x1_rawtdc_nhit1 'HMS DC 1x1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==1
+TH1F hdc_1x1_rawtdc_nhit2 'HMS DC 1x1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==2
+TH1F hdc_1x1_rawtdc_nhit3 'HMS DC 1x1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==3
+
+TH1F hdc_1x2_rawtdc 'HMS DC 1x2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000
+TH1F hdc_1x2_nhit 'HMS DC 1X2 NHit; Number of Hits Per Event; Counts' H.dc.1x2.nhit 10 -0.5 9.5
+TH1F hdc_1x2_rawtdc_nhit1 'HMS DC 1x2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==1
+TH1F hdc_1x2_rawtdc_nhit2 'HMS DC 1x2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==2
+TH1F hdc_1x2_rawtdc_nhit3 'HMS DC 1x2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==3
+
+TH1F hdc_1v1_rawtdc 'HMS DC 1v1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000
+TH1F hdc_1v1_nhit 'HMS DC 1V1 NHit; Number of Hits Per Event; Counts' H.dc.1v1.nhit 10 -0.5 9.5
+TH1F hdc_1v1_rawtdc_nhit1 'HMS DC 1v1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==1
+TH1F hdc_1v1_rawtdc_nhit2 'HMS DC 1v1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==2
+TH1F hdc_1v1_rawtdc_nhit3 'HMS DC 1v1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==3
+
+TH1F hdc_1v2_rawtdc 'HMS DC 1v2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000
+TH1F hdc_1v2_nhit 'HMS DC 1V2 NHit; Number of Hits Per Event; Counts' H.dc.1v2.nhit 10 -0.5 9.5
+TH1F hdc_1v2_rawtdc_nhit1 'HMS DC 1v2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==1
+TH1F hdc_1v2_rawtdc_nhit2 'HMS DC 1v2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==2
+TH1F hdc_1v2_rawtdc_nhit3 'HMS DC 1v2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==3
+
+#--------------------
+#  Drift Chamber 2
+#--------------------
+
+TH1F hdc_2u1_rawtdc 'HMS DC 1u1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000
+TH1F hdc_2u1_nhit 'HMS DC 1U1 NHit; Number of Hits Per Event; Counts' H.dc.1u1.nhit 10 -0.5 9.5
+TH1F hdc_2u1_rawtdc_nhit1 'HMS DC 1u1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==1
+TH1F hdc_2u1_rawtdc_nhit2 'HMS DC 1u1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==2
+TH1F hdc_2u1_rawtdc_nhit3 'HMS DC 1u1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1u1.rawtdc 5000 -16000 -2000 H.dc.1u1.nhit==3
+
+TH1F hdc_2u2_rawtdc 'HMS DC 1u2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000
+TH1F hdc_2u2_nhit 'HMS DC 1U2 NHit; Number of Hits Per Event; Counts' H.dc.1u2.nhit 10 -0.5 9.5
+TH1F hdc_2u2_rawtdc_nhit1 'HMS DC 1u2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==1
+TH1F hdc_2u2_rawtdc_nhit2 'HMS DC 1u2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==2
+TH1F hdc_2u2_rawtdc_nhit3 'HMS DC 1u2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1u2.rawtdc 5000 -16000 -2000 H.dc.1u2.nhit==3
+
+TH1F hdc_2x1_rawtdc 'HMS DC 1x1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000
+TH1F hdc_2x1_nhit 'HMS DC 1X1 NHit; Number of Hits Per Event; Counts' H.dc.1x1.nhit 10 -0.5 9.5
+TH1F hdc_2x1_rawtdc_nhit1 'HMS DC 1x1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==1
+TH1F hdc_2x1_rawtdc_nhit2 'HMS DC 1x1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==2
+TH1F hdc_2x1_rawtdc_nhit3 'HMS DC 1x1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1x1.rawtdc 5000 -16000 -2000 H.dc.1x1.nhit==3
+
+TH1F hdc_2x2_rawtdc 'HMS DC 1x2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000
+TH1F hdc_2x2_nhit 'HMS DC 1X2 NHit; Number of Hits Per Event; Counts' H.dc.1x2.nhit 10 -0.5 9.5
+TH1F hdc_2x2_rawtdc_nhit1 'HMS DC 1x2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==1
+TH1F hdc_2x2_rawtdc_nhit2 'HMS DC 1x2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==2
+TH1F hdc_2x2_rawtdc_nhit3 'HMS DC 1x2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1x2.rawtdc 5000 -16000 -2000 H.dc.1x2.nhit==3
+
+TH1F hdc_2v1_rawtdc 'HMS DC 1v1 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000
+TH1F hdc_2v1_nhit 'HMS DC 1V1 NHit; Number of Hits Per Event; Counts' H.dc.1v1.nhit 10 -0.5 9.5
+TH1F hdc_2v1_rawtdc_nhit1 'HMS DC 1v1 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==1
+TH1F hdc_2v1_rawtdc_nhit2 'HMS DC 1v1 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==2
+TH1F hdc_2v1_rawtdc_nhit3 'HMS DC 1v1 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1v1.rawtdc 5000 -16000 -2000 H.dc.1v1.nhit==3
+
+TH1F hdc_2v2_rawtdc 'HMS DC 1v2 Raw TDC; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000
+TH1F hdc_2v2_nhit 'HMS DC 1V2 NHit; Number of Hits Per Event; Counts' H.dc.1v2.nhit 10 -0.5 9.5
+TH1F hdc_2v2_rawtdc_nhit1 'HMS DC 1v2 Raw TDC, nhit=1; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==1
+TH1F hdc_2v2_rawtdc_nhit2 'HMS DC 1v2 Raw TDC, nhit=2; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==2
+TH1F hdc_2v2_rawtdc_nhit3 'HMS DC 1v2 Raw TDC, nhit=3; Channels 0.1 ns / Ch; Counts' H.dc.1v2.rawtdc 5000 -16000 -2000 H.dc.1v2.nhit==3 
