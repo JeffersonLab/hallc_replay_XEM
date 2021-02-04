@@ -158,13 +158,13 @@ Pre-Scaled Ps2 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (
 Pre-Scaled Ps3 Total Live Time (EDTM) : {(hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 Pre-Scaled Ps3 Total Dead Time (EDTM) : {100.0 - (hcut_edtm_accepted.npassed / (H.EDTM.scaler/ghconfig_ti_ps_factors[2]))*100.0:%3.4f} %
 
-OG 6 GeV Electronic Live Time (100, 150) : {100.0 - ((H.pPRE100.scalerCut - H.pPRE150.scalerCut)/H.pPRE100.scalerCut):%3.4f} %
+OG 6 GeV Electronic Live Time (100, 150) : {100.0*(1. - ((H.pPRE100.scalerCut - H.pPRE150.scalerCut)/H.pPRE100.scalerCut)):%3.4f} %
 OG 6 GeV Electronic Dead Time (100, 150) : {100*((H.pPRE100.scalerCut - H.pPRE150.scalerCut)/H.pPRE100.scalerCut):%3.4f} %
 
-OG 6 GeV Electronic Live Time (100, 200) : {100.0 - ((H.pPRE100.scalerCut - H.pPRE200.scalerCut)/H.pPRE100.scalerCut):%3.4f} %
+OG 6 GeV Electronic Live Time (100, 200) : {100.0*(1. - ((H.pPRE100.scalerCut - H.pPRE200.scalerCut)/H.pPRE100.scalerCut)):%3.4f} %
 OG 6 GeV Electronic Dead Time (100, 200) : {100*((H.pPRE100.scalerCut - H.pPRE200.scalerCut)/H.pPRE100.scalerCut):%3.4f} %
 
-OG 6 GeV Electronic Live Time (150, 200) : {100.0 - ((H.pPRE150.scalerCut - H.pPRE200.scalerCut)/H.pPRE150.scalerCut):%3.4f} %
+OG 6 GeV Electronic Live Time (150, 200) : {100.0*(1. - ((H.pPRE150.scalerCut - H.pPRE200.scalerCut)/H.pPRE150.scalerCut)):%3.4f} %
 OG 6 GeV Electronic Dead Time (150, 200) : {100*((H.pPRE150.scalerCut - H.pPRE200.scalerCut)/H.pPRE150.scalerCut):%3.4f} %
 
 3/4      Pre-Trigger 50 ns Gate  : {H.hTRIG1.scalerCut/H.1MHz.scalerTimeCut/1000.:%.3f} kHz
