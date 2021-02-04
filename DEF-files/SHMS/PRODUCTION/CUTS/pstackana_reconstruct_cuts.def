@@ -14,7 +14,7 @@ pcut_pi_all            	  pcut_cer_ng_pi && pcut_cer_hg_pi && pcut_cal_pi
 shmsScinGood        P.hod.goodscinhit == 1
 shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
 
-shmsScinShould      shmsScinGood && shmsGoodBetanotrk && !shmsDCany_large 
+shmsScinShould      shmsScinGood && shmsGoodBetanotrk 
 shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
 #shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
 shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0.
