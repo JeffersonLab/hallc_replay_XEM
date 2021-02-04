@@ -12,7 +12,7 @@ cminch=2.54
 
 ; General SHMS parameter files
 ; Note: shmsflags.param includes spectrometer offsets and options.
-#include "PARAM/SHMS/GEN/pcana.param"
+#include "PARAM/SHMS/GEN/pcana_sp18.param"
 #include "PARAM/SHMS/GEN/pdebug.param"
 #include "PARAM/SHMS/GEN/shmsflags_sp18.param"
 #include "PARAM/SHMS/GEN/ptracking_sp18.param"
@@ -29,7 +29,7 @@ cminch=2.54
 ; SHMS default cut parameter files
 #include "PARAM/SHMS/NGCER/pngcer_cuts_sp18.param"
 #include "PARAM/SHMS/DC/pdc_cuts_sp18.param"
-#include "PARAM/SHMS/HODO/phodo_cuts_sp18.param"
+;#include "PARAM/SHMS/HODO/phodo_cuts_sp18.param"
 #include "PARAM/SHMS/HGCER/phgcer_cuts_sp18.param"
 #include "PARAM/SHMS/AERO/paero_cuts_sp18.param"
 #include "PARAM/SHMS/CAL/pcal_cuts_sp18.param"

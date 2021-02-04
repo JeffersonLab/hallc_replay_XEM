@@ -1,3 +1,66 @@
+; Common kinematics parameter for ALL running
 0-99999
-g_ctp_parm_filename       = "DBASE/SHMS/general.param"
 g_ctp_kinematics_filename = "DBASE/SHMS/standard.kinematics"
+
+
+; General parameters for Spring 2018 running during F2.
+0-7100
+g_ctp_parm_filename  = "DBASE/SHMS/general_sp18.param"
+g_ctp_calib_filename = "DBASE/SHMS/default_det_calib_sp18.param"
+
+; General parameters for Spring 2019 running during j-psi
+7197-7261
+g_ctp_parm_filename  = "DBASE/SHMS/general_sp19.param"
+g_ctp_calib_filename = "DBASE/SHMS/default_det_calib_sp19.param"
+
+
+; General parameters for Spring 2021 running during the full experiment
+7300-99999
+g_ctp_parm_filename  = "DBASE/SHMS/general_sp21.param"
+g_ctp_calib_filename = "DBASE/SHMS/default_det_calib_sp21.param"
+
+
+
+
+; Specialized detector calibrations w.r.t. kinematic settings
+1980-2013
+;Very Early Boiling Runs at 15 degrees on C, D, Al
+
+
+2484-2508
+;Production EMC
+
+
+2509-2523
+;Production EMC
+
+
+2524-2545
+;Production EMC
+
+
+2547-2563
+;Production EMC
+
+
+3102-3121
+;Boiling Runs at 15 degrees on H, D, C, Al
+
+
+3122-3130
+;Boiling at 25 degrees on H and D
+
+
+3130-3163
+;X>1 at 8 degrees on H, D, B10, B11, Be12, C, Al
+
+
+3204-3226
+;Boiling at 25 degrees on H, D, C, Al
+
+
+
+
+7197-7261
+;Production during jpsi on H, D, B10, B11, C, Al
+

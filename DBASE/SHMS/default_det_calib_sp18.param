@@ -6,5 +6,5 @@
 #include "PARAM/SHMS/HGCER/phgcer_calib_sp18.param"
 #include "PARAM/SHMS/AERO/paero_calib_sp18.param"
 #include "PARAM/SHMS/CAL/pcal_calib_sp18.param"
-;#include "PARAM/SHMS/HODO/phodo_TWcalib_sp18.param"
-;#include "PARAM/SHMS/HODO/phodo_Vpcalib_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_sp18.param"
