@@ -1,0 +1,14 @@
+;SHMS Central Path Lenth from target to focal plane
+SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
+
+
+; Parameters we need to keep THcHallCSpectrometer Happy
+;p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_p20_rec.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_m015_rec.dat"
+;p_recon_coeff_filename = "DATFILES/shms_dipole_2plow.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2017-optimized.dat"
+p_recon_coeff_filename = "DATFILES/shms-2017-optimized_delta_newfit3.dat"
+
+; fall 2019 defocused tune -> Q2 current set to 120% of nominal tune
+; p_recon_coeff_filename = "DATFILES/shms-2017-26cm-monte_quads_p18_q2_120_rec.dat"
