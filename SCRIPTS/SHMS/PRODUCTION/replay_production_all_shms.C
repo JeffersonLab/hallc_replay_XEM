@@ -39,7 +39,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_shms_map_filename"));
 
   // Add the dec data class for debugging
   Podd::DecData *decData = new Podd::DecData("D", "Decoder Raw Data");

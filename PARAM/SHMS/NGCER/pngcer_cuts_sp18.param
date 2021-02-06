@@ -20,7 +20,7 @@ pngcer_adc_tdc_offset = 200.
 ;pngcer_adcTimeWindowMax = -15.0,  -8.25, -12.0, -12.0
 
 pngcer_adcTimeWindowMin = -50.0, -45.0, -45.0, -45.0
-pngcer_adcTimeWindowMax = -10.0, -10.0, -10.0, -10.0
+pngcer_adcTimeWindowMax =  10.0,  10.0,  10.0,  10.0
 
 
 ; ; NPE Threshold for "good" hit (for measureing effic.)

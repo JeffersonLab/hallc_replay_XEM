@@ -8,11 +8,11 @@
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
 pdc_tdcrefcut    = -13500.
-phodo_tdcrefcut  = -3000.
-phodo_adcrefcut  = -187.5/.0625
-pngcer_adcrefcut = -187.5/.0625
-phgcer_adcrefcut = -187.5/.0625
-paero_adcrefcut  = -187.5/.0625
-pcal_adcrefcut   = -187.5/.0625
+phodo_tdcrefcut  = -2800.
+phodo_adcrefcut  = -2800.
+pngcer_adcrefcut = -2800.
+phgcer_adcrefcut = -2800.
+paero_adcrefcut  = -2800.
+pcal_adcrefcut   = -2800.
 
 

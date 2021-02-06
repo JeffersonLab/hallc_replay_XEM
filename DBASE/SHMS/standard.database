@@ -7,12 +7,13 @@ g_ctp_kinematics_filename = "DBASE/SHMS/standard.kinematics"
 0-7100
 g_ctp_parm_filename  = "DBASE/SHMS/general_sp18.param"
 g_ctp_calib_filename = "DBASE/SHMS/default_det_calib_sp18.param"
+g_ctp_shms_map_filename = "MAPS/SHMS/DETEC/STACK/shms_stack_sp18.map"
+g_ctp_hms_map_filename  = "MAPS/HMS/DETEC/STACK/hms_stack_sp18.map"
 
 ; General parameters for Spring 2019 running during j-psi
 7197-7261
 g_ctp_parm_filename  = "DBASE/SHMS/general_sp19.param"
 g_ctp_calib_filename = "DBASE/SHMS/default_det_calib_sp19.param"
-
 
 ; General parameters for Spring 2021 running during the full experiment
 7300-99999

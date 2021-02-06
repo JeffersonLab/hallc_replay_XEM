@@ -4,23 +4,23 @@ raddeg=3.14159265/180
 cminch=2.54
 
 ; General Hall-C parameter files
-#include "PARAM/GEN/genflags.param"
-#include "PARAM/GEN/gdebug.param"
-#include "PARAM/GEN/gtarget.param"
-#include "PARAM/GEN/gbeam_spring18.param"
+#include "PARAM/GEN/genflags_sp18.param"
+#include "PARAM/GEN/gdebug_sp18.param"
+#include "PARAM/GEN/gtarget_sp18.param"
+#include "PARAM/GEN/gbeam_sp18.param"
 #include "PARAM/GEN/gscalers_sp18.param"
 
 ; General SHMS parameter files
 ; Note: shmsflags.param includes spectrometer offsets and options.
 #include "PARAM/SHMS/GEN/pcana_sp18.param"
-#include "PARAM/SHMS/GEN/pdebug.param"
+#include "PARAM/SHMS/GEN/pdebug_sp18.param"
 #include "PARAM/SHMS/GEN/shmsflags_sp18.param"
 #include "PARAM/SHMS/GEN/ptracking_sp18.param"
 #include "PARAM/SHMS/GEN/p_reftime_cut_sp18.param"
 
 ; SHMS default geometry parameter files
 #include "PARAM/SHMS/NGCER/pngcer_geom.param"
-#include "PARAM/SHMS/DC/pdc_geom.param"
+#include "PARAM/SHMS/DC/pdc_geom_sp18.param"
 #include "PARAM/SHMS/HODO/phodo_geom.param"
 #include "PARAM/SHMS/HGCER/phgcer_geom.param"
 #include "PARAM/SHMS/AERO/paero_geom.param"
