@@ -3,22 +3,22 @@
 #---------------------------------------------------------
 
 #Pre-Shower Positive
-TH2F pcal_pr_good_adctdc_diff_time_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000
-TH2F pcal_pr_good_adc_mult_vs_pmt_pos 'SHMS PR POS Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.pr.goodPosAdcMult 14 0.5 14.5 5 0.5 5.5
-TH2F pcal_pr_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==1
-TH2F pcal_pr_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==2
-TH2F pcal_pr_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==3
+TH2F pcal_prshwr_good_adctdc_diff_time_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000
+TH2F pcal_prshwr_good_adc_mult_vs_pmt_pos 'SHMS PR POS Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.pr.goodPosAdcMult 14 0.5 14.5 5 0.5 5.5
+TH2F pcal_prshwr_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==1
+TH2F pcal_prshwr_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==2
+TH2F pcal_prshwr_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS PR Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodPosAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodPosAdcMult==3
 
 #Pre-Shower Negative
-TH2F pcal_pr_good_adctdc_diff_time_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000
-TH2F pcal_pr_good_adc_mult_vs_pmt_neg 'SHMS PR NEG Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.pr.goodNegAdcMult 14 0.5 14.5 5 0.5 5.5
-TH2F pcal_pr_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==1
-TH2F pcal_pr_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==2
-TH2F pcal_pr_good_adctdc_diff_time_mult3_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==3
+TH2F pcal_prshwr_good_adctdc_diff_time_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000
+TH2F pcal_prshwr_good_adc_mult_vs_pmt_neg 'SHMS PR NEG Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.pr.goodNegAdcMult 14 0.5 14.5 5 0.5 5.5
+TH2F pcal_prshwr_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==1
+TH2F pcal_prshwr_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==2
+TH2F pcal_prshwr_good_adctdc_diff_time_mult3_vs_pmt_neg 'SHMS PR Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.pr.goodNegAdcTdcDiffTime 14 0.5 14.5 1000 -1000 1000 P.cal.pr.goodNegAdcMult==3
 
 #Flies Eye Shower Counter
-TH2F pcal_fly_good_adctdc_diff_time_vs_pmt 'SHMS FLY Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000
-TH2F pcal_fly_good_adc_mult_vs_pmt 'SHMS FLY  Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.fly.goodAdcMult 224 0.5 224.5 5 0.5 5.5
-TH2F pcal_fly_good_adctdc_diff_time_mult1_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==1
-TH2F pcal_fly_good_adctdc_diff_time_mult2_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==2
-TH2F pcal_fly_good_adctdc_diff_time_mult3_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==3 
+TH2F pcal_shwr_good_adctdc_diff_time_vs_pmt 'SHMS FLY Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000
+TH2F pcal_shwr_good_adc_mult_vs_pmt 'SHMS FLY  Good Adc Multiplicity;  PMT Number; SHMS Adc Multiplicity' [I+1] P.cal.fly.goodAdcMult 224 0.5 224.5 5 0.5 5.5
+TH2F pcal_shwr_good_adctdc_diff_time_mult1_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==1
+TH2F pcal_shwr_good_adctdc_diff_time_mult2_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==2
+TH2F pcal_shwr_good_adctdc_diff_time_mult3_vs_pmt 'SHMS FLY Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.cal.fly.goodAdcTdcDiffTime 224 0.5 224.5 1000 -1000 1000 P.cal.fly.goodAdcMult==3
