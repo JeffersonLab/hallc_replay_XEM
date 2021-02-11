@@ -25,3 +25,5 @@ pngcer_adcTimeWindowMax =  10.0,  10.0,  10.0,  10.0
 
 ; ; NPE Threshold for "good" hit (for measureing effic.)
 pngcer_npe_thresh = 0.5
+
+pngcer_PedDefault= 2083, 2072, 2032, 1955

@@ -1,0 +1,3 @@
+; Parameters we need to keep THcHallCSpectrometer Happy
+
+p_recon_coeff_filename = "DATFILES/shms-21deg_2p7_Gev_correction.dat"

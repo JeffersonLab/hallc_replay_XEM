@@ -8,11 +8,11 @@ cminch=2.54
 #include "PARAM/GEN/gdebug_sp18.param"
 #include "PARAM/GEN/gtarget_sp18.param"
 #include "PARAM/GEN/gbeam_sp18.param"
-#include "PARAM/GEN/gscalers_sp18.param"
+;#include "PARAM/GEN/gscalers_sp18.param"
 
 ; General SHMS parameter files
 ; Note: shmsflags.param includes spectrometer offsets and options.
-#include "PARAM/SHMS/GEN/pcana_sp18.param"
+;#include "PARAM/SHMS/GEN/pcana_sp18.param"
 #include "PARAM/SHMS/GEN/pdebug_sp18.param"
 #include "PARAM/SHMS/GEN/shmsflags_sp18.param"
 #include "PARAM/SHMS/GEN/ptracking_sp18.param"
@@ -33,3 +33,14 @@ cminch=2.54
 #include "PARAM/SHMS/HGCER/phgcer_cuts_sp18.param"
 #include "PARAM/SHMS/AERO/paero_cuts_sp18.param"
 #include "PARAM/SHMS/CAL/pcal_cuts_sp18.param"
+
+; SHMS default calib parameter files
+#include "PARAM/SHMS/NGCER/pngcer_calib_sp18.param"
+#include "PARAM/SHMS/DC/pdc_calib_sp18.param"
+#include "PARAM/SHMS/DC/pdc_tzero_per_wire_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_calib_sp18.param"
+#include "PARAM/SHMS/HGCER/phgcer_calib_sp18.param"
+#include "PARAM/SHMS/AERO/paero_calib_sp18.param"
+#include "PARAM/SHMS/CAL/pcal_calib_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_sp18.param"

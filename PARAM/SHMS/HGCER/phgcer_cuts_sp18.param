@@ -21,3 +21,5 @@ phgcer_adcTimeWindowMax =  -5.0, -10.0, -10.0, -10.0
 
 ; NPE Threshold for "good" hit (for measureing effic.)
 phgcer_npe_thresh = 0.5
+
+phgcer_PedDefault= 2083, 2143, 2309, 1978

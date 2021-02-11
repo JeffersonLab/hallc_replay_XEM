@@ -1,0 +1,3 @@
+; Parameters we need to keep THcHallCSpectrometer Happy
+
+p_recon_coeff_filename = "DATFILES/9p8_Gev_correction.dat"

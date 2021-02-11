@@ -7,12 +7,12 @@
 ;     is used as reftime. If no ref time is found  greater than the abs(refcut) then no
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
-pdc_tdcrefcut    = -13500.
-phodo_tdcrefcut  = -2800.
-phodo_adcrefcut  = -2800.
-pngcer_adcrefcut = -2800.
-phgcer_adcrefcut = -2800.
-paero_adcrefcut  = -2800.
-pcal_adcrefcut   = -2800.
+pdc_tdcrefcut    = -13500
+phodo_tdcrefcut  = -2800
+phodo_adcrefcut  = -2800
+pngcer_adcrefcut = -2800
+phgcer_adcrefcut = -2800
+paero_adcrefcut  = -2800
+pcal_adcrefcut   = -2800
 
 
