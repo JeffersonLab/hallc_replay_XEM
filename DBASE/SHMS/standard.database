@@ -70,7 +70,7 @@ g_ctp_bcm_calib_filename = "PARAM/SHMS/BCM/gscaler_period3.param"
 ;Boiling at 25 degrees on H and D
 g_ctp_bcm_calib_filename = "PARAM/SHMS/BCM/gscaler_period3.param"
 ;g_ctp_optics_filename = 
-;g_ctp_det_calib_filename = 
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 
 
 3131-3163
@@ -84,7 +84,7 @@ g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_8deg_m9p8.param"
 ;Boiling at 25 degrees on H, D, C, Al
 g_ctp_bcm_calib_filename = "PARAM/SHMS/BCM/gscaler_period4.param"
 ;g_ctp_optics_filename = 
-;g_ctp_det_calib_filename = 
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 
 
 

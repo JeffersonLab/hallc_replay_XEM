@@ -17,6 +17,8 @@ REPORT_OUTPUT
 HISTOGRAMS
 MON_OUTPUT
 ROOTfiles
+/CALIBRATION/dc_calib/scripts/*cardLog*/
+/CALIBRATION/shms_cal_calib_f2/
 .root_history
 raw
 raw.copiedtotape

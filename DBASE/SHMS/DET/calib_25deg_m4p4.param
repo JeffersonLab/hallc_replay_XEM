@@ -1,0 +1,4 @@
+; SHMS calibration files for 8 deg, p = -9.8 GeV, runs 3131-3163
+#include "PARAM/SHMS/DC/pdc_calib_25deg_m4p4_sp18.param"
+#include "PARAM/SHMS/DC/pdc_tzero_per_wire_25deg_m4p4_sp18.param"
+#include "PARAM/SHMS/CAL/pcal_calib_25deg_m4p4_sp18.param"

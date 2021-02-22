@@ -7,3 +7,15 @@ block P.cal.etotnorm
 block P.cal.etottracknorm
 block P.hgcer.npeSum
 block P.ngcer.npeSum
+
+#Add for checking Calibrations
+block P.dc.*.dist
+block P.dc.*.time
+block P.dc.residualExclPlane
+
+block P.cal.xtrack
+block P.cal.ytrack
+block P.cal.fly.goodAdcTdcDiffTime
+
+block P.hod.goodstarttime
+block P.hod.beta
