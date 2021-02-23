@@ -1,3 +1,57 @@
+; Common kinematics parameter for ALL running
 0-99999
-g_ctp_parm_filename       = "DBASE/HMS/general.param"
 g_ctp_kinematics_filename = "DBASE/HMS/standard.kinematics"
+
+; General parameters for Spring 2018 running during F2
+0-7100
+g_ctp_parm_filename        = "DBASE/HMS/general_sp18.param"
+g_ctp_det_calib_filename   = "DBASE/HMS/default_det_calib_sp18.param"
+g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp18.param"
+g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_sp18.param"
+g_ctp_hms_map_filename     = "MAPS/HMS/DETEC/STACK/hms_stack_sp18.map"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_sp18.param"
+
+; General parameters for Spring 2022 running during the full experiment
+7300-99999
+;g_ctp_parm_filename        =
+;g_ctp_det_calib_filename   =
+;g_ctp_bcm_calib_filename   =
+;g_ctp_optics_filename      =
+;g_ctp_hms_map_filename     =
+;g_ctp_trig_config_filename =
+
+
+1565-1591
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p7.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+
+1592-1602
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p1.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+
+1603-1621
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p5.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+
+1622-1633
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p0.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+
+1634-1641
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m3p3.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+
+2038-2057
+; 15 Degree Boiling Runs
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_15deg_m2p0.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
+
+2058-2071
+; 25 Degree Boiling Runs
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
+
+2072-2096
+; 25 Degree Boiling Runs
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period4.param"

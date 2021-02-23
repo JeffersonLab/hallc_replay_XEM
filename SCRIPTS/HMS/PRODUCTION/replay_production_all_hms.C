@@ -32,14 +32,19 @@ void replay_production_all_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  // Load params for HMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/thms.param");
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
+
+  // Load parameters for SHMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+  //gHcParms->Load("PARAM/TRIG/tshms.param");
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_hms_map_filename"));
 
   // Add the dec data class for debugging
   Podd::DecData *decData = new Podd::DecData("D", "Decoder Raw Data");

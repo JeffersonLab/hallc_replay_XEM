@@ -1,0 +1,7 @@
+;Calibration constants for HMS Aerogel - unknown run number
+
+; Positive aerogel gain factors
+haero_pos_gain   = 1./168.3, 1./233.9, 1./181.3, 1./169.2, 1./177.6, 1./155.0, 1./169.5, 1./149.7
+
+; Negative aerogel gain factors
+haero_neg_gain   = 1./248.8, 1./186.4, 1./236.4, 1./172.0, 1./205.3, 1./198.1, 1./227.9, 1./229.2

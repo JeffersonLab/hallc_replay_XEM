@@ -1,0 +1,29 @@
+; HMS Cherenkov Cuts parameter files
+
+; Track matching reduced chi2 cut values
+hcer_red_chi2_min = 0.0
+hcer_red_chi2_max = 25.0
+
+; Track matching beta cut values
+hcer_beta_min = 0.0
+hcer_beta_max = 1.2
+
+; Track matching normalized energy (E/p) cut values
+hcer_enorm_min = 0.0
+hcer_enorm_max = 1.5
+
+; Track matching delta p (dp) cut values
+hcer_dp_min = -20.0
+hcer_dp_max = 25.0
+
+; ADC time window cut values used to select "good" ADC events
+hcer_adc_tdc_window = 200.0
+
+;hcer_adcTimeWindowMin = 84.5,  87.5
+;hcer_adcTimeWindowMax = 99.5, 102.5
+
+hcer_adcTimeWindowMin = 0.0,  0.0
+hcer_adcTimeWindowMax = 120.0, 120.0
+
+; NPE Threshold for good hit (for measureing effic.)
+hcer_npe_thresh = 0.5

@@ -1,4 +1,4 @@
-void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -23,7 +23,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_boiling_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.
@@ -164,7 +164,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define output DEF-file 
-  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production.def");
+  analyzer->SetOdefFile("DEF-files/HMS/CALIBRATION/hboil_calibration.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def");    // optional
   // File to record cuts accounting information for cuts
