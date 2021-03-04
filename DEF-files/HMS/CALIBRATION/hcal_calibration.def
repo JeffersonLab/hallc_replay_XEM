@@ -1,0 +1,22 @@
+#****************************
+#* Variables for Calo Calib
+#****************************
+
+block H.cal.1pr.goodNegAdcPulseInt
+block H.cal.1pr.goodPosAdcPulseInt
+block H.cal.2ta.goodNegAdcPulseInt
+block H.cal.2ta.goodPosAdcPulseInt
+block H.cal.3ta.goodNegAdcPulseInt
+block H.cal.3ta.goodPosAdcPulseInt
+block H.cal.4ta.goodNegAdcPulseInt
+block H.cal.4ta.goodPosAdcPulseInt
+block H.dc.ntrack
+block H.dc.x_fp
+block H.dc.y_fp
+block H.dc.xp_fp
+block H.dc.yp_fp
+block H.gtr.p
+block H.gtr.dp
+block H.cer.npeSum
+block H.hod.beta
+block H.cal.nclust

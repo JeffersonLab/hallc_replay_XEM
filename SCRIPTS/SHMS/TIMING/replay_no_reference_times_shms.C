@@ -20,7 +20,7 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
-  pathList.push_back("./raw-jpsi");
+  pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
@@ -32,7 +32,9 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
 
   //===============================================================================================
 
@@ -46,10 +48,9 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/SHMS/detector_cuts_no_timing_windows.param");
   gHcParms->Load(gHcParms->GetString("g_ctp_no_timing_windows_filename"));
 
-  //I do NOT KNOW what to set the tshms.param values to..
-  //Leaving alone for now for more clarification..
+  // I need more claraification on how to set tshms.param
   // Load parameters for SHMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/tshms.param");
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
 
   //===============================================================================================
 
@@ -60,10 +61,10 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
   bcmFile.open(bcmParamFile);
   if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
-
+  
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/SHMS/DETEC/STACK/shms_stack.map");
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -107,7 +108,7 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
   // Calculate extended target corrections
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react"); 
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "SHMS extended target corrections", "P", "P.react");
   gHaPhysics->Add(pext);
   // Calculate golden track quantites
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
@@ -132,6 +133,16 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
+
+  /*
+  //Add event handler for helicity scalers
+  THcHelicityScaler *phelscaler = new THcHelicityScaler("P", "Hall C helicity scaler");
+  //phelscaler->SetDebugFile("PHelScaler.txt");
+  phelscaler->SetROC(8);   
+  phelscaler->SetUseFirstEvent(kTRUE); 
+  gHaEvtHandlers->Add(phelscaler); 
+  */
+  
   // Add event handler for DAQ configuration event
   THcConfigEvtHandler *pconfig = new THcConfigEvtHandler("pconfig", "Hall C configuration event handler");
   gHaEvtHandlers->Add(pconfig);
@@ -168,7 +179,8 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
                               // 2 = counter is event number
   analyzer->SetEvent(event);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(181);
+  analyzer->SetEpicsEvtType(180);
+  analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file
@@ -185,11 +197,7 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   //These do not appear to effect the study on reference times.  Leaving in.
   analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
 
-
   // Start the actual analysis.
   analyzer->Process(run);
-
-
-
 
 }

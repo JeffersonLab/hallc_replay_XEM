@@ -20,6 +20,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
+  pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
@@ -34,20 +35,19 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
-
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
-  //gHcParms->Load("PARAM/TRIG/tshms.param");
   // Load fadc debug parameters
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
-
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
+  
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_shms_map_filename"));
-
-  // Add the dec data class for debugging
-  Podd::DecData *decData = new Podd::DecData("D", "Decoder Raw Data");
-  gHaApps->Add(decData);
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -56,7 +56,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
   TRG->AddDetector(shms);
 
-  // Set up the equipment to be analyzed
+  // Set up the equipment to be analyzed.
   THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
   gHaApps->Add(SHMS);
   // Add Noble Gas Cherenkov to SHMS apparatus
@@ -82,11 +82,16 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
   // Add physics modules
+  // Add beam current monitor module
+  if (bcmFile.is_open()) {
+    THcBCMCurrent* bcm = new THcBCMCurrent("P.bcm", "BCM Module");
+    gHaPhysics->Add(bcm);
+  }
   // Calculate reaction point
   THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
   // Calculate extended target corrections
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "SHMS extended target corrections", "P", "P.react");
   gHaPhysics->Add(pext);
   // Calculate golden track quantites
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
@@ -96,13 +101,13 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHaPhysics->Add(kin);
   // Calculate the hodoscope efficiencies
   THcHodoEff* peff = new THcHodoEff("phodeff", "SHMS hodo efficiency", "P.hod");
-  gHaPhysics->Add(peff);
+  gHaPhysics->Add(peff);   
 
   // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add event handler for EPICS events
-  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 181");
+  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
@@ -116,9 +121,9 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   //Add event handler for helicity scalers
   THcHelicityScaler *phelscaler = new THcHelicityScaler("P", "Hall C helicity scaler");
   //phelscaler->SetDebugFile("PHelScaler.txt");
-  phelscaler->SetROC(8);
-  phelscaler->SetUseFirstEvent(kTRUE);
-  gHaEvtHandlers->Add(phelscaler);
+  phelscaler->SetROC(8);   
+  phelscaler->SetUseFirstEvent(kTRUE); 
+  gHaEvtHandlers->Add(phelscaler); 
   */
   
   // Add event handler for DAQ configuration event
@@ -157,7 +162,8 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
                               // 2 = counter is event number
   analyzer->SetEvent(event);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(181);
+  analyzer->SetEpicsEvtType(180);
+  analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file

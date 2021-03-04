@@ -16,14 +16,19 @@ void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "hms_all_%05d.dat";
+  const char* RunFileNamePattern;
+  if (RunNumber == 1566 || RunNumber == 1598 || RunNumber == 1608 || RunNumber == 1618)
+    RunFileNamePattern = "hms_all_%05d_filtered.dat";
+  else 
+    RunFileNamePattern = "hms_all_%05d.dat";
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
+  pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_boiling_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_boiling_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.
@@ -41,13 +46,16 @@ void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load("PARAM/HMS/GEN/hpcentral_function_sp18.param");
   // Load fadc debug parameters
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
-
-  // const char* CurrentFileNamePattern = "low_curr_bcm/bcmcurrent_%d.param";
-  // gHcParms->Load(Form(CurrentFileNamePattern, RunNumber));
+  
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/HMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_hms_map_filename"));
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
   
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -75,13 +83,15 @@ void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
 
-  // THcBCMCurrent* hbc = new THcBCMCurrent("H.bcm", "BCM current check");
-  // gHaPhysics->Add(hbc);
-
   // Add rastered beam apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
   gHaApps->Add(beam);  
   // Add physics modules
+  // Add beam current monitor module
+  if (bcmFile.is_open()) {
+    THcBCMCurrent* bcm = new THcBCMCurrent("H.bcm", "BCM Module");
+    gHaPhysics->Add(bcm);
+  }
   // Calculate reaction point
   THcReactionPoint* hrp = new THcReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
@@ -102,7 +112,7 @@ void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add handler for EPICS events
-  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 181");
+  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 2");  
@@ -157,8 +167,11 @@ void replay_boiling_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
                               // 2 = counter is event number
 
   analyzer->SetEvent(event);
+  // Set CODA version
+  analyzer->SetCodaVersion(2);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(181);
+  analyzer->SetEpicsEvtType(180);
+  analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file

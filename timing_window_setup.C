@@ -4,19 +4,21 @@
 void calc_timing_windows(TString, TString , TString ,TString, Double_t, Double_t[], Double_t[], bool, double);
 
 void run_shms_timing_windows(TString, TString, int, bool, double);
-void run_hms_ped_timing_windows(TString);
+void run_hms_timing_windows(TString, TString, int, bool, double);
 
 void run_shms_timing_windows(TString file_name = "", TString out_file="", int RunNumber = 0, bool newWindows=false, double width=40.) {
 
-  //Load PRODUCTION Windows
+  // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
   // Load parameters for SHMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/tshms.param");
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
 
   const char* prefix = "p";
 
@@ -80,18 +82,74 @@ void run_shms_timing_windows(TString file_name = "", TString out_file="", int Ru
   calc_timing_windows(file_name,out_file,"hgcer","p",0,fHGCerAdcTimeWindowMin,fHGCerAdcTimeWindowMax,newWindows,width);
   calc_timing_windows(file_name,out_file,"ngcer","p",0,fNGCerAdcTimeWindowMin,fNGCerAdcTimeWindowMax,newWindows,width);
 }
-/*
-void run_hms_timing_windows(TString file_name = "") {
-  calc_timing_windows(file_name,"cer","h",0);
-  calc_timing_windows(file_name,"cal_hA","h",1);
-  calc_timing_windows(file_name,"cal_hB","h",1);
-  calc_timing_windows(file_name,"cal_hC","h",1);
-  calc_timing_windows(file_name,"cal_hD","h",1);
-  calc_timing_windows(file_name,"cal_hA","h",2);
-  calc_timing_windows(file_name,"cal_hB","h",2);
+
+void run_hms_timing_windows(TString file_name = "", TString out_file="", int RunNumber = 0, bool newWindows=false, double width=40.) {
+
+  // Load global parameters
+  gHcParms->Define("gen_run_number", "Run Number", RunNumber);
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
+  gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
+  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
+  // Load parameters for SHMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+
+  const char* prefix = "h";
+
+  UInt_t nPMT = 16;   //2Y plane has 21 PMTs
+  UInt_t nPlanes = 4; //1x, 1y, 2x, 2y
+  UInt_t fHodoScin = nPlanes * nPMT; //This could be determined from hcana DB
+  Double_t* fHodoPosAdcTimeWindowMin = new Double_t [fHodoScin];
+  Double_t* fHodoPosAdcTimeWindowMax = new Double_t [fHodoScin];
+  Double_t* fHodoNegAdcTimeWindowMin = new Double_t [fHodoScin];
+  Double_t* fHodoNegAdcTimeWindowMax = new Double_t [fHodoScin];
+
+  UInt_t fPrShwr = 13 * 4;
+  UInt_t fShwr  = 13 * 4;
+  Double_t* fCaloPosAdcTimeWindowMin = new Double_t [fPrShwr];
+  Double_t* fCaloPosAdcTimeWindowMax = new Double_t [fPrShwr];
+  Double_t* fCaloNegAdcTimeWindowMin = new Double_t [fShwr];
+  Double_t* fCaloNegAdcTimeWindowMax = new Double_t [fShwr];
+
+  UInt_t fCer = 2;
+  Double_t* fCerAdcTimeWindowMin = new Double_t [fCer];
+  Double_t* fCerAdcTimeWindowMax = new Double_t [fCer];
+
+  DBRequest windowList[] = {
+    {"hodo_PosAdcTimeWindowMin", fHodoPosAdcTimeWindowMin, kDouble, fHodoScin, 1},
+    {"hodo_PosAdcTimeWindowMax", fHodoPosAdcTimeWindowMax, kDouble, fHodoScin, 1},
+    {"hodo_NegAdcTimeWindowMin", fHodoNegAdcTimeWindowMin, kDouble, fHodoScin, 1},
+    {"hodo_NegAdcTimeWindowMax", fHodoNegAdcTimeWindowMax, kDouble, fHodoScin, 1},
+    {"cal_pos_AdcTimeWindowMin", fCaloPosAdcTimeWindowMin, kDouble, fPrShwr, 1},
+    {"cal_pos_AdcTimeWindowMax", fCaloPosAdcTimeWindowMax, kDouble, fPrShwr, 1},
+    {"cal_neg_AdcTimeWindowMin", fCaloNegAdcTimeWindowMin, kDouble, fShwr, 1},
+    {"cal_neg_AdcTimeWindowMax", fCaloNegAdcTimeWindowMax, kDouble, fShwr, 1},
+    {"cer_adcTimeWindowMin",     fCerAdcTimeWindowMin    , kDouble, fCer, 1},
+    {"cer_adcTimeWindowMax",     fCerAdcTimeWindowMax    , kDouble, fCer, 1},
+    {0},
+  };
+
+  gHcParms->LoadParmValues((DBRequest*)&windowList, prefix);
+  calc_timing_windows(file_name,out_file,"hodo_1x","h",1,fHodoPosAdcTimeWindowMin, fHodoPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_1x","h",2,fHodoNegAdcTimeWindowMin, fHodoNegAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_1y","h",1,fHodoPosAdcTimeWindowMin, fHodoPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_1y","h",2,fHodoNegAdcTimeWindowMin, fHodoNegAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_2x","h",1,fHodoPosAdcTimeWindowMin, fHodoPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_2x","h",2,fHodoNegAdcTimeWindowMin, fHodoNegAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_2y","h",1,fHodoPosAdcTimeWindowMin, fHodoPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"hodo_2y","h",2,fHodoNegAdcTimeWindowMin, fHodoNegAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cer","h",0,fCerAdcTimeWindowMin,fCerAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hA","h",1,fCaloPosAdcTimeWindowMin,fCaloPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hB","h",1,fCaloPosAdcTimeWindowMin,fCaloPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hC","h",1,fCaloPosAdcTimeWindowMin,fCaloPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hD","h",1,fCaloPosAdcTimeWindowMin,fCaloPosAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hA","h",2,fCaloNegAdcTimeWindowMin,fCaloNegAdcTimeWindowMax,newWindows,width);
+  calc_timing_windows(file_name,out_file,"cal_hB","h",2,fCaloNegAdcTimeWindowMin,fCaloNegAdcTimeWindowMax,newWindows,width);
 
 }
-*/
 
 void calc_timing_windows(TString golden_file = "", TString out_file = "",
 			 TString detector = "", TString spect = "", Double_t polarity = -1,
@@ -169,10 +227,30 @@ void calc_timing_windows(TString golden_file = "", TString out_file = "",
     histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_neg");
   if (histname.Contains("_shwr"))
     histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt");
-  if (histname.Contains("hcal_h") && polarity == 1)
+  if (histname.Contains("hcal") && histname.Contains("hA") && polarity == 1) {
     histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_pos");
-  if (histname.Contains("hcal_h") && polarity == 2)
+    offset = 0;
+  }
+  if (histname.Contains("hcal") && histname.Contains("hB") && polarity == 1) {
+    histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_pos");
+    offset = 13;
+  }
+  if (histname.Contains("hcal") && histname.Contains("hC") && polarity == 1) {
+    histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_pos");
+    offset = 26;
+  }
+  if (histname.Contains("hcal") && histname.Contains("hD") && polarity == 1) {
+    histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_pos");
+    offset = 39;
+  }
+  if (histname.Contains("hcal") && histname.Contains("hA") && polarity == 2) {
     histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_neg");
+    offset = 0;
+  }
+  if (histname.Contains("hcal") && histname.Contains("hB") && polarity == 2) {
+    histname = Form("%s%s", histname.Data(), "_good_adctdc_diff_time_vs_pmt_neg");
+    offset = 13;
+  }
 
   TH2F* H1_adctdc_diff_time_vs_pmt;
 
@@ -181,7 +259,7 @@ void calc_timing_windows(TString golden_file = "", TString out_file = "",
     cout << "Cannot find : " << golden_file << endl;
     return;
   }
-
+  cout << histname.Data() << endl;
   f1->GetObject(histname.Data(), H1_adctdc_diff_time_vs_pmt);
 
   TFile* f2 = new TFile(out_file, "Update");
@@ -252,6 +330,9 @@ void calc_timing_windows(TString golden_file = "", TString out_file = "",
   if(histname.Contains("hodo")) {
     minVal = minArr[ipmt*4+offset];
     maxVal = maxArr[ipmt*4+offset];
+  } else if(histname.Contains("cal_h")) {
+    minVal = minArr[ipmt+offset];
+    maxVal = maxArr[ipmt+offset];
   } else {
     minVal = minArr[ipmt];
     maxVal = maxArr[ipmt];
@@ -267,6 +348,9 @@ void calc_timing_windows(TString golden_file = "", TString out_file = "",
   }
   minLine->Draw();
   maxLine->Draw();
+  H1_adctdc_diff_time[ipmt]->GetXaxis()->SetRangeUser(minVal-15,maxVal+15);
+  H1_adctdc_diff_time[ipmt]->SetStats(0);
+  gPad-> SetLogy();
   currentCanvas->Update();
 
   }

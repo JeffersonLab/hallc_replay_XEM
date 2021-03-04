@@ -8,7 +8,7 @@ g_ctp_parm_filename        = "DBASE/HMS/general_sp18.param"
 g_ctp_det_calib_filename   = "DBASE/HMS/default_det_calib_sp18.param"
 g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp18.param"
 g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_sp18.param"
-g_ctp_hms_map_filename     = "MAPS/HMS/DETEC/STACK/hms_stack_sp18.map"
+g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_sp18.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_sp18.param"
 
 ; General parameters for Spring 2022 running during the full experiment
@@ -48,7 +48,7 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
 
 2058-2071
 ; 25 Degree Boiling Runs
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
+;g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
 
 2072-2096

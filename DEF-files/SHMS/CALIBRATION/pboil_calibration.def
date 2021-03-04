@@ -17,12 +17,14 @@ block P.ngcer.npeSum
 
 block P.hod.betanotrack
 block P.hod.goodscinhit
+block P.hod.goodstartttime
 
 block P.dc.ntrack
 block P.dc.x_fp
 block P.dc.xp_fp
 block P.dc.y_fp
 block P.dc.yp_fp
+block P.dc.InsideDipoleExit
 
 block P.gtr.beta
 block P.gtr.dp
@@ -30,15 +32,3 @@ block P.gtr.p
 block P.gtr.y
 block P.gtr.th
 block P.gtr.ph
-
-#*********************
-#* Scaler Variables
-#*********************
-block evNumber
-block P.pTRIG2.scaler
-block P.pTRIG3.scaler
-block P.EDTM.scaler
-block P.*.scalerCharge
-block P.*.scalerCurrent
-block P.1MHz.scalerTime
-block P.*.scalerRate

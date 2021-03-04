@@ -1,4 +1,4 @@
-void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_dc_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -16,40 +16,58 @@ void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "coin_all_%05d.dat";
+  const char* RunFileNamePattern;
+  if (RunNumber == 1566 || RunNumber == 1598 || RunNumber == 1608 || RunNumber == 1618)
+    RunFileNamePattern = "hms_all_%05d_filtered.dat";
+  else 
+    RunFileNamePattern = "hms_all_%05d.dat";
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
+  pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_coin_replay_production_all_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_dc_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
+  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  // Load params for HMS trigger configuration
-  gHcParms->Load("PARAM/TRIG/thms.param");
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
+  // Load parameters for SHMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+  // Load hpcentral momentum offset 
+  gHcParms->Load("PARAM/HMS/GEN/hpcentral_function_sp18.param");
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
+
+  gHcParms->Load("PARAM/HMS/DC/hdc_set_tzero_to_zero.param");
+  
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/HMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
-     // Dec data
-   gHaApps->Add(new Podd::DecData("D","Decoder raw data"));
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
+  
+  // Add trigger apparatus
+  THaApparatus* TRG = new THcTrigApp("T", "TRG");
+  gHaApps->Add(TRG);
+  // Add trigger detector to trigger apparatus
+  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
+  TRG->AddDetector(hms);
 
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
-  HMS->SetEvtType(2);
-  HMS->AddEvtType(4);
-  HMS->AddEvtType(5);
-  HMS->AddEvtType(6);
-  HMS->AddEvtType(7);
   gHaApps->Add(HMS);
   // Add drift chambers to HMS apparatus
   THcDC* dc = new THcDC("dc", "Drift Chambers");
@@ -67,18 +85,15 @@ void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   HMS->AddDetector(cal);
 
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* hms = new THcTrigDet("hms", "HMS Trigger Information");
-  hms->SetSpectName("H");
-  TRG->AddDetector(hms);
-
   // Add rastered beam apparatus
   THaApparatus* beam = new THcRasteredBeam("H.rb", "Rastered Beamline");
   gHaApps->Add(beam);  
   // Add physics modules
+  // Add beam current monitor module
+  if (bcmFile.is_open()) {
+    THcBCMCurrent* bcm = new THcBCMCurrent("H.bcm", "BCM Module");
+    gHaPhysics->Add(bcm);
+  }
   // Calculate reaction point
   THcReactionPoint* hrp = new THcReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
@@ -99,22 +114,19 @@ void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add handler for EPICS events
-  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 182");
+  THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add handler for scaler events
   THcScalerEvtHandler *hscaler = new THcScalerEvtHandler("H", "Hall C scaler event type 2");  
   hscaler->AddEvtType(2);
-  hscaler->AddEvtType(4);
-  hscaler->AddEvtType(5);
-  hscaler->AddEvtType(6);
-  hscaler->AddEvtType(7);
   hscaler->AddEvtType(129);
   hscaler->SetDelayedType(129);
   hscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(hscaler);
 
   /*
-  // Add event handler for helicity scalers  THcHelicityScaler *hhelscaler = new THcHelicityScaler("H", "Hall C helicity scaler");
+  // Add event handler for helicity scalers
+  THcHelicityScaler *hhelscaler = new THcHelicityScaler("H", "Hall C helicity scaler");
   //hhelscaler->SetDebugFile("HHelScaler.txt");
   hhelscaler->SetROC(5);
   hhelscaler->SetUseFirstEvent(kTRUE);
@@ -155,24 +167,22 @@ void replay_production_hms_coin_all(Int_t RunNumber=0, Int_t MaxEvent=0) {
   analyzer->SetCountMode(2);  // 0 = counter is # of physics triggers
                               // 1 = counter is # of all decode reads
                               // 2 = counter is event number
-  
+
   analyzer->SetEvent(event);
+  // Set CODA version
+  analyzer->SetCodaVersion(2);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(182);
+  analyzer->SetEpicsEvtType(180);
+  analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define output DEF-file 
-  analyzer->SetOdefFile("DEF-files/HMS/PRODUCTION/hstackana_production_all.def");
+  analyzer->SetOdefFile("DEF-files/HMS/CALIBRATION/hdc_calibration.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def");    // optional
-  // File to record cuts accounting information for cuts
-  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_coin_all_production_%d_%d.report", RunNumber, MaxEvent));    // optional
   // Start the actual analysis.
   analyzer->Process(run);
-  // Create report file from template.
-  analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production.template",
-			Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_coin_all_production_%d_%d.report", RunNumber, MaxEvent));
 
 }
