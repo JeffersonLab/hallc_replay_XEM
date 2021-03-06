@@ -1,0 +1,27 @@
+; Track matching reduced chi2 cut values
+paero_red_chi2_min = 0.0
+paero_red_chi2_max = 25.0
+
+; Track matching beta cut values
+paero_beta_min = 0.0
+paero_beta_max = 1.2
+
+; Track matching normailized energy (E/p) cut values
+paero_enorm_min = 0.0
+paero_enorm_max = 1.5
+
+; Track matching delta p (dp) cut values
+paero_dp_min = -20.0
+paero_dp_max = 25.0
+
+; NPE Threshold for "good" hit (for measureing effic.)
+paero_npe_thresh = 0.5
+
+; ADC time window cut values used to select "good" ADC events
+paero_adc_tdc_offset = 200.
+
+paero_adcPosTimeWindowMin =   0.,   0.,   0.,   0.,   0.,   0.,   0.
+paero_adcNegTimeWindowMin = 195., 195., 195., 195., 195., 195., 195.
+
+paero_adcPosTimeWindowMax = 100., 100., 100., 100., 100., 100., 100.
+paero_adcNegTimeWindowMax = 295., 295., 295., 295., 295., 295., 295.

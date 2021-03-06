@@ -1,0 +1,24 @@
+
+; The pdelta_offset,ptheta_offset,pphi_offset effect the
+; reconstructed target quantities. 
+; For transport x is in the dispersive direction with + down
+;               y is in the horizontal + towards small angles.
+;               z is along the central optics axis.
+; In transport coordinates phi = hyptar = dy/dz and theta = hxptar = dx/dz 
+;    but for unknown reasons the yp offset is named  htheta_offset
+;    and  the xp offset is named  hphi_offset
+; Do not to change these values, since these are the zero order
+;  CMOP matrix elements. If you do change then your shms sieve
+;  plots will be screwed up.
+
+pdelta_offset = 0.0
+ptheta_offset = 0.0
+pphi_offset = -8.093640059E-4
+
+; The following offsets are applied to the central kinematic variables
+; ptheta_lab=htheta_lab + pthetacentral_offset/degree
+; ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
+
+pthetacentral_offset = 0.0
+p_oopcentral_offset = 0.0
+ppcentral_offset = -1.7
