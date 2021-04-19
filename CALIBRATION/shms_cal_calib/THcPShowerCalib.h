@@ -26,6 +26,7 @@
 #include <string>
 
 #define D_CALO_FP 292.64
+#define D_EXIT_FP -307.
 
 //Whole calorimeter fid. limits
 #define XMIN -60.
@@ -61,6 +62,15 @@ class THcPShowerCalib {
   void FillHEcal();
   void SaveAlphas();
   void SaveRawData();
+  void fillHits();
+  void howLong(Double_t goal);
+  void fillCutBranch();
+  Double_t GetDeltaMin(){return fDeltaMin;};  
+  Double_t GetDeltaMax(){return fDeltaMax;};  
+  Double_t GetBetaMin(){return fBetaMin;};  
+  Double_t GetBetaMax(){return fBetaMax;};  
+  Double_t GetCerMin(){return fNGCerMin;};  
+  Double_t GetRatio(){return (Double_t)fNev/(fNstop-fNstart);};  
 
   TH1F* hEunc;
   TH1F* hEuncSel;
@@ -72,6 +82,31 @@ class THcPShowerCalib {
   TH2F* hETOTvsEPR;
   TH2F* hETOTvsEPRunc;
   TH2F* hESHvsEPRunc;
+  //wph more plots
+  TH1F* hCer;
+  TH1F* hP;
+  TH1F* hDelta;
+  TH1F* hBeta;
+  TH2F* hClusTrk;
+  TH2F* hCaloPos;
+  TH2F* hCaloPos2;
+  TH2F* hCaloPosWt;
+  TH2F* hCaloPosNorm;
+  TH2F* hCaloPosWtU;
+  TH2F* hCaloPosNormU;
+  TH2F* hCaloPosWtPint;
+  TH2F* hCaloPosNormPint;
+  TH2F*  hExitPos;
+  //hits
+  TH2F*  hpr;
+  TH2F*  hsh;
+  //gains
+  TH2F*  hpra;
+  TH2F*  hsha;
+  TH2F*  pmtList;
+  TH1F **hAdc;
+  TH2F* yCalVsEp;
+  TH2F* xCalVsEp;
 
  private:
 
@@ -88,6 +123,7 @@ class THcPShowerCalib {
   Double_t fEuncLoLo, fEuncHiHi;   // Range of uncalibrated Edep histogram
   UInt_t fEuncNBin;                // Binning of uncalibrated Edep histogram
   Double_t fEuncGFitLo,fEuncGFitHi;// Gaussian fit range of uncalib. Edep histo.
+  Double_t sigmaRange;             // range for events to use for calib (e.g +/- 3*sigma)
 
   TTree* fTree;
   UInt_t fNentries;
@@ -116,12 +152,13 @@ class THcPShowerCalib {
   Double_t        P_tr_tg_ph;
   Double_t        P_tr_tg_th;
   Double_t        P_tr_tg_y;
-
+  //  Double_t        P_dc_insideDipoleExit;
   Double_t        P_hgcer_npe[4];
   Double_t        P_ngcer_npe[4];
   Double_t        P_ngcer_npeSum;
   Double_t        P_hgcer_npeSum;
   Double_t        P_tr_beta;
+
 
   Double_t        P_cal_nclust;          //Preshower
   Double_t        P_cal_ntracks;         //Preshower
@@ -133,6 +170,7 @@ class THcPShowerCalib {
   TBranch* b_P_pr_aneg_p;
   TBranch* b_P_sh_a_p;
   TBranch* b_P_tr_n;
+  //  TBranch* b_P_dc_insideDipoleExit;
   TBranch* b_P_tr_x;
   TBranch* b_P_tr_y;
   TBranch* b_P_tr_xp;
@@ -251,6 +289,8 @@ void THcPShowerCalib::ReadThresholds() {
   iss >> fEuncNBin;
   getline(fin, line);  iss.str(line);
   iss >> fEuncGFitLo >> fEuncGFitHi;
+  getline(fin, line);  iss.str(line);
+  iss >> sigmaRange;
 
   getline(fin, line);
   getline(fin, line);
@@ -309,8 +349,10 @@ void THcPShowerCalib::ReadThresholds() {
   cout << "  Min. hit count   = " << fMinHitCount << endl;
   cout << "  Uncalibrated histo. range and binning: " << fEuncLoLo << "  "
        << fEuncHiHi << "  " << fEuncNBin << endl;
-  cout << "  Uncalibrated histo. fit range: " << fEuncGFitLo << "  "
+  cout << "  Uncalibrated histo. fit range (red line): " << fEuncGFitLo << "  "
        << fEuncGFitHi << endl;
+  cout << "  Sigma range to select events (green fill): " << sigmaRange << endl;
+
   cout << endl;
 
   cout << "Initial gain constants:\n";
@@ -365,6 +407,7 @@ void THcPShowerCalib::Init() {
 			  &b_P_sh_a_p);
 
   fTree->SetBranchAddress("P.dc.ntrack", &P_tr_n,&b_P_tr_n);
+  //  fTree->SetBranchAddress("P.dc.InsideDipoleExit", &P_dc_insideDipoleExit,&b_P_dc_insideDipoleExit);
   fTree->SetBranchAddress("P.dc.x_fp", &P_tr_x,&b_P_tr_x);
   fTree->SetBranchAddress("P.dc.y_fp", &P_tr_y,&b_P_tr_y);
   fTree->SetBranchAddress("P.dc.xp_fp",&P_tr_xp,&b_P_tr_xp);
@@ -404,6 +447,34 @@ void THcPShowerCalib::Init() {
 			   500,0.,0.2, 500,0.,0.2);
   hESHvsEPRunc = new TH2F("hESHvsEPRunc","E_{SH} versus E_{PR} uncalibrated",
 			   500,0.,0.2, 500,0.,0.2);
+
+  hClusTrk = new TH2F("hClusTrk","nTracks vs nClusters",9,-0.5,8.5, 41,-0.5,40.5);
+  //wph add plot
+  hCer = new TH1F("hCer","P.cer.npeSum",210, -0.5, 50.5);
+  hP = new TH1F("hP","P.gtr.p",100, 0, 12);
+  hDelta = new TH1F("hDelta","P.gtr.dp",100, -20, 30);
+  hBeta = new TH1F("hBeta","P.hod.beta",100, 0, 2);
+  hpr= new TH2F("hpr","Hits: Preshower(Layer1)",2, .5, 2.5, 14, 0.5, 14.5);
+  hsh= new TH2F("hsh","Hits: Shower (Layer2)",14, 0.5, 14.5, 16, 0.5, 16.5);
+  hpra= new TH2F("hpra","Calib. Gains: Preshower (Layer1)",2, .5, 2.5, 14, 0.5, 14.5);
+  hsha= new TH2F("hsha","Calib. Gains:Shower (Layer2)",14, 0.5, 14.5, 16, 0.5, 16.5);
+  hCaloPos = new TH2F("hCaloPos", "Tracks Projected to Calorimeter",100,YMIN-10, YMAX+10, 100, XMIN-10, XMAX+10);
+  hCaloPos2 = new TH2F("hCaloPos2", "Tracks Projected to Calorimeter",100,YMIN-10, YMAX+10, 100, XMIN-10, XMAX+10);
+  hCaloPosWt = new TH2F("hCaloPosWt", "Calibrated E/p at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+  hCaloPosNorm = new TH2F("hCaloPosNorm", "Calibrated E/p at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+  hCaloPosWtU = new TH2F("hCaloPosWtU", "Uncalibrated E/p at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+  hCaloPosNormU = new TH2F("hCaloPosNormU", "Uncalibrated E/p at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+  hCaloPosWtPint = new TH2F("hCaloPosWtPint", "Avg PulseInt per track at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+  hCaloPosNormPint = new TH2F("hCaloPosNormPint", "Avg PulseInt at calorimeter",100,YMIN-10, YMAX+10,100, XMIN-10, XMAX+10);
+
+  hExitPos = new TH2F("hExitPos", "Tracks Projected to Dipole Exit",100,-50, 50, 100, -50, 50);
+
+  pmtList= new TH2F("pmtList","Signal vs Block# of pmt_hits_list",   253,-0.5,252.5, 100, 0, 250);
+  yCalVsEp = new TH2F("yCalVsEp","Y_calo vs E/p", 150, 0, 1.5, 100,YMIN-10,YMAX+10);
+  xCalVsEp = new TH2F("xCalVsEp","X_calo vs E/p", 150, 0, 1.5, 54, XMIN-10, XMAX+10);
+  hAdc = new TH1F*[THcPShTrack::fNpmts];
+  for(UInt_t i=0; i<THcPShTrack::fNpmts; i++){hAdc[i]=new TH1F(Form("hADC%d",i),"pulseInts",25,0.1,250);}
+
 
   // Initialize cumulative quantities.
   
@@ -449,8 +520,26 @@ void THcPShowerCalib::CalcThresholds() {
 
     if ( ReadShRawTrack(trk, ientry)) {
 
-	//    trk.Print(cout);
-	//    getchar();
+      //************wph*************
+      Double_t  xCalo= P_tr_x + P_tr_xp*D_CALO_FP ;  //could have done trk.GetX()
+      Double_t  yCalo= P_tr_y + P_tr_yp*D_CALO_FP ;
+      Double_t  xExit= P_tr_x + P_tr_xp*D_EXIT_FP ; //but not here
+      Double_t  yExit= P_tr_y + P_tr_yp*D_EXIT_FP ;
+
+      hCaloPos->Fill(yCalo,xCalo);
+      hExitPos->Fill(yExit,xExit);
+
+      for(UInt_t i=0; i< THcPShTrack::fNrows_pr; i++)
+	{
+	  hAdc[i]->Fill(P_pr_apos_p[i]);
+	  hAdc[i+THcPShTrack::fNrows_pr]->Fill(P_pr_aneg_p[i]);
+	}
+
+      for(UInt_t i= 0; i< THcPShTrack::fNpmts - 2*THcPShTrack::fNrows_pr; i++)
+	{
+	  hAdc[i]->Fill(P_sh_a_p[i]);
+	}
+
 
 	trk.SetEs(falpha0);             //Use initial gain constants here.
 	Double_t Enorm = trk.Enorm();
@@ -472,7 +561,12 @@ void THcPShowerCalib::CalcThresholds() {
     if (nev > 200000) break;
   };
 
-  //  hEunc->Fit("gaus","0","",fEuncGFitLo, fEuncGFitHi);    //fit, do not plot
+  //Find max bin (peak) and fit in range
+  //specified in input.dat
+  Double_t maxBin= hEunc->GetMaximumBin();
+  Double_t maxValue= hEunc->GetBinCenter(maxBin);
+  fEuncGFitLo=fEuncGFitLo+maxValue;
+  fEuncGFitHi=fEuncGFitHi+maxValue;
   hEunc->Fit("gaus","","",fEuncGFitLo, fEuncGFitHi);
   hEunc->GetFunction("gaus")->SetLineColor(2);
   hEunc->GetFunction("gaus")->SetLineWidth(1);
@@ -480,8 +574,8 @@ void THcPShowerCalib::CalcThresholds() {
   TF1 *fit = hEunc->GetFunction("gaus");
   Double_t gmean  = fit->GetParameter(1);
   Double_t gsigma = fit->GetParameter(2);
-  fLoThr = gmean - 3.*gsigma;
-  fHiThr = gmean + 3.*gsigma;
+  fLoThr = gmean - gsigma*sigmaRange;
+  fHiThr = gmean + gsigma*sigmaRange;
   cout << "CalcThreshods: fLoThr=" << fLoThr << "  fHiThr=" << fHiThr 
        << "  nev=" << nev << endl;
 
@@ -531,7 +625,9 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
 		    P_tr_x + P_tr_xp*D_CALO_FP > XMIN &&
 		    P_tr_x + P_tr_xp*D_CALO_FP < XMAX &&
                     P_tr_y + P_tr_yp*D_CALO_FP > YMIN &&
-		    P_tr_y + P_tr_yp*D_CALO_FP < YMAX ;
+                    P_tr_y + P_tr_yp*D_CALO_FP < YMAX ;
+    //                    P_dc_insideDipoleExit == 1;
+
   if (!good_trk) return 0;
 
   ////
@@ -650,7 +746,7 @@ void THcPShowerCalib::ComposeVMs() {
 
 	  UInt_t ic = (*i).channel;
 	  Double_t is = (*i).signal;
-
+	  pmtList->Fill(ic,is);
 	  for (vector<pmt_hit>::iterator j=i;
 	       j < pmt_hit_list.end(); j++) {
 
@@ -895,21 +991,45 @@ void THcPShowerCalib::FillHEcal() {
     if (ReadShRawTrack(trk, ientry)) {
       //    trk.Print(cout);
 
+      //    trk.Print(cout);
+      //************wph*************
+      Double_t  xCalo= P_tr_x + P_tr_xp*D_CALO_FP ;  //could have done trk.GetX()
+      Double_t  yCalo= P_tr_y + P_tr_yp*D_CALO_FP ; 
+      Double_t  xExit= P_tr_x + P_tr_xp*D_EXIT_FP ; //but not here
+      Double_t  yExit= P_tr_y + P_tr_yp*D_EXIT_FP ;
+
+
       trk.SetEs(falphaC);       // use the 'constrained' calibration constants
       Double_t P = trk.GetP();
       Double_t delta = trk.GetDp();
       Double_t Enorm = trk.Enorm();
 
       ////
-      if (Enorm>0.) {
+      if (Enorm>0) {
 	hEcal->Fill(Enorm);
 	hDPvsEcal->Fill(Enorm,delta,1.);
+	hCaloPos2->Fill(yCalo,xCalo);
+	hCaloPosWt->Fill(yCalo,xCalo,Enorm);
+	hCaloPosNorm->Divide(hCaloPosWt,hCaloPos2);	
 	hESHvsEPR->Fill(trk.EPRnorm(), trk.ESHnorm());
 	hETOTvsEPR->Fill(trk.EPRnorm(), trk.Enorm());      ////
-	//      output << Enorm*P/1000. << " " << P/1000. << " " << delta << " "
-	//	     << trk.GetX() << " " << trk.GetY() << endl;
+	yCalVsEp->Fill(Enorm, trk.GetY());
+	xCalVsEp->Fill(Enorm, trk.GetX());
+
+	//Plots with uncalibrated E
+	trk.SetEs(falpha0); 
+	hCaloPosWtU->Fill(yCalo,xCalo,trk.Enorm());
+	hCaloPosNormU->Divide(hCaloPosWtU,hCaloPos2);	
+
+	//Plots with PulseInt per track
+	//Set gain=1 then pulseInt=Enorm*P
+	trk.SetEs(falpha1);
+	hCaloPosWtPint->Fill(yCalo,xCalo,trk.Enorm()*trk.GetP());
+	hCaloPosNormPint->Divide(hCaloPosWtPint,hCaloPos);	
 	nev++;
       }
+
+
     }
 
     if (nev > 200000) break;
@@ -989,4 +1109,83 @@ bool CollCut(double xptar, double ytar, double yptar, double delta) {
   return true;
 }
 
+void THcPShowerCalib::howLong(Double_t goal=20.){
+      Double_t max=0;
+
+  for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) 
+    {
+      Int_t row=0;
+      Int_t col=0;
+      Double_t ratio=(Double_t)fHitCount[i]/(Double_t)fNentries;
+      Double_t val=goal/ratio;
+      Double_t maxCol=0;
+      Double_t maxRow=0;
+      if (i<28) 
+	{
+	  cout << "Preshower Block #" << i%14 +1 << setw(14) << "You will need " << val <<" triggers" << endl;
+	  if(val>max && val < 1E38)max=val;
+	}
+      if (i>=28 )        
+	{
+	  row=(i-28)%16+1;
+	  col=((i-28)-(i-28)%16)/16+1;
+	  cout << "Shower Column#"<<col<<" Row #" << row << setw(14)<<" You will need " << val <<" triggers" << endl;
+	  if(val>max && val < 1E38)max=val;
+	}
+    }
+  cout << endl << endl;
+ cout << "You need " << max/1000000. << "M triggers to get " << goal << " events per block"<<endl;
+  cout << endl << endl;
+}
+
+
+void THcPShowerCalib::fillHits(){
+
+  for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) 
+    {
+      //      cout << i << "\t" << fHitCount[i] << "\t" << i % 13 <<  endl;
+    }
+
+  for (UInt_t i=0; i<THcPShTrack::fNpmts; i++) 
+    {
+      Int_t row=0;
+      Int_t col=0;
+
+      if (i<14         ) 
+	{
+	  hpr->Fill(1,i % 14 + 1, fHitCount[i]);
+	  hpra->Fill(1,i % 14 + 1, falphaC[i]);
+	}
+      if (i>=14 && i<28) 
+	{
+	  hpr->Fill(2,i % 14 + 1, fHitCount[i]);
+	  hpra->Fill(2,i % 14 + 1, falphaC[i]);
+	}
+      if (i>=28 )        
+	{
+	  row=(i-28)%16+1;
+	  col=((i-28)-(i-28)%16)/16+1;
+	  hsh->Fill(15-col ,row , fHitCount[i]);
+	  hsha->Fill(15-col ,row , falphaC[i]);
+	  //	  cout <<"i:"<<i<<"\t col:"<<col  << "\t row:"<< row <<endl;
+	}
+    }
+}
+
+
+void THcPShowerCalib::fillCutBranch() {
+  Int_t nev=0;
+  for (UInt_t ientry=fNstart; ientry<fNstop; ientry++) 
+    {
+    fTree->GetEntry(ientry);
+    hCer->Fill(P_ngcer_npeSum);
+    hP->Fill(P_tr_p);
+    hDelta->Fill(P_tr_tg_dp);
+    hBeta->Fill(P_tr_beta);
+    hClusTrk->Fill(P_cal_nclust,P_tr_n);  
+    nev++;
+    if (nev > 200000) break; //going to use this number to 
+                             //calculate percentages
+    }
+}
 #endif

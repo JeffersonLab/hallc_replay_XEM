@@ -48,6 +48,7 @@ class THcShTrack {
   void Print(ostream & ostrm);
 
   void SetEs(Double_t* alpha);
+  void SetEsNoCor(Double_t* alpha);
 
   Double_t Enorm();
   Double_t EPRnorm();
@@ -172,11 +173,43 @@ void THcShTrack::SetEs(Double_t* alpha) {
     Double_t xh=X+Xp*(ncol-0.5)*fZbl;
     Double_t yh=Y+Yp*(ncol-0.5)*fZbl;
     if (nblk <= fNnegs) {
+      //      cout << adc_pos <<"\t"<< Ycor(yh,0) <<"\t"<< alpha[nblk-1] << endl;
+      //      cout << adc_neg <<"\t"<< Ycor(yh,1) <<"\t"<< alpha[fNblks+nblk-1] << endl;
       (*iter)->SetEpos(adc_pos*Ycor(yh,0)*alpha[nblk-1]);
       (*iter)->SetEneg(adc_neg*Ycor(yh,1)*alpha[fNblks+nblk-1]);
     }
     else {
+      //      cout << adc_pos <<"\t"<< Ycor(yh) <<"\t"<< alpha[nblk-1] << endl;
       (*iter)->SetEpos(adc_pos*Ycor(yh)*alpha[nblk-1]);
+      (*iter)->SetEneg(0.);
+    };
+
+  };
+
+}
+
+//------------------------------------------------------------------------------
+
+void THcShTrack::SetEsNoCor(Double_t* alpha) {
+
+  // Set hit energy depositions seen from postive and negative sides,
+  // by use of calibration (gain) constants alpha.
+  
+  for (THcShHitIt iter = Hits.begin(); iter != Hits.end(); iter++) {
+  
+    Double_t adc_pos = (*iter)->GetADCpos();
+    Double_t adc_neg = (*iter)->GetADCneg();
+    UInt_t nblk = (*iter)->GetBlkNumber();
+
+    Int_t ncol=(nblk-1)/fNrows+1;
+    Double_t xh=X+Xp*(ncol-0.5)*fZbl;
+    Double_t yh=Y+Yp*(ncol-0.5)*fZbl;
+    if (nblk <= fNnegs) {
+      (*iter)->SetEpos(adc_pos*alpha[nblk-1]);
+      (*iter)->SetEneg(adc_neg*alpha[fNblks+nblk-1]);
+    }
+    else {
+      (*iter)->SetEpos(adc_pos*alpha[nblk-1]);
       (*iter)->SetEneg(0.);
     };
 

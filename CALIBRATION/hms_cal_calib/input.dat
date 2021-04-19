@@ -1,18 +1,20 @@
 -10 10	Delta range, %
 0.5 1.5	Beta range
 1.5  	Gas Cherenkov, threshold on signals in p.e.
-20	Minimum number of hits per channel required to be calibrated
-0. 2.	Range of uncalibrated energy deposition histogram
+10	Minimum number of hits per channel required to be calibrated
+0.05 2.	Range of uncalibrated energy deposition histogram
 500	Binning of uncalibrated energy deposition histogram
-0.5 1.5	Gaussian fit range around e- peak in the uncalibrated Edep histogram
+-0.1 0.1	Gaussian fit range around mean e- peak in the uncalibrated Edep histogram 
+2.	Sigma width to select events to use in calibration (green fill)
 
-; Initial calibration constants.
+; Calibration constants for file hms_ecal.root (HMS 2489-2494), 164827 events processed
 
-hcal_pos_gain_cor= 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00,
-                   10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00,
-                   20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00,
-                   20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00, 20.00,
-hcal_neg_gain_cor= 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00,
-                   10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00, 10.00,
+hcal_pos_gain_cor= 12.99,  7.13,  9.22, 10.26, 10.82, 12.49, 11.93, 12.39, 10.28, 15.14, 14.59, 12.85,  6.40,
+                   10.87, 12.23,  9.46, 13.51,  8.71,  6.30,  7.73,  7.41,  8.94, 11.40, 11.51, 12.40, 14.86,
+                   24.29, 14.78, 18.17, 21.53, 16.96, 18.97, 23.00, 19.51, 21.92, 25.86, 18.37, 22.29, 19.84,
+                   32.17, 16.75, 20.16, 18.54, 17.89, 19.25, 22.14, 17.51, 19.67, 20.51, 18.37, 18.86, 26.46,
+hcal_neg_gain_cor= 15.11, 14.11, 14.42, 10.92, 11.88, 13.32, 14.58, 18.16, 12.63, 11.47, 10.60, 11.41, 19.57,
+                   14.71, 13.20, 14.22, 14.34, 16.11, 16.93, 19.64, 17.34, 18.06, 11.49, 14.83, 13.72,  8.86,
                     0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,
                     0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,
+

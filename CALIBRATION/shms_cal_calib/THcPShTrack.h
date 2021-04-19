@@ -166,6 +166,7 @@ void THcPShTrack::SetEs(Double_t* alpha) {
       UInt_t ncol = 1;
       if (nblk > fNrows_pr) ncol = 2;
       (*iter)->SetEdep(adc*Ycor(Y,ncol)*alpha[nblk-1]);
+      //(*iter)->SetEdep(adc*alpha[nblk-1]);
     }
     else
       //Shower block, no coordinate correction.
