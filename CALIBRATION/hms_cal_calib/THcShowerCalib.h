@@ -1020,7 +1020,7 @@ void THcShowerCalib::FillHEcal() {
 
 void THcShowerCalib::FillHEcalNoCor() {
 
-  //  FILL WITHOUT USING Y CORRECTION
+  // FILL WITHOUT USING Y CORRECTION
   // Fill histogram of the normalized energy deposition
   // of momentum deviation versus normalized energy deposition. 
   //

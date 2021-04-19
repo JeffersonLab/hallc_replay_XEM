@@ -70,7 +70,7 @@ void hcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  TF1 *fit = theShowerCalib.hEcal->GetFunction("gaus");
  Double_t gmean  = fit->GetParameter(1);
  Double_t gsigma = fit->GetParameter(2);
- double gLoThr = gmean - 1.*gsigma;
+ double gLoThr = gmean - 2.*gsigma;
  double gHiThr = gmean + 2.*gsigma;
  cout << "gLoThr=" << gLoThr << "  gHiThr=" << gHiThr << endl;
  theShowerCalib.hEcal->Fit("gaus","","",gLoThr,gHiThr);
@@ -287,10 +287,14 @@ void hcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  Canvas3->Print(Form("PDFs/pInt_%s_%d_%d.pdf",Prefix.c_str(),nstart,nstop));
  }
 
- // Calculate the analysis rate
- //   TFile *oFile=new TFile("hcal_out.root","RECREATE");
+ //  If you want to save the histograms in a root file 
+ //  you could do something like this.....
+
+ //  TFile *oFile=new TFile("hcal_out.root","RECREATE");
  //  theShowerCalib.hEcal->Write();
  //  oFile->Close();
+
+ // Calculate the analysis rate
  t = clock() - t;
  printf ("The analysis took %.1f seconds \n", ((float) t) / CLOCKS_PER_SEC);
 
