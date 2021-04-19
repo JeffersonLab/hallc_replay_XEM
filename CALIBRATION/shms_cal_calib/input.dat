@@ -6,7 +6,7 @@
 0. 3.	        Range of uncalibrated energy deposition histogram
 500	        Binning of uncalibrated energy deposition histogram
 -0.2 0.2	Gaussian fit range around max min in the uncalibrated Edep histogram (units E/p) (red line)
-2.5	        Events in include in calibration.  +/- Sigma range around fitted mean (green fill)
+3.0	        Events in include in calibration.  +/- Sigma range around fitted mean (green fill)
 
 ; Calibration constants for file shms_defocused.root (SHMS 9643, 9644, 9645, 9646, 9648, 9649, 9650, 9652 and 9654) 306065 events processed
 
