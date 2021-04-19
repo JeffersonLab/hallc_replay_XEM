@@ -1,11 +1,11 @@
--10 10	Delta range, %
-0.5 1.5	Beta range
-1.5  	Gas Cherenkov, threshold on signals in p.e.
-10	Minimum number of hits per channel required to be calibrated
-0.05 2.	Range of uncalibrated energy deposition histogram
-500	Binning of uncalibrated energy deposition histogram
--0.1 0.1	Gaussian fit range around mean e- peak in the uncalibrated Edep histogram 
-2.	Sigma width to select events to use in calibration (green fill)
+-10 10	     Delta range, %
+0.5 1.5	     Beta range
+1.5  	     Gas Cherenkov, threshold on signals in p.e.
+10	     Minimum number of hits per channel required to be calibrated
+0.05 2.	     Range of uncalibrated energy deposition histogram
+500	     Binning of uncalibrated energy deposition histogram
+-0.1 0.1     Gaussian fit range around max min in the uncalibrated Edep histogram (units E/p) (red line)	
+2.	     Events in include in calibration.  +/- Sigma range around fitted mean (green fill)
 
 ; Calibration constants for file hms_ecal.root (HMS 2489-2494), 164827 events processed
 
