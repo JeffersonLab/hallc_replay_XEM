@@ -1,0 +1,8 @@
+gNumBCMs    = 6
+gBCM_Names  = " BCM1      BCM2      Unser	BCM4A    BCM4B   BCM4C"
+gBCM_Gain   =   4795.0,   4092.0,   4014.452, 	12960.0, 2042.0, 6166.0
+gBCM_Offset = 250300.0, 250200.0,   342746.954,	3969.0,  204.9,  2205.0
+
+gBCM_Current_threshold = 5.0
+; index = 0 to gNumBCMs-1
+gBCM_Current_threshold_index = 3

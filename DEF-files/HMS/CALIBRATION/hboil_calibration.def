@@ -1,0 +1,34 @@
+#*******************************
+#* Variables for Boiling Study
+#*******************************
+block g.evnum
+block g.evtyp
+
+block H.bcm.*.AvgCurrent
+
+block T.hms.hTRIG2_tdcTimeRaw
+block T.hms.hEDTM_tdcTimeRaw
+
+block H.cal.etotnorm
+block H.cal.etottracknorm
+block H.cal.etracknorm
+
+block H.cer.npeSum
+
+block H.hod.betanotrack
+block H.hod.goodscinhit
+block H.hod.goodstarttime
+
+block H.dc.ntrack
+block H.dc.x_fp
+block H.dc.xp_fp
+block H.dc.y_fp
+block H.dc.yp_fp
+block H.dc.InsideDipoleExit
+
+block H.gtr.beta
+block H.gtr.dp
+block H.gtr.p
+block H.gtr.y
+block H.gtr.th
+block H.gtr.ph

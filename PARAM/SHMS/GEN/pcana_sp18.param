@@ -1,0 +1,2 @@
+; Parameters we need to keep THcHallCSpectrometer Happy
+p_recon_coeff_filename = "DATFILES/shms_newfit_xptar_april2020.dat"

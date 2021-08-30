@@ -6,3 +6,5 @@ phgcer_adc_tdc_offset = 200.0
 ;Wide open timing windows
 phgcer_adcTimeWindowMin = -1000.0, -1000.0, -1000.0, -1000.0
 phgcer_adcTimeWindowMax = 1000.0, 1000.0, 1000.0, 1000.0
+
+phgcer_PedDefault= 2083, 2143, 2309, 1978
