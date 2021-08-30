@@ -48,6 +48,7 @@ class THcShTrack {
   void Print(ostream & ostrm);
 
   void SetEs(Double_t* alpha);
+  void SetEsNoCor(Double_t* alpha);
 
   Double_t Enorm();
   Double_t EPRnorm();
@@ -177,6 +178,35 @@ void THcShTrack::SetEs(Double_t* alpha) {
     }
     else {
       (*iter)->SetEpos(adc_pos*Ycor(yh)*alpha[nblk-1]);
+      (*iter)->SetEneg(0.);
+    };
+
+  };
+
+}
+
+//------------------------------------------------------------------------------
+
+void THcShTrack::SetEsNoCor(Double_t* alpha) {
+
+  // Same As SetEs() but exludes coordinate correction
+  // Method used only to create additional histogram
+  
+  for (THcShHitIt iter = Hits.begin(); iter != Hits.end(); iter++) {
+  
+    Double_t adc_pos = (*iter)->GetADCpos();
+    Double_t adc_neg = (*iter)->GetADCneg();
+    UInt_t nblk = (*iter)->GetBlkNumber();
+
+    Int_t ncol=(nblk-1)/fNrows+1;
+    Double_t xh=X+Xp*(ncol-0.5)*fZbl;
+    Double_t yh=Y+Yp*(ncol-0.5)*fZbl;
+    if (nblk <= fNnegs) {
+      (*iter)->SetEpos(adc_pos*alpha[nblk-1]);
+      (*iter)->SetEneg(adc_neg*alpha[fNblks+nblk-1]);
+    }
+    else {
+      (*iter)->SetEpos(adc_pos*alpha[nblk-1]);
       (*iter)->SetEneg(0.);
     };
 

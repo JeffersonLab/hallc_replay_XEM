@@ -32,6 +32,12 @@ root file to be calibrated, last (-1 by default) and the first (0 by
 default) events to be used for calibration. The -1 value for last
 event number defaults to the number of entries in the root file.
 
+Additional plots were added in April 2021.  By default they are enabled.  
+They can be disabled with the DRAW flag in hcal_calib.cpp on order to 
+speed up the code.  The plots will be saved in the PDFs/ directory which the 
+user must create.  Similarly there is a SAVE flag which will write several
+histograms to a ROOTfile.
+
 Once your hcana, hallc_replay and Root are set up, you can compile and
 run pcal_calib under hcana, by issuing command
 
