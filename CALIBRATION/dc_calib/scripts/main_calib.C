@@ -15,23 +15,9 @@ int main_calib()
   //measure execution time
   clock_t cl;
   cl = clock();
-                                                                                                  
-                                                                                                        //pid_elec,  pid_kFALSE (no PID cuts) 
-                                                                                                        // |
-                                                                                                        // v
-  //  DC_calib obj("HMS", "../../../ROOTfiles/hms_replay_production_all_1856_hodtrefcut1000_-1.root", 1856,-1, "pid_elec", "card");
-  //DC_calib obj("SHMS", "../../../ROOTfiles/shms_replay_production_all_2774_-1.root", 2774, -1, "pid_elec"); 
-  //  DC_calib obj("SHMS", "~/abishek/hallc_replay/ROOTfiles/shms_replay_production_all_1791_-1.root", 1791, 10000000, "pid_elec", "card");
-    
-  DC_calib obj("HMS", "../../../ROOTfiles/hms_replay_production_all_2369_500000.root", 2369, 500000, "pid_elec", "card");                                                                                                        
-  //DC_calib obj("SHMS", "../../../ROOTfiles/shms_replay_production_all_7110_500000.root", 7110, 500000, "pid_elec", "card");                                                                                                        
 
-
-    //DC_calib obj("SHMS", "../../../ROOTfiles/shms_replay_production_all_7109_500000.root", 7109, 500000, "pid_elec", "card");                                                                                                        
-
-
-    // DC_calib obj("HMS", "../../../ROOTfiles/hms_coin_replay_production_1866_1000000.root", 1866, 1000, "pid_kFALSE");
-  
+  DC_calib obj("HMS", "../../../ROOTfiles/CALIB/hms_replay_dc_2088_-1.root", 2088, -1, "pid_elec", "card");                                 
+  //DC_calib obj("SHMS", "../../../ROOTfiles/CALIB/shms_replay_dc_3219_-1.root", 3219, -1, "pid_elec", "card");                                 
   obj.setup_Directory();
   obj.SetPlaneNames();
   obj.GetDCLeafs();

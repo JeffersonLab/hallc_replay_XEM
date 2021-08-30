@@ -2,7 +2,8 @@
 
 ; phodo_adc_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the ADC pulse time after reference time subtraction to a reasonable time (ns).
-phodo_adc_tdc_offset = 200., 200., 200., 200.
+;phodo_adc_tdc_offset = 200., 200., 200., 200.
+phodo_adc_tdc_offset = 221., 225., 222., 239.
 
 ;Wide open Timing Windows
 phodo_PosAdcTimeWindowMin = -200., -200., -200., -200.,

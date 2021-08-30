@@ -2,20 +2,27 @@
 # PID Variables
 #**************
 
+block P.cal.eprtrack
+block P.cal.eprtracknorm
+block P.cal.etrack
 block P.cal.etracknorm
+block P.cal.etot
 block P.cal.etotnorm
 block P.cal.etottracknorm
+
+block P.hgcer.npe
+block P.ngcer.npe
 block P.hgcer.npeSum
 block P.ngcer.npeSum
 
 #Add for checking Calibrations
-block P.dc.*.dist
-block P.dc.*.time
-block P.dc.residualExclPlane
-
 block P.cal.xtrack
 block P.cal.ytrack
 block P.cal.fly.goodAdcTdcDiffTime
 
 block P.hod.goodstarttime
 block P.hod.beta
+
+block P.react.x
+block P.react.y
+block P.react.z

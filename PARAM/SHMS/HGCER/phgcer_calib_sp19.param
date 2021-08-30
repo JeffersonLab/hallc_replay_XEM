@@ -1,0 +1,6 @@
+; Garth H. gain calibration from Run 1583, Dec 14 2017
+;phgcer_adc_to_npe = 1.0/6.587, 1.0/7.069, 1.0/6.507, 1.0/6.367
+;phgcer_adc_to_npe = 1.0/6.44, 1.0/7.05, 1.0/5.8, 1.0/6.83
+
+; Garth H. gain calibration from Run 4721, Sept 27 2018
+phgcer_adc_to_npe = 1.0/6.26, 1.0/7.30, 1.0/5.85, 1.0/6.98

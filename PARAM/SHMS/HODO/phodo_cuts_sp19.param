@@ -1,0 +1,140 @@
+; Cosmic flag for beta calculation
+
+pcosmicflag=0
+
+; for now manually set hte FADC mode
+;  1 == Use the pulse int - pulse ped
+;  2 == Use the sample integral - known ped
+;  3 == Use the sample integral - sample ped
+; if not set then defaults to use the raw pulse integral
+phodo_adc_mode=1
+
+; Set ptofusinginvadc=0 to use new hodo calibration parameters
+ptofusinginvadc=0
+; pstart_time_center center of allowed time window                             
+pstart_time_center = 32.                                                     
+
+; hstart_time_slop    1/2 width of time window                                  
+pstart_time_slop = 100.                                                       
+
+; pscin_tdc_min       minimum tdc value in hms scin                             
+;pscin_tdc_min = -500                                                           
+
+;with run 4698
+pscin_tdc_min = -1000                                                           
+
+; pscin_tdc_max       maximum allowed tdc value                                 
+;pscin_tdc_max = -1000                                                        
+
+; with run 4698
+pscin_tdc_max = 2000                                                        
+
+; pscin_tdc_to_time   scin tdc time per channel                                 
+pscin_tdc_to_time = 0.09766 ; 0.1 (See Log Entry 3574348)                                                   
+
+; tof and you figured out good values
+ptof_tolerance = 3.0
+                                                                               
+; shms_tof_params                                                              
+; pnum_scin_counters, phodo_zpos, phodo_center_coord, phodo_width               
+; are all calculated within p_init_scin                                         
+;    phodo_pos_coord and phodo_neg_coord are not yet used                                                                                                    
+phodo_slop = 2.,  2.,  4.,  4.    
+
+; phodo_tdc_offset is array of time offsets for all paddles in a plane
+;   to move the tdc after reference time subtraction to between 0 and 4000 channels.
+;phodo_tdc_offset = 1860, 2000, 2060, 2000
+phodo_tdc_offset = 2000, 2000, 2000, 2000
+
+; phodo_adc_tdc_offset is array of time offsets for all paddles in a plane
+;   to move the ADC pulse time after reference time subtraction to a reasonable time (ns).
+phodo_adc_tdc_offset = 221., 225., 222., 239.
+
+;                            1x,     1y,     2x,     2y
+phodo_PosAdcTimeWindowMin =  -40.5, -38.5, -37.5, -40.0,
+			     -39.5, -39.5, -36.5, -40.0,
+			     -35.5, -38.5, -36.5, -36.5,
+			     -35.5, -39.5, -40.5, -37.5,
+			     -35.5, -39.5, -36.5, -37.5,
+			     -35.5, -40.5, -37.5, -38.5,
+			     -35.5, -38.5, -36.5, -36.5,
+			     -38.5, -39.5, -37.5, -37.5,
+			     -35.5, -40.5, -36.5, -37.5,
+			     -35.5, -43.5, -36.5, -36.5,
+			     -34.5, -42.5, -36.5, -37.5,
+			     -35.5, -39.5, -35.5, -39.5,
+			     -35.5, -39.5, -40.5, -37.5,
+			     -40.0, -40.0, -39.5, -36.5,
+			     -40.0, -40.0, -40.0, -36.5,
+			     -40.0, -40.0, -40.0, -36.5,
+			     -40.0, -40.0, -40.0, -36.5,
+			     -40.0, -40.0, -40.0, -37.5,
+			     -40.0, -40.0, -40.0, -40.0,
+			     -40.0, -40.0, -40.0, -40.0,
+			     -40.0, -40.0, -40.0, -40.0
+;                            1x,     1y,    2x,   2y
+phodo_PosAdcTimeWindowMax =   39.5, 41.5, 42.5, 40.0,
+			      40.5, 40.5, 43.5, 40.0,
+			      44.5, 41.5, 43.5, 43.5,
+			      44.5, 40.5, 39.5, 42.5,
+			      44.5, 40.5, 43.5, 42.5,
+			      44.5, 39.5, 42.5, 41.5,
+			      44.5, 41.5, 43.5, 43.5,
+			      41.5, 40.5, 42.5, 42.5,
+			      44.5, 39.5, 43.5, 42.5,
+			      44.5, 36.5, 43.5, 43.5,
+			      45.5, 37.5, 43.5, 42.5,
+			      44.5, 40.5, 44.5, 40.5,
+			      44.5, 40.5, 39.5, 42.5,
+			      40.0, 40.0, 40.5, 43.5,
+			      40.0, 40.0, 40.0, 43.5,
+			      40.0, 40.0, 40.0, 43.5,
+			      40.0, 40.0, 40.0, 43.5,
+			      40.0, 40.0, 40.0, 42.5,
+			      40.0, 40.0, 40.0, 40.0,
+			      40.0, 40.0, 40.0, 40.0,
+			      40.0, 40.0, 40.0, 40.0,
+;                            1x,     1y,     2x,    2y				
+phodo_NegAdcTimeWindowMin = -43.5, -39.5, -44.5, -40.0,
+			    -42.5, -39.5, -43.5, -40.0,
+			    -42.5, -38.5, -44.5, -42.5,
+			    -45.5, -39.5, -43.5, -43.5,
+			    -46.5, -39.5, -44.5, -43.5,
+			    -42.5, -40.5, -43.5, -44.5,
+			    -41.5, -38.5, -43.5, -43.5,
+			    -42.5, -39.5, -43.5, -43.5,
+			    -41.5, -39.5, -43.5, -44.5,
+			    -41.5, -39.5, -43.5, -44.5,
+			    -44.5, -39.5, -42.5, -44.5,
+			    -41.5, -40.5, -42.5, -44.5,
+			    -41.5, -39.5, -43.5, -44.5,
+			    -40.0, -40.0, -43.5, -44.5,
+			    -40.0, -40.0, -40.0, -44.5,
+			    -40.0, -40.0, -40.0, -43.5,
+			    -40.0, -40.0, -40.0, -47.5,
+			    -40.0, -40.0, -40.0, -44.5,
+			    -40.0, -40.0, -40.0, -40.0,
+			    -40.0, -40.0, -40.0, -40.0,
+			    -40.0, -40.0, -40.0, -40.0,	   
+;                            1x,     1y,   2x,   2y
+phodo_NegAdcTimeWindowMin =  36.5, 40.5, 35.5, 40.0,
+			     37.5, 40.5, 36.5, 40.0,
+			     37.5, 41.5, 35.5, 37.5,
+			     34.5, 40.5, 36.5, 36.5,
+			     33.5, 40.5, 35.5, 36.5,
+			     37.5, 39.5, 36.5, 35.5,
+			     38.5, 41.5, 36.5, 36.5,
+			     37.5, 40.5, 36.5, 36.5,
+			     38.5, 40.5, 36.5, 35.5,
+			     38.5, 40.5, 36.5, 35.5,
+			     35.5, 40.5, 37.5, 35.5,
+			     38.5, 39.5, 37.5, 35.5,
+			     38.5, 40.5, 36.5, 35.5,
+			     40.0, 40.0, 36.5, 35.5,
+			     40.0, 40.0, 40.0, 35.5,
+			     40.0, 40.0, 40.0, 36.5,
+			     40.0, 40.0, 40.0, 32.5,
+			     40.0, 40.0, 40.0, 35.5,
+			     40.0, 40.0, 40.0, 40.0,
+			     40.0, 40.0, 40.0, 40.0,
+			     40.0, 40.0, 40.0, 40.0

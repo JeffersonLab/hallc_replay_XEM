@@ -1,4 +1,4 @@
-void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_setPedDefault_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -24,8 +24,8 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/TIMING/shms_noTimingWindows_%d_%d.root";
-
+  const char* ROOTFileNamePattern = "ROOTfiles/shms_setPedDefault_%d_%d.root";
+  
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
@@ -35,20 +35,8 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
-
-  //=======================================================================
-
-  //Now remove all timing windows and revert to 
-  //the default values specifid in hallc_replay
-  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/SHMS/detector_cuts_no_timing_windows.param");
-  gHcParms->Load(gHcParms->GetString("g_ctp_no_timing_windows_filename"));
-
-  // I need more claraification on how to set tshms.param
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
-
-  //======================================================================
-
   // Load fadc debug parameters
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load BCM values
@@ -181,17 +169,16 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file
-
-  //=======================================================================
-
-  analyzer->SetOdefFile("DEF-files/SHMS/TIMING/no_timing_windows.def");
-
-  //=======================================================================
-
+  //analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production.def");
+  analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/SHMS_PedDefault.def");
   // Define cuts file
-  //To remain consistent with production running, I am keeping the same Cuts
   analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
+  // File to record accounting information for cuts
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
+  // Create report file from template
+  analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production.template",
+  			Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }
