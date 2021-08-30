@@ -25,5 +25,7 @@ pngcer_adc_tdc_offset   =  200.0
 ;pngcer_adcTimeWindowMax =  100.0,  100.0,  100.0,  100.0
 
 ; Burcu+Simona's cuts 
-pngcer_adcTimeWindowMin = 22.0, 22.0, 22.0, 40.0
-pngcer_adcTimeWindowMax = 37.0, 37.0, 37.0, 50.0
+pngcer_adcTimeWindowMin = 22.0, 22.0, 20.0, 35.0
+pngcer_adcTimeWindowMax = 42.0, 42.0, 40.0, 55.0
+
+pngcer_PedDefault= 2086, 2074, 2032, 1957

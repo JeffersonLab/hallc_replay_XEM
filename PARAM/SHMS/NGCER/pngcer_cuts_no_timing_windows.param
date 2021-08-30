@@ -6,5 +6,3 @@ pngcer_adc_tdc_offset = 200.
 ;Wide open Timing Windows
 pngcer_adcTimeWindowMin = -1000., -1000., -1000., -1000.
 pngcer_adcTimeWindowMax = 1000., 1000., 1000., 1000.
-
-pngcer_PedDefault= 2083, 2072, 2032, 1955

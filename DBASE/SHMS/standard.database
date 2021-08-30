@@ -13,7 +13,7 @@ g_ctp_map_filename         = "MAPS/SHMS/DETEC/STACK/shms_stack_sp18.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/tshms_sp18.param"
 
 ; General parameters for Spring 2019 running during j-psi
-7197-7261
+7188-7261
 g_ctp_parm_filename        = "DBASE/SHMS/general_sp19.param"
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_sp19.param"
 g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp19.param"
