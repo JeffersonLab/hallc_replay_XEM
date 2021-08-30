@@ -1,0 +1,9 @@
+#---------------------------------------------------------
+# Noble Gas Cherenkov ADC TDC Diff Time for hcana update
+#---------------------------------------------------------
+
+TH2F pngcer_good_adctdc_diff_time_vs_pmt 'SHMS NGCER Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels  0.0625 ns / Ch;' [I+1] P.ngcer.goodAdcTdcDiffTime 4 0.5 4.5 1000 -1000 1000
+TH2F pngcer_good_adc_mult_vs_pmt 'SHMS NGCER Good Adc Multiplicity; PMT Number; SHMS ADC Multiplicity;' [I+1] P.goodAdcMult 4 0.5 4.5 5 -0.5 4.5
+TH2F pngcer_good_adctdc_diff_time_mult_0_vs_pmt 'SHMS NGCER Good AdcTdc Diff Time, Mult=0 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.ngcer.goodAdcTdcDiffTime 4 0.5 4.5 1000 -1000 1000 P.ngcer.goodAdcMult==1
+TH2F pngcer_good_adctdc_diff_time_mult1_vs_pmt 'SHMS NGCER Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.ngcer.goodAdcTdcDiffTime 4 0.5 4.5 1000 -1000 1000 P.ngcer.goodAdcMult==2
+TH2F pngcer_good_adctdc_diff_time_mult2_vs_pmt 'SHMS NGCER Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.ngcer.goodAdcTdcDiffTime 4 0.5 4.5 1000 -1000 1000 P.ngcer.goodAdcMult==3 

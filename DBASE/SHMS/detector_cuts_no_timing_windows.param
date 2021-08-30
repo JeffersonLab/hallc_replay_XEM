@@ -1,0 +1,9 @@
+;Points to cuts defined for f2-emc, but with wide open
+;Reference Time Cuts
+; SHMS default cut parameter files
+#include "PARAM/SHMS/NGCER/pngcer_cuts_no_timing_windows.param"
+#include "PARAM/SHMS/DC/pdc_cuts_no_timing_windows.param"
+#include "PARAM/SHMS/HODO/phodo_cuts_no_timing_windows.param"
+#include "PARAM/SHMS/HGCER/phgcer_cuts_no_timing_windows.param"
+#include "PARAM/SHMS/AERO/paero_cuts_no_timing_windows.param"
+#include "PARAM/SHMS/CAL/pcal_cuts_no_timing_windows.param" 

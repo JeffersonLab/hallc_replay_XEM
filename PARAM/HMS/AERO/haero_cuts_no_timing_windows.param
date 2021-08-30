@@ -1,0 +1,6 @@
+;HMS Aerogel Cut parameters for removing timing windows
+
+haero_adc_tdc_offset = 200.
+; ADC time window cut values used to select "good" ADC events
+haero_adcTimeWindowMin = -1000.
+haero_adcTimeWindowMax = 1000.
