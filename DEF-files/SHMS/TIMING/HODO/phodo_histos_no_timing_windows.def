@@ -9,7 +9,7 @@ TH2F phodo_1x_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS 1X+ Good AdcTdc Diff 
 TH2F phodo_1x_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS 1X+ Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodPosAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1x.GoodPosAdcMult==2
 TH2F phodo_1x_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS 1X+ Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodPosAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1x.GoodPosAdcMult==3
 
-TH2F phodo_1x_good_adctdc_diff_time_vs_pmt_neg 'SHMS 1X+ Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200
+TH2F phodo_1x_good_adctdc_diff_time_vs_pmt_neg 'SHMS 1X- Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200
 TH2F phodo_1x_good_adc_mult_vs_pmt_neg 'SHMS 1X NEG Good AdcTdc Multiplicity;PMT Number; SHMS Adc Multiplicity' [I+1] P.hod.1x.GoodNegAdcMult 13 0.5 13.5 5 0.5 5.5
 TH2F phodo_1x_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS 1X- Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1x.GoodNegAdcMult==1
 TH2F phodo_1x_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS 1X- Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1x.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1x.GoodNegAdcMult==2
@@ -22,7 +22,7 @@ TH2F phodo_1y_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS 1Y+ Good AdcTdc Diff 
 TH2F phodo_1y_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS 1Y+ Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodPosAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1y.GoodPosAdcMult==2
 TH2F phodo_1y_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS 1Y+ Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodPosAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1y.GoodPosAdcMult==3
 
-TH2F phodo_1y_good_adctdc_diff_time_vs_pmt_neg 'SHMS 1Y+ Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200
+TH2F phodo_1y_good_adctdc_diff_time_vs_pmt_neg 'SHMS 1Y- Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200
 TH2F phodo_1y_good_adc_mult_vs_pmt_neg 'SHMS 1Y NEG Good AdcTdc Multiplicity;PMT Number; SHMS Adc Multiplicity' [I+1] P.hod.1y.GoodNegAdcMult 13 0.5 13.5 5 0.5 5.5
 TH2F phodo_1y_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS 1Y- Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1y.GoodNegAdcMult==1
 TH2F phodo_1y_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS 1Y- Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.1y.GoodNegAdcTdcDiffTime 13 0.5 13.5 400 -200 200 P.hod.1y.GoodNegAdcMult==2
@@ -35,7 +35,7 @@ TH2F phodo_2x_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS 2X+ Good AdcTdc Diff 
 TH2F phodo_2x_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS 2X+ Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodPosAdcTdcDiffTime 14 0.5 14.5 400 -200 200 P.hod.2x.GoodPosAdcMult==2
 TH2F phodo_2x_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS 2X+ Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodPosAdcTdcDiffTime 14 0.5 14.5 400 -200 200 P.hod.2x.GoodPosAdcMult==3
 
-TH2F phodo_2x_good_adctdc_diff_time_vs_pmt_neg 'SHMS 2X+ Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodNegAdcTdcDiffTime 14 0.5 14.5 400 -200 200
+TH2F phodo_2x_good_adctdc_diff_time_vs_pmt_neg 'SHMS 2X- Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodNegAdcTdcDiffTime 14 0.5 14.5 400 -200 200
 TH2F phodo_2x_good_adc_mult_vs_pmt_neg 'SHMS 2X NEG Good AdcTdc Multiplicity;PMT Number; SHMS Adc Multiplicity' [I+1] P.hod.2x.GoodNegAdcMult 14 0.5 14.5 5 0.5 5.5
 TH2F phodo_2x_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS 2X- Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodNegAdcTdcDiffTime 14 0.5 14.5 400 -200 200 P.hod.2x.GoodNegAdcMult==1
 TH2F phodo_2x_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS 2X- Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2x.GoodNegAdcTdcDiffTime 14 0.5 14.5 400 -200 200 P.hod.2x.GoodNegAdcMult==2
@@ -48,7 +48,7 @@ TH2F phodo_2y_good_adctdc_diff_time_mult1_vs_pmt_pos 'SHMS 2Y+ Good AdcTdc Diff 
 TH2F phodo_2y_good_adctdc_diff_time_mult2_vs_pmt_pos 'SHMS 2Y+ Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodPosAdcTdcDiffTime 21 0.5 21.5 400 -200 200 P.hod.2y.GoodPosAdcMult==2
 TH2F phodo_2y_good_adctdc_diff_time_mult3_vs_pmt_pos 'SHMS 2Y+ Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodPosAdcTdcDiffTime 21 0.5 21.5 400 -200 200 P.hod.2y.GoodPosAdcMult==3
 
-TH2F phodo_2y_good_adctdc_diff_time_vs_pmt_neg 'SHMS 2Y+ Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodNegAdcTdcDiffTime 21 0.5 21.5 400 -200 200
+TH2F phodo_2y_good_adctdc_diff_time_vs_pmt_neg 'SHMS 2Y- Good AdcTdc Diff Time vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodNegAdcTdcDiffTime 21 0.5 21.5 400 -200 200
 TH2F phodo_2y_good_adc_mult_vs_pmt_neg 'SHMS 2Y NEG Good AdcTdc Multiplicity;PMT Number; SHMS Adc Multiplicity' [I+1] P.hod.2y.GoodNegAdcMult 21 0.5 21.5 5 0.5 5.5
 TH2F phodo_2y_good_adctdc_diff_time_mult1_vs_pmt_neg 'SHMS 2Y- Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodNegAdcTdcDiffTime 21 0.5 21.5 400 -200 200 P.hod.2y.GoodNegAdcMult==1
 TH2F phodo_2y_good_adctdc_diff_time_mult2_vs_pmt_neg 'SHMS 2Y- Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] P.hod.2y.GoodNegAdcTdcDiffTime 21 0.5 21.5 400 -200 200 P.hod.2y.GoodNegAdcMult==2
