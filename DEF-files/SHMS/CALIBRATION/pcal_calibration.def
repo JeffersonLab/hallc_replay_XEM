@@ -6,7 +6,7 @@ block P.cal.pr.goodPosAdcPulseInt
 block P.cal.pr.goodNegAdcPulseInt
 block P.cal.fly.goodAdcPulseInt
 block P.dc.ntrack
-;block P.dc.InsideDipoleExit
+block P.dc.InsideDipoleExit
 block P.dc.x_fp
 block P.dc.y_fp
 block P.dc.xp_fp

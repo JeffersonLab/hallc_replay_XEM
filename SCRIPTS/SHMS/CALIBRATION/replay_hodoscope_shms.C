@@ -1,4 +1,4 @@
-void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_hodoscope_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -25,7 +25,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/CALIBRATION/shms_replay_hodoscope_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -170,15 +170,14 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file
-  analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production.def");
+  analyzer->SetOdefFile("DEF-files/SHMS/CALIBRATION/phodo_calibration.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
   // File to record accounting information for cuts
-  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/SHMS/CALIBRATION/summary_hodo_calibration_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
-  analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production.template",
-  			Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  //analyzer->PrintReport("","", RunNumber, MaxEvent));  // optional
 
 }

@@ -2,9 +2,10 @@
 #* Variables for DC Calib
 #**************************
 
-block P.dc.*.wirenum
+block P.dc.*
 block Ndata.P.dc.*.time
-block P.dc.*.time
+
+block P.gtr.*
 
 block P.cal.etot
 block P.ngcer.npeSum

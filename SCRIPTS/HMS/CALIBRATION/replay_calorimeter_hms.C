@@ -28,7 +28,7 @@ void replay_cal_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_cal_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/CALIBRATION/hms_replay_cal_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.

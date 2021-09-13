@@ -1,0 +1,150 @@
+#****************************
+#* Variables for Hodo Calib
+#****************************
+
+block T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw
+block T.shms.pFADC_TREF_ROC2_adcPulseAmp
+block T.shms.pFADC_TREF_ROC2_adcMultiplicity
+block T.shms.pT1_tdcTimeRaw
+block T.shms.pT2_tdcTimeRaw
+block T.shms.pT3_tdcTimeRaw
+
+block P.cal.etot
+block P.ngcer.npeSum
+
+
+block P.hod.1x.nhits
+block P.hod.1y.nhits
+block P.hod.2x.nhits
+block P.hod.2y.nhits
+
+block NData.P.hod.1x.posAdcCounter
+block NData.P.hod.1y.posAdcCounter
+block NData.P.hod.2x.posAdcCounter
+block NData.P.hod.2y.posAdcCounter
+block NData.P.hod.1x.negAdcCounter
+block NData.P.hod.1y.negAdcCounter
+block NData.P.hod.2x.negAdcCounter
+block NData.P.hod.2y.negAdcCounter
+
+block P.hod.1x.posAdcCounter
+block P.hod.1y.posAdcCounter
+block P.hod.2x.posAdcCounter
+block P.hod.2y.posAdcCounter
+block P.hod.1x.negAdcCounter
+block P.hod.1y.negAdcCounter
+block P.hod.2x.negAdcCounter
+block P.hod.2y.negAdcCounter
+
+block P.hod.1x.posAdcErrorFlag
+block P.hod.1y.posAdcErrorFlag
+block P.hod.2x.posAdcErrorFlag
+block P.hod.2y.posAdcErrorFlag
+block P.hod.1x.negAdcErrorFlag
+block P.hod.1y.negAdcErrorFlag
+block P.hod.2x.negAdcErrorFlag
+block P.hod.2y.negAdcErrorFlag
+
+block P.hod.1x.posAdcPulseTimeRaw
+block P.hod.1y.posAdcPulseTimeRaw
+block P.hod.2x.posAdcPulseTimeRaw
+block P.hod.2y.posAdcPulseTimeRaw
+block P.hod.1x.negAdcPulseTimeRaw
+block P.hod.1y.negAdcPulseTimeRaw
+block P.hod.2x.negAdcPulseTimeRaw
+block P.hod.2y.negAdcPulseTimeRaw
+
+block P.hod.1x.posAdcPulseAmp
+block P.hod.1y.posAdcPulseAmp
+block P.hod.2x.posAdcPulseAmp
+block P.hod.2y.posAdcPulseAmp
+block P.hod.1x.negAdcPulseAmp
+block P.hod.1y.negAdcPulseAmp
+block P.hod.2x.negAdcPulseAmp
+block P.hod.2y.negAdcPulseAmp
+
+block NData.P.hod.1x.posTdcCounter
+block NData.P.hod.1y.posTdcCounter
+block NData.P.hod.2x.posTdcCounter
+block NData.P.hod.2y.posTdcCounter
+block NData.P.hod.1x.negTdcCounter
+block NData.P.hod.1y.negTdcCounter
+block NData.P.hod.2x.negTdcCounter
+block NData.P.hod.2y.negTdcCounter
+
+block P.hod.1x.posTdcCounter
+block P.hod.1y.posTdcCounter
+block P.hod.2x.posTdcCounter
+block P.hod.2y.posTdcCounter
+block P.hod.1x.negTdcCounter
+block P.hod.1y.negTdcCounter
+block P.hod.2x.negTdcCounter
+block P.hod.2y.negTdcCounter
+
+block P.hod.1x.posTdcTimeRaw
+block P.hod.1y.posTdcTimeRaw
+block P.hod.2x.posTdcTimeRaw
+block P.hod.2y.posTdcTimeRaw
+block P.hod.1x.negTdcTimeRaw
+block P.hod.1y.negTdcTimeRaw
+block P.hod.2x.negTdcTimeRaw
+block P.hod.2y.negTdcTimeRaw
+
+block P.cal.etracknorm
+block P.hod.betanotrack
+block P.hgcer.npeSum
+block P.dc.ntrack
+
+block P.hod.1x.DiffDisTrackCorr
+block P.hod.1x.TrackXPos
+block P.hod.1x.TrackYPos
+block P.hod.1x.nhits
+block P.hod.1y.DiffDisTrackCorr
+block P.hod.1y.TrackXPos
+block P.hod.1y.TrackYPos
+block P.hod.1y.nhits
+block P.hod.2x.DiffDisTrackCorr
+block P.hod.2x.TrackXPos
+block P.hod.2x.TrackYPos
+block P.hod.2x.nhits
+block P.hod.2y.DiffDisTrackCorr
+block P.hod.2y.TrackXPos
+block P.hod.2y.TrackYPos
+block P.hod.2y.nhits
+
+
+block P.hod.1x.GoodPosTdcTimeUnCorr
+block P.hod.1x.GoodPosTdcTimeWalkCorr
+block P.hod.1x.GoodPosAdcPulseTime
+block P.hod.1x.GoodPosAdcPulseAmp
+block P.hod.1x.GoodNegTdcTimeUnCorr
+block P.hod.1x.GoodNegTdcTimeWalkCorr
+block P.hod.1x.GoodNegAdcPulseTime
+block P.hod.1x.GoodNegAdcPulseAmp
+
+block P.hod.1y.GoodPosTdcTimeUnCorr
+block P.hod.1y.GoodPosTdcTimeWalkCorr
+block P.hod.1y.GoodPosAdcPulseTime
+block P.hod.1y.GoodPosAdcPulseAmp
+block P.hod.1y.GoodNegTdcTimeUnCorr
+block P.hod.1y.GoodNegTdcTimeWalkCorr
+block P.hod.1y.GoodNegAdcPulseTime
+block P.hod.1y.GoodNegAdcPulseAmp
+
+block P.hod.2x.GoodPosTdcTimeUnCorr
+block P.hod.2x.GoodPosTdcTimeWalkCorr
+block P.hod.2x.GoodPosAdcPulseTime
+block P.hod.2x.GoodPosAdcPulseAmp
+block P.hod.2x.GoodNegTdcTimeUnCorr
+block P.hod.2x.GoodNegTdcTimeWalkCorr
+block P.hod.2x.GoodNegAdcPulseTime
+block P.hod.2x.GoodNegAdcPulseAmp
+
+block P.hod.2y.GoodPosTdcTimeUnCorr
+block P.hod.2y.GoodPosTdcTimeWalkCorr
+block P.hod.2y.GoodPosAdcPulseTime
+block P.hod.2y.GoodPosAdcPulseAmp
+block P.hod.2y.GoodNegTdcTimeUnCorr
+block P.hod.2y.GoodNegTdcTimeWalkCorr
+block P.hod.2y.GoodNegAdcPulseTime
+block P.hod.2y.GoodNegAdcPulseAmp

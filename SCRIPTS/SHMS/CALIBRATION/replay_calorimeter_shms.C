@@ -25,8 +25,8 @@ void replay_calorimeter_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/shms_replay_calorimeter_%d_%d.root";
-  
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/CALIBRATION/shms_replay_calorimeter_%d_%d.root";
+    
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
@@ -40,13 +40,15 @@ void replay_calorimeter_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
   // Load fadc debug parameters
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
-
-  // const char* CurrentFileNamePattern = "low_curr_bcm/bcmcurrent_%d.param";
-  // gHcParms->Load(Form(CurrentFileNamePattern, RunNumber));
-
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
+  
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_shms_map_filename"));
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -77,18 +79,20 @@ void replay_calorimeter_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcShower* cal = new THcShower("cal", "Calorimeter");
   SHMS->AddDetector(cal);
 
-  // THcBCMCurrent* pbc = new THcBCMCurrent("P.bcm", "BCM current check");
-  // gHaPhysics->Add(pbc);
-
   // Add rastered beam apparatus
   THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
   gHaApps->Add(beam);
   // Add physics modules
+  // Add beam current monitor module
+  if (bcmFile.is_open()) {
+    THcBCMCurrent* bcm = new THcBCMCurrent("P.bcm", "BCM Module");
+    gHaPhysics->Add(bcm);
+  }
   // Calculate reaction point
   THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
   // Calculate extended target corrections
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
+  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "SHMS extended target corrections", "P", "P.react");
   gHaPhysics->Add(pext);
   // Calculate golden track quantites
   THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
@@ -104,7 +108,7 @@ void replay_calorimeter_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
   // Add event handler for EPICS events
-  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 181");
+  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
   gHaEvtHandlers->Add(hcepics);
   // Add event handler for scaler events
   THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
@@ -159,7 +163,8 @@ void replay_calorimeter_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
                               // 2 = counter is event number
   analyzer->SetEvent(event);
   // Set EPICS event type
-  analyzer->SetEpicsEvtType(181);
+  analyzer->SetEpicsEvtType(180);
+  analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
   // Define output ROOT file

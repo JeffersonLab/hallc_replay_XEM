@@ -1,35 +1,55 @@
 #include "TFile.h"
 #include "TH1D.h"
 #include <iostream>
-void calc_ped_default(TString , TString ,TString, Double_t);
-void run_shms_ped_default(TString);
-void run_hms_ped_default(TString);
+void calc_ped_default(TString , TString ,TString, Double_t,TString);
+void run_shms_ped_default(TString,TString);
+void run_hms_ped_default(TString,TString);
 
 //
-void run_shms_ped_default(TString file_name = "") {
-  calc_ped_default(file_name,"hgcer","p",0);
-  calc_ped_default(file_name,"ngcer","p",0);
-  calc_ped_default(file_name,"aero","p",1);
-  calc_ped_default(file_name,"aero","p",2);
-  calc_ped_default(file_name,"cal_prshwr","p",1);
-  calc_ped_default(file_name,"cal_prshwr","p",2);
-  calc_ped_default(file_name,"cal_shwr","p",0);
+void run_shms_ped_default(TString file_name = "",TString ofName="move_me.root") {
+  TFile* f2 = new TFile(ofName,"RECREATE");
+  f2->Close();
+  calc_ped_default(file_name,"hgcer","p",0,ofName);
+  calc_ped_default(file_name,"ngcer","p",0,ofName);
+  calc_ped_default(file_name,"aero","p",1,ofName);
+  calc_ped_default(file_name,"aero","p",2,ofName);
+  calc_ped_default(file_name,"cal_prshwr","p",1,ofName);
+  calc_ped_default(file_name,"cal_prshwr","p",2,ofName);
+  calc_ped_default(file_name,"cal_shwr","p",0,ofName);
+  calc_ped_default(file_name,"hodo_1x","p",1,ofName);
+  calc_ped_default(file_name,"hodo_1x","p",2,ofName);
+  calc_ped_default(file_name,"hodo_1y","p",1,ofName);
+  calc_ped_default(file_name,"hodo_1y","p",2,ofName);
+  calc_ped_default(file_name,"hodo_2x","p",1,ofName);
+  calc_ped_default(file_name,"hodo_2x","p",2,ofName);
+  calc_ped_default(file_name,"hodo_2y","p",1,ofName);
+  calc_ped_default(file_name,"hodo_2y","p",2,ofName);
 }
 //
-void run_hms_ped_default(TString file_name = "") {
-  calc_ped_default(file_name,"cer","h",0);
-  calc_ped_default(file_name,"cal_hA","h",1);
-  calc_ped_default(file_name,"cal_hB","h",1);
-  calc_ped_default(file_name,"cal_hC","h",1);
-  calc_ped_default(file_name,"cal_hD","h",1);
-  calc_ped_default(file_name,"cal_hA","h",2);
-  calc_ped_default(file_name,"cal_hB","h",2);
-
+void run_hms_ped_default(TString file_name = "",TString ofName="move_me.root") {
+  TFile* f2 = new TFile(ofName,"RECREATE");
+  f2->Close();
+  calc_ped_default(file_name,"cer","h",0,ofName);
+  calc_ped_default(file_name,"cal_hA","h",1,ofName);
+  calc_ped_default(file_name,"cal_hB","h",1,ofName);
+  calc_ped_default(file_name,"cal_hC","h",1,ofName);
+  calc_ped_default(file_name,"cal_hD","h",1,ofName);
+  calc_ped_default(file_name,"cal_hA","h",2,ofName);
+  calc_ped_default(file_name,"cal_hB","h",2,ofName);
+  calc_ped_default(file_name,"hodo_1x","h",1,ofName);
+  calc_ped_default(file_name,"hodo_1x","h",2,ofName);
+  calc_ped_default(file_name,"hodo_1y","h",1,ofName);
+  calc_ped_default(file_name,"hodo_1y","h",2,ofName);
+  calc_ped_default(file_name,"hodo_2x","h",1,ofName);
+  calc_ped_default(file_name,"hodo_2x","h",2,ofName);
+  calc_ped_default(file_name,"hodo_2y","h",1,ofName);
+  calc_ped_default(file_name,"hodo_2y","h",2,ofName);
 }
 
 
 void calc_ped_default(TString golden_file = "", TString detector = "",
-                           TString spect = "", Double_t polarity = -1) {
+		      TString spect = "", Double_t polarity = -1,
+		      TString ofName="move_me.root") {
 
   if (golden_file == "") {
     cout << "Enter golden run root file name: " << endl;
@@ -95,8 +115,12 @@ void calc_ped_default(TString golden_file = "", TString detector = "",
     cout << "Cannot find : " << golden_file << endl;
     return;
   }
-
   f1->GetObject(histname.Data(), H1_ped_vs_pmt);
+  TFile* f2 = new TFile(ofName,"UPDATE");
+  f2->cd();
+  H1_ped_vs_pmt->Write();
+  f2->Close();
+  f1->cd();
 
   TH1D* H1_pmt;
 

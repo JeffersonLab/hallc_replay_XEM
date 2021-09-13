@@ -25,7 +25,7 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/TIMING/shms_noTimingWindows_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/TIMING/shms_noTimingWindows_%d_%d.root";
 
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);

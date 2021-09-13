@@ -2,11 +2,11 @@
 #include "TH1D.h"
 #include <iostream>
 
-void run_shms_reference_time_setup(TString infile);
-void run_hms_reference_time_setup(TString infile);
-void run_coin_reference_time_setup(TString infile);
+void run_shms_reference_time_setup(TString infile, TString outfile="move_me.root");
+void run_hms_reference_time_setup(TString infile, TString outfile="move_me.root");
+void run_coin_reference_time_setup(TString infile, TString outfile="move_me.root");
 
-void run_shms_reference_time_setup(TString infile) {
+void run_shms_reference_time_setup(TString infile, TString outfile="move_me.root") {
   gStyle->SetOptStat(0);
   const int n_pdc_refs = 10;
   const int n_pT_refs = 2;
@@ -15,6 +15,7 @@ void run_shms_reference_time_setup(TString infile) {
     cout << "Cannot find : " << infile << endl;
     return;
   }
+  TFile* f2 = new TFile(outfile,"RECREATE");
   //Canvases for SHMS Reference Times
   TCanvas *c1_pdcref = new TCanvas("c1_pdcref","c1_pdcref");
   TCanvas *c2_pdcref = new TCanvas("c2_pdcref","c2_pdcref");
@@ -130,6 +131,7 @@ void run_shms_reference_time_setup(TString infile) {
   c7_pFADC_ROC2->cd(2);
   pFADC_TREF_ROC2_adc_mult->Draw();
 
+  f2->cd();
   c1_pdcref->Write();
   c2_pdcref->Write();
   c3_pdcref->Write();
@@ -137,13 +139,14 @@ void run_shms_reference_time_setup(TString infile) {
   c5_pdcref->Write();
   c6_pT->Write();
   c7_pFADC_ROC2->Write();
-
+  f2->Write();
+  f2->Close();
   //f1->Close();
     
   return;
 }
 
-void run_hms_reference_time_setup(TString infile) {
+void run_hms_reference_time_setup(TString infile, TString outfile="move_me.root") {
   gStyle->SetOptStat(0);
   int n_hdc_refs = 5;
   const int n_hT_refs = 2;
@@ -152,6 +155,7 @@ void run_hms_reference_time_setup(TString infile) {
     cout << "Cannot find : " << infile << endl;
     return;
   }
+  TFile* f2 = new TFile(outfile,"RECREATE");
   //Canvases for HMS Reference Times
   TCanvas *c1_hdcref = new TCanvas("c1_hdcref","c1_hdcref");
   TCanvas *c2_hdcref = new TCanvas("c2_hdcref","c2_hdcref");
@@ -267,6 +271,7 @@ void run_hms_reference_time_setup(TString infile) {
   c7_hFADC_ROC1->cd(2);
   hFADC_TREF_ROC1_adc_mult->Draw();
 
+  f2->cd();
   c1_hdcref->Write();
   c2_hdcref->Write();
   if(!histoFound) {
@@ -274,13 +279,14 @@ void run_hms_reference_time_setup(TString infile) {
   }
   c6_hT->Write();
   c7_hFADC_ROC1->Write();
-
+  f2->Write();
+  f2->Close();
   //f1->Close();
     
   return;
 }
 
-void run_coin_reference_time_setup(TString infile) {
+void run_coin_reference_time_setup(TString infile, TString outfile="move_me.root") {
   cout << "This script is not working yet...\n";
   return;
   TFile* f1 = new TFile(infile, "UPDATE");
@@ -288,6 +294,7 @@ void run_coin_reference_time_setup(TString infile) {
     cout << "Cannot find : " << infile << endl;
     return;
   }
+  TFile* f2 = new TFile(outfile,"RECREATE");
 
   return;
 }
