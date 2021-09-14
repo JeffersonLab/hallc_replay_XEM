@@ -88,18 +88,18 @@ TH1F pT1_tdc_time_raw 'Raw SHMS pT1 Raw TDC Time; Raw TDC Time (ns); Counts / 1 
 TH1F pT1_tdc_mult 'SHMS pT1 TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.pT1_tdcMultiplicity 15 0 5
 TH1F pT1_tdc_time_raw_mult1  'Raw SHMS pT1 TDC Time, Mult=1; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT1_tdcTimeRaw  3500 0 7000 T.shms.pT1_tdcMultiplicity==1
 TH1F pT1_tdc_time_raw_mult2  'Raw SHMS pT1 TDC Time, Mult=2; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT1_tdcTimeRaw  3500 0 7000 T.shms.pT1_tdcMultiplicity==2
-TH1F pT1_tdc_time_raw_mult2  'Raw SHMS pT1 TDC Time, Mult=2; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT1_tdcTimeRaw  3500 0 7000 T.shms.pT1_tdcMultiplicity==3
+TH1F pT1_tdc_time_raw_mult3  'Raw SHMS pT1 TDC Time, Mult=2; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT1_tdcTimeRaw  3500 0 7000 T.shms.pT1_tdcMultiplicity==3
 
 
-TH1F ptrig_pT2_raw_tdc 'Raw SHMS pT2 Good TDC Time (Slot 19, Channel 31); Good TDC Time (ns); Counts / 1 ns' T.shms.pT2_tdcTimeRaw 3500 0 7000 
+TH1F pT2_tdc_time_raw 'Raw SHMS pT2 Good TDC Time (Slot 19, Channel 31); Good TDC Time (ns); Counts / 1 ns' T.shms.pT2_tdcTimeRaw 3500 0 7000 
 TH1F pT2_tdc_mult 'SHMS pT2 TDC Multiplicity; TDC Multiplicity; Counts / 1' T.shms.pT2_tdcMultiplicity 15 0 5
 TH1F pT2_tdc_time_raw_mult1  'Raw SHMS pT2 TDC Time, Mult=1; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT2_tdcTimeRaw  3500 0 7000 T.shms.pT2_tdcMultiplicity==1
 TH1F pT2_tdc_time_raw_mult2  'Raw SHMS pT2 TDC Time, Mult=2; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT2_tdcTimeRaw  3500 0 7000 T.shms.pT2_tdcMultiplicity==2
 TH1F pT2_tdc_time_raw_mult3  'Raw SHMS pT2 TDC Time, Mult=3; Raw TDC Time (ns); Counts / 0.1 ns;'  T.shms.pT2_tdcTimeRaw  3500 0 7000 T.shms.pT2_tdcMultiplicity==3
 
 
-TH1F ptrig_pFADC_TREF_ROC2_raw_tdc 'Raw SHMS pFADC_TREF_ROC2 Good Pulse Time; Good Pulse Time (ns); Counts / 1 ns' T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw 5000 0 10000
-TH1F ptrig_pFADC_TREF_ROC2_ptime_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; ADC Multiplicity; Counts / 1' T.shms.pFADC_TREF_ROC2_adcMultiplicity 15 0 5
+TH1F pFADC_TREF_ROC2_raw_adc 'Raw SHMS pFADC_TREF_ROC2 Good Pulse Time; Good Pulse Time (ns); Counts / 1 ns' T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw 5000 0 10000
+TH1F pFADC_TREF_ROC2_adc_mult 'SHMS pFADC_TREF_ROC2 ADC Multiplicity; ADC Multiplicity; Counts / 1' T.shms.pFADC_TREF_ROC2_adcMultiplicity 15 0 5
 TH1F pFADC_TREF_ROC2_mult1  'Raw SHMS pFADC_TREF_ROC2 ADC Time, Mult=1; Raw ADC Time (ns); Counts / 0.1 ns;'  T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw  5000 0 10000 T.shms.pFADC_TREF_ROC2_adcMultiplicity==1
 TH1F pFADC_TREF_ROC2_mult2  'Raw SHMS pFADC_TREF_ROC2 ADC Time, Mult=2; Raw ADC Time (ns); Counts / 0.1 ns;'  T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw  5000 0 10000 T.shms.pFADC_TREF_ROC2_adcMultiplicity==2
 TH1F pFADC_TREF_ROC2_mult3  'Raw SHMS pFADC_TREF_ROC2 ADC Time, Mult=3; Raw ADC Time (ns); Counts / 0.1 ns;'  T.shms.pFADC_TREF_ROC2_adcPulseTimeRaw  5000 0 10000 T.shms.pFADC_TREF_ROC2_adcMultiplicity==3

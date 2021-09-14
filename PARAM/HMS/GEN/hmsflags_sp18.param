@@ -32,7 +32,9 @@
                           ; Data taken with fields set by field00.f or later should set to 2000.
 ; These offsets are determined from elastic ep data.
 ; central field  correction
-  hpcentral_offset = 0.0 ;    
+;hpcentral offset from F2 analysis.
+;hpcentral_offset = 0.0 ;    
+hpcentral_offset = 100*(0.006440-0.008697*hpcentral+0.002585*hpcentral*hpcentral-0.000276*hpcentral*hpcentral*hpcentral) 
   hthetacentral_offset = 0.000 ; (rad) 
   h_oopcentral_offset = 0.00  ; (rad)
 ; sets hpcentral = hpcentral * ( 1. + hpcentral_offset / 100. )

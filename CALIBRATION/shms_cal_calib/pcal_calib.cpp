@@ -330,7 +330,7 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  }
 
  if (SAVE==1){
-  TFile* froot=new TFile(Form("%s_%d_%d.root",Prefix.c_str(),nstart,nstop),
+  TFile* froot=new TFile(Form("ROOTfiles/%s_%d_%d.root",Prefix.c_str(),nstart,nstop),
 			 "RECREATE");
   cout << "Savings histograms...." << endl;
   theShowerCalib.hEunc->Write();

@@ -1,0 +1,20 @@
+# HMS CER GOOD Pulse Profile
+TH2F hcer_good_pped_vs_pmt 'HMS Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] H.cer.goodAdcPed 2 0.5 2.5 200 100 150 H.cer.goodAdcPed>0.0
+# HMS CAL Good Pulse Pedestals 
+TH2F hcal_hA_good_pped_vs_pmt_pos 'HMS hA+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.1pr.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.1pr.goodPosAdcPed>0.0
+TH2F hcal_hA_good_pped_vs_pmt_neg 'HMS hA- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.1pr.goodNegAdcPed 13 0.5 13.5 200 100 150 H.cal.1pr.goodNegAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_pos 'HMS hB+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.2ta.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.2ta.goodPosAdcPed>0.0
+TH2F hcal_hB_good_pped_vs_pmt_neg 'HMS hB- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.2ta.goodNegAdcPed 13 0.5 13.5 200 100 150 H.cal.2ta.goodNegAdcPed>0.0
+TH2F hcal_hC_good_pped_vs_pmt_pos 'HMS hC+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.3ta.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.3ta.goodPosAdcPed>0.0
+TH2F hcal_hD_good_pped_vs_pmt_pos 'HMS hD+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] H.cal.4ta.goodPosAdcPed 13 0.5 13.5 200 100 150 H.cal.4ta.goodPosAdcPed>0.0
+# HMS HODO Good PULSE PEDESTAL
+#------------------------------
+
+TH2F hhodo_1x_good_pped_vs_pmt_pos 'HMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.1x.GoodPosAdcPed 16 0.5 16.5 200 100 150 H.hod.1x.GoodPosAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_pos 'HMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.1y.GoodPosAdcPed 10 0.5 10.5 200 100 150 H.hod.1y.GoodPosAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_pos 'HMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.2x.GoodPosAdcPed 16 0.5 16.5 200 100 150 H.hod.2x.GoodPosAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_pos 'HMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.2y.GoodPosAdcPed 10 0.5 10.5 200 100 150 H.hod.2y.GoodPosAdcPed>0.0
+TH2F hhodo_1x_good_pped_vs_pmt_neg 'HMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.1x.GoodNegAdcPed 16 0.5 16.5 200 100 150 H.hod.1x.GoodNegAdcPed>0.0
+TH2F hhodo_1y_good_pped_vs_pmt_neg 'HMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.1y.GoodNegAdcPed 10 0.5 10.5 200 100 150 H.hod.1y.GoodNegAdcPed>0.0
+TH2F hhodo_2x_good_pped_vs_pmt_neg 'HMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.2x.GoodNegAdcPed 16 0.5 16.5 200 100 150 H.hod.2x.GoodNegAdcPed>0.0
+TH2F hhodo_2y_good_pped_vs_pmt_neg 'HMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal 0.25 mV' [I+1] H.hod.2y.GoodNegAdcPed 10 0.5 10.5 200 100 150 H.hod.2y.GoodNegAdcPed>0.0

@@ -558,7 +558,7 @@ void THcPShowerCalib::CalcThresholds() {
     //      cout << "CalcThreshods: nev=" << nev << "  Enorm=" << Enorm << endl;
     }
 
-    if (nev > 200000) break;
+    if (nev > 800000) break;
   };
 
   //Find max bin (peak) and fit in range
@@ -1050,8 +1050,7 @@ void THcPShowerCalib::SaveAlphas() {
   //
 
   ofstream output;
-  char* fname = Form("pcal.param.%s_%d_%d", fPrefix.c_str(),
-		     fNstart, fNstopRequested);
+  char* fname = Form("pcal.param");
   cout << "SaveAlphas: fname=" << fname << endl;
 
   output.open(fname,ios::out);

@@ -20,11 +20,12 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
+  pathList.push_back("./raw-sp18");
   pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -177,7 +178,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
-  analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production.template",
+  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
   			Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }

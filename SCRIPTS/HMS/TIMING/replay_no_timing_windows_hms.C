@@ -24,11 +24,11 @@ void replay_no_timing_windows_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
-  pathList.push_back("./raw-sp19");
+  pathList.push_back("./raw-sp18");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/TIMING/hms_noTimingWindows_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/TIMING/hms_noTimingWindows_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.

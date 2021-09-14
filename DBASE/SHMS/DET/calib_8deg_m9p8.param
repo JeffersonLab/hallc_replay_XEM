@@ -1,4 +1,6 @@
 ; SHMS calibration files for 8 deg, p = -9.8 GeV, runs 3131-3163
+#include "PARAM/SHMS/HODO/phodo_TWcalib_8deg_m9p8_sp18.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_8deg_m9p8_sp18.param"
 #include "PARAM/SHMS/DC/pdc_calib_8deg_m9p8_sp18.param"
 #include "PARAM/SHMS/DC/pdc_tzero_per_wire_8deg_m9p8_sp18.param"
 #include "PARAM/SHMS/CAL/pcal_calib_8deg_m9p8_sp18.param"

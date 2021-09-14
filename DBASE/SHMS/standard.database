@@ -11,6 +11,7 @@ g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp18.param"
 g_ctp_optics_filename      = "PARAM/SHMS/GEN/pcana_sp18.param"
 g_ctp_map_filename         = "MAPS/SHMS/DETEC/STACK/shms_stack_sp18.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/tshms_sp18.param"
+g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp18.template"
 
 ; General parameters for Spring 2019 running during j-psi
 7188-7261
@@ -34,35 +35,42 @@ g_ctp_det_calib_filename = "DBASE/SHMS/default_det_calib_sp21.param"
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
 g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_5p1.param"
-;g_ctp_det_calib_filename = 
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m5p1.param"
 
 
 2509-2523
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
 g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_4p0.param"
-;g_ctp_det_calib_filename = 
+;g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m4p0.param"
 
 
-2524-2545
+2524-2543
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
 g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_3p3.param"
-;g_ctp_det_calib_filename = 
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m3p3.param"
+
+
+2544-2545
+;Production EMC
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser2.param"
+g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_3p3.param"
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m3p3.param"
 
 
 2547-2563
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser2.param"
-g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_3p3.param"
-;g_ctp_det_calib_filename = 
+g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_2p7.param"
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m2p7.param"
 
 
 3085-3101
 ;Charge-Symmetric Background for EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
-;g_ctp_optics_filename = 
-;g_ctp_det_calib_filename = 
+;g_ctp_optics_filename = Default Used for CSB runs
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_p2p7.param"
 
 
 3102-3121
@@ -73,7 +81,7 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
 3122-3130
 ;Boiling at 25 degrees on H and D
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
-;g_ctp_optics_filename = 
+;g_ctp_optics_filename = Default Used for Boiling runs
 g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 
 
@@ -84,10 +92,16 @@ g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_9p8.param"
 g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_8deg_m9p8.param"
 
 
+3164-3201
+g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
+;g_ctp_optics_filename = Default Used for Boiling runs
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
+
+
 3204-3226
 ;Boiling at 25 degrees on H, D, C, Al
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period4.param"
-;g_ctp_optics_filename = 
+;g_ctp_optics_filename = Default Used for Boiling runs
 g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 
 

@@ -17,18 +17,15 @@ void replay_no_reference_times_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern;
-  if (RunNumber == 1566 || RunNumber == 1598 || RunNumber == 1608 || RunNumber == 1618)
-    RunFileNamePattern = "hms_all_%05d_filtered.dat";
-  else 
-    RunFileNamePattern = "hms_all_%05d.dat";
+  RunFileNamePattern = "hms_all_%05d.dat";
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
-  pathList.push_back("./raw-sp19");
+  pathList.push_back("./raw-sp18");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/TIMING/hms_noReferenceTime_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/TIMING/hms_noReferenceTime_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.
@@ -42,21 +39,19 @@ void replay_no_reference_times_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
-  // Load hpcentral momentum offset 
-  gHcParms->Load("PARAM/HMS/GEN/hpcentral_function_sp18.param");
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
   //=======================================================================
 
   //Overwrite the existing reference times with
   //the default values specified in hallc_replay.  
-  gHcParms->AddString("g_ctp_no_reference_times_filename", "PARAM/HMS/h_no_reference_times.param");
+  gHcParms->AddString("g_ctp_no_reference_times_filename", "PARAM/HMS/GEN/h_no_reference_times.param");
   gHcParms->Load(gHcParms->GetString("g_ctp_no_reference_times_filename"));
 
   //Now remove all Timing Windows and revert to 
   //the default values specifid in hallc_replay
-  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/HMS/detector_cuts_no_time_windows.param");
+  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/HMS/detector_cuts_no_timing_windows.param");
   gHcParms->Load(gHcParms->GetString("g_ctp_no_timing_windows_filename"));
 
   //I do NOT KNOW what to set the tshms.param values to..

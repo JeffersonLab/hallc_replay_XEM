@@ -1,4 +1,4 @@
-void replay_dc_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool WithTzero = false) {
+void replay_dc_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool withTzero = false) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -20,11 +20,12 @@ void replay_dc_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool WithTzero = f
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
+  pathList.push_back("./raw-sp18");
   pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/shms_replay_dc_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/CALIBRATION/shms_replay_dc_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);

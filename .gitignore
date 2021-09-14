@@ -22,6 +22,8 @@ ROOTfiles
 /CALIBRATION/hms_cal_calib_f2/
 .root_history
 raw
+raw-sp18
+raw-sp19
 raw.copiedtotape
 cache
 scratch
