@@ -3,9 +3,18 @@
 #**************************
 
 block P.dc.*
-block Ndata.P.dc.*.time
+block Ndata.P.dc.*
 
 block P.gtr.*
 
+block P.kin.W
+block P.kin.x_bj
+
 block P.cal.etot
+block P.cal.etotnorm
+
 block P.ngcer.npeSum
+block P.hgcer.npeSum
+
+block P.hod.starttime
+block P.hod.goodstarttime

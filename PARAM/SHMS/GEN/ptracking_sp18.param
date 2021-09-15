@@ -4,42 +4,50 @@
 ;              kami kaze events which hang the analyzer to a long time.
 
 ; Tracking parameters
-  pmax_pr_hits = 25, 25
+  pmax_pr_hits = 35, 35
 
 ; pminhit(i)   minimum number of hits in each space point (one for each chamber)
 pmin_hit = 5, 5
-; hmin_combos(i) minimum number of pairs in each space point ( one per chamber)
+
+; pmin_combos(i) minimum number of pairs in each space point ( one per chamber)
 ; should be 3/3 for 4/6 tracking, and 4/4 for 5/6 tracking (JRA)
-pmin_combos = 4, 4
-; hspace_point_criterion(i) minimum separation of distinct space points
+  pmin_combos = 4, 4 ! Doesn't matter for new sp method, still needs included
+
+; pspace_point_criterion(i) minimum separation of distinct space points
 ; recommended value for hspace_point_criterion ( based on meeting
 ; Feb 2003)
-  pspace_point_criterion = 1.2, 1.2
+  pspace_point_criterion = 0.5, 0.5
 
 ; The following four criteria are applied to the stub fit results at the
 ; focal plane position to link stubs to tracks
 ; maximum number of possible focal plane tracks, must be <= 20
-pntracks_max_fp = 10
+  pxt_track_criterion = 10.0
+  pyt_track_criterion = 6.0
+  pxpt_track_criterion = 0.4
+  pypt_track_criterion = 1.0 ;Unspessified by Mark J for new DC sp method (CAM)
 
-; The following four criteria are applied to the stub fit results at the
-; focal plane position to link stubs to tracks
+;Currently don't know what this parameter is (CAM)
   pntracks_max_fp = 10
-  pxt_track_criterion = 25.0
-  pyt_track_criterion = 7.0
-  pxpt_track_criterion = 0.7
-  pypt_track_criterion = 0.2
 
 ; Make a track of all single stubs normally 0
   psingle_stub = 0
 
 ; No small angle approximation for cosmic ray tests
-  pSmallAngleApprox = 0
+  pSmallAngleApprox = 1
+;dd Branches for SHMS DC calibration check.  Add make_hist_shms_dc from Mark Jones, which will be helpful for diagnosing track selection criterion and new tracking algorithm.  Modify PARAM files to support new new tracking method.  NOTE: Must use mkj-dc branch of hcana at this point.
 
 ; if both psel_using_scin = 0 and psel_using_prune = 0 then best chi2 track is used.
 ; psel_using_scin         uses scintillator for track selection
   psel_using_scin = 0
 ; psel_using_prune         using prune
-  psel_using_prune = 0
+  psel_using_prune = 1
+
+;Parameters for new DC tracking method (CAM)
+  pUseNewLinkStubs = 1 		;Turn on new linkstub method
+  pUseFindSpacePoints = 1	;Turn on new spacepoint method
+  pTrackLargeResidCut = -1	;Do not use the large residual cut (yet)
+  pmin_drifttime = -50 ;Same as default
+  pmax_drifttime = 200 ;Same as default
 
 ; parameters used in selecting tracks for Hodoscope efficiency in THcHodoEff.cxx
 ;   HodoEff_CalEnergy_Cut  cut on the track energy (GeV)
