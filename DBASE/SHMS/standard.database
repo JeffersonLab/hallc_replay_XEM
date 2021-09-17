@@ -42,7 +42,7 @@ g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m5p1.param"
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
 g_ctp_optics_filename = "PARAM/SHMS/GEN/pcana_4p0.param"
-;g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m4p0.param"
+g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_21deg_m4p0.param"
 
 
 2524-2543
