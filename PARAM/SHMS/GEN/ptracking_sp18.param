@@ -45,7 +45,7 @@ pmin_hit = 5, 5
 ;Parameters for new DC tracking method (CAM)
   pUseNewLinkStubs = 1 		;Turn on new linkstub method
   pUseFindSpacePoints = 1	;Turn on new spacepoint method
-  pTrackLargeResidCut = -1	;Do not use the large residual cut (yet)
+  pTrackLargeResidCut = 0.075	;Using with a value ~5x sigma.
   pmin_drifttime = -50 ;Same as default
   pmax_drifttime = 200 ;Same as default
 
