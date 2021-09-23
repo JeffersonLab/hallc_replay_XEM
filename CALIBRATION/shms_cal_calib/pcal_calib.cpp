@@ -128,12 +128,13 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
 // SET DRAW==0 at beginning of code to avoid drawing the extras 
 //wph
 
+ TCanvas *Canvas2, *Canvas3, *Canvas4;
  if(DRAW==1){ 
- TCanvas* Canvas2 =
+ Canvas2 =
    new TCanvas("Canvas2", "Hits, gains, and Projections",cwid+cxt,0,cwid,cht);
- TCanvas* Canvas3 =
+ Canvas3 =
    new TCanvas("Canvas3", "Branches for cuts",0,cht+cxt,cwid,cht);
- TCanvas* Canvas4 =
+ Canvas4 =
    new TCanvas("Canvas4", "Pulse Integrals, x/y_calo vs E/p",cwid+cxt,cht+cxt,cwid,cht);
  //___________Canvas 2_______________
   Canvas2->Divide(3,2);
@@ -342,6 +343,10 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
   theShowerCalib.hEPRunc->Write();           ////
   theShowerCalib.hETOTvsEPRunc->Write();     ////
   theShowerCalib.hESHvsEPRunc->Write();      ////
+  Canvas->Write();
+  Canvas2->Write();
+  Canvas3->Write();
+  Canvas4->Write();
   froot->Close();
  }
 

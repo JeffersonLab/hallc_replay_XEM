@@ -31,6 +31,10 @@ g_ctp_det_calib_filename = "DBASE/SHMS/default_det_calib_sp21.param"
 
 ; Specialized detector calibrations w.r.t. kinematic settings
 
+1791
+;Defocused run used for hodo calib.
+;No special DET files, just need for hodo calib.
+
 2484-2508
 ;Production EMC
 g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"

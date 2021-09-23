@@ -1032,7 +1032,7 @@ void THcPShowerCalib::FillHEcal() {
 
     }
 
-    if (nev > 200000) break;
+    if (nev > 2000000) break;
   };
 
   //  output.close();

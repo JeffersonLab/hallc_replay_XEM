@@ -49,9 +49,9 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
   static const Int_t SIDES = 2;
   TString spec = "P";
   TString det = "hod";
-  string pl_names[4] = {"1x", "1y", "2x", "2y"};
-  string side_names[2] = {"GoodPos", "GoodNeg"};
-  string nsign[2] = {"+", "-"};
+  TString pl_names[4] = {"1x", "1y", "2x", "2y"};
+  TString side_names[2] = {"GoodPos", "GoodNeg"};
+  TString nsign[2] = {"+", "-"};
   Int_t maxPMT[4] = {13, 13, 14, 21};
   Int_t refPad[4] = {0, 13, 26, 40};              //use as reference when counting bars up to 61 
   
@@ -183,6 +183,7 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
   TH1F *h1Hist_TWAvg[PLANES][21];                    // (TWCorr_Pos + TWCorr_Neg) / 2       <------- 
   TH1F *h1Hist_TWAvg_CUT[PLANES][21];                                                    //<------
   TH1F *h1Hist_TWDiffTrkPos[PLANES][21];             //1D hist of TW Corr. Dist - Track Position (width should be Hodo resolution)    <------
+  TH1D *determineFitRange;                           // Used to detemine fit range of TW_CORR_v_TrkPos (proj. X axis)
 
   TH2F *h2Hist_TW_UnCorr[PLANES][SIDES][21];         //Time-Walk Uncorrected vs. ADC Pulse Amp Hist
   TH2F *h2Hist_TW_Corr[PLANES][SIDES][21];           //Time-Walk Corrected vs. ADC Pulse Amp Hist
@@ -196,6 +197,11 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
   Double_t StdDev;                                    //variable to get satndar deviation to make a 3sig cut
   Double_t nSig;                                         //multiple of Sigma used for sigmaCut
   
+  //Fit Ranges for TW_Corr_v_TrkPos
+  int minFitBin, maxFitBin;
+  double minFitVal, maxFitVal;
+  int nEvts, nFitCut;
+
   //Gaussian Fit for TWAvg
   TF1 *gausFit[PLANES][21];
 
@@ -245,8 +251,8 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 	    {
 	    	   
 	      //Initialize Histograms
-	      h2Hist_TW_UnCorr[npl][side][ipmt] = new TH2F(Form("TW_UnCorr PMT %s%d%s", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), Form("PMT %s%d%s: UnCorr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ",pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), 600, 0, 420, 120, -60, 60);   
-	      h2Hist_TW_Corr[npl][side][ipmt] = new TH2F(Form("TW_Corr PMT %s%d%s", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()) , Form("PMT %s%d%s: Corr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), 600, 0, 420, 120, -60, 60);   
+	      h2Hist_TW_UnCorr[npl][side][ipmt] = new TH2F(Form("TW_UnCorr PMT %s%d%s", pl_names[npl].Data(), ipmt+1, nsign[side].Data()), Form("PMT %s%d%s: UnCorr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ",pl_names[npl].Data(), ipmt+1, nsign[side].Data()), 600, 0, 420, 120, -60, 60);   
+	      h2Hist_TW_Corr[npl][side][ipmt] = new TH2F(Form("TW_Corr PMT %s%d%s", pl_names[npl].Data(), ipmt+1, nsign[side].Data()) , Form("PMT %s%d%s: Corr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ", pl_names[npl].Data(), ipmt+1, nsign[side].Data()), 600, 0, 420, 120, -60, 60);   
 	      
 	      h2Hist_TW_UnCorr[npl][side][ipmt]->GetYaxis()->SetTitle("Time Walk UnCorr.(TDC - ADC) Pulse Time (ns)");
 	      h2Hist_TW_UnCorr[npl][side][ipmt]->GetXaxis()->SetTitle("ADC Pulse Amplitude (mV)");
@@ -259,16 +265,16 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 	       if (side==0) //require ONLY one side, since a time diff between two pmts at each end is taken
 		{
 
-		  h1Hist_TWAvg[npl][ipmt] = new TH1F(Form("Avg. Time: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corrected Average Time", pl_names[npl].c_str(), ipmt+1), 100, 0, 100);
+		  h1Hist_TWAvg[npl][ipmt] = new TH1F(Form("Avg. Time: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corrected Average Time", pl_names[npl].Data(), ipmt+1), 100, 0, 100);
 		  
-		  h1Hist_TWAvg_CUT[npl][ipmt] = new TH1F(Form("Avg. Time CUT: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corrected Average (CUT)",pl_names[npl].c_str(), ipmt+1), 100, 0, 100);
+		  h1Hist_TWAvg_CUT[npl][ipmt] = new TH1F(Form("Avg. Time CUT: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corrected Average (CUT)",pl_names[npl].Data(), ipmt+1), 100, 0, 100);
 	      
-		  h2Hist_TWDiff_v_TrkPos[npl][ipmt] = new TH2F(Form("DistDiff: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -80, 80, 200, -120, 80);
-		  h2Hist_TW_Corr_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeDiff: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeDiff. vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -60, 60, 200, -15, 15);
+		  h2Hist_TWDiff_v_TrkPos[npl][ipmt] = new TH2F(Form("DistDiff: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist vs. Hod Track Position", pl_names[npl].Data(), ipmt+1), 160, -80, 80, 200, -120, 80);
+		  h2Hist_TW_Corr_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeDiff: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeDiff. vs. Hod Track Position", pl_names[npl].Data(), ipmt+1), 160, -60, 60, 200, -15, 15);
 		  
-		  h1Hist_TWDiffTrkPos[npl][ipmt] = new TH1F(Form("DistDiff - Track: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist. - Hod Track Position",pl_names[npl].c_str(), ipmt+1), 200, -120, 80);
+		  h1Hist_TWDiffTrkPos[npl][ipmt] = new TH1F(Form("DistDiff - Track: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist. - Hod Track Position",pl_names[npl].Data(), ipmt+1), 200, -120, 80);
 
-		  h2Hist_TWAvg_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeAvg_v_Trk: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeAvg. vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -40, 40, 120, 0, 100);
+		  h2Hist_TWAvg_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeAvg_v_Trk: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeAvg. vs. Hod Track Position", pl_names[npl].Data(), ipmt+1), 160, -40, 40, 120, 0, 100);
   
 		  //Set Axis Titles
 		  h1Hist_TWAvg[npl][ipmt]->GetXaxis()->SetTitle("Time-Walk Corr. TDC Average Paddle Time (ns)");
@@ -493,12 +499,12 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
     {      
     
       //Create Canvas to store TW-Corr Time/Dist vs. trk position
-      TWCorr_v_TrkPos_canv[npl] = new TCanvas(Form("TWCorrTime_v_Pos%d", npl), Form("2DTWCorr_Time, plane %s", pl_names[npl].c_str()),  1000, 700);
-      TWDiff_v_TrkPos_canv[npl] = new TCanvas(Form("TWCorrDist_v_Pos%d", npl), Form("2DTWCorr_Dist, plane %s", pl_names[npl].c_str()),  1000, 700);
+      TWCorr_v_TrkPos_canv[npl] = new TCanvas(Form("TWCorrTime_v_Pos%d", npl), Form("2DTWCorr_Time, plane %s", pl_names[npl].Data()),  1000, 700);
+      TWDiff_v_TrkPos_canv[npl] = new TCanvas(Form("TWCorrDist_v_Pos%d", npl), Form("2DTWCorr_Dist, plane %s", pl_names[npl].Data()),  1000, 700);
 
-      TWAvg_canv[npl] = new TCanvas(Form("TWAvg_%d", npl), Form("TWAvg, plane %s", pl_names[npl].c_str()),  1000, 700);
-      TWAvg_canv_2D[npl] = new TCanvas(Form("TWAvg2D_%d", npl), Form("TWAvg2D, plane %s", pl_names[npl].c_str()),  1000, 700);
-      Diff_TWDistTrkPos_canv[npl] = new TCanvas(Form("Diff_TrkDist_%d", npl), Form("Diff_TrkDist, plane %s", pl_names[npl].c_str()),  1000, 700);
+      TWAvg_canv[npl] = new TCanvas(Form("TWAvg_%d", npl), Form("TWAvg, plane %s", pl_names[npl].Data()),  1000, 700);
+      TWAvg_canv_2D[npl] = new TCanvas(Form("TWAvg2D_%d", npl), Form("TWAvg2D, plane %s", pl_names[npl].Data()),  1000, 700);
+      Diff_TWDistTrkPos_canv[npl] = new TCanvas(Form("Diff_TrkDist_%d", npl), Form("Diff_TrkDist, plane %s", pl_names[npl].Data()),  1000, 700);
 
       if (npl==0 || npl==1 || npl==2) {
 	TWCorr_v_TrkPos_canv[npl]->Divide(4,4);
@@ -520,8 +526,8 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
       for (Int_t side = 0; side < SIDES; side++)
 	{	  
 	  //Create Canvas
-	  TWUnCorr_canv[npl][side] = new TCanvas(Form("TWUnCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].c_str(), side_names[side].c_str()),  1000, 700);
-	  TWCorr_canv[npl][side] = new TCanvas(Form("TWCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].c_str(), side_names[side].c_str()),  1000, 700);
+	  TWUnCorr_canv[npl][side] = new TCanvas(Form("TWUnCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].Data(), side_names[side].Data()),  1000, 700);
+	  TWCorr_canv[npl][side] = new TCanvas(Form("TWCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].Data(), side_names[side].Data()),  1000, 700);
 
 	  //Divide Canvas
 	  if (npl==0 || npl==1 || npl==2) {
@@ -553,18 +559,63 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 		  //Fit TW Corr Time vs. Trk Pos
 		  if (npl==0)
 		    {
-		      fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1x", "QR");  		    }
+		      determineFitRange = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->ProjectionX();
+		      nEvts = determineFitRange->GetEntries();
+		      if(nEvts > 2500) {nFitCut = 10;} else {nFitCut = 1;}
+		      minFitBin = determineFitRange->FindFirstBinAbove(nFitCut,1,1,-1);
+		      minFitVal = determineFitRange->GetBinCenter(minFitBin);
+		      maxFitBin = determineFitRange->FindLastBinAbove(nFitCut,1,1,-1);
+		      maxFitVal = determineFitRange->GetBinCenter(maxFitBin);
+		      if(maxFitBin==-1 || minFitBin==-1) {
+			 fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1x", "QR");  		    
+		      } else {
+			fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1x", "","",minFitVal,maxFitVal);  		    
+		      }
+		     }
 		  else if (npl==1)
 		    {   
-		      fit_status =  h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1y", "QR");     
+		      determineFitRange = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->ProjectionX();
+		      nEvts = determineFitRange->GetEntries();
+		      if(nEvts > 2500) {nFitCut = 10;} else {nFitCut = 1;}
+		      minFitBin = determineFitRange->FindFirstBinAbove(nFitCut,1,1,-1);
+		      minFitVal = determineFitRange->GetBinCenter(minFitBin);
+		      maxFitBin = determineFitRange->FindLastBinAbove(nFitCut,1,1,-1);
+		      maxFitVal = determineFitRange->GetBinCenter(maxFitBin);
+		      if(maxFitBin==-1 || minFitBin==-1) {
+			fit_status =  h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1y", "QR");     
+		      } else {
+			fit_status =  h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit1y", "","",minFitVal,maxFitVal);
+		      }     
 		    } 
 		  else if (npl==2)
 		    {                                                                                               
-		      fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2x", "QR");                         
+		      determineFitRange = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->ProjectionX();
+		      nEvts = determineFitRange->GetEntries();
+		      if(nEvts > 2500) {nFitCut = 10;} else {nFitCut = 1;}
+		      minFitBin = determineFitRange->FindFirstBinAbove(nFitCut,1,1,-1);
+		      minFitVal = determineFitRange->GetBinCenter(minFitBin);
+		      maxFitBin = determineFitRange->FindLastBinAbove(nFitCut,1,1,-1);
+		      maxFitVal = determineFitRange->GetBinCenter(maxFitBin);
+		      if(maxFitBin==-1 || minFitBin==-1) {
+			fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2x", "QR");                         
+		      } else {
+			fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2x", "", "",minFitVal,maxFitVal);                         
+		      }
 		    }
 		  else if (npl==3)
-		    {                                                                                            
-                      fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2y", "QR");     
+		    {   
+		      determineFitRange = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->ProjectionX();
+		      nEvts = determineFitRange->GetEntries();
+		      if(nEvts > 2500) {nFitCut = 10;} else {nFitCut = 1;}
+		      minFitBin = determineFitRange->FindFirstBinAbove(nFitCut,1,1,-1);
+		      minFitVal = determineFitRange->GetBinCenter(minFitBin);
+		      maxFitBin = determineFitRange->FindLastBinAbove(nFitCut,1,1,-1);
+		      maxFitVal = determineFitRange->GetBinCenter(maxFitBin);
+		      if(maxFitBin==-1 || minFitBin==-1) {
+			fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2y", "QR");     
+		      } else {
+			fit_status = h2Hist_TW_Corr_v_TrkPos[npl][ipmt]->Fit("fit2y", "","",minFitVal,maxFitVal);     
+		      }
 		    } 
 		  		  
 		  TWDiff_v_TrkPos_canv[npl]->cd(ipmt+1);
@@ -641,11 +692,31 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
   
     } //end plane loop
 
+ //Create output root file where histograms will be stored
+ TFile *outCANVAS = new TFile(Form("HodoCanvasPlots_%d.root", runNUM), "recreate");
+ outCANVAS->cd();
+ //Write Canvases to file
+ for(int ipl = 0; ipl < PLANES; ipl++) {
+   cout << "Plane: " << ipl << endl;
+   //Loop over hodo side
+   for (Int_t side = 0; side < SIDES; side++) {
+     cout << "Side: " << side << endl;
+     TWUnCorr_canv[ipl][side]->Write();
+     TWCorr_canv[ipl][side]->Write();
+   }
+   TWAvg_canv[ipl]->Write();
+   TWAvg_canv_2D[ipl]->Write();
+   Diff_TWDistTrkPos_canv[ipl]->Write();
+   TWCorr_v_TrkPos_canv[ipl]->Write();
+   TWDiff_v_TrkPos_canv[ipl]->Write();
+ }
+ outCANVAS->Close();
+ 
 
  /************WRITE FIT RESULTS TO PARAMETER FILE***************/
  
  ofstream outPARAM;
- outPARAM.open(Form("../../PARAM/SHMS/HODO/phodo_Vpcalib_%d.param", runNUM));
+ outPARAM.open(Form("phodo_Vpcalib_%d.param", runNUM));
  
  outPARAM << "; SHMS Hodoscope Parameter File Containing propagation velocities per paddle " << endl;
  outPARAM << "; and signal cable time diff. offsets per paddle " << endl;
@@ -933,7 +1004,7 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
     outPARAM << ";Timing Corrections Per Paddle, where 1X Paddle 7 has been set as the reference paddle" << endl;
     outPARAM << "; " << setw(20) << "1x " << setw(19) << "1y " << setw(16) << "2x " << setw(16) << "2y " << endl;
     outPARAM << "phodo_LCoeff = ";
-    
+
     //Write Lambda Time Coeff. Parameters to Param File
     for (Int_t ipmt = 0; ipmt < 21; ipmt++)
       {
