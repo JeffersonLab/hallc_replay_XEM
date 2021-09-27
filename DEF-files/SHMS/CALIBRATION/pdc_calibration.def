@@ -18,3 +18,5 @@ block P.hgcer.npeSum
 
 block P.hod.starttime
 block P.hod.goodstarttime
+
+block P.tr.*
