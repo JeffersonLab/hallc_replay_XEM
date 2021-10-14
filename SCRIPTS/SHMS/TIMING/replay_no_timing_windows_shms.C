@@ -41,7 +41,7 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   //Now remove all timing windows and revert to 
   //the default values specifid in hallc_replay
-  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/SHMS/detector_cuts_no_timing_windows.param");
+  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/SHMS/pdet_cuts_no_timing_windows.param");
   gHcParms->Load(gHcParms->GetString("g_ctp_no_timing_windows_filename"));
 
   // I need more claraification on how to set tshms.param

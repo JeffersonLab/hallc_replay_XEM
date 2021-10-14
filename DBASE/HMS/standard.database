@@ -13,12 +13,12 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_sp18.param"
 
 ; General parameters for Spring 2022 running during the full experiment
 7300-99999
-;g_ctp_parm_filename        =
-;g_ctp_det_calib_filename   =
-;g_ctp_bcm_calib_filename   =
-;g_ctp_optics_filename      =
-;g_ctp_hms_map_filename     =
-;g_ctp_trig_config_filename =
+;g_ctp_parm_filename        = "DBASE/HMS/general_sp22.param"
+;g_ctp_det_calib_filename   = "DBASE/HMS/default_det_calib_sp22.param"
+;g_ctp_bcm_calib_filename   = 
+;g_ctp_optics_filename      = 
+;g_ctp_hms_map_filename     = 
+;g_ctp_trig_config_filename = 
 
 
 1565-1591
