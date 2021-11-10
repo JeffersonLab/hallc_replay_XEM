@@ -101,7 +101,7 @@ void shms_m2(TString file_name) {
 	Double_t xmin = 2;
 	Double_t ymin = 2;
 	Double_t xmax = 25;
-	Double_t ymax = 16;
+	Double_t ymax = 25;
 	Double_t emin = 0.7;
 	Double_t emax = 2.0;
 	Double_t dpmin = -10;
@@ -113,25 +113,25 @@ void shms_m2(TString file_name) {
 			h5->Fill(etottracknorm);
 		}
 		if (etottracknorm > emin && etottracknorm < emax && dp > dpmin && dp < dpmax){ //common cuts
-			if(adcMult[0] == adcMultCut){ // PMT 1 Specific Cuts
+			if(adcMult[0] == adcMultCut && adcMult[1] == 0 && adcMult[2] == 0 && adcMult[3] == 0){ // PMT 1 Specific Cuts
 				h6->Fill(xAtCer,yAtCer);
 				if(xAtCer > xmin && xAtCer < xmax && yAtCer > ymin && yAtCer < ymax){
 					h1->Fill(adcPulseInt[0]);
 				}
 			}
-			if(adcMult[1] == adcMultCut){ // PMT 2 Specific Cuts
+			if(adcMult[1] == adcMultCut && adcMult[0] == 0 && adcMult[2] == 0 && adcMult[3] == 0){ // PMT 2 Specific Cuts
 				h7->Fill(xAtCer,yAtCer);
 				if(xAtCer > xmin && xAtCer < xmax && yAtCer < -1*ymin && yAtCer > -1*ymax){
 					h2->Fill(adcPulseInt[1]);
 				}
 			}
-			if(adcMult[2] == adcMultCut){ // PMT 3 Specific Cuts
+			if(adcMult[2] == adcMultCut && adcMult[1] == 0 && adcMult[0] == 0 && adcMult[3] == 0){ // PMT 3 Specific Cuts
 				h8->Fill(xAtCer,yAtCer);
 				if(xAtCer < -1*xmin && xAtCer > -1*xmax && yAtCer > ymin && yAtCer < ymax){
 					h3->Fill(adcPulseInt[2]);
 				}
 			}
-			if(adcMult[3] == adcMultCut){ // PMT 4 Specific Cuts
+			if(adcMult[3] == adcMultCut && adcMult[1] == 0 && adcMult[2] == 0 && adcMult[0] == 0){ // PMT 4 Specific Cuts
 				h9->Fill(xAtCer,yAtCer);
 				if(xAtCer < -1*xmin && xAtCer > -1*xmax && yAtCer < -1*ymin && yAtCer > -1*ymax){
 					h4->Fill(adcPulseInt[3]);
