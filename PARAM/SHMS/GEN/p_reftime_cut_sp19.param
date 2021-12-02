@@ -1,8 +1,8 @@
-;singles daq
-pdc_tdcrefcut=-14000.
-phodo_tdcrefcut=-4000.
-phodo_adcrefcut=-5200.
-pngcer_adcrefcut=-5200.
-phgcer_adcrefcut=-5200.
-paero_adcrefcut=-5200.
-pcal_adcrefcut=-5200.
+;singles daq, integer values in hcana
+pdc_tdcrefcut=-14000
+phodo_tdcrefcut=-4000
+phodo_adcrefcut=-5200
+pngcer_adcrefcut=-5200
+phgcer_adcrefcut=-5200
+paero_adcrefcut=-5200
+pcal_adcrefcut=-5200

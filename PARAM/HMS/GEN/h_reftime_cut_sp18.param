@@ -7,8 +7,9 @@
 ;     is used as reftime. If no ref time is found  greater than the abs(refcut) then no
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
-hdc_tdcrefcut   = -13500.
-hhodo_tdcrefcut = -1500.
-hhodo_adcrefcut = -187.5/.0625
-hcer_adcrefcut  = -187.5/.0625
-hcal_adcrefcut  = -187.5/.0625
+hdc_tdcrefcut   = -13500
+hhodo_tdcrefcut = -1500
+;-187.5/.0625 for ADC to integer
+hhodo_adcrefcut = -3000
+hcer_adcrefcut  = -3000
+hcal_adcrefcut  = -3000
