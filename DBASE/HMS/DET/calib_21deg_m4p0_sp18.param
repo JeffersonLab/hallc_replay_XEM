@@ -1,0 +1,4 @@
+; HMS calibration files for 21 deg, p = -4.0 GeV, runs 1622-1633
+#include "PARAM/HMS/DC/hdc_calib_21deg_m4p0_sp18.param"
+#include "PARAM/HMS/DC/hdc_tzero_per_wire_21deg_m4p0_sp18.param"
+#include "PARAM/HMS/CAL/hcal_calib_21deg_m4p0_sp18.param"

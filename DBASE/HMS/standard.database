@@ -22,24 +22,24 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_sp18.param"
 
 
 1565-1591
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p7.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p7_sp18.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 
 1592-1602
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p1.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p1_sp18.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 
 1603-1621
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p5.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p5_sp18.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 
 1622-1633
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p0.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m4p0_sp18.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 
 1634-1641
-g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m3p3.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period1_unser1.param"
+g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m3p3_sp18.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 
 2038-2057
 ; 15 Degree Boiling Runs
