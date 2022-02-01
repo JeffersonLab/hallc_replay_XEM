@@ -21,6 +21,7 @@ shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 
 shmsScinDid         shmsScinShould && P.dc.ntrack > 0
 shmsScinDide        shmsScinShoulde && P.dc.ntrack > 0
 shmsScinDidh        shmsScinShouldh && P.dc.ntrack > 0
+shmsShouldGoodDC        pcut_cer_ng_elec && P.cal.etotnorm > 0.6 && P.dc.1u1.nhit==1 && P.dc.1u1.time>0.0 && P.dc.1u1.time<190.0
 
 pcut_goodHDC1x1     P.dc.1x1.nhit > 0 && P.dc.1x1.nhit < 3
 pcut_goodHDC1u2     P.dc.1u2.nhit > 0 && P.dc.1u2.nhit < 3

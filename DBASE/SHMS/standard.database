@@ -21,6 +21,7 @@ g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp19.param"
 g_ctp_optics_filename      = "PARAM/SHMS/GEN/pcana_sp19.param"
 g_ctp_map_filename         = "MAPS/SHMS/DETEC/STACK/shms_stack_sp19.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/tshms_sp19.param"
+g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp18.template"
 
 
 ; General parameters for Spring 2022 running during the full experiment
