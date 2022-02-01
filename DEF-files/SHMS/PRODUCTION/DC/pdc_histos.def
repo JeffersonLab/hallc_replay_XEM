@@ -52,6 +52,10 @@ TH1F pdc2x1_drifttime 'SHMS DC 2X1 Drift Time; Drift Time (ns); Number of Entrie
 TH1F pdc2u2_drifttime 'SHMS DC 2U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u2.time 400 -50 350
 TH1F pdc2u1_drifttime 'SHMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u1.time 400 -50 350
 
+TH1F pdc1u1_ddist_cut 'SHMS 1U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1u1.dist 28 -0.1 0.6 shmsShouldGoodDC==1
+TH1F pdc1u1_drifttime_cut 'SHMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u1.time 400 -50 350 shmsShouldGoodDC==1
+TH1F h_shmsShouldGoodDC 'title; ax_title; ax_title' shmsShouldGoodDC 2 0 1
+
 #----------------------------------
 # SHMS DC Drift Distance Per Plane 
 #----------------------------------

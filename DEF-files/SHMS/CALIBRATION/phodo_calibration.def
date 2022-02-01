@@ -148,3 +148,49 @@ block P.hod.2y.GoodNegTdcTimeUnCorr
 block P.hod.2y.GoodNegTdcTimeWalkCorr
 block P.hod.2y.GoodNegAdcPulseTime
 block P.hod.2y.GoodNegAdcPulseAmp
+
+block P.hod.1x.PosTdcRefTime
+block P.hod.1y.PosTdcRefTime
+block P.hod.2x.PosTdcRefTime
+block P.hod.2y.PosTdcRefTime
+block P.hod.1x.NegTdcRefTime
+block P.hod.1y.NegTdcRefTime
+block P.hod.2x.NegTdcRefTime
+block P.hod.2y.NegTdcRefTime
+block P.hod.1x.PosAdcRefTime
+block P.hod.1y.PosAdcRefTime
+block P.hod.2x.PosAdcRefTime
+block P.hod.2y.PosAdcRefTime
+block P.hod.1x.NegAdcRefTime
+block P.hod.1y.NegAdcRefTime
+block P.hod.2x.NegAdcRefTime
+block P.hod.2y.NegAdcRefTime
+
+block P.hod.1x.PosTdcRefDiffTime
+block P.hod.1y.PosTdcRefDiffTime
+block P.hod.2x.PosTdcRefDiffTime
+block P.hod.2y.PosTdcRefDiffTime
+block P.hod.1x.NegTdcRefDiffTime
+block P.hod.1y.NegTdcRefDiffTime
+block P.hod.2x.NegTdcRefDiffTime
+block P.hod.2y.NegTdcRefDiffTime
+block P.hod.1x.PosAdcRefDiffTime
+block P.hod.1y.PosAdcRefDiffTime
+block P.hod.2x.PosAdcRefDiffTime
+block P.hod.2y.PosAdcRefDiffTime
+block P.hod.1x.NegAdcRefDiffTime
+block P.hod.1y.NegAdcRefDiffTime
+block P.hod.2x.NegAdcRefDiffTime
+block P.hod.2y.NegAdcRefDiffTime
+
+block P.hod.goodstarttime
+block P.hod.TimeHist_StartTime_NumPeaks
+block P.hod.TimeHist_StartTime_Peak
+block P.hod.TimeHist_StartTime_Sigma
+block P.hod.TimeHist_StartTime_Hits
+block P.hod.TimeHist_FpTime_NumPeaks
+block P.hod.TimeHist_FpTime_Peak
+block P.hod.TimeHist_FpTime_Sigma
+block P.hod.TimeHist_FpTime_Hits
+
+block P.hod.adctdc_offset
