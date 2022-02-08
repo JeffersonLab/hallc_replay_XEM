@@ -3,6 +3,7 @@ t_hms_numTdc = 53
 t_hms_tdcoffset=300.
 t_hms_adc_tdc_offset=300.
 t_hms_tdcchanperns=0.09766
+t_hms_trig_tdcrefcut = -1200.
 
 ; bar num:          1     2     3     4     5      6     7    8        9
 t_hms_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAER hCER hFADC_TREF_ROC1"

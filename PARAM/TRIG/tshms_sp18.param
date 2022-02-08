@@ -4,6 +4,7 @@ t_shms_numTdc = 57
 t_shms_tdcoffset = 300.
 t_shms_adc_tdc_offset = 200.
 t_shms_tdcchanperns = 0.09766
+t_shms_trig_tdcrefcut = -2900.
 
 ; bar num:          1      2      3      4         5             6          7
 t_shms_adcNames = "pAER pHGCER pNGCER pPSHWR pFADC_TREF_ROC2 pHGCER_MOD pNGCER_MOD"
