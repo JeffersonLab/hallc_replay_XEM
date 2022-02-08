@@ -16,7 +16,7 @@ hhodo_adc_mode=1
 ;  hhodo_tdc_offset = 1000, 1000, 1000, 1000
 
 ;hhodo_adc_tdc_offset = 200., 200., 200., 200.
-hhodo_adc_tdc_offset = 143., 142., 143., 142.
+hhodo_adc_tdc_offset = 145., 145., 145., 145.
 
 hhodo_PosAdcTimeWindowMin =-39, -42, -42, -42,
 			   -39, -40, -40, -42,
