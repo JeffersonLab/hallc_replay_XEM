@@ -1,6 +1,6 @@
 ;HMS Hodo Cut parameters for removing timing windows
 
-hhodo_adc_tdc_offset = 200., 200., 200., 200.
+hhodo_adc_tdc_offset = 145., 145., 145., 145.
 
 hhodo_AdcPosTimeWindowMin = -200., -200., -200., -200.,
 			    -200., -200., -200., -200.,

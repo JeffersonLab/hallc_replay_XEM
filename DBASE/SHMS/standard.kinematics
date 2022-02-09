@@ -1177,6 +1177,8 @@ ppartmass = 0.00051099
 ptheta_lab = 24.98
 ppcentral = 4.4
 
+# x > 1 Runs
+
 3131-3133
 gpbeam = 10.601815
 gtargmass_amu = 2.014101
@@ -1204,8 +1206,6 @@ gtargmass_amu = 12.0107
 ppartmass = 0.00051099
 ptheta_lab = 8.02
 ppcentral = 9.8
-
-# x > 1 Runs
 
 3142-3143
 gpbeam = 10.601815
@@ -1266,13 +1266,6 @@ ppcentral = 9.8
 3157-3160
 gpbeam = 10.601815
 gtargmass_amu = 9.012
-ppartmass = 0.00051099
-ptheta_lab = 8.02
-ppcentral = 9.8
-
-3161-3161
-gpbeam = 10.601815
-gtargmass_amu =  2.014101
 ppartmass = 0.00051099
 ptheta_lab = 8.02
 ppcentral = 9.8

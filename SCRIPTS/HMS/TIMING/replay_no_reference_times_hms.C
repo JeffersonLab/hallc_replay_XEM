@@ -40,7 +40,7 @@ void replay_no_reference_times_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
 
   //=======================================================================
 
