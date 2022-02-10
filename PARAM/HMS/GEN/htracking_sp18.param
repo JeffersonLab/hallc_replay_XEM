@@ -46,6 +46,12 @@ hstub_max_xpdiff = .05
 ; hsel_using_prune         using prune
   hsel_using_prune = 1
 
+;Parameters for new DC tracking method
+  hUseNewLinkStubs = 1          ;Turn on new linkstub method
+  hUseFindSpacePoints = 1       ;Turn on new spacepoint method
+  hTrackLargeResidCut = 0.075   ;Using with a value ~5x sigma.
+  hmin_drifttime = -50 ;Same as default
+  hmax_drifttime = 200 ;Same as default
 
 ; parameters used in selecting tracks for Hodoscope efficiency in THcHodoEff.cxx
 ;   hHodoEff_CalEnergy_Cut  cut on the track energy (GeV)
