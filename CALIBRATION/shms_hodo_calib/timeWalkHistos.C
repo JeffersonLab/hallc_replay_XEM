@@ -1,6 +1,6 @@
 // Macro to generate time-walk histograms for the hodoscopes
 // Author: Eric Pooser, pooser@jlab.org
-
+// Changes made by/Jacob Murphy (Ohio U) and Nathan Heinrich (UR) 2021/12/08, including new plotting bounds and fit style
 #include <time.h>
 #include <TSystem.h>
 #include <TString.h>
@@ -45,7 +45,7 @@ static const TString detec = "hod";
 static const TString trig  = "T";
 static const TString shms  = "shms";
 
-static const UInt_t  nbars[nPlanes]        = {13, 13, 14, 21};
+static const UInt_t  nbars[nPlanes]        = {13, 13, 14, 18};
 static const TString planeNames[nPlanes]   = {"1x", "1y", "2x", "2y"};
 static const TString sideNames[nSides]     = {"pos", "neg"};
 static const TString signalNames[nSignals] = {"Adc", "Tdc"};
@@ -58,18 +58,20 @@ static const Double_t adcDynamicRange = 1000.0;                   // Units of mV
 static const Double_t nAdcChan        = 4096.0;                   // Units of ADC channels
 static const Double_t adcChanTomV     = adcDynamicRange/nAdcChan; // Units of mV/ADC Chan
 
-static const Double_t hodoPulseAmpCutLow     = 10.0;   // Units of mV
+static const Double_t hodoPulseAmpCutLow     = 15.0;   // Units of mV
 static const Double_t hodoPulseAmpCutHigh    = 1000.0; // Units of mV
-static const Double_t refAdcPulseAmpCutLow   = 50.0;   // Units of mV
-static const Double_t refAdcPulseAmpCutHigh  = 60.0;   // Units of mV
-static const Double_t refAdcPulseTimeCutLow  = 210.0;  // Units of ns
-static const Double_t refAdcPulseTimeCutHigh = 225.0;  // Units of ns
-static const Double_t adcTdcTimeDiffCutLow   = -100.0; // Units of ns
+static const Double_t refAdcPulseAmpCutLow   = 40.0;   // Units of mV
+static const Double_t refAdcPulseAmpCutHigh  = 70.0;   // Units of mV
+static const Double_t refAdcPulseTimeCutLow  = 300.0;  // Units of ns
+static const Double_t refAdcPulseTimeCutHigh = 370.0;  // Units of ns
+static const Double_t adcTdcTimeDiffCutLow   = 0.0; // Units of ns
 static const Double_t adcTdcTimeDiffCutHigh  = 100.0;  // Units of ns
-static const Double_t calEtotCutVal          = 2.0;  // Units of GeV
-static const Double_t cerNpeSumCutVal        = 1.5;    // Units of NPE
+static const Double_t calEtotnormCutVal      = 0.7;    // Units of Normalized energy
+static const Double_t cerNpeSumCutVal        = 0.5;    // Units of NPE in aerogel
 // static const Double_t adcTdcTimeDiffCutLow   = -6000.0;  // Units of ns
 // static const Double_t adcTdcTimeDiffCutHigh  = 1000.0;  // Units of ns
+
+static const bool TimeWalkRangeSet = false; // this will determine if the TDC ADC Time Diff walk is done per plane or set with the adcTdcTimeDiffCutLow/High variables 
 
 static const Double_t fontSize = 0.04;
 
@@ -122,15 +124,14 @@ Int_t numAdcHits, numTdcHits;
 
 Double_t adcErrorFlag, adcPulseTimeRaw, adcPulseTime, adcPulseAmp;
 Double_t tdcTimeRaw, tdcTime, adcTdcTimeDiff;
-Double_t calEtot, cerNpeSum;
+Double_t calEtotnorm, cerNpeSum;
 
 Bool_t adcRefMultiplicityCut, adcRefPulseAmpCut, adcRefPulseTimeCut;
 Bool_t edtmCut, adcErrorFlagCut, adcAndTdcHitCut;
 Bool_t adcPulseAmpCut, adcTdcTimeDiffCut;
-Bool_t calEtotCut, cerNpeSumCut;
+Bool_t calEtotnormCut, cerNpeSumCut;
 
 void generatePlots(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
-
   // Create trigger aparatus directory
   trigRawDir = dynamic_cast <TDirectory*> (outFile->Get("trigAppRaw"));
   if (!trigRawDir) {trigRawDir = outFile->mkdir("trigAppRaw"); trigRawDir->cd();}
@@ -194,8 +195,19 @@ void generatePlots(UInt_t iplane, UInt_t iside, UInt_t ipaddle) {
   if (!adcTdcTimeDiffWalkDir[iplane][iside]) {adcTdcTimeDiffWalkDir[iplane][iside] = sideUncalibDir[iplane][iside]->mkdir("adcTdcTimeDiffWalk"); adcTdcTimeDiffWalkDir[iplane][iside]->cd();}
   else (outFile->cd("hodoUncalib/"+planeNames[iplane]+"/"+sideNames[iside]+"/adcTdcTimeDiffWalk"));
   // Book histos
-  if (!h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle]) h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 1000, 0, 1000, 500, -20, 30);
-  
+  if (!h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] && !TimeWalkRangeSet){ // NH 2021 11 26 changed this so that each plane could have the y-range set seperately
+    if (iplane == 0)
+      h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 500, 0, 500, 1500, 15, 35);
+    if(iplane == 1)
+      h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 500, 0, 500, 1500, 20, 40);
+    if(iplane == 2)
+      h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 500, 0, 500, 1500, 15, 35);
+    if(iplane == 3)
+      h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 500, 0, 500, 1500, 33, 53);
+  }else{
+    if(!h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] && TimeWalkRangeSet)
+      h2_adcTdcTimeDiffWalk[iplane][iside][ipaddle] = new TH2F(Form("h2_adcTdcTimeDiffWalk_paddle_%d", ipaddle+1), "TDC-ADC Time vs. Pulse Amp Plane "+planeNames[iplane]+" Side "+sideNames[iside]+Form(" Paddle %d", ipaddle+1)+"; Pulse Amplitude (mV) / 1 mV;  TDC-ADC Time (ns) / 100 ps", 500, 0, 500, 1500, adcTdcTimeDiffCutLow, adcTdcTimeDiffCutHigh);
+  }
 } // generatePlots()
 
 void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_flg--> "shms" or "coin"
@@ -215,8 +227,8 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
     
   replayFile = new TFile(inputname, "READ");
   // replayFile = new TFile(Form("ROOTfiles/shms_coin_replay_production_%d_-1.root", runNum), "READ");
-   
-  outFile    = new TFile("timeWalkHistos.root", "RECREATE");
+  TString outFileName = Form("timeWalkHistos_%d.root", runNum ); // SK 13/5/19 - new .root output for each run tested                                                                                             
+  outFile    = new TFile(outFileName, "RECREATE");
   // Obtain the tree
   rawDataTree = dynamic_cast <TTree*> (replayFile->Get("T"));
 
@@ -226,6 +238,27 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
   Double_t phod_2xnhits;
   Double_t phod_2ynhits;
 
+  //C.Y. Dec 21, 2021 | Variables for Good ADC,TDC Hits per plane side (this will be used to require 2-ended PMT hits)
+  Double_t phod_1x_posAdcHits;
+  Double_t phod_1x_negAdcHits;
+  Double_t phod_1x_posTdcHits;
+  Double_t phod_1x_negTdcHits;
+
+  Double_t phod_1y_posAdcHits;
+  Double_t phod_1y_negAdcHits;
+  Double_t phod_1y_posTdcHits;
+  Double_t phod_1y_negTdcHits;
+
+  Double_t phod_2x_posAdcHits;
+  Double_t phod_2x_negAdcHits;
+  Double_t phod_2x_posTdcHits;
+  Double_t phod_2x_negTdcHits;
+
+  Double_t phod_2y_posAdcHits;
+  Double_t phod_2y_negAdcHits;
+  Double_t phod_2y_posTdcHits;
+  Double_t phod_2y_negTdcHits;
+  
   // Acquire the trigger apparatus data
   rawDataTree->SetBranchAddress(Form("T.%s.pFADC_TREF_ROC2_adcPulseTimeRaw", SPEC_flg.c_str()), &refAdcPulseTimeRaw);
   rawDataTree->SetBranchAddress(Form("T.%s.pFADC_TREF_ROC2_adcPulseAmp", SPEC_flg.c_str()),     &refAdcPulseAmp);
@@ -233,16 +266,40 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
   rawDataTree->SetBranchAddress(Form("T.%s.pT1_tdcTimeRaw", SPEC_flg.c_str()), &refT1TdcTimeRaw);
   rawDataTree->SetBranchAddress(Form("T.%s.pT2_tdcTimeRaw", SPEC_flg.c_str()), &refT2TdcTimeRaw);
   rawDataTree->SetBranchAddress(Form("T.%s.pT3_tdcTimeRaw", SPEC_flg.c_str()), &refT3TdcTimeRaw);
-  // rawDataTree->SetBranchAddress("P.cal.etot", &calEtot);
-  // rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
+
+  //C.Y. Dec 21. 2021 | Suggestion: These types of cuts should be placed externaly to let the uset
+  // select the appropiate cut based on their experiment
+  rawDataTree->SetBranchAddress("P.cal.etracknorm", &calEtotnorm);
+  rawDataTree->SetBranchAddress("P.hgcer.npeSum", &cerNpeSum);
+  //rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
 
   rawDataTree->SetBranchAddress("P.hod.1x.nhits", &phod_1xnhits);
   rawDataTree->SetBranchAddress("P.hod.1y.nhits", &phod_1ynhits);
   rawDataTree->SetBranchAddress("P.hod.2x.nhits", &phod_2xnhits);
   rawDataTree->SetBranchAddress("P.hod.2y.nhits", &phod_2ynhits);
 
- 
+  //C.Y. Dec 21, 2021 | Added variable for total number of good ADC, TDC hits per plane side 
+  rawDataTree->SetBranchAddress("P.hod.1x.totNumGoodPosAdcHits", &phod_1x_posAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1x.totNumGoodNegAdcHits", &phod_1x_negAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1x.totNumGoodPosTdcHits", &phod_1x_posTdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1x.totNumGoodNegTdcHits", &phod_1x_negTdcHits);
 
+  rawDataTree->SetBranchAddress("P.hod.1y.totNumGoodPosAdcHits", &phod_1y_posAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1y.totNumGoodNegAdcHits", &phod_1y_negAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1y.totNumGoodPosTdcHits", &phod_1y_posTdcHits);
+  rawDataTree->SetBranchAddress("P.hod.1y.totNumGoodNegTdcHits", &phod_1y_negTdcHits);
+
+  rawDataTree->SetBranchAddress("P.hod.2x.totNumGoodPosAdcHits", &phod_2x_posAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2x.totNumGoodNegAdcHits", &phod_2x_negAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2x.totNumGoodPosTdcHits", &phod_2x_posTdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2x.totNumGoodNegTdcHits", &phod_2x_negTdcHits);
+
+  rawDataTree->SetBranchAddress("P.hod.2y.totNumGoodPosAdcHits", &phod_2y_posAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2y.totNumGoodNegAdcHits", &phod_2y_negAdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2y.totNumGoodPosTdcHits", &phod_2y_posTdcHits);
+  rawDataTree->SetBranchAddress("P.hod.2y.totNumGoodNegTdcHits", &phod_2y_negTdcHits);
+
+				
 // Loop over the planes, sides, signals, leafs, and fill data arrays
   for(UInt_t iplane = 0; iplane < nPlanes; iplane++) {
     
@@ -304,10 +361,14 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
   } // Plane loop
 
   Bool_t good_hits;
+  Bool_t good_two_ended_hits_1x;
+  Bool_t good_two_ended_hits_1y;
+  Bool_t good_two_ended_hits_2x;
+  Bool_t good_two_ended_hits_2y;
   
     // Loop over the events and fill histograms
   nentries = rawDataTree->GetEntries();
-  //nentries = ;
+  
   cout << "\n******************************************"    << endl;
   cout << nentries << " Events Will Be Processed"           << endl;
   cout << "******************************************\n"    << endl;
@@ -316,12 +377,39 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
     rawDataTree->GetEntry(ievent);
   
     good_hits = phod_1xnhits==1&&phod_1ynhits==1&&phod_2xnhits==1&&phod_2ynhits==1;
+    
+    //C.Y. Dec 21, 2021 | Add 2-ended PMT hit requirement for both ADCs and TDCs
+    good_two_ended_hits_1x = phod_1x_posAdcHits==1 && phod_1x_negAdcHits==1 && phod_1x_posTdcHits==1 && phod_1x_negTdcHits==1;
+    good_two_ended_hits_1y = phod_1y_posAdcHits==1 && phod_1y_negAdcHits==1 && phod_1y_posTdcHits==1 && phod_1y_negTdcHits==1;
+    good_two_ended_hits_2x = phod_2x_posAdcHits==1 && phod_2x_negAdcHits==1 && phod_2x_posTdcHits==1 && phod_2x_negTdcHits==1;
+    good_two_ended_hits_2y = phod_2y_posAdcHits==1 && phod_2y_negAdcHits==1 && phod_2y_posTdcHits==1 && phod_2y_negTdcHits==1;
+    
 
     // Fiducial PID cuts
-    //   calEtotCut   = (calEtot   < calEtotCutVal);
-    //cerNpeSumCut = (cerNpeSum < cerNpeSumCutVal);
-    // if (calEtotCut || cerNpeSumCut) continue;
-    if (!good_hits) continue;
+    calEtotnormCut   = (calEtotnorm < calEtotnormCutVal);
+    cerNpeSumCut = (cerNpeSum < cerNpeSumCutVal); // JM 31-10-21: Editing cer cuts for good event selection. Added non-zero requirement
+    if (calEtotnormCut || cerNpeSumCut) continue;
+    
+    //if (!good_hits) continue; 
+    //if (!(good_two_ended_hits_1x && good_two_ended_hits_1y && good_two_ended_hits_2x && good_two_ended_hits_2y)) continue; //C.Y. Added 2-ended hit requirement
+    
+    if (!(good_hits && good_two_ended_hits_1x && good_two_ended_hits_1y && good_two_ended_hits_2x && good_two_ended_hits_2y)) continue; //C.Y. Added 2-ended hit requirement         
+
+    //cout << "evt = " << ievent << endl;
+    //cout << "phod_1xnhits = " << phod_1xnhits << endl;
+    //if(good_two_ended_hits_1x){
+    /*
+    cout << "evt = " << ievent << endl;                                                                                                      
+    cout << "phod_1xnhits = " << phod_1xnhits << endl;  
+    cout << "phod_1x_posAdcHits = " << phod_1x_posAdcHits << endl;                     
+    cout << "phod_1x_negAdcHits = " << phod_1x_negAdcHits << endl;                                                                       
+    cout << "phod_1x_posTdcHits = " << phod_1x_posTdcHits << endl;                                                            
+    cout << "phod_1x_negTdcHits = " << phod_1x_negTdcHits << endl;  
+    cout << "-------" << endl;
+    cout << "" << endl;
+    */
+    //}
+    
     // Fill trigger apparatus histos
     h1_refAdcPulseTimeRaw->Fill(refAdcPulseTimeRaw*adcChanToTime);
     h1_refAdcPulseAmp->Fill(refAdcPulseAmp);
@@ -383,11 +471,11 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
 	  } // TDC signal
 
 	    // Define cuts
-	  adcRefMultiplicityCut = (refAdcMultiplicity != 1.0);
+	  adcRefMultiplicityCut = (refAdcMultiplicity < 1.0); //cut only zeros
 	  adcRefPulseAmpCut     = (refAdcPulseAmp < refAdcPulseAmpCutLow || refAdcPulseAmp > refAdcPulseAmpCutHigh);
 	  adcRefPulseTimeCut    = (refAdcPulseTimeRaw*adcChanToTime < refAdcPulseTimeCutLow || refAdcPulseTimeRaw*adcChanToTime > refAdcPulseTimeCutHigh);
 	  // Implement cuts
-	  //if (adcRefMultiplicityCut || adcRefPulseAmpCut || adcRefPulseTimeCut) continue;	  
+	  if (adcRefMultiplicityCut || adcRefPulseAmpCut || adcRefPulseTimeCut) continue;	  
 	  // Acquire the hodoscope ADC data objects
 	  if(signalNames[isignal] == "Adc") { 
 	    // Loop over the signals again
@@ -450,6 +538,9 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
 	} // Signal loop
       } // Side loop
     } // Plane loop
+    
+    //C.Y. Feb 25, 2022 | print the percentage of events analyzed 
+    cout << std::setprecision(2) << double(ievent) / nentries * 100. << "  % " << std::flush << "\r"; 
 
     if (ievent % 100000 == 0 && ievent != 0)
       cout << ievent << " Events Have Been Processed..." << endl;
@@ -462,12 +553,12 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
 
   // Calculate the analysis rate
   t = clock() - t;
-  printf ("The Analysis Took %.1f seconds \n", ((float) t) / CLOCKS_PER_SEC);
+  printf ("The Analysis Took %.1f seconds (%.1f min.) \n", ((float) t) / CLOCKS_PER_SEC,  ((float) t) / CLOCKS_PER_SEC/60.) ;
   printf ("The Analysis Event Rate Was %.3f kHz \n", (ievent + 1) / (((float) t) / CLOCKS_PER_SEC*1000.));
 
   outFile->Write();
-  //outFile->Close();
+  outFile->Close();
 
   //return 0;
 
-} // time_walk_calib()
+} 
