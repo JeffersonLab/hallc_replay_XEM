@@ -42,12 +42,12 @@ pmin_hit = 5, 5
 ; psel_using_prune         using prune
   psel_using_prune = 1
 
-;Parameters for new DC tracking method (CAM)
-  pUseNewLinkStubs = 1 		;Turn on new linkstub method
-  pUseFindSpacePoints = 1	;Turn on new spacepoint method
-  pTrackLargeResidCut = 0.075	;Using with a value ~5x sigma.
-  pmin_drifttime = -50 ;Same as default
-  pmax_drifttime = 200 ;Same as default
+;Parameters for new DC tracking method hcana-mkj-dc(CAM), currently not used.
+;pUseNewLinkStubs = 1 		;Turn on new linkstub method
+;pUseFindSpacePoints = 1	;Turn on new spacepoint method
+;pTrackLargeResidCut = 0.075	;Using with a value ~5x sigma.
+;pmin_drifttime = -50 ;Same as default
+;pmax_drifttime = 200 ;Same as default
 
 ; parameters used in selecting tracks for Hodoscope efficiency in THcHodoEff.cxx
 ;   HodoEff_CalEnergy_Cut  cut on the track energy (GeV)
