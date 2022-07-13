@@ -1,0 +1,8 @@
+;HMS Cherenkov Cuts parameter for removing timing windows
+
+;FADC Pulse time window cuts
+hcer_adc_tdc_window= 200.
+
+; ADC time window cut values used to select "good" ADC events
+hcer_adcTimeWindowMin = -1000., -1000.
+hcer_adcTimeWindowMax = 1000., 1000.
