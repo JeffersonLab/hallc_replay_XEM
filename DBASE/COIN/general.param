@@ -4,19 +4,19 @@ raddeg=3.14159265/180
 cminch=2.54
 
 ; General Hall-C parameter files
-#include "PARAM/GEN/genflags.param"
-#include "PARAM/GEN/gdebug.param"
-#include "PARAM/GEN/gtarget.param"
-#include "PARAM/GEN/gbeam.param"
-#include "PARAM/GEN/gscalers.param"
+#include "PARAM/GEN/genflags_fa22.param"
+#include "PARAM/GEN/gdebug_fa22.param"
+#include "PARAM/GEN/gtarget_fa22.param"
+#include "PARAM/GEN/gbeam_fa22.param"
+#include "PARAM/GEN/gscalers_fa22.param"
 
 ; General HMS parameter files
-; Note: hmsflags.param includes spectrometer offsets and options.
-#include "PARAM/HMS/GEN/hcana.param"
-#include "PARAM/HMS/GEN/hdebug.param"
-#include "PARAM/HMS/GEN/hmsflags.param"
-#include "PARAM/HMS/GEN/htracking.param"
-#include "PARAM/HMS/GEN/h_reftime_cut_coindaq.param"
+; Note: hmsflags_fa22.param includes spectrometer offsets and options.
+#include "PARAM/HMS/GEN/hcana_fa22.param"
+#include "PARAM/HMS/GEN/hdebug_fa22.param"
+#include "PARAM/HMS/GEN/hmsflags_fa22.param"
+#include "PARAM/HMS/GEN/htracking_fa22.param"
+#include "PARAM/HMS/GEN/h_reftime_cut_coindaq_fa22.param"
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"
@@ -26,29 +26,29 @@ cminch=2.54
 #include "PARAM/HMS/CAL/hcal_geom.param"
 
 ; HMS default cut parameter files
-#include "PARAM/HMS/CER/hcer_cuts.param"
-#include "PARAM/HMS/DC/hdc_cuts.param"
-#include "PARAM/HMS/HODO/hhodo_cuts.param"
-#include "PARAM/HMS/AERO/haero_cuts.param"
-#include "PARAM/HMS/CAL/hcal_cuts.param"
+#include "PARAM/HMS/CER/hcer_cuts_fa22.param"
+#include "PARAM/HMS/DC/hdc_cuts_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_cuts_fa22.param"
+#include "PARAM/HMS/AERO/haero_cuts_fa22.param"
+#include "PARAM/HMS/CAL/hcal_cuts_fa22.param"
 
 ; HMS default calibration parameter files
-#include "PARAM/HMS/CER/hcer_calib.param"
-#include "PARAM/HMS/DC/hdc_calib.param"
-#include "PARAM/HMS/DC/hdc_tzero_per_wire.param"
-#include "PARAM/HMS/HODO/hhodo_calib.param"
-#include "PARAM/HMS/HODO/hhodo_TWcalib.param"
-#include "PARAM/HMS/HODO/hhodo_Vpcalib.param"
-#include "PARAM/HMS/AERO/haero_calib.param"
-#include "PARAM/HMS/CAL/hcal_calib.param"
+#include "PARAM/HMS/CER/hcer_calib_fa22.param"
+#include "PARAM/HMS/DC/hdc_calib_fa22.param"
+#include "PARAM/HMS/DC/hdc_tzero_per_wire_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_calib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib_fa22.param"
+#include "PARAM/HMS/AERO/haero_calib_fa22.param"
+#include "PARAM/HMS/CAL/hcal_calib_fa22.param"
 
 ; General SHMS parameter files
-; Note: shmsflags.param includes spectrometer offsets and options.
-#include "PARAM/SHMS/GEN/pcana.param"
-#include "PARAM/SHMS/GEN/pdebug.param"
-#include "PARAM/SHMS/GEN/shmsflags.param"
-#include "PARAM/SHMS/GEN/ptracking.param"
-#include "PARAM/SHMS/GEN/p_reftime_cut.param"
+; Note: shmsflags_fa22.param includes spectrometer offsets and options.
+#include "PARAM/SHMS/GEN/pcana_fa22.param"
+#include "PARAM/SHMS/GEN/pdebug_fa22.param"
+#include "PARAM/SHMS/GEN/shmsflags_fa22.param"
+#include "PARAM/SHMS/GEN/ptracking_fa22.param"
+#include "PARAM/SHMS/GEN/p_reftime_cut_fa22.param"
 
 ; SHMS default geometry parameter files
 #include "PARAM/SHMS/NGCER/pngcer_geom.param"
@@ -59,20 +59,20 @@ cminch=2.54
 #include "PARAM/SHMS/CAL/pcal_geom.param"
 
 ; SHMS default cut parameter files
-#include "PARAM/SHMS/NGCER/pngcer_cuts.param"
-#include "PARAM/SHMS/DC/pdc_cuts.param"
-#include "PARAM/SHMS/HODO/phodo_cuts.param"
-#include "PARAM/SHMS/HGCER/phgcer_cuts.param"
-#include "PARAM/SHMS/AERO/paero_cuts.param"
-#include "PARAM/SHMS/CAL/pcal_cuts.param"
+#include "PARAM/SHMS/NGCER/pngcer_cuts_fa22.param"
+#include "PARAM/SHMS/DC/pdc_cuts_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_cuts_fa22.param"
+#include "PARAM/SHMS/HGCER/phgcer_cuts_fa22.param"
+#include "PARAM/SHMS/AERO/paero_cuts_fa22.param"
+#include "PARAM/SHMS/CAL/pcal_cuts_fa22.param"
 
 ; SHMS default calibration parameter files
-#include "PARAM/SHMS/NGCER/pngcer_calib.param"
-#include "PARAM/SHMS/DC/pdc_calib.param"
-#include "PARAM/SHMS/DC/pdc_tzero_per_wire.param"
-#include "PARAM/SHMS/HODO/phodo_calib.param"
-#include "PARAM/SHMS/HODO/phodo_TWcalib.param"
-#include "PARAM/SHMS/HODO/phodo_Vpcalib.param"
-#include "PARAM/SHMS/HGCER/phgcer_calib.param"
-#include "PARAM/SHMS/AERO/paero_calib.param"
-#include "PARAM/SHMS/CAL/pcal_calib.param"
+#include "PARAM/SHMS/NGCER/pngcer_calib_fa22.param"
+#include "PARAM/SHMS/DC/pdc_calib_fa22.param"
+#include "PARAM/SHMS/DC/pdc_tzero_per_wire_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_calib_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_fa22.param"
+#include "PARAM/SHMS/HGCER/phgcer_calib_fa22.param"
+#include "PARAM/SHMS/AERO/paero_calib_fa22.param"
+#include "PARAM/SHMS/CAL/pcal_calib_fa22.param"

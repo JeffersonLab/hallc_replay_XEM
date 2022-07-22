@@ -1,0 +1,2 @@
+; calibration from log entry https://logbooks.jlab.org/entry/3647463
+phgcer_adc_to_npe = 1.0/5.92, 1.0/6.67, 1.0/5.28, 1.0/6.83

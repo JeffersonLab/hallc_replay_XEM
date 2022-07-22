@@ -1,0 +1,24 @@
+; DC cuts file for 2019--20 Pol He3 Run group
+;    See also:  https://hallcweb.jlab.org/elogs/A1n-d2n+Combined+Analysis/41
+
+; Utilize per wire tzero offsets, 1 means true
+p_using_tzero_per_wire = 1
+
+; Infinite TDC window limits for each plane.
+; pdc_tdc_min_win = -1000000, -1000000, -1000000, -1000000, -1000000, -1000000
+;                   -1000000, -1000000, -1000000, -1000000, -1000000, -1000000
+; pdc_tdc_max_win =  1000000,  1000000,  1000000,  1000000,  1000000,  1000000
+;                    1000000,  1000000,  1000000,  1000000,  1000000,  1000000
+
+; Junhao Determine from A1nd2n runs 9779, 10614, 11498, 11210
+  pdc_tdc_min_win = -13200, -13200, -13200, -13200, -13200, -13200
+                    -13200, -13200, -13200, -13200, -13200, -13200
+  pdc_tdc_max_win = -10600, -10600, -10600, -10600, -10600, -10600
+                    -10600, -10600, -10600, -10600, -10600, -10600
+
+pdc_fix_lr = 1
+pdc_fix_propcorr = 1
+
+; Zero time correction for each plane in ns that is added to TDC time.
+pdc_plane_time_zero = 1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5
+                      1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5, 1270.0+42.5

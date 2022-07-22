@@ -1,4 +1,4 @@
-void replay_hodoscope_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_hodoscope_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, Int_t replay_step=1) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -39,7 +39,15 @@ void replay_hodoscope_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+  if (replay_step == 1) {
+    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+  } 
+  else if (replay_step == 2) {
+    cout << "Not turning on p_fadc_debug for this replay.\n";}
+  else {
+    cout << "Incorrect replay_step!\n";
+    return;
+  }
   // Load BCM values
   ifstream bcmFile;
   TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);

@@ -600,7 +600,7 @@ void timeWalkCalib(int run) {
   //make sure current file is output file
   gFile = histOutFile;
   //write to ROOT file
-  writePlots(run); 
+  //writePlots(run); 
  
   histOutFile->Close();
   //Write to a param file

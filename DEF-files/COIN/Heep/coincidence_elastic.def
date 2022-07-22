@@ -1,0 +1,39 @@
+block T.coin.hTRIG*
+block T.coin.pTRIG*
+block H.cer.npe*
+block H.cal.e*
+block P.hod.goodstarttime
+block H.hod.goodstarttime
+block P.hod.goodscinhit
+block H.hod.goodscinhit
+block H.gtr.*
+block H.kin.*
+block P.hgcer.npe*
+block P.ngcer.npe*
+block P.cal.e*
+block P.gtr.*
+block P.kin.*
+block P.dc.x_fp
+block P.dc.xp_fp
+block P.dc.y_fp
+block P.dc.yp_fp
+block H.dc.x_fp
+block H.dc.xp_fp
+block H.dc.y_fp
+block H.dc.yp_fp
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
+
+
+#include "DEF-files/COIN/PRODUCTION/GTR/coin_gtr_histos.def"
+#include "DEF-files/COIN/PRODUCTION/KIN/coin_pElec_hProt_kin_histos.def"
+#include "DEF-files/COIN/PRODUCTION/TRIG/coin_trig_histos.def"
+
