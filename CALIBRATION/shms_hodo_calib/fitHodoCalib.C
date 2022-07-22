@@ -353,8 +353,8 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 	    {
 	    	   
 	      //Initialize Histograms
-	      h2Hist_TW_UnCorr[npl][side][ipmt] = new TH2F(Form("TW_UnCorr PMT %s%d%s", pl_names[npl].Data(), ipmt+1, nsign[side].Data()), Form("PMT %s%d%s: UnCorr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ",pl_names[npl].Data(), ipmt+1, nsign[side].Data()), 600, 0, 420, 120, -60, 60);   
-	      h2Hist_TW_Corr[npl][side][ipmt] = new TH2F(Form("TW_Corr PMT %s%d%s", pl_names[npl].Data(), ipmt+1, nsign[side].Data()) , Form("PMT %s%d%s: Corr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ", pl_names[npl].Data(), ipmt+1, nsign[side].Data()), 600, 0, 420, 120, -60, 60);   
+	      h2Hist_TW_UnCorr[npl][side][ipmt] = new TH2F(Form("TW_UnCorr PMT %s%d%s", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), Form("PMT %s%d%s: UnCorr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ",pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), 600, 0, 420, 120, -60, 60);   
+	      h2Hist_TW_Corr[npl][side][ipmt] = new TH2F(Form("TW_Corr PMT %s%d%s", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()) , Form("PMT %s%d%s: Corr. (TDC - ADC) Pulse Time vs. ADC Pulse Amplitude ", pl_names[npl].c_str(), ipmt+1, nsign[side].c_str()), 600, 0, 420, 120, -60, 60);   
 	      
 	      h2Hist_TW_UnCorr[npl][side][ipmt]->GetYaxis()->SetTitle("Time Walk UnCorr.(TDC - ADC) Pulse Time (ns)");
 	      h2Hist_TW_UnCorr[npl][side][ipmt]->GetXaxis()->SetTitle("ADC Pulse Amplitude (mV)");
@@ -371,10 +371,10 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 		  
 		  h1Hist_TWAvg_CUT[npl][ipmt] = new TH1F(Form("Avg. Time CUT: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corrected Average (CUT)",pl_names[npl].c_str(), ipmt+1), 200, 0, 200);
 	      
-		  h2Hist_TWDiff_v_TrkPos[npl][ipmt] = new TH2F(Form("DistDiff: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist vs. Hod Track Position", pl_names[npl].Data(), ipmt+1), 160, -80, 80, 200, -120, 80);
-		  h2Hist_TW_Corr_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeDiff: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeDiff. vs. Hod Track Position", pl_names[npl].Data(), ipmt+1), 160, -60, 60, 200, -15, 15);
+		  h2Hist_TWDiff_v_TrkPos[npl][ipmt] = new TH2F(Form("DistDiff: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -80, 80, 200, -120, 80);
+		  h2Hist_TW_Corr_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeDiff: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeDiff. vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -60, 60, 200, -15, 15);
 		  
-		  h1Hist_TWDiffTrkPos[npl][ipmt] = new TH1F(Form("DistDiff - Track: Paddle %s%d", pl_names[npl].Data(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist. - Hod Track Position",pl_names[npl].Data(), ipmt+1), 200, -120, 80);
+		  h1Hist_TWDiffTrkPos[npl][ipmt] = new TH1F(Form("DistDiff - Track: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. Hit Dist. - Hod Track Position",pl_names[npl].c_str(), ipmt+1), 200, -120, 80);
 
 		  h2Hist_TWAvg_v_TrkPos[npl][ipmt] = new TH2F(Form("TimeAvg_v_Trk: Paddle %s%d", pl_names[npl].c_str(), ipmt+1), Form("Paddle %s%d: Time-Walk Corr. TimeAvg. vs. Hod Track Position", pl_names[npl].c_str(), ipmt+1), 160, -40, 40, 150, 0, 150);
   
@@ -754,8 +754,8 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
       for (Int_t side = 0; side < SIDES; side++)
 	{	  
 	  //Create Canvas
-	  TWUnCorr_canv[npl][side] = new TCanvas(Form("TWUnCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].Data(), side_names[side].Data()),  1000, 700);
-	  TWCorr_canv[npl][side] = new TCanvas(Form("TWCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].Data(), side_names[side].Data()),  1000, 700);
+	  TWUnCorr_canv[npl][side] = new TCanvas(Form("TWUnCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].c_str(), side_names[side].c_str()),  1000, 700);
+	  TWCorr_canv[npl][side] = new TCanvas(Form("TWCorrCanv%d%d", npl, side), Form("plane %s_%s", pl_names[npl].c_str(), side_names[side].c_str()),  1000, 700);
 
 	  //Divide Canvas
 	  if (npl==0 || npl==1 || npl==2) {

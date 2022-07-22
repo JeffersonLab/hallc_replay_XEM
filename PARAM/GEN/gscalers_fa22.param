@@ -1,0 +1,27 @@
+gNumBCMs=6
+; Melanie's fit from Dec. 2019 SHMS run 9728 (Unser left from summer 2019)
+gBCM_Gain = 5762, 5651, 4011.2, 9418, 2120, 1809
+gBCM_Offset = 253100, 250600, 277000, 1720, 706.2, 473.4
+
+; Melanie's fit from Feb. 2020 SHMS run 10402 (Unser left from summer 2019)
+;gBCM_Gain   = 5785, 5657, 4011.2, 9471, 2117, 1821
+;gBCM_Offset = 252600, 250200, 277000, 1084, 733.7, 301
+
+; Dave Mack's fit from Feb. 2020 SHMS run 10402 (Unser left from summer 2019)
+;gBCM_Gain   = 5791, 5663, 4011.2, 9496, 2126, 1826
+;gBCM_Offset = 252200, 249700, 277000, -259.4, 296.5, 33.72
+
+; Dave Mack's fit from Dec. 2019 SHMS run 9728 (Unser left from summer 2019)
+;gBCM_Gain   = 5761, 5649, 4011.2, 9445, 2129, 1815
+;gBCM_Offset = 253000, 250600, 277000, 927.1, 446.7, 294.6
+
+; summer 2019 fit
+;gBCM_Gain   = 5757.6,   5590.,   4011.2,   9364,   2125.,   5180.
+;gBCM_Offset = 253389, 250888, 277000, 1521, 764, 1569.
+ 
+;gBCM_Gain   = 5713,   5528,   5020,   9279,   2102.,   6343.
+;gBCM_Offset = 253400, 250900, 325000, 762.6, 317.9, 852.4
+gBCM_Names  = "BCM1 BCM2 Unser BCM4A BCM4B BCM4C"
+gBCM_Current_threshold = 5.0
+; index = 0 to gNumBCMs-1
+gBCM_Current_threshold_index = 3

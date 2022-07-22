@@ -4,17 +4,17 @@ raddeg=3.14159265/180
 cminch=2.54
 
 ; General Hall-C parameter files
-#include "PARAM/GEN/genflags_sp22.param"
-#include "PARAM/GEN/gbeam_sp22.param"
-#include "PARAM/GEN/gscalers_sp22.param"
+#include "PARAM/GEN/genflags_fa22.param"
+#include "PARAM/GEN/gbeam_fa22.param"
+#include "PARAM/GEN/gscalers_fa22.param"
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
-#include "PARAM/HMS/GEN/hcana_sp22.param"
-#include "PARAM/HMS/GEN/hdebug_sp22.param"
-#include "PARAM/HMS/GEN/hmsflags_sp22.param"
-#include "PARAM/HMS/GEN/htracking_sp22.param"
-#include "PARAM/HMS/GEN/h_reftime_cut_sp22.param"
+#include "PARAM/HMS/GEN/hcana_fa22.param"
+#include "PARAM/HMS/GEN/hdebug_fa22.param"
+#include "PARAM/HMS/GEN/hmsflags_fa22.param"
+#include "PARAM/HMS/GEN/htracking_fa22.param"
+#include "PARAM/HMS/GEN/h_reftime_cut_fa22.param"
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"

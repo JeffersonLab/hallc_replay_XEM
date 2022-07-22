@@ -270,8 +270,8 @@ void timeWalkHistos(TString inputname, Int_t runNum, string SPEC_flg) {  //SPEC_
   //C.Y. Dec 21. 2021 | Suggestion: These types of cuts should be placed externaly to let the uset
   // select the appropiate cut based on their experiment
   rawDataTree->SetBranchAddress("P.cal.etracknorm", &calEtotnorm);
-  rawDataTree->SetBranchAddress("P.hgcer.npeSum", &cerNpeSum);
-  //rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
+  //rawDataTree->SetBranchAddress("P.hgcer.npeSum", &cerNpeSum);
+  rawDataTree->SetBranchAddress("P.ngcer.npeSum", &cerNpeSum);
 
   rawDataTree->SetBranchAddress("P.hod.1x.nhits", &phod_1xnhits);
   rawDataTree->SetBranchAddress("P.hod.1y.nhits", &phod_1ynhits);

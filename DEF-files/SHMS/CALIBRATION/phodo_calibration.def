@@ -18,15 +18,6 @@ block P.hod.1y.nhits
 block P.hod.2x.nhits
 block P.hod.2y.nhits
 
-block NData.P.hod.1x.posAdcCounter
-block NData.P.hod.1y.posAdcCounter
-block NData.P.hod.2x.posAdcCounter
-block NData.P.hod.2y.posAdcCounter
-block NData.P.hod.1x.negAdcCounter
-block NData.P.hod.1y.negAdcCounter
-block NData.P.hod.2x.negAdcCounter
-block NData.P.hod.2y.negAdcCounter
-
 block P.hod.1x.posAdcCounter
 block P.hod.1y.posAdcCounter
 block P.hod.2x.posAdcCounter
@@ -62,15 +53,6 @@ block P.hod.1x.negAdcPulseAmp
 block P.hod.1y.negAdcPulseAmp
 block P.hod.2x.negAdcPulseAmp
 block P.hod.2y.negAdcPulseAmp
-
-block NData.P.hod.1x.posTdcCounter
-block NData.P.hod.1y.posTdcCounter
-block NData.P.hod.2x.posTdcCounter
-block NData.P.hod.2y.posTdcCounter
-block NData.P.hod.1x.negTdcCounter
-block NData.P.hod.1y.negTdcCounter
-block NData.P.hod.2x.negTdcCounter
-block NData.P.hod.2y.negTdcCounter
 
 block P.hod.1x.posTdcCounter
 block P.hod.1y.posTdcCounter
@@ -194,3 +176,20 @@ block P.hod.TimeHist_FpTime_Sigma
 block P.hod.TimeHist_FpTime_Hits
 
 block P.hod.adctdc_offset
+
+block P.hod.1x.totNumGoodPosAdcHits
+block P.hod.1x.totNumGoodNegAdcHits
+block P.hod.1x.totNumGoodPosTdcHits
+block P.hod.1x.totNumGoodNegTdcHits
+block P.hod.1y.totNumGoodPosAdcHits
+block P.hod.1y.totNumGoodNegAdcHits
+block P.hod.1y.totNumGoodPosTdcHits
+block P.hod.1y.totNumGoodNegTdcHits
+block P.hod.2x.totNumGoodPosAdcHits
+block P.hod.2x.totNumGoodNegAdcHits
+block P.hod.2x.totNumGoodPosTdcHits
+block P.hod.2x.totNumGoodNegTdcHits
+block P.hod.2y.totNumGoodPosAdcHits
+block P.hod.2y.totNumGoodNegAdcHits
+block P.hod.2y.totNumGoodPosTdcHits
+block P.hod.2y.totNumGoodNegTdcHits

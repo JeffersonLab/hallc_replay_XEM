@@ -1,0 +1,25 @@
+;HMS Aerogel Cut parameters
+
+; Track matching reduced chi2 cut values
+haero_red_chi2_min = 0.0
+haero_red_chi2_max = 25.0
+
+; Track matching beta cut values
+haero_beta_min = 0.0
+haero_beta_max = 1.2
+
+; Track matching normailized energy (E/p) cut values
+haero_enorm_min = 0.0
+haero_enorm_max = 1.5
+
+; Track matching delta p (dp) cut values
+haero_dp_min = -20.0
+haero_dp_max = 25.0
+
+haero_adc_tdc_offset = 200.
+; ADC time window cut values used to select "good" ADC events
+haero_adcTimeWindowMin = -1000.
+haero_adcTimeWindowMax = 1000.
+
+; NPE Threshold for "good" hit (for measureing effic.)
+haero_npe_thresh = 0.5
