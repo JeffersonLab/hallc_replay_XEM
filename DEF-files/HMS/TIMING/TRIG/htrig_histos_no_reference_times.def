@@ -6,39 +6,39 @@
 # DC REFERENCE TIMES
 #-------------------
 
-TH1F hdc_time_raw_ref1  'Raw HMS HDC Reference Time 1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  9000 0 18000
+TH1F hdc_time_raw_ref1  'Raw HMS HDC Reference Time 1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  15000 0 30000
 TH1F hdc_tdc_mult_ref1 'HMS DC TDC Reference 1 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF1_tdcMultiplicity 15 0 5
-TH1F hdc_time_raw_ref1_mult1  'Raw HMS HDC Reference Time 1, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  9000 0 18000 T.hms.hDCREF1_tdcMultiplicity==1
-TH1F hdc_time_raw_ref1_mult2  'Raw HMS HDC Reference Time 1, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  9000 0 18000 T.hms.hDCREF1_tdcMultiplicity==2
-TH1F hdc_time_raw_ref1_mult3  'Raw HMS HDC Reference Time 1, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  9000 0 18000 T.hms.hDCREF1_tdcMultiplicity==3
+TH1F hdc_time_raw_ref1_mult1  'Raw HMS HDC Reference Time 1, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  15000 0 30000 T.hms.hDCREF1_tdcMultiplicity==1
+TH1F hdc_time_raw_ref1_mult2  'Raw HMS HDC Reference Time 1, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  15000 0 30000 T.hms.hDCREF1_tdcMultiplicity==2
+TH1F hdc_time_raw_ref1_mult3  'Raw HMS HDC Reference Time 1, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF1_tdcTimeRaw  15000 0 30000 T.hms.hDCREF1_tdcMultiplicity==3
 
 
-TH1F hdc_time_raw_ref2  'Raw HMS HDC Reference Time 2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  9000 0 18000
+TH1F hdc_time_raw_ref2  'Raw HMS HDC Reference Time 2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  15000 0 30000
 TH1F hdc_tdc_mult_ref2 'HMS DC TDC Reference 2 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF2_tdcMultiplicity 15 0 5
-TH1F hdc_time_raw_ref2_mult1  'Raw HMS HDC Reference Time 2, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  9000 0 18000 T.hms.hDCREF2_tdcMultiplicity==1
-TH1F hdc_time_raw_ref2_mult2  'Raw HMS HDC Reference Time 2, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  9000 0 18000 T.hms.hDCREF2_tdcMultiplicity==2
-TH1F hdc_time_raw_ref2_mult3  'Raw HMS HDC Reference Time 2, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  9000 0 18000 T.hms.hDCREF2_tdcMultiplicity==3
+TH1F hdc_time_raw_ref2_mult1  'Raw HMS HDC Reference Time 2, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  15000 0 30000 T.hms.hDCREF2_tdcMultiplicity==1
+TH1F hdc_time_raw_ref2_mult2  'Raw HMS HDC Reference Time 2, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  15000 0 30000 T.hms.hDCREF2_tdcMultiplicity==2
+TH1F hdc_time_raw_ref2_mult3  'Raw HMS HDC Reference Time 2, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF2_tdcTimeRaw  15000 0 30000 T.hms.hDCREF2_tdcMultiplicity==3
 
 
-TH1F hdc_time_raw_ref3  'Raw HMS HDC Reference Time 3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  9000 0 18000
+TH1F hdc_time_raw_ref3  'Raw HMS HDC Reference Time 3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  15000 0 30000
 TH1F hdc_tdc_mult_ref3 'HMS DC TDC Reference 3 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF3_tdcMultiplicity 15 0 5
-TH1F hdc_time_raw_ref3_mult1  'Raw HMS HDC Reference Time 3, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  9000 0 18000 T.hms.hDCREF3_tdcMultiplicity==1
-TH1F hdc_time_raw_ref3_mult2  'Raw HMS HDC Reference Time 3, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  9000 0 18000 T.hms.hDCREF3_tdcMultiplicity==2
-TH1F hdc_time_raw_ref3_mult3  'Raw HMS HDC Reference Time 3, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  9000 0 18000 T.hms.hDCREF3_tdcMultiplicity==3
+TH1F hdc_time_raw_ref3_mult1  'Raw HMS HDC Reference Time 3, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  15000 0 30000 T.hms.hDCREF3_tdcMultiplicity==1
+TH1F hdc_time_raw_ref3_mult2  'Raw HMS HDC Reference Time 3, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  15000 0 30000 T.hms.hDCREF3_tdcMultiplicity==2
+TH1F hdc_time_raw_ref3_mult3  'Raw HMS HDC Reference Time 3, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF3_tdcTimeRaw  15000 0 30000 T.hms.hDCREF3_tdcMultiplicity==3
 
 
-TH1F hdc_time_raw_ref4  'Raw HMS HDC Reference Time 4; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  9000 0 18000
+TH1F hdc_time_raw_ref4  'Raw HMS HDC Reference Time 4; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  15000 0 30000
 TH1F hdc_tdc_mult_ref4 'HMS DC TDC Reference 4 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF4_tdcMultiplicity 15 0 5
-TH1F hdc_time_raw_ref4_mult1  'Raw HMS HDC Reference Time 4, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  9000 0 18000 T.hms.hDCREF4_tdcMultiplicity==1
-TH1F hdc_time_raw_ref4_mult2  'Raw HMS HDC Reference Time 4, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  9000 0 18000 T.hms.hDCREF4_tdcMultiplicity==2
-TH1F hdc_time_raw_ref4_mult3  'Raw HMS HDC Reference Time 4, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  9000 0 18000 T.hms.hDCREF4_tdcMultiplicity==3
+TH1F hdc_time_raw_ref4_mult1  'Raw HMS HDC Reference Time 4, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  15000 0 30000 T.hms.hDCREF4_tdcMultiplicity==1
+TH1F hdc_time_raw_ref4_mult2  'Raw HMS HDC Reference Time 4, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  15000 0 30000 T.hms.hDCREF4_tdcMultiplicity==2
+TH1F hdc_time_raw_ref4_mult3  'Raw HMS HDC Reference Time 4, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  15000 0 30000 T.hms.hDCREF4_tdcMultiplicity==3
 
 #hDCREF5 shouldn't exist for Sp18 runs.  Added July 2018
-#TH1F hdc_time_raw_ref5  'Raw HMS HDC Reference Time 5; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  9000 0 18000
+#TH1F hdc_time_raw_ref5  'Raw HMS HDC Reference Time 5; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000
 #TH1F hdc_tdc_mult_ref5 'HMS DC TDC Reference 5 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF5_tdcMultiplicity 15 0 5
-#TH1F hdc_time_raw_ref5_mult1  'Raw HMS HDC Reference Time 5, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  9000 0 18000 T.#hms.hDCREF5_tdcMultiplicity==1
-#TH1F hdc_time_raw_ref5_mult2  'Raw HMS HDC Reference Time 5, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  9000 0 18000 T.#hms.hDCREF5_tdcMultiplicity==2
-#TH1F hdc_time_raw_ref5_mult3  'Raw HMS HDC Reference Time 5, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  9000 0 18000 T.#hms.hDCREF5_tdcMultiplicity==3
+#TH1F hdc_time_raw_ref5_mult1  'Raw HMS HDC Reference Time 5, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==1
+#TH1F hdc_time_raw_ref5_mult2  'Raw HMS HDC Reference Time 5, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==2
+#TH1F hdc_time_raw_ref5_mult3  'Raw HMS HDC Reference Time 5, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==3
 
 #------------------------
 # TRIGGER REFERENCE TIMES
