@@ -34,6 +34,7 @@ pntracks_max_fp = 10
 
 ; No small angle approximation for cosmic ray tests
   pSmallAngleApprox = 1
+;
 ; when selecting stub for chamber 
 ;  be sure stub_xp - stub_x*fRatio_xpfp_to_xfp < pstub_max_xpdiff
 ;   fRatio_xpfp_to_xfp is set in THcDriftChamber::ReadDatabase according to the spectrometer
