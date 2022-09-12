@@ -12,10 +12,12 @@ pcut_elec_all          	  pcut_cer_ng_elec && pcut_cer_hg_elec && pcut_cal_elec
 pcut_pi_all            	  pcut_cer_ng_pi && pcut_cer_hg_pi && pcut_cal_pi
 
 shmsScinGood        P.hod.goodscinhit == 1
-shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
+#shmsGoodBetanotrk   P.hod.betanotrack > 0.5 && P.hod.betanotrack < 1.4
+shmsGoodBetanotrk   P.hod.betanotrack > 0.8 && P.hod.betanotrack < 1.4
 
 shmsScinShould      shmsScinGood && shmsGoodBetanotrk 
-shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
+#shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.6 && P.cal.etotnorm < 1.6 && P.hgcer.npeSum > 0.5
+shmsScinShoulde     shmsScinShould &&  P.cal.etotnorm > 0.8 && P.ngcer.npeSum > 2.0
 #shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0. && P.hgcer.npeSum < 0.2
 shmsScinShouldh     shmsScinShould && P.cal.etotnorm <= 0.6 && P.cal.etotnorm > 0.
 shmsScinDid         shmsScinShould && P.dc.ntrack > 0

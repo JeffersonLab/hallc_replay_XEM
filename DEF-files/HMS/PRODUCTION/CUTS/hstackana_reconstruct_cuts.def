@@ -10,7 +10,8 @@ HMSGoodBetanotrk      H.hod.betanotrack > 0.8 && H.hod.betanotrack < 1.3
 
 
 HMSScinShould         HMSScinGood && HMSGoodBetanotrk 
-HMSScinShoulde        HMSScinShould && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
+#HMSScinShoulde        HMSScinShould && H.cal.etotnorm > 0.6&& H.cal.etotnorm < 2.0&& H.cer.npeSum > 0.5
+HMSScinShoulde        HMSScinShould && H.cal.etotnorm > 0.8 && H.cer.npeSum > 2.5
 HMSScinShouldh        HMSScinGood && H.cal.etotnorm <0.6&& H.cal.etotnorm>0.0&& H.cer.npeSum < 0.5
 
 HMSScinDid            HMSScinShould && H.dc.ntrack > 0

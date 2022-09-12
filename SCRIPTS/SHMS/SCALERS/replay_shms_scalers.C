@@ -114,7 +114,8 @@ void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file
-  analyzer->SetOdefFile("DEF-files/SHMS/EPICS/epics_short.def");
+  //analyzer->SetOdefFile("DEF-files/SHMS/EPICS/epics_short.def");
+  analyzer->SetOdefFile("DEF-files/SHMS/EPICS/epics.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/SHMS/SCALERS/pscaler_cuts.def");  // optional
   // File to record accounting information for cuts

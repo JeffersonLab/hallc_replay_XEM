@@ -1450,21 +1450,21 @@ ppartmass = 0.0005109
 7256 - 7256
 gpbeam = 10.6
 gtargmass_amu = 2.014101
-ptheta_lab = 13.08
+ptheta_lab = 13.11
 ppcentral = 9.8
 ppartmass = 0.0005109
 
 7257 - 7257
 gpbeam = 10.6
 gtargmass_amu = 2.014101
-ptheta_lab = 13.08
+ptheta_lab = 13.11
 ppcentral = 9.8
 ppartmass = 0.0005109
 
 7258 - 7258
 gpbeam = 10.6
 gtargmass_amu = 2.014101
-ptheta_lab = 13.08
+ptheta_lab = 13.11
 ppcentral = 9.8
 ppartmass = 0.0005109
 
@@ -1478,7 +1478,7 @@ ppartmass = 0.0005109
 7261 - 7261
 gpbeam = 10.6
 gtargmass_amu = 10.012938
-ptheta_lab = 13.08
+ptheta_lab = 13.11
 ppcentral = 9.8
 ppartmass = 0.0005109
 
