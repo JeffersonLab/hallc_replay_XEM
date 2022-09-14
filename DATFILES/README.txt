@@ -7,10 +7,15 @@ HMS
 
 You must use the corresponding hmsflags file in the PARAM/*/GEN/ to keep offsets correct!!
 
+-hms_poltar_fit.dat: Fit to optics data from the 40cm polarized target experiment. 
+
+
 ~~~~~
 SHMS
 ~~~~~
-
+-shms_newfit_global_zbin_allA1n.dat : Fit to optics data taken during A1N experiment for long 40cm target.
+-shms_newfit_xptar_aprl2020 : Just use runs 1814 and 1919 to improve xptar fit in the > 10% delta region.
+-shms-2019-newopt-Jan19.dat : includes new optimization that excludes the 4 GeV runs used previously and uses a 6th order fit.
 shms-2017-26cm-monte_quads_p18_q2_120_rec.dat: Current matrix elements for SHMS in hallc_replay.  Needs double-checked for Sp22 startup.
 shms-21deg_2p7_Gev_correction.dat: 2018 EMC running at 2.7GeV
 shms-21deg_3p3_Gev_correction.dat: 2018 EMC running at 3.3GeV
