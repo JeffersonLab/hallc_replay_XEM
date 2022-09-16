@@ -6,6 +6,10 @@
 # SHMS NGC FADC/NPE MONITORING
 #-----------------------------
 
+TH1F pngcer_npe1 'SHMS Noble Gas Cherenkov Number of Photoelectrons PMT1 ; Number of Photoelectrons / 0.5 Photoelectrons; counts'  P.ngcer.npe[0] 100 0 50 
+TH1F pngcer_npe2 'SHMS Noble Gas Cherenkov Number of Photoelectrons PMT2 ; Number of Photoelectrons / 0.5 Photoelectrons; counts' P.ngcer.npe[1] 100 0 50
+TH1F pngcer_npe3 'SHMS Noble Gas Cherenkov Number of Photoelectrons PMT3 ; Number of Photoelectrons / 0.5 Photoelectrons; counts' P.ngcer.npe[2] 100 0 50
+TH1F pngcer_npe4 'SHMS Noble Gas Cherenkov Number of Photoelectrons PMT4 ; Number of Photoelectrons / 0.5 Photoelectrons; counts' P.ngcer.npe[3] 100 0 50
 TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 200 100 150  P.ngcer.goodAdcPed>0.0
 
 TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Good Occupancy; PMT Number; Number of Good ADC Hits' P.ngcer.numGoodAdcHits 4 0.5 4.5

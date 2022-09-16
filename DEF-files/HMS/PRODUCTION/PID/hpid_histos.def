@@ -3,6 +3,7 @@
 # TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
 #-------------------------------------------------------------------------------------
 
+TH1F hcal_etottracknorm 'HMS Calorimeter Total E/p (GeV); Number of Entries /0.02 GeV' H.cal.etottracknorm 100 0 2 H.cal.etottracknorm>0.0
 # TH1F hcal_etrack 'HMS Calorimeter Total Track Energy; Track Energy Deposition (GeV); Number of Entries / 0.1 GeV' H.cal.etrack 100 0 10 H.cal.etrack>0.0 
 # TH1F hcal_etracknorm 'HMS Calorimeter Normalized Track Energy; Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0
 # TH1F hcal_etracknorm_track 'HMS Calorimeter Normalized Track Energy (Ntrack > 0); Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.1 ' H.cal.etracknorm 100 0 10 H.cal.etracknorm>0.0&&H.dc.ntrack>0
