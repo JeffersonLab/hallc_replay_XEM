@@ -1,7 +1,6 @@
 [submodule "UTIL_OL"]
 	path = UTIL_OL
-	url = git@github.com:mrcmor100/UTIL_OL.git
-	branch = master
+	url = https://github.com/mrcmor100/UTIL_OL.git
 [submodule "UTIL_XEM"]
 	path = UTIL_XEM
-	url = git@github.com:mrcmor100/UTIL_XEM.git
+	url = https://github.com/mrcmor100/UTIL_XEM.git
