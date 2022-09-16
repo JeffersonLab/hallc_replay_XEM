@@ -36,23 +36,23 @@ TH2F hFRBraw_XvsY_notrack 'HMS FRB Raw (No Track) X vs Y; FRXB RAW ADC (Volts); 
 TH2F hFRAraw_XvsY_track 'HMS FRA Raw X vs Y (Track Cut); FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0
 TH2F hFRBraw_XvsY_track 'HMS FRB Raw X vs Y (Track Cut); FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0
 
-TH2F hFRAraw_XvsY_us 'HMS FRA Raw X vs Y (Upstream Foil Cut); FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
-TH2F hFRBraw_XvsY_us 'HMS FRB Raw X vs Y (Upstream Foil Cut); FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
+TH2F hFRAraw_XvsY_us 'HMS FRA Raw X vs Y (Upstream Foil Cut); FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z<3.37&&H.react.z>-6.67
+TH2F hFRBraw_XvsY_us 'HMS FRB Raw X vs Y (Upstream Foil Cut); FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z<3.37&&H.react.z>-6.67
 
-TH2F hFRAraw_XvsY_ds 'HMS FRA Raw X vs Y (Downstream Foil Cut); FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
-TH2F hFRBraw_XvsY_ds 'HMS FRB Raw X vs Y (Downstream Foil Cut); FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
+TH2F hFRAraw_XvsY_ds 'HMS FRA Raw X vs Y (Downstream Foil Cut); FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXAraw_V FRYAraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z>3.37&&H.react.z<20.01
+TH2F hFRBraw_XvsY_ds 'HMS FRB Raw X vs Y (Downstream Foil Cut); FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXBraw_V FRYBraw_V 250 0 1.0 250 0 1.0 H.dc.ntrack>0&&H.react.z>3.37&&H.react.z<20.01
 
-TH2F hFRApos_XvsY_notrack 'HMS FRA X vs Y (No Track); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.6 0.6 300 -0.6 0.6
-TH2F hFRBpos_XvsY_notrack 'HMS FRB X vs Y (No Track); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.6 0.6 300 -0.6 0.6
+TH2F hFRApos_XvsY_notrack 'HMS FRA X vs Y (No Track); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.3 0.3 300 -0.3 0.3
+TH2F hFRBpos_XvsY_notrack 'HMS FRB X vs Y (No Track); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.3 0.3 300 -0.3 0.3
 
-TH2F hFRApos_XvsY_track 'HMS FRA X vs Y (Track Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0
-TH2F hFRBpos_XvsY_track 'HMS FRB X vs Y (Track Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0
+TH2F hFRApos_XvsY_track 'HMS FRA X vs Y (Track Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0
+TH2F hFRBpos_XvsY_track 'HMS FRB X vs Y (Track Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0
 
-TH2F hFRApos_XvsY_us 'HMS FRA X vs Y (Upstream Foil Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
-TH2F hFRBpos_XvsY_us 'HMS FRB X vs Y (Upstream Foil Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
+TH2F hFRApos_XvsY_us 'HMS FRA X vs Y (Upstream Foil Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
+TH2F hFRBpos_XvsY_us 'HMS FRB X vs Y (Upstream Foil Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0&&H.react.z<6.67&&H.react.z>-6.67
 
-TH2F hFRApos_XvsY_ds 'HMS FRA X vs Y (Downstream Foil Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
-TH2F hFRBpos_XvsY_ds 'HMS FRB X vs Y (Downstream Foil Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.6 0.6 300 -0.6 0.6 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
+TH2F hFRApos_XvsY_ds 'HMS FRA X vs Y (Downstream Foil Cut); FRA X Position (cm); FRA Y Position (cm)' H.rb.raster.fr_xa H.rb.raster.fr_ya 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
+TH2F hFRBpos_XvsY_ds 'HMS FRB X vs Y (Downstream Foil Cut); FRB X Position (cm); FRB Y Position (cm)' H.rb.raster.fr_xb H.rb.raster.fr_yb 300 -0.3 0.3 300 -0.3 0.3 H.dc.ntrack>0&&H.react.z>6.67&&H.react.z<20.01
 
 TH1F hBPMA_X 'Beam BPMA_X ; BPMA_X  (CM); Counts' H.rb.raster.fr_xbpmA 300 -.3 .3
 TH1F hBPMB_X 'Beam BPMB_X ; BPMB_X  (CM); Counts' H.rb.raster.fr_xbpmB 300 -.3 .3
