@@ -1,1 +1,0 @@
-UTIL_OL/SCRIPTS/SHELL/run_coin_shms.sh

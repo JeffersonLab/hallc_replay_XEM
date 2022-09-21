@@ -8,16 +8,12 @@
 ;     reference time is used and warning message is produced.
 ; Cut is on reference time per detector.
 
-;JPsi Coincidence KIN 2-0 (verified with run 7221)
-;hdc_tdcrefcut=-14000
-;hhodo_tdcrefcut=-3200
-;hhodo_adcrefcut=-5000
-;hcer_adcrefcut=-5000.
-;hcal_adcrefcut=-5000.
 
-;Trigger change: PS3 is HMS CLEAN and PS5 SHMS 3/4 & HMS ELREAL
-hdc_tdcrefcut=-15000
-hhodo_tdcrefcut=-2500
-hhodo_adcrefcut=-4250
-hcer_adcrefcut=-4250.
-hcal_adcrefcut=-4250.
+; CaFe 2022 Initial Ref. Times (determined from 50k replay of run 16026)
+pdc_tdcrefcut    =-14000.
+phodo_tdcrefcut  =-3200.
+phodo_adcrefcut  =-4000.
+pngcer_adcrefcut =-4000.
+phgcer_adcrefcut =-4000.
+paero_adcrefcut  =-4000.
+pcal_adcrefcut   =-4000.

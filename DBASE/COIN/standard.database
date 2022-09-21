@@ -1,3 +1,14 @@
+; General parameters for Fall 2022 running during the full experiment
+16500-99999
+g_ctp_parm_filename       = "DBASE/COIN/general_fa22.param"
+g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
+g_ctp_det_calib_filename   = "DBASE/COIN/default_det_calib_fa22.param"
+g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_fa22.param"
+g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/tcoin_fa22.param"
+g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_fa22.map"
+g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp18.template"
+
 0-6008
 g_ctp_parm_filename       = "DBASE/COIN/general_pt.param"
 0-6180
@@ -20,7 +31,6 @@ g_ctp_map_filename = "MAPS/COIN/DETEC/coin_fall18.map"
 
 6009-6999
 g_ctp_trigdet_filename = "PARAM/TRIG/tcoin_fall18.param"
-
 
 # jpsi experiment
 # phase 1 kinematics
@@ -52,7 +62,7 @@ g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
 g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
 
 # phase 2 kinematics
-7430-99999
+7430-8000
 g_ctp_parm_filename       = "DBASE/COIN/general.param"
 g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
 g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"

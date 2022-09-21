@@ -9,10 +9,13 @@ SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
 ;p_recon_coeff_filename = "DATFILES/shms_dipole_2plow.dat"
 ;p_recon_coeff_filename = "DATFILES/shms-2017-optimized.dat"
 ;p_recon_coeff_filename = "DATFILES/shms-2017-optimized_delta_newfit3.dat"
+;p_recon_coeff_filename = "DATFILES/shms_OptimizedFINAL_post3288.dat
 
-; New SHMS Optics by Holly from August 2020
-;p_recon_coeff_filename = "DATFILES/hsv_fit_global.dat"
-p_recon_coeff_filename = "DATFILES/newfit_global_zbin_allA1n.dat" 
+; Starting shms matrix file (CaFe 2022) (suggested by M. Jones for PION-LT 2021)
+p_recon_coeff_filename = "DATFILES/shms_newfit_xptar_april2020.dat"
 
-; fall 2019 defocused tune -> Q2 current set to 120% of nominal tune
-; p_recon_coeff_filename = "DATFILES/shms-2017-26cm-monte_quads_p18_q2_120_rec.dat"
+; testing (with C. Yero SHMS optics from deuteron 2018 exp)
+;p_recon_coeff_filename = "DATFILES/shms_OptimizedFINAL_post3288.dat  
+
+; testing (with Holly's optimized matrix for A1n/d2n)
+;p_recon_coeff_filename = "DATFILES/hsv_fit_global.dat 

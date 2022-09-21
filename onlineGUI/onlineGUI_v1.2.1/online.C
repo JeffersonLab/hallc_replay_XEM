@@ -888,7 +888,7 @@ void OnlineGUI::CreateGUI(const TGWindow *p, UInt_t w, UInt_t h)
     if(!fConfig->IsMonitor()) {
         wile =
             new TGPictureButton(vframe,
-                    gClient->GetPicture(guiDirectory+"/hcsmall.png"));
+                    gClient->GetPicture(guiDirectory+"/xemsmall.png"));
         wile->Connect("Pressed()","OnlineGUI", this,"DoDraw()");
     } else {
         wile =

@@ -1,5 +1,7 @@
 ; Geometrical parameters
 
+; fall 2022 HMS DC | M. Jones updated DC alignment parms
+
 ; Chamber version
  hdc_version = 1
 
@@ -24,8 +26,8 @@ hdc_nrwire = 96, 96, 102, 102, 96, 96
              96, 96, 102, 102, 96, 96
 
 ; Sigma of wire chamber resolution for each plane.
-hdc_sigma = 0.02, 0.02, 0.02, 0.02, 0.02, 0.02  ; TODO - SOS values for now
-            0.02, 0.02, 0.02, 0.02, 0.02, 0.02
+hdc_sigma = 0.0140, 0.0140, 0.0140, 0.0140, 0.0140, 0.0140  ; TODO - SOS values for now
+            0.0140, 0.0140, 0.0140, 0.0140, 0.0140, 0.0140
 
 ; Wire velocity corrections.
 hdc_wire_velocity  = 12.0; -this should be checked (old HMS value for now)
@@ -69,8 +71,8 @@ hdc_2_yaw = -0.0079 ;
 
 ; Wire number of center of wire chamber for each plane.
 ; From technical drawings.
-hdc_central_wire = 48.75, 48.25, 51.75, 51.25, 48.25, 48.75
-                   48.75, 48.25, 51.25, 51.75, 48.25, 48.75
+hdc_central_wire = 48.75-0.0038, 48.25+0.00035, 51.75+0.0029, 51.25+0.001, 48.25-0.002, 48.75-0.0016
+                   48.75-0.0006, 48.25-0.0047, 51.25+0.0037, 51.75+0.0017, 48.25-0.0108, 48.75+0.0071
 
 ; Distance between wires for each plane in cm.
 ; From technical drawings.
@@ -82,23 +84,23 @@ hdc_wire_counting = 0, 0, 0, 0, 0, 0
                     0, 0, 0, 0, 0, 0
 
 ; x position in cm defaults to global
-hdc_xpos = hdc_xcenter[0]-0.01
-           hdc_xcenter[0]
-           hdc_xcenter[0]+0.005
+hdc_xpos = hdc_xcenter[0]
            hdc_xcenter[0]
            hdc_xcenter[0]
            hdc_xcenter[0]
-           hdc_xcenter[1]+0.01
+           hdc_xcenter[0]
+           hdc_xcenter[0]
            hdc_xcenter[1]
            hdc_xcenter[1]
            hdc_xcenter[1]
-           hdc_xcenter[1]-0.015
-           hdc_xcenter[1]-0.003
-           
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+           hdc_xcenter[1]
+
 ; y position in cm defaults to global
-hdc_ypos = hdc_ycenter[0]+0.0015
+hdc_ypos = hdc_ycenter[0]
            hdc_ycenter[0]
-           hdc_ycenter[0]-0.002
+           hdc_ycenter[0]
            hdc_ycenter[0]
            hdc_ycenter[0]
            hdc_ycenter[0]
@@ -106,8 +108,8 @@ hdc_ypos = hdc_ycenter[0]+0.0015
            hdc_ycenter[1]
            hdc_ycenter[1]
            hdc_ycenter[1]
-           hdc_ycenter[1]+0.015
-           hdc_ycenter[1]+0.001
+           hdc_ycenter[1]
+           hdc_ycenter[1]
 
 ; z position in cm of each plane measured from focal plane.
 ; From technical drawings.

@@ -1,27 +1,15 @@
+;djm "final" for Fall 2021, period 2a which I define to be COIN runs 12004- TBD
+; BCM calibration run 12496 taken on Oct 6.  
+; I still need to check the wire calibration, but the result is unlikely to change. 
+; Use BCM2 for normalization of physics data. (The BCM1 offset was found to be unstable on Oct 28. Not sure when the problem started.) 
+; Experimenters should be wary of the impact of the current threshold when taking production data near 5 muA.  
+; Note this version includes a small but highly significant saturation correction for BCM1,2 that turns on above 50 muA (reaching ~1% at 70 muA).
 gNumBCMs=6
-; Melanie's fit from Dec. 2019 SHMS run 9728 (Unser left from summer 2019)
-gBCM_Gain = 5762, 5651, 4011.2, 9418, 2120, 1809
-gBCM_Offset = 253100, 250600, 277000, 1720, 706.2, 473.4
-
-; Melanie's fit from Feb. 2020 SHMS run 10402 (Unser left from summer 2019)
-;gBCM_Gain   = 5785, 5657, 4011.2, 9471, 2117, 1821
-;gBCM_Offset = 252600, 250200, 277000, 1084, 733.7, 301
-
-; Dave Mack's fit from Feb. 2020 SHMS run 10402 (Unser left from summer 2019)
-;gBCM_Gain   = 5791, 5663, 4011.2, 9496, 2126, 1826
-;gBCM_Offset = 252200, 249700, 277000, -259.4, 296.5, 33.72
-
-; Dave Mack's fit from Dec. 2019 SHMS run 9728 (Unser left from summer 2019)
-;gBCM_Gain   = 5761, 5649, 4011.2, 9445, 2129, 1815
-;gBCM_Offset = 253000, 250600, 277000, 927.1, 446.7, 294.6
-
-; summer 2019 fit
-;gBCM_Gain   = 5757.6,   5590.,   4011.2,   9364,   2125.,   5180.
-;gBCM_Offset = 253389, 250888, 277000, 1521, 764, 1569.
- 
-;gBCM_Gain   = 5713,   5528,   5020,   9279,   2102.,   6343.
-;gBCM_Offset = 253400, 250900, 325000, 762.6, 317.9, 852.4
-gBCM_Names  = "BCM1 BCM2 Unser BCM4A BCM4B BCM4C"
-gBCM_Current_threshold = 5.0
+gBCM_Names =            "BCM1      BCM2      Unser      BCM4A      BCM4B      BCM4C"
+gBCM_Gain =            5696.6,    5602.4,   4011.2,    9351.2,    6665.1,    4574.4
+gBCM_Offset =        251640.,   249200.,  244000.,    -1081.9,   -703.7,    -263.3
+gBCM_SatOffset =         50.,       50.,    1000.,     1000.,     1000.,     1000. 
+gBCM_SatQuadratic =  0.00175,    0.002,      0.0,     0.0,     0.0,    0.0 
+gBCM_Current_threshold = 3.0
 ; index = 0 to gNumBCMs-1
 gBCM_Current_threshold_index = 3

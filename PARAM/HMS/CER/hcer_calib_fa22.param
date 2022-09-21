@@ -1,10 +1,2 @@
-;hcer_adc_to_npe = 1./5.735, 1./5.741
-;hcer_adc_to_npe = 1./10.69, 1./9.81
-;hcer_adc_to_npe = 1./9.069, 1./9.035
-;HMS CER calibration constants from runs 2489, 2493 and 2494
-;hcer_adc_to_npe = 1./6.318, 1./7.921
-;from cosmics 2504
-;hcer_adc_to_npe = 1./8.409, 1./7.735
-
-;from cosmics 3732
-hcer_adc_to_npe = 1./7.664, 1./7.904
+; start fall 2022
+hcer_adc_to_npe = 1./10.17, 1./9.4

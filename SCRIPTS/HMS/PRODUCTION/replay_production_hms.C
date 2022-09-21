@@ -23,9 +23,13 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   pathList.push_back("./raw");
   pathList.push_back("./raw-sp18");
   pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
+  pathList.push_back("./CACHE_LINKS/cache_cafe");
+  pathList.push_back("./CACHE_LINKS/cache_pionlt");
+  pathList.push_back("./CACHE_LINKS/cache_sp18");
+  pathList.push_back("./CACHE_LINKS/cache_sp19");
+  pathList.push_back("./CACHE_LINKS/cache_xem2");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/PRODUCTION/hms_replay_production_%d_%d.root";
 
   // Load Global parameters
   // Add variables to global list.

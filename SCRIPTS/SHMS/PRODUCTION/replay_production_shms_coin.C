@@ -1,4 +1,4 @@
-void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_production_shms_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0, Int_t FirstEvent = 1) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -21,10 +21,10 @@ void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back(".");
   pathList.push_back("./raw");
   pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
+  pathList.push_back("./CACHE_LINKS/cache_pionlt");
+  pathList.push_back("./CACHE_LINKS/cache_cafe"); 
 
-  //const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/coin_noTimingWindows_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/shms_coin_replay_production_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -40,21 +40,16 @@ void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Load fadc debug parameters
   gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
+
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
-
-  //==========================================
-
-  //Now remove all Timing Windows and revert to 
-  //the default values specifid in hallc_replay
-  gHcParms->AddString("g_ctp_no_timing_windows_filename", "PARAM/SHMS/GEN/pdet_cuts_no_timing_windows.param");
-  gHcParms->Load(gHcParms->GetString("g_ctp_no_hms_timing_windows_filename"));
-  gHcParms->AddString("g_ctp_no_hms_timing_windows_filename", "PARAM/HMS/GEN/hdet_cuts_no_timing_windows.param");
-  gHcParms->Load(gHcParms->GetString("g_ctp_no_hms_timing_windows_filename"));
-
-  //==========================================
-
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
+  
   //=:=:=:=
   // SHMS 
   //=:=:=:=
@@ -116,19 +111,6 @@ void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pscaler->SetDelayedType(129);
   pscaler->SetUseFirstEvent(kTRUE);
   gHaEvtHandlers->Add(pscaler);
-
-  /*
-  //Add SHMS event handler for helicity scalers
-  THcHelicityScaler *phelscaler = new THcHelicityScaler("P", "Hall C helicity scaler");
-  //phelscaler->SetDebugFile("PHelScaler.txt");
-  phelscaler->SetROC(8);   
-  phelscaler->SetUseFirstEvent(kTRUE); 
-  gHaEvtHandlers->Add(phelscaler); 
-  */
-  
-  //=:=:=
-  // HMS 
-  //=:=:=
 
   // Set up the equipment to be analyzed.
   THcHallCSpectrometer* HMS = new THcHallCSpectrometer("H", "HMS");
@@ -271,10 +253,15 @@ void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file+
-  analyzer->SetOdefFile("DEF-files/COIN/TIMING/no_timing_windows.def");
+  analyzer->SetOdefFile("DEF-files/COIN/HeeP/coincidence_elastic.def");
   // Define cuts file
   analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/CUTS/coin_production_cuts.def");  // optional
+  // File to record accounting information for cuts
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/HeeP/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
+  // Create report file from template
+  //analyzer->PrintReport("TEMPLATES/COIN/PRODUCTION/coin_production.template",
+  //			Form("REPORT_OUTPUT/COIN/HeeP/replay_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }

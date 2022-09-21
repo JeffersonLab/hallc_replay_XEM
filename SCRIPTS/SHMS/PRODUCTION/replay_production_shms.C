@@ -23,7 +23,10 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw-sp18");
   pathList.push_back("./raw-sp19");
   pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
+  pathList.push_back("./CACHE_LINKS/cache_pionlt");
+  pathList.push_back("./CACHE_LINKS/cache_cafe"); 
+  pathList.push_back("./CACHE_LINKS/cache_sp18");
+  pathList.push_back("./CACHE_LINKS/cache_sp19"); 
 
   const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_%d_%d.root";
   

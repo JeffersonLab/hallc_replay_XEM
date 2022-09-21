@@ -41,22 +41,20 @@ gbpmc_zpos = 129.38 ; cm
 ; if 0 then only use average beam pos and angles in calculating beam position
 ; Various fast raster quantities: gUse* are flags
 
-; Raster constants for initial pol target setup Nov 22, 2019
-gfr_cal_mom  = 10.36
-gfrxa_adc_zero_offset = 64310
-gfrxb_adc_zero_offset = 67210
-gfrya_adc_zero_offset = 67500
-gfryb_adc_zero_offset = 61840
+; Raster constants for CaFe June 2 2022 (https://logbooks.jlab.org/entry/3998936#comment-38008)
+gfr_cal_mom = 7.950
+gfrxa_adc_zero_offset = 54300
+gfrxb_adc_zero_offset = 54300
+gfrya_adc_zero_offset = 54630
+gfryb_adc_zero_offset = 54800
 ;
-gfrxa_adcpercm = 96000
-gfrxb_adcpercm = 97086
-gfrya_adcpercm = -88300
-gfryb_adcpercm = -84800
+gfrxa_adcpercm = (63427-44954)/.2
+gfrxb_adcpercm = (63841-44824)/.2
+gfrya_adcpercm = -(65450-44885)/.2
+gfryb_adcpercm = -(64417-45240)/.2
 
  
  
 ; positions of FR magnets relative to target
-  gfrx_dist  = 1375   ; cm
-  gfry_dist  = 1337   ; cm
-
-
+gfrx_dist  = 1375   ; cm
+gfry_dist  = 1337   ; cm
