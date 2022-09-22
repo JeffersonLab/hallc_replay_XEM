@@ -1,0 +1,37 @@
+Block: RawDecode
+
+Pedestal_event         g.evtyp == 99
+SHMS_event             g.evtyp == 1
+HMS_event              g.evtyp == 2
+BOTH_SINGLES_event     g.evtyp == 3
+COIN_ONLY_event        g.evtyp == 4
+SHMS_COIN_event        g.evtyp == 5
+HMS_COIN_event         g.evtyp == 6 
+COIN_ALL_event         g.evtyp == 7
+ALL_COIN_events        g.evtyp >= 4 && g.evtyp <= 7 
+ALL_events             g.evtyp >= 1 && g.evtyp <= 7 
+
+ALL_HMS_events       HMS_event || COIN_ONLY_event || HMS_COIN_event  || COIN_ALL_event
+ALL_SHMS_events     SHMS_event || COIN_ONLY_event || SHMS_COIN_event || COIN_ALL_event
+
+#RawDecode_master ALL_events
+
+Block: Decode
+EDTM_Events           T.coin.pEDTM_tdcTimeRaw > 0
+Decode_master ALL_events
+
+Block: CoarseTracking
+CoarseTracking_master ALL_events
+
+Block: CoarseReconstruct
+CoarseReconstruct_master ALL_events
+
+Block: Tracking
+Tracking_master  ALL_events
+
+Block: Reconstruct
+Reconstruct_master ALL_events
+
+Block: Physics
+hcut_CleanTrack            H.gtr.index > -1 && H.gtr.dp > -8.0 && H.gtr.dp < 8.0
+Physics_master ALL_HMS_events

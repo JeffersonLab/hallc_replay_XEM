@@ -1,0 +1,554 @@
+block T.coin.*
+
+# SHMS HGC
+block P.hgcer.xAtCer
+block P.hgcer.yAtCer
+block P.hgcer.tot*
+block P.hgcer.npe*
+block P.hgcer.good*
+block P.hgcer.num*
+block P.hgcer.RefTime
+
+# SHMS NGC
+#block P.ngcer.xAtCer
+#block P.ngcer.yAtCer
+#block P.ngcer.tot*
+#block P.ngcer.npe*
+#block P.ngcer.good*
+#block P.ngcer.num*
+#block P.ngcer.RefTime
+block P.ngcer.*
+block P.hgcer.*
+block P.hod.*
+
+# SHMS Aero
+block P.aero.xAtAero
+block P.aero.yAtAero
+block P.aero.tot*
+block P.aero.npe*
+#block P.aero.RefTime
+
+# SHMS DC
+block P.dc.Ch1.*
+block P.dc.Ch2.*
+block P.dc.x_fp
+block P.dc.xp_fp
+block P.dc.y_fp
+block P.dc.yp_fp
+block P.dc.n*
+block P.dc.InsideDipoleExit
+block P.dc.1x1.time
+block P.dc.1x1.dist
+block P.dc.1x2.time
+block P.dc.1x2.dist
+block P.dc.1u1.time
+block P.dc.1u1.dist
+block P.dc.1u2.time
+block P.dc.1u2.dist
+block P.dc.1v1.time
+block P.dc.1v1.dist
+block P.dc.1v2.time
+block P.dc.1v2.dist
+block P.dc.2x1.time
+block P.dc.2x1.dist
+block P.dc.2x2.time
+block P.dc.2x2.dist
+block P.dc.2u1.time
+block P.dc.2u1.dist
+block P.dc.2u2.time
+block P.dc.2u2.dist
+block P.dc.2v1.time
+block P.dc.2v1.dist
+block P.dc.2v2.time
+block P.dc.2v2.dist
+block P.dc.1x1.nhit
+block P.dc.1x1.RefTime
+block P.dc.1x2.nhit
+block P.dc.1x2.RefTime
+block P.dc.1u1.nhit
+block P.dc.1u1.RefTime
+block P.dc.1u2.nhit
+block P.dc.1u2.RefTime
+block P.dc.1v1.nhit
+block P.dc.1v1.RefTime
+block P.dc.1v2.nhit
+block P.dc.1v2.RefTime
+block P.dc.2x1.nhit
+block P.dc.2x1.RefTime
+block P.dc.2x2.nhit
+block P.dc.2x2.RefTime
+block P.dc.2u1.nhit
+block P.dc.2u1.RefTime
+block P.dc.2u2.nhit
+block P.dc.2u2.RefTime
+block P.dc.2v1.nhit
+block P.dc.2v1.RefTime
+block P.dc.2v2.nhit
+block P.dc.2v2.RefTime
+block P.dc.residual*
+block P.dc.wireHit*
+block P.dc.gtr*
+
+# SHMS Calorimeter
+block P.cal.fly.e*
+block P.cal.pr.e*
+block P.cal.ep*
+block P.cal.etot*
+block P.cal.etrack*
+block P.cal.fly.nclust
+block P.cal.fly.ntracks
+block P.cal.nclust
+block P.cal.ntracks
+block P.cal.pr.eplane*
+block P.cal.pr.tot*
+block P.cal.fly.tot*
+block P.cal.xclust*
+block P.cal.xtrack*
+block P.cal.yclust*
+block P.cal.ytrack*
+block P.cal.fly.numGoodAdcHits
+
+# SHMS Hodoscope
+block P.hod.adctdc_offset
+block P.hod.beta*
+block P.hod.good*
+block P.hod.fpHitsTime
+block P.hod.starttime
+block P.hod.1x.nhits
+block P.hod.1x.fptime
+block P.hod.1x.Neg*
+block P.hod.1x.Pos*
+block P.hod.1x.tot*
+block P.hod.1x.Track*
+block P.hod.1x.Scin*
+block P.hod.1x.NumClus
+block P.hod.1y.nhits
+block P.hod.1y.fptime
+block P.hod.1y.Neg*
+block P.hod.1y.Pos*
+block P.hod.1y.tot*
+block P.hod.1y.Track*
+block P.hod.1y.Scin*
+block P.hod.1y.NumClus
+block P.hod.2x.nhits
+block P.hod.2x.fptime
+block P.hod.2x.Neg*
+block P.hod.2x.Pos*
+block P.hod.2x.tot*
+block P.hod.2x.Track*
+block P.hod.2x.Scin*
+block P.hod.2x.NumClus
+block P.hod.2y.nhits
+block P.hod.2y.fptime
+block P.hod.2y.Neg*
+block P.hod.2y.Pos*
+block P.hod.2y.tot*
+block P.hod.2y.Track*
+block P.hod.2y.Scin*
+block P.hod.2y.NumClus
+
+# SHMS tracking
+block P.tr.*
+block P.gtr.*
+
+# SHMS Kinematics/rastered beam/reaction info
+block P.kin.*
+block P.rb.*
+block P.react.*
+
+# Epics data
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+IPM3H07A.XPOS
+IPM3H07A.YPOS
+IPM3H07B.XPOS
+IPM3H07B.YPOS
+IPM3H07C.XPOS
+IPM3H07C.YPOS
+IPM3H07A.XRAW
+IPM3H07A.YRAW
+IPM3H07B.XRAW
+IPM3H07B.YRAW
+IPM3H07C.XRAW
+IPM3H07C.YRAW
+IPM3H07A.XSOF
+IPM3H07A.YSOF
+IPM3H07B.XSOF
+IPM3H07B.YSOF
+IPM3H07C.XSOF
+IPM3H07C.YSOF
+HALLC:p
+pgunFreqDiv:C
+end epics
+
+
+#*****************
+# SHMS HODOSCOPES
+#*****************
+
+# SHMS HODO GOOD ADC OCCUPANCIES
+
+TH1F phodo_1x_good_adc_occ_pos 'SHMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1x.numGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_pos 'SHMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1y.numGoodPosAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_pos 'SHMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2x.numGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_pos 'SHMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2y.numGoodPosAdcHits 19 0.5 19.5
+
+TH1F phodo_1x_good_adc_occ_neg 'SHMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1x.numGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_neg 'SHMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1y.numGoodNegAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_neg 'SHMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2x.numGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_neg 'SHMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2y.numGoodNegAdcHits 19 0.5 19.5
+
+# SHMS HODO GOOD ADC MULTIPLICITIES
+
+TH1F phodo_1x_good_adc_mult_pos 'SHMS 1X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1x.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_pos 'SHMS 1Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.1y.totNumGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_pos 'SHMS 2X+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2x.totNumGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_pos 'SHMS 2Y+ Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.hod.2y.totNumGoodPosAdcHits 19 0.5 19.5
+
+TH1F phodo_1x_good_adc_mult_neg 'SHMS 1X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1x.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_mult_neg 'SHMS 1Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.1y.totNumGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_2x_good_adc_mult_neg 'SHMS 2X- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2x.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_mult_neg 'SHMS 2Y- Good ADC Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.hod.2y.totNumGoodNegAdcHits 19 0.5 19.5
+
+#SHMS HODO GOOD TDC OCCUPANCIES
+
+TH1F phodo_1x_good_tdc_occ_pos 'SHMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1x.numGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_pos 'SHMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1y.numGoodPosTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_pos 'SHMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2x.numGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_pos 'SHMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2y.numGoodPosTdcHits 19 0.5 19.5
+
+TH1F phodo_1x_good_tdc_occ_neg 'SHMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1x.numGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_neg 'SHMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1y.numGoodNegTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_neg 'SHMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2x.numGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_neg 'SHMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2y.numGoodNegTdcHits 19 0.5 19.5
+
+# SHMS HODO Good TDC Multiplicities
+
+TH1F phodo_1x_good_tdc_mult_pos 'SHMS 1X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1x.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_pos 'SHMS 1Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.1y.totNumGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_pos 'SHMS 2X+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2x.totNumGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_pos 'SHMS 2Y+ Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good +TDC Hits' P.hod.2y.totNumGoodPosTdcHits 19 0.5 19.5
+
+TH1F phodo_1x_good_tdc_mult_neg 'SHMS 1X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1x.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_mult_neg 'SHMS 1Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.1y.totNumGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_2x_good_tdc_mult_neg 'SHMS 2X- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2x.totNumGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_mult_neg 'SHMS 2Y- Good TDC Multiplicity; Number of PMTs Hit; Total Number of Good -TDC Hits' P.hod.2y.totNumGoodNegTdcHits 19 0.5 19.5
+
+# SHMS HODO GOOD PULSE PEDESTAL
+
+TH2F phodo_1x_good_pped_vs_pmt_pos 'SHMS 1X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1x.GoodPosAdcPed 13 0.5 13.5 200 100 150 P.hod.1x.GoodPosAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_pos 'SHMS 1Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1y.GoodPosAdcPed 13 0.5 13.5 200 100 150 P.hod.1y.GoodPosAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_pos 'SHMS 2X+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2x.GoodPosAdcPed 14 0.5 14.5 200 100 150 P.hod.2x.GoodPosAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_pos 'SHMS 2Y+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2y.GoodPosAdcPed 21 0.5 21.5 200 100 150 P.hod.2y.GoodPosAdcPed>0.0
+
+TH2F phodo_1x_good_pped_vs_pmt_neg 'SHMS 1X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1x.GoodNegAdcPed 13 0.5 13.5 200 100 150 P.hod.1x.GoodNegAdcPed>0.0
+TH2F phodo_1y_good_pped_vs_pmt_neg 'SHMS 1Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.1y.GoodNegAdcPed 13 0.5 13.5 200 100 150 P.hod.1y.GoodNegAdcPed>0.0
+TH2F phodo_2x_good_pped_vs_pmt_neg 'SHMS 2X- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2x.GoodNegAdcPed 14 0.5 14.5 200 100 150 P.hod.2x.GoodNegAdcPed>0.0
+TH2F phodo_2y_good_pped_vs_pmt_neg 'SHMS 2Y- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1]  P.hod.2y.GoodNegAdcPed 21 0.5 21.5 200 100 150 P.hod.2y.GoodNegAdcPed>0.0
+
+#-----------------------
+# SHMS DC RAW WIRE MAP
+#-----------------------
+
+TH1F pdc1u1_rawwirenum 'SHMS DC 1U1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1u1.raw.wirenum 107 0.5 107.5
+TH1F pdc1u2_rawwirenum 'SHMS DC 1U2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1u2.raw.wirenum 107 0.5 107.5
+TH1F pdc1x1_rawwirenum 'SHMS DC 1X1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1x1.raw.wirenum  79 0.5  79.5
+TH1F pdc1x2_rawwirenum 'SHMS DC 1X2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1x2.raw.wirenum  79 0.5  79.5
+TH1F pdc1v1_rawwirenum 'SHMS DC 1V1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1v1.raw.wirenum 107 0.5 107.5
+TH1F pdc1v2_rawwirenum 'SHMS DC 1V2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.1v2.raw.wirenum 107 0.5 107.5
+
+TH1F pdc2v2_rawwirenum 'SHMS DC 2V2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2v2.raw.wirenum 107 0.5 107.5
+TH1F pdc2v1_rawwirenum 'SHMS DC 2V1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2v1.raw.wirenum 107 0.5 107.5
+TH1F pdc2x2_rawwirenum 'SHMS DC 2X2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2x2.raw.wirenum  79 0.5  79.5
+TH1F pdc2x1_rawwirenum 'SHMS DC 2X1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2x1.raw.wirenum  79 0.5  79.5
+TH1F pdc2u2_rawwirenum 'SHMS DC 2U2 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2u2.raw.wirenum 107 0.5 107.5
+TH1F pdc2u1_rawwirenum 'SHMS DC 2U1 Wiremap; Wire Number (all hits); Number of Entries' P.dc.2u1.raw.wirenum 107 0.5 107.5
+
+#----------------------------------
+# SHMS DC Drift Distance Per Plane 
+#----------------------------------
+
+TH1F pdc1u1_ddist 'SHMS 1U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1u1.dist 28 -0.1 0.6
+TH1F pdc1u2_ddist 'SHMS 1U2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1u2.dist 28 -0.1 0.6
+TH1F pdc1x1_ddist 'SHMS 1X1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1x1.dist 28 -0.1 0.6
+TH1F pdc1x2_ddist 'SHMS 1X2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1x2.dist 28 -0.1 0.6
+TH1F pdc1v1_ddist 'SHMS 1V1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1v1.dist 28 -0.1 0.6
+TH1F pdc1v2_ddist 'SHMS 1V2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.1v2.dist 28 -0.1 0.6
+
+TH1F pdc2u2_ddist 'SHMS 2U2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2u2.dist 28 -0.1 0.6
+TH1F pdc2u1_ddist 'SHMS 2U1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2u1.dist 28 -0.1 0.6
+TH1F pdc2x2_ddist 'SHMS 2X2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2x2.dist 28 -0.1 0.6
+TH1F pdc2x1_ddist 'SHMS 2X1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2x1.dist 28 -0.1 0.6
+TH1F pdc2v2_ddist 'SHMS 2V2 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2v2.dist 28 -0.1 0.6
+TH1F pdc2v1_ddist 'SHMS 2V1 Drift Distance; Drift Distance (cm); Number of Entries' P.dc.2v1.dist 28 -0.1 0.6
+
+#------------------------------
+# SHMS DC DRIFT TIME PER PLANE 
+#------------------------------
+
+TH1F pdc1u1_drifttime 'SHMS DC 1U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u1.time 400 -50 350
+TH1F pdc1u2_drifttime 'SHMS DC 1U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1u2.time 400 -50 350
+TH1F pdc1x1_drifttime 'SHMS DC 1X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1x1.time 400 -50 350
+TH1F pdc1x2_drifttime 'SHMS DC 1X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1x2.time 400 -50 350
+TH1F pdc1v1_drifttime 'SHMS DC 1V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1v1.time 400 -50 350
+TH1F pdc1v2_drifttime 'SHMS DC 1V2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.1v2.time 400 -50 350
+
+TH1F pdc2v2_drifttime 'SHMS DC 2V2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2v2.time 400 -50 350
+TH1F pdc2v1_drifttime 'SHMS DC 2V1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2v1.time 400 -50 350
+TH1F pdc2x2_drifttime 'SHMS DC 2X2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2x2.time 400 -50 350
+TH1F pdc2x1_drifttime 'SHMS DC 2X1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2x1.time 400 -50 350
+TH1F pdc2u2_drifttime 'SHMS DC 2U2 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u2.time 400 -50 350
+TH1F pdc2u1_drifttime 'SHMS DC 2U1 Drift Time; Drift Time (ns); Number of Entries / 1 ns' P.dc.2u1.time 400 -50 350
+
+#-------------------------------------------
+# SHMS DC TRACKING VARIABLES AT FOCAL PLANE
+#-------------------------------------------
+
+TH2F pdc_xfp_vs_yfp   'SHMS DC X_{fp} vs Y_{fp}; Y_{fp} (cm) / 1 cm; X_{fp} (cm) / 1 cm' P.dc.y_fp P.dc.x_fp 80 -40 40 80 -40 40
+TH2F pdc_xpfp_vs_ypfp 'SHMS DC X'_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X'_{fp} / 0.002 rad' P.dc.yp_fp P.dc.xp_fp 100 -.1 .1 100 -.1 .1
+TH2F pdc_xfp_vs_xpfp  'SHMS DC X_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; X_{fp} / 1 cm' P.dc.xp_fp P.dc.x_fp 100 -.1 .1 80 -40 40
+TH2F P_xfp_vs_beta 'SHMS DC X_{fp} vs Beta; X_{fp} (cm) / 1 cm; Beta' P.dc.x_fp P.gtr.beta 80 -40 40 100 0 2
+TH2F pdc_xfp_vs_ypfp  'SHMS DC X_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; X_{fp} / 1 cm'  P.dc.yp_fp P.dc.x_fp 100 -.1 .1 80 -40 40 
+TH2F pdc_yfp_vs_xpfp  'SHMS DC Y_{fp} vs X'_{fp}; X'_{fp} / 0.002 rad; Y_{fp} / 1 cm' P.dc.xp_fp P.dc.y_fp 100 -.1 .1 80 -40 40
+TH2F pdc_yfp_vs_ypfp  'SHMS DC Y_{fp} vs Y'_{fp}; Y'_{fp} / 0.002 rad; Y_{fp} / 1 cm'  P.dc.yp_fp P.dc.y_fp 100 -.1 .1 80 -40 40
+TH2F P_yfp_vs_beta 'SHMS DC Y_{fp} vs Beta; Y_{fp} (cm) / 1 cm; Beta' P.dc.y_fp P.gtr.beta 80 -40 40 100 0 2
+
+#-------------------
+# TARGET VARIABLES
+#-------------------
+TH2F pgtr_ytar_vs_yptar  'SHMS Golden Track Y_{tar} vs Y'_{tar}; Y'_{tar} / 0.002 rad; Y_{tar} / 0.25 cm'  P.gtr.ph P.gtr.y 100 -.1 .1 60 -7.5 7.5 pcut_CleanTrack
+TH2F pgtr_xptar_vs_yptar 'SHMS Golden Track X'_{tar} vs Y'_{tar}; Y'_{tar} / 0.002 rad; X'_{tar} / 0.002 rad' P.gtr.ph P.gtr.th 100 -.1 .1 100 -.1 .1 pcut_CleanTrack
+TH2F pgtr_xtar_vs_reactz 'SHMS Golden Track X_{tar}; Z_{react} / 0.1 cm; X_{tar} / 0.05 cm' P.react.z P.gtr.x 200 -10 10 80 -2 2 pcut_CleanTrack
+TH1F pgtr_xtar 'SHMS Golden Track X_{tar}; X_{tar} (cm); Number of Entries / 0.05 cm' P.gtr.x 80 -2 2 pcut_CleanTrack
+TH1F pgtr_ytar 'SHMS Golden Track Y_{tar}; Y_{tar} (cm); Number of Entries / 0.25 cm' P.gtr.y 60 -7.5 7.5 pcut_CleanTrack
+TH2F pextcor_xysieve 'SHMS Extended Target Correction XY-Sieve; Y_{sieve} / 0.1 cm; X_{sieve} / 0.1 cm' P.extcor.ysieve P.extcor.xsieve 200 -10 10 300 -15 15 pcut_CleanTrack
+
+
+#--------------------------------
+# SHMS Cherenkovs GOOD OCC/MULT
+#--------------------------------
+
+TH1F pngcer_good_occ 'SHMS Noble Gas Cherenkov Good Occupancy; PMT Number; Number of Good ADC Hits' P.ngcer.numGoodAdcHits 4 0.5 4.5
+TH1F pngcer_good_mult 'SHMS Noble Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.ngcer.totNumGoodAdcHits 4 0.5 4.5
+TH1F phgcer_good_occ 'SHMS Heavy Gas Cherenkov Good Occupancy; PMT Number; Number Good ADC Hits' P.hgcer.numGoodAdcHits 4 0.5 4.5
+TH1F phgcer_good_mult 'SHMS Heavy Gas Cherenkov Good Multiplicity; Number of PMTs Hit; Total Number of Good ADC Hits' P.hgcer.totNumGoodAdcHits 4 0.5 4.5
+TH1F paero_good_occ_pos 'SHMS Aero+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.aero.numGoodPosAdcHits 7 0.5 7.5
+TH1F paero_good_occ_neg 'SHMS Aero- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.aero.numGoodNegAdcHits 7 0.5 7.5
+TH1F paero_good_mult_pos 'SHMS Aero+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.aero.totNumGoodPosAdcHits 7 0.5 7.5
+TH1F paero_good_mult_neg 'SHMS Aero- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.aero.totNumGoodNegAdcHits 7 0.5 7.5
+
+#---------------------------
+# SHMS Cherenkovs PEDESTALS
+#---------------------------
+TH2F paero_good_pped_vs_pmt_pos 'SHMS Aero+ Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.25 mV' [I+1] P.aero.goodPosAdcPed 7 0.5 7.5 200 100 150 P.aero.goodPosAdcPed>0.0
+TH2F paero_good_pped_vs_pmt_neg 'SHMS Aero- Good Pulse Pedestal vs. PMT Number; PMT Number;  Pulse Pedestal / 0.25 mV' [I+1] P.aero.goodNegAdcPed 7 0.5 7.5 200 100 150 P.aero.goodNegAdcPed>0.0
+TH2F phgcer_good_pped_vs_pmt 'SHMS Heavy Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.hgcer.goodAdcPed 4 0.5 4.5 200 100 150  P.hgcer.goodAdcPed>0.0
+TH2F pngcer_good_pped_vs_pmt 'SHMS Noble Gas Cherenkov Good Pulse Pedestal vs. PMT Number; PMT Number; Pulse Pedestal / 0.25 mV' [I+1] P.ngcer.goodAdcPed 4 0.5 4.5 200 100 150  P.ngcer.goodAdcPed>0.0
+
+#---------------------------
+# SHMS Cherenkovs NPE
+#---------------------------
+
+TH2F paero_npe_pos 'SHMS Aero+ NPE vs. PMT Number; PMT Number; NPE / 0.5 Photoelectrons' [I+1] P.aero.posNpe 7 0.5 7.5 60 0 30 P.aero.posNpe>0.0 
+TH2F paero_npe_neg 'SHMS Aero- NPE vs. PMT Number; PMT Number; NPE / 0.5 Photoelectrons' [I+1] P.aero.negNpe 7 0.5 7.5 60 0 30 P.aero.negNpe>0.0 
+TH2F phgcer_npe 'SHMS Heavy Gas Cherenkov NPE vs. PMT Number; PMT Number; NPE / 0.5 Photoelectrons' [I+1] P.hgcer.npe 4 0.5 4.5 60 0 30 P.hgcer.npe>0.0 
+TH2F pngcer_npe 'SHMS Noble Gas Cherenkov Number of Photoelectrons vs. PMT Number; PMT Number; Number of Photoelectrons / 0.5 Photoelectrons' [I+1] P.ngcer.npe 4 0.5 4.5 60 0 30 P.ngcer.npe>0.0 
+TH1F paero_npeSum 'SHMS Aero NPE; NPE' P.aero.npeSum 100 0 30
+TH1F phgcer_npeSum 'SHMS Heavy Gas Cherenkov NPE; NPE' P.hgcer.npeSum 100 0 30
+TH1F pngcer_npeSum 'SHMS Noble Gas Cherenkov NPE; NPE' P.ngcer.npeSum 100 0 50
+#TH2F paero_y_vs_npe 'SHMS Aerogel Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.aero.npeSum P.aero.yAtAero 60 0 30 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+#TH2F paero_x_vs_npe 'SHMS Aerogel X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.aero.npeSum P.aero.xAtAero 60 0 30 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+#TH2F phgcer_x_vs_npe 'SHMS Heavy Gas Cherenkov X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.hgcer.npeSum P.hgcer.xAtCer 60 0 30 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH2F pngcer_x_vs_npe 'SHMS Noble Gas Cherenkov X vs NPE; NPE / 0.5 PE ; X (cm) / 1 cm' P.ngcer.npeSum P.ngcer.xAtCer 60 0 30 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH2F paero_xytrack 'SHMS Aerogel Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.aero.yAtAero P.aero.xAtAero 120 -60 60 120 -60 60 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+#TH2F phgcer_xytrack 'SHMS Heavy Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.hgcer.yAtCer P.hgcer.xAtCer 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH2F pngcer_xytrack 'SHMS Noble Gas Cherenkov Tracking Y vs X; Y (cm) / 1 cm; X (cm) / 1 cm' P.ngcer.yAtCer P.ngcer.xAtCer 120 -60 60 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+#TH2F pngcer_y_vs_npe 'SHMS Noble Gas Cherenkov Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.ngcer.npeSum P.ngcer.yAtCer 100 0 50 120 -60 60 P.ngcer.xAtCer!=0.0&&P.ngcer.yAtCer!=0
+#TH2F phgcer_y_vs_npe 'SHMS Heavy Gas Cherenkov Y vs NPE; NPE / 0.5 PE ; Y (cm) / 1 cm' P.hgcer.npeSum P.hgcer.yAtCer 60 0 30 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH3F phgcer_xy_vs_npe 'SHMS Heavy Gas Cherenkov XY vs NPE; X (cm) / 1 cm; Y (cm) / 1 cm; NPE' P.hgcer.xAtCer P.hgcer.yAtCer P.hgcer.npeSum 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH3F pngcer_xy_vs_npe 'SHMS Noble Gas Cherenkov XY vs NPE; X (cm) / 1 cm; Y (cm) / 1 cm; NPE' P.ngcer.xAtCer P.ngcer.yAtCer P.ngcer.npeSum 120 -60 60 120 -60 60 P.hgcer.xAtCer!=0.0&&P.hgcer.yAtCer!=0
+#TH3F paero_xy_vs_npe 'SHMS Aerogel XY vs NPE; X (cm) / 1 cm; Y (cm) / 1 cm; NPE' P.aero.xAtAero P.aero.yAtAero P.aero.npeSum  60 0 30 60 0 30 P.aero.xAtAero!=0.0&&P.aero.yAtAero!=0
+
+#---------------------------------
+# SHMS CALORIMETER GOOD OCC/MULT
+#---------------------------------
+TH1F pcal_prshwr_good_occ_pos 'SHMS PreShower+ Good Occupancy; PMT Number; Number of Good +ADC Hits' P.cal.pr.numGoodPosAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_occ_neg 'SHMS PreShower- Good Occupancy; PMT Number; Number of Good -ADC Hits' P.cal.pr.numGoodNegAdcHits 14 0.5 14.5
+TH1F pcal_shwr_good_occ 'SHMS Shower Good Occupancy; PMT Number; Number of Good ADC Hits' P.cal.fly.numGoodAdcHits 224 0.5 224.5
+TH1F pcal_prshwr_good_mult_pos 'SHMS PreShower+ Good Multiplicity; Number of PMTs Hit; Total Number of Good +ADC Hits' P.cal.pr.totNumGoodPosAdcHits 14 0.5 14.5
+TH1F pcal_prshwr_good_mult_neg 'SHMS PreShower- Good Multiplicity; Number of PMTs Hit; Total Number of Good -ADC Hits' P.cal.pr.totNumGoodNegAdcHits 14 0.5 14.5
+TH1F pcal_shwr_good_mult 'SHMS Shower Good Multiplicity; Numer of PMTs Hit; Total Number of Good ADC Hits' P.cal.fly.totNumGoodAdcHits 40 0.5 40.5
+
+#----------------------------
+# SHMS CALORIMETER PEDESTALS
+#----------------------------
+
+TH2F pcal_prshwr_good_pped_vs_pmt_pos 'SHMS PreShower+ Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.pr.goodPosAdcPed 14 0.5 14.5 200 100 150 P.cal.pr.goodPosAdcPed>0.0
+TH2F pcal_prshwr_good_pped_vs_pmt_neg 'SHMS PreShower- Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.pr.goodNegAdcPed 14 0.5 14.5 200 100 150 P.cal.pr.goodNegAdcPed>0.0
+
+TH2F pcal_shwr_good_pped_vs_pmt_grp1 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 0.5 16.5 200 100 150 P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp2 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 16.5 32.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp3 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 32.5 48.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp4 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 48.5 64.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp5 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 64.5 80.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp6 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 80.5 96.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp7 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 96.5 112.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp8 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 112.5 128.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp9  'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 128.5 144.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp10 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 144.5 160.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp11 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 160.5 176.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp12 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 176.5 192.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp13 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 192.5 208.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+TH2F pcal_shwr_good_pped_vs_pmt_grp14 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 16 208.5 224.5 200 100 150  P.cal.fly.goodAdcPed>0.0
+
+#-------------------------------------
+# SHMS CALORIMETER Ped Monitoring
+#-------------------------------------
+
+TH2F pcal_shwr_good_pped_vs_pmt 'SHMS Shower Good Pulse Pedestal vs. PMT Number; PMT Number; Good Pulse Pedestal / 0.25 mV' [I+1] P.cal.fly.goodAdcPed 224 0.5 224.5 200 100 150 P.cal.fly.goodAdcPed>0.0
+
+#--------------------------
+# SHMS DC REFERENCE TIMES
+#--------------------------
+
+TH1F ptrig_pdc_ref1  'SHMS PDC Reference Time 1; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF1_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref2  'SHMS PDC Reference Time 2; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF2_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref3  'SHMS PDC Reference Time 3; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF3_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref4  'SHMS PDC Reference Time 4; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF4_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref5  'SHMS PDC Reference Time 5; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF5_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref6  'SHMS PDC Reference Time 6; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF6_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref7  'SHMS PDC Reference Time 7; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF7_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref8  'SHMS PDC Reference Time 8; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF8_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref9  'SHMS PDC Reference Time 9; TDC Time (ns); Counts / 1 ns;'  T.coin.pDCREF9_tdcTime  4000 0 4000
+TH1F ptrig_pdc_ref10 'SHMS PDC Reference Time 10; TDC Time (ns); Counts / 1 ns;' T.coin.pDCREF10_tdcTime 4000 0 4000
+
+#------------------------
+# TRIGGER REFERENCE TIMES
+#------------------------
+
+TH1F ptrig_p1x_good_tdc 'SHMS p1x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.coin.p1X_tdcTime 800 0 800 
+TH1F ptrig_p1y_good_tdc 'SHMS p1y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.coin.p1Y_tdcTime 800 0 800 
+TH1F ptrig_p2x_good_tdc 'SHMS p2x Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.coin.p2X_tdcTime 800 0 800 
+TH1F ptrig_p2y_good_tdc 'SHMS p2y Good TDC Time; Good TDC Time (ns); Counts / 1 ns' T.coin.p2Y_tdcTime 800 0 800 
+TH1F ptrig_pT1_good_tdc 'SHMS pT1 Good TDC Time (Slot 20, Channel 15); Good TDC Time (ns); Counts / 1 ns' T.coin.pT1_tdcTime 800 0 800 
+TH1F ptrig_pT2_good_tdc 'SHMS pT2 Good TDC Time (Slot 19, Channel 31); Good TDC Time (ns); Counts / 1 ns' T.coin.pT2_tdcTime 800 0 800 
+TH1F ptrig_pT3_good_tdc 'SHMS pT3 Good TDC Time (Slot 19, Channel 38); Good TDC Time (ns); Counts / 1 ns' T.coin.pT3_tdcTime 800 0 800 
+TH1F ptrig_pFADC_TREF_ROC2_good_tdc 'SHMS pFADC_TREF_ROC2 Good Pulse Time; Good Pulse Time (ns); Counts / 1 ns' T.coin.pFADC_TREF_ROC2_adcPulseTime 800 0 800 
+
+#-------------------
+# SHMS FAST RASTER
+#-------------------
+#formula FRXA_V P.rb.raster.frxaRawAdc*(1./4096.)/25.
+#formula FRXB_V P.rb.raster.frxbRawAdc*(1./4096.)/25.
+#formula FRYA_V P.rb.raster.fryaRawAdc*(1./4096.)/25.
+#formula FRYB_V P.rb.raster.frybRawAdc*(1./4096.)/25.
+#TH2F pFRAraw_XvsY 'SHMS FRA Raw X vs Y; FRXA RAW ADC (Volts); FRYA RAW ADC (Volts)' FRXA_V FRYA_V 100 0 1.0 100 0 1.0 
+#TH2F pFRBraw_XvsY 'SHMS FRB Raw X vs Y; FRXB RAW ADC (Volts); FRYB RAW ADC (Volts)' FRXB_V FRYB_V 100 0 1.0 100 0 1.0 
+TH2F pFRApos_XvsY 'SHMS FRA X vs Y; FRA X Position (cm); FRA Y Position (cm)' P.rb.raster.fr_xa P.rb.raster.fr_ya 140 -0.3 0.3 140 -0.3 0.3 P.dc.ntrack>0
+TH2F pFRBpos_XvsY 'SHMS FRB X vs Y; FRB X Position (cm); FRB Y Position (cm)' P.rb.raster.fr_xb P.rb.raster.fr_yb 140 -0.3 0.3 140 -0.3 0.3 P.dc.ntrack>0
+
+#----------------
+# SHMS EPICS BPM
+#----------------
+
+TH1F hBPMA_X 'Beam BPMA_X ; BPMA_X  (CM); Counts' P.rb.raster.fr_xbpmA 300 -.3 .3
+TH1F hBPMB_X 'Beam BPMB_X ; BPMB_X  (CM); Counts' P.rb.raster.fr_xbpmB 300 -.3 .3
+TH1F hBPMC_X 'Beam BPMC_X ; BPMC_X  (CM); Counts' P.rb.raster.fr_xbpmC 300 -.3 .3
+TH1F hBPMT_X 'Beam BPMT_X ; BPM_X projected to target  (CM); Counts' P.rb.raster.fr_xbpm_tar 300 -.3 .3
+TH1F hBPMA_Y 'Beam BPMA_Y ; BPMA_Y  (CM); Counts' P.rb.raster.fr_ybpmA 300 -.3 .3
+TH1F hBPMB_Y 'Beam BPMB_Y ; BPMB_Y  (CM); Counts' P.rb.raster.fr_ybpmB 300 -.3 .3
+TH1F hBPMC_Y 'Beam BPMC_Y ; BPMC_Y  (CM); Counts' P.rb.raster.fr_ybpmC 300 -.3 .3
+TH1F hBPMT_Y 'Beam BPMT_Y ; BPM_Y projected to target  (CM); Counts' P.rb.raster.fr_ybpm_tar 300 -.3 .3
+
+#------------
+# SHMS PID
+#------------
+TH2F hgc_vs_prshw      'SHMS HGC NPE Sum vs. PreSh Energy; Total PreSh Energy Deposition / 0.01 GeV; HGC NPE Sum / 0.5' P.cal.pr.eplane P.hgcer.npeSum 400 0 4 80 0 40 P.cal.pr.eplane>0.0&&P.hgcer.npeSum>0.0 
+TH2F pcal_shw_vs_prshw      'SHMS Shower vs. PreShower Energy Deposition; PreShower Energy / 0.01 GeV; Shower Energy / 0.01 GeV' P.cal.pr.eplane P.cal.fly.earray 400 0 4 1200 0 12 P.cal.pr.eplane>0.0&&P.cal.fly.earray>0.0 
+TH1F pdc_trk_beta     'SHMS DC Golden Track Beta; Beta; Number of Entires' P.gtr.beta 300 -1.5 1.5 pcut_CleanTrack
+TH2F pcal_xtrack_vs_etracknorm 'SHMS Calorimeter X-Track vs Total Track Energy; Normalized Track Energy Deposition (Gev) / 0.025; X Track (cm) / 1 cm' P.cal.etottracknorm P.cal.xtrack 60 0 1.5 120 -60 60 pcut_CleanTrack
+TH2F pcal_ytrack_vs_etracknorm 'SHMS Calorimeter Y-Track vs Total Track Energy; Normalized Track Energy Deposition (Gev) / 0.025; Y Track (cm) / 1 cm' P.cal.etottracknorm P.cal.ytrack 60 0 1.5 100 -50 50 pcut_CleanTrack
+TH2F pcal_delta_etracknorm      'SHMS Delta vs. Cal E/p; Normalized Track Energy Deposition / 0.025; Delta / 0.25' P.cal.etracknorm P.gtr.dp 60 0. 1.5 128 -10. 22. pcut_CleanTrack
+TH2F paero_vrs_phgcer 'SHMS Areogel NPE vrs HGC NPE; Aerogel Number Photoelectrons; HGC Number of photoelectrons' P.aero.npeSum P.hgcer.npeSum 50 0. 50 50 0. 50 pcut_CleanTrack
+TH2F pngcer_vrs_phgcer 'SHMS NGC NPE vrs HGC NPE; NGC Number Photoelectrons; HGC Number of photoelectrons' P.ngcer.npeSum P.hgcer.npeSum 50 0. 50 50 0. 50 pcut_CleanTrack
+
+#---------------------------------
+# SHMS Trigger Pedestal Tracking
+#---------------------------------
+
+TH1F ptrig_prshwr_sum_pped   'SHMS Preshwr Sum FADC pulse Pedestal; Pulse Pedestal; Number of Entries / 0.5 mV'    T.coin.pPSHWR_adcPed      400 0 200  T.coin.pPSHWR_adcPed>0.0
+TH1F ptrig_phgc_sum_pped     'SHMS Heavy Gas Sum FADC Pulse Pedestal; Pulse Pedestal; Number of Entries / 0.5 mV' T.coin.pHGCER_adcPed       400 0 200  T.coin.pHGCER_adcPed>0.0
+
+
+#=================================================
+#  EXPERT HISTOGRAMS
+#  (Required for hms_coin_production_expert.cfg
+#   to properly display histograms
+#=================================================
+
+#------------------
+# SHMS DC WIRE MAP
+#------------------
+
+TH1F pdc1u1_wirenum 'SHMS DC 1U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1u1.wirenum 107 0.5 107.5
+TH1F pdc1u2_wirenum 'SHMS DC 1U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1u2.wirenum 107 0.5 107.5
+TH1F pdc1x1_wirenum 'SHMS DC 1X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1x1.wirenum  79 0.5  79.5
+TH1F pdc1x2_wirenum 'SHMS DC 1X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1x2.wirenum  79 0.5  79.5
+TH1F pdc1v1_wirenum 'SHMS DC 1V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1v1.wirenum 107 0.5 107.5
+TH1F pdc1v2_wirenum 'SHMS DC 1V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.1v2.wirenum 107 0.5 107.5
+
+TH1F pdc2v2_wirenum 'SHMS DC 2V2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2v2.wirenum 107 0.5 107.5
+TH1F pdc2v1_wirenum 'SHMS DC 2V1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2v1.wirenum 107 0.5 107.5
+TH1F pdc2x2_wirenum 'SHMS DC 2X2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2x2.wirenum  79 0.5  79.5
+TH1F pdc2x1_wirenum 'SHMS DC 2X1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2x1.wirenum  79 0.5  79.5
+TH1F pdc2u2_wirenum 'SHMS DC 2U2 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2u2.wirenum 107 0.5 107.5
+TH1F pdc2u1_wirenum 'SHMS DC 2U1 Wiremap; Wire Number (first hit in TDC window); Number of Entries' P.dc.2u1.wirenum 107 0.5 107.5
+
+#-----------------------------------
+# SHMS Drift Chambers Efficiencies
+#-----------------------------------
+
+TH1F pdc1u1_wirenum_did 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitDid[0] 107 0.5 107.5 
+TH1F pdc1u2_wirenum_did 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[1]  107 0.5 107.5 
+TH1F pdc1x1_wirenum_did 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[2]   79 0.5  79.5 
+TH1F pdc1x2_wirenum_did 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[3]   79 0.5  79.5 
+TH1F pdc1v1_wirenum_did 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitDid[4] 107 0.5 107.5 
+TH1F pdc1v2_wirenum_did 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[5]  107 0.5 107.5 
+												               
+TH1F pdc2v2_wirenum_did 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[6]  107 0.5 107.5 
+TH1F pdc2v1_wirenum_did 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[7]  107 0.5 107.5 
+TH1F pdc2x2_wirenum_did 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[8]   79 0.5  79.5 
+TH1F pdc2x1_wirenum_did 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[9]   79 0.5  79.5 
+TH1F pdc2u2_wirenum_did 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[10] 107 0.5 107.5 
+TH1F pdc2u1_wirenum_did 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitDid[11] 107 0.5 107.5 
+
+TH1F pdc1u1_wirenum_should 'SHMS DC 1U1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitShould[0] 107 0.5 107.5
+TH1F pdc1u2_wirenum_should 'SHMS DC 1U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[1]  107 0.5 107.5
+TH1F pdc1x1_wirenum_should 'SHMS DC 1X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[2]   79 0.5  79.5
+TH1F pdc1x2_wirenum_should 'SHMS DC 1X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[3]   79 0.5  79.5 
+TH1F pdc1v1_wirenum_should 'SHMS DC 1V1 Wiremap; Wire Number; Number of Entries'  P.dc.wireHitShould[4] 107 0.5 107.5
+TH1F pdc1v2_wirenum_should 'SHMS DC 1V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[5]  107 0.5 107.5
+													             
+TH1F pdc2v2_wirenum_should 'SHMS DC 2V2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[6]  107 0.5 107.5
+TH1F pdc2v1_wirenum_should 'SHMS DC 2V1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[7]  107 0.5 107.5
+TH1F pdc2x2_wirenum_should 'SHMS DC 2X2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[8]   79 0.5  79.5 
+TH1F pdc2x1_wirenum_should 'SHMS DC 2X1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[9]   79 0.5  79.5 
+TH1F pdc2u2_wirenum_should 'SHMS DC 2U2 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[10] 107 0.5 107.5
+TH1F pdc2u1_wirenum_should 'SHMS DC 2U1 Wiremap; Wire Number; Number of Entries' P.dc.wireHitShould[11] 107 0.5 107.5 
+
+#-----------------
+# SHMS KINEMATICS
+#-----------------
+TH1F pdc_trk_mom      'SHMS DC Track Momentum; P (GeV); Number of Entires / 50 MeV' P.tr.p 240 0 12
+TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 350 5 40 pcut_CleanTrack
+TH1F pkin_q2 'SHMS 4-Momentum Transfer Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 400 0 20 pcut_CleanTrack
+TH1F pkin_w  'SHMS Invariant Mass W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 200 0 10 pcut_CleanTrack
+#TH1F pkin_omega 'SHMS Energy Transfer Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 200 0 10 pcut_CleanTrack
+#TH1F pkin_w2 'SHMS Invariant Mass W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10 pcut_CleanTrack
+

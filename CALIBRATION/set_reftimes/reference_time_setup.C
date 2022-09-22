@@ -11,14 +11,14 @@ void run_shms_reference_time_setup(TString infile, int RunNumber, TString outfil
     gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
     gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
     // Load parameters for SHMS trigger configuration
-    gHcParms->Load("PARAM/TRIG/tshms.param");
+    gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
   } else if (spec.CompareTo("coin",TString::kIgnoreCase)==0) {
     gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
     gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
     gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
     gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
     // Load params for COIN trigger configuration
-    gHcParms->Load("PARAM/TRIG/tcoin.param");
+    gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
     gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
     gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
@@ -267,7 +267,7 @@ void run_hms_reference_time_setup(TString infile, int RunNumber, TString outfile
     gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
     gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
     // Load params for HMS trigger configuration
-    gHcParms->Load("PARAM/TRIG/thms.param");
+    gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
     gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
   } else if (spec.CompareTo("coin",TString::kIgnoreCase)==0) {
@@ -276,7 +276,7 @@ void run_hms_reference_time_setup(TString infile, int RunNumber, TString outfile
     gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
     gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
     // Load params for COIN trigger configuration
-    gHcParms->Load("PARAM/TRIG/tcoin.param");
+    gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
     gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
     gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");

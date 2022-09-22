@@ -34,11 +34,11 @@ TH1F hdc_time_raw_ref4_mult2  'Raw HMS HDC Reference Time 4, Mult=2; HMS Raw DC 
 TH1F hdc_time_raw_ref4_mult3  'Raw HMS HDC Reference Time 4, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF4_tdcTimeRaw  15000 0 30000 T.hms.hDCREF4_tdcMultiplicity==3
 
 #hDCREF5 shouldn't exist for Sp18 runs.  Added July 2018
-#TH1F hdc_time_raw_ref5  'Raw HMS HDC Reference Time 5; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000
-#TH1F hdc_tdc_mult_ref5 'HMS DC TDC Reference 5 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF5_tdcMultiplicity 15 0 5
-#TH1F hdc_time_raw_ref5_mult1  'Raw HMS HDC Reference Time 5, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==1
-#TH1F hdc_time_raw_ref5_mult2  'Raw HMS HDC Reference Time 5, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==2
-#TH1F hdc_time_raw_ref5_mult3  'Raw HMS HDC Reference Time 5, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==3
+TH1F hdc_time_raw_ref5  'Raw HMS HDC Reference Time 5; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000
+TH1F hdc_tdc_mult_ref5 'HMS DC TDC Reference 5 Multiplicity; TDC Multiplicity; Counts / 1' T.hms.hDCREF5_tdcMultiplicity 15 0 5
+TH1F hdc_time_raw_ref5_mult1  'Raw HMS HDC Reference Time 5, Mult=1; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==1
+TH1F hdc_time_raw_ref5_mult2  'Raw HMS HDC Reference Time 5, Mult=2; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==2
+TH1F hdc_time_raw_ref5_mult3  'Raw HMS HDC Reference Time 5, Mult=3; HMS Raw DC TDC (Channel); Counts / 0.1 ns;'  T.hms.hDCREF5_tdcTimeRaw  15000 0 30000 T.#hms.hDCREF5_tdcMultiplicity==3
 
 #------------------------
 # TRIGGER REFERENCE TIMES
