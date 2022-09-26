@@ -1,8 +1,8 @@
 //Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
 //Same functionality as any SCRIPT in hallc_replay_XEM
-#include "SCRIPTS/HMS/hms_shared.h"
+#include "SCRIPTS/SHMS/shms_shared.h"
 
-void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_ (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -14,20 +14,22 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
   vector<TString> pathList =paths_to_data();
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_dc_%d_%d.root";
+  const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/HMS/CALIBRATION/hdc_calibration.def";
-  TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
-  //No Report File
-  //No Summary File
+  TString odef_file = "DEF-files/SHMS/";
+  TString cdef_file = "DEF-files/SHMS/";
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/",
+			      RunNumber, MaxEvent);
+  TString report_file  = Form("REPORT_OUTPUT/SHMS/",
+			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.
-  //Shared HMS gHcParms setup located in ../hms_shared.h
+  //Shared SHMS gHcParms setup located in ../shms_shared.h
   setupParms(RunNumber);
-  //Initialize HMS single-arm DAQ with detectors
-  //Shared HMS apparatus setup located in ../hms_shared.h
+  //Initialize SHMS single-arm DAQ with detectors
+  //Shared SHMS apparatus setup located in ../shms_shared.h
   setupApparatus();
 
   // Set up the analyzer - we use the standard one,
@@ -63,13 +65,13 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define cuts file
   analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
-  //analyzer->SetSummaryFile(summary_file);  // optional
+  analyzer->SetSummaryFile(summary_file);  // optional
 
   // Start the actual analysis.
   analyzer->Process(run);
 
   // Create report file from template
-  //analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
-  //			report_file);  // optional
+  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  			report_file);  // optional
 
 }

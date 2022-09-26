@@ -44,14 +44,14 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
 2038-2057
 ; 15 Degree Boiling Runs
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_15deg_m2p0.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period3_sp18.param"
 
 2058-2071
 ; 25 Degree Boiling Runs
 ;g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period3.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period3_sp18.param"
 
 2072-2096
 ; 25 Degree Boiling Runs
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
-g_ctp_bcm_calib_filename = "PARAM/GEN/gscaler_period4.param"
+g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period4_sp18.param"

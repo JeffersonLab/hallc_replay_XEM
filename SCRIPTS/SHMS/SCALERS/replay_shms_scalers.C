@@ -1,3 +1,7 @@
+//Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
+//Same functionality as any SCRIPT in hallc_replay_XEM
+#include "SCRIPTS/SHMS/shms_shared.h"
+
 void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
@@ -14,31 +18,15 @@ void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
       exit;
     }
   }
+  vector<TString> pathList =paths_to_data();
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";
-  vector<TString> pathList;
-  pathList.push_back(".");
-  pathList.push_back("./raw");
-  pathList.push_back("./raw-sp18");
-  pathList.push_back("./raw-sp19");
-  pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
-
   const char* ROOTFileNamePattern = "ROOTfiles/shms_replay_scalers_%d_%d.root";
 
-  // Load global parameters
-  // Add variables to global list.
-  gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
-  gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
-  // Load parameters for SHMS trigger configuration
-  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+  //Initialize gHcParms.
+  //Shared SHMS gHcParms setup located in ../shms_shared.h
+  setupParms(RunNumber);
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();

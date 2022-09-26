@@ -1,11 +1,21 @@
-
-#include <iostream>
+//Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
+//Same functionality as any SCRIPT in hallc_replay_XEM
+#include "SCRIPTS/SHMS/shms_shared.h"
 
 void replay_tracking_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, 
 			   double x_stub_c=25., double y_stub_c=7., double xp_stub_c=0.7,
 			   double yp_stub_c=0.2, double sp_c=1.2, int max_pr_hits=25,
 			   int p_min_combos=4, int p_min_hit=5) {
-  //TODO: Change output name to be unique for same run, different parameters.
+
+  // Get RunNumber and MaxEvent if not provided.
+  if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
+    cin >> RunNumber; if( RunNumber<=0 ) {
+      cerr << "...Invalid RunNumber entry\n";exit;}}
+  if(MaxEvent == 0) {cout << "\nNumber of Events to analyze: ";
+    cin >> MaxEvent; if(MaxEvent == 0) {
+      cerr << "...Invalid MaxEvent entry\n";exit;}}
+  vector<TString> pathList =paths_to_data();
+
   std::ofstream tracking_param;
   tracking_param.open(Form("./tracking_param_tmp_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.param",x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit));
   tracking_param << Form("pxt_track_criterion = %f\n",x_stub_c);  
@@ -17,53 +27,23 @@ void replay_tracking_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   tracking_param << Form("pmin_combos = %d, %d\n",p_min_combos, p_min_combos);  
   tracking_param << Form("pmin_hit = %d, %d\n",p_min_hit, p_min_hit);  
   tracking_param.close();
-  // Get RunNumber and MaxEvent if not provided.
-  if(RunNumber == 0) {
-    cout << "Enter a Run Number (-1 to exit): ";
-    cin >> RunNumber;
-    if( RunNumber<=0 ) return;
-  }
-  if(MaxEvent == 0) {
-    cout << "\nNumber of Events to analyze: ";
-    cin >> MaxEvent;
-    if(MaxEvent == 0) {
-      cerr << "...Invalid entry\n";
-      exit;
-    }
-  }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "shms_all_%05d.dat";
-  vector<TString> pathList;
-  pathList.push_back(".");
-  pathList.push_back("./raw");
-  pathList.push_back("./raw-sp18");
-  pathList.push_back("./raw-sp19");
-  pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
-
+  const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
   const char* ROOTFileNamePattern = "ROOTfiles/SHMS/CALIBRATION/shms_replay_tracking_%d_%d_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.root";
-  
-  // Load global parameters
-  gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/SHMS/standard.database");
-  gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
-  // Load parameters for SHMS trigger configuration
-  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
-  // Load fadc debug parameters
-  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
-  // Load BCM values
-  ifstream bcmFile;
-  TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
-  bcmFile.open(bcmParamFile);
-  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
+  TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit);
+  //Specifics for the replay
+  TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production.def";
+  TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/",
+			      RunNumber, MaxEvent);
+  TString report_file  = Form("REPORT_OUTPUT/SHMS/CALIBRATION/replay_shms_production_%d_%d_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.report", RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit);
 
-  // Set the tzero to zero for calibrating tzero.
+  //Initialize gHcParms.
+  //Shared SHMS gHcParms setup located in ../shms_shared.h
+  setupParms(RunNumber);
+  //==============================================================
+  //Load tracking parameters from file for this run
   cout << "Setting tracking parameters from input.\n";
   gHcParms->Load(Form("./tracking_param_tmp_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.param",x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit));
   //Show that the parameters were actually loaded properly.
@@ -71,106 +51,19 @@ void replay_tracking_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   gHcParms->PrintFull("pmax_pr_hits");
   gHcParms->PrintFull("pmin_combos");
   gHcParms->PrintFull("pmin_hit");
+  //==============================================================
 
-  // Load the Hall C detector map
-  gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
-
-  // Add trigger apparatus
-  THaApparatus* TRG = new THcTrigApp("T", "TRG");
-  gHaApps->Add(TRG);
-  // Add trigger detector to trigger apparatus
-  THcTrigDet* shms = new THcTrigDet("shms", "SHMS Trigger Information");
-  TRG->AddDetector(shms);
-
-  // Set up the equipment to be analyzed.
-  THcHallCSpectrometer* SHMS = new THcHallCSpectrometer("P", "SHMS");
-  gHaApps->Add(SHMS);
-  // Add Noble Gas Cherenkov to SHMS apparatus
-  THcCherenkov* ngcer = new THcCherenkov("ngcer", "Noble Gas Cherenkov");
-  SHMS->AddDetector(ngcer);
-  // Add drift chambers to SHMS apparatus
-  THcDC* dc = new THcDC("dc", "Drift Chambers");
-  SHMS->AddDetector(dc);
-  // Add hodoscope to SHMS apparatus
-  THcHodoscope* hod = new THcHodoscope("hod", "Hodoscope");
-  SHMS->AddDetector(hod);
-  // Add Heavy Gas Cherenkov to SHMS apparatus
-  THcCherenkov* hgcer = new THcCherenkov("hgcer", "Heavy Gas Cherenkov");
-  SHMS->AddDetector(hgcer);
-  // Add Aerogel Cherenkov to SHMS apparatus
-  THcAerogel* aero = new THcAerogel("aero", "Aerogel");
-  SHMS->AddDetector(aero);
-  // Add calorimeter to SHMS apparatus
-  THcShower* cal = new THcShower("cal", "Calorimeter");
-  SHMS->AddDetector(cal);
-
-  // Add rastered beam apparatus
-  THaApparatus* beam = new THcRasteredBeam("P.rb", "Rastered Beamline");
-  gHaApps->Add(beam);
-  // Add physics modules
-  // Add beam current monitor module
-  if (bcmFile.is_open()) {
-    THcBCMCurrent* bcm = new THcBCMCurrent("P.bcm", "BCM Module");
-    gHaPhysics->Add(bcm);
-  }
-  // Calculate reaction point
-  THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
-  gHaPhysics->Add(prp);
-  // Calculate extended target corrections
-  THcExtTarCor* pext = new THcExtTarCor("P.extcor", "SHMS extended target corrections", "P", "P.react");
-  gHaPhysics->Add(pext);
-  // Calculate golden track quantites
-  THaGoldenTrack* gtr = new THaGoldenTrack("P.gtr", "SHMS Golden Track", "P");
-  gHaPhysics->Add(gtr);
-  // Calculate primary (scattered beam - usually electrons) kinematics
-  THcPrimaryKine* kin = new THcPrimaryKine("P.kin", "SHMS Single Arm Kinematics", "P", "P.rb");
-  gHaPhysics->Add(kin);
-  // Calculate the hodoscope efficiencies
-  THcHodoEff* peff = new THcHodoEff("phodeff", "SHMS hodo efficiency", "P.hod");
-  gHaPhysics->Add(peff);   
-
-  // Add event handler for prestart event 125.
-  THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
-  gHaEvtHandlers->Add(ev125);
-  // Add event handler for EPICS events
-  THaEpicsEvtHandler* hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
-  gHaEvtHandlers->Add(hcepics);
-  // Add event handler for scaler events
-  THcScalerEvtHandler* pscaler = new THcScalerEvtHandler("P", "Hall C scaler event type 1");
-  pscaler->AddEvtType(1);
-  pscaler->AddEvtType(129);
-  pscaler->SetDelayedType(129);
-  pscaler->SetUseFirstEvent(kTRUE);
-  gHaEvtHandlers->Add(pscaler);
-
-  /*
-  //Add event handler for helicity scalers
-  THcHelicityScaler *phelscaler = new THcHelicityScaler("P", "Hall C helicity scaler");
-  //phelscaler->SetDebugFile("PHelScaler.txt");
-  phelscaler->SetROC(8);   
-  phelscaler->SetUseFirstEvent(kTRUE); 
-  gHaEvtHandlers->Add(phelscaler); 
-  */
-  
-  // Add event handler for DAQ configuration event
-  THcConfigEvtHandler *pconfig = new THcConfigEvtHandler("pconfig", "Hall C configuration event handler");
-  gHaEvtHandlers->Add(pconfig);
+  //Initialize SHMS single-arm DAQ with detectors
+  //Shared SHMS apparatus setup located in ../shms_shared.h
+  setupApparatus();
 
   // Set up the analyzer - we use the standard one,
-  // but this could be an experiment-specific one as well.
-  // The Analyzer controls the reading of the data, executes
-  // tests/cuts, loops over Acpparatus's and PhysicsModules,
-  // and executes the output routines.
   THcAnalyzer* analyzer = new THcAnalyzer;
 
   // A simple event class to be output to the resulting tree.
-  // Creating your own descendant of THaEvent is one way of
-  // defining and controlling the output.
   THaEvent* event = new THaEvent;
 
-  // Define the run(s) that we want to analyze.
-  // We just set up one, but this could be many.
+  // Define the run that we want to analyze.
   THcRun* run = new THcRun( pathList, Form(RunFileNamePattern, RunNumber) );
 
   // Set to read in Hall C run database parameters
@@ -182,27 +75,28 @@ void replay_tracking_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   run->SetDataRequired(0x7);
   run->Print();
 
-  // Define the analysis parameters
-  TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit);
-  analyzer->SetCountMode(2);  // 0 = counter is # of physics triggers
-                              // 1 = counter is # of all decode reads
-                              // 2 = counter is event number
+  analyzer->SetCountMode(2);  // 0 # of physics triggers,1 # of all decode reads,2 event #
   analyzer->SetEvent(event);
   // Set EPICS event type
   analyzer->SetEpicsEvtType(180);
   analyzer->AddEpicsEvtType(181);
   // Define crate map
   analyzer->SetCrateMapFileName("MAPS/db_cratemap.dat");
+
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file
-  analyzer->SetOdefFile("DEF-files/SHMS/PRODUCTION/pstackana_production.def");
+  analyzer->SetOdefFile(odef_file);
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile(cdef_file);  // optional
+  // File to record accounting information for cuts
+  //analyzer->SetSummaryFile(summary_file);  // optional
 
+  // Start the actual analysis.
   analyzer->Process(run);
 
-  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
-  			Form("REPORT_OUTPUT/SHMS/CALIBRATION/replay_shms_production_%d_%d_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.report", RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit));  // optional
+  // Create report file from template
+  //analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  //			report_file);  // optional
 
 }
