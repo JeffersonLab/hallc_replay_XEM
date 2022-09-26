@@ -15,13 +15,13 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_dc_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/hms_replay_production_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/HMS/CALIBRATION/hdc_calibration.def";
-  TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
-  //No Report File
-  //No Summary File
+  TString odef_file = "";
+  TString cdef_file = "";
+  TString summary_file = "";
+  TString report_file  = "";
 
   //Initialize gHcParms.
   //Shared HMS gHcParms setup located in ../hms_shared.h
@@ -63,13 +63,13 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define cuts file
   analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
-  //analyzer->SetSummaryFile(summary_file);  // optional
+  analyzer->SetSummaryFile(summary_file);  // optional
 
   // Start the actual analysis.
   analyzer->Process(run);
 
   // Create report file from template
-  //analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
-  //			report_file);  // optional
+  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  			report_file);  // optional
 
 }

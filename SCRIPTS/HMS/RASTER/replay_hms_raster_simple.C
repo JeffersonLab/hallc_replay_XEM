@@ -1,41 +1,25 @@
+//Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
+//Same functionality as any SCRIPT in hallc_replay_XEM
+#include "SCRIPTS/HMS/hms_shared.h"
+
 void replay_hms_raster_simple(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
-  if(RunNumber == 0) {
-    cout << "Enter a Run Number (-1 to exit): ";
-    cin >> RunNumber;
-    if( RunNumber<=0 ) return;
-  }
-  if(MaxEvent == 0) {
-    cout << "\nNumber of Events to analyze: ";
-    cin >> MaxEvent;
-    if(MaxEvent == 0) {
-      cerr << "...Invalid entry\n";
-      exit;
-    }
-  }
+  if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
+    cin >> RunNumber; if( RunNumber<=0 ) {
+      cerr << "...Invalid RunNumber entry\n";exit;}}
+  if(MaxEvent == 0) {cout << "\nNumber of Events to analyze: ";
+    cin >> MaxEvent; if(MaxEvent == 0) {
+      cerr << "...Invalid MaxEvent entry\n";exit;}}
+  vector<TString> pathList =paths_to_data();
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "hms_all_%05d.dat";
-  vector<TString> pathList;
-  pathList.push_back(".");
-  pathList.push_back("./raw");
-  pathList.push_back("./raw-sp18");
-  pathList.push_back("./raw-sp19");
-  pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
-
-  const char* ROOTFileNamePattern = "ROOTfiles/hms_raster_simple_%d_%d.root";
-  // Add variables to global list.
-  gHcParms->Define("gen_run_number", "Run Number", RunNumber);
-  gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
-  gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
-  gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-
-  // Load the Hall C style detector map
-  gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/RASTER/hraster.map");
+  const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
+  const char* ROOTFileNamePattern = "ROOTfiles/hms_replay_scalers_%d_%d.root";
+  
+  //Initialize gHcParms.
+  //Shared HMS gHcParms setup located in ../hms_shared.h
+  setupParms(RunNumber);
 
   // Add handler for EPICS events
   THaEpicsEvtHandler *hcepics = new THaEpicsEvtHandler("epics", "HC EPICS event type 180");
