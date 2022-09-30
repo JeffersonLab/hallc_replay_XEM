@@ -14,6 +14,9 @@ SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
 ; Starting shms matrix file (CaFe 2022) (suggested by M. Jones for PION-LT 2021)
 p_recon_coeff_filename = "DATFILES/shms_newfit_xptar_april2020.dat"
 
+; SHMS Q2 20% defocused
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_p20_rec.dat"
+
 ; testing (with C. Yero SHMS optics from deuteron 2018 exp)
 ;p_recon_coeff_filename = "DATFILES/shms_OptimizedFINAL_post3288.dat  
 
