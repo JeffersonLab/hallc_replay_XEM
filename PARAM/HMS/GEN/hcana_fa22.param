@@ -29,3 +29,4 @@ hcal_layer_names = "1pr 2ta 3ta 4ta"
 ;h_recon_coeff_filename =    'DATFILES/hms_recon_coeff.dat'  ;hms optics matrix
 h_recon_coeff_filename =    'DATFILES/hms_recon_coeff_opt2018.dat'  ;hms optics matrix
 ;h_recon_coeff_filename =    'DATFILES/hms_newfit_poltar.dat'  ; new fit hms optics matrix
+;h_recon_coeff_filename =    'DATFILES/hms_q2_p20_rec.dat'  ; HMS Q2 20% defocused

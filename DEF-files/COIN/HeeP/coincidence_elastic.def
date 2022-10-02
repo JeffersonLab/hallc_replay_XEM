@@ -1,4 +1,5 @@
 block T.coin.hTRIG*
+block CTime.epCoinTime_ROC1
 block T.coin.pTRIG*
 block H.cer.npe*
 block H.cal.e*

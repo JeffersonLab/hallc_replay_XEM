@@ -279,7 +279,7 @@ hpartmass = 0.00051099
 
 2045-2054
 gpbeam = 6.430
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -45.11
 ptheta_lab = 17.12
 hpcentral = 2.131
@@ -289,7 +289,7 @@ hpartmass = 0.00051099
 
 2055
 gpbeam = 6.430
-gtargmass_amu = 26.98 
+gtargmass_amu = 26.98
 htheta_lab = -45.11
 ptheta_lab = 17.12
 hpcentral = 2.131
@@ -677,7 +677,7 @@ ppcentral = 8.700*0.985
 ppartmass = 0.0005109
 hpartmass = 0.93827231
 
-#Proton Absorption Measurements 
+#Proton Absorption Measurements
 3249-3251
 gpbeam = 10.600
 gtargmass_amu = 1.00794
@@ -904,7 +904,7 @@ hpartmass = 0.0005109
 # group1,  set-1 (LD2)
 3408-3416
 gpbeam = 10.600
-gtargmass_amu= 2.014101     
+gtargmass_amu= 2.014101
 htheta_lab = -13.505
 ptheta_lab = 11.995
 hpcentral = 5.27
@@ -915,7 +915,7 @@ hpartmass = 0.0005109
 # group1,  set-1 (Dummy)
 3417-3419
 gpbeam = 10.600
-gtargmass_amu=  26.98    
+gtargmass_amu=  26.98
 htheta_lab = -13.505
 ptheta_lab = 11.995
 hpcentral = 5.27
@@ -957,7 +957,7 @@ ppcentral = 5.05*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-#group 1,  set-2 (LD2 target) 
+#group 1,  set-2 (LD2 target)
 3430-3432
 gpbeam = 10.600
 gtargmass_amu= 2.014101
@@ -1339,7 +1339,7 @@ ppcentral = 5.05*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-#3549-3553 Junk 
+#3549-3553 Junk
 
 #group2,  set-2 (Dummy)
 3554
@@ -1606,7 +1606,7 @@ ppcentral = 2.53*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-#group2,  set-11 (LH2)     
+#group2,  set-11 (LH2)
 3630-3632
 gpbeam = 10.600
 gtargmass_amu = 1.00794
@@ -1628,7 +1628,7 @@ ppcentral = 2.53*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-#group2,  set-12 (LH2)     
+#group2,  set-12 (LH2)
 3634-3436
 gpbeam = 10.600
 gtargmass_amu = 1.00794
@@ -1686,7 +1686,7 @@ hpartmass = 0.0005109
 #group2,  set-13 (LH2)
 3647 - 3653
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -13.505
 ptheta_lab = 24.01
 hpcentral = 5.27
@@ -1698,7 +1698,7 @@ hpartmass = 0.0005109
 #group2,  set-14 (LH2)
 3654 - 3657
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -13.505
 ptheta_lab = 26.005
 hpcentral = 5.27
@@ -1755,7 +1755,7 @@ hpartmass = 0.0005109
 #group2,  set-6 (LH2)
 3668-3672
 gpbeam = 10.600
-gtargmass_amu =  1.00794 
+gtargmass_amu =  1.00794
 htheta_lab = -13.505
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -1766,7 +1766,7 @@ hpartmass = 0.0005109
 #group2,  set-5 (LH2)
 3673-3675
 gpbeam = 10.600
-gtargmass_amu =  1.00794 
+gtargmass_amu =  1.00794
 htheta_lab = -13.505
 ptheta_lab = 8.0
 hpcentral = 5.27
@@ -2265,7 +2265,7 @@ hpartmass = 0.0005109
 
 3792-3794
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -13.505
 ptheta_lab = 19.96
 hpcentral = 5.27
@@ -2278,7 +2278,7 @@ hpartmass = 0.0005109
 
 3795-3797
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -13.505
 ptheta_lab = 19.96
 hpcentral = 5.27
@@ -2390,7 +2390,7 @@ hpartmass = 0.0005109
 
 3823-3824
 gpbeam = 10.600
-gtargmass_amu = 26.92 
+gtargmass_amu = 26.92
 htheta_lab = -13.505
 ptheta_lab = 18.022
 hpcentral = 5.27
@@ -2422,7 +2422,7 @@ hpartmass = 0.0005109
 
 3831
 gpbeam = 10.600
-gtargmass_amu = 26.92 
+gtargmass_amu = 26.92
 htheta_lab = -13.505
 ptheta_lab = 16.015
 hpcentral = 5.27
@@ -2857,7 +2857,7 @@ hpartmass = 0.0005109
 
 3968-3971
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 8.495
 hpcentral = 3.32
@@ -2869,7 +2869,7 @@ hpartmass = 0.0005109
 
 3972-3974
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 8.005
 hpcentral = 3.32
@@ -3268,7 +3268,7 @@ hpartmass = 0.0005109
 
 4076-4078
 gpbeam = 10.600
-gtargmass_amu = 2.014101 
+gtargmass_amu = 2.014101
 htheta_lab = -19.682
 ptheta_lab = 7.995
 hpcentral = 3.32
@@ -3280,7 +3280,7 @@ hpartmass = 0.0005109
 
 4079-4082
 gpbeam = 10.600
-gtargmass_amu = 2.014101 
+gtargmass_amu = 2.014101
 htheta_lab = -19.682
 ptheta_lab = 7.995
 hpcentral = 3.32
@@ -3373,7 +3373,7 @@ ppartmass = 0.1395706
 hpartmass = 0.0005109
 
 # group 7-4
- 
+
 4112-4115
 gpbeam = 10.600
 gtargmass_amu = 1.00794
@@ -4017,7 +4017,7 @@ ppcentral = 3.40*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4257 
+4257
 gpbeam = 10.600
 gtargmass_amu = 1.00794
 htheta_lab = -19.682
@@ -4029,7 +4029,7 @@ hpartmass = 0.0005109
 
 #group 10-3
 
-4258 
+4258
 gpbeam = 10.600
 gtargmass_amu = 1.00794
 htheta_lab = -19.682
@@ -4063,7 +4063,7 @@ hpartmass = 0.0005109
 
 4261 - 4261
 gpbeam = 10.600
-gtargmass_amu = 2.014101 
+gtargmass_amu = 2.014101
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.0
@@ -4073,7 +4073,7 @@ hpartmass = 0.0005109
 
 4262 - 4262
 gpbeam = 10.600
-gtargmass_amu = 26.92 
+gtargmass_amu = 26.92
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.0
@@ -4083,7 +4083,7 @@ hpartmass = 0.0005109
 
 4263 - 4263
 gpbeam = 10.600
-gtargmass_amu = 1.00794  
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.0
@@ -4096,7 +4096,7 @@ hpartmass = 0.0005109
 
 4264 - 4266
 gpbeam = 10.600
-gtargmass_amu = 1.00794  
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4106,7 +4106,7 @@ hpartmass = 0.0005109
 
 4267 - 4267
 gpbeam = 10.600
-gtargmass_amu = 26.92  
+gtargmass_amu = 26.92
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4116,7 +4116,7 @@ hpartmass = 0.0005109
 
 4268 - 4268
 gpbeam = 10.600
-gtargmass_amu = 2.014101   
+gtargmass_amu = 2.014101
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4128,7 +4128,7 @@ hpartmass = 0.0005109
 
 4269 - 4270
 gpbeam = 10.600
-gtargmass_amu = 2.014101   
+gtargmass_amu = 2.014101
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4138,7 +4138,7 @@ hpartmass = 0.0005109
 
 4271 - 4272
 gpbeam = 10.600
-gtargmass_amu = 26.92   
+gtargmass_amu = 26.92
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4146,9 +4146,9 @@ ppcentral = 3.40*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4273 
+4273
 gpbeam = 10.600
-gtargmass_amu = 1.00794     
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4156,9 +4156,9 @@ ppcentral = 3.40*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4274  
+4274
 gpbeam = 10.600
-gtargmass_amu = 1.00794     
+gtargmass_amu = 1.00794
 htheta_lab = -19.682
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4166,9 +4166,9 @@ ppcentral = 3.40*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4275 - 4278 
+4275 - 4278
 gpbeam = 10.600
-gtargmass_amu = 1.00794     
+gtargmass_amu = 1.00794
 htheta_lab = -13.5
 ptheta_lab = 8.015
 hpcentral = 5.27
@@ -4176,9 +4176,9 @@ ppcentral = 1.96*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4279 - 4281 
+4279 - 4281
 gpbeam = 10.600
-gtargmass_amu = 2.014101     
+gtargmass_amu = 2.014101
 htheta_lab = -13.5
 ptheta_lab = 8.015
 hpcentral = 5.27
@@ -4186,9 +4186,9 @@ ppcentral = 1.96*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4282 - 4283 
+4282 - 4283
 gpbeam = 10.600
-gtargmass_amu = 26.92   
+gtargmass_amu = 26.92
 htheta_lab = -13.5
 ptheta_lab = 8.015
 hpcentral = 5.27
@@ -4198,7 +4198,7 @@ hpartmass = 0.0005109
 
 4284 - 4287
 gpbeam = 10.600
-gtargmass_amu = 1.00794     
+gtargmass_amu = 1.00794
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4208,7 +4208,7 @@ hpartmass = 0.0005109
 
 4288 - 4296
 gpbeam = 10.600
-gtargmass_amu = 2.014101     
+gtargmass_amu = 2.014101
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4219,7 +4219,7 @@ hpartmass = 0.0005109
 
 4297 - 4300
 gpbeam = 10.600
-gtargmass_amu = 26.92     
+gtargmass_amu = 26.92
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4231,7 +4231,7 @@ hpartmass = 0.0005109
 
 4301 - 4303
 gpbeam = 10.600
-gtargmass_amu = 1.00794      
+gtargmass_amu = 1.00794
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4241,7 +4241,7 @@ hpartmass = 0.0005109
 
 4304 - 4304
 gpbeam = 10.600
-gtargmass_amu = 26.92      
+gtargmass_amu = 26.92
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4251,7 +4251,7 @@ hpartmass = 0.0005109
 
 4305 - 4307
 gpbeam = 10.600
-gtargmass_amu = 2.014101      
+gtargmass_amu = 2.014101
 htheta_lab = -13.5
 ptheta_lab = 10.0
 hpcentral = 5.27
@@ -4259,11 +4259,11 @@ ppcentral = 1.96*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-#group 4-1 
+#group 4-1
 
 4308 - 4309
 gpbeam = 10.600
-gtargmass_amu = 2.014101      
+gtargmass_amu = 2.014101
 htheta_lab = -13.5
 ptheta_lab = 8.015
 hpcentral = 5.27
@@ -4271,7 +4271,7 @@ ppcentral = 1.96*0.985
 ppartmass = 0.1395706
 hpartmass = 0.0005109
 
-4310 
+4310
 gpbeam = 10.600
 gtargmass_amu = 26.92
 htheta_lab = -13.5
@@ -4284,7 +4284,7 @@ hpartmass = 0.0005109
 
 4311 - 4315
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -13.5
 ptheta_lab = 8.015
 hpcentral = 5.27
@@ -4294,9 +4294,9 @@ hpartmass = 0.0005109
 
 # group 11-1
 
-4316 
+4316
 gpbeam = 10.600
-gtargmass_amu = 2.014101 
+gtargmass_amu = 2.014101
 htheta_lab = -19.705
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4317,7 +4317,7 @@ hpartmass = 0.0005109
 
 4318
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -19.705
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4330,7 +4330,7 @@ hpartmass = 0.0005109
 
 4319
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -19.705
 ptheta_lab = 14.00
 hpcentral = 4.8
@@ -4363,7 +4363,7 @@ hpartmass = 0.0005109
 
 4323 - 4325
 gpbeam = 10.600
-gtargmass_amu = 1.00794 
+gtargmass_amu = 1.00794
 htheta_lab = -19.705
 ptheta_lab = 22.03
 hpcentral = 3.32
@@ -4416,7 +4416,7 @@ hpartmass = 0.0005109
 
 4336
 gpbeam = 10.600
-gtargmass_amu =1.00794  
+gtargmass_amu =1.00794
 htheta_lab = -19.705
 ptheta_lab = 22.03
 hpcentral = 3.32
@@ -4427,7 +4427,7 @@ hpartmass = 0.0005109
 
 4698 - 4715
 gpbeam = 10.600
-gtargmass_amu =1.00794  
+gtargmass_amu =1.00794
 htheta_lab = -13.5
 ptheta_lab = 18.00
 hpcentral = 5.27
@@ -4438,7 +4438,7 @@ hpartmass = 0.0005109
 
 4716 - 4718
 gpbeam = 10.600
-gtargmass_amu =1.00794  
+gtargmass_amu =1.00794
 htheta_lab = -24.43
 ptheta_lab = 20.53
 hpcentral = 4.
@@ -4449,7 +4449,7 @@ hpartmass = 0.0005109
 
 4719-4721
 gpbeam = 10.600
-gtargmass_amu =1.00794  
+gtargmass_amu =1.00794
 htheta_lab = -24.43
 ptheta_lab = 20.53
 hpcentral = 3.
@@ -4467,7 +4467,7 @@ ptheta_lab = 9.505
 hpcentral = 6.6
 ppcentral = 8.035
 ppartmass = 0.0005109
-hpartmass = 0.0005109 
+hpartmass = 0.0005109
 
 4737 - 4779
 gpbeam = 10.600
@@ -4477,7 +4477,7 @@ ptheta_lab = 9.505
 hpcentral = 6.6+6.6*0.0145
 ppcentral = 8.035
 ppartmass = 0.0005109
-hpartmass = 0.0005109 
+hpartmass = 0.0005109
 
 # Heep single
 
@@ -4489,7 +4489,7 @@ ptheta_lab = 20.00
 hpcentral = 5.322
 ppcentral = 6.30
 ppartmass = 0.0005109
-hpartmass = 0.0005109 
+hpartmass = 0.0005109
 
 4785
 gpbeam = 10.588
@@ -5334,7 +5334,7 @@ SHMS_RF_Offset = 1.9
 eHadCoinTime_Offset = 74.85
 Bunch_Spacing_Override = 4.008
 
-15175 - 99999
+15175 - 15175
 gpbeam = 10.549355
 gtargmass_amu = 1.00794
 htheta_lab = -17.49
@@ -5349,169 +5349,482 @@ SHMS_RF_Offset = 1.9
 eHadCoinTime_Offset = 74.85
 Bunch_Spacing_Override = 4.008
 
-15230 - 16921
+#-------------------
+# CAFE Experiment
+#-------------------
+#Optics runs for Cafe SHMS angle = 6.8 on single foil + double foils
+16023 - 16025
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -12.5
+ptheta_lab = 6.8
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+#elastics run for Cafe SHMS angle = 6.8 on (e,e'p) H
+16026
 gpbeam = 10.549355
 gtargmass_amu = 1.00794
-htheta_lab = -17.49
-ptheta_lab = 11.905
-hpcentral = 3.944
-ppcentral = 6.538
+htheta_lab = -12.5
+ptheta_lab = 6.8
+hpcentral = 5.587
+ppcentral = 8.55
 hpartmass =  0.000511
-ppartmass =  0.139570
-helicity_freq = 120.0007547169
-HMS_RF_Offset = 0
-SHMS_RF_Offset = 1.9
-eHadCoinTime_Offset = 74.85
-Bunch_Spacing_Override = 4.008
+ppartmass =  0.000511
+
+#elastics runs for Cafe SHMS angle = 7.5 on (e,e'p) H
+16027 - 16028
+gpbeam = 10.549355
+gtargmass_amu = 1.00794
+htheta_lab = -12.5
+ptheta_lab = 7.495
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+#Optics runs for Cafe SHMS angle = 7.5 on (e,e') C12
+16029 - 16031
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -12.5
+ptheta_lab = 7.495
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+#Optics runs for Cafe SHMS angle = 8.3 on (e,e') C12
+16032 - 16035
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -12.5
+ptheta_lab = 8.295
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+#elastics run for Cafe SHMS angle = 8.3 on (e,e'p) Hodo HV ON
+16036
+gpbeam = 10.549355
+gtargmass_amu =1.00794
+htheta_lab = -12.5
+ptheta_lab = 8.295
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+#elastics run for Cafe SHMS angle = 8.3 on (e,e'p) Hodo HV ON
+16432
+gpbeam = 10.549355
+gtargmass_amu =1.00794
+htheta_lab = -12.5
+ptheta_lab = 8.295
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+
+#elastics run for Cafe SHMS angle = 8.3 Hodo Test (S1X [1-6]+/-, S2X [1-6]+/- HV OFF)
+16037
+gpbeam = 10.549355
+gtargmass_amu =1.00794
+htheta_lab = -12.5
+ptheta_lab = 8.295
+hpcentral = 5.587
+ppcentral = 8.55
+hpartmass =  0.000511
+ppartmass =  0.000511
+
+
+16038 - 16041
+gpbeam = 10.549355
+gtargmass_amu = 1.00794
+htheta_lab = -15.700
+ptheta_lab = 12.240
+hpcentral = 6.792
+ppcentral = 8.035
+hpartmass = 0.000511
+ppartmass = 0.000511
 
 #---------------------
 # CAFE COSMIC TESTS
 #---------------------
 16922 - 16945
-gpbeam = 10.549355                       
-gtargmass_amu = 1.00794                  
-htheta_lab = -15.700                     
-ptheta_lab = 12.240                      
-hpcentral = 6.792                        
-ppcentral = 8.035                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511  
+gpbeam = 10.549355
+gtargmass_amu = 1.00794
+htheta_lab = -15.700
+ptheta_lab = 12.240
+hpcentral = 6.792
+ppcentral = 8.035
+hpartmass = 0.93827231
+ppartmass = 0.000511
 
 #---------------------
-# CAFE Set @ Mean-Field 
+# CAFE Set @ Mean-Field
 #---------------------
 
 # Aluminum Hole Check
 16946 - 16958
-gpbeam = 10.549355                       
-gtargmass_amu = 12.0107                
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511  
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
 
 # Trigger Checkout / H(e,e'p)
 16959 - 16968
-gpbeam = 10.549355                       
-gtargmass_amu = 1.00794             
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511 
+gpbeam = 10.549355
+gtargmass_amu = 1.00794
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
 
 # LD2 MF Kinematics
 16969 - 16975
-gpbeam = 10.549355                       
-gtargmass_amu = 2.014101           
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
+gpbeam = 10.549355
+gtargmass_amu = 2.014101
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
 ppartmass = 0.000511
 
 # Dummy MF Kinematics
 16976
-gpbeam = 10.549355                       
-gtargmass_amu = 2.014101          
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511 
+gpbeam = 10.549355
+gtargmass_amu = 2.014101
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
 
 # Carbon MF Kinematics
 16977
-gpbeam = 10.549355                       
-gtargmass_amu = 12.0107     
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511 
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
 
 # Ca48 MF Kinematics
 16978 - 16979
-gpbeam = 10.549355                       
+gpbeam = 10.549355
 gtargmass_amu = 47.95252276
-htheta_lab = -48.30                     
-ptheta_lab = 8.3                      
-hpcentral = 1.820                        
-ppcentral = 8.55                        
-hpartmass = 0.93827231                 
-ppartmass = 0.000511 
-
-# Ca40 MF Kinematics                                                            
-16980                                                                 
-gpbeam = 10.549355                                                              
-gtargmass_amu = 39.962590863 
-htheta_lab = -48.30                                                             
-ptheta_lab = 8.3                                                                
-hpcentral = 1.820                                                               
-ppcentral = 8.55                                                                
-hpartmass = 0.93827231                                                          
-ppartmass = 0.000511 
-
-# Fe54 MF Kinematics                                                                         
-16981 - 16982                                                                              
-gpbeam = 10.549355                                                                           
-gtargmass_amu = 53.9396147   
-htheta_lab = -48.30                                                                          
-ptheta_lab = 8.3                                                                             
-hpcentral = 1.820                                                                            
-ppcentral = 8.55                                                                             
-hpartmass = 0.93827231                                                                       
-ppartmass = 0.000511    
-
-# Be9 MF Kinematics                                                                         
-16983                                                                            
-gpbeam = 10.549355                                                                           
-gtargmass_amu = 9.012182
-htheta_lab = -48.30                                                                          
-ptheta_lab = 8.3                                                                             
-hpcentral = 1.820                                                                            
-ppcentral = 8.55                                                                             
-hpartmass = 0.93827231                                                                       
-ppartmass = 0.000511  
-
-# B10 MF Kinematics                                                                         
-16984                                                                            
-gpbeam = 10.549355                                                                           
-gtargmass_amu = 10.0129370
-htheta_lab = -48.30                                                                          
-ptheta_lab = 8.3                                                                             
-hpcentral = 1.820                                                                            
-ppcentral = 8.55                                                                             
-hpartmass = 0.93827231                                                                       
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
 ppartmass = 0.000511
 
-# B11 MF Kinematics                                                                         
-16985 - 16991                                                                             
-gpbeam = 10.549355                                                                           
+# Ca40 MF Kinematics
+16980
+gpbeam = 10.549355
+gtargmass_amu = 39.962590863
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Fe54 MF Kinematics
+16981 - 16982
+gpbeam = 10.549355
+gtargmass_amu = 53.9396147
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Be9 MF Kinematics
+16983
+gpbeam = 10.549355
+gtargmass_amu = 9.012182
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B10 MF Kinematics
+16984
+gpbeam = 10.549355
+gtargmass_amu = 10.0129370
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B11 MF Kinematics
+16985 - 16991
+gpbeam = 10.549355
 gtargmass_amu = 11.009306
-htheta_lab = -48.30                                                                      
-ptheta_lab = 8.3                                                                             
-hpcentral = 1.820                                                                            
-ppcentral = 8.55                                                                             
-hpartmass = 0.93827231                                                                       
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
 ppartmass = 0.000511
 
 #SRC KINEMATICS
 
-# Ca40 SRC Kinematics                                                                         
-16992 - 9999999                                                                             
-gpbeam = 10.549355                                                                           
+# Ca40 SRC Kinematics
+16992 - 17004
+gpbeam = 10.549355
 gtargmass_amu = 39.962590863
-htheta_lab = -66.40                                                                      
-ptheta_lab = 8.3                                                                             
-hpcentral = 1.325                                                                            
-ppcentral = 8.55                                                                             
-hpartmass = 0.93827231                                                                       
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+#LD2 Trigger Check
+17005 - 17007
+gpbeam = 10.549355
+gtargmass_amu = 2.014101
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Ca40 SRC Kinematics
+17008 - 17035
+gpbeam = 10.549355
+gtargmass_amu = 39.962590863
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Ca48 SRC Kinematics
+17036 - 17057
+gpbeam = 10.549355
+gtargmass_amu = 47.95252276
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Fe54 SRC Kinematics
+17058 - 17075
+gpbeam = 10.549355
+gtargmass_amu = 53.9396147
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# C12 SRC Kinematics
+17076 - 17089
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+
+#B10 SRC Kinematics
+17090 - 17092
+gpbeam = 10.549355
+gtargmass_amu = 10.0129370
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Ca48 MF Kinematics (2nd round)
+17093 - 17096
+gpbeam = 10.549355
+gtargmass_amu = 47.95252276
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Ca40 MF Kinematics   (2nd round)
+17097
+gpbeam = 10.549355
+gtargmass_amu = 39.962590863
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# C12 MF Kinematics (2nd round)
+17098
+gpbeam = 10.549355
+gtargmass_amu = 12.0107
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Beryllium MF Kinematics (2nd round)
+17099 - 17100
+gpbeam = 10.549355
+gtargmass_amu = 9.012182
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B4C10 MF Kinematics (2nd round)
+17101
+gpbeam = 10.549355
+gtargmass_amu = 10.0129370
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B4C11 MF Kinematics (2nd round)
+17102
+gpbeam = 10.549355
+gtargmass_amu = 11.009306
+htheta_lab = -48.30
+ptheta_lab = 8.3
+hpcentral = 1.820
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Be SRC Kinematics
+17103 - 17111
+gpbeam = 10.549355
+gtargmass_amu = 9.012182
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B4C10 SRC Kinematics
+17112 - 17115
+gpbeam = 10.549355
+gtargmass_amu = 10.0129370
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B4C11 SRC Kinematics
+17116 - 17123
+gpbeam = 10.549355
+gtargmass_amu = 11.009306
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# B4C10 SRC Kinematics
+17124 - 17128
+gpbeam = 10.549355
+gtargmass_amu = 10.0129370
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Be SRC Kinematics
+17129 - 17132
+gpbeam = 10.549355
+gtargmass_amu = 9.012182
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# D2 SRC Kinematics
+17133 - 17134
+gpbeam = 10.549355
+gtargmass_amu = 2.014101
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+# Fe54 SRC Kinematics
+17135 - 17135
+gpbeam = 10.549355
+gtargmass_amu = 53.9396147
+htheta_lab = -66.40
+ptheta_lab = 8.3
+hpcentral = 1.325
+ppcentral = 8.55
+hpartmass = 0.93827231
+ppartmass = 0.000511
+
+#---------------------
+# Start XEM Runs
+#---------------------
+
+#Carbon Hole
+17151 - 17151
+gpbeam = 10.549355
+gtargmass_amu = .9396147
+htheta_lab = -19.520
+ptheta_lab = 26.000
+hpcentral = 6.476
+ppcentral = 4.935
+hpartmass = 0.93827231
 ppartmass = 0.000511
 
