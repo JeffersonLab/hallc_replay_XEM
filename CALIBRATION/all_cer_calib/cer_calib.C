@@ -86,7 +86,7 @@ void shms_m2(TString file_name) {
 	tr1->SetBranchAddress("P.ngcer.xAtCer",&xAtCer);
 	tr1->SetBranchAddress("P.ngcer.yAtCer",&yAtCer);
 	
-	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 80, 0, 160);
+	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 80, 0, 640);
 	TH1F *h2 = new TH1F("h2", "PMT 2 goodAdcPulseInt Distribution", 80, 0, 160);
 	TH1F *h3 = new TH1F("h3", "PMT 3 goodAdcPulseInt Distribution", 80, 0, 160);
 	TH1F *h4 = new TH1F("h4", "PMT 4 goodAdcPulseInt Distribution", 80, 0, 160);
@@ -113,7 +113,8 @@ void shms_m2(TString file_name) {
 			h5->Fill(etottracknorm);
 		}
 		if (etottracknorm > emin && etottracknorm < emax && dp > dpmin && dp < dpmax){ //common cuts
-			if(adcMult[0] == adcMultCut && adcMult[1] == 0 && adcMult[2] == 0 && adcMult[3] == 0){ // PMT 1 Specific Cuts
+			//if(adcMult[0] == adcMultCut && adcMult[1] == 0 && adcMult[2] == 0 && adcMult[3] == 0){ // PMT 1 Specific Cuts
+			if (true){
 				h6->Fill(xAtCer,yAtCer);
 				if(xAtCer > xmin && xAtCer < xmax && yAtCer > ymin && yAtCer < ymax){
 					h1->Fill(adcPulseInt[0]);
@@ -144,7 +145,7 @@ void shms_m2(TString file_name) {
 	c1->Divide(2,2);
 	c1->cd(1);
 	h1->Draw();
-	TF1* f1 = new TF1("f1","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",30,70);
+	TF1* f1 = new TF1("f1","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",100,300);
 	f1->SetParameters(2000,50,3);
 	h1->Fit(f1,"R");
 	double yscale1 = f1->GetParameter(0);
@@ -154,7 +155,7 @@ void shms_m2(TString file_name) {
 	
 	c1->cd(2);
 	h2->Draw();
-	TF1* f2 = new TF1("f2","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",30,70);
+	TF1* f2 = new TF1("f2","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",25,75);
 	f2->SetParameters(2000,50,3);
 	h2->Fit(f2,"R");
 	double yscale2 = f2->GetParameter(0);
@@ -164,7 +165,7 @@ void shms_m2(TString file_name) {
 	
 	c1->cd(3);
 	h3->Draw();
-	TF1* f3 = new TF1("f3","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",30,70);
+	TF1* f3 = new TF1("f3","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",25,75);
 	f3->SetParameters(2000,50,3);
 	h3->Fit(f3,"R");
 	double yscale3 = f3->GetParameter(0);
@@ -174,7 +175,7 @@ void shms_m2(TString file_name) {
 	
 	c1->cd(4);
 	h4->Draw();
-	TF1* f4 = new TF1("f4","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",30,70);
+	TF1* f4 = new TF1("f4","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",25,75);
 	f4->SetParameters(2000,50,3);
 	h4->Fit(f4,"R");
 	double yscale4 = f4->GetParameter(0);

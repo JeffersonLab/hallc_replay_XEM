@@ -68,5 +68,5 @@ g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
 g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
 g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
 
-17152 - 99999
-g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_6p5_gev_fa22.param"
+17191 - 17201
+g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_6p5_fa22.param"

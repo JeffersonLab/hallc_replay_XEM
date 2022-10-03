@@ -1,8 +1,8 @@
 //Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
 //Same functionality as any SCRIPT in hallc_replay_XEM
-#include "SCRIPTS/SHMS/shms_shared.h"
+#include "SCRIPTS/HMS/hms_shared.h"
 
-void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_pid_leg (Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -14,20 +14,22 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   vector<TString> pathList =paths_to_data();
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_production_all_%d_%d.root";
+  const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/hms_replay_pid_leg_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production_all.def";
-  TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("PRODUCTION/summary_all_production_%d_%d.report", RunNumber, MaxEvent);
-  TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_all_production_%d_%d.report", RunNumber, MaxEvent);  // optional
+  TString odef_file = "DEF-files/HMS/PRODUCTION/hms_pid_leg.def";
+  TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
+  TString summary_file = Form("REPORT_OUTPUT/HMS/summary_production_%d_%d.report",
+			      RunNumber, MaxEvent);
+  TString report_file  = Form("REPORT_OUTPUT/HMS/hms50k/replay_hms_production_%d_%d.report",
+			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.
-  //Shared SHMS gHcParms setup located in ../shms_shared.h
+  //Shared HMS gHcParms setup located in ../hms_shared.h
   setupParms(RunNumber);
-  //Initialize SHMS single-arm DAQ with detectors
-  //Shared SHMS apparatus setup located in ../shms_shared.h
+  //Initialize HMS single-arm DAQ with detectors
+  //Shared HMS apparatus setup located in ../hms_shared.h
   setupApparatus();
 
   // Set up the analyzer - we use the standard one,
@@ -61,7 +63,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile(odef_file);
   // Define cuts file
-  //analyzer->SetCutFile(cdef_file);  // optional
+  analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(summary_file);  // optional
 

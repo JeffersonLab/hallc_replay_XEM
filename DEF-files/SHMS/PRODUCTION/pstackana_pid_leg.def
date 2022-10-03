@@ -20,5 +20,6 @@
 #include "DEF-files/SHMS/PRODUCTION/KIN/pkin_vars.def"
 #include "DEF-files/SHMS/PRODUCTION/HODO/phodo_vars.def"
 
+block T.shms.*
 
 # Not included #include "DEF-files/SHMS/PRODUCTION/BLOCK/pblock_vars.def"

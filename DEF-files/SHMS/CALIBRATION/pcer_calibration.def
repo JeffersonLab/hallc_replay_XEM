@@ -1,0 +1,14 @@
+#****************************
+#* Variables for Cer Calib
+#****************************
+
+block P.hgcer.npeSum
+block P.hgcer.goodAdcMult
+block P.hgcer.goodAdcPulseInt
+block P.ngcer.npeSum
+block P.ngcer.goodAdcMult
+block P.ngcer.goodAdcPulseInt
+block P.ngcer.xAtCer
+block P.ngcer.yAtCer
+block P.cal.etottracknorm
+block P.gtr.dp

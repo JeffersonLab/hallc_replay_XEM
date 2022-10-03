@@ -24,7 +24,7 @@ void replay_production_hms_coin_pionlt (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   pathList.push_back("./CACHE_LINKS/cache_pionlt");
   pathList.push_back("./CACHE_LINKS/cache_cafe"); 
 
-  const char* ROOTFileNamePattern = "ROOTfiles/COIN/hms_coin_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/COIN/hms50k/hms_coin_replay_production_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -176,13 +176,13 @@ void replay_production_hms_coin_pionlt (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   // Define output DEF-file 
   analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_pionlt_50k_HMS.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/HMS/PRODUCTION/CUTS/hstackana_50k_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/summary_hms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
-  analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production.template",
-  			Form("REPORT_OUTPUT/COIN/replay_hms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->PrintReport("TEMPLATES/HMS/PRODUCTION/hstackana_production_pionlt.template",
+  			Form("REPORT_OUTPUT/COIN/hms50k/replay_hms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }

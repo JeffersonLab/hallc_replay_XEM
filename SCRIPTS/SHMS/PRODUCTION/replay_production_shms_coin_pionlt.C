@@ -24,7 +24,7 @@ void replay_production_shms_coin_pionlt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   pathList.push_back("./CACHE_LINKS/cache_pionlt");
   pathList.push_back("./CACHE_LINKS/cache_cafe"); 
 
-  const char* ROOTFileNamePattern = "ROOTfiles/COIN/shms_coin_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/COIN/shms50k/shms_coin_replay_production_%d_%d.root";
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -178,13 +178,13 @@ void replay_production_shms_coin_pionlt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   // Define DEF-file
   analyzer->SetOdefFile("DEF-files/COIN/PRODUCTION/coin_pionlt_50k_SHMS.def");
   // Define cuts file
-  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def");  // optional
+  analyzer->SetCutFile("DEF-files/SHMS/PRODUCTION/CUTS/pstackana_50k_cuts.def");  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/summary_shms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
-  analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp18.template",
-  			Form("REPORT_OUTPUT/COIN/replay_shms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->PrintReport("TEMPLATES/SHMS/PRODUCTION/pstackana_production_pionlt.template",
+  			Form("REPORT_OUTPUT/COIN/shms50k/replay_shms_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }
