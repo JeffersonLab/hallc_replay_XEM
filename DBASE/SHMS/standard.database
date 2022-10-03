@@ -120,3 +120,7 @@ g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 7197-7261
 ;Production during jpsi on H, D, B10, B11, C, Al
 
+
+17232 - 17232
+g_ctp_optics_filename      = "PARAM/COIN/GEN/defocused_fa22.param"
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_pre_ngcer_hv_change_fa22.param"

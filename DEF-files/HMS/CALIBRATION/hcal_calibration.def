@@ -10,6 +10,7 @@ block H.cal.3ta.goodNegAdcPulseInt
 block H.cal.3ta.goodPosAdcPulseInt
 block H.cal.4ta.goodNegAdcPulseInt
 block H.cal.4ta.goodPosAdcPulseInt
+block H.dc.InsideDipoleExit
 block H.dc.ntrack
 block H.dc.x_fp
 block H.dc.y_fp

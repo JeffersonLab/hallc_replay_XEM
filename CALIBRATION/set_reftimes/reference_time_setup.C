@@ -20,8 +20,8 @@ void run_shms_reference_time_setup(TString infile, int RunNumber, TString outfil
     // Load params for COIN trigger configuration
     gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
-    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
   } else {
     cout << "Unknown Spec: " << spec << endl;
     return;
@@ -269,7 +269,7 @@ void run_hms_reference_time_setup(TString infile, int RunNumber, TString outfile
     // Load params for HMS trigger configuration
     gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
   } else if (spec.CompareTo("coin",TString::kIgnoreCase)==0) {
     gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
     gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
@@ -278,8 +278,8 @@ void run_hms_reference_time_setup(TString infile, int RunNumber, TString outfile
     // Load params for COIN trigger configuration
     gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
-    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
   } else {
     cout << "Unknown Spec: " << spec << endl;
     return;

@@ -10,6 +10,7 @@ g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_sp18.param"
 g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_sp18.param"
 g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_sp18.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_sp18.param"
+g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_sp18.template"
 
 ; General parameters for Fall 2022 running during the full experiment
 2356-99999
@@ -19,7 +20,7 @@ g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_fa22.param"
 g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_fa22.param"
 g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_fa22.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_fa22.param"
-g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_sp18.template"
+g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_fa22.template"
 
 1565-1591
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p7_sp18.param"
@@ -55,3 +56,6 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period3_sp18.param"
 ; 25 Degree Boiling Runs
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
 g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period4_sp18.param"
+
+4402 - 4402
+g_ctp_optics_filename      = "PARAM/COIN/GEN/defocused_fa22.param"

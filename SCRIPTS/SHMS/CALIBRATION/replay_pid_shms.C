@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/SHMS/shms_shared.h"
 
-void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_shms_pid (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,13 +15,15 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_production_all_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/CALIBRATION/shms_replay_pid_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production_all.def";
+  TString odef_file = "DEF-files/SHMS/CALIBRATION/ppid_calibration.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("PRODUCTION/summary_all_production_%d_%d.report", RunNumber, MaxEvent);
-  TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_all_production_%d_%d.report", RunNumber, MaxEvent);  // optional
+  //TString summary_file = Form("REPORT_OUTPUT/SHMS/",
+  //			      RunNumber, MaxEvent);
+//TString report_file  = Form("REPORT_OUTPUT/SHMS/",
+//			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.
   //Shared SHMS gHcParms setup located in ../shms_shared.h
@@ -61,7 +63,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile(odef_file);
   // Define cuts file
-  //analyzer->SetCutFile(cdef_file);  // optional
+  analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(summary_file);  // optional
 
@@ -69,7 +71,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   analyzer->Process(run);
 
   // Create report file from template
-  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
-  			report_file);  // optional
+  //analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  //			report_file);  // optional
 
 }

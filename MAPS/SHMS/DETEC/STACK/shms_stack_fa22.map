@@ -124,12 +124,19 @@ SLOT=14
 REFINDEX=3
   11,1000,   0,   3  ! pFADC_TREF_ROC2
 
-SLOT=13
+SLOT=9
 REFINDEX=3
-   8,   1,   1,   0  ! pNGCER01
-   9,   1,   2,   0  ! pNGCER02
-  10,   1,   3,   0  ! pNGCER03
-  11,   1,   4,   0  ! pNGCER04
+   2,   1,   1,   0  ! pNGCER01
+   6,   1,   2,   0  ! pNGCER02
+   4,   1,   3,   0  ! pNGCER03
+   5,   1,   4,   0  ! pNGCER04
+
+!SLOT=13
+!REFINDEX=3
+!   8,   1,   1,   0  ! pNGCER01
+!   9,   1,   2,   0  ! pNGCER02
+!  10,   1,   3,   0  ! pNGCER03
+!  11,   1,   4,   0  ! pNGCER04
 
 
 DETECTOR=22  ! SHMS chambers
