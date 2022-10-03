@@ -1,0 +1,117 @@
+#********************
+# Kinematic Variables
+#********************
+
+block P.kin.*
+block P.gtr.*
+block P.tr.*
+block P.1MHz.*
+
+#**************
+# HOD Variables
+#**************
+
+block P.hod.*
+
+#**************
+# PID Variables
+#**************
+
+block P.cal.eprtrack
+block P.cal.eprtracknorm
+block P.cal.etrack
+block P.cal.etracknorm
+block P.cal.etot
+block P.cal.etotnorm
+block P.cal.etottracknorm
+
+block P.hgcer.npe
+block P.ngcer.npe
+block P.hgcer.npeSum
+block P.ngcer.npeSum
+
+#Add for checking Calibrations
+block P.cal.xtrack
+block P.cal.ytrack
+block P.cal.fly.goodAdcTdcDiffTime
+
+block P.react.x
+block P.react.y
+block P.react.z
+
+#**************
+# Histograms
+#**************
+# SHMS HODO GOOD ADC OCCUPANCIES
+
+TH1F phodo_1x_good_adc_occ_pos 'SHMS 1X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1x.numGoodPosAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_pos 'SHMS 1Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.1y.numGoodPosAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_pos 'SHMS 2X+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2x.numGoodPosAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_pos 'SHMS 2Y+ Good ADC Occupancy; PMT Number; Number of Good +ADC Hits' P.hod.2y.numGoodPosAdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_adc_occ_neg 'SHMS 1X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1x.numGoodNegAdcHits 13 0.5 13.5
+TH1F phodo_1y_good_adc_occ_neg 'SHMS 1Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.1y.numGoodNegAdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_adc_occ_neg 'SHMS 2X- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2x.numGoodNegAdcHits 14 0.5 14.5
+TH1F phodo_2y_good_adc_occ_neg 'SHMS 2Y- Good ADC Occupancy; PMT Number; Number of Good -ADC Hits' P.hod.2y.numGoodNegAdcHits 21 0.5 21.5
+
+#SHMS HODO GOOD TDC OCCUPANCIES
+
+TH1F phodo_1x_good_tdc_occ_pos 'SHMS 1X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1x.numGoodPosTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_pos 'SHMS 1Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.1y.numGoodPosTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_pos 'SHMS 2X+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2x.numGoodPosTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_pos 'SHMS 2Y+ Good TDC Occupancy; PMT Number; Number of Good +TDC Hits' P.hod.2y.numGoodPosTdcHits 21 0.5 21.5
+
+TH1F phodo_1x_good_tdc_occ_neg 'SHMS 1X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1x.numGoodNegTdcHits 13 0.5 13.5
+TH1F phodo_1y_good_tdc_occ_neg 'SHMS 1Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.1y.numGoodNegTdcHits 13 0.5 13.5 
+TH1F phodo_2x_good_tdc_occ_neg 'SHMS 2X- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2x.numGoodNegTdcHits 14 0.5 14.5
+TH1F phodo_2y_good_tdc_occ_neg 'SHMS 2Y- Good TDC Occupancy; PMT Number; Number of Good -TDC Hits' P.hod.2y.numGoodNegTdcHits 21 0.5 21.5
+
+#----------------------------------------------------------------
+# SHMS HODO TRACKING, TIMING  AND  Particle ID (PID) - BETA (v/c) 
+#----------------------------------------------------------------
+
+TH1F phodo_beta_notrack 'SHMS Hodo Calculated Beta Without Track Info; Beta; Number of Entries / 0.015' P.hod.betanotrack 100 0 1.5 
+TH1F phodo_beta 'SHMS Hodo Beta; Beta; Number of Entries / 0.015' P.hod.beta 100 0 1.5 
+TH1F phodo_fpHitsTime 'SHMS Hodo Focal Plane Time; Focal Plane Time (ns); Number of Entries / 1 ns' P.hod.fpHitsTime 90 0 90 
+TH1F phodo_starttime 'SHMS Hodo Start Time; Start Time (ns); Number of Entries / 1ns' P.hod.starttime 90 0 90
+TH1F phodo_good_startime 'SHMS Hodo Good Start Flag; Good Start Flag (=1 is good); Number of Entries' P.hod.goodstarttime 5 0 5
+
+#*****************************************
+# SHMS Single Arm Primary (Scattered Beam)
+# Kinematic Quantities
+#*****************************************
+
+TH1F pkin_q2 'SHMS 4-Momentum Transfer Q^{2}; Q^{2} (GeV^{2}); Number of Entries / 0.050 GeV^{2}' P.kin.Q2 400 0 20 pcut_CleanTrack
+TH1F pkin_omega 'SHMS Energy Transfer Omega; E_{beam} - E_{scat} (GeV); Number of Entries / 0.050 GeV' P.kin.omega 200 0 10 pcut_CleanTrack
+TH1F pkin_w2 'SHMS Invariant Mass W^{2}; W^{2} (GeV^{2}); Number of Entries / 0.100 GeV^{2}' P.kin.W2 100 0 10 pcut_CleanTrack
+TH1F pkin_w  'SHMS Invariant Mass W; W  (GeV); Number of Entries / 0.050 GeV' P.kin.W 200 0 10 pcut_CleanTrack
+TH1F pkin_theta 'SHMS Scattering Angle Theta; SHMS Scattering Angle (deg); Number of Entries / 0.06 deg' P.kin.scat_ang_deg 350 5 40 pcut_CleanTrack
+
+#-------------------------------------------------------------------------------------
+# SHMS PRE-SHOWER AND SHOWER (CALORIMETER) TOTAL ENERGY DEPOSITION
+# TOTAL ENERGY AND NORMALIZED ENERGY DEPOSITED IN CALORIMETER (SHOWER AND PRE-SHOWER)
+#-------------------------------------------------------------------------------------
+
+ TH1F pcal_etottracknorm 'SHMS Calorimeter Total E/p; Total E/p (GeV); Number of Entries /0.02 GeV' P.cal.etottracknorm 100 0 2 P.cal.etottracknorm>0.0 
+# TH1F pcal_etrack 'SHMS Calorimeter Total Track Energy; Track Energy Deposition (GeV); Number of Entries / 0.01 GeV' P.cal.etrack 1000 0 10 P.cal.etrack>0.0 
+# TH1F pcal_etracknorm 'SHMS Calorimeter Normalized Track Energy; Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.001 ' P.cal.etracknorm 2000 0 2 P.cal.etracknorm>0.0
+# TH1F pcal_etracknorm_track 'SHMS Calorimeter Normalized Track Energy (Ntrack > 0); Trk. Energy Dep. (GeV) / Trk. P (GeV); Number of Entries / 0.001 ' P.cal.etracknorm 2000 0 2 P.cal.etracknorm>0.0&&P.dc.ntrack>0
+# TH1F pcal_etracknorm_track_elec 'SHMS Cal E/p Elec (npeSum>.5 && abs(del)<8); E/p; Entries / 0.001' P.cal.etracknorm 2000 0. 2 P.dc.ntrack>0&&P.ngcer.npeSum>.5&&P.hgcer.npeSum>.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+# TH1F pcal_etracknorm_track_pion 'SHMS Cal E/p Pion (npeSum<.5 && abs(del)<8); E/p; Entries / 0.001' P.cal.etracknorm 2000 0. 2 P.dc.ntrack>0&&P.ngcer.npeSum<.5&&P.hgcer.npeSum<.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+# TH1F pcal_etrack_track_elec 'SHMS Cal Electron Energy (npeSum>.5 && abs(del)<8); etrack; Entries / 0.01 GeV' P.cal.etrack 1000 0. 10 P.dc.ntrack>0&&P.ngcer.npeSum>.5&&P.hgcer.npeSum>.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+# TH1F pcal_etrack_track_pion 'SHMS Cal Pion Energy (npeSum<.5 && abs(del)<8); etrack; Entries / 0.01 GeV' P.cal.etrack 1000 0. 10 P.dc.ntrack>0&&P.ngcer.npeSum<.5&&P.hgcer.npeSum<.5&&P.gtr.dp>-8.&&P.gtr.dp<8.
+# TH2F pcal_etot_etrack  'SHMS Cal energy vs. track energy; Track Energy Deposition (GeV) / 0.01 GeV; Total Energy (GeV) / 0.01 GeV' P.cal.etrack P.cal.etot 1000 0. 10. 1000 0. 10. P.dc.ntrack>0
+TH2F pcal_ngnpe_etracknorm 'SHMS NG Cer Npe vs. Total Cal E/p; Total E/p / 0.002; ngcer NPE / 0.4 NPE' P.cal.etottracknorm P.ngcer.npeSum 100 0. 2 100 0. 40. P.dc.ntrack>0
+TH2F pcal_hgnpe_etracknorm 'SHMS HG Cer Npe vs. Cal E/p; Normalized Track Energy Deposition / 0.001; hgcer NPE / 0.025 NPE' P.cal.etracknorm P.hgcer.npeSum 2000 0. 2 60 0. 15. P.dc.ntrack>0
+
+#----------------------------------------
+# SHMS Trigger Rate vs. 1 Mhz Clock Time
+#----------------------------------------
+
+# TH2D ptrig1rate_vs_time 'SHMS Trig1 Rate vs. Time; 1 MHz Clock Time (s); pTRIG1 Rate (Hz)' P.1MHz.scalerTime P.pTRIG1.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig2rate_vs_time 'SHMS Trig2 Rate vs. Time; 1 MHz Clock Time (s); pTRIG2 Rate (Hz)' P.1MHz.scalerTime P.pTRIG2.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig3rate_vs_time 'SHMS Trig3 Rate vs. Time; 1 MHz Clock Time (s); pTRIG3 Rate (Hz)' P.1MHz.scalerTime P.pTRIG3.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig4rate_vs_time 'SHMS Trig4 Rate vs. Time; 1 MHz Clock Time (s); pTRIG4 Rate (Hz)' P.1MHz.scalerTime P.pTRIG4.scalerRate 350 0 7000 500 0 200000 
+# TH2D ptrig6rate_vs_time 'SHMS Trig6 Rate vs. Time; 1 MHz Clock Time (s); pTRIG6 Rate (Hz)' P.1MHz.scalerTime P.pTRIG6.scalerRate 350 0 7000 500 0 200000 
+
+
