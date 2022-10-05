@@ -23,6 +23,7 @@ class ScalerCalib {
 
   void SetInputFile(string fin){ filename = fin; }
   void SetPrintFlag(int p_opt){ fPrintFlag = p_opt; }
+  void SetRunNum(int num){runstr = to_string(num); }
   int Run();
 
  private:

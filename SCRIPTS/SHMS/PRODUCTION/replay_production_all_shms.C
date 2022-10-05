@@ -61,7 +61,7 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define DEF-file
   analyzer->SetOdefFile(odef_file);
   // Define cuts file
-  //analyzer->SetCutFile(cdef_file);  // optional
+  analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(summary_file);  // optional
 

@@ -5,9 +5,11 @@
 block P.hgcer.npeSum
 block P.hgcer.goodAdcMult
 block P.hgcer.goodAdcPulseInt
+block P.hgcer.goodAdcPulseAmp
 block P.ngcer.npeSum
 block P.ngcer.goodAdcMult
 block P.ngcer.goodAdcPulseInt
+block P.ngcer.goodAdcPulseAmp
 block P.ngcer.xAtCer
 block P.ngcer.yAtCer
 block P.cal.etottracknorm

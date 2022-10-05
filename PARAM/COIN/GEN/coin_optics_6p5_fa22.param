@@ -1,2 +1,5 @@
+;High momentum HMS running requires different optics
+;Jacob M has updated matrix elements from PionLT study
+;Only HMS optics file changes.  No SHMS file change.
+;Angle and/or momentum offsets could be added here as needed.
 #include "PARAM/HMS/GEN/hcana_6p5_fa22.param"
-#include "PARAM/SHMS/GEN/pcana_fa22.param"

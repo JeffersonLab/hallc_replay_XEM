@@ -1,3 +1,0 @@
-; start fall 2022
-; calib from run 7120
-pngcer_adc_to_npe = 1./15.41, 1./5.51, 1./4.46, 1./5.23

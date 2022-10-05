@@ -86,7 +86,7 @@ void shms_m2(TString file_name) {
 	tr1->SetBranchAddress("P.ngcer.xAtCer",&xAtCer);
 	tr1->SetBranchAddress("P.ngcer.yAtCer",&yAtCer);
 	
-	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 80, 0, 640);
+	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 80, 0, 160);
 	TH1F *h2 = new TH1F("h2", "PMT 2 goodAdcPulseInt Distribution", 80, 0, 160);
 	TH1F *h3 = new TH1F("h3", "PMT 3 goodAdcPulseInt Distribution", 80, 0, 160);
 	TH1F *h4 = new TH1F("h4", "PMT 4 goodAdcPulseInt Distribution", 80, 0, 160);
@@ -145,7 +145,7 @@ void shms_m2(TString file_name) {
 	c1->Divide(2,2);
 	c1->cd(1);
 	h1->Draw();
-	TF1* f1 = new TF1("f1","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",100,300);
+	TF1* f1 = new TF1("f1","[0]*TMath::Power(([1]/[2]),(x/[2]))*(TMath::Exp(-([1]/[2])))/TMath::Gamma((x/[2])+1)",30,90);
 	f1->SetParameters(2000,50,3);
 	h1->Fit(f1,"R");
 	double yscale1 = f1->GetParameter(0);

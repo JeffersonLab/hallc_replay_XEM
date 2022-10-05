@@ -57,5 +57,22 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period3_sp18.param"
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_25deg_m4p4.param"
 g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period4_sp18.param"
 
+
+
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+;Start of full XEM running
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 4402 - 4402
-g_ctp_optics_filename      = "PARAM/COIN/GEN/defocused_fa22.param"
+;Calibration & PID Threshold Checks Setting 1
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"
+4407 - 4407
+;Calibration & PID Threshold Checks Setting 2
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"
+
+4410 - 4410
+;Calibration & PID Threshold Checks Setting 3
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"

@@ -1,0 +1,3 @@
+;Calibration & PID Threshold Checks Setting 1-3
+;Defocused Q2+20% calorimeter calibration calibration
+#include "PARAM/SHMS/GEN/pcana_defocused_fa22.param"

@@ -1,0 +1,12 @@
+;Start SHMS Singles
+;SHMS NGCER HV was lowered near the start of singles running.
+;Log Entries: HV CHANGED 4050329, Pulse AMP from Mark J 4050338
+;Calibration using run 17239 (First run with beam after HV lowered)
+
+;HeeP studies were done with higher PMT1 HV.
+;The HV was changed back to 1835V after 17259 Log Entry: 4051044
+;Reverted back to 1835V.
+;This calibration is applicable to runs 17239 - 17259
+
+
+pngcer_adc_to_npe = 1./6.83, 1./5.09, 1./4.55, 1./5.38
