@@ -40,20 +40,8 @@ int ScalerCalib::Run()
       return -1;
     }
 
-  int pos;
-  pos = filename.find("scalers_");
-
-  if(pos == -1)
-    {
-      pos = filename.find("production_");
-      runstr = (filename.substr(pos+11)).substr(0,4);
-    }
-  else
-    {
-      runstr = (filename.substr(pos+8)).substr(0,4);  
-    }
-
   ofilename = "bcmcurrent_" + runstr + ".param";
+  cout << ofilename << "\n";
   outfile.open(ofilename.c_str());
 
   outfile << "num_scal_reads = " << evnum.size();

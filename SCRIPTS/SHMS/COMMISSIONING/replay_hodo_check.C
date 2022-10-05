@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/SHMS/shms_shared.h"
 
-void replay_pid_leg (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_hodo_check (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,14 +15,14 @@ void replay_pid_leg (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_pid_leg_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_hodo_check_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_pid_leg.def";
+  TString odef_file = "DEF-files/SHMS/COMMISSIONING/hodo_check_odef.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("REPORT_OUTPUT/SHMS/summary_production_%d_%d.report",
-			      RunNumber, MaxEvent);
-  TString report_file  = Form("REPORT_OUTPUT/SHMS/shms50k/replay_shms_production_%d_%d.report",
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/COMMISSIONING/HODO_CHECK/summary_hodo_check_%d_%d.report",
+  			      RunNumber, MaxEvent);
+  TString report_file  = Form("REPORT_OUTPUT/SHMS/COMMISSIONING/HODO_CHECK/replay_hodo_check_%d_%d.report",
 			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.

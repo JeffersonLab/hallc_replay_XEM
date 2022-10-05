@@ -33,4 +33,7 @@ cminch=2.54
 #include "PARAM/SHMS/CAL/pcal_cuts_fa22.param"
 
 ; SHMS default calib parameter files included in 
-;g_ctp_det_calib_filename = DBASE/SHMS/default_det_calib_fa22.param
+;Default values always loaded.
+;Specific calibration files loaded in with g_ctp_det_calib_filename
+;Specific g_ctp_det_calib_filename loaded by run in standard.database
+#include "DBASE/SHMS/default_det_calib_fa22.param"

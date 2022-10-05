@@ -10,19 +10,13 @@
 ;
 ; NOTE: These are integers, not floats
 
-; no cuts
-; hdc_tdcrefcut=-100000
-; hhodo_tdcrefcut=-100000
-; hhodo_adcrefcut=-100000
-; hcer_adcrefcut=-100000
-; hcal_adcrefcut=-100000
-
-; determined from fall 2019 - spring 2020 offline analysis
+;Determined from 4402, 4405, 4406
+;HMS p=-4.0GeV/c, theta=20 degrees
 ; cut variable = hDCREF2
-hdc_tdcrefcut=-20000
+hdc_tdcrefcut=-20200
 ; cut variable = hT2
-hhodo_tdcrefcut=-1400
+hhodo_tdcrefcut=-1100
 ; cut variable = hFADC_TREF_ROC1
-hhodo_adcrefcut=-3400
-hcer_adcrefcut=-3400
-hcal_adcrefcut=-3400
+hhodo_adcrefcut=-2500
+hcer_adcrefcut=-2500
+hcal_adcrefcut=-2500

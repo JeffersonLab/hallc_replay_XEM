@@ -68,5 +68,13 @@ g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
 g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
 g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
 
+
+
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+;Start of full XEM running
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 17191 - 17201
+;High momentum HMS running requires different optics
+;Jacob M has updated matrix elements from PionLT study
 g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_6p5_fa22.param"

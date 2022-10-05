@@ -121,6 +121,26 @@ g_ctp_det_calib_filename = "DBASE/SHMS/DET/calib_25deg_m4p4.param"
 ;Production during jpsi on H, D, B10, B11, C, Al
 
 
+
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+;Start of full XEM running
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 17232 - 17232
-g_ctp_optics_filename      = "PARAM/COIN/GEN/defocused_fa22.param"
-g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_pre_ngcer_hv_change_fa22.param"
+;Calibration & PID Threshold Checks Setting 1
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/SHMS/GEN/defocused_Q2_p20_fa22.param"
+
+17239 - 17259
+;Lowered NGCER PMT1 HV.  Reverted to match COIN running (for efficiencies)
+g_ctp_det_calib_filename   = "DBASE/SHMS/DET/calib_lower_hv_ngcer_fa22.param"
+
+17243 - 17243
+;Calibration & PID Threshold Checks Setting 2
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/SHMS/GEN/defocused_Q2_p20_fa22.param"
+
+17247 - 17247
+;Calibration & PID Threshold Checks Setting 3
+;Defocused Q2+20% calorimeter calibration calibration
+g_ctp_optics_filename      = "PARAM/SHMS/GEN/defocused_Q2_p20_fa22.param"

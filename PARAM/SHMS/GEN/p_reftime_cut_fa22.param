@@ -10,23 +10,16 @@
 ;
 ; NOTE: refcuts are integers, not reals
 
-; no cuts
-; pdc_tdcrefcut=-100000.
-; phodo_tdcrefcut=-100000
-; phodo_adcrefcut=-100000
-; pngcer_adcrefcut=-100000
-; phgcer_adcrefcut=-100000
-; paero_adcrefcut=-100000
-; pcal_adcrefcut=-100000
 
-; determined from fall 2019 - spring 2020 offline analysis
+;Determined from 17232,17239,17242
+;SHMS p=-4.0GeV/c, theta=20 degrees
 ; cut variable = pDCREF(min)
 pdc_tdcrefcut=-14400
 ; cut variable = pT1
 phodo_tdcrefcut=-3400
 ; cut variable = pFADC_TREF_ROC2
-phodo_adcrefcut=-4200
-pngcer_adcrefcut=-4200
-phgcer_adcrefcut=-4200
-paero_adcrefcut=-4200
-pcal_adcrefcut=-4200
+phodo_adcrefcut=-3700
+pngcer_adcrefcut=-3700
+phgcer_adcrefcut=-3700
+paero_adcrefcut=-3700
+pcal_adcrefcut=-3700
