@@ -18,6 +18,7 @@ vector<TString> paths_to_data() {
   pathList.push_back("./CACHE_LINKS/cache_cafe"); 
   pathList.push_back("./CACHE_LINKS/cache_sp18");
   pathList.push_back("./CACHE_LINKS/cache_sp19"); 
+  pathList.push_back("./CACHE_LINKS/cache_xem2"); 
   return pathList;
 }
 

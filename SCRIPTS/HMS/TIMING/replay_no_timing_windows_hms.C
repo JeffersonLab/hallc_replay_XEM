@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/HMS/hms_shared.h"
 
-void replay_no_timing_windows_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_no_timing_windows_hms(Int_t RunNumber=0, Int_t MaxEvent=0, bool run_all=false) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,10 +15,20 @@ void replay_no_timing_windows_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/HMS/TIMING/hms_noTimingWindows_%d_%d.root";
+  const char* ROOTFileNamePattern;
+  if(run_all) {
+    ROOTFileNamePattern = "ROOTfiles/HMS/TIMING/hms_noTimingWindows_all_%d_%d.root";
+  } else { 
+    ROOTFileNamePattern = "ROOTfiles/HMS/TIMING/hms_noTimingWindows_%d_%d.root";
+  }
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/HMS/TIMING/no_timing_windows.def";
+  TString odef_file;
+  if(run_all) {
+    odef_file = "DEF-files/HMS/TIMING/no_timing_windows_all.def";
+  } else {
+    odef_file = "DEF-files/HMS/TIMING/no_timing_windows.def";
+  }
   TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
   //No Summary File
   //No Report File

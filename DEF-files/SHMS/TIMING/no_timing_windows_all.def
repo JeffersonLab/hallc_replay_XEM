@@ -1,0 +1,8 @@
+#include "DEF-files/SHMS/PRODUCTION/BLOCK/pblock_vars_forMark.def"
+#include "DEF-files/SHMS/PRODUCTION/EPICS/pepics_vars.def"
+
+#include "DEF-files/SHMS/TIMING/HODO/phodo_histos_no_timing_windows.def"
+#include "DEF-files/SHMS/TIMING/CAL/pcal_histos_no_timing_windows.def"
+#include "DEF-files/SHMS/TIMING/DC/pdc_histos_no_timing_windows.def"
+#include "DEF-files/SHMS/TIMING/NGCER/pngcer_histos_no_timing_windows.def"
+#include "DEF-files/SHMS/TIMING/HGCER/phgcer_histos_no_timing_windows.def" 

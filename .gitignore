@@ -21,6 +21,7 @@ ROOTfiles
 /CALIBRATION/dc_calib/scripts/*cardLog*/
 /CALIBRATION/shms_cal_calib_f2/
 /CALIBRATION/hms_cal_calib_f2/
+/CALIBRATION/hms_cal_calib/pcal.param.*
 .root_history
 raw
 raw-sp18

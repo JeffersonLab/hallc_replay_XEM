@@ -1,0 +1,33 @@
+#           XEM2 (9/29/2022-) SHMS Runs in numerical order
+#
+# Run#  Ebeam I-beam Target SHMS_p  SHMS_th  PS1-6   Comment
+#------------------------------------------------------------------------------------------------------------------------------------
+17232	10.544	60	LH2	-4.0	20.0	-1	1	-1	-1	-1	-1	!SHMS Q2 defocused 20%
+#17233 Junk
+#17234-17236 NGC debugging
+#17237 Cosmics
+#17238 Cosmics, edtm 4000 Hz
+17239  10.544	60   	LH2	-4.0	20.0	-1	1	-1	-1	-1	-1	!Coda crashed at end of run, no comment about Q2 setgign
+#17240-1 Junk
+17242  10.544	60	LH2	-4.0	20.0	3	-1	-1	-1	-1	-1	!Q2 nominal, setting 1, I guess 3/4
+17243  10.544	60	LH2	-3.5	25.0	-1	0	-1	-1	-1	-1	!Q2+20% defocused, setting 2
+#setting change
+17244  10.544	60	LH2	-3.5	25.0	-1	0	-1	-1	-1	-1	!Q2 nominal, ELREAL
+17245  10.544	60	LH2	-3.5	25.0	1	-1	-1	-1	-1	-1	!Q2 nominal, 3/4
+#setting change
+17246  10.544	60	LH2	-2.5	35.0	-1	0	-1	-1	-1	-1	!Defocused Q1+20%, setting 3
+17247  10.544	60	LH2	-2.5	35.0	-1	0	-1	-1	-1	-1	!Defocused Q2+20%, setting 3 (Q1 normal, I hope)
+17248  10.544	60	LH2	-2.5	35.0	-1	0	-1	-1	-1	-1	!Nominal magnet settings, setting 3 
+17249  10.544	60	LH2	-2.5	35.0	0	-1	-1	-1	-1	-1	!Nominal magnets, 3/4
+#change places!
+#17250-251 not in runsheets, junk?
+17252  10.544   60 	LH2	-1.24	35.0	6	-1	-1	-1	-1	-1	!Setting 4, threshold check, 3/4
+17253  10.544	60	LH2	-1.24	35.0	6	-1	-1	-1	-1	-1	!same as above
+17254  10.544	60	LH2	-1.24	35.0	6	-1	-1	-1	-1	-1	!same as above
+#change setting for paddle test
+17255	10.544	60  	LH2	-9.24	8.00	-1	5	-1	-1	-1	-1	!Likely junk, incorrect prescale factors
+17256	10.544	60  	C12	-9.24	8.00	-1	5	-1	-1	-1	-1	!Likely junk, incorrect prescale factors
+17257	10.544	60	C12	-9.24	8.00	-1	8	-1	-1	-1	-1	!no comment
+#17258 junk, interlock HB
+17259  10.544	60     C12	-9.24	8.00	8	-1	-1	-1	-1	-1	
+

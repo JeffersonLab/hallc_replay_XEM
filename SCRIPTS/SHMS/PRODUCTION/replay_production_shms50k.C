@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/SHMS/shms_shared.h"
 
-void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool run_all=false) {
+void replay_production_shms50k (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,39 +15,19 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bo
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/TIMING/shms_noReferenceTime_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms50k/shms_replay_production_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file;
-  if(run_all) {
-    odef_file = "DEF-files/SHMS/TIMING/no_reference_times_all.def";
-  } else {
-    odef_file = "DEF-files/SHMS/TIMING/no_reference_times.def";
-  }
+  TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  //No Summary File
-  //No Report File
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/summary_production_%d_%d.report",
+			      RunNumber, MaxEvent);
+  TString report_file  = Form("REPORT_OUTPUT/SHMS/shms50k/replay_shms_production_%d_%d.report",
+			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.
   //Shared SHMS gHcParms setup located in ../shms_shared.h
   setupParms(RunNumber);
-  //===============================================================================================
-  //Overwrite the existing reference times with
-  //the default values specified in hallc_replay.  
-  gHcParms->AddString("g_ctp_no_reference_times_filename", "PARAM/SHMS/GEN/p_no_reference_times.param");
-  gHcParms->Load(gHcParms->GetString("g_ctp_no_reference_times_filename"));
-
-  //Now remove all Timing Windows and revert to 
-  //the default values specifid in hallc_replay
-  gHcParms->AddString("g_ctp_no_timing_windows_filename", "DBASE/SHMS/pdet_cuts_no_timing_windows.param");
-  gHcParms->Load(gHcParms->GetString("g_ctp_no_timing_windows_filename"));
-
-  // I need more claraification on how to set tshms.param
-  // Load parameters for SHMS trigger configuration
-  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
-
-  //===============================================================================================
-
   //Initialize SHMS single-arm DAQ with detectors
   //Shared SHMS apparatus setup located in ../shms_shared.h
   setupApparatus();
@@ -85,13 +65,13 @@ void replay_no_reference_times_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bo
   // Define cuts file
   analyzer->SetCutFile(cdef_file);  // optional
   // File to record accounting information for cuts
-  //analyzer->SetSummaryFile(summary_file);  // optional
+  analyzer->SetSummaryFile(summary_file);  // optional
 
   // Start the actual analysis.
   analyzer->Process(run);
 
   // Create report file from template
-  //analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
-  //			report_file);  // optional
+  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  			report_file);  // optional
 
 }

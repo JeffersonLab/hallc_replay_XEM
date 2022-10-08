@@ -5,7 +5,7 @@
 #include <ctime>
 using namespace std;
 
-int main_calib()
+int main_calib(int runNumber, int nEvents=-1)
 {
 
   //prevent root from displaying graphs while executing
@@ -16,8 +16,8 @@ int main_calib()
   clock_t cl;
   cl = clock();
 
-  DC_calib obj("HMS", "../../../ROOTfiles/CALIB/hms_replay_dc_2088_-1.root", 2088, -1, "pid_elec", "card");                                 
-  //DC_calib obj("SHMS", "../../../ROOTfiles/CALIB/shms_replay_dc_3219_-1.root", 3219, -1, "pid_elec", "card");                                 
+  DC_calib obj("HMS", Form("ROOTfiles/HMS/CALIBRATION/hms_replay_dc_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "card");                       
+  //DC_calib obj("SHMS", Form("ROOTfiles/SHMS/CALIBRATION/shms_replay_dc_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "card");                                 
   obj.setup_Directory();
   obj.SetPlaneNames();
   obj.GetDCLeafs();

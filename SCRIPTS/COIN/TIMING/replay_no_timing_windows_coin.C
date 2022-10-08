@@ -22,6 +22,7 @@ void replay_no_timing_windows_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
+  pathList.push_back("./CACHE_LINKS/cache_xem2"); 
 
   //const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/coin_noTimingWindows_%d_%d.root";

@@ -29,8 +29,3 @@ hcer_adc_tdc_offset= 0.
 ; cut variable is H.cer.goodAdcTdcDiffTime
 hcer_adcTimeWindowMin =   60.,  60.
 hcer_adcTimeWindowMax =  200., 200.
-
-; No cuts
-; cut variable is H.cer.goodAdcTdcDiffTime
-;hcer_adcTimeWindowMin =   -1000.,  -1000.
-;hcer_adcTimeWindowMax =  1000., 1000.

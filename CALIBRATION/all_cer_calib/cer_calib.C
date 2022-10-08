@@ -278,39 +278,41 @@ void hms_m1(TString file_name) {
 	
 	TCanvas* c1 = new TCanvas("c1", "Cerenkov Calibration Method 1", 1200, 1200);
 	c1->Divide(2,1);
-	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 50, 0, 25);
-	TH1F *h2 = new TH1F("h2", "PMT 2 goodAdcPulseInt Distribution", 50, 0, 25);
+	TH1F *h1 = new TH1F("h1", "PMT 1 goodAdcPulseInt Distribution", 300, 0, 150);
+	TH1F *h2 = new TH1F("h2", "PMT 2 goodAdcPulseInt Distribution", 300, 0, 150);
 	
 	Int_t nentries = (Int_t)tr1->GetEntries();
 	for (Int_t i = 0; i < nentries; i++){
 		tr1->GetEntry(i);
 		if (true){ //common cuts
-			if(adcMult[0] == 1 && adcPulseInt[0] > 1){ // PMT 1 Specific Cuts
+			if(adcMult[0] == 1 && adcPulseInt[0] > 0.1){ // PMT 1 Specific Cuts
 				h1->Fill(adcPulseInt[0]);
 			}
-			if(adcMult[1] == 1 && adcPulseInt[1] > 1){ // PMT 2 Specific Cuts
+			if(adcMult[1] == 1 && adcPulseInt[1] > 0.1){ // PMT 2 Specific Cuts
 				h2->Fill(adcPulseInt[1]);
 			}
 		}
 	}
 	
 	c1->cd(1);
+	gPad->SetLogy();
 	h1->Draw();
-	TF1* f1 = new TF1("f1","gaus",2,8);
+	TF1* f1 = new TF1("f1","gaus",7.5,13.5);
 	h1->Fit(f1,"R");
 	double mean1 = f1->GetParameter(1); //this is the calibration constant
 	h1->SetTitle("PMT1 Cerenkov Calibration; Pulse Integral");
-	
+
 	c1->cd(2);
+	gPad->SetLogy();
 	h2->Draw();
-	TF1* f2 = new TF1("f2","gaus",2,8);
+	TF1* f2 = new TF1("f2","gaus",7.5,13);
 	h2->Fit(f2,"R");
 	double mean2 = f2->GetParameter(1); //this is the calibration constant
 	h2->SetTitle("PMT2 Cerenkov Calibration; Pulse Integral");
-	
+
 	cout << "1/PMT1 Calibration Constant: " << mean1 << endl;
 	cout << "1/PMT2 Calibration Constant: " << mean2 << endl;
-	
+
 	return;
 }
 

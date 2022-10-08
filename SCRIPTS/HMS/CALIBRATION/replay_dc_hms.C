@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/HMS/hms_shared.h"
 
-void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_dc_hms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool withTzero = false) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,7 +15,7 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/CALIB/hms_replay_dc_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/CALIBRATION/hms_replay_dc_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
   TString odef_file = "DEF-files/HMS/CALIBRATION/hdc_calibration.def";
@@ -28,6 +28,14 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
   setupParms(RunNumber);
   //Initialize HMS single-arm DAQ with detectors
   //Shared HMS apparatus setup located in ../hms_shared.h
+  //=============================================================================
+  //Specific parameter for doing DC replays (without time offset)
+  if(!withTzero) {
+    // Set the tzero to zero for calibrating tzero.
+    cout << "Setting tzero to zero.\n";
+    gHcParms->Load("PARAM/HMS/DC/hdc_set_tzero_to_zero.param");
+  }
+  //=============================================================================
   setupApparatus();
 
   // Set up the analyzer - we use the standard one,

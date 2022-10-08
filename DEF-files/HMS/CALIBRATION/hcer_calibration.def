@@ -1,0 +1,10 @@
+#****************************
+#* Variables for Cer Calib
+#****************************
+
+block H.cer.goodAdcPulseInt
+block H.cer.goodAdcPulseAmp
+block H.cer.goodAdcMult
+block H.cer.npe
+block H.cer.npeSum
+

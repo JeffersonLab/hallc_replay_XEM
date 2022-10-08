@@ -23,6 +23,7 @@ void replay_production_shms_coin_pionlt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./CACHE_LINKS/cache_pionlt");
   pathList.push_back("./CACHE_LINKS/cache_cafe"); 
+  pathList.push_back("./CACHE_LINKS/cache_xem2"); 
 
   const char* ROOTFileNamePattern = "ROOTfiles/COIN/shms50k/shms_coin_replay_production_%d_%d.root";
   
