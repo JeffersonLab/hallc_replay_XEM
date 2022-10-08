@@ -91,4 +91,5 @@ hodo_NegAdcTimeWindowMax =  200., 200., 200., 200.,
                 	    200., 200., 200., 200.
 
 ; pscin_tdc_max       maximum allowed tdc value                                 
-pscin_tdc_max = 1000
+;pscin_tdc_min = 0
+;pscin_tdc_max = 1600

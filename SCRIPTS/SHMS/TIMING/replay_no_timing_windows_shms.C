@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/SHMS/shms_shared.h"
 
-void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool run_all=false) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -15,10 +15,20 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/TIMING/shms_noTimingWindows_%d_%d.root";
+  const char* ROOTFileNamePattern;
+  if(run_all) {
+    ROOTFileNamePattern = "ROOTfiles/SHMS/TIMING/shms_noTimingWindows_all_%d_%d.root";
+  } else { 
+    ROOTFileNamePattern = "ROOTfiles/SHMS/TIMING/shms_noTimingWindows_%d_%d.root";
+  }
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
-  TString odef_file = "DEF-files/SHMS/TIMING/no_timing_windows.def";
+  TString odef_file;
+  if(run_all) {
+    odef_file = "DEF-files/SHMS/TIMING/no_timing_windows_all.def";
+  } else {
+    odef_file = "DEF-files/SHMS/TIMING/no_timing_windows.def";
+  }
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
   //TString summary_file = Form("REPORT_OUTPUT/SHMS/",RunNumber, MaxEvent);
   //TString report_file  = Form("REPORT_OUTPUT/SHMS/",RunNumber, MaxEvent);
@@ -36,7 +46,7 @@ void replay_no_timing_windows_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // I need more claraification on how to set tshms.param
   // Load parameters for SHMS trigger configuration
-  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+  //gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
 
   //======================================================================
 

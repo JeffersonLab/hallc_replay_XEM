@@ -1,7 +1,7 @@
 ;SHMS Aero Cut parameters for removing timing windows
 
 ; ADC time window cut values used to select "good" ADC events
-paero_adc_tdc_offset = 200.
+;paero_adc_tdc_offset = 200.
 
 paero_adcPosTimeWindowMin = -1000., -1000., -1000., -1000., -1000., -1000., -1000.
 paero_adcPosTimeWindowMax = 1000., 1000., 1000., 1000., 1000., 1000., 1000.

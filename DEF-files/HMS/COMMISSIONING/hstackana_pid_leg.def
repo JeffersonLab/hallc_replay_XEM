@@ -2,6 +2,7 @@
 #include "DEF-files/HMS/PRODUCTION/GTR/hgtr_vars.def"
 #include "DEF-files/HMS/PRODUCTION/PID/hpid_vars.def"
 #include "DEF-files/HMS/PRODUCTION/EPICS/hepics_vars.def"
+#include "DEF-files/HMS/PRODUCTION/KIN/hkin_vars.def"
 
 block T.hms.*
 block H.cal.eprtracknorm

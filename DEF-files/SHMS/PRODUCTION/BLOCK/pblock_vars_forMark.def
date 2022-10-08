@@ -1,0 +1,15 @@
+#********************
+# Block Definitions *
+#********************
+
+block T.shms.*
+block P.ngcer.*
+block P.dc.*
+block P.hod.*
+block P.cal.*
+block P.tr.*
+block P.gtr.*
+block P.kin.*
+block P.rb.*
+block P.react.*
+block P.extcor.*

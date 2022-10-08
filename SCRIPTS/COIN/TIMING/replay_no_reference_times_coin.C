@@ -1,4 +1,4 @@
-void replay_no_reference_times_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
+void replay_no_reference_times_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0, bool run_all=false) {
   //Made from replay_production_coin_pElec_hProt.C
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
@@ -22,9 +22,15 @@ void replay_no_reference_times_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./cache");
+  pathList.push_back("./CACHE_LINKS/cache_xem2"); 
 
   //const char* RunFileNamePattern = "raw/shms_all_%05d.dat";
-  const char* ROOTFileNamePattern = "ROOTfiles/coin_noReferenceTime_%d_%d.root";
+  const char* ROOTFileNamePattern;
+  if(run_all) {
+    ROOTFileNamePattern = "ROOTfiles/coin_noReferenceTime_all_%d_%d.root";
+  } else {
+    ROOTFileNamePattern = "ROOTfiles/coin_noReferenceTime_%d_%d.root";
+  }
   
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
@@ -278,7 +284,11 @@ void replay_no_reference_times_coin (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Define output ROOT file
   analyzer->SetOutFile(ROOTFileName.Data());
   // Define DEF-file+
-  analyzer->SetOdefFile("DEF-files/COIN/TIMING/no_reference_times.def");
+  if(run_all) {
+    analyzer->SetOdefFile("DEF-files/COIN/TIMING/no_reference_times_all.def");
+  } else {
+    analyzer->SetOdefFile("DEF-files/COIN/TIMING/no_reference_times.def");
+  }
   // Define cuts file
   analyzer->SetCutFile("DEF-files/COIN/PRODUCTION/CUTS/coin_production_cuts.def");  // optional
   // Start the actual analysis.
