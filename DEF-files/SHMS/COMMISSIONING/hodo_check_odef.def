@@ -38,6 +38,8 @@ block P.cal.etotnorm
 block P.cal.etottracknorm
 
 block P.ngcer.npe
+block P.ngcer.npeSum
+block P.hgcer.npe
 block P.hgcer.npeSum
 
 #Add for checking Calibrations
