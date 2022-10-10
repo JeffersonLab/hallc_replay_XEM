@@ -1,0 +1,3 @@
+; HMS calibration files for 25 deg, p = -3.5 GeV, runs 4407-4409
+; Default Cal Calib Sufficient
+;#include "PARAM/HMS/CAL/hcal_calib_25deg_m3p5_fa22.param"

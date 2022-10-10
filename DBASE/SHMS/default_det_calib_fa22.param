@@ -1,5 +1,5 @@
 ; SHMS default calibration parameter files
-#include "PARAM/SHMS/NGCER/pngcer_calib_fa22.param"
+#include "PARAM/SHMS/NGCER/pngcer_calib_lower_hv_fa22.param"
 #include "PARAM/SHMS/DC/pdc_calib_fa22.param"
 #include "PARAM/SHMS/DC/pdc_tzero_per_wire_fa22.param"
 #include "PARAM/SHMS/HGCER/phgcer_calib_fa22.param"

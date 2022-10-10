@@ -1,0 +1,4 @@
+; HMS calibration files for 20 deg, p = -4.0 GeV, runs 4402-4406
+;Default Cal Calib Sufficient
+;#include "PARAM/HMS/CAL/hcal_calib_20deg_m4p0_fa22.param"
+

@@ -305,7 +305,7 @@ void hms_m1(TString file_name) {
 	c1->cd(2);
 	gPad->SetLogy();
 	h2->Draw();
-	TF1* f2 = new TF1("f2","gaus",7.5,13);
+	TF1* f2 = new TF1("f2","gaus",7.0,12.5);
 	h2->Fit(f2,"R");
 	double mean2 = f2->GetParameter(1); //this is the calibration constant
 	h2->SetTitle("PMT2 Cerenkov Calibration; Pulse Integral");

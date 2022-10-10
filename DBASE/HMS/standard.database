@@ -67,12 +67,25 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period4_sp18.param"
 ;Calibration & PID Threshold Checks Setting 1
 ;Defocused Q2+20% calorimeter calibration calibration
 g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_20deg_m4p0_fa22.param"
+
+4403 - 4406
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_20deg_m4p0_fa22.param"
+
 4407 - 4407
 ;Calibration & PID Threshold Checks Setting 2
 ;Defocused Q2+20% calorimeter calibration calibration
 g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_25deg_m3p5_fa22.param"
+
+4408 - 4409
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_25deg_m3p5_fa22.param"
 
 4410 - 4410
 ;Calibration & PID Threshold Checks Setting 3
 ;Defocused Q2+20% calorimeter calibration calibration
 g_ctp_optics_filename      = "PARAM/HMS/GEN/defocused_Q2_p20_fa22.param"
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_35deg_m2p5_fa22.param"
+
+4411 - 4413
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_35deg_m2p5_fa22.param"

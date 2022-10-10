@@ -513,7 +513,6 @@ void THcShowerCalib::CalcThresholds() {
       //    cout << "CalcThreshods: nev=" << nev << "  Enorm=" << Enorm << endl;
     }
 
-    if (nev > 200000) break;
   };
   //wph modifing the code to fit +/- sigma from peak
   //Double_t max
@@ -1007,7 +1006,6 @@ void THcShowerCalib::FillHEcal() {
 
     }
  
-    if (nev > 200000) break;
   };
 
   //  output.close();
@@ -1043,7 +1041,6 @@ void THcShowerCalib::FillHEcalNoCor() {
       nev++;
     }
 
-    if (nev > 200000) break;
   };
 
   cout << "FillHEcalNoCor: " << nev << " events filled" << endl;
@@ -1121,7 +1118,6 @@ void THcShowerCalib::FillCutBranch() {
       hNtrack->Fill(H_tr_n);
             hClusTrk->Fill(H_cal_nclust,H_tr_n);  
       nev++;
-      if (nev > 200000) break;
     }
 }
 

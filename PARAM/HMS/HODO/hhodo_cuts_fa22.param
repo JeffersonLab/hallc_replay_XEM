@@ -44,9 +44,9 @@ hhodo_slop     =    2.,  2.,  4.,  4.
 ;   to move the tdc to between 0 and 4000 channels.
 hhodo_tdc_offset = 1580, 1580, 1580, 1580
 
-;hhodo_adc_tdc_offset = 200., 200., 200., 200.
+hhodo_adc_tdc_offset = 200., 200., 200., 200.
 ;Offset changed with HCANA update (April 2021)
-hhodo_adc_tdc_offset = 171., 171., 171., 171.
+;hhodo_adc_tdc_offset = 171., 171., 171., 171.
 
 ; HMS Hodoscope Parameter File Containing TimeWindow Min/Max Cuts
 ;Startup of XEM 2022 with run 4402
