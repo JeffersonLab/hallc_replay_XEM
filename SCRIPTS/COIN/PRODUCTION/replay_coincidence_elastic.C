@@ -22,7 +22,7 @@ void replay_coincidence_elastic (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./raw");
   pathList.push_back("./raw/../raw.copiedtotape");
   pathList.push_back("./CACHE_LINKS/cache_pionlt");
-  pathList.push_back("./CACHE_LINKS/cache_cafe"); 
+  pathList.push_back("./CACHE_LINKS/cache_xem2"); 
 
   //const char* RunFileNamePattern = "raw/coin_all_%05d.dat";
   const char* ROOTFileNamePattern = "ROOTfiles/COIN/HeeP/coin_replay_production_%d_%d.root";

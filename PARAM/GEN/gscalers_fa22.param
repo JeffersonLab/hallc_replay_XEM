@@ -1,15 +1,18 @@
-;djm "final" for Fall 2021, period 2a which I define to be COIN runs 12004- TBD
-; BCM calibration run 12496 taken on Oct 6.  
-; I still need to check the wire calibration, but the result is unlikely to change. 
-; Use BCM2 for normalization of physics data. (The BCM1 offset was found to be unstable on Oct 28. Not sure when the problem started.) 
-; Experimenters should be wary of the impact of the current threshold when taking production data near 5 muA.  
-; Note this version includes a small but highly significant saturation correction for BCM1,2 that turns on above 50 muA (reaching ~1% at 70 muA).
-gNumBCMs=6
-gBCM_Names =            "BCM1      BCM2      Unser      BCM4A      BCM4B      BCM4C"
-gBCM_Gain =            5696.6,    5602.4,   4011.2,    9351.2,    6665.1,    4574.4
-gBCM_Offset =        251640.,   249200.,  244000.,    -1081.9,   -703.7,    -263.3
-gBCM_SatOffset =         50.,       50.,    1000.,     1000.,     1000.,     1000. 
-gBCM_SatQuadratic =  0.00175,    0.002,      0.0,     0.0,     0.0,    0.0 
-gBCM_Current_threshold = 3.0
+;Analysis done on 9/20/2022 by CC
+;Final high current BCM scan from PionLT run
+;BCM Scan in coin run 16898 performed on 9/8/2022 13:26
+;Analyzed by a modified version of Gabriel's BCM calibration script
+;script saved under UTIL_XEM
+;Script parameters used:
+;zeroThr=1.e-6,matchThr=0.1,spikeThr=0.05,plateauThr=0.02
+;plateauSpan=50.,plateauTrim=4.,UnserGain=0.0002492
+;L175 modified: if(...=0.05) --> if(...=0.025) to get lowest current plateau
+
+gNumBCMs    = 6
+gBCM_Names  = " BCM1      BCM2      Unser	BCM4A    BCM4B   BCM4C"
+gBCM_Gain   =   5621.0,   5456.0,   4013.0, 	9235.0, 20900.0, 5025.0
+gBCM_Offset = 4120.0, 252100.0,   358100.0, 3290.0, 152700.0,	 2190.0
+
+gBCM_Current_threshold = 5.0
 ; index = 0 to gNumBCMs-1
 gBCM_Current_threshold_index = 3
