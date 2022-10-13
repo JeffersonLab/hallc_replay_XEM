@@ -2,16 +2,18 @@
 #* Variables for Hodo Calib
 #****************************
 
-block T.hms.pFADC_TREF_ROC1_adcPulseTimeRaw
-block T.hms.pFADC_TREF_ROC1_adcPulseAmp
-block T.hms.pFADC_TREF_ROC1_adcMultiplicity
-block T.hms.pT1_tdcTimeRaw
-block T.hms.pT2_tdcTimeRaw
-block T.hms.pT3_tdcTimeRaw
+block T.hms.hFADC_TREF_ROC1_adcPulseTimeRaw
+block T.hms.hFADC_TREF_ROC1_adcPulseAmp
+block T.hms.hFADC_TREF_ROC1_adcMultiplicity
+block T.hms.hT1_tdcTimeRaw
+block T.hms.hT2_tdcTimeRaw
+block T.hms.hT3_tdcTimeRaw
 
 block H.cal.etot
+block H.cal.etracknorm
+block H.cal.etottracknorm
 block H.cer.npeSum
-
+block H.cer.*
 
 block H.hod.1x.nhits
 block H.hod.1y.nhits

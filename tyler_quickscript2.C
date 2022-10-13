@@ -1,6 +1,4 @@
-#include "UTIL_XEM/paddle_cut_plots.C"
-
-void tyler_quickscript(){
+void tyler_quickscript2(){
   vector<int> deg8;
   deg8.push_back(17255);
   deg8.push_back(17256);
@@ -40,11 +38,24 @@ void tyler_quickscript(){
   deg85.push_back(17311);
   deg85.push_back(17312);
 
+  auto c = new TCanvas();
   for(int i=0; i<deg8.size(); i++){
-    paddle_cut_plots(deg8[i],8,7);
+    auto f = new TFile(Form("UTIL_XEM/paddle_plots_out/paddle_cut_plots_%d_S1X8_S2X7.root", deg8[i]));
+    auto h = (TH1D*) f->Get("hS1Xgoodhits");
+    h->Draw();
+    c->Print(Form("UTIL_XEM/paddle_plots_out/%dS1X.png",deg8[i]));
+    auto h2 = (TH1D*) f->Get("hS2Xgoodhits");
+    h2->Draw();
+    c->Print(Form("UTIL_XEM/paddle_plots_out/%dS2X.png",deg8[i]));
   }
   for(int i=0; i<deg85.size(); i++){
-    paddle_cut_plots(deg85[i],6,8);
+    auto f = new TFile(Form("UTIL_XEM/paddle_plots_out/paddle_cut_plots_%d_S1X6_S2X8.root", deg85[i]));
+    auto h = (TH1D*) f->Get("hS1Xgoodhits");
+    h->Draw();
+    c->Print(Form("UTIL_XEM/paddle_plots_out/%dS1X.png",deg85[i]));
+    auto h2 = (TH1D*) f->Get("hS2Xgoodhits");
+    h2->Draw();
+    c->Print(Form("UTIL_XEM/paddle_plots_out/%dS2X.png",deg85[i]));
   }
 }
   
