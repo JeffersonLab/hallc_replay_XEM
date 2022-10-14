@@ -1,0 +1,4 @@
+hhodo_SampThreshold = 10.
+hhodo_OutputSampWaveform = 1
+#phgcer_UseSampWaveform = 1
+#phgcer_SampNSA = 15

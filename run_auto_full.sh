@@ -1,4 +1,1 @@
-#!/bin/bash
-
-go_analysis
-touch tmp.dat
+UTIL_XEM/run_auto_full.sh
