@@ -16,12 +16,16 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0,Int_t FirstEve
   }
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "coin_all_%05d.dat";
+  const char* RunFileNamePattern = "shms_all_%05d.dat";
   vector<TString> pathList;
   pathList.push_back(".");
   pathList.push_back("./raw");
   pathList.push_back("./raw/../raw.copiedtotape");
-  pathList.push_back("./cache");
+  pathList.push_back("CACHE_LINKS/cache_cafe");
+  pathList.push_back("CACHE_LINKS/cache_pionlt");
+  pathList.push_back("CACHE_LINKS/cache_sp18");
+  pathList.push_back("CACHE_LINKS/cache_sp19");
+  pathList.push_back("CACHE_LINKS/cache_xem2");
 
   const char* ROOTFileNamePattern = "ROOTfiles/COIN/SCALARS/coin_replay_scalers_%d_%d.root";
 
@@ -31,14 +35,23 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0,Int_t FirstEve
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
-  // Load params for SHMS coin configuration
-  gHcParms->Load("PARAM/TRIG/tcoin.param");
-  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
+  gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
+  // Load parameters for SHMS trigger configuration
+  gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
+  // Load fadc debug parameters
+  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+  // Load BCM values
+  ifstream bcmFile;
+  TString bcmParamFile = Form("PARAM/SHMS/BCM/bcmcurrent_%d.param", RunNumber);
+  bcmFile.open(bcmParamFile);
+  if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
+  gHcDetectorMap->Load(gHcParms->GetString("g_ctp_map_filename"));
 
   // Add trigger apparatus
   THaApparatus* TRG = new THcTrigApp("T", "TRG");
@@ -147,7 +160,7 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0,Int_t FirstEve
                                 // 1 = counter is # of all decode reads
                                 // 2 = counter is event number
   analyzer->SetEvent(event);
-  analyzer->SetMarkInterval(100000);
+  analyzer->SetMarkInterval(10000);
   // Set EPICS event type
   analyzer->SetEpicsEvtType(180);
   // Define crate map

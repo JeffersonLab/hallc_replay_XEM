@@ -1,4 +1,5 @@
 R__LOAD_LIBRARY(./CALIBRATION/bcm_current_map/ScalerCalib.C)
+//R__LOAD_LIBRARY(ScalerCalib.C)
 
 void run(string fin="fin.root", string spec_name="H", int runNum=0)
 {

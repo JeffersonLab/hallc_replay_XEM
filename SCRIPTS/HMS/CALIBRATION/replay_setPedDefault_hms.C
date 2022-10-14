@@ -2,7 +2,7 @@
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/HMS/hms_shared.h"
 
-void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
+void replay_setPedDefault_hms (Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) { cout << "Enter a Run Number (-1 to exit): ";
@@ -14,7 +14,12 @@ void replay (Int_t RunNumber=0, Int_t MaxEvent=0) {
   vector<TString> pathList =paths_to_data();
 
   // Create file name patterns.
-  const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
+  const char* RunFileNamePattern;
+  if(RunNumber > 16500) {
+    RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
+  } else {
+    RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
+  }
   const char* ROOTFileNamePattern = "ROOTfiles/HMS/CALIBRATION/hms_setPedDefault_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
