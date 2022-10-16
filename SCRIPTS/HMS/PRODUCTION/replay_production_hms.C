@@ -15,14 +15,14 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/HMS/hms_replay_production_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/PRODUCTION/hms_replay_production_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
   TString odef_file = "DEF-files/HMS/PRODUCTION/hstackana_production.def";
   TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
   TString summary_file = Form("REPORT_OUTPUT/HMS/summary_production_%d_%d.report",
 			      RunNumber, MaxEvent);
-  TString report_file  = Form("REPORT_OUTPUT/HMS/hms50k/replay_hms_production_%d_%d.report",
+  TString report_file  = Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_production_%d_%d.report",
 			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.
