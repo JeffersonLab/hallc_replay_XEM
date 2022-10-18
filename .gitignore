@@ -22,6 +22,7 @@ ROOTfiles
 /CALIBRATION/shms_cal_calib_f2/
 /CALIBRATION/hms_cal_calib_f2/
 /CALIBRATION/hms_cal_calib/pcal.param.*
+/CACHE_LINKS/
 .root_history
 raw
 raw-sp18

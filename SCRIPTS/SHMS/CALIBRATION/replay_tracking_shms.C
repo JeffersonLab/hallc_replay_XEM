@@ -35,8 +35,7 @@ void replay_tracking_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,
   //Specifics for the replay
   TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("REPORT_OUTPUT/SHMS/",
-			      RunNumber, MaxEvent);
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/summary_production_%d_%d_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.report", RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit);
   TString report_file  = Form("REPORT_OUTPUT/SHMS/CALIBRATION/replay_shms_production_%d_%d_%3.1f_%3.1f_%3.2f_%3.2f_%3.2f_%d_%d_%d.report", RunNumber, MaxEvent, x_stub_c, y_stub_c, xp_stub_c, yp_stub_c, sp_c, max_pr_hits, p_min_combos, p_min_hit);
 
   //Initialize gHcParms.

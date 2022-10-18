@@ -20,7 +20,7 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   //Specifics for the replay
   TString odef_file = "DEF-files/HMS/PRODUCTION/hstackana_production.def";
   TString cdef_file = "DEF-files/HMS/PRODUCTION/CUTS/hstackana_production_cuts.def";
-  TString summary_file = Form("REPORT_OUTPUT/HMS/summary_production_%d_%d.report",
+  TString summary_file = Form("REPORT_OUTPUT/HMS/PRODUCTION/summary_production_%d_%d.report",
 			      RunNumber, MaxEvent);
   TString report_file  = Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_hms_production_%d_%d.report",
 			      RunNumber, MaxEvent);

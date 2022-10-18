@@ -20,7 +20,7 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   //Specifics for the replay
   TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("REPORT_OUTPUT/SHMS/summary_production_%d_%d.report",
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report",
 			      RunNumber, MaxEvent);
   TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report",
 			      RunNumber, MaxEvent);

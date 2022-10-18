@@ -15,12 +15,12 @@ void replay_production_all_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_production_all_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_all_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
   TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production_all.def";
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("PRODUCTION/summary_all_production_%d_%d.report", RunNumber, MaxEvent);
+  TString summary_file = Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_all_production_%d_%d.report", RunNumber, MaxEvent);
   TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_all_production_%d_%d.report", RunNumber, MaxEvent);  // optional
 
   //Initialize gHcParms.

@@ -15,7 +15,7 @@ void replay_hodo_check (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/shms_replay_hodo_check_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/COMMISSIONING/HODO_CHECK/shms_replay_hodo_check_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
   TString odef_file = "DEF-files/SHMS/COMMISSIONING/hodo_check_odef.def";

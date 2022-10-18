@@ -22,7 +22,7 @@ Help()
     echo "      This option selects filesystem in which to read/write data " 
     echo "      from the XEM experiment. "
     echo ""
-    echo "      The optional arguments are: volatile, work, group"
+    echo "      The optional arguments are: volatile, ... THATS IT!"
     echo ""
     echo "      volatile, work, group: "
     echo "            these options will set symbolic links to the corresponding filesystem "
@@ -83,6 +83,8 @@ if echo $HOSTNAME | grep -q "ifarm"; then
     ifarm_flg=1
 elif echo $HOSTNAME | grep -q "cdaq"; then
     cdaq_flg=1
+ else
+    echo "Unknown hostname, use ifarm or cdaq"
 fi
 
 #if [[ ifarm_flg==0 &&  cdaq_flg==0 ]]; then
@@ -155,7 +157,7 @@ if [[ ifarm_flg -eq 1 ]]; then
     if [[ $fsys == "volatile" ]]; then	     
 	echo ""
 	echo 'Setting up symbolic links to volatile filesystem on ifarm . . .'
-	base_dir_voli="/volatile/hallc/c-xem2/"	
+	base_dir_voli="/volatile/hallc/xem2/"	
 
 	echo "Creating dir $base_dir_voli$USER . . ."
 	mkdir $base_dir_voli$USER
@@ -183,16 +185,72 @@ if [[ ifarm_flg -eq 1 ]]; then
 	echo "Creating symlink to ${cache_raw_dir_cafe}"
 	ln -sf $cache_raw_dir_cafe $CACHE_LINKS/cache_cafe
 	
-	unlink REPORT_OUTPUT
-	echo "Creating dir and symlink to $base_dir_voli$USER/REPORT_OUTPUT . . ."
-	mkdir $base_dir_voli$USER"/REPORT_OUTPUT"
-	ln -sf $base_dir_voli$USER"/REPORT_OUTPUT"
+	echo "Creating dir and symlink to $base_dir_voli/REPORT_OUTPUT . . ."
+	mkdir $base_dir_voli"/REPORT_OUTPUT"
+	ln -sf $base_dir_voli"/REPORT_OUTPUT"
+	#Creating REPORT_OUTPUT/SPEC Directories
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS"
+	#Add COIN REPORT_OUTPUT Directories
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/REPLAY_REPORT"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/COMMISSIONING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/CALIBRATION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/PRODUCTION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/SCALARS"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/TIMING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/shms50k"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/COIN/hms50k"
+	#Add SHMS REPORT_OUTPUT Directories
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/REPLAY_REPORT"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/COMMISSIONING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/COMMISSIONING/HODO_CHECK"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/CALIBRATION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/PRODUCTION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/SCALARS"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/TIMING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/SHMS/shms50k"
+	#Add HMS REPORT_OUTPUT Directories
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/REPLAY_REPORT"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/COMMISSIONING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/CALIBRATION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/PRODUCTION"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/SCALARS"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/TIMING"
+	mkdir $base_dir_voli"/REPORT_OUTPUT/HMS/hms50k"
 
-	unlink ROOTfiles
-	echo "Creating dir and symlink to $base_dir_voli$USER/ROOTfiles . . ."
-	mkdir $base_dir_voli$USER"/ROOTfiles"
-	ln -sf $base_dir_voli$USER"/ROOTfiles"
-	echo ""
+	
+	echo "Creating dir and symlink to $base_dir_voli/ROOTfiles . . ."
+	mkdir $base_dir_voli"/ROOTfiles"
+	ln -sf $base_dir_voli"/ROOTfiles"
+	#Creating ROOTfiles/SPEC Directories
+	mkdir $base_dir_voli"/ROOTfiles/COIN"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS"
+	mkdir $base_dir_voli"/ROOTfiles/HMS"
+	#Add COIN ROOTfiles Directories
+	mkdir $base_dir_voli"/ROOTfiles/COIN/COMMISSIONING"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/CALIBRATION"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/PRODUCTION"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/SCALARS"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/TIMING"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/HeeP"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/shms50k"
+	mkdir $base_dir_voli"/ROOTfiles/COIN/hms50k"
+	#Add SHMS ROOTfiles Directories
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/COMMISSIONING"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/COMMISSIONING/HODO_CHECK"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/CALIBRATION"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/PRODUCTION"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/SCALARS"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/TIMING"
+	mkdir $base_dir_voli"/ROOTfiles/SHMS/shms50k"
+	#Add HMS ROOTfiles Directories
+	mkdir $base_dir_voli"/ROOTfiles/HMS/COMMISSIONING"
+	mkdir $base_dir_voli"/ROOTfiles/HMS/CALIBRATION"
+	mkdir $base_dir_voli"/ROOTfiles/HMS/PRODUCTION"
+	mkdir $base_dir_voli"/ROOTfiles/HMS/SCALARS"
+	mkdir $base_dir_voli"/ROOTfiles/HMS/TIMING"
+	mkdir $base_dir_voli"/ROOTfiles/HMS/hms50k"
 	
     elif [[ $fsys == "work" ]]; then	     
 	echo ""
