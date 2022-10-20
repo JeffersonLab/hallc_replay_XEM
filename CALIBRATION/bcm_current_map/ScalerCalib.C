@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const double kBig = 1.e38;
+//const double kBig = 1.e38;
 const int NBCM = 5;
 
 ofstream outfile;
@@ -39,8 +39,15 @@ int ScalerCalib::Run()
       cout << "ERROR: empty container! Check the input file" << endl;
       return -1;
     }
-
-  ofilename = "bcmcurrent_" + runstr + ".param";
+  cout << fName << endl;
+  if(fName=="P") {
+    ofilename = "PARAM/SHMS/BCM/bcmcurrent_" + runstr + ".param";
+  } else if(fName=="H") {
+    ofilename = "PARAM/HMS/BCM/bcmcurrent_" + runstr + ".param";
+  } else {
+    cout << "Invalid spec name!\n";
+    return -1;
+  }
   cout << ofilename << "\n";
   outfile.open(ofilename.c_str());
 

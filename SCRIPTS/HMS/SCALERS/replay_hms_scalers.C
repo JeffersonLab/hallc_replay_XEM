@@ -1,6 +1,7 @@
 //Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/HMS/hms_shared.h"
+R__LOAD_LIBRARY(CALIBRATION/bcm_current_map/ScalerCalib.C)
 
 void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
@@ -103,5 +104,12 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Create report file from template
   analyzer->PrintReport("TEMPLATES/HMS/SCALERS/hscalers.template",
   			Form("REPORT_OUTPUT/HMS/SCALARS/replay_hms_scalars_%d_%d.report", RunNumber, MaxEvent));  // optional  
+
+  //H: HMS, P: SHMS
+  ScalerCalib scalib("H");
+  scalib.SetInputFile(ROOTFileName.Data());
+  scalib.SetRunNum(RunNumber);
+  scalib.SetPrintFlag(1); //0: bcm1 and bcm2 only, 1: all
+  scalib.Run();
 
 }

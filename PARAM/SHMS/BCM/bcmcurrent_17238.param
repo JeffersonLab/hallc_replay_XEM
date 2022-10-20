@@ -1,13 +1,13 @@
 num_scal_reads = 4
 
-scal_read_bcm1_current = -44, -44, -44, -44
+scal_read_bcm1_current = -0, -0, -0, -0
 
-scal_read_bcm2_current = 0, 0, 0, 0
+scal_read_bcm2_current = -0, -0, -0, -0
 
 scal_read_bcm4a_current = 1, 1, 1, 1
 
-scal_read_bcm4b_current = 3, 3, 3, 3
+scal_read_bcm4b_current = -6, -6, -6, -6
 
-scal_read_bcm4c_current = 1, 1, 1, 1
+scal_read_bcm4c_current = 0, 0, 0, 0
 
 scal_read_event = 30000, 70000, 357998, 378285
