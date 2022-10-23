@@ -16,7 +16,8 @@ g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_sp18
 2356-99999
 g_ctp_parm_filename        = "DBASE/HMS/general_fa22.param"
 g_ctp_det_calib_filename   = "DBASE/HMS/default_det_calib_fa22.param"
-g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_fa22.param"
+;g_ctp_bcm_calib_filename  = "PARAM/GEN/gscalers_fa22.param"
+g_ctp_bcm_calib_filename   = "PARAM/GEN/BCM/gbcm_period2_fa22.param"
 g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_fa22.param"
 g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_fa22.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_fa22.param"

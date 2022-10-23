@@ -4,7 +4,7 @@
 **************************
 
 Run Num     : {gen_run_number}
-Momentum    : {ppcentral*0.983:%.3f}
+Momentum    : {ppcentral:%.3f}
 Target AMU  : {gtargmass_amu:%.2f}
 Spec Theta  : {ptheta_lab:%.4f}
 Beam Energy : {gpbeam:%.3f}
