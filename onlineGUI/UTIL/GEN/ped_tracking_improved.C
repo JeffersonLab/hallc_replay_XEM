@@ -101,7 +101,7 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
   Double_t H2_ped_peak[H2_pmt->GetSize() - 2];
   for (Int_t ipmt = 0; ipmt < (H1_pmt->GetSize() - 2); ipmt++) {
 
-    if (H1_ped[ipmt]->GetEntries() > 25) {
+    if (H1_ped[ipmt]->GetEntries() > 10) {
       TSpectrum* s = new TSpectrum(1);
       gSystem->RedirectOutput("/dev/null", "a");
       s->Search(H1_ped[ipmt], 1.0, "nobackground&&nodraw", 0.001);
@@ -117,7 +117,7 @@ void ped_tracking_improved(TString golden_file = "", TString detector = "",
       H1_ped_peak[ipmt] = 1e+38;
     }
 
-    if (H2_ped[ipmt]->GetEntries() > 25) {
+    if (H2_ped[ipmt]->GetEntries() > 10) {
       TSpectrum* s = new TSpectrum(1);
       gSystem->RedirectOutput("/dev/null", "a");
       s->Search(H2_ped[ipmt], 1.0, "nobackground&&nodraw", 0.001);
