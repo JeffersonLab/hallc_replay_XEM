@@ -1,0 +1,23 @@
+block P.hod.goodstarttime
+block P.hod.goodscinhit
+block P.ngcer.npe*
+block P.cal.e*
+block P.gtr.*
+block P.kin.*
+block P.dc.x_fp
+block P.dc.xp_fp
+block P.dc.y_fp
+block P.dc.yp_fp
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
+
+
+
