@@ -1,10 +1,14 @@
-Run # : {gen_run_number}
-
 **************************
 * General Run Information
 **************************
 
-1 MhZ Pulses : {H.1MHz.scaler}
+Run Num     : {gen_run_number}
+Momentum    : {hpcentral:%.3f}
+Target AMU  : {gtargmass_amu:%.2f}
+Spec Theta  : {htheta_lab:%.4f}
+Beam Energy : {gpbeam:%.3f}
+
+1 MHz Pulses : {H.1MHz.scaler}
 Run Length   : {H.1MHz.scalerTime:%.3f} sec
 
 ***********
