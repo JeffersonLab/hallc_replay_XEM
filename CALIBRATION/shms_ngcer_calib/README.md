@@ -28,6 +28,8 @@
 
 8. shms_aero_calib : Contains a script to calibrate the NPE/ADC conversion parameters from SPE peaks for the SHMS aerogel.
 
-9. shms_hgcer_calib : Contains scripts to calibrate hte NPE/ADC conversion parameters for SHMS Gas Cerenkovs.
+9. shms_hgcer_calib : Contains scripts to calibrate the NPE/ADC conversion parameters for SHMS Gas Cerenkovs.
 
 10. set_peddefault : Contains script to determine the default pedestals for each SHMS and HMS detector.
+
+11. shms_ngcer_calib : Contains scripts to calibrate the NPE/ADC conversion parameters for the SHMS Noble Gas Cerenkov
