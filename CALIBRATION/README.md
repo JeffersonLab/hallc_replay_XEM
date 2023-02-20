@@ -32,6 +32,4 @@
 
 10. set_peddefault : Contains script to determine the default pedestals for each SHMS and HMS detector.
 
-
-
-
+11. shms_ngcer_calib : Contains script to calibrate the NPE/ADC conversion parameters for SHMS Noble Gas Cerenkov.
