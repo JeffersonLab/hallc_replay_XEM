@@ -3,11 +3,15 @@
 * General Run Information
 **************************
 
-Run Num     : {gen_run_number}
-Momentum    : {ppcentral:%.3f}
-Target AMU  : {gtargmass_amu:%.2f}
-Spec Theta  : {ptheta_lab:%.4f}
-Beam Energy : {gpbeam:%.3f}
+Run Num           : {gen_run_number}
+Raw Momentum      : {ppcentral:%.3f}
+Momentum Offset   : {ppcentral_offset:%.3f}
+True Momentum     : {ppcentral*(1+ppcentral_offset*0.01):%.3f}
+Target AMU        : {gtargmass_amu:%.2f}
+Raw Spec Theta    : {ptheta_lab:%.4f}
+Spec Theta Offset : {pthetacentral_offset:%.4f}
+True Spec Theta   : {ptheta_lab+pthetacentral_offset*180/pi:%.4f}
+Beam Energy       : {gpbeam:%.3f}
 
 1 MHz Pulses : {P.1MHz.scaler}
 Run Length   : {P.1MHz.scalerTime:%.3f} sec

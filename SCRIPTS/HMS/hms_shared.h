@@ -37,9 +37,8 @@ void setupParms(Int_t RunNumber) {
   // Load parameters for SHMS trigger configuration
   gHcParms->Load(gHcParms->GetString("g_ctp_trig_config_filename"));
   // Load hpcentral momentum offset 
-  gHcParms->Load("PARAM/HMS/GEN/hpcentral_function_sp18.param");
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
+  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
   
   // Load BCM values
   TString bcmParamFile = Form("PARAM/HMS/BCM/bcmcurrent_%d.param", RunNumber);
