@@ -42,7 +42,6 @@ void setupParms(Int_t RunNumber) {
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_sp18.param");
   
   // Load BCM values
-  ifstream bcmFile;
   TString bcmParamFile = Form("PARAM/HMS/BCM/bcmcurrent_%d.param", RunNumber);
   bcmFile.open(bcmParamFile);
   if (bcmFile.is_open()) gHcParms->Load(bcmParamFile);

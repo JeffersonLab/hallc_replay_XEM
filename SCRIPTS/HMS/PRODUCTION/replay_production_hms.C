@@ -31,8 +31,6 @@ void replay_production_hms(Int_t RunNumber=0, Int_t MaxEvent=0) {
   //Initialize HMS single-arm DAQ with detectors
   //Shared HMS apparatus setup located in ../hms_shared.h
   setupApparatus();
-  THcBCMCurrent* bcm = new THcBCMCurrent("H.bcm", "BCM Module");
-  gHaPhysics->Add(bcm);
 
   // Set up the analyzer - we use the standard one,
   THcAnalyzer* analyzer = new THcAnalyzer;
