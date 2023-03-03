@@ -26,19 +26,20 @@
 ;  gbpmyc_off   = -0.77972
 ;
 ; Updated by Cameron Cotton, Values Grabbed from the target_bpm.py script 
+; DJG: - target_bpm.py uses "pos" values, not "raw". Also need to correct sign of the offset
 ;
   gbpmxa_slope = -0.973   
-  gbpmxa_off   = 0.17    
+  gbpmxa_off   = -1.0*0.162    
   gbpmxb_slope = -1.096  
-  gbpmxb_off   = -0.21   
+  gbpmxb_off   = -1.0*0.221   
   gbpmxc_slope = -0.956   
-  gbpmxc_off   = -0.37   
+  gbpmxc_off   = -1.0*0.544
   gbpmya_slope = 0.957   
-  gbpmya_off   = 0.09
+  gbpmya_off   = -0.185
   gbpmyb_slope = 1.16   
-  gbpmyb_off   = 0.24
+  gbpmyb_off   = 0.022
   gbpmyc_slope = 0.855   
-  gbpmyc_off   = 0.23
+  gbpmyc_off   = 0.394
 ;
 
 ;positions of BPMs relative to target (from target_bpm.py script)
@@ -62,10 +63,11 @@ gfrxb_adc_zero_offset = 54300
 gfrya_adc_zero_offset = 54630
 gfryb_adc_zero_offset = 54800
 ;
-gfrxa_adcpercm = (63427-44954)/.2
-gfrxb_adcpercm = (63841-44824)/.2
-gfrya_adcpercm = -(65450-44885)/.2
-gfryb_adcpercm = -(64417-45240)/.2
+; Raster sign was wrong - see https://logbooks.jlab.org/entry/4138317
+gfrxa_adcpercm = -(63427-44954)/.2
+gfrxb_adcpercm = -(63841-44824)/.2
+gfrya_adcpercm = (65450-44885)/.2
+gfryb_adcpercm = (64417-45240)/.2
 
  
  
