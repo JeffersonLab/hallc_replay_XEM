@@ -1565,6 +1565,8 @@ ptheta_lab = 20.0
 ppcentral = 4.0
 ppartmass = 0.000511
 
+## 17240 Not in mss 
+
 17241 - 17241
 gpbeam = 10.551
 gtargmass_amu = 1.00794
@@ -1627,6 +1629,8 @@ gtargmass_amu = 1.00794
 ptheta_lab = 34.995
 ppcentral = 2.5
 ppartmass = 0.000511
+
+## 17250 Not in mss 
 
 17251 - 17251
 gpbeam = 10.551
@@ -1719,12 +1723,7 @@ ptheta_lab = 8.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
-17264 - 17264
-gpbeam = 10.551
-gtargmass_amu = 12.0107
-ptheta_lab = 8.0
-ppcentral = 9.2
-ppartmass = 0.000511
+## 17264 Not in mss
 
 17265 - 17265
 gpbeam = 10.551
@@ -1830,6 +1829,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 8.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17280 Not in mss 
 
 17281 - 17281
 gpbeam = 10.551
@@ -2194,6 +2195,8 @@ gtargmass_amu = 2.014101
 ptheta_lab = 26.02
 ppcentral = 5.42
 ppartmass = 0.000511
+
+## 17333 Not in mss 
 
 17334 - 17334
 gpbeam = 10.551
@@ -2636,6 +2639,8 @@ ptheta_lab = 26.02
 ppcentral = 3.25
 ppartmass = 0.000511
 
+## 17397 Not in mss 
+
 17398 - 17398
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -2671,6 +2676,8 @@ ptheta_lab = 26.02
 ppcentral = 3.25
 ppartmass = 0.000511
 
+## 17403 Not in mss 
+
 17404 - 17404
 gpbeam = 10.551
 gtargmass_amu = 12.0107
@@ -2705,6 +2712,10 @@ gtargmass_amu = 12.0107
 ptheta_lab = 26.02
 ppcentral = 2.86
 ppartmass = 0.000511
+
+## 17409 Not in mss 
+
+## 17410 Not in mss 
 
 17411 - 17411
 gpbeam = 10.551
@@ -2754,6 +2765,8 @@ gtargmass_amu = 1.00794
 ptheta_lab = 26.02
 ppcentral = 2.52
 ppartmass = 0.000511
+
+## 17418 Not in mss 
 
 17419 - 17419
 gpbeam = 10.551
@@ -3364,6 +3377,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17506 raw file exists
+
 17507 - 17507
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -3420,6 +3435,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17515 raw file exists
+
 17516 - 17516
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -3427,12 +3444,16 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17517 Not in mss  
+
 17518 - 17518
 gpbeam = 10.551
 gtargmass_amu = 2.014101
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17519 Not in mss  
 
 17520 - 17520
 gpbeam = 10.551
@@ -3770,6 +3791,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17568 Not in mss 
+
 17569 - 17569
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -3896,6 +3919,12 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17587 raw file exists
+
+## 17588 raw file exists
+
+## 17589 raw file exists
+
 17590 - 17590
 gpbeam = 10.551
 gtargmass_amu = 26.981539
@@ -3916,6 +3945,8 @@ gtargmass_amu = 9.012182
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17593 Not in mss  
 
 17594 - 17594
 gpbeam = 10.551
@@ -3987,6 +4018,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17604 Not in mss 
+
 17605 - 17605
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -4049,6 +4082,8 @@ gtargmass_amu = 47.95252276
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17614 raw file exists
 
 17615 - 17615
 gpbeam = 10.551
@@ -4596,6 +4631,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17693 Not in mss 
+
 17694 - 17694
 gpbeam = 10.551
 gtargmass_amu = 53.9396147
@@ -4687,12 +4724,16 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17707 Not in mss 
+
 17708 - 17708
 gpbeam = 10.551
 gtargmass_amu = 107.8682
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17709 Not in mss 
 
 17710 - 17710
 gpbeam = 10.551
@@ -4729,12 +4770,16 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17715 Not in mss 
+
 17716 - 17716
 gpbeam = 10.551
 gtargmass_amu = 232.038
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17717 Not in mss 
 
 17718 - 17718
 gpbeam = 10.551
@@ -5093,6 +5138,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17769 Not in mss 
+
 17770 - 17770
 gpbeam = 10.551
 gtargmass_amu = 57.935342
@@ -5260,6 +5307,8 @@ gtargmass_amu = 47.9479463
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17794 Not in mss 
 
 17795 - 17795
 gpbeam = 10.551
@@ -5632,6 +5681,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17848 Not in mss 
+
 17849 - 17849
 gpbeam = 10.551
 gtargmass_amu = 26.981539
@@ -5758,6 +5809,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17867 Not in mss 
+
 17868 - 17868
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -5785,6 +5838,8 @@ gtargmass_amu = 2.014101
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17872 Not in mss 
 
 17873 - 17873
 gpbeam = 10.551
@@ -5834,6 +5889,8 @@ gtargmass_amu = 2.014101
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17880 Not in mss 
 
 17881 - 17881
 gpbeam = 10.551
@@ -6045,6 +6102,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17911 Not in mss 
+
 17912 - 17912
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -6100,6 +6159,8 @@ gtargmass_amu = 47.95252276
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17920 Not in mss 
 
 17921 - 17921
 gpbeam = 10.551
@@ -6206,6 +6267,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17936 Not in mss 
+
 17937 - 17937
 gpbeam = 10.551
 gtargmass_amu = 11.009306
@@ -6304,6 +6367,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 17951 Not in mss 
+
 17952 - 17952
 gpbeam = 10.551
 gtargmass_amu = 118.71
@@ -6366,6 +6431,8 @@ gtargmass_amu = 47.9479463
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 17961 Not in mss 
 
 17962 - 17962
 gpbeam = 10.551
@@ -6738,6 +6805,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18015 Not in mss 
+
 18016 - 18016
 gpbeam = 10.551
 gtargmass_amu = 47.95252276
@@ -6878,6 +6947,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18036 Not in mss  
+
 18037 - 18037
 gpbeam = 10.551
 gtargmass_amu = 12.0107
@@ -6891,6 +6962,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18039 Not in mss 
 
 18040 - 18040
 gpbeam = 10.551
@@ -7501,6 +7574,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18127 raw file exists
+
 18128 - 18128
 gpbeam = 10.551
 gtargmass_amu = 11.009306
@@ -7788,6 +7863,8 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18169 Not in mss 
+
 18170 - 18170
 gpbeam = 10.551
 gtargmass_amu = 9.012182
@@ -7850,6 +7927,8 @@ gtargmass_amu = 9.012182
 ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18179 Not in mss  
 
 18180 - 18180
 gpbeam = 10.551
@@ -8012,6 +8091,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18203 Not in mss 
+
 18204 - 18204
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -8025,6 +8106,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18206 Not in mss 
 
 18207 - 18207
 gpbeam = 10.551
@@ -8215,6 +8298,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18234 raw file exists
+
 18235 - 18235
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -8249,6 +8334,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18240 Not in mss 
 
 18241 - 18241
 gpbeam = 10.551
@@ -8291,6 +8378,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18247 Not in mss 
 
 18248 - 18248
 gpbeam = 10.551
@@ -9230,6 +9319,10 @@ ptheta_lab = 10.0
 ppcentral = 8.8
 ppartmass = 0.000511
 
+## 18382 raw file exists
+
+## 18383 raw file exists
+
 18384 - 18384
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -9412,6 +9505,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18410 Not in mss 
+
 18411 - 18411
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -9502,6 +9597,8 @@ gtargmass_amu = 2.014101
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18424 Not in mss 
 
 18425 - 18425
 gpbeam = 10.551
@@ -9649,6 +9746,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18446 Not in mss 
 
 18447 - 18447
 gpbeam = 10.551
@@ -10021,12 +10120,16 @@ ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18500 Not in mss 
+
 18501 - 18501
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
 ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18502 Not in mss 
 
 18503 - 18503
 gpbeam = 10.551
@@ -10062,6 +10165,8 @@ gtargmass_amu = 2.014101
 ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18508 raw file exists
 
 18509 - 18509
 gpbeam = 10.551
@@ -10427,6 +10532,8 @@ ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 18561 Not in mss 
+
 18562 - 18562
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -10461,6 +10568,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18567 Not in mss 
 
 18568 - 18568
 gpbeam = 10.551
@@ -11280,6 +11389,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18685 Not in mss 
 
 18686 - 18686
 gpbeam = 10.551
@@ -12372,6 +12483,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 9.85
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 18842 Not in mss 
 
 18843 - 18843
 gpbeam = 10.551
@@ -13857,6 +13970,8 @@ ptheta_lab = 19.98
 ppcentral = 4.0
 ppartmass = 0.000511
 
+## 19055 raw file exists
+
 19056 - 19056
 gpbeam = 10.551
 gtargmass_amu = 1.00794
@@ -14094,6 +14209,8 @@ gtargmass_amu = 47.95252276
 ptheta_lab = 7.995000000000001
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19090 raw file exists
 
 19091 - 19091
 gpbeam = 10.551
@@ -14703,6 +14820,8 @@ gtargmass_amu = 39.962590863
 ptheta_lab = 7.995000000000001
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19178 raw file exists
 
 19179 - 19179
 gpbeam = 10.551
@@ -16524,6 +16643,8 @@ ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 19439 raw file exists
+
 19440 - 19440
 gpbeam = 10.551
 gtargmass_amu = 26.98
@@ -16642,6 +16763,8 @@ gtargmass_amu = 63.54
 ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19457 Not in mss 
 
 19458 - 19458
 gpbeam = 10.551
@@ -17056,12 +17179,16 @@ ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 19517 Not in mss 
+
 19518 - 19518
 gpbeam = 10.551
 gtargmass_amu = 196.966
 ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19519 Not in mss  
 
 19520 - 19520
 gpbeam = 10.551
@@ -17538,6 +17665,8 @@ gtargmass_amu = 26.98
 ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19588 raw file exists
 
 19589 - 19589
 gpbeam = 10.551
@@ -18211,6 +18340,8 @@ ptheta_lab = 20.0
 ppcentral = 4.0
 ppartmass = 0.000511
 
+## 19685 raw file exists
+
 19686 - 19686
 gpbeam = 10.551
 gtargmass_amu = 12.0107
@@ -18623,6 +18754,8 @@ gtargmass_amu = 3.0160293
 ptheta_lab = 8.49
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19745 raw file exists
 
 19746 - 19746
 gpbeam = 10.551
@@ -19534,6 +19667,12 @@ ptheta_lab = 8.49
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 19876 raw file exists
+
+## 19877 raw file exists
+
+## 19878 raw file exists
+
 19879 - 19879
 gpbeam = 10.551
 gtargmass_amu = 4.002603254
@@ -19639,6 +19778,8 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 19894 raw file exists
+
 19895 - 19895
 gpbeam = 10.551
 gtargmass_amu = 12.0107
@@ -19708,6 +19849,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19905 raw file exists
 
 19906 - 19906
 gpbeam = 10.551
@@ -20177,6 +20320,8 @@ gtargmass_amu = 4.002603254
 ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 19973 raw file exists
 
 19974 - 19974
 gpbeam = 10.551
@@ -21081,6 +21226,8 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20103 raw file exists
+
 20104 - 20104
 gpbeam = 10.551
 gtargmass_amu = 3.0160293
@@ -21339,6 +21486,8 @@ gtargmass_amu = 4.002603254
 ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20141 raw file exists
 
 20142 - 20142
 gpbeam = 10.551
@@ -21612,6 +21761,8 @@ gtargmass_amu = 12.0107
 ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20181 raw file exists
 
 20182 - 20182
 gpbeam = 10.551
@@ -22187,6 +22338,8 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20264 Not in mss 
+
 20265 - 20265
 gpbeam = 10.551
 gtargmass_amu = 12.0107
@@ -22243,12 +22396,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-20273 - 20273
-gpbeam = 10.551
-gtargmass_amu = 4.002603254
-ptheta_lab = 9.99
-ppcentral = 9.2
-ppartmass = 0.000511
+## 20273 Not in mss
 
 20274 - 20274
 gpbeam = 10.551
@@ -23307,6 +23455,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20425 raw file exists
+
 20426 - 20426
 gpbeam = 10.551
 gtargmass_amu = 0.0
@@ -23355,6 +23505,12 @@ gtargmass_amu = 0.0
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20433 raw file exists
+
+## 20434 raw file exists
+
+## 20435 raw file exists
 
 20436 - 20436
 gpbeam = 10.551
@@ -23825,6 +23981,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20503 raw file exists
+
 20504 - 20504
 gpbeam = 10.551
 gtargmass_amu = 0.0
@@ -24104,6 +24262,8 @@ gtargmass_amu = 0.0
 ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20544 Not in mss 
 
 20545 - 20545
 gpbeam = 10.551
@@ -24483,6 +24643,8 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20599 Not in mss 
+
 20600 - 20600
 gpbeam = 10.551
 gtargmass_amu = 0.0
@@ -24770,6 +24932,8 @@ ptheta_lab = 8.5
 ppcentral = 9.2
 ppartmass = 0.000511
 
+## 20641 Not in mss 
+
 20642 - 20642
 gpbeam = 10.551
 gtargmass_amu = 3.0160293
@@ -24818,6 +24982,8 @@ gtargmass_amu = 3.0160293
 ptheta_lab = 8.5
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20649 Not in mss 
 
 20650 - 20650
 gpbeam = 10.551
@@ -24881,6 +25047,8 @@ gtargmass_amu = 3.0160293
 ptheta_lab = 8.5
 ppcentral = 9.2
 ppartmass = 0.000511
+
+## 20659 Not in mss 
 
 20660 - 20660
 gpbeam = 10.551
