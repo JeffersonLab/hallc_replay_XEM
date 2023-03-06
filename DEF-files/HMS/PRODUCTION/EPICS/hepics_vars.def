@@ -11,6 +11,12 @@ ibcm2
 iunser
 itov3out
 itov4out
+IPM3H07A.XRAW
+IPM3H07A.YRAW
+IPM3H07B.XRAW
+IPM3H07B.YRAW
+IPM3H07C.XRAW
+IPM3H07C.YRAW
 
 #Spectrometer Settings
 ecHMS_Angle
