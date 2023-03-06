@@ -32,5 +32,11 @@ IPM3H07B.YRAW
 IPM3H07C.XRAW
 IPM3H07C.YRAW
 
+#Target variables 
+hcBDSPOS
+hcL1_Temperature
+hcL2_Temperature 
+hcHe3_P_Fill_Target_R
+hcHe4_Fill_Target_R
 
 end epics
