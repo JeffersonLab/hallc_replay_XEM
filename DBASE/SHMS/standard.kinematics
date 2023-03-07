@@ -3377,7 +3377,7 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 17506 raw file exists
+## 17506 raw file exists, 32K
 
 17507 - 17507
 gpbeam = 10.551
@@ -3435,7 +3435,7 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 17515 raw file exists
+## 17515 raw file exists, 32K
 
 17516 - 17516
 gpbeam = 10.551
@@ -3919,11 +3919,26 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 17587 raw file exists
+17587 - 17587
+gpbeam = 10.551
+gtargmass_amu = 26.981539
+ptheta_lab = 8.02
+ppcentral = 9.2
+ppartmass = 0.000511
 
-## 17588 raw file exists
+17588 - 17588
+gpbeam = 10.551
+gtargmass_amu = 26.981539
+ptheta_lab = 8.02
+ppcentral = 9.2
+ppartmass = 0.000511
 
-## 17589 raw file exists
+17589 - 175889
+gpbeam = 10.551
+gtargmass_amu = 26.981539
+ptheta_lab = 8.02
+ppcentral = 9.2
+ppartmass = 0.000511
 
 17590 - 17590
 gpbeam = 10.551
@@ -4083,7 +4098,7 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 17614 raw file exists
+## 17614 raw file exists, 32K
 
 17615 - 17615
 gpbeam = 10.551
@@ -7574,7 +7589,7 @@ ptheta_lab = 8.02
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 18127 raw file exists
+## 18127 raw file exists, 32K
 
 18128 - 18128
 gpbeam = 10.551
@@ -8298,7 +8313,12 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 18234 raw file exists
+18234 - 18234
+gpbeam = 10.551
+gtargmass_amu = 39.962590863
+ptheta_lab = 10.0
+ppcentral = 9.2
+ppartmass = 0.000511
 
 18235 - 18235
 gpbeam = 10.551
@@ -9319,9 +9339,9 @@ ptheta_lab = 10.0
 ppcentral = 8.8
 ppartmass = 0.000511
 
-## 18382 raw file exists
+## 18382 raw file exists, 32K
 
-## 18383 raw file exists
+## 18383 raw file exists, 32K
 
 18384 - 18384
 gpbeam = 10.551
@@ -10166,7 +10186,7 @@ ptheta_lab = 10.01
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 18508 raw file exists
+## 18508 raw file exists, 32K
 
 18509 - 18509
 gpbeam = 10.551
@@ -13970,7 +13990,7 @@ ptheta_lab = 19.98
 ppcentral = 4.0
 ppartmass = 0.000511
 
-## 19055 raw file exists
+## 19055 raw file exists, 32K
 
 19056 - 19056
 gpbeam = 10.551
@@ -14210,7 +14230,7 @@ ptheta_lab = 7.995000000000001
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19090 raw file exists
+## 19090 raw file exists, 32K
 
 19091 - 19091
 gpbeam = 10.551
@@ -14821,7 +14841,7 @@ ptheta_lab = 7.995000000000001
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19178 raw file exists
+## 19178 raw file exists, 32K
 
 19179 - 19179
 gpbeam = 10.551
@@ -16643,7 +16663,7 @@ ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19439 raw file exists
+## 19439 raw file exists, 32K
 
 19440 - 19440
 gpbeam = 10.551
@@ -17666,7 +17686,12 @@ ptheta_lab = 7.998
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19588 raw file exists
+19588 - 19588
+gpbeam = 10.551
+gtargmass_amu = 26.98
+ptheta_lab = 7.998
+ppcentral = 9.2
+ppartmass = 0.000511
 
 19589 - 19589
 gpbeam = 10.551
@@ -18340,7 +18365,7 @@ ptheta_lab = 20.0
 ppcentral = 4.0
 ppartmass = 0.000511
 
-## 19685 raw file exists
+## 19685 raw file exists, 32K
 
 19686 - 19686
 gpbeam = 10.551
@@ -18755,7 +18780,7 @@ ptheta_lab = 8.49
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19745 raw file exists
+## 19745 raw file exists, 32K
 
 19746 - 19746
 gpbeam = 10.551
@@ -19667,11 +19692,11 @@ ptheta_lab = 8.49
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19876 raw file exists
+## 19876 raw file exists, (CODA3 test)
 
-## 19877 raw file exists
+## 19877 raw file exists, (CODA3 test)
 
-## 19878 raw file exists
+## 19878 raw file exists, (CODA3 test)
 
 19879 - 19879
 gpbeam = 10.551
@@ -19778,7 +19803,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19894 raw file exists
+## 19894 raw file exists, 32K
 
 19895 - 19895
 gpbeam = 10.551
@@ -19850,7 +19875,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19905 raw file exists
+## 19905 raw file exists, 32K
 
 19906 - 19906
 gpbeam = 10.551
@@ -20321,7 +20346,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 19973 raw file exists
+## 19973 raw file exists, 32K
 
 19974 - 19974
 gpbeam = 10.551
@@ -21226,7 +21251,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20103 raw file exists
+## 20103 raw file exists, 32K
 
 20104 - 20104
 gpbeam = 10.551
@@ -21487,7 +21512,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20141 raw file exists
+## 20141 raw file exists, 32K
 
 20142 - 20142
 gpbeam = 10.551
@@ -21762,7 +21787,7 @@ ptheta_lab = 9.99
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20181 raw file exists
+## 20181 raw file exists, 32K
 
 20182 - 20182
 gpbeam = 10.551
@@ -23455,7 +23480,7 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20425 raw file exists
+## 20425 raw file exists, 32K
 
 20426 - 20426
 gpbeam = 10.551
@@ -23506,11 +23531,21 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20433 raw file exists
+## 20433 raw file exists, 32K
 
-## 20434 raw file exists
+20434 - 20434
+gpbeam = 10.551
+gtargmass_amu = 4.002603254
+ptheta_lab = 10.0
+ppcentral = 9.2
+ppartmass = 0.000511
 
-## 20435 raw file exists
+20435 - 20435
+gpbeam = 10.551
+gtargmass_amu = 4.002603254
+ptheta_lab = 10.0
+ppcentral = 9.2
+ppartmass = 0.000511
 
 20436 - 20436
 gpbeam = 10.551
@@ -23981,7 +24016,7 @@ ptheta_lab = 10.0
 ppcentral = 9.2
 ppartmass = 0.000511
 
-## 20503 raw file exists
+## 20503 raw file exists, 32K
 
 20504 - 20504
 gpbeam = 10.551
