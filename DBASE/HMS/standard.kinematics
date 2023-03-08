@@ -2786,12 +2786,26 @@ htheta_lab = -20.0
 hpcentral = 2.421
 hpartmass = 0.000511
 
+## 4626 Not in mss 
+
+## 4627 Not in mss 
+
+## 4628 Not in mss 
+
+## 4629 Not in mss 
+
+## 4630 Not in mss 
+
 4631 - 4631
 gpbeam = 10.551
 gtargmass_amu = 1.00794
 htheta_lab = -20.0
 hpcentral = 2.421
 hpartmass = 0.000511
+
+## 4632 raw file exists, 32K 
+
+## 4633 Not in mss 
 
 4634 - 4634
 gpbeam = 10.551
@@ -2800,33 +2814,7 @@ htheta_lab = -20.0
 hpcentral = 2.421
 hpartmass = 0.000511
 
-4481 - 4481
-gpbeam = 10.551
-gtargmass_amu = 2.014101
-htheta_lab = -20.0
-hpcentral = 2.421
-hpartmass = 0.000511
-
-4482 - 4482
-gpbeam = 10.551
-gtargmass_amu = 2.014101
-htheta_lab = -20.0
-hpcentral = 2.421
-hpartmass = 0.000511
-
-4483 - 4483
-gpbeam = 10.551
-gtargmass_amu = 2.014101
-htheta_lab = -20.0
-hpcentral = 2.421
-hpartmass = 0.000511
-
-4622 - 4622
-gpbeam = 10.551
-gtargmass_amu = 2.014101
-htheta_lab = -20.0
-hpcentral = 2.421
-hpartmass = 0.000511
+## 4635 Not in mss 
 
 4636 - 4636
 gpbeam = 10.551
@@ -6111,6 +6099,8 @@ htheta_lab = -35.0
 hpcentral = 4.08
 hpartmass = 0.000511
 
+## 5105 raw file exists, 32K 
+
 5106 - 5106
 gpbeam = 10.551
 gtargmass_amu = 1.00794
@@ -7903,6 +7893,8 @@ htheta_lab = -35.01
 hpcentral = 2.72
 hpartmass = 0.000511
 
+## 5362 Not in mss 
+
 5363 - 5363
 gpbeam = 10.551
 gtargmass_amu = 2.014101
@@ -9554,6 +9546,8 @@ gtargmass_amu = 47.95252276
 htheta_lab = -35.010000000000005
 hpcentral = 2.72
 hpartmass = 0.000511
+
+## 5599 raw file exists, 32K 
 
 5600 - 5600
 gpbeam = 10.551
@@ -12943,6 +12937,8 @@ htheta_lab = -34.99
 hpcentral = 4.08
 hpartmass = 0.000511
 
+## 6084 Not in mss 
+
 6085 - 6085
 gpbeam = 10.551
 gtargmass_amu = 39.962590863
@@ -13299,6 +13295,10 @@ gtargmass_amu = 4.002603254
 htheta_lab = -34.99
 hpcentral = 3.57
 hpartmass = 0.000511
+
+## 6136 raw file exists, (CODA3 test)
+
+## 6137 raw file exists, (CODA3 test)
 
 6138 - 6138
 gpbeam = 10.551
@@ -14973,12 +14973,24 @@ htheta_lab = -35.01
 hpcentral = 3.09
 hpartmass = 0.000511
 
+## 6377 Not in mss 
+
+## 6378 Not in mss 
+
+## 6379 Not in mss 
+
 6380 - 6380
 gpbeam = 10.551
 gtargmass_amu = 12.0107
 htheta_lab = -35.01
 hpcentral = 3.09
 hpartmass = 0.000511
+
+## 6381 Not in mss 
+
+## 6382 Not in mss 
+
+## 6383 Not in mss 
 
 6384 - 6384
 gpbeam = 10.551
@@ -15925,6 +15937,8 @@ htheta_lab = -35.0
 hpcentral = 1.26
 hpartmass = 0.000511
 
+## 6519 raw file exists, 32K 
+
 6520 - 6520
 gpbeam = 10.551
 gtargmass_amu = 3.0160293
@@ -16619,6 +16633,30 @@ hpcentral = 4.08
 hpartmass = 0.000511
 
 6619 - 6619
+gpbeam = 10.551
+gtargmass_amu = 4.002603254
+htheta_lab = -35.0
+hpcentral = 4.08
+hpartmass = 0.000511
+
+## 6620 raw file exists, SHMS DAQ issues may have effected these runs
+6620 - 6620
+gpbeam = 10.551
+gtargmass_amu = 4.002603254
+htheta_lab = -35.0
+hpcentral = 4.08
+hpartmass = 0.000511
+
+## 6621 raw file exists, SHMS DAQ issues may have effected these runs
+6621 - 6621
+gpbeam = 10.551
+gtargmass_amu = 4.002603254
+htheta_lab = -35.0
+hpcentral = 4.08
+hpartmass = 0.000511
+
+## 6622 raw file exists, SHMS DAQ issues may have effected these runs
+6622 - 6622
 gpbeam = 10.551
 gtargmass_amu = 4.002603254
 htheta_lab = -35.0
@@ -17723,6 +17761,8 @@ gtargmass_amu = 3.0160293
 htheta_lab = -35.0
 hpcentral = 4.08
 hpartmass = 0.000511
+
+## 6780 raw file exists, 32K
 
 6781 - 6781
 gpbeam = 10.551
