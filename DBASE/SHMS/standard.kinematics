@@ -1502,12 +1502,9 @@ ptheta_lab = 11.01
 ppcentral = 7.5
 ppartmass = 0.000511
 
-17229 - 17229
-gpbeam = 10.551
-gtargmass_amu = 9.012182
-ptheta_lab = 7.99
-ppcentral = 8.55
-ppartmass = 0.000511
+#---------------------
+# Start XEM Runs
+#---------------------
 
 17231 - 17231
 gpbeam = 10.551
@@ -1543,6 +1540,8 @@ gtargmass_amu = 1.00794
 ptheta_lab = 20.0
 ppcentral = 4.0
 ppartmass = 0.000511
+
+## 17236 raw file in mss, SHMS COIN run
 
 17237 - 17237
 gpbeam = 10.551
