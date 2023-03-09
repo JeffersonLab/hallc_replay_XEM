@@ -82,6 +82,14 @@ SHMS BCM4B Beam Cut Charge: {P.BCM4B.scalerChargeCut/1000.:%.3f} mC
 SHMS BCM4C Beam Cut Charge: {P.BCM4C.scalerChargeCut/1000.:%.3f} mC		 
 SHMS Unser Beam Cut Charge: {P.Unser.scalerChargeCut/1000.:%.3f} mC
  
+**************************
+* Spectrometer Mispointing
+**************************
+SHMS X Mispointing:	{pmispointing_x:%.3f}
+SHMS Y Mispointing:	{pmispointing_y:%.3f}
+
+HMS X Mispointing:		{hmispointing_x:%.3f}
+HMS Y Mispointing:		{hmispointing_y:%.3f}
 
 ********************
 * DAQ Configuration

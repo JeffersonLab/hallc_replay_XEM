@@ -198,6 +198,7 @@ if [[ ifarm_flg -eq 1 ]]; then
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/CALIBRATION"
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/PRODUCTION"
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/SCALARS"
+	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/HeeP"
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/TIMING"
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/shms50k"
 	mkdir $base_dir_voli$USER"/REPORT_OUTPUT/COIN/hms50k"
