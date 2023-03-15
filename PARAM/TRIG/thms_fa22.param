@@ -12,7 +12,7 @@ helicity_freq = 120+.7*120/(70*1000)
 ; cut variable is hT1
 ; NOTE: *_{ta}dcrefcut are integers
 ; determined from fall 2019 - spring 2020 analysis
-t_hms_trig_tdcrefcut = -1400
+t_hms_trig_tdcrefcut = -1000
 ; cut variable is hFADC_TREF_ROC1
 ; determined from fall 2019 - spring 2020 analysis
 t_hms_trig_adcrefcut = -3400
