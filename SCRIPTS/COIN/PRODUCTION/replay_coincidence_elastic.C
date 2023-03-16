@@ -262,7 +262,7 @@ void replay_coincidence_elastic (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
-  //analyzer->PrintReport("TEMPLATES/COIN/PRODUCTION/coin_production.template",
-  //			Form("REPORT_OUTPUT/COIN/HeeP/replay_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->PrintReport(gHcParms->GetString("g_ctp_template_filename"),
+  			Form("REPORT_OUTPUT/COIN/HeeP/replay_coin_production_%d_%d.report", RunNumber, MaxEvent));  // optional
 
 }

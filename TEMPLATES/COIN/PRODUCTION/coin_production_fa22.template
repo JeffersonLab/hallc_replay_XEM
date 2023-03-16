@@ -61,8 +61,11 @@ Unser Beam Cut Charge: {P.Unser.scalerChargeCut:%.3f} uC
 **************************
 * Spectrometer Mispointing
 **************************
-X Mispointing:	{pmispointing_x:%.3f}
-Y Mispointing:	{pmispointing_y:%.3f}
+SHMS X Mispointing:	{pmispointing_x:%.3f}
+SHMS Y Mispointing:	{pmispointing_y:%.3f}
+
+HMS X Mispointing:		{hmispointing_x:%.3f}
+HMS Y Mispointing:		{hmispointing_y:%.3f}
 
 ********************
 * DAQ Configuration

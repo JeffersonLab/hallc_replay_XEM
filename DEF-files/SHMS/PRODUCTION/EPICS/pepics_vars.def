@@ -4,6 +4,7 @@
 
 begin epics
 
+HALLC:p
 IBC3H00CRCUR4
 hac_bcm_average
 ibcm1
@@ -11,12 +12,12 @@ ibcm2
 iunser
 itov3out
 itov4out
-IPM3H07A.XPOS
-IPM3H07A.YPOS
-IPM3H07B.XPOS
-IPM3H07B.YPOS
-IPM3H07C.XPOS
-IPM3H07C.YPOS
+IPM3H07A.XRAW
+IPM3H07A.YRAW
+IPM3H07B.XRAW
+IPM3H07B.YRAW
+IPM3H07C.XRAW
+IPM3H07C.YRAW
 
 #Spectrometer Settings
 ecSHMS_Angle
@@ -33,5 +34,12 @@ ecSQ3_Set_Current
 ecSQ3_I_True
 ecSDI_B_Set_NMR
 ecSDI_B_True_NMR
+
+#Target variables 
+hcBDSPOS
+hcL1_Temperature
+hcL2_Temperature 
+hcHe3_P_Fill_Target_R
+hcHe4_Fill_Target_R
 
 end epics
