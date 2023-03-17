@@ -1,5 +1,5 @@
 ; Cut to select the Reference time when multiple hits in reference time 
-; This file is for ELREAL triggers
+; This file is for 3/4 triggers
 ; The units in channels for the module (CAEN tdc or FADC)
 ; negative value refcut means that the first reference time greater than the abs(refcut)
 ;     is used as reftime. If no ref time is found  greater than the abs(refcut) then first
@@ -14,10 +14,10 @@
 ;Determined from 4402, 4405, 4406
 ;HMS p=-4.0GeV/c, theta=20 degrees
 ; cut variable = hDCREF2
-hdc_tdcrefcut=-20200
+hdc_tdcrefcut=-21100
 ; cut variable = hT2
-hhodo_tdcrefcut=-1100
+hhodo_tdcrefcut=-1700
 ; cut variable = hFADC_TREF_ROC1
-hhodo_adcrefcut=-1300
-hcer_adcrefcut=-1300
-hcal_adcrefcut=-1300 
+hhodo_adcrefcut=-2300
+hcer_adcrefcut=-2300
+hcal_adcrefcut=-2300 
