@@ -90,3 +90,1227 @@ g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_35deg_m2p5_fa22.param"
 
 4411 - 4413
 g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_35deg_m2p5_fa22.param"
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_35deg_m2p5_fa22.param"
+
+4439-4439
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4440-4440
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4457-4457
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4460-4460
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4461-4461
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4462-4462
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4463-4463
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4484-4484
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4485-4485
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4494-4494
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4495-4495
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4516-4516
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22"
+
+4517-4517
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4523-4523
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4524-4524
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4536-4536
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4537-4537
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4541-4541
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4542-4542
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4551-4551
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4552-4552
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4555-4555
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4556-4556
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4566-4566
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4570-4570
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4571-4571
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4575-4575
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4576-4576
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4579-4579
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4586-4586
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4587-4587
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4590-4590
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4591-4591
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4594-4594
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4595-4595
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4598-4598
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4602-4602
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4603-4603
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4604-4604
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4607-4607
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4608-4608
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4614-4614
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4615-4615
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4620-4620
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4623-4623
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4637-4637
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4642-4642
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4643-4643
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4646-4646
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4647-4647
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4650-4650
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4651-4651
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4652-4652
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4655-4655
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4656-4656
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4659-4659
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4660-4660
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4683-4683
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4761-4761
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4768-4768
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4769-4769
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4797-4797
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4803-4803
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4849-4849
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4856-4856
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4872-4872
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4876-4876
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4903-4903
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4904-4904
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4910-4910
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4923-4923
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4926-4926
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4947-4947
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4952-4952
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4966-4966
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4970-4970
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4985-4985
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4986-4986
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4991-4991
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4992-4992
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4995-4995
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4996-4996
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+4999-4999
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5000-5000
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5003-5003
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5004-5004
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5008-5008
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5009-5009
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5013-5013
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5015-5015
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5018-5018
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5019-5019
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5025-5025
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5026-5026
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5030-5030
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5031-5031
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5043-5043
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5044-5044
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5047-5047
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5048-5048
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5052-5052
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5054-5054
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5055-5055
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5059-5059
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5061-5061
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5062-5062
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5065-5065
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5067-5067
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5071-5071
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5075-5075
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5076-5076
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5082-5082
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5083-5083
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5086-5086
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5087-5087
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5090-5090
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5092-5092
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5095-5095
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5096-5096
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5115-5115
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5146-5146
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5147-5147
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5222-5222
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5223-5223
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5236-5236
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5237-5237
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5290-5290
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5291-5291
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5311-5311
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5312-5312
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5392-5392
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5393-5393
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5435-5435
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5436-5436
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5437-5437
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5441-5441
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5442-5442
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5443-5443
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5452-5452
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5453-5453
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5456-5456
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5459-5459
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5460-5460
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5465-5465
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5469-5469
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5475-5475
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5478-5478
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5479-5479
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5482-5482
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5484-5484
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5485-5485
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5488-5488
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5489-5489
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5491-5491
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5494-5494
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5496-5496
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5498-5498
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5500-5500
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5509-5509
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5510-5510
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5515-5515
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5516-5516
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5526-5526
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5530-5530
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5538-5538
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5592-5592
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5594-5594
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5608-5608
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5609-5609
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5612-5612
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5614-5614
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5617-5617
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5654-5654
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5655-5655
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5776-5776
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5777-5777
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5797-5797
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5816-5816
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5824-5824
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5837-5837
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5847-5847
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5858-5858
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5864-5864
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5870-5870
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5877-5877
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5886-5886
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5891-5891
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5900-5900
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5907-5907
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5912-5912
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5917-5917
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5923-5923
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5930-5930
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5937-5937
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5942-5942
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5943-5943
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5946-5946
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5947-5947
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5950-5950
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5952-5952
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5955-5955
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5956-5956
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5959-5959
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+5960-5960
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6007-6007
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6009-6009
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6010-6010
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6013-6013
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6014-6014
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6017-6017
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6018-6018
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6021-6021
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6022-6022
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6025-6025
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+6026-6026
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6029-6029
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6030-6030
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6031-6031
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6035-6035
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6037-6037
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6038-6038
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6041-6041
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6042-6042
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6046-6046
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6047-6047
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6051-6051
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6052-6052
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6055-6055
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6056-6056
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6059-6059
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6060-6060
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6063-6063
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6064-6064
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6067-6067
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6069-6069
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6073-6073
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6074-6074
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6145-6145
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6146-6146
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6147-6147
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6152-6152
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6154-6154
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6157-6157
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6158-6158
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6159-6159
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6160-6160
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6165-6165
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6170-6170
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6171-6171
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6174-6174
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6175-6175
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6179-6179
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6180-6180
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6184-6184
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6187-6187
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6189-6189
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6193-6193
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6194-6194
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6197-6197
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6198-6198
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6201-6201
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6202-6202
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6206-6206
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6208-6208
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6211-6211
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6212-6212
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6215-6215
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6216-6216
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6219-6219
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6220-6220
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6223-6223
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6224-6224
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6227-6227
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6229-6229
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6232-6232
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6233-6233
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6235-6235
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6241-6241
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6298-6298
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6365-6365
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6398-6398
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6465-6465
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6479-6479
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6487-6487
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6504-6504
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6507-6507
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6515-6515
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6516-6516
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6521-6521
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6522-6522
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6548-6548
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6558-6558
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6565-6565
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6574-6574
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6580-6580
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6592-6592
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6594-6594
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6595-6595
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6599-6599
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6601-6601
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6605-6605
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6626-6626
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6670-6670
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6750-6750
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6825-6825
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
+
+6887-6887
+g_ctp_parm_filename        = "DBASE/HMS/general_PS1_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_PS1_fa22.param"
