@@ -49,6 +49,12 @@ BCM4B Beam Cut Charge: {H.BCM4B.scalerChargeCut:%.3f} uC
 BCM4C Beam Cut Charge: {H.BCM4C.scalerChargeCut:%.3f} uC		 
 Unser Beam Cut Charge: {H.Unser.scalerChargeCut:%.3f} uC
 
+**************************
+* Spectrometer Mispointing
+**************************
+X Mispointing:	{hmispointing_x:%.3f}
+Y Mispointing:	{hmispointing_y:%.3f}
+
 ********************
 * DAQ Configuration
 ********************

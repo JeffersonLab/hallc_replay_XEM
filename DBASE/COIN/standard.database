@@ -7,7 +7,7 @@ g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_fa22.param"
 g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/tcoin_fa22.param"
 g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_fa22.map"
-g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp18.template"
+g_ctp_template_filename    = "TEMPLATES/COIN/PRODUCTION/coin_production.template"
 
 0-6008
 g_ctp_parm_filename       = "DBASE/COIN/general_pt.param"
