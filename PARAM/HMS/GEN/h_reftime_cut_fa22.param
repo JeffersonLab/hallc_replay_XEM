@@ -11,13 +11,12 @@
 ;
 ; NOTE: These are integers, not floats
 
-;Determined from 4402, 4405, 4406
 ;HMS p=-4.0GeV/c, theta=20 degrees
 ; cut variable = hDCREF2
 hdc_tdcrefcut=-20200
 ; cut variable = hT2
 hhodo_tdcrefcut=-1100
 ; cut variable = hFADC_TREF_ROC1
-hhodo_adcrefcut=-1300
-hcer_adcrefcut=-1300
-hcal_adcrefcut=-1300 
+hhodo_adcrefcut=-2200
+hcer_adcrefcut=-2200
+hcal_adcrefcut=-2200 
