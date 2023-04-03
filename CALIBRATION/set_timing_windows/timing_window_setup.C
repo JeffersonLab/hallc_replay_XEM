@@ -21,8 +21,8 @@ void run_shms_timing_windows(TString file_name, TString out_file, int RunNumber,
     // Load params for COIN trigger configuration
     gHcParms->Load("PARAM/TRIG/tcoin.param");
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
-    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
   } else {
     cout << "Unknown Spec: " << spec << endl;
     return;
@@ -102,9 +102,9 @@ void run_hms_timing_windows(TString file_name, TString out_file, int RunNumber, 
     gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
     gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
     // Load params for HMS trigger configuration
-    gHcParms->Load("PARAM/TRIG/thms.param");
+    gHcParms->Load("PARAM/TRIG/thms_fa22.param");
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
   } else if (spec.CompareTo("coin",TString::kIgnoreCase)==0) {
     gHcParms->AddString("g_ctp_database_filename", "DBASE/COIN/standard.database");
     gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
@@ -113,8 +113,8 @@ void run_hms_timing_windows(TString file_name, TString out_file, int RunNumber, 
     // Load params for COIN trigger configuration
     gHcParms->Load("PARAM/TRIG/tcoin.param");
     // Load fadc debug parameters
-    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
-    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+    gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug_fa22.param");
+    gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug_fa22.param");
   } else {
     cout << "Unknown Spec: " << spec << endl;
     return;
@@ -171,7 +171,6 @@ void run_hms_timing_windows(TString file_name, TString out_file, int RunNumber, 
   calc_timing_windows(file_name,out_file,"cal_hD","h",1,fCaloPosAdcTimeWindowMin,fCaloPosAdcTimeWindowMax,newWindows,width);
   calc_timing_windows(file_name,out_file,"cal_hA","h",2,fCaloNegAdcTimeWindowMin,fCaloNegAdcTimeWindowMax,newWindows,width);
   calc_timing_windows(file_name,out_file,"cal_hB","h",2,fCaloNegAdcTimeWindowMin,fCaloNegAdcTimeWindowMax,newWindows,width);
-
 }
 
 void run_coin_timing_windows(TString file_name, TString out_file, int RunNumber, bool newWindows=false, double width=40.) {
