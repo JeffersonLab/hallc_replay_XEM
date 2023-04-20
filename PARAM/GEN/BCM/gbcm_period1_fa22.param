@@ -1,18 +1,23 @@
-;Analysis done on 9/20/2022 by CC
-;Final high current BCM scan from PionLT run
-;BCM Scan in coin run 16898 performed on 9/8/2022 13:26
-;Analyzed by a modified version of Gabriel's BCM calibration script
-;script saved under UTIL_XEM
-;Script parameters used:
-;zeroThr=1.e-6,matchThr=0.1,spikeThr=0.05,plateauThr=0.02
-;plateauSpan=50.,plateauTrim=4.,UnserGain=0.0002492
-;L175 modified: if(...=0.05) --> if(...=0.025) to get lowest current plateau
-
+Analysis done on 04/13/2023 by ZW
+;BCM Scan in SHMS 17756 performed on 10/20/2022
+;BCM Scan in SHMS 18531 performed on 11/03/2022
+;BCM Scan in SHMS 18723 performed on 11/08/2022
+;BCM Scan in SHMS 19783 performed on 12/16/2022
+;BCM Scan in SHMS 20277 performed on 01/29/2023
+;Analyzed by a modified version of Zoe's BCM calibration script
+;script saved under CALIBRATION
 gNumBCMs    = 6
-gBCM_Names  = " BCM1      BCM2      Unser	BCM4A    BCM4B   BCM4C"
-gBCM_Gain   =   5621.0,   5456.0,   4013.0, 	9235.0, 20900.0, 5025.0
-gBCM_Offset = 4120.0, 252100.0,   358100.0, 3290.0, 152700.0,	 2190.0
+gBCM_Names  = " BCM1      BCM2      Unser       BCM4A    BCM4B    BCM4C"
+gBCM_Gain   =   5587,     5466.,    4013.,      9343.,   1.498E4,  5078.
+gBCM_Offset =   4309,     2.523E5,  4.234E5,    3056.,   2.385E5,  2118.
+
+
+; The following two lines are to correct for ~1% saturation 
+; in BCM1,2 between 50 and 70 muA. 
+gBCM_SatOffset=   50.,   50.,  1000., 1000., 1000.,   1000. 
+gBCM_SatQuadratic=  0.00175,  0.002,  0.0,  0.0,  0.0,  0.0 
 
 gBCM_Current_threshold = 5.0
 ; index = 0 to gNumBCMs-1
 gBCM_Current_threshold_index = 3
+
