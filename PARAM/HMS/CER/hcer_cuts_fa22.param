@@ -25,7 +25,7 @@ hcer_npe_thresh = 0.5
 ; ADC time window cut values used to select "good" ADC events
 hcer_adc_tdc_offset= 0.
 
-; fall 2019 -spring 2020 analysis A1n, d2n
+; Checked for fa22-sp23 XEM2 running by CC using ~30 runs spread through run period
 ; cut variable is H.cer.goodAdcTdcDiffTime
 hcer_adcTimeWindowMin =   60.,  60.
 hcer_adcTimeWindowMax =  200., 200.

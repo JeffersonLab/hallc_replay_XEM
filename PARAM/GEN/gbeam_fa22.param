@@ -29,7 +29,7 @@
 ; DJG: - target_bpm.py uses "pos" values, not "raw". Also need to correct sign of the offset
 ;
   gbpmxa_slope = -0.973   
-  gbpmxa_off   = -1.0*0.162    
+  gbpmxa_off   = -1.0*(-0.162)    
   gbpmxb_slope = -1.096  
   gbpmxb_off   = -1.0*0.221   
   gbpmxc_slope = -0.956   

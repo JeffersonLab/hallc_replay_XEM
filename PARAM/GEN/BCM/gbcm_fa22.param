@@ -1,0 +1,27 @@
+Analysis done on 04/13/2023 by ZW
+;BCMs that should be used: BCM1, BCM2, and BCM4A
+;This parameter file is valid for runs during the Fall 2022 - Spring 2023, XEM2 run period
+
+;BCM Scan in SHMS 17756 performed on 10/20/2022
+;BCM Scan in SHMS 18531 performed on 11/03/2022
+;BCM Scan in SHMS 18723 performed on 11/08/2022
+;BCM Scan in SHMS 19783 performed on 12/16/2022
+;BCM Scan in SHMS 20277 performed on 01/29/2023
+;Analyzed by a modified version of Zoe's BCM calibration script
+;script saved under CALIBRATION
+
+gNumBCMs    = 6
+gBCM_Names  = " BCM1      BCM2      Unser       BCM4A    BCM4B    BCM4C"
+gBCM_Gain   =   5587,     5466.,    4013.,      9343.,   1.498E4,  5078.
+gBCM_Offset =   4309,     2.523E5,  4.234E5,    3056.,   2.385E5,  2118.
+
+
+; The following two lines are to correct for ~1% saturation 
+; in BCM1,2 between 50 and 70 muA. 
+gBCM_SatOffset=   50.,   50.,  1000., 1000., 1000.,   1000. 
+gBCM_SatQuadratic=  0.00175,  0.002,  0.0,  0.0,  0.0,  0.0 
+
+gBCM_Current_threshold = 5.0
+; index = 0 to gNumBCMs-1
+gBCM_Current_threshold_index = 3
+
