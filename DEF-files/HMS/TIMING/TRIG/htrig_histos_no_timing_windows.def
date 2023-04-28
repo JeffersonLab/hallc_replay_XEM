@@ -1,0 +1,30 @@
+#---------------------------------------------------------
+# Trigger TDC Times
+#---------------------------------------------------------
+
+TH1F htrig_elreal_rawtdc 'HMS hEL_REAL Raw TDC; TDC; Counts' T.hms.hEL_REAL_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_elreal_rawtdc_mult1 'HMS hEL_REAL Raw TDC Mult == 1; TDC; Counts' T.hms.hEL_REAL_tdcTimeRaw 6000 -1000 5000 T.hms.hEL_REAL_tdcMultiplicity==1
+TH1F htrig_elclean_rawtdc 'HMS hEL_CLEAN Raw TDC; TDC; Counts' T.hms.hEL_CLEAN_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_elclean_rawtdc_mult1 'HMS hEL_CLEAN Raw TDC Mult == 1; TDC; Counts' T.hms.hEL_CLEAN_tdcTimeRaw 6000 -1000 5000 T.hms.hEL_CLEAN_tdcMultiplicity==1
+TH1F htrig_htrig1_rawtdc 'HMS hTRIG1 Raw TDC; TDC; Counts' T.hms.hTRIG1_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_htrig1_rawtdc_mult1 'HMS hTRIG1 Raw TDC Mult == 1; TDC; Counts' T.hms.hTRIG1_tdcTimeRaw 6000 -1000 5000 T.hms.hTRIG1_tdcMultiplicity==1
+TH1F htrig_htrig2_rawtdc 'HMS hTRIG2 Raw TDC; TDC; Counts' T.hms.hTRIG2_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_htrig2_rawtdc_mult1 'HMS hTRIG2 Raw TDC Mult == 1; TDC; Counts' T.hms.hTRIG2_tdcTimeRaw 6000 -1000 5000 T.hms.hTRIG2_tdcMultiplicity==1
+TH1F htrig_htrig3_rawtdc 'HMS hTRIG3 Raw TDC; TDC; Counts' T.hms.hTRIG3_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_htrig3_rawtdc_mult1 'HMS hTRIG3 Raw TDC Mult == 1; TDC; Counts' T.hms.hTRIG3_tdcTimeRaw 6000 -1000 5000 T.hms.hTRIG3_tdcMultiplicity==1
+TH1F htrig_el_hi_rawtdc 'HMS hEL_HI Raw TDC; TDC; Counts' T.hms.hEL_HI_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_el_hi_rawtdc_mult1 'HMS hEL_HI Raw TDC Mult == 1; TDC; Counts' T.hms.hEL_HI_tdcTimeRaw 6000 -1000 5000 T.hms.hEL_HI_tdcMultiplicity==1
+TH1F htrig_el_lo_rawtdc	'HMS hEL_LO Raw	TDC; TDC; Counts' T.hms.hEL_LO_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_el_lo_rawtdc_mult1 'HMS hEL_LO Raw TDC Mult == 1; TDC; Counts' T.hms.hEL_LO_tdcTimeRaw 6000 -1000 5000 T.hms.hEL_LO_tdcMultiplicity==1
+TH1F htrig_el_lo_lo_rawtdc 'HMS hEL_LO_LO Raw TDC; TDC; Counts' T.hms.hEL_LO_LO_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_el_lo_lo_rawtdc_mult1 'HMS hEL_LO_LO Raw TDC Mult == 1; TDC; Counts' T.hms.hEL_LO_LO_tdcTimeRaw 6000 -1000 5000 T.hms.hEL_LO_LO_tdcMultiplicity==1
+TH1F htrig_stof_rawtdc 'HMS hSTOF Raw TDC; TDC; Counts' T.hms.hSTOF_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_stof_rawtdc_mult1 'HMS hSTOF Raw TDC Mult == 1; TDC; Counts' T.hms.hSTOF_tdcTimeRaw 6000 -1000 5000 T.hms.hSTOF_tdcMultiplicity==1
+TH1F htrig_shwr_rawtdc 'HMS hSHWR Raw TDC; TDC; Counts' T.hms.hSHWR_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_shwr_rawtdc_mult1 'HMS hSHWR Raw TDC Mult == 1; TDC; Counts' T.hms.hSHWR_tdcTimeRaw 6000 -1000 5000 T.hms.hSHWR_tdcMultiplicity==1
+TH1F htrig_cer_rawtdc 'HMS hCER Raw TDC; TDC; Counts' T.hms.hCER_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_cer_rawtdc_mult1 'HMS hCER Raw TDC Mult == 1; TDC; Counts' T.hms.hCER_tdcTimeRaw 6000 -1000 5000 T.hms.hCER_tdcMultiplicity==1
+TH1F htrig_prlo_rawtdc 'HMS hPRLO Raw TDC; TDC; Counts' T.hms.hPRLO_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_prlo_rawtdc_mult1 'HMS hPRLO Raw TDC Mult == 1; TDC; Counts' T.hms.hPRLO_tdcTimeRaw 6000 -1000 5000 T.hms.hPRLO_tdcMultiplicity==1
+TH1F htrig_prhi_rawtdc 'HMS hPRHI Raw TDC; TDC; Counts' T.hms.hPRHI_tdcTimeRaw 6000 -1000 5000
+TH1F htrig_prhi_rawtdc_mult1 'HMS hPRHI Raw TDC Mult == 1; TDC; Counts' T.hms.hPRHI_tdcTimeRaw 6000 -1000 5000 T.hms.hPRHI_tdcMultiplicity==1
