@@ -12,6 +12,7 @@
 #include "DEF-files/HMS/PRODUCTION/PID/hpid_histos.def"
 #include "DEF-files/HMS/PRODUCTION/EXTCOR/hextcor_histos.def"
 
+#include "DEF-files/HMS/PRODUCTION/TRIG/htrig_vars.def"
 #include "DEF-files/HMS/PRODUCTION/DC/hdc_vars.def"
 #include "DEF-files/HMS/PRODUCTION/GTR/hgtr_vars.def"
 #include "DEF-files/HMS/PRODUCTION/PID/hpid_vars.def"
