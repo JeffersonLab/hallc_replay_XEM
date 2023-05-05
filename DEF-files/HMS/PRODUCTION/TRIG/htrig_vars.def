@@ -1,0 +1,33 @@
+#**************************
+#* Trigger Variables
+#**************************
+
+block T.hms.hEL_REAL_tdcTimeRaw
+block T.hms.hEL_REAL_tdcMultiplicity
+block T.hms.hEL_CLEAN_tdcTimeRaw
+block T.hms.hEL_CLEAN_tdcMultiplicity
+block T.hms.hTRIG1_tdcTimeRaw
+block T.hms.hTRIG1_tdcMultiplicity
+block T.hms.hTRIG2_tdcTimeRaw
+block T.hms.hTRIG2_tdcMultiplicity
+block T.hms.hTRIG3_tdcTimeRaw
+block T.hms.hTRIG3_tdcMultiplicity
+block T.hms.hEL_HI_tdcTimeRaw
+block T.hms.hEL_HI_tdcMultiplicity
+block T.hms.hEL_LO_tdcTimeRaw
+block T.hms.hEL_LO_tdcMultiplicity
+block T.hms.hEL_LO_LO_tdcTimeRaw
+block T.hms.hEL_LO_LO_tdcMultiplicity
+block T.hms.hSTOF_tdcTimeRaw
+block T.hms.hSTOF_tdcMultiplicity
+block T.hms.hSHWR_tdcTimeRaw
+block T.hms.hSHWR_tdcMultiplicity
+block T.hms.hCER_tdcTimeRaw
+block T.hms.hCER_tdcMultiplicity
+block T.hms.hPRLO_tdcTimeRaw
+block T.hms.hPRLO_tdcMultiplicity
+block T.hms.hPRHI_tdcTimeRaw
+block T.hms.hPRHI_tdcMultiplicity
+
+
+
