@@ -11,13 +11,13 @@ t_shms_trig_adcrefcut=-5000
 helicity_freq = 120.0007547169
 
 ; NOTE:  refcuts are integers, not reals
-; This is for 3/4 Trigger, 9.2Gev, 8 degrees
+; This is for EL-REAL Trigger, 4.0Gev, 20 degrees
 ; cut variable is pT2
 ; determined from fall 2019 - spring 2020 analysis
-t_shms_trig_tdcrefcut = -4200
+t_shms_trig_tdcrefcut = -3000
 ; cut variable is pFADC_TREF_ROC2
 ; determined from fall 2019 - spring 2020 analysis
-t_shms_trig_adcrefcut = -4200
+t_shms_trig_adcrefcut = -3000
 
 ; bar num:          1      2      3      4         5             6          7         8        9        10       11
 t_shms_adcNames = "pAER pHGCER pNGCER pPSHWR pFADC_TREF_ROC2 pHGCER_MOD pNGCER_MOD pHEL_QRT pHEL_NEG pHEL_POS pHEL_MPS"
