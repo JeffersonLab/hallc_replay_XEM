@@ -11,7 +11,7 @@ t_shms_trig_adcrefcut=-5000
 helicity_freq = 120.0007547169
 
 ; NOTE:  refcuts are integers, not reals
-; This is for 3/4 Trigger, 9.2Gev, 8 degrees
+; This is for 3/4 Trigger, 9.2Gev, 10 degrees
 ; cut variable is pT2
 ; determined from fall 2019 - spring 2020 analysis
 t_shms_trig_tdcrefcut = -4200
