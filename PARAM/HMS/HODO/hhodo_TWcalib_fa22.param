@@ -1,4 +1,4 @@
-;HMS Hodoscopes Output Parameter File: Run 4402, 2M Events, Defocused, 20 Deg 4.0 GeV
+;HMS Hodoscopes Output Parameter File: Run 4402
  
 hTDC_threshold=120. ;units of mV 
  
