@@ -1,0 +1,25 @@
+; Cut to select the Reference time when multiple hits in reference time 
+; The units in channels for the module (CAEN tdc or FADC)
+; negative value refcut means that the first reference time greater than the abs(refcut)
+;     is used as reftime. If no ref time is found  greater than the abs(refcut) then first
+;     reference time is used.
+; positive value refcut means that the the first reference time greater than the abs(refcut)
+;     is used as reftime. If no ref time is found  greater than the abs(refcut) then no
+;     reference time is used and warning message is produced.
+; Cut is on reference time per detector.
+;
+; NOTE: refcuts are integers, not reals
+
+
+;Determined from 17232,17239,17242
+;SHMS p=-2.5GeV/c, theta=35 degrees, EL-REAL trigger
+; cut variable = pDCREF(min)
+pdc_tdcrefcut=-14400
+; cut variable = pT1
+phodo_tdcrefcut=-3000
+; cut variable = pFADC_TREF_ROC2
+phodo_adcrefcut=-3000
+pngcer_adcrefcut=-3000
+phgcer_adcrefcut=-3000
+paero_adcrefcut=-3000
+pcal_adcrefcut=-3000

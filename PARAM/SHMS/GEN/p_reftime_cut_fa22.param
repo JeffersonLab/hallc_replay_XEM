@@ -1,4 +1,5 @@
 ; Cut to select the Reference time when multiple hits in reference time 
+; This file is for 3/4 triggers
 ; The units in channels for the module (CAEN tdc or FADC)
 ; negative value refcut means that the first reference time greater than the abs(refcut)
 ;     is used as reftime. If no ref time is found  greater than the abs(refcut) then first

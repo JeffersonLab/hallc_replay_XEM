@@ -20,7 +20,7 @@ g_ctp_det_calib_filename   = "DBASE/HMS/default_det_calib_fa22.param"
 g_ctp_bcm_calib_filename   = "PARAM/GEN/BCM/gbcm_fa22.param"
 g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_fa22.param"
 g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_fa22.map"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_fa22.param"
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elreal_fa22.param"
 g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_fa22.template"
 
 1565-1591
@@ -126,15 +126,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4438-4438
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4439-4439
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4440-4440
+4438-4440
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -142,221 +134,194 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4460-4460
+4459-4463
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4461-4461
+4484-4485
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4462-4462
+4494-4495
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4463-4463
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4484-4484
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4485-4485
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4494-4494
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4495-4495
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4516-4516
+4516-4517
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22"
 
-4517-4517
+4523-4524
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4523-4523
+4536-4537
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4524-4524
+4541-4542
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4536-4536
+4551-4552
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4537-4537
+4555-4556
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4541-4541
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4542-4542
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4551-4551
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4552-4552
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4555-4555
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4556-4556
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+4563-4563
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 4566-4566
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4570-4570
+4568-4569
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4570-4571
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4571-4571
+4572-4574
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4575-4576
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4575-4575
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4576-4576
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+4577-4578
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 4579-4579
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4586-4586
+4581-4581
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4587-4587
+4583-4583
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4585-4585
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4586-4587
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4590-4590
+4588-4589
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4590-4591
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4591-4591
+4592-4593
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4594-4595
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4594-4594
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4595-4595
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+4596-4597
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 4598-4598
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4602-4602
+4599-4600
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4602-4604
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4603-4603
+4605-4606
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4607-4608
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4604-4604
+4609-4613
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4614-4615
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4607-4607
+4616-4617
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4619-4620
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4608-4608
+4621-4622
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4623-4624
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4614-4614
+4625-4625
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4634-4634
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4615-4615
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4620-4620
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4623-4623
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+4636-4636
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 4637-4637
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4642-4642
+4638-4638
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4640-4641
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4642-4643
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4643-4643
+4644-4645
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4646-4647
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4646-4646
+4648-4649
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4650-4652
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4647-4647
+4653-4654
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4655-4656
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4650-4650
+4657-4658
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+4659-4660
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4651-4651
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4652-4652
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4655-4655
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4656-4656
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4659-4659
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4660-4660
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+4661-4661
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 4683-4683
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -366,15 +331,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4768-4768
+4768-4769
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4769-4769
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4797-4797
+4797-4798
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -398,11 +359,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4903-4903
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4904-4904
+4903-4904
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -434,51 +391,27 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4985-4985
+4985-4986
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4986-4986
+4991-4992
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4991-4991
+4995-4996
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4992-4992
+4999-5000
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4995-4995
+5003-5004
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-4996-4996
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-4999-4999
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5000-5000
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5003-5003
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5004-5004
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5008-5008
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5009-5009
+5008-5009
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -490,73 +423,78 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5018-5018
+5018-5019
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5019-5019
+5024-5024
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5025-5026
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5025-5025
+5027-5028
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5030-5031
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5026-5026
+5032-5035
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5039-5039
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5043-5044
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5030-5030
+5045-5046
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5047-5048
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5031-5031
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5043-5043
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5044-5044
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5047-5047
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5048-5048
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5050-5051
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5052-5052
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5054-5054
+5053-5053
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5054-5055
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5055-5055
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5056-5056
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5058-5058
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5059-5059
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5061-5061
+5061-5062
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5062-5062
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5063-5064
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5065-5065
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+
+5066-5066
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5067-5067
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -566,29 +504,29 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5075-5075
+5072-5074
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5075-5076
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5076-5076
+5077-5080
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5082-5083
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5082-5082
+5084-5085
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5086-5087
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5083-5083
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5086-5086
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5087-5087
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5088-5089
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5090-5090
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -598,95 +536,57 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5095-5095
+5093-5094
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5095-5096
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5096-5096
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5097-5097
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5115-5115
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5146-5146
+5146-5147
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5147-5147
+5222-5223
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5222-5222
+5236-5237
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5223-5223
+5290-5291
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5236-5236
+5311-5312
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5237-5237
+5392-5393
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5290-5290
+5412-5413
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5291-5291
+5435-5437
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5311-5311
+5441-5443
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5312-5312
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5392-5392
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5393-5393
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5435-5435
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5436-5436
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5437-5437
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5441-5441
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5442-5442
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5443-5443
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5452-5452
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5453-5453
+5452-5453
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -694,11 +594,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5459-5459
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5460-5460
+5459-5460
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -714,11 +610,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5478-5478
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5479-5479
+5478-5479
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -726,19 +618,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5484-5484
+5484-5485
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5485-5485
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5488-5488
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5489-5489
+5488-5489
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -762,33 +646,49 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5509-5509
+5503-5506
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5509-5510
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5510-5510
+5511-5513
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5515-5516
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5515-5515
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5517-5517
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
-5516-5516
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+5519-5522
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+5524-5525
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5526-5526
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
+5527-5528
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
 5530-5530
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
+5531-5537
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
 5538-5538
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+
+5539-5540
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 5592-5592
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -798,11 +698,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5608-5608
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5609-5609
+5608-5609
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -818,19 +714,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5654-5654
+5654-5655
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5655-5655
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5776-5776
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5777-5777
+5776-5777
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -906,19 +794,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5942-5942
+5942-5943
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5943-5943
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5946-5946
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5947-5947
+5946-5947
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -930,19 +810,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5955-5955
+5955-5956
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-5956-5956
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5959-5959
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-5960-5960
+5959-5960
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -950,116 +822,106 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6009-6009
+6008-6008
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6009-6010
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6010-6010
+6011-6012
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6013-6014
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6013-6013
+6015-6016
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6017-6018
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6014-6014
+6019-6020
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6021-6022
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6017-6017
+6023-6024
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6025-6026
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6018-6018
+6027-6028
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6029-6031
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6021-6021
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6022-6022
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6025-6025
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-6026-6026
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6029-6029
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6030-6030
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6031-6031
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6033-6034
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6035-6035
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6037-6037
+6037-6038
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6038-6038
+6039-6040
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6041-6042
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6041-6041
+6043-6043
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6045-6045
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6046-6047
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6042-6042
+6048-6049
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6051-6052
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6046-6046
+6053-6054
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6055-6056
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6047-6047
+6057-6058
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6059-6060
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6051-6051
+6061-6062
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6063-6064
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6052-6052
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6055-6055
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6056-6056
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6059-6059
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6060-6060
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6063-6063
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6064-6064
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6065-6066
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6067-6067
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1069,25 +931,25 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6073-6073
+6070-6071
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6073-6074
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6074-6074
+6075-6075
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6144-6144
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6145-6147
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6145-6145
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6146-6146
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6147-6147
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6149-6151
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6152-6152
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1097,53 +959,50 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6157-6157
+6155-6156
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6157-6160
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6158-6158
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6159-6159
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6160-6160
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6161-6164
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6165-6165
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6170-6170
+6166-6168
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6170-6171
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6171-6171
+6172-6173
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6174-6175
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6174-6174
+6176-6178
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6179-6180
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6175-6175
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6179-6179
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6180-6180
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6181-6183
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6184-6184
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+
+6185-6185
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6187-6187
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1153,29 +1012,29 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6193-6193
+6191-6192
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6193-6194
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6194-6194
+6195-6196
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6197-6198
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6197-6197
+6199-6200
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6201-6202
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6198-6198
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6201-6201
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6202-6202
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6204-6205
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6206-6206
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1185,37 +1044,36 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6211-6211
+6209-6210
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6211-6212
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6212-6212
+6213-6214
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6215-6216
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6215-6215
+6217-6218
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6219-6220
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6216-6216
+6221-6222
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6223-6224
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6219-6219
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6220-6220
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6223-6223
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6224-6224
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6225-6226
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6227-6227
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1225,13 +1083,15 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6232-6232
+6230-6231
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
+
+6232-6233
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6233-6233
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
+6234-6234
+g_ctp_trig_config_filename = "PARAM/TRIG/thms_elclean_fa22.param"
 
 6235-6235
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
@@ -1273,19 +1133,11 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6515-6515
+6515-6516
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6516-6516
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6521-6521
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6522-6522
+6521-6522
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
@@ -1313,11 +1165,7 @@ g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 
-6594-6594
-g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
-g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
-
-6595-6595
+6594-6595
 g_ctp_parm_filename        = "DBASE/HMS/general_3of4_fa22.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/thms_3of4_fa22.param"
 

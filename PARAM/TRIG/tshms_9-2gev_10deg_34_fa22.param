@@ -1,0 +1,40 @@
+t_shms_numAdc = 11
+t_shms_numTdc = 58
+
+t_shms_tdcoffset = 300.
+t_shms_adc_tdc_offset = 200.
+
+t_shms_tdcchanperns = 0.09766
+t_shms_trig_tdcrefcut=-4800
+t_shms_trig_adcrefcut=-5000
+
+helicity_freq = 120.0007547169
+
+; NOTE:  refcuts are integers, not reals
+; This is for 3/4 Trigger, 9.2Gev, 10 degrees
+; cut variable is pT2
+; determined from fall 2019 - spring 2020 analysis
+t_shms_trig_tdcrefcut = -4200
+; cut variable is pFADC_TREF_ROC2
+; determined from fall 2019 - spring 2020 analysis
+t_shms_trig_adcrefcut = -4200
+
+; bar num:          1      2      3      4         5             6          7         8        9        10       11
+t_shms_adcNames = "pAER pHGCER pNGCER pPSHWR pFADC_TREF_ROC2 pHGCER_MOD pNGCER_MOD pHEL_QRT pHEL_NEG pHEL_POS pHEL_MPS"
+
+; BAR NUM:          1   2   3   4   5   6   7   8   9   10    11     12     13      14      15      16      17      18      19      20      21       22     23    24     25      26     27      28     29     30    31     32     33     34     35     36     37    38       39      40     41      42        43     44       45      46     47     48        49       50     51      52      53      54     55      56      57    58
+t_shms_tdcNames = "pT1 pT2 p1X p1Y p2X p2Y p1T p2T pT3 pAER pHGCER pNGCER pDCREF1 pDCREF2 pDCREF3 pDCREF4 pDCREF5 pDCREF6 pDCREF7 pDCREF8 pDCREF9 pDCREF10 pEDTM pPRLO  pPRHI  pTRIG1 pTRIG2 pTRIG3 pTRIG4 pTRIG5 pTRIG6 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6 pSTOF pEL_LO_LO pEL_LO pEL_HI pEL_REAL pEL_CLEAN hSTOF hEL_LO_LO hEL_LO hEL_HI hEL_REAL hEL_CLEAN pPRE40 pPRE100 pPRE150 pPRE200 hPRE40 hPRE100 hPRE150 hPRE200 pRF" 
+
+t_shms_TdcTimeWindowMin =      0,      0,     0,       0,      0,      0,      0,      0,      0,      0,
+                               0,      0,     0,       0,      0,      0,      0,      0,      0,      0,
+                               0,      0,     0,       0,      0,      0,      0,      0,      0,      0,
+                               0,      0,     0,       0,      0,      0,      0,      0,      0,      0,
+                               0,      0,     0,       0,      0,      0,      0,      0,      0,      0,
+                               0,      0,     0,       0,      0,      0,      0,      0
+
+t_shms_TdcTimeWindowMax = 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+                          100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+                          100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+                          100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+                          100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+                          100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000

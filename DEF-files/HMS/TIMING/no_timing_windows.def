@@ -2,3 +2,4 @@
 #include "DEF-files/HMS/TIMING/CAL/hcal_histos_no_timing_windows.def"
 #include "DEF-files/HMS/TIMING/DC/hdc_histos_no_timing_windows.def"
 #include "DEF-files/HMS/TIMING/CER/hcer_histos_no_timing_windows.def" 
+#include "DEF-files/HMS/TIMING/TRIG/htrig_histos_no_timing_windows.def"
