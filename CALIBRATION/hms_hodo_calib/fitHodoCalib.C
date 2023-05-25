@@ -37,7 +37,7 @@ void fitHodoCalib(TString filename,Int_t runNUM,Bool_t cosmic_flag=kFALSE)
 
 
  
-  Int_t evtNUM = 500000;
+  Int_t evtNUM = 2000000;
 
 
 
