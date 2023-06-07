@@ -46,9 +46,9 @@ phodo_tdc_offset = 2000, 2000, 2000, 2000
 
 ; phodo_adc_tdc_offset is array of time offsets for all paddles in a plane
 ;   to move the ADC pulse time after reference time subtraction to a reasonable time (ns).
-;phodo_adc_tdc_offset = 200., 200., 200., 200.
+phodo_adc_tdc_offset = 200., 200., 200., 200.
 ; Offset changed with HCANA update (April 2021)
-phodo_adc_tdc_offset = 211., 219., 212., 228.
+;phodo_adc_tdc_offset = 211., 219., 212., 228.
 
 ; SHMS Hodoscope TimeWindow Min/Max Cuts
 ; variables = P.hod.(1x, 1y, 2x, 2y).GoodNeg(Pos)AdcTdcDiffTime
