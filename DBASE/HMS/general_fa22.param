@@ -6,7 +6,6 @@ cminch=2.54
 ; General Hall-C parameter files
 #include "PARAM/GEN/genflags_fa22.param"
 #include "PARAM/GEN/gbeam_fa22.param"
-#include "PARAM/GEN/gscalers_fa22.param"
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
