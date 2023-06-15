@@ -9,11 +9,9 @@ cminch=2.54
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
-;#include "PARAM/HMS/GEN/hcana_fa22.param"
 #include "PARAM/HMS/GEN/hdebug_fa22.param"
 #include "PARAM/HMS/GEN/hmsflags_fa22.param"
 #include "PARAM/HMS/GEN/htracking_fa22.param"
-#include "PARAM/HMS/GEN/h_reftime_cut_fa22.param"
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"
