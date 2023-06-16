@@ -1,0 +1,9 @@
+; HMS detector calibration files for setting 106 runs 6386-6445
+#include "PARAM/HMS/CER/hcer_calib_fa22.param"
+#include "PARAM/HMS/DC/s106_35deg_m2p72/hdc_calib_s106.param"
+#include "PARAM/HMS/DC/s106_35deg_m2p72/hdc_tzero_per_wire_s106.param"
+#include "PARAM/HMS/HODO/hhodo_calib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib_fa22.param"
+#include "PARAM/HMS/AERO/haero_calib_fa22.param"
+#include "PARAM/HMS/CAL/hcal_calib_fa22.param"
