@@ -22,8 +22,8 @@ phgcer_adc_tdc_offset   =  200.0
 
 ;Fall 2022 - Based on SHMS run 17232
 ; cut variable is P.hgcer.goodAdcTdcDiffTime
-phgcer_adcTimeWindowMin = -70.0, -70.0, -70.0, -70.0
-phgcer_adcTimeWindowMax =  40.0,  40.0,  40.0,  40.0
+phgcer_adcTimeWindowMin = -90.0, -90.0, -90.0, -90.0
+phgcer_adcTimeWindowMax =  45.0,  35.0,  45.0,  40.0
 
 ; Pedestal Defaults from HCANA update (April 2021)
 phgcer_PedDefault= 2085, 2141, 2309, 1980
