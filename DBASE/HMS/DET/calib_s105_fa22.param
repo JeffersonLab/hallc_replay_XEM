@@ -1,0 +1,9 @@
+; HMS detector calibration files for setting 105 runs 6324-6385
+#include "PARAM/HMS/CER/hcer_calib_fa22.param"
+#include "PARAM/HMS/DC/s105_35deg_m3p09/hdc_calib_s105.param"
+#include "PARAM/HMS/DC/s105_35deg_m3p09/hdc_tzero_per_wire_s105.param"
+#include "PARAM/HMS/HODO/hhodo_calib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib_fa22.param"
+#include "PARAM/HMS/AERO/haero_calib_fa22.param"
+#include "PARAM/HMS/CAL/hcal_calib_fa22.param"

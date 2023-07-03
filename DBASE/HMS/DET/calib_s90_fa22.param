@@ -1,0 +1,9 @@
+; HMS detector calibration files for setting 90 runs 5985-6006
+#include "PARAM/HMS/CER/hcer_calib_fa22.param"
+#include "PARAM/HMS/DC/s90_20deg_m4p0/hdc_calib_s90.param"
+#include "PARAM/HMS/DC/s90_20deg_m4p0/hdc_tzero_per_wire_s90.param"
+#include "PARAM/HMS/HODO/hhodo_calib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib_fa22.param"
+#include "PARAM/HMS/AERO/haero_calib_fa22.param"
+#include "PARAM/HMS/CAL/hcal_calib_fa22.param"

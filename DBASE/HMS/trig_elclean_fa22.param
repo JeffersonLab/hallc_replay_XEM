@@ -1,0 +1,3 @@
+; Trigger specific param files for elclean trigger
+#include "PARAM/HMS/GEN/h_reftime_cut_fa22.param"
+#include "PARAM/TRIG/thms_elclean_fa22.param"

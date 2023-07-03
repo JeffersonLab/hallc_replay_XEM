@@ -1,0 +1,3 @@
+; Trigger specific param files for 3of4 trigger
+#include "PARAM/HMS/GEN/h_reftime_cut_3of4_fa22.param"
+#include "PARAM/TRIG/thms_3of4_fa22.param"
