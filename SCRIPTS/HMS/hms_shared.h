@@ -29,8 +29,8 @@ void setupParms(Int_t RunNumber) {
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
   gHcParms->AddString("g_ctp_database_filename", "DBASE/HMS/standard.database");
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
-  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
+  gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_det_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_bcm_calib_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_optics_filename"));
