@@ -268,7 +268,7 @@ void THcPShowerCalib::ReadThresholds() {
     falpha0[ipmt] = 0.;
   };
 
-  ifstream fin( "input.dat" );
+  ifstream fin( "CALIBRATION/shms_cal_calib/input.dat" );
 
   string line;
   istringstream iss;
