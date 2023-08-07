@@ -1,2 +1,2 @@
-; start fall 2022
-hcer_adc_to_npe = 1./10.03, 1./9.56
+; Constants determined from post-run analysis
+hcer_adc_to_npe = 1./10.01, 1./9.46

@@ -1,0 +1,9 @@
+; HMS detector calibration files for setting 54 runs 5541-5542
+#include "PARAM/HMS/CER/hcer_calib_fa22.param"
+#include "PARAM/HMS/DC/s54_21p36deg_m5p878/hdc_calib_s54.param"
+#include "PARAM/HMS/DC/s54_21p36deg_m5p878/hdc_tzero_per_wire_s54.param"
+#include "PARAM/HMS/HODO/hhodo_calib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_TWcalib_fa22.param"
+#include "PARAM/HMS/HODO/hhodo_Vpcalib_fa22.param"
+#include "PARAM/HMS/AERO/haero_calib_fa22.param"
+#include "PARAM/HMS/CAL/hcal_calib_fa22.param"

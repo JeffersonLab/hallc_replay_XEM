@@ -20,10 +20,11 @@ pngcer_npe_thresh = 0.5
 ; ADC time window cut values used to select "good" ADC events
 pngcer_adc_tdc_offset   =  200.0
 
-;Fall 2022 - Based on SHMS run 17232
+;Based on SHMS
 ; cut variable is P.ngcer.goodAdcTdcDiffTime
-pngcer_adcTimeWindowMin = -60.0, -60.0, -60.0, -60.0
-pngcer_adcTimeWindowMax = 60.0, 60.0, 60.0, 60.0
+pngcer_adcTimeWindowMin = -80.0, -80.0, -90.0, -80.0
+pngcer_adcTimeWindowMax = 55.0, 55.0, 55.0, 50.0
 
 ; Pedestal Defaults from HCANA Update (April 2021)
 pngcer_PedDefault= 2083, 2070, 2033, 1955
+

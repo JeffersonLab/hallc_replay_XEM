@@ -6,7 +6,7 @@ Run Num           : {gen_run_number}
 Raw Momentum      : {hpcentral:%.3f}
 Momentum Offset   : {hpcentral_offset:%.3f}
 True Momentum     : {hpcentral*(1+hpcentral_offset*0.01):%.3f}
-Target AMU        : {gtargmass_amu:%.2f}
+Target AMU        : {gtargmass_amu:%.3f}
 Raw Spec Theta    : {htheta_lab:%.4f}
 Spec Theta Offset : {hthetacentral_offset:%.4f}
 True Spec Theta   : {htheta_lab+hthetacentral_offset*180/pi:%.4f}

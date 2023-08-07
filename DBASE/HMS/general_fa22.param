@@ -6,15 +6,12 @@ cminch=2.54
 ; General Hall-C parameter files
 #include "PARAM/GEN/genflags_fa22.param"
 #include "PARAM/GEN/gbeam_fa22.param"
-#include "PARAM/GEN/gscalers_fa22.param"
 
 ; General HMS parameter files
 ; Note: hmsflags.param includes spectrometer offsets and options.
-;#include "PARAM/HMS/GEN/hcana_fa22.param"
 #include "PARAM/HMS/GEN/hdebug_fa22.param"
 #include "PARAM/HMS/GEN/hmsflags_fa22.param"
 #include "PARAM/HMS/GEN/htracking_fa22.param"
-#include "PARAM/HMS/GEN/h_reftime_cut_fa22.param"
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"
@@ -29,9 +26,3 @@ cminch=2.54
 #include "PARAM/HMS/HODO/hhodo_cuts_fa22.param"
 #include "PARAM/HMS/AERO/haero_cuts_fa22.param"
 #include "PARAM/HMS/CAL/hcal_cuts_fa22.param"
-
-; HMS default calib parameter files included in 
-;Default values always loaded.
-;Specific calibration files loaded in with g_ctp_det_calib_filename
-;Specific g_ctp_det_calib_filename loaded by run in standard.database
-#include "DBASE/HMS/default_det_calib_fa22.param"
