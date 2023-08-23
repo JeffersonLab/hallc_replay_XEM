@@ -1,7 +1,7 @@
-; Calibration constants for file hms_replay_cal_5614_-1.root, 12768 events processed
+; Calibration constants for file hms_replay_cal_5615_-1.root, 129952 events processed
 
 ;fDeltaMin  fDeltaMax	fBetaMin fBetaMax	fLoThr	fHiThr
-;-10	10	0.5	1.5	0.775087	1.02929
+;-10	10	0.5	1.5	0.77426	1.02833
 hcal_pos_gain_cor= 14.89,  6.90,  9.29, 12.03, 11.96, 15.61, 14.00, 14.20, 11.04, 16.29, 15.50, 13.53, 14.28,
                    11.11, 13.79, 10.40, 17.02,  9.81,  6.71,  8.97,  8.62, 10.11, 12.49, 13.01, 13.60, 14.09,
                    25.33, 14.76, 18.92, 23.07, 17.31, 19.81, 23.84, 20.91, 21.70, 26.33, 20.10, 22.38, 21.14,
