@@ -53,3 +53,8 @@ TH2F hhodo_2y_good_adc_mult_vs_pmt_neg 'HMS 2Y NEG Good AdcTdc Multiplicity;PMT 
 TH2F hhodo_2y_good_adctdc_diff_time_mult1_vs_pmt_neg 'HMS 2Y- Good AdcTdc Diff Time, Mult=1 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] H.hod.2y.GoodNegAdcTdcDiffTime 10 0.5 10.5 400 -250 250 H.hod.2y.GoodNegAdcMult==1
 TH2F hhodo_2y_good_adctdc_diff_time_mult2_vs_pmt_neg 'HMS 2Y- Good AdcTdc Diff Time, Mult=2 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] H.hod.2y.GoodNegAdcTdcDiffTime 10 0.5 10.5 400 -250 250 H.hod.2y.GoodNegAdcMult==2
 TH2F hhodo_2y_good_adctdc_diff_time_mult3_vs_pmt_neg 'HMS 2Y- Good AdcTdc Diff Time, Mult=3 vs. PMT Number; PMT Number; Channels 0.0625 ns / Ch;' [I+1] H.hod.2y.GoodNegAdcTdcDiffTime 10 0.5 10.5 400 -250 250 H.hod.2y.GoodNegAdcMult==3 
+
+block H.hod.2y.GoodNegAdcPulseAmp
+block H.hod.2y.GoodNegAdcTdcDiffTime
+block H.hod.2y.GoodNegAdcMult
+block H.hod.2y.GoodNegAdcPulseInt
