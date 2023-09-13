@@ -6,5 +6,5 @@
 #include "PARAM/SHMS/AERO/paero_calib_fa22.param"
 ;#include "PARAM/SHMS/CAL/pcal_calib_fa22.param"
 #include "PARAM/SHMS/CAL/pcal_calib_fa22_Oct3_2022.param"
-#include "PARAM/SHMS/HODO/phodo_TWcalib_fa22.param"
-#include "PARAM/SHMS/HODO/phodo_Vpcalib_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib_paddle_17290.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_paddle_17290.param"
