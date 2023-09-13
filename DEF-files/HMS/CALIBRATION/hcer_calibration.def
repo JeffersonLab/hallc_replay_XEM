@@ -7,4 +7,9 @@ block H.cer.goodAdcPulseAmp
 block H.cer.goodAdcMult
 block H.cer.npe
 block H.cer.npeSum
-
+block H.cer.xAtCer
+block H.cer.yAtCer
+block H.cal.etottrack
+block H.cal.etottracknorm
+block H.gtr.dp
+block H.gtr.beta
