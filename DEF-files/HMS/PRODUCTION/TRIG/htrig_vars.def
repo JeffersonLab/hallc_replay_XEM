@@ -28,6 +28,7 @@ block T.hms.hPRLO_tdcTimeRaw
 block T.hms.hPRLO_tdcMultiplicity
 block T.hms.hPRHI_tdcTimeRaw
 block T.hms.hPRHI_tdcMultiplicity
-
+block T.hms.hEDTM_tdcTimeRaw
+block T.hms.hEDTM_tdcMultiplicity
 
 
