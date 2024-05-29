@@ -23,14 +23,14 @@ t_hms_adcNames = "hASUM hBSUM hCSUM hDSUM hPSHWR hSHWR hAER hCER hFADC_TREF_ROC1
 t_hms_tdcNames = "h1X h1Y h2X h2Y h1T h2T hT1 hASUM hBSUM hCSUM hDSUM hPRLO hPRHI hSHWR hEDTM hCER hT2 hDCREF1 hDCREF2 hDCREF3 hDCREF4 hDCREF5 hTRIG1 hTRIG2 hTRIG3 hTRIG4 hTRIG5 hTRIG6 pTRIG1 pTRIG2 pTRIG3 pTRIG4 pTRIG5 pTRIG6 pSTOF pEL_LO_LO pEL_LO pEL_HI pEL_REAL pEL_CLEAN hSTOF hEL_LO_LO hEL_LO hEL_HI hEL_REAL hEL_CLEAN  hT3 pPRE40 pPRE100 pPRE150 pPRE200 hPRE40 hPRE100 hPRE150 hPRE200 hRF hHODO_RF"
 
 t_hms_TdcTimeWindowMin =       0,      0,      0,      0,      0,      0,      0,      0,      0,      0,
-                               0,    700,    700,    800,      0,   1200,      0,      0,      0,      0,
+                               0,    700,    700,    800,    900,   1200,      0,      0,      0,      0,
                                0,      0,   1000,      0,      0,      0,      0,      0,      0,      0,
                                0,      0,      0,      0,      0,      0,      0,      0,      0,      0,
                              600,    900,   1800,   1400,   1950,   2000,      0,      0,      0,      0,
                                0,      0,      0,      0,      0,      0,      0
 
 t_hms_TdcTimeWindowMax =    100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
-                            100000,   2000,   2100,   2200, 100000,   2200, 100000, 100000, 100000, 100000,
+                            100000,   2000,   2100,   2200,   1700,   2200, 100000, 100000, 100000, 100000,
                             100000, 100000,   2400, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
                             100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
                               2200,   2200,   2400,   2400,   2400,   2800, 100000, 100000, 100000, 100000,
