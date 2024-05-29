@@ -8,5 +8,13 @@
 ;Reverted back to 1835V.
 ;This calibration is applicable to runs 17239 - 17259
 
+;pngcer_adc_to_npe = 1./6.83, 1./5.09, 1./4.55, 1./5.38
 
-pngcer_adc_to_npe = 1./6.83, 1./5.09, 1./4.55, 1./5.38
+;Updated: May 29, 2024. Julio's calibration.
+
+;Calibration of Cherenkov using runs 17232-17245, 17322-17325, 17391-17433,
+;18451-18491, 19032-19063, 19648-19688
+;These runs correspond to settings with SHMS_p > -8 GeV and SHMS_th < 30°,
+;which include a considerable number of events on each PMT position.
+
+pngcer_adc_to_npe = 1./5.23, 1./4.88, 1./4.54, 1./5.50
