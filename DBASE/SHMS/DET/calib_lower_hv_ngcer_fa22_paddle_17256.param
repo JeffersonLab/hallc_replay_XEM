@@ -1,5 +1,0 @@
-; SHMS runs 17239 - 17259 Lower NGCER PMT1 HV.
-; Reverted because HeeP studies done with higher NGCER PMT1 HV
-#include "PARAM/SHMS/NGCER/pngcer_calib_lower_hv_fa22.param"
-#include "PARAM/SHMS/HODO/phodo_TWcalib_paddle_17256.param"
-#include "PARAM/SHMS/HODO/phodo_Vpcalib_paddle_17256.param"
