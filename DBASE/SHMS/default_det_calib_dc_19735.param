@@ -1,0 +1,10 @@
+; SHMS default calibration parameter files
+#include "PARAM/SHMS/NGCER/pngcer_calib_lower_hv_fa22.param"
+#include "PARAM/SHMS/DC/pdc_calib_19735.param"
+#include "PARAM/SHMS/DC/pdc_tzero_per_wire_19735.param"
+#include "PARAM/SHMS/HGCER/phgcer_calib_fa22.param"
+#include "PARAM/SHMS/AERO/paero_calib_fa22.param"
+;#include "PARAM/SHMS/CAL/pcal_calib_fa22.param"
+#include "PARAM/SHMS/CAL/pcal_calib_fa22_Oct3_2022.param"
+#include "PARAM/SHMS/HODO/phodo_TWcalib_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_Vpcalib_fa22.param"
