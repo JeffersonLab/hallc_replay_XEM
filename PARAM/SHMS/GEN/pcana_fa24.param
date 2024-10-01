@@ -1,0 +1,27 @@
+;SHMS Central Path Lenth from target to focal plane
+SHMS_CentralPathLen = 18.1*100   ; 18.1 m (or 1810 cm)
+
+
+; Parameters we need to keep THcHallCSpectrometer Happy
+;p_recon_coeff_filename = "DATFILES/SHMS_fr3_rec__order_5.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_p20_rec.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_m015_rec.dat"
+;p_recon_coeff_filename = "DATFILES/shms_dipole_2plow.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2017-optimized.dat"
+;p_recon_coeff_filename = "DATFILES/shms-2017-optimized_delta_newfit3.dat"
+;p_recon_coeff_filename = "DATFILES/shms_OptimizedFINAL_post3288.dat
+
+; New higher momemntum optics matrix at 8.55 GeV from Holly (Aug 2022)
+p_recon_coeff_filename = "DATFILES/newfit_cafe4_rmterms.dat"
+
+; Starting shms matrix file (CaFe 2022) (suggested by M. Jones for PION-LT 2021)
+;p_recon_coeff_filename = "DATFILES/shms_newfit_xptar_april2020.dat"
+
+; SHMS Q2 20% defocused
+;p_recon_coeff_filename = "DATFILES/shms-2011-26cm-monte_q2_p20_rec.dat"
+
+; testing (with C. Yero SHMS optics from deuteron 2018 exp)
+;p_recon_coeff_filename = "DATFILES/shms_OptimizedFINAL_post3288.dat  
+
+; testing (with Holly's optimized matrix for A1n/d2n)
+;p_recon_coeff_filename = "DATFILES/hsv_fit_global.dat 
