@@ -16,7 +16,7 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/HMS/SCALARS/hms_replay_scalars_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/HMS/SCALERS/hms_replay_scalers_%d_%d.root";
   
   //Initialize gHcParms.
   //Shared HMS gHcParms setup located in ../hms_shared.h
@@ -98,12 +98,12 @@ void replay_hms_scalers(Int_t RunNumber=0, Int_t MaxEvent=0) {
   // Define cuts file
   analyzer->SetCutFile("DEF-files/HMS/SCALERS/hscaler_cuts.def");  // optional
   // File to record accounting information for cuts
-  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/SCALARS/summary_scalars_%d_%d.report", RunNumber, MaxEvent));  // optional
+  analyzer->SetSummaryFile(Form("REPORT_OUTPUT/HMS/SCALERS/summary_scalers_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.
   analyzer->Process(run);
   // Create report file from template
   analyzer->PrintReport("TEMPLATES/HMS/SCALERS/hscalers.template",
-  			Form("REPORT_OUTPUT/HMS/SCALARS/replay_hms_scalars_%d_%d.report", RunNumber, MaxEvent));  // optional  
+  			Form("REPORT_OUTPUT/HMS/SCALERS/replay_hms_scalers_%d_%d.report", RunNumber, MaxEvent));  // optional  
 
   //H: HMS, P: SHMS
   ScalerCalib scalib("H");

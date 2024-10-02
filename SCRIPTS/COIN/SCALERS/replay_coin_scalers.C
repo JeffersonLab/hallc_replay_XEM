@@ -27,7 +27,7 @@ void replay_coin_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0,Int_t FirstEve
   pathList.push_back("CACHE_LINKS/cache_sp19");
   pathList.push_back("CACHE_LINKS/cache_xem2");
 
-  const char* ROOTFileNamePattern = "ROOTfiles/COIN/SCALARS/coin_replay_scalers_%d_%d.root";
+  const char* ROOTFileNamePattern = "ROOTfiles/COIN/SCALERS/coin_replay_scalers_%d_%d.root";
 
   // Load global parameters
   gHcParms->Define("gen_run_number", "Run Number", RunNumber);
