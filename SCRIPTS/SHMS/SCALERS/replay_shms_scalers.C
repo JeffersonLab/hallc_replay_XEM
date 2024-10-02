@@ -1,7 +1,7 @@
 //Not intended to be standalone. Must be called in SCRIPT from top directory of hallc_replay_XEM
 //Same functionality as any SCRIPT in hallc_replay_XEM
 #include "SCRIPTS/SHMS/shms_shared.h"
-R__LOAD_LIBRARY(CALIBRATION/bcm_current_map/ScalerCalib.C)
+R__LOAD_LIBRARY(CALIBRATION/bcm_current_map/ScalerCalib_C.so)
 
 void replay_shms_scalers (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
 
