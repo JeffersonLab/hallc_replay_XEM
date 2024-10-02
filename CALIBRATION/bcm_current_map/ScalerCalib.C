@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const double kBig = 1.e38;
+// const double kBig = 1.e38;
 const int NBCM = 5;
 
 ofstream outfile;
