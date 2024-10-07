@@ -15,7 +15,7 @@ production_script="SCRIPTS/SHMS/COMMISSIONING/replay_hodo_check_other.C"
 
 # Which commands to run.
 runProd="./hcana -l -b -q \"${production_script}(${runNum}, ${numEvents})\""
-runScal="./hcana -l -b -q \"${scalar_script}(${runNum}, ${numEvents})\""
+runScal="./hcana -l -b -q \"${scaler_script}(${runNum}, ${numEvents})\""
 
 {
   echo ""
