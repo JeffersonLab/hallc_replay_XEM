@@ -37,4 +37,4 @@ cminch=2.54
 ;Default values always loaded.
 ;Specific calibration files loaded in with g_ctp_det_calib_filename
 ;Specific g_ctp_det_calib_filename loaded by run in standard.database
-#include "DBASE/SHMS/default_det_calib_fa22.param"
+#include "DBASE/SHMS/default_det_35Deg5p57GeV.param"
