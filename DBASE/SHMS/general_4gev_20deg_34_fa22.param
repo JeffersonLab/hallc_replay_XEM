@@ -11,7 +11,7 @@ cminch=2.54
 
 ; General SHMS parameter files
 ; Note: shmsflags.param includes spectrometer offsets and options.
-;#include "PARAM/SHMS/GEN/pcana_fa22.param"
+#include "PARAM/SHMS/GEN/pcana_fa22.param"
 #include "PARAM/SHMS/GEN/pdebug_fa22.param"
 #include "PARAM/SHMS/GEN/shmsflags_4p2_fa22.param"
 #include "PARAM/SHMS/GEN/ptracking_fa22.param"

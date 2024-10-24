@@ -257,8 +257,8 @@ g_ctp_trig_config_filename = "DBASE/HMS/trig_3of4_fa22.param"
 4616-4617
 g_ctp_trig_config_filename = "DBASE/HMS/trig_elclean_fa22.param"
 
-4617-4661
-g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s17_fa22.param"
+4617-4634
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s17_1_fa22.param"
 
 4619-4620
 g_ctp_trig_config_filename = "DBASE/HMS/trig_3of4_fa22.param"
@@ -274,6 +274,9 @@ g_ctp_trig_config_filename = "DBASE/HMS/trig_elclean_fa22.param"
 
 4634-4634
 g_ctp_trig_config_filename = "DBASE/HMS/trig_3of4_fa22.param"
+
+4635-4661
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s17_2_fa22.param"
 
 4636-4636
 g_ctp_trig_config_filename = "DBASE/HMS/trig_elclean_fa22.param"
@@ -317,8 +320,20 @@ g_ctp_trig_config_filename = "DBASE/HMS/trig_3of4_fa22.param"
 4661-4661
 g_ctp_trig_config_filename = "DBASE/HMS/trig_elclean_fa22.param"
 
-4662-4731
-g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_fa22.param"
+4662-4671
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_1_fa22.param"
+
+4672-4685
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_2_fa22.param"
+
+4686-4703
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_3_fa22.param"
+
+4704-4712
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_4_fa22.param"
+
+4713-4731
+g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s18_5_fa22.param"
 
 4683-4683
 g_ctp_trig_config_filename = "DBASE/HMS/trig_3of4_fa22.param"

@@ -25,18 +25,20 @@ g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_sp1
 
 
 ; General parameters for Fall 2022 running during the full experiment
+;SHMS run 17382 was used for the hodoscope calibraion 
 7300-99999
 g_ctp_parm_filename        = "DBASE/SHMS/general_fa22.param"
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_fa22.param"
 ;g_ctp_bcm_calib_filename  = "PARAM/GEN/gscalers_fa22.param"
 g_ctp_bcm_calib_filename   = "PARAM/GEN/BCM/gbcm_fa22.param"
-g_ctp_optics_filename      = "PARAM/SHMS/GEN/pcana_fa22.param"
+;g_ctp_optics_filename      = "PARAM/SHMS/GEN/pcana_fa22.param"
 g_ctp_map_filename         = "MAPS/SHMS/DETEC/STACK/shms_stack_fa22.map"
 g_ctp_trig_config_filename = "PARAM/TRIG/tshms_fa22.param"
 g_ctp_template_filename    = "TEMPLATES/SHMS/PRODUCTION/pstackana_production_fa22.template"
 
 
 ; Specialized detector calibrations w.r.t. kinematic settings
+
 
 1791
 ;Defocused run used for hodo calib.
@@ -2249,3 +2251,74 @@ g_ctp_optics_filename      = "PARAM/SHMS/GEN/defocused_Q2_p20_fa22.param"
 ;Calibration & PID Threshold Checks Setting 3
 ;Defocused Q2+20% calorimeter calibration calibration
 g_ctp_optics_filename      = "PARAM/SHMS/GEN/defocused_Q2_p20_fa22.param"
+
+
+;Drift Chamber Calibration
+
+18183 - 18394
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+18395-18447
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+18494-18990
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+19259-19262
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+19319-19364
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+19366-19403
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+19888-20356
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+20415-20512
+;Drift Chamber Calibration with run 18436
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
+
+17479-18181
+;Drift Chamber Calibration with run 17738
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17738.param"
+
+18991-19023
+;Drift Chamber Calibration with run 17738
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17738.param"
+
+19070-19199
+;Drift Chamber Calibration with run 17738
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17738.param"
+
+19407-19647
+;Drift Chamber Calibration with run 17738
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17738.param"
+
+20358-20414
+;Drift Chamber Calibration with run 17738
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17738.param"
+
+17300 - 17312
+;Drift Chamber Calibration with run 19735
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
+
+19263 - 19276
+;Drift Chamber Calibration with run 19735
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
+
+19689 - 19875
+;Drift Chamber Calibration with run 19735
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
+
+17255 - 17299
+;Drift Chamber Calibration with run 17299
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_17299.param"
