@@ -23,3 +23,5 @@ block P.cal.nclust
 block P.cal.ntracks
 block P.cal.fly.nclust
 block P.cal.fly.ntracks
+block P.cal.etottracknorm
+block P.cal.xtrack

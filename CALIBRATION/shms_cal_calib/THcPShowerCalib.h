@@ -77,6 +77,7 @@ class THcPShowerCalib {
   TH1F* hEcal;
   TH2F* hDPvsEcal;
   TH2F* hESHvsEPR;
+  TH2F* hEcalvxXbj;
   ////
   TH1F* hEPRunc;
   TH2F* hETOTvsEPR;
@@ -124,6 +125,7 @@ class THcPShowerCalib {
   UInt_t fEuncNBin;                // Binning of uncalibrated Edep histogram
   Double_t fEuncGFitLo,fEuncGFitHi;// Gaussian fit range of uncalib. Edep histo.
   Double_t sigmaRange;             // range for events to use for calib (e.g +/- 3*sigma)
+  Double_t fxCaloMin;              // Threshold in xCalo. For when preshower blocks are turned OFF
 
   TTree* fTree;
   UInt_t fNentries;
@@ -263,12 +265,14 @@ void THcPShowerCalib::ReadThresholds() {
   fHGCerMin = 999.;
   fNGCerMin = 999.;
   fMinHitCount = 999999;
+  fxCaloMin = -999.;
 
   for (UInt_t ipmt=0; ipmt<THcPShTrack::fNpmts; ipmt++) {
-    falpha0[ipmt] = 0.;
+    falpha0[ipmt] = 30.0;
   };
 
-  ifstream fin( "input.dat" );
+  // ifstream fin( "CALIBRATION/shms_cal_calib/input_xCalCuts.dat" );
+  ifstream fin( "CALIBRATION/shms_cal_calib/input.dat" );
 
   string line;
   istringstream iss;
@@ -291,6 +295,8 @@ void THcPShowerCalib::ReadThresholds() {
   iss >> fEuncGFitLo >> fEuncGFitHi;
   getline(fin, line);  iss.str(line);
   iss >> sigmaRange;
+  getline(fin, line);  iss.str(line);
+  iss >> fxCaloMin;
 
   getline(fin, line);
   getline(fin, line);
@@ -352,6 +358,7 @@ void THcPShowerCalib::ReadThresholds() {
   cout << "  Uncalibrated histo. fit range (red line): " << fEuncGFitLo << "  "
        << fEuncGFitHi << endl;
   cout << "  Sigma range to select events (green fill): " << sigmaRange << endl;
+  cout << "  Threshold in xCalo =  " << fxCaloMin << endl;
 
   cout << endl;
 
@@ -439,6 +446,7 @@ void THcPShowerCalib::Init() {
 		       400,0.,2., 440,fDeltaMin-1.,fDeltaMax+1.);
   hESHvsEPR = new TH2F("hESHvsEPR", "E_{SH} versus E_{PR}",
 		       300,0.,1.5, 300,0.,1.5);
+  hEcalvxXbj = new TH2F("hEcalvxXbj", "Calibrated EvsXbj", 100, 1.1, 3.0, 100, 0.5, 1.5);
   ////
   hEPRunc = new TH1F("hEPRunc", "EPR/P uncalibrated", 500, 0., 0.2);
   hETOTvsEPR = new TH2F("hETOTvsEPR", "E_{TOT} versus E_{PR}",
@@ -613,7 +621,8 @@ bool THcPShowerCalib::ReadShRawTrack(THcPShTrack &trk, UInt_t ientry) {
   if (P_tr_n != 1) return 0;
 
   bool good_trk =   P_tr_tg_dp > fDeltaMin &&
-                    P_tr_tg_dp < fDeltaMax;
+                    P_tr_tg_dp < fDeltaMax &&
+                    (P_tr_x + P_tr_xp*D_CALO_FP) > fxCaloMin;
 
   if (!good_trk) return 0;
 
@@ -1003,10 +1012,30 @@ void THcPShowerCalib::FillHEcal() {
       Double_t P = trk.GetP();
       Double_t delta = trk.GetDp();
       Double_t Enorm = trk.Enorm();
+      Double_t th = trk.GetXp();
+      Double_t ph = trk.GetYp();
+      Double_t p_spec = 9.2;
+      Double_t th_central = 8.5;
+      Double_t Xbj;
+
+      Double_t E = 10.542134056112856; //Beam energy
+      Double_t Mp = 0.938;              //Mass of proton
+      Double_t nu, Q2, W, Ep, thetaRad;      //energy transfer; momentum transfer; invariant mass; energy of scattered e; radians
+      thetaRad = TMath::ACos((cos(th_central*3.1415/180.0) - ph * sin(th_central*3.1415/180.0)) / TMath::Sqrt(1.0 + th * th + ph * ph));
+      Ep = p_spec * (1.0 + 0.01*delta); //delta
+      Q2 = (TMath::Sin(thetaRad/2.0))*(TMath::Sin(thetaRad/2.0))*4.0*E*Ep;
+      nu = E - Ep; //nu
+      W = TMath::Sqrt(Mp*Mp + 2.0*Mp*nu - Q2);
+      Xbj = Q2/(2.0*Mp*nu);
+      //cout << "Xbj: " << Xbj << endl;
+      // cout << "delta: " << delta << endl;
+      // cout << "th: " << th << endl;
+      // cout << "ph: " << ph << endl;
 
       ////
       if (Enorm>0) {
 	hEcal->Fill(Enorm);
+  hEcalvxXbj->Fill(Xbj,Enorm);
 	hDPvsEcal->Fill(Enorm,delta,1.);
 	hCaloPos2->Fill(yCalo,xCalo);
 	hCaloPosWt->Fill(yCalo,xCalo,Enorm);
@@ -1050,7 +1079,8 @@ void THcPShowerCalib::SaveAlphas() {
   //
 
   ofstream output;
-  char* fname = Form("pcal.param");
+  cout << "P_tr_p  " << P_tr_p << endl;
+  char* fname = Form("goodParam/pcal_8p5Deg9p20GeV.param");
   cout << "SaveAlphas: fname=" << fname << endl;
 
   output.open(fname,ios::out);
@@ -1063,18 +1093,30 @@ void THcPShowerCalib::SaveAlphas() {
 
   for (UInt_t k=0; k<THcPShTrack::fNcols_pr; k++) {
     k==0 ? output << "pcal_neg_gain_cor =" : output << "pcal_pos_gain_cor =";
-    for (UInt_t i=0; i<THcPShTrack::fNrows_pr; i++)
+    for (UInt_t i=0; i<THcPShTrack::fNrows_pr; i++){
+      if(falphaC[j] > -0.01 && falphaC[j] < 0.01){
+         output << fixed << setw(6) << setprecision(2) << falpha0[j++] << ",";
+      }
+      else{
       output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
+      }
+    }
     output << endl;
   }
 
   for (UInt_t k=0; k<THcPShTrack::fNcols_sh; k++) {
     k==0 ? output << "pcal_arr_gain_cor =" : output << "                   ";
-    for (UInt_t i=0; i<THcPShTrack::fNrows_sh; i++)
+    for (UInt_t i=0; i<THcPShTrack::fNrows_sh; i++){
+      if(falphaC[j] > -0.01 && falphaC[j] < 0.01){
+         output << fixed << setw(6) << setprecision(2) << falpha0[j++] << ",";
+      }
+      else{
       output << fixed << setw(6) << setprecision(2) << falphaC[j++] << ",";
+      }
+    }
     output << endl;
   }
-
+  
   output.close();
 }
 

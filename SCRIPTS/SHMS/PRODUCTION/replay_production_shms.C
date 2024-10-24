@@ -25,14 +25,26 @@ void replay_production_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0) {
   pathList.push_back("./CACHE_LINKS/cache_xem2");
   // Create file name patterns.
   const char* RunFileNamePattern = "shms_all_%05d.dat";  //Raw data file name pattern
-  const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_%d_%d.root";
+//THESE ARE THE ORIGINALS  
+  // const char* ROOTFileNamePattern = "ROOTfiles/SHMS/PRODUCTION/shms_replay_production_%d_%d.root";
+//THESE ARE THE EXTRA ONES FOR OFFSET STUDY
+  const char* ROOTFileNamePattern = "tempOUTPUT/shms_replay_production_%d_%d.root";
   TString ROOTFileName = Form(ROOTFileNamePattern, RunNumber, MaxEvent);
   //Specifics for the replay
   TString odef_file = "DEF-files/SHMS/PRODUCTION/pstackana_production.def";
+// IF the replay is for runs with preshower blocks turned ON (like most of the production data), use this one:
   TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts.def";
-  TString summary_file = Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report",
+// IF the replay is for runs with preshower blocks turned OFF, use this one:
+//  TString cdef_file = "DEF-files/SHMS/PRODUCTION/CUTS/pstackana_production_cuts_xCalCuts.def";
+//THESE ARE THE ORIGINALS  
+  // TString summary_file = Form("REPORT_OUTPUT/SHMS/PRODUCTION/summary_production_%d_%d.report",
+	// 		      RunNumber, MaxEvent);
+  // TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report",
+	// 		      RunNumber, MaxEvent);
+//THESE ARE THE EXTRA ONES FOR OFFSET STUDY
+  TString summary_file = Form("tempOUTPUT/summary_production_%d_%d.report",
 			      RunNumber, MaxEvent);
-  TString report_file  = Form("REPORT_OUTPUT/SHMS/PRODUCTION/replay_shms_production_%d_%d.report",
+  TString report_file  = Form("tempOUTPUT/replay_shms_production_%d_%d.report",
 			      RunNumber, MaxEvent);
 
   //Initialize gHcParms.

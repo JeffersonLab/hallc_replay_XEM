@@ -13,7 +13,7 @@ cminch=2.54
 ; Note: shmsflags.param includes spectrometer offsets and options.
 #include "PARAM/SHMS/GEN/pcana_fa22.param"
 #include "PARAM/SHMS/GEN/pdebug_fa22.param"
-#include "PARAM/SHMS/GEN/shmsflags_fa22.param"
+#include "PARAM/SHMS/GEN/shmsflags_3p5_fa22.param"
 #include "PARAM/SHMS/GEN/ptracking_fa22.param"
 #include "PARAM/SHMS/GEN/p_reftime_cut_2-2gev_26deg_34_fa22.param"
 
@@ -34,7 +34,7 @@ cminch=2.54
 #include "PARAM/SHMS/CAL/pcal_cuts_fa22.param"
 
 ; SHMS default calib parameter files included in 
-;Default values always loaded.
+;Default values always loaded. POSITRON data, instead using 1.95for electrons
 ;Specific calibration files loaded in with g_ctp_det_calib_filename
 ;Specific g_ctp_det_calib_filename loaded by run in standard.database
-#include "DBASE/SHMS/default_det_calib_fa22.param"
+#include "DBASE/SHMS/default_det_26De1p95GeV_loTh.param"

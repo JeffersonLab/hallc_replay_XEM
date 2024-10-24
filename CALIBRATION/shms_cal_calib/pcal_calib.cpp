@@ -13,7 +13,7 @@
 
 void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
 
-  bool DRAW = 1;  //flag to draw extra plots
+  bool DRAW = 0;  //flag to draw extra plots   /////////////////DEFAULT IS 1, make sure to change back!!!!!!!!////////////////////////
   bool SAVE = 1;  //flag to save plots in root file 
 
   // Initialize the analysis clock
@@ -42,8 +42,8 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  Int_t cxt=50;
   //___________Canvas 1_______________
   TCanvas* Canvas =
-   new TCanvas("Canvas", "HMS Shower Counter calibration",0,0,cwid,cht);
-  Canvas->Divide(3,2);
+   new TCanvas("Canvas", "SHMS Shower Counter calibration",0,0,cwid,cht);
+  Canvas->Divide(4,2);
 
   Canvas->cd(1);
 
@@ -57,7 +57,7 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
   theShowerCalib.hESHvsEPR->Draw("colz");
 
   // Normalized energy deposition after calibration.
-  Canvas->cd(4);
+  Canvas->cd(5);
   gStyle->SetOptFit();
 
  //wph______ Fit over range centered by max bin_________
@@ -78,7 +78,7 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  theShowerCalib.hEcal->GetFunction("gaus")->SetLineStyle(1);
 
   // SHMS delta(P) versus the calibrated energy deposition.
-  Canvas->cd(5);
+  Canvas->cd(6);
   theShowerCalib.hDPvsEcal->Draw("colz");
 
   // Uncalibrated e/p at calorimeter
@@ -114,12 +114,26 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
   // *********Done drawing shower blocks **************
 
   // Calibrated e/p at calorimeter
-  Canvas->cd(6);
+  Canvas->cd(7);
   theShowerCalib.hCaloPosNorm->GetZaxis()->SetRangeUser(0.5,1.5);
   theShowerCalib.hCaloPosNorm->Draw("COLZ");
   theShowerCalib.hCaloPosNorm->SetStats(0);
   for (Int_t i=0;i<=nRows;i++){tr[i]->Draw("same");} 
   for (Int_t i=0;i<=nCols;i++){tc[i]->Draw("same");} 
+
+  Canvas->cd(8);
+  theShowerCalib.hEcalvxXbj->Draw("colz");
+
+  // Save histograms in another file for further use
+//  fname = Form("caloHistos%d.root" , run);
+  TFile f("histos.root","new");
+  theShowerCalib.hEunc->Write();
+  theShowerCalib.hEcal->Write();
+  theShowerCalib.hESHvsEPR->Write();
+  theShowerCalib.hDPvsEcal->Write();
+  theShowerCalib.hCaloPosNormU->Write();
+  theShowerCalib.hCaloPosNorm->Write();
+  theShowerCalib.hEcalvxXbj->Write();
 
   // Save canvas in a pdf format.
   Canvas->Print(Form("PDFs/%s_%d_%d.pdf",Prefix.c_str(),nstart,nstop));
@@ -331,7 +345,7 @@ void pcal_calib(string Prefix, int nstop=-1, int nstart=0) {
  }
 
  if (SAVE==1){
-  TFile* froot=new TFile(Form("ROOTfiles/%s_%d_%d.root",Prefix.c_str(),nstart,nstop),
+  TFile* froot=new TFile(Form("ROOTfiles/SHMS/CALIBRATION/%s_%d_%d.root",Prefix.c_str(),nstart,nstop),
 			 "RECREATE");
   cout << "Savings histograms...." << endl;
   theShowerCalib.hEunc->Write();
