@@ -1,0 +1,40 @@
+#real raddeg
+raddeg=3.14159265/180
+#real cminch
+cminch=2.54
+
+; This file is for 2.21 Gev at 26 Degrees for the 3/4 trigger
+; General Hall-C parameter files
+#include "PARAM/GEN/genflags_fa22.param"
+#include "PARAM/GEN/gbeam_fa22.param"
+#include "PARAM/GEN/gscalers_fa22.param"
+
+; General SHMS parameter files
+; Note: shmsflags.param includes spectrometer offsets and options.
+;#include "PARAM/SHMS/GEN/pcana_fa22.param"
+#include "PARAM/SHMS/GEN/pdebug_fa22.param"
+#include "PARAM/SHMS/GEN/shmsflags_3p5_fa22.param"
+#include "PARAM/SHMS/GEN/ptracking_fa22.param"
+#include "PARAM/SHMS/GEN/p_reftime_cut_2-2gev_26deg_34_fa22.param"
+
+; SHMS default geometry parameter files
+#include "PARAM/SHMS/NGCER/pngcer_geom.param"
+#include "PARAM/SHMS/DC/pdc_geom_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_geom.param"
+#include "PARAM/SHMS/HGCER/phgcer_geom.param"
+#include "PARAM/SHMS/AERO/paero_geom.param"
+#include "PARAM/SHMS/CAL/pcal_geom.param"
+
+; SHMS default cut parameter files
+#include "PARAM/SHMS/NGCER/pngcer_cuts_fa22.param"
+#include "PARAM/SHMS/DC/pdc_cuts_fa22.param"
+#include "PARAM/SHMS/HODO/phodo_cuts_fa22.param"
+#include "PARAM/SHMS/HGCER/phgcer_cuts_fa22.param"
+#include "PARAM/SHMS/AERO/paero_cuts_fa22.param"
+#include "PARAM/SHMS/CAL/pcal_cuts_fa22.param"
+
+; SHMS default calib parameter files included in 
+;Default values always loaded.
+;Specific calibration files loaded in with g_ctp_det_calib_filename
+;Specific g_ctp_det_calib_filename loaded by run in standard.database
+#include "DBASE/SHMS/default_det_26De3p69GeV_loTh.param"

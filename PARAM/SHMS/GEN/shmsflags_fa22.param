@@ -33,5 +33,9 @@ p_oopcentral_offset = 0.0
 ;  SHMS central momentum offset determined from carbon elastic data fall 2017
 ; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
 ;ppcentral_offset = -0.250
-ppcentral_offset = 0
+;ppcentral_offset = 0
 
+;  SHMS central momentum offset determined from elastic data fall 2022
+; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
+ppcentral_offset = -0.141
+;ppcentral_offset = 0

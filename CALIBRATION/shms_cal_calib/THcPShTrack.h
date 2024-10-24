@@ -58,6 +58,8 @@ class THcPShTrack {
 
   Double_t GetX() {return X;}
   Double_t GetY() {return Y;}
+  Double_t GetXp() {return Xp;}
+  Double_t GetYp() {return Yp;}
 
   Float_t Ycor(Double_t, UInt_t);       // coord. corection for Preshower module
 

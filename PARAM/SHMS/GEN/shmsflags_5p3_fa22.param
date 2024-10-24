@@ -1,0 +1,41 @@
+
+; The pdelta_offset,ptheta_offset,pphi_offset effect the
+; reconstructed target quantities. 
+; For transport x is in the dispersive direction with + down
+;               y is in the horizontal + towards small angles.
+;               z is along the central optics axis.
+; In transport coordinates phi = hyptar = dy/dz and theta = hxptar = dx/dz 
+;    but for unknown reasons the yp offset is named  htheta_offset
+;    and  the xp offset is named  hphi_offset
+; Do not to change these values, since these are the zero order
+;  CMOP matrix elements. If you do change then your shms sieve
+;  plots will be screwed up.
+
+; do not change pdelta_offset from zero, use ppcentral_offset
+pdelta_offset = 0.0;   (%)   hdelta_tar = hdelta_tar + hdelta_offset 
+
+; new_xptar_2020.dat 
+ptheta_offset = 0.0 ; (rad) hyp_tar = hyp_tar + htheta_offset
+pphi_offset = -8.681269905E-4; (rad) hxp_tar = hxp_tar + hphi_offset 
+
+;OPTICS_MATRIX: hsv_fit_global.dat offsets
+;pphi_offset = -0.00158534706; (rad) hxp_tar = hxp_tar + hphi_offset
+;ptheta_offset = 0.000336262798 ; (rad) hyp_tar = hyp_tar + htheta_offset
+
+;OPTICS_MATRIX: shms_OptimizedFINAL_post3288.dat (C. Yero optics for deuteron 2018)
+;pphi_offset = -6.824131892e-04; (rad) hxp_tar = hxp_tar + hphi_offset  
+;ptheta_offset = 4.114719318e-04 ; (rad) hyp_tar = hyp_tar + htheta_offset  
+
+; The following offsets are applied to the central kinematic variables
+;      ptheta_lab=htheta_lab + pthetacentral_offset/degree 
+pthetacentral_offset = 0.0
+p_oopcentral_offset = 0.0
+;  SHMS central momentum offset determined from carbon elastic data fall 2017
+; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
+;ppcentral_offset = -0.250
+;ppcentral_offset = 0
+
+;  SHMS central momentum offset determined from elastic data fall 2022
+; sets ppcentral = ppcentral * ( 1. + ppcentral_offset / 100. )
+ppcentral_offset = -0.137
+;ppcentral_offset = 0
