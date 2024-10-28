@@ -901,7 +901,7 @@ void DC_calib::GetCard()
 void DC_calib::EventLoop(string option="")
 {
 
-  if (mode=="card")
+ if (mode=="card")
     {
       //cout << "Executing GetCard() Method . . ." << endl;
       GetCard();
@@ -928,7 +928,7 @@ void DC_calib::EventLoop(string option="")
       //PID Cut, Set Bool_t to actual leaf value, and see if it passes cut
       else if (pid=="pid_elec")
 	{
-	  cal_elec = cal_etot>0.1;  //normalize energy > 0.1 (bkg cleanup)
+	  cal_elec = cal_etot>6 && cal_etot < 14;  //normalize energy > 0.1 (bkg cleanup)
 	  cer_elec = cer_npe>1.0;     //number of photoelec. > 1 (electrons)
 	  
 	}

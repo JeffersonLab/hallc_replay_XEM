@@ -16,8 +16,8 @@ int main_calib(int runNumber, int nEvents=-1)
   clock_t cl;
   cl = clock();
 
-  DC_calib obj("HMS", Form("ROOTfiles/HMS/CALIBRATION/hms_replay_dc_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "card");                       
-  //DC_calib obj("SHMS", Form("ROOTfiles/SHMS/CALIBRATION/shms_replay_dc_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "card");                                 
+  //DC_calib obj("HMS", Form("ROOTfiles/HMS/CALIBRATION/h_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "card");                       
+  DC_calib obj("SHMS", Form("/lustre24/expphy/volatile/hallc/xem2/zoew/ROOTfiles/SHMS/CALIBRATION/shms_replay_dc_own2_%d_%d.root",runNumber, nEvents), runNumber, -1, "pid_elec", "wire");                                 
   obj.setup_Directory();
   obj.SetPlaneNames();
   obj.GetDCLeafs();
