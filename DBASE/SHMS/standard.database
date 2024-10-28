@@ -2283,7 +2283,7 @@ g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
 ;Drift Chamber Calibration with run 18436
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
 
-20415-20512
+20415-20613
 ;Drift Chamber Calibration with run 18436
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_18436.param"
 
@@ -2316,6 +2316,10 @@ g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
 
 19689 - 19875
+;Drift Chamber Calibration with run 19735
+g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
+
+20614 - 20770
 ;Drift Chamber Calibration with run 19735
 g_ctp_det_calib_filename   = "DBASE/SHMS/default_det_calib_dc_19735.param"
 
