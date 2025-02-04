@@ -23,7 +23,6 @@ void replay_production_all_hms (Int_t RunNumber=0, Int_t MaxEvent=0) {
   pathList.push_back("./CACHE_LINKS/cache_sp18");
   pathList.push_back("./CACHE_LINKS/cache_sp19"); 
   pathList.push_back("./CACHE_LINKS/cache_xem2"); 
-  return pathList;
 
   // Create file name patterns.
   const char* RunFileNamePattern = "hms_all_%05d.dat";  //Raw data file name pattern
