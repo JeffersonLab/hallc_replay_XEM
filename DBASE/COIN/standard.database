@@ -4,77 +4,72 @@ g_ctp_parm_filename       = "DBASE/COIN/general_fa22.param"
 g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
 g_ctp_det_calib_filename   = "DBASE/COIN/default_det_calib_fa22.param"
 g_ctp_bcm_calib_filename   = "PARAM/GEN/gscalers_fa22.param"
-g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_fa22.param"
+g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_XEM.param"
 g_ctp_trig_config_filename = "PARAM/TRIG/tcoin_fa22.param"
 g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_fa22.map"
 g_ctp_template_filename    = "TEMPLATES/COIN/PRODUCTION/coin_production.template"
-
-0-6008
-g_ctp_parm_filename       = "DBASE/COIN/general_pt.param"
-0-6180
-g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
-0-5417
-g_ctp_map_filename = "MAPS/COIN/DETEC/coin.map"
-0-5417
-g_ctp_trigdet_filename = "PARAM/TRIG/tcoin.param"
-
-5418-6008
-g_ctp_trigdet_filename = "PARAM/TRIG/tcoin_fall18_hRF.param"
-
-# CSV experiment
-6009-6999
-g_ctp_parm_filename       = "DBASE/COIN/general.param"
-6181-6999
-g_ctp_kinematics_filename = "db2/auto_standard_coin.kinematics"
-5418-6999
-g_ctp_map_filename = "MAPS/COIN/DETEC/coin_fall18.map"
-
-6009-6999
-g_ctp_trigdet_filename = "PARAM/TRIG/tcoin_fall18.param"
-
-# jpsi experiment
-# phase 1 kinematics
-7000-7273
-g_ctp_parm_filename       = "DBASE/COIN/general_7000.param"
-g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
-g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
-g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
-
-# phase 2 kinematics
-7274-7307
-g_ctp_parm_filename       = "DBASE/COIN/general_7274.param"
-g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
-g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
-g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
-
-# phase 3 kinematics
-7308-7408
-g_ctp_parm_filename       = "DBASE/COIN/general_7308.param"
-g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
-g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
-g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
-
-# phase 1 kinematics
-7409-7429
-g_ctp_parm_filename       = "DBASE/COIN/general_7000.param"
-g_ctp_kinematics_filename = "DBASE/COIN/auto_standard_coin.kinematics"
-g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
-g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
-
-# phase 2 kinematics
-7430-8000
-g_ctp_parm_filename       = "DBASE/COIN/general.param"
-g_ctp_kinematics_filename = "DBASE/COIN/standard.kinematics"
-g_ctp_map_filename        = "MAPS/COIN/DETEC/coin_spring19.map"
-g_ctp_trigdet_filename    = "PARAM/TRIG/tcoin_spring19.param"
-
-
 
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ;Start of full XEM running
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-17191 - 17201
-;High momentum HMS running requires different optics
-;Jacob M has updated matrix elements from PionLT study
-g_ctp_optics_filename      = "PARAM/COIN/GEN/coin_optics_6p5_fa22.param"
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+; OPTICS SETTINGS
+; "Low" momentum optics - abs(p) < 8.8 GeV
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+17151-17207,17224-17230
+g_ctp_optics_filename = "PARAM/COIN/GEN/coin_optics_XEM.param"
+
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+; OPTICS SETTINGS
+; "High" momentum optics - abs(p) >= 8.8 GeV
+;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+17208-17223
+g_ctp_optics_filename = "PARAM/COIN/GEN/coin_optics_XEM_HighMomentum.param"
+
+17151-17167
+g_ctp_det_calib_filename   = "DBASE/COIN/s1_det_calib_fa22.param"
+
+17177-17178
+g_ctp_det_calib_filename   = "DBASE/COIN/s2_det_calib_fa22.param"
+
+17179-17181
+g_ctp_det_calib_filename   = "DBASE/COIN/s3_det_calib_fa22.param"
+
+17182-17183
+g_ctp_det_calib_filename   = "DBASE/COIN/s4_det_calib_fa22.param"
+
+17184-17186
+g_ctp_det_calib_filename   = "DBASE/COIN/s5_det_calib_fa22.param"
+
+17187-17188
+g_ctp_det_calib_filename   = "DBASE/COIN/s6_det_calib_fa22.param"
+
+17189-17190
+g_ctp_det_calib_filename   = "DBASE/COIN/s7_det_calib_fa22.param"
+
+17202-17204
+g_ctp_det_calib_filename   = "DBASE/COIN/s8_det_calib_fa22.param"
+
+17205-17207
+g_ctp_det_calib_filename   = "DBASE/COIN/s9_det_calib_fa22.param"
+
+17208-17210
+g_ctp_det_calib_filename   = "DBASE/COIN/s10_det_calib_fa22.param"
+
+17211-17213
+g_ctp_det_calib_filename   = "DBASE/COIN/s11_det_calib_fa22.param"
+
+17214-17216
+g_ctp_det_calib_filename   = "DBASE/COIN/s12_det_calib_fa22.param"
+
+17217-17218
+g_ctp_det_calib_filename   = "DBASE/COIN/s13_det_calib_fa22.param"
+
+17220-17223
+g_ctp_det_calib_filename   = "DBASE/COIN/s14_det_calib_fa22.param"
+
+17224-17230
+g_ctp_det_calib_filename   = "DBASE/COIN/s15_det_calib_fa22.param"
