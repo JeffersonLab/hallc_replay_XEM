@@ -17,7 +17,7 @@ cminch=2.54
 
 ; SHMS default geometry parameter files
 #include "PARAM/SHMS/NGCER/pngcer_geom.param"
-#include "PARAM/SHMS/DC/pdc_geom_fa22.param"
+#include "PARAM/SHMS/DC/pdc_newalign_geom.param"
 #include "PARAM/SHMS/HODO/phodo_geom.param"
 #include "PARAM/SHMS/HGCER/phgcer_geom.param"
 #include "PARAM/SHMS/AERO/paero_geom.param"

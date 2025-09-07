@@ -11,5 +11,6 @@ block P.dc.residualExclPlane
 block P.dc.chisq
 block P.dc.ntrack
 block P.dc.InsideDipoleExit
+block P.tr.*
 #*block P.dc.*.dist
 #*block P.dc.*.time

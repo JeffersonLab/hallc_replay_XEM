@@ -21,6 +21,10 @@ g_ctp_map_filename         = "MAPS/HMS/DETEC/STACK/hms_stack_fa22.map"
 g_ctp_trig_config_filename = "DBASE/HMS/trig_elreal_fa22.param"
 g_ctp_template_filename    = "TEMPLATES/HMS/PRODUCTION/hstackana_production_fa22.template"
 
+;;;;;;;;;;;;;;
+; Begin runs ;
+;;;;;;;;;;;;;;
+
 1565-1591
 g_ctp_det_calib_filename = "DBASE/HMS/DET/calib_21deg_m5p7_sp18.param"
 g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period1_unser1_sp18.param"
@@ -61,6 +65,22 @@ g_ctp_bcm_calib_filename = "PARAM/GEN/BCM/gbcm_period4_sp18.param"
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ;Start of full XEM running
 ;=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; XEM Runs with different optics ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; -6.6 GeV running
+4662-4731,5792-5820
+g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_6p5_fa22.param"
+
+; -5.878 GeV running
+4734-4785,5021-5023,5541-5542,5821-5841,5962-5966
+g_ctp_optics_filename      = "PARAM/HMS/GEN/hcana_5p878_fa22.param"
+
+;;;;;;;;;;;;;;
+; Begin runs ;
+;;;;;;;;;;;;;;
 
 4402-4469
 g_ctp_det_calib_filename   = "DBASE/HMS/DET/calib_s1_fa22.param"

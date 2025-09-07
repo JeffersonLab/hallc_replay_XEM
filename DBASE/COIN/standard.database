@@ -50,6 +50,9 @@ g_ctp_det_calib_filename   = "DBASE/COIN/s6_det_calib_fa22.param"
 17189-17190
 g_ctp_det_calib_filename   = "DBASE/COIN/s7_det_calib_fa22.param"
 
+17191-17201
+g_ctp_det_calib_filename   = "DBASE/COIN/s8_det_calib_fa22.param"
+
 17202-17204
 g_ctp_det_calib_filename   = "DBASE/COIN/s8_det_calib_fa22.param"
 
