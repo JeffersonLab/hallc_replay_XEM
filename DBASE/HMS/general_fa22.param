@@ -15,7 +15,7 @@ cminch=2.54
 
 ; HMS default geometry parameter files 
 #include "PARAM/HMS/CER/hcer_geom.param"
-#include "PARAM/HMS/DC/hdc_geom.param"
+#include "PARAM/HMS/DC/hdc_newalign_geom.param"
 #include "PARAM/HMS/HODO/hhodo_geom.param"
 #include "PARAM/HMS/AERO/haero_geom.param"
 #include "PARAM/HMS/CAL/hcal_geom.param"

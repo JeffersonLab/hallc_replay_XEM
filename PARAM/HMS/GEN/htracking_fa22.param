@@ -1,3 +1,7 @@
+; Use updated tracking algorithm
+hUseFindSpacePoints = 1
+hUseNewLinkStubs = 1
+
 ; Maximum number of hits allowed in chambers for pattern recognition to proceed (one for each chamber)
 hmax_pr_hits = 35, 35
 
@@ -15,7 +19,10 @@ hmin_hit = 5, 5
 hmin_combos = 4, 4 
 
 ; Minimum separation of distinct space points
-hspace_point_criterion = 1.0, 1.0
+; Old values
+;hspace_point_criterion = 1.0, 1.0
+; Suggested new values for new tracking algorithm
+hspace_point_criterion = 0.5, 0.5
 
 ; Maximum difference between xp returned by stub and expected xp
 hstub_max_xpdiff = .05

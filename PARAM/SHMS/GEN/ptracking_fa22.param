@@ -3,6 +3,10 @@
 ;              pattern recognition to proceed. This protexts against unusual
 ;              kami kaze events which hang the analyzer to a long time.
 
+; Use updated tracking algorithm
+pUseFindSpacePoints = 1
+pUseNewLinkStubs = 1
+
 ; Tracking parameters
   pmax_pr_hits = 35, 35
 
@@ -14,7 +18,11 @@ pmin_combos = 4,4
 ; hspace_point_criterion(i) minimum separation of distinct space points
 ; recommended value for hspace_point_criterion ( based on meeting
 ; Feb 2003)
-  pspace_point_criterion = 0.9, 0.9
+;
+;  Old values
+;  pspace_point_criterion = 0.9, 0.9
+; Suggested values for new tracking algorithm
+  pspace_point_criterion = 0.5, 0.5
 
 ; The following four criteria are applied to the stub fit results at the
 ; focal plane position to link stubs to tracks
