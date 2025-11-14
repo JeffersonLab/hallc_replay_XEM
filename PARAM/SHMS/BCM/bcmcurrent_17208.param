@@ -1,0 +1,13 @@
+num_scal_reads = 8
+
+scal_read_bcm1_current = 31, 31, 36, 38, 40, 40, 40, 40
+
+scal_read_bcm2_current = 31, 31, 36, 38, 41, 40, 40, 40
+
+scal_read_bcm4a_current = 31, 31, 35, 38, 40, 40, 40, 40
+
+scal_read_bcm4b_current = 41, 41, 41, 41, 41, 41, 41, 41
+
+scal_read_bcm4c_current = 31, 31, 36, 38, 40, 40, 40, 40
+
+scal_read_event = 1, 1418, 3039, 4795, 6640, 8446, 10000, 10692
