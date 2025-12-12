@@ -37,7 +37,7 @@ class ScalerCalib {
 
   void ClearContainers();
   int FillContainer();
-  int PrintContainer(ScalerContainer sc);
+  int PrintContainer(ScalerContainer sc, bool isEvNum = false);
 
 
   ScalerContainer evnum;
