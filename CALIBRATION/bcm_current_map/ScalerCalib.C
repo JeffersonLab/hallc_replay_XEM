@@ -78,7 +78,7 @@ int ScalerCalib::Run()
   
   outfile << "\n" << "\n";
   outfile << "scal_read_event = ";
-  PrintContainer(evnum);
+  PrintContainer(evnum, true);
 
   outfile.close();
 
@@ -88,7 +88,7 @@ int ScalerCalib::Run()
 
 //_________________________________
 
-int ScalerCalib::PrintContainer(ScalerContainer sc)
+int ScalerCalib::PrintContainer(ScalerContainer sc, bool isEvNum)
 {
   
   if(sc.size() < 1)
@@ -100,8 +100,9 @@ int ScalerCalib::PrintContainer(ScalerContainer sc)
 
   for(SCIterator i = sc.begin(); i != sc.end()-1; ++i)
     {
-      if(*i<=1E6)outfile<<std::fixed<<std::setprecision(0);
-      outfile << *i << ", ";
+      // if(*i<=1E6)outfile<<std::fixed<<std::setprecision(0);
+      if(isEvNum) {outfile << std::fixed << std::setprecision(0) <<  *i << ", ";}
+      else {outfile << std::fixed << std::setprecision(6) <<  *i << ", ";}
     }
   
   outfile << sc.back();
