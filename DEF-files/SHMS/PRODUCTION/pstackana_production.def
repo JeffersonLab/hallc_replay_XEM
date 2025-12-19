@@ -22,6 +22,7 @@
 #include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_prodvars.def"
 #include "DEF-files/SHMS/PRODUCTION/BCM/pbcm_vars.def"
 #include "DEF-files/SHMS/PRODUCTION/TRIG/ptrig_vars.def"
+#include "DEF-files/SHMS/PRODUCTION/EXTCOR/pextcor_vars.def"
 
 #include "DEF-files/SHMS/PRODUCTION/pcal_ps_adcvars_tmp.def"
 
