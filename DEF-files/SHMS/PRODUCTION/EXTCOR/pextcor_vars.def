@@ -2,4 +2,4 @@
 # Extended Target Correction Variables
 #*************************************
 
-P.extcor.*
+block P.extcor.*
