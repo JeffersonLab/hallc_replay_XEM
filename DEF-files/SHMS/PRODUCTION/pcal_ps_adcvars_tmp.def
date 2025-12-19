@@ -1,0 +1,5 @@
+# Temporary file for including preshower adc variables in pass 2.5
+# May not be used long term, including allows pass 2.5 to occur sooner
+
+block P.cal.numGoodPosAdcHits
+block P.cal.numGoodNegAdcHits
