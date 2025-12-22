@@ -23,5 +23,5 @@ gBCM_SatQuadratic=  0.00175,  0.002,  0.0,  0.0,  0.0,  0.0
 
 gBCM_Current_threshold = 5.0
 ; index = 0 to gNumBCMs-1
-gBCM_Current_threshold_index = 3
+gBCM_Current_threshold_index = 1
 
